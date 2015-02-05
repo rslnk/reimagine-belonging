@@ -4,8 +4,19 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "429774c2405a7b26903ada0fd8020f3b",
+    "hash": "9b03a6e28d505a76616cccebb5e3f5d7",
     "packages": [
+        {
+            "name": "advancedcustomfields/acf-pro",
+            "version": "5.1.8",
+            "dist": {
+                "type": "zip",
+                "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzYwMTd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMjkgMDA6MTM6MDg=",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-muplugin"
+        },
         {
             "name": "composer/installers",
             "version": "v1.0.12",
@@ -173,6 +184,61 @@
             "time": "2013-09-09 15:04:54"
         },
         {
+            "name": "roots/soil",
+            "version": "3.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/roots/soil/archive/master.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "type": "wordpress-muplugin"
+        },
+        {
+            "name": "roots/wp-h5bp-htaccess",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roots/wp-h5bp-htaccess.git",
+                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roots/wp-h5bp-htaccess/zipball/d0f9b5bdadec33169b0074c9a26f610886c61864",
+                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.3.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Scott Walkinshaw",
+                    "email": "scott.walkinshaw@gmail.com",
+                    "homepage": "https://github.com/swalkinshaw",
+                    "role": "Roots/Bedrock developer"
+                },
+                {
+                    "name": "Ben Word",
+                    "email": "ben@benword.com",
+                    "homepage": "https://github.com/retlehs",
+                    "role": "Roots/Bedrock developer"
+                }
+            ],
+            "description": "HTML5 Boilerplate's .htaccess for WordPress",
+            "homepage": "http://roots.io/plugins/html5-boilerplate-htaccess/",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2014-06-07 21:14:41"
+        },
+        {
             "name": "vlucas/phpdotenv",
             "version": "v1.0.9",
             "source": {
@@ -229,6 +295,7 @@
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.4"
     },

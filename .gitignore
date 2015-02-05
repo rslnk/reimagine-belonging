@@ -23,8 +23,8 @@ web/media/*
 !web/app/mu-plugins/disallow-indexing.php
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/bedrock-autoloader.php
-#!web/app/mu-plugins/base-roots-settings
-#!web/app/mu-plugins/base-roots-settings/*
+!web/app/mu-plugins/base-roots-settings
+!web/app/mu-plugins/base-roots-settings/*
 
 # Vendor (e.g. Composer)
 vendor

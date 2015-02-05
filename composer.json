@@ -37,13 +37,40 @@
     {
       "type": "composer",
       "url": "http://wpackagist.org"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "roots/soil",
+        "version": "3.0.3",
+        "type": "wordpress-muplugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://github.com/roots/soil/archive/master.zip"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advancedcustomfields/acf-pro",
+        "version": "5.1.8",
+        "type": "wordpress-muplugin",
+        "dist": {
+          "type": "zip",
+          "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzYwMTd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMjkgMDA6MTM6MDg="
+        }
+      }
     }
   ],
   "require": {
     "php": ">=5.4",
     "johnpbloch/wordpress": "4.1",
     "composer/installers": "v1.0.12",
-    "vlucas/phpdotenv": "1.0.9"
+    "vlucas/phpdotenv": "1.0.9",
+    "roots/soil": "3.0.3",
+    "advancedcustomfields/acf-pro": "5.1.8",
+    "roots/wp-h5bp-htaccess": "1.1.0"
   },
   "extra": {
     "installer-paths": {
