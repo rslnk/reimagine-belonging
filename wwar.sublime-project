@@ -1,0 +1,59 @@
+{
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": ".",
+            "name": "Project root"
+        },
+        {
+            "follow_symlinks": true,
+            "path": "./web/app",
+            "name": "App",
+            "file_exclude_patterns": [".gitkeep"]
+        },
+        {
+            "follow_symlinks": true,
+            "path": "./web/app/themes/wwar/lib",
+            "name": "Theme (lib)",
+        },
+        {
+            "path": "./web/app/themes/wwar",
+            "name": "Theme (templates)",
+            "folder_exclude_patterns":
+            [
+                "assets",
+                "lang",
+                "lib"
+            ],
+            "file_exclude_patterns":
+            [
+                ".gitkeep",
+                "*.md",
+                "*.bowerrc",
+                "*.editorconfig",
+                "*.jshintrc",
+                "*.json",
+                "*.gitignore",
+                "Grunfile.js",
+            ]
+        },
+        {
+            "path": "./web/app/themes/wwar/assets",
+            "name": "Theme (assets)"
+        },
+        {
+            "path": "./web/app/themes/wwar/assets/styles",
+            "name": "Theme (assets/styles)"
+            //"file_exclude_patterns": ["*.css"]
+        },
+        {
+            "follow_symlinks": true,
+            "path": "./web/app/themes/wwar/assets/scripts",
+            "name": "Theme (assets/scripts)",
+        }
+    ],
+    "tab_size": 2,
+    "translate_tabs_to_spaces": true,
+    "use_tab_stops": true
+}
