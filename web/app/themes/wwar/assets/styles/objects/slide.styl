@@ -1,0 +1,61 @@
+.slide
+  position relative
+  overflow hidden
+  +media-query( $screen, $bp--tablet )
+    min-height 100%
+
+.slide__content 
+  position relative
+  text-align left
+  z-index 100
+  padding 1em
+  +media-query( $screen, $bp--tablet )
+    margin-left 5%
+    width 50%
+  +media-query( $screen, $bp--desktop )
+    width 40%
+
+.slide__content
+  h2, p
+    color $color--black
+
+
+
++media-query( $screen, $bp--tablet )
+  .slide--1905
+    background black
+    h2, p 
+      color white
+    p.date 
+      display none
+  .slide--2006-b
+    h2, p
+      color white
+    background black
+  .slide--1915
+    background url('../images/1915-background.jpg')
+    h2, p
+      color white
+
+.slide__bg
+  display none
+  +media-query( $screen, $bp--tablet )
+    display block
+  position absolute
+  left 0
+  top 0
+  size 100% 100%  
+  background-position center
+  background-size cover
+  z-index 10
+
+
+.slide__bg--1848
+  background-image url('../images/1848.jpg')
+.slide__bg--1905
+  background-image url('../images/1905-1.jpg')
+.slide__bg--1915
+  z-index 50
+  background-image url('../images/1915-calculations.png')
+.slide__bg--2006-b
+  background-image url('../images/2006-b.jpg')

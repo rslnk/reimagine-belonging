@@ -7,6 +7,10 @@ var gulp        = require('gulp');
 var lazypipe    = require('lazypipe');
 var merge       = require('merge-stream');
 
+// Stylus + koutoSwiss
+var stylus = require('gulp-stylus');
+var koutoSwiss = require('kouto-swiss');
+
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./assets/manifest.json');
 
@@ -141,7 +145,8 @@ gulp.task('styles', function() {
   var merged = merge();
   manifest.forEachDependency('css', function(dep) {
     merged.add(gulp.src(dep.globs, {base: 'styles'})
-      .pipe(cssTasks(dep.name)));
+      .pipe(stylus({ use: [ koutoSwiss() ] }))
+    );
   });
   return merged
     .pipe(writeToManifest('styles'));
