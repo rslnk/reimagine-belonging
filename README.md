@@ -1,8 +1,8 @@
-# [With Winds and Roots Interactive](http://withwingandroots.com)
+# [With Wings and Roots Interactive](http://withwingandroots.com)
 
-**With Wings And Roots Interactive** project is build on [Bedrock](http://roots.io/wordpress-stack/), a modern WordPress stack and [Roots](http://roots.io/starter-theme/) starter theme that utilizes [HTML5 Boilerplate](http://html5boilerplate.com/) and modern development tools for easier website development.
+This project is build on [Bedrock](http://roots.io/wordpress-stack/) and [Roots](http://roots.io/starter-theme/), a combination of a WordPress stack and a starter theme that utilize modern development tools and practices for easier website development.
 
-* Source: [https://bitbucket.org/rslnk/wwar-interactive](https://bitbucket.org/rslnk/wwar-interactive)
+* Source: [https://github.com/rslnk/wwar-interactive](https://github.com/rslnk/wwar-interactive)
 * Homepage: [http://withwingandroots.com](http://withwingandroots.com)
 
 ## Requirements
@@ -26,12 +26,12 @@
   * The latest [Modernizr](http://modernizr.com/) build for feature detection
   * An optimized Google Analytics snippet
 * [Kuoto Swiss](http://kouto-swiss.io/)
-* [Theme wrapper](http://roots.io/sage/getting-started/theme-wrapper/)
+* [Theme wrapper](http://roots.io/an-introduction-to-the-roots-theme-wrapper/)
 * Cleaner HTML output of navigation menus
 
 ## Installation/Usage
 
-1. Fork git repo: `git clone https://rslnk@bitbucket.org/rslnk/wwar-interactive.git`
+1. Fork git repo: `git clone git@github.com:rslnk/wwar-interactive.git`
 2. Edit `.env` and update environment variables:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
@@ -186,9 +186,11 @@ Edit `lib/config.php` to enable or disable theme features and to define a Google
 
 Edit `lib/init.php` to setup navigation menus, post thumbnail sizes, post formats, and sidebars.
 
-## Must-use plugins
+## Project plugins
 
-### Base theme setup
+### Must-use plugins
+
+#### Base theme setup
 Custom plugin that automatically sets theme specific defaults:
 
 * Updates permalink structure
@@ -197,22 +199,17 @@ Custom plugin that automatically sets theme specific defaults:
 * Sets uploads directory URL to `example.com/media`
 * Disables year/month uploads sorting
 
-### Soil
+#### Soil
 [Soil](https://github.com/roots/soil) plugin cleans up WordPress:
 
 * Cleaner output of `wp_head` and enqueued assets
 * Root relative URLs
 * Nice search (`/search/query/`)
 
-### ACF PRO
+#### ACF PRO
 [ACF PRO](http://www.advancedcustomfields.com/pro/) plugin manages WordPress custom fields.
 
 ## Todo
 
 * Vagrant/Ansible
 * Solution for basic database syncing/copying
-
-## Support
-
-* Contact: [ruslan.komjakov@gmail.com](mailto:ruslan.komjakov@gmail.com)
-* Use the [Roots Discourse](http://discourse.roots.io/) forum to ask questions and get support with Bedrock and Roots.
