@@ -14,14 +14,45 @@
         },
         {
             "follow_symlinks": true,
-            "path": "./web/app/themes/wwar/lib",
-            "name": "Theme (lib)",
+            "path": "./web/app/themes/wwar-theme/",
+            "name": "Theme",
+            "folder_exclude_patterns":
+            [
+                "bower_components",
+                //"dist",
+                //"assets",
+                //"lang",
+                //"lib"
+            ],
+            "file_exclude_patterns":
+            [
+                ".gitkeep",
+                "*.md",
+                "*.bowerrc",
+                "*.editorconfig",
+                "*.jshintrc",
+                //"*.json",
+                "*.gitignore",
+                //"Grunfile.js",
+                //"gulpfile.js",
+                "ruleset.xml",
+                "*.jscsrc",
+                "*.yml"
+            ]
         },
         {
-            "path": "./web/app/themes/wwar",
+            "follow_symlinks": true,
+            "path": "./web/app/themes/wwar-theme/lib",
+            "name": "Theme (lib)"
+        },
+        {
+            "follow_symlinks": true,
+            "path": "./web/app/themes/wwar-theme/templates",
             "name": "Theme (templates)",
             "folder_exclude_patterns":
             [
+                "bower_components",
+                "dist",
                 "assets",
                 "lang",
                 "lib"
@@ -36,21 +67,24 @@
                 "*.json",
                 "*.gitignore",
                 "Grunfile.js",
+                "gulpfile.js",
+                "ruleset.xml",
+                "*.jscsrc",
+                "*.yml"
             ]
         },
         {
-            "path": "./web/app/themes/wwar/assets",
+            "path": "./web/app/themes/wwar-theme/assets",
             "name": "Theme (assets)"
         },
         {
-            "path": "./web/app/themes/wwar/assets/styles",
+            "path": "./web/app/themes/wwar-theme/assets/styles",
             "name": "Theme (assets/styles)"
-            //"file_exclude_patterns": ["*.css"]
         },
         {
             "follow_symlinks": true,
-            "path": "./web/app/themes/wwar/assets/scripts",
-            "name": "Theme (assets/scripts)",
+            "path": "./web/app/themes/wwar-theme/assets/scripts",
+            "name": "Theme (assets/scripts)"
         }
     ],
     "tab_size": 2,
