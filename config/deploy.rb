@@ -1,33 +1,25 @@
-set :application, 'wwar-interactive'
-set :user, "wwar-interactive"
+set :application, 'reimaginebelonging'
+set :rootuser, 'wingsroots'
+set :user, 'deploy'
 
 set :scm, :git
-set :repo_url, "git@bitbucket.org:rslnk/wwar-interactive.git"
-
-# Webfaction Server (both for production and staging)
-server "#{fetch(:user)}.webfactional.com", user: "#{fetch(:user)}", roles: %w{web app db}
+set :repo_url, "git@github.com:rslnk/reimagine-belonging.git"
 
 # Webfaction specific settings
-# =====================================================
+server "#{fetch(:rootuser)}.webfactional.com", user: "#{fetch(:user)}", roles: %w{web app db}
 
-# Set temp directory for username 'deploy'
-set :tmp_dir, "/home/#{fetch(:user)}/tmp"
+# Set temp directory
+set :tmp_dir, "/home/#{fetch(:rootuser)}/tmp"
 
-# Run composer update through SSHKit command
-# Note that composer must be installed in users home dir
-SSHKit.config.command_map[:composer] = "php55 -d memory_limit=512M -d allow_url_fopen=1 -d suhosin.executor.include.whitelist=phar /home/#{fetch(:user)}/composer/composer.phar"
-
-# =====================================================
+# Run Composer update through SSHKit command
+# Note that Composer must be installed in root user directory
+SSHKit.config.command_map[:composer] = "php55 -d memory_limit=512M -d allow_url_fopen=1 -d suhosin.executor.include.whitelist=phar /home/#{fetch(:rootuser)}/composer/composer.phar"
 
 # Branch options
-# Prompts for the branch name (defaults to current branch)
-#ask :branch, -> { `git rev-parse --abbrev-ref HEAD`.chomp }
 
-# Hardcodes branch to always be master
-# This could be overridden in a stage config file
+# Hardcode branch to always be master
+# This is overridden in a stage config file
 set :branch, :master
-
-#set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
 
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
