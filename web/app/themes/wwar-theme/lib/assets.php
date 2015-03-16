@@ -17,24 +17,81 @@ namespace Roots\Sage\Assets;
  * - An ID has been defined in config.php
  * - You're not logged in as an administrator
  */
-function asset_path($filename) {
-  $dist_path = get_template_directory_uri() . '/dist/';
-  $directory = dirname($filename) . '/';
-  $file = basename($filename);
 
-  $manifest_path = get_template_directory() . '/dist/assets.json';
+class JsonManifest {
+  private $manifest;
 
-  if (file_exists($manifest_path)) {
-    $manifest = json_decode(file_get_contents($manifest_path), true);
-  } else {
-    $manifest = [];
+  public function __construct($manifest_path) {
+    if (file_exists($manifest_path)) {
+      $this->manifest = json_decode(file_get_contents($manifest_path), true);
+    } else {
+      $this->manifest = [];
+    }
   }
 
-  if (WP_ENV !== 'development' && array_key_exists($file, $manifest)) {
-    return $dist_path . $directory . $manifest[$file];
+  public function get() {
+    return $this->manifest;
+  }
+
+  public function getPath($key = '', $default = null) {
+    $collection = $this->manifest;
+    if (is_null($key)) {
+      return $collection;
+    }
+    if (isset($collection[$key])) {
+      return $collection[$key];
+    }
+    foreach (explode('.', $key) as $segment) {
+      if (!isset($collection[$segment])) {
+        return $default;
+      } else {
+        $collection = $collection[$segment];
+      }
+    }
+    return $collection;
+  }
+}
+
+function asset_path($filename) {
+  $dist_path = get_template_directory_uri() . DIST_DIR;
+  $directory = dirname($filename) . '/';
+  $file = basename($filename);
+  static $manifest;
+
+  if (empty($manifest)) {
+    $manifest_path = get_template_directory() . DIST_DIR . 'assets.json';
+    $manifest = new JsonManifest($manifest_path);
+  }
+
+  if (WP_ENV !== 'development' && array_key_exists($file, $manifest->get())) {
+    return $dist_path . $directory . $manifest->get()[$file];
   } else {
     return $dist_path . $directory . $file;
   }
+}
+
+function bower_map_to_cdn($dependency, $fallback) {
+  static $bower;
+
+  if (empty($bower)) {
+    $bower_path = get_template_directory() . '/bower.json';
+    $bower = new JsonManifest($bower_path);
+  }
+
+  $templates = [
+    'google' => '//ajax.googleapis.com/ajax/libs/%name%/%version%/%file%'
+  ];
+
+  $version = $bower->getPath('dependencies.' . $dependency['name']);
+
+  if (isset($version) && preg_match('/^(\d+\.){2}\d+$/', $version)) {
+    $search = ['%name%', '%version%', '%file%'];
+    $replace = [$dependency['name'], $version, $dependency['file']];
+    return str_replace($search, $replace, $templates[$dependency['cdn']]);
+  } else {
+    return $fallback;
+  }
+
 }
 
 function assets() {
@@ -49,7 +106,11 @@ function assets() {
   if (!is_admin() && current_theme_supports('jquery-cdn')) {
     wp_deregister_script('jquery');
 
-    wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', [], null, true);
+    wp_register_script('jquery', bower_map_to_cdn([
+      'name' => 'jquery',
+      'cdn' => 'google',
+      'file' => 'jquery.min.js'
+    ], asset_path('scripts/jquery.js')), [], null, true);
 
     add_filter('script_loader_src', __NAMESPACE__ . '\\jquery_local_fallback', 10, 2);
   }
@@ -69,45 +130,14 @@ function jquery_local_fallback($src, $handle = null) {
   static $add_jquery_fallback = false;
 
   if ($add_jquery_fallback) {
-    echo '<script>window.jQuery || document.write(\'<script src="' . get_template_directory_uri() . '/dist/scripts/jquery.js"><\/script>\')</script>' . "\n";
+    echo '<script>window.jQuery || document.write(\'<script src="' . $add_jquery_fallback .'"><\/script>\')</script>' . "\n";
     $add_jquery_fallback = false;
   }
 
   if ($handle === 'jquery') {
-    $add_jquery_fallback = true;
+    $add_jquery_fallback = apply_filters('script_loader_src', asset_path('scripts/jquery.js'), 'jquery-fallback');
   }
 
   return $src;
 }
 add_action('wp_head', __NAMESPACE__ . '\\jquery_local_fallback');
-
-/**
- * Google Analytics snippet from HTML5 Boilerplate
- *
- * Cookie domain is 'auto' configured. See: http://goo.gl/VUCHKM
- */
-function google_analytics() {
-  ?>
-  <script>
-    <?php if (WP_ENV === 'production' && !current_user_can('manage_options')) : ?>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='//www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    <?php else : ?>
-      function ga() {
-        if (window.console) {
-          console.log('Google Analytics: ' + [].slice.call(arguments));
-        }
-      }
-    <?php endif; ?>
-    ga('create','<?= GOOGLE_ANALYTICS_ID; ?>','auto');ga('send','pageview');
-  </script>
-  <?php
-}
-
-if (GOOGLE_ANALYTICS_ID) {
-  add_action('wp_footer', __NAMESPACE__ . '\\google_analytics', 20);
-}
-
