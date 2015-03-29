@@ -54,7 +54,7 @@
       "type": "package",
       "package": {
         "name": "advancedcustomfields/acf-pro",
-        "version": "5.1.8",
+        "version": "5.2.1",
         "type": "wordpress-muplugin",
         "dist": {
           "type": "zip",
@@ -65,11 +65,11 @@
   ],
   "require": {
     "php": ">=5.4",
-    "johnpbloch/wordpress": "4.1",
     "composer/installers": "v1.0.12",
     "vlucas/phpdotenv": "1.0.9",
+    "johnpbloch/wordpress": "4.1.1",
     "roots/soil": "3.0.3",
-    "advancedcustomfields/acf-pro": "5.1.8",
+    "advancedcustomfields/acf-pro": "5.2.1",
     "roots/wp-h5bp-htaccess": "1.1.0"
   },
   "extra": {
