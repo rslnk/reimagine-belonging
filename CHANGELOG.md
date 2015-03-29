@@ -1,5 +1,6 @@
 ### 0.0.4: 2015-03-29
 
+* Referencing Sage ConditionalTagCheck directly
 * Update all dev dependencies
 * Add CHANGELOG.md
 * Update ACF Pro to 5.2.1
