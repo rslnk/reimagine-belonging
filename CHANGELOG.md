@@ -1,3 +1,7 @@
+### 0.0.5: 2015-03-30
+
+* Customize WordPress admin panel
+
 ### 0.0.4: 2015-03-29
 
 * Referencing Sage ConditionalTagCheck directly

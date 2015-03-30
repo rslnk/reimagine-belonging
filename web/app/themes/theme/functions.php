@@ -20,6 +20,7 @@ $sage_includes = [
   'lib/nav.php',                   // Custom nav modifications
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
+  'lib/admin-cp.php',              // Custom WordPress admin panel modifications
 ];
 
 foreach ($sage_includes as $file) {
