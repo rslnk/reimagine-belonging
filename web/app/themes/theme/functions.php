@@ -21,6 +21,7 @@ $sage_includes = [
   'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
   'lib/admin-cp.php',              // Custom WordPress admin panel modifications
+  'lib/post-types.php',            // Custom post types
 ];
 
 foreach ($sage_includes as $file) {
