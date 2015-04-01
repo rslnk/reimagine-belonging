@@ -1,5 +1,7 @@
-### 0.0.5: 2015-03-30
+### 0.0.6: 2015-04-01
 
+* Update ACF PRO to 5.2.2
+* Register Events and Stories post types and custom taxonomies
 * Customize WordPress admin panel
 
 ### 0.0.4: 2015-03-29
