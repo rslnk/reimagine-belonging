@@ -1,5 +1,7 @@
-### 0.0.6: 2015-04-01
+### 0.0.5: 2015-04-01
 
+* Add save/load directory for ACF PRO custom fields JSON to mu-plugins
+* Add Base Setup mu-plugin
 * Update ACF PRO to 5.2.2
 * Register Events and Stories post types and custom taxonomies
 * Customize WordPress admin panel
