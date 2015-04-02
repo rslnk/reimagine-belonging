@@ -15,7 +15,6 @@ sql-dump-*.sql
 web/app/plugins
 !web/app/plugins/.gitkeep
 web/app/mu-plugins/*
-!web/app/mu-plugins/.gitkeep
 web/app/upgrade
 web/app/uploads
 web/media/*
@@ -24,7 +23,6 @@ web/media/*
 !web/app/mu-plugins/register-theme-directory.php
 !web/app/mu-plugins/bedrock-autoloader.php
 !web/app/mu-plugins/base-setup
-!web/app/mu-plugins/acf-custom-fields
 
 # Vendor (e.g. Composer)
 vendor
