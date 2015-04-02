@@ -1,6 +1,7 @@
-### 0.0.5: 2015-04-01
+### 0.0.5: 2015-04-02
 
-* Add save/load directory for ACF PRO custom fields JSON to mu-plugins
+* Add API data endpoint to Base Setup mu-plugin
+* Add save/load directory for ACF PRO custom fields JSON to Base Setup mu-plugin
 * Add Base Setup mu-plugin
 * Register Events and Stories post types and custom taxonomies
 * Customize WordPress admin panel
