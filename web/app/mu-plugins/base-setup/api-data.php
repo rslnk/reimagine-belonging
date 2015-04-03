@@ -66,17 +66,26 @@ class API_Data {
 
     while ($query->have_posts()) {
       $p= $query->next_post();
+         have_rows('event_dates', $p->ID)
 
+    // vars
+    $image = get_sub_field('start_date');
       $output[] = array(
+
+
+
+
         'id' => $p->ID,
         //'title' => $p->post_title,
         'post_date_gmt' => $p->post_date_gmt,
         'permalink' => get_permalink( $p->ID ),
 
         'title' => $p->event_title,
+        'title2' => get_field('event_title', $p->ID),
         'subtitle' => $p->event_subtitle,
 
-        'start_date' => $p->event_dates, // ->start_date,
+        'start_date' => $p->event_dates -> $start_date, // ->start_date,
+        //'start_date' => have_rows('event_dates', $p->ID), // ->start_date,
         'end_date' => $p->event_dates, // ->end_date,
         'display_end_date' => $p->event_dates, // ->end_date_display,
 
