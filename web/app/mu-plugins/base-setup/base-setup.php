@@ -60,7 +60,7 @@ add_filter('acf/settings/load_json', 'custom_acf_json_load_point');
 
 function custom_acf_json_save_point( $path ) {
   // update path
-  $path = dirname( __FILE__ ) . '/custom-fields';
+  $path = __DIR__ . '/custom-fields';
   // return
   return $path;
   /* echo $path; */
@@ -69,7 +69,7 @@ function custom_acf_json_load_point( $paths ) {
   // remove original path (optional)
   unset($paths[0]);
   // append path
-  $paths[] = dirname( __FILE__ ) . '/custom-fields';
+  $paths[] = __DIR__ . '/custom-fields';
   // return
   return $paths;
 }
