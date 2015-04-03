@@ -1,26 +1,32 @@
 <?php
 /*
-* Sample code for using WordPress as a REST API endpoint (vs AJAX Admin)
-* Author: Pete Nelson @GunGeekATX
+* WordPress as a REST API
 *
-* 1) Create a page called API in WordPres
-* 2) Create a file called page-api.php in your theme directory
-* 3) Add code as-needed
+* example.com/api/?action=list-all-events
+*
+* Based on Pete Nelson's https://gist.github.com/petenelson/4724984
+* See also: http://www.billerickson.net/code/improve-performance-of-wp_query
+*
+* API calls:
+*
+* 1) List all 'events' post type
+* To do: 2) List all 'stories' post type
 *
 */
-
-
-// See what API call we want to do
-// example: http://localhost:/wp-mysite/api/?action=list-all-pages
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 
 $output = null;
-$sample_api = new My_Sample_API();
+$api = new API_Data();
 
 switch ($action) {
-  case 'list-all-pages':
-    $output = $sample_api->list_all_pages();
+
+  case 'list-all-events':
+    $output = $api->list_all_events();
+    break;
+
+  case 'list-all-stories':
+    $output = $api->list_all_events();
     break;
 
   default:
@@ -43,35 +49,45 @@ if ($output) {
 die();
 
 
+class API_Data {
 
-class My_Sample_API {
-
-  function list_all_pages() {
-
-    // last three options are from
-    // http://www.billerickson.net/code/improve-performance-of-wp_query/
+  function list_all_events() {
 
     $query = new WP_Query(
       array(
-        'post_type' => 'page',
+        'post_type' => 'events',
         'no_found_rows' => true, // counts posts, remove if pagination required
-        'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
-        'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
+        //'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
+        //'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
       )
     );
 
     $output = array();
 
-    // output just a small subset of the page information
     while ($query->have_posts()) {
       $p= $query->next_post();
 
-      // we'll return just a subest of
       $output[] = array(
         'id' => $p->ID,
-        'title' => $p->post_title,
+        //'title' => $p->post_title,
         'post_date_gmt' => $p->post_date_gmt,
         'permalink' => get_permalink( $p->ID ),
+
+        'title' => $p->event_title,
+        'subtitle' => $p->event_subtitle,
+
+        'start_date' => $p->event_dates, // ->start_date,
+        'end_date' => $p->event_dates, // ->end_date,
+        'display_end_date' => $p->event_dates, // ->end_date_display,
+
+        'timelines' => $p->event_taxonomies, // ->timelines,
+        'eras' => $p->event_taxonomies, // ->eras,
+        'types' => $p->event_taxonomies, // ->types,
+        'groups' => $p->event_taxonomies, // ->groups,
+        'topics' => $p->event_taxonomies, // t->opics,
+        'tags' => $p->event_taxonomies // ->tags,
+
+        //'preview_image_url' => $p->preview_image
       );
 
     }
