@@ -138,8 +138,8 @@ function change_menu_order( $menu_order ) {
   return array(
       'index.php',
       'edit.php', // blog posts
-      'edit.php?post_type=events',
-      'edit.php?post_type=stories',
+      'edit.php?post_type=event',
+      'edit.php?post_type=story',
       'edit.php?post_type=page',
       'separator1',
       'upload.php',
