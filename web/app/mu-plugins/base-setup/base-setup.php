@@ -62,8 +62,8 @@ function custom_acf_json_save_point( $path ) {
   // update path
   $path = dirname( __FILE__ ) . '/custom-fields';
   // return
-  /* return $path; */
-  echo $path;
+  return $path;
+  /* echo $path; */
 }
 function custom_acf_json_load_point( $paths ) {
   // remove original path (optional)

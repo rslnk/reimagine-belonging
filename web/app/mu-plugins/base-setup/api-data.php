@@ -50,53 +50,55 @@ die();
 
 
 class API_Data {
+  function termsArray($terms) {
+    $arr = array();
+    foreach ( $terms as $term ) {
+      $arr[] = array(
+        'name' => $term->name,
+        'slug' => $term->slug
+      );
+    }
+    return $arr;
+  }
 
   function list_all_events() {
 
-    $query = new WP_Query(
-      array(
-        'post_type' => 'events',
-        'no_found_rows' => true, // counts posts, remove if pagination required
-        //'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
-        //'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
-      )
-    );
+    $query = new WP_Query(array(
+      'post_type' => 'event',
+      'no_found_rows' => true, // counts posts, remove if pagination required
+      //'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
+      //'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
+    ));
 
     $output = array();
 
     while ($query->have_posts()) {
-      $p= $query->next_post();
-         have_rows('event_dates', $p->ID)
+      $p = $query->next_post();
+      $fields = get_fields($p->ID);
+      $dates = $fields['event_dates'][0];
+      $taxonomy = $fields['event_taxonomies'][0];
 
-    // vars
-    $image = get_sub_field('start_date');
+      $timelines = get_the_terms( $p->ID , 'event_timeline' );
+      $eras = get_the_terms( $p->ID , 'event_era' );
+      $types = get_the_terms( $p->ID , 'event_type' );
+      $groups = get_the_terms( $p->ID , 'event_group' );
+      $topics = get_the_terms( $p->ID , 'event_topic' );
+      $tags = get_the_terms( $p->ID , 'event_tag' );
+
+      // vars
       $output[] = array(
-
-
-
-
-        'id' => $p->ID,
-        //'title' => $p->post_title,
-        'post_date_gmt' => $p->post_date_gmt,
-        'permalink' => get_permalink( $p->ID ),
-
-        'title' => $p->event_title,
-        'title2' => get_field('event_title', $p->ID),
-        'subtitle' => $p->event_subtitle,
-
-        'start_date' => $p->event_dates -> $start_date, // ->start_date,
-        //'start_date' => have_rows('event_dates', $p->ID), // ->start_date,
-        'end_date' => $p->event_dates, // ->end_date,
-        'display_end_date' => $p->event_dates, // ->end_date_display,
-
-        'timelines' => $p->event_taxonomies, // ->timelines,
-        'eras' => $p->event_taxonomies, // ->eras,
-        'types' => $p->event_taxonomies, // ->types,
-        'groups' => $p->event_taxonomies, // ->groups,
-        'topics' => $p->event_taxonomies, // t->opics,
-        'tags' => $p->event_taxonomies // ->tags,
-
-        //'preview_image_url' => $p->preview_image
+        'id'          => $p->ID,
+        'permalink'   => get_permalink( $p->ID ),
+        'subtitle'    => $p->event_subtitle,
+        'start_date'  => $dates['start_date'],
+        'end_date'    => $dates['end_date'],
+        'display_end_date' => $dates['end_date'],
+        'timelines'   => $this->termsArray($timelines),
+        'eras'        => $this->termsArray($eras),
+        'types'       => $this->termsArray($types),
+        'groups'      => $this->termsArray($groups),
+        'topics'      => $this->termsArray($topics),
+        'tags'        => $this->termsArray($tags)
       );
 
     }
