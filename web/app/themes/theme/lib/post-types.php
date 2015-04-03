@@ -35,9 +35,13 @@ function register_post_types() {
 
   // Custom post type: Event
 
-  $singular = 'Event';
-  $plural   = 'Events';
-  $slug     = 'history/events';
+  $post_type      = 'event';
+  $slug           = 'history/events';
+  $supported_ui   = false; // hide all default WordPress post editing UI
+
+  $singular   = 'Event';
+  $plural     = 'Events';
+
 
   $labels = array(
     'name'               => __( $plural ),
@@ -61,7 +65,7 @@ function register_post_types() {
     'has_archive'       => false, // set 'true' to use archive-post-type.php template
     'capability_type'   => 'post',
     'rewrite'           => array('slug' => $slug, 'with_front' => false),
-    'supports'          => false,
+    'supports'          => $supported_ui,
     'labels'            => $labels,
     'menu_position'     => 6, // menu order overwritten in admin-cp.php
     'menu_icon'         => 'dashicons-clock',
@@ -70,14 +74,17 @@ function register_post_types() {
     'public'            => true
   );
 
-  register_post_type( 'events', $args );
+  register_post_type( $post_type, $args );
 
 
   // Custom post type: Story
 
-  $singular = 'Story';
-  $plural   = 'Stories';
-  $slug     = 'stories';
+  $post_type      = 'story';
+  $slug           = 'stories';
+  $supported_ui   = array( 'post-formats'); // false to hide all default WordPress post editing UI
+
+  $singular   = 'Story';
+  $plural     = 'Stories';
 
   $labels = array(
     'name'               => __( $plural ),
@@ -101,7 +108,7 @@ function register_post_types() {
     'has_archive'       => false, // set 'true' to use archive-post-type.php template
     'capability_type'   => 'post',
     'rewrite'           => array('slug' => $slug, 'with_front' => false),
-    'supports'          => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+    'supports'          => $supported_ui,
     'labels'            => $labels,
     'menu_position'     => 6, // menu order overwritten in admin-cp.php
     'menu_icon'         => 'dashicons-format-status',
@@ -110,19 +117,22 @@ function register_post_types() {
     'public'            => true
   );
 
-  register_post_type( 'stories', $args );
-
+  register_post_type( $post_type, $args );
 }
 
 // Taxonomies:
 
 function register_taxonomies() {
 
-  // Taxonomy: Event Timelines
+  // Taxonomy: Event Timeline
+  // This taxonomy is for internal use only and it is not publicly queryable
 
-  $singular = 'Timeline';
-  $plural   = 'Timelines';
-  $slug     = 'history/timelines';
+  $taxonomy     = 'event_timeline';
+  //$slug         = 'history/timeline';
+  $post_types   = 'event';
+
+  $plural       = 'Timelines';
+  $singular     = 'Timeline';
 
   $labels = array(
     'name'              => __( $plural ),
@@ -140,22 +150,27 @@ function register_taxonomies() {
 
   $args = array(
     'hierarchical'      => true,
+    'public'            => false,
     'labels'            => $labels,
     'show_ui'           => true,
     'meta_box_cb'       => false, // true to show meta box on post edit page
     'show_admin_column' => true,
     'query_var'         => true,
-    'rewrite'           => array('slug' => $slug, 'with_front' => false)
+    //'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'events_timelines', array( 'events' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Events Eras
+  // Taxonomy: Event Era
+  // This taxonomy is for internal use only and it is not publicly queryable
+
+  $taxonomy     = 'event_era';
+  //$slug         = 'history/events/eras';
+  $post_types   = 'event';
 
   $singular = 'Era';
   $plural   = 'Eras';
-  $slug     = 'history/events/eras';
 
   $labels = array(
     'name'              => __( $plural ),
@@ -173,22 +188,26 @@ function register_taxonomies() {
 
   $args = array(
     'hierarchical'      => true,
+    'public'            => false,
     'labels'            => $labels,
     'show_ui'           => true,
     'meta_box_cb'       => false, // true to show meta box on post edit page
     'show_admin_column' => true,
     'query_var'         => true,
-    'rewrite'           => array('slug' => $slug, 'with_front' => false)
+    //'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'evetns_eras', array( 'events' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Event Types
+  // Taxonomy: Event Type
+
+  $taxonomy     = 'event_type';
+  $slug         = 'history/events/types';
+  $post_types   = 'event';
 
   $singular = 'Type';
   $plural   = 'Types';
-  $slug     = 'history/events/types';
 
   $labels = array(
     'name'                       => __( $plural ),
@@ -219,14 +238,17 @@ function register_taxonomies() {
     'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'events_types', array( 'events' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Events Topics
+  // Taxonomy: Event Topic
+
+  $taxonomy     = 'event_topic';
+  $slug         = 'history/events/topics';
+  $post_types   = 'event';
 
   $singular = 'Topic';
   $plural   = 'Topics';
-  $slug     = 'history/events/topics';
 
   $labels = array(
     'name'                       => __( $plural ),
@@ -258,14 +280,17 @@ function register_taxonomies() {
     'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'events_topics', array( 'events' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Events Groups
+  // Taxonomy: Event Group
+
+  $taxonomy     = 'event_group';
+  $slug         = 'history/events/groups';
+  $post_types   = 'event';
 
   $singular = 'Group';
   $plural   = 'Groups';
-  $slug     = 'history/events/groups';
 
   $labels = array(
     'name'                       => __( $plural ),
@@ -297,89 +322,17 @@ function register_taxonomies() {
     'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'events_groups', array( 'events' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Stories Formats
+  // Taxonomy: Story Topic
 
-  $singular = 'Format';
-  $plural   = 'Formats';
-  $slug     = 'stories/formats';
-
-  $labels = array(
-    'name'                       => __( $plural ),
-    'singular_name'              => __( $singular ),
-    'search_items'               => __( 'Search ' . $plural ),
-    'popular_items'              => __( 'Popular ' . $plural ),
-    'all_items'                  => __( 'All ' . $plural ),
-    'parent_item'                => null,
-    'parent_item_colon'          => null,
-    'edit_item'                  => __( 'Edit ' . $singular  ),
-    'update_item'                => __( 'Update ' . $singular  ),
-    'add_new_item'               => __( 'Add New ' . $singular ),
-    'new_item_name'              => __( 'Add New ' . $singular . ' Name'),
-    'separate_items_with_commas' => __( 'Separate ' . $plural . ' with commas' ),
-    'add_or_remove_items'        => __( 'Add or remove ' . $plural . ' writers' ),
-    'choose_from_most_used'      => __( 'Choose from the most used ' . $plural ),
-    'not_found'                  => __( 'No ' . $plural  .' found.' ),
-    'menu_name'                  => __(  $plural ),
-  );
-
-  $args = array(
-    'hierarchical'      => false,
-    'labels'            => $labels,
-    'show_ui'           => true,
-    'show_admin_column' => true,
-    'query_var'         => true,
-    'rewrite'           => array('slug' => $slug, 'with_front' => false)
-  );
-
-  register_taxonomy( 'stories_formats', array( 'stories' ), $args );
-
-
-  // Taxonomy: Stories Categories
-
-  $singular = 'Category';
-  $plural   = 'Categories';
-  $slug     = 'stories/categories';
-
-  $labels = array(
-    'name'                       => __( $plural ),
-    'singular_name'              => __( $singular ),
-    'search_items'               => __( 'Search ' . $plural ),
-    'popular_items'              => __( 'Popular ' . $plural ),
-    'all_items'                  => __( 'All ' . $plural ),
-    'parent_item'                => null,
-    'parent_item_colon'          => null,
-    'edit_item'                  => __( 'Edit ' . $singular  ),
-    'update_item'                => __( 'Update ' . $singular  ),
-    'add_new_item'               => __( 'Add New ' . $singular ),
-    'new_item_name'              => __( 'Add New ' . $singular . ' Name'),
-    'separate_items_with_commas' => __( 'Separate ' . $plural . ' with commas' ),
-    'add_or_remove_items'        => __( 'Add or remove ' . $plural . ' writers' ),
-    'choose_from_most_used'      => __( 'Choose from the most used ' . $plural ),
-    'not_found'                  => __( 'No ' . $plural  .' found.' ),
-    'menu_name'                  => __(  $plural ),
-  );
-
-  $args = array(
-    'hierarchical'      => false,
-    'labels'            => $labels,
-    'show_ui'           => true,
-    'meta_box_cb'       => false, // true to show meta box on post edit page    'meta_box_cb'       => false, // true to show meta box on post edit page
-    'show_admin_column' => true,
-    'query_var'         => true,
-    'rewrite'           => array('slug' => $slug, 'with_front' => false)
-  );
-
-  register_taxonomy( 'stories_categories', array( 'stories' ), $args );
-
-
-  // Taxonomy: Stories Topics
+  $taxonomy     = 'story_topic';
+  $slug         = 'stories/topics';
+  $post_types   = 'story';
 
   $singular = 'Topic';
   $plural   = 'Topics';
-  $slug     = 'stories/topics';
 
   $labels = array(
     'name'                       => __( $plural ),
@@ -411,15 +364,104 @@ function register_taxonomies() {
     'rewrite'           => array('slug' => $slug, 'with_front' => false)
   );
 
-  register_taxonomy( 'stories_topics', array( 'stories' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 
 
-  // Taxonomy: Tags;
+  // Taxonomy: Stories Formats
+  // This taxonomy is for internal use only and it is not publicly queryable
+
+  $taxonomy     = 'story_format';
+  //$slug         = 'stories/formats';
+  $post_types   = 'story';
+
+  $singular = 'Format';
+  $plural   = 'Formats';
+
+  $labels = array(
+    'name'                       => __( $plural ),
+    'singular_name'              => __( $singular ),
+    'search_items'               => __( 'Search ' . $plural ),
+    'popular_items'              => __( 'Popular ' . $plural ),
+    'all_items'                  => __( 'All ' . $plural ),
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => __( 'Edit ' . $singular  ),
+    'update_item'                => __( 'Update ' . $singular  ),
+    'add_new_item'               => __( 'Add New ' . $singular ),
+    'new_item_name'              => __( 'Add New ' . $singular . ' Name'),
+    'separate_items_with_commas' => __( 'Separate ' . $plural . ' with commas' ),
+    'add_or_remove_items'        => __( 'Add or remove ' . $plural . ' writers' ),
+    'choose_from_most_used'      => __( 'Choose from the most used ' . $plural ),
+    'not_found'                  => __( 'No ' . $plural  .' found.' ),
+    'menu_name'                  => __(  $plural ),
+  );
+
+  $args = array(
+    'hierarchical'      => false,
+    'public'            => false,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    //'rewrite'           => array('slug' => $slug, 'with_front' => false)
+  );
+
+  register_taxonomy( $taxonomy, $post_types, $args );
+
+
+  // Taxonomy: Story Group
+  // This taxonomy is for internal use only and it is not publicly queryable
+
+  $taxonomy     = 'story_group';
+  //$slug         = 'stories/group';
+  $post_types   = 'story';
+
+
+  $singular = 'Group';
+  $plural   = 'Groups';
+
+  $labels = array(
+    'name'                       => __( $plural ),
+    'singular_name'              => __( $singular ),
+    'search_items'               => __( 'Search ' . $plural ),
+    'popular_items'              => __( 'Popular ' . $plural ),
+    'all_items'                  => __( 'All ' . $plural ),
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => __( 'Edit ' . $singular  ),
+    'update_item'                => __( 'Update ' . $singular  ),
+    'add_new_item'               => __( 'Add New ' . $singular ),
+    'new_item_name'              => __( 'Add New ' . $singular . ' Name'),
+    'separate_items_with_commas' => __( 'Separate ' . $plural . ' with commas' ),
+    'add_or_remove_items'        => __( 'Add or remove ' . $plural . ' writers' ),
+    'choose_from_most_used'      => __( 'Choose from the most used ' . $plural ),
+    'not_found'                  => __( 'No ' . $plural  .' found.' ),
+    'menu_name'                  => __(  $plural ),
+  );
+
+  $args = array(
+    'hierarchical'      => false,
+    'public'            => false,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'meta_box_cb'       => false, // true to show meta box on post edit page    'meta_box_cb'       => false, // true to show meta box on post edit page
+    'show_admin_column' => true,
+    'query_var'         => true,
+    //'rewrite'           => array('slug' => $slug, 'with_front' => false)
+  );
+
+  register_taxonomy( $taxonomy, $post_types, $args );
+
+
+  // Taxonomy: Global Tag;
   // Shared beetween Events and Stories
+
+  $taxonomy     = 'global_tag';
+  $slug         = 'tags';
+  $post_types   = array( 'event', 'story' );
 
   $singular = 'Tag';
   $plural   = 'Tags';
-  $slug     = 'tags';
 
   $labels = array(
     'name'                       => __( $plural ),
@@ -451,5 +493,5 @@ function register_taxonomies() {
     'rewrite'               => array( 'slug' => $slug ),
   );
 
-  register_taxonomy( 'global_tag', array( 'events', 'stories' ), $args );
+  register_taxonomy( $taxonomy, $post_types, $args );
 }

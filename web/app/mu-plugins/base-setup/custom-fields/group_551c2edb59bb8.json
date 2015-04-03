@@ -162,7 +162,7 @@
         },
         {
             "key": "field_551dc1ab7a5f7",
-            "label": "Classification",
+            "label": "Event classification",
             "name": "event_taxonomies",
             "prefix": "",
             "type": "repeater",
@@ -193,7 +193,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "events_timelines",
+                    "taxonomy": "event_timeline",
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "load_save_terms": 1,
@@ -214,7 +214,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "evetns_eras",
+                    "taxonomy": "event_era",
                     "field_type": "select",
                     "allow_null": 0,
                     "load_save_terms": 1,
@@ -223,8 +223,8 @@
                 },
                 {
                     "key": "field_551dc2c67a5fa",
-                    "label": "Types",
-                    "name": "types",
+                    "label": "Type",
+                    "name": "type",
                     "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
@@ -235,7 +235,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "events_types",
+                    "taxonomy": "event_type",
                     "field_type": "select",
                     "allow_null": 0,
                     "load_save_terms": 1,
@@ -256,7 +256,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "events_types",
+                    "taxonomy": "event_topic",
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "load_save_terms": 1,
@@ -277,7 +277,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "taxonomy": "events_groups",
+                    "taxonomy": "event_group",
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "load_save_terms": 1,
@@ -313,7 +313,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "events"
+                "value": "event"
             }
         ]
     ],
@@ -325,5 +325,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1428026580
+    "modified": 1428064035
 }
