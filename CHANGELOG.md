@@ -1,3 +1,21 @@
+### TO DOs
+
+* Add references and resources custom fields to event post
+* Add relative stories custom field to event post
+* Add flexible editor custom field to event post
+* Add option to show only year on event post
+* Replace WP the_title with custom field title value
+* Fix API output calls for repeaters custom filds in `api-data.php`
+
+### 0.0.6: 2015-04-03
+
+* Add preview image custom field to event post
+* Custom fields group for event post
+* Update taxonomies for event, story post types
+* Add image, video and audio post formats
+* Switch to `__DIR__` instead of `dirname(__FILE__)`
+* Don't register theme directory if `WP_DEFAULT_THEME` is defined
+
 ### 0.0.5: 2015-04-02
 
 * Add API data endpoint to Base Setup mu-plugin
