@@ -1,0 +1,329 @@
+{
+    "key": "group_551c2edb59bb8",
+    "title": "Event preview",
+    "fields": [
+        {
+            "key": "field_551dc6f9e7088",
+            "label": "Main",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_551db97154995",
+            "label": "Title",
+            "name": "event_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 75,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_551dc1907a5f6",
+            "label": "Subtitle",
+            "name": "event_subtitle",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 140,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_551dbcf53dbed",
+            "label": "Event date",
+            "name": "event_dates",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 1,
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_551dbef5e5ca7",
+                    "label": "Start date",
+                    "name": "start_date",
+                    "prefix": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "F j, Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_551dbf24e5ca8",
+                    "label": "Display end date",
+                    "name": "end_date_display",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Show end date?",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_551dbf59e5ca9",
+                    "label": "End date",
+                    "name": "end_date",
+                    "prefix": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_551dbf24e5ca8",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "F j, Y",
+                    "first_day": 1
+                }
+            ]
+        },
+        {
+            "key": "field_551dc6692d82e",
+            "label": "Classification",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_551dc1ab7a5f7",
+            "label": "Classification",
+            "name": "event_taxonomies",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 1,
+            "layout": "row",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_551dc1f57a5f8",
+                    "label": "Timelines",
+                    "name": "timelines",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "events_timelines",
+                    "field_type": "multi_select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_551dc2847a5f9",
+                    "label": "Eras",
+                    "name": "eras",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "evetns_eras",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_551dc2c67a5fa",
+                    "label": "Types",
+                    "name": "types",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "events_types",
+                    "field_type": "select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_551dc3247a5fc",
+                    "label": "Topics",
+                    "name": "topics",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "events_types",
+                    "field_type": "multi_select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_551dc2f17a5fb",
+                    "label": "Groups",
+                    "name": "groups",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "events_groups",
+                    "field_type": "multi_select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                },
+                {
+                    "key": "field_551dc3407a5fd",
+                    "label": "Tags",
+                    "name": "tags",
+                    "prefix": "",
+                    "type": "taxonomy",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "taxonomy": "global_tag",
+                    "field_type": "multi_select",
+                    "allow_null": 0,
+                    "load_save_terms": 1,
+                    "return_format": "id",
+                    "multiple": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "page_attributes"
+    ],
+    "modified": 1428026580
+}
