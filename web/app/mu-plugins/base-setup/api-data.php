@@ -1,17 +1,19 @@
 <?php
+
 /*
-* WordPress as a REST API
-*
-* example.com/api/?action=list-all-events
-*
-* Based on Pete Nelson's https://gist.github.com/petenelson/4724984
-* See also: http://www.billerickson.net/code/improve-performance-of-wp_query
-*
-* API calls:
-*
-* 1) List all 'events' post type
-* To do: 2) List all 'stories' post type
-*
+
+  WordPress as a REST API
+  -----------------------
+
+  Based on Pete Nelson's https://gist.github.com/petenelson/4724984
+  See also: http://www.billerickson.net/code/improve-performance-of-wp_query
+
+  API calls
+  =========
+
+  1) example.com/api/?action=list-all-events
+  2) List all 'stories' post type (to do!)
+
 */
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
@@ -73,11 +75,20 @@ class API_Data {
     $output = array();
 
     while ($query->have_posts()) {
-      $p = $query->next_post();
-      $fields = get_fields($p->ID);
-      $dates = $fields['event_dates'][0];
-      $taxonomy = $fields['event_taxonomies'][0];
 
+      $p = $query->next_post();
+
+      // get values from acf repeater fileds
+      // http://www.advancedcustomfields.com/resources/get_fields
+      $custom_fields = get_fields($p->ID);
+      //$end_date = $custom_fields['end_date'][0];
+      //$taxonomy = $fields['event_taxonomies'][0];
+
+      // get dates in F d format
+      $date_started = strtotime(get_field('date_started',$p->ID));
+      $date_ended = strtotime(get_field('date_ended',$p->ID));
+
+      // get post taxonomies
       $timelines = get_the_terms( $p->ID , 'event_timeline' );
       $eras = get_the_terms( $p->ID , 'event_era' );
       $types = get_the_terms( $p->ID , 'event_type' );
@@ -85,20 +96,35 @@ class API_Data {
       $topics = get_the_terms( $p->ID , 'event_topic' );
       $tags = get_the_terms( $p->ID , 'event_tag' );
 
-      // vars
+      // output post attributes
       $output[] = array(
-        'id'          => $p->ID,
-        'permalink'   => get_permalink( $p->ID ),
-        'subtitle'    => $p->event_subtitle,
-        'start_date'  => $dates['start_date'],
-        'end_date'    => $dates['end_date'],
-        'display_end_date' => $dates['end_date'],
-        'timelines'   => $this->termsArray($timelines),
-        'eras'        => $this->termsArray($eras),
-        'types'       => $this->termsArray($types),
-        'groups'      => $this->termsArray($groups),
-        'topics'      => $this->termsArray($topics),
-        'tags'        => $this->termsArray($tags)
+        'id'                    => $p->ID,
+        'permalink'             => get_permalink( $p->ID ),
+        'title'                 => $p->event_title,
+        'subtitle'              => $p->event_subtitle,
+
+        'display_date'          => $p->display_date,
+
+        // Event start date
+        'year_event_started'    => $p->year_started,
+        'month_event_started'   => date('F', $date_started),
+        'day_event_started'     => date('d', $date_started),
+
+        // Event end date
+        'year_event_ended'      => $p->year_ended,
+        'month_event_ended'     => date('F', $date_ended),
+        'day_event_ended'       => date('d', $date_ended),
+
+        //'start_date'          => $dates['start_date'],
+        //'end_date'            => $dates['end_date'],
+        //'display_end_date'    => $dates['end_date'],
+        'timelines'             => $this->termsArray($timelines),
+        'eras'                  => $this->termsArray($eras),
+        'types'                 => $this->termsArray($types),
+        'groups'                => $this->termsArray($groups),
+        'topics'                => $this->termsArray($topics),
+        'tags'                  => $this->termsArray($tags),
+        'preview_image'         => $p->preview_image
       );
 
     }
