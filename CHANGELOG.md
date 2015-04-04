@@ -1,14 +1,22 @@
 ### TO DOs
 
 * Add references and resources custom fields to event post
-* Add relative stories custom field to event post
 * Add flexible editor custom field to event post
 * Add option to show only year on event post
 * Replace WP the_title with custom field title value
-* Fix API output calls for repeaters custom filds in `api-data.php`
+
+
+### 0.0.7: 2015-04-04
+
+* Update event dates custom fields and API output to display full month and day
+* Add relationship custom fields to event post
+* Change post thumbnail meta box title to Preview Image
+* Remove global tag meta box from event and story post types
+* Remove story formats taxonomy, add post formats instead
 
 ### 0.0.6: 2015-04-03
 
+* Fix API output for repeaters custom filds in `api-data.php`
 * Add preview image custom field to event post
 * Custom fields group for event post
 * Update taxonomies for event, story post types
