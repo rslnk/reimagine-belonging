@@ -1,14 +1,17 @@
 <?php
+
 /*
 
-WordPress admin panel modifications
+  WordPress admin panel modifications
+  -----------------------------------
 
-* Clean up WordPress admin toolbar
-* Clean up WordPress dashboard
-* Register Site option pages
-* Clean up WordPress admin menu
-* Rename default WordPress admin menu items
-* Customize WordPress admin menu items order
+  * Clean up WordPress admin toolbar
+  * Clean up WordPress dashboard
+  * Register 'Site' option pages
+  * Clean up WordPress admin menu
+  * Rename default WordPress admin menu items
+  * Customize WordPress admin menu items order
+  * Change post thumbnail meta box title to 'Preview image'
 
 */
 
@@ -95,12 +98,16 @@ function hide_amdin_menu_items()
   remove_menu_page('tools.php');
 
   /*
+
     If user is an editor:
+
       1) Give permissions to edit theme options
       2) Hide theme options menu
       3) Hide ACF PRO custom fields menu
       4) Create 'Edit menus' subpage under Site Options page
+
   */
+
   global $user_ID;
 
   $user = wp_get_current_user();
@@ -149,4 +156,15 @@ function change_menu_order( $menu_order ) {
       'profile.php',
   );
 
+}
+
+// Change post thumbnail meta box title to 'Preview image'
+add_action( 'add_meta_boxes', 'change_featured_image_meta_box_title', 10, 2 );
+
+function change_featured_image_meta_box_title( $post_type, $post ) {
+  $post_types = array ( 'post', 'event', 'story' );
+  // remove original thumbnail image metabox
+  remove_meta_box( 'postimagediv', '', 'side' );
+  // add customized metabox
+  add_meta_box( 'postimagediv', __('Preview Image'), 'post_thumbnail_meta_box', '', 'side', 'high' );
 }
