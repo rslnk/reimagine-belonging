@@ -432,7 +432,7 @@ function register_taxonomies() {
 
   $taxonomy       = 'global_tag';
   $slug           = 'tags';
-  $post_types     = array( 'event', 'story' );
+  $post_types     = false; // array( 'event', 'story' );
 
   $singular       = 'Tag';
   $plural         = 'Tags';
