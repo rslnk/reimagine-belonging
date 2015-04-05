@@ -41,7 +41,7 @@ function register_post_types() {
 
   $post_type      = 'event';
   $slug           = 'history/events';
-  $supported_ui   = 'thumbnail'; // false to hide all default WordPress post editing UI
+  $supported_ui   = array( 'title', 'thumbnail' ); // false to hide all default WordPress post editing UI
 
   $singular       = 'Event';
   $plural         = 'Events';

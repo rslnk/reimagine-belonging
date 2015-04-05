@@ -1,8 +1,11 @@
 ### TO DOs
 
+* /history URL and template for timeline events
+* Default timeline in Site settings to be outputed in API default-settings
+* Rename event_date custom field to event_dates
+* Event relationship fields to output.
 * Add references and resources custom fields to event post
 * Add flexible editor custom field to event post
-* Replace WP the_title with custom field title value
 
 ### 0.0.7: 2015-04-04
 
