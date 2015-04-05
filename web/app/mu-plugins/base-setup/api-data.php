@@ -52,15 +52,18 @@ die();
 
 
 class API_Data {
-  function termsArray($terms) {
+
+  function terms_array($terms) {
     $arr = array();
-    foreach ( $terms as $term ) {
-      $arr[] = array(
-        'name' => $term->name,
-        'slug' => $term->slug
-      );
+    if ( !empty( $terms ) ) {
+      foreach ( $terms as $term ) {
+        $arr[] = array(
+          'name'  => $term->name,
+          'slug'  => $term->slug
+        );
+      }
+      return $arr;
     }
-    return $arr;
   }
 
   function list_all_events() {
@@ -68,8 +71,8 @@ class API_Data {
     $query = new WP_Query(array(
       'post_type' => 'event',
       'no_found_rows' => true, // counts posts, remove if pagination required
-      //'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
-      //'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
+      'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
+      'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
     ));
 
     $output = array();
@@ -78,17 +81,20 @@ class API_Data {
 
       $p = $query->next_post();
 
-      // get values from acf repeater fileds
+      // Get values from acf repeater fileds
       // http://www.advancedcustomfields.com/resources/get_fields
-      $custom_fields = get_fields($p->ID);
-      //$end_date = $custom_fields['end_date'][0];
-      //$taxonomy = $fields['event_taxonomies'][0];
+      //
+      // Example:
+      //
+      // $custom_fields = get_fields($p->ID);
+      // $dates = $acf_fields['acf_repeater_field'][0];
+      // 'output_name' => $dates['acf_sub_field'],
 
-      // get dates in F d format
+      // Get and format event start and end dates (month, day)
       $date_started = strtotime(get_field('date_started',$p->ID));
       $date_ended = strtotime(get_field('date_ended',$p->ID));
 
-      // get post taxonomies
+      // Get post taxonomies
       $timelines = get_the_terms( $p->ID , 'event_timeline' );
       $eras = get_the_terms( $p->ID , 'event_era' );
       $types = get_the_terms( $p->ID , 'event_type' );
@@ -96,7 +102,7 @@ class API_Data {
       $topics = get_the_terms( $p->ID , 'event_topic' );
       $tags = get_the_terms( $p->ID , 'event_tag' );
 
-      // output post attributes
+      // Output event attributes
       $output[] = array(
         'id'                    => $p->ID,
         'permalink'             => get_permalink( $p->ID ),
@@ -115,16 +121,14 @@ class API_Data {
         'month_event_ended'     => date('F', $date_ended),
         'day_event_ended'       => date('d', $date_ended),
 
-        //'start_date'          => $dates['start_date'],
-        //'end_date'            => $dates['end_date'],
-        //'display_end_date'    => $dates['end_date'],
-        'timelines'             => $this->termsArray($timelines),
-        'eras'                  => $this->termsArray($eras),
-        'types'                 => $this->termsArray($types),
-        'groups'                => $this->termsArray($groups),
-        'topics'                => $this->termsArray($topics),
-        'tags'                  => $this->termsArray($tags),
-        'preview_image'         => $p->preview_image
+        // Event taxonomy terms
+        'timelines'             => $this->terms_array($timelines),
+        'eras'                  => $this->terms_array($eras),
+        'types'                 => $this->terms_array($types),
+        'groups'                => $this->terms_array($groups),
+        'topics'                => $this->terms_array($topics),
+        'tags'                  => $this->terms_array($tags),
+
       );
 
     }

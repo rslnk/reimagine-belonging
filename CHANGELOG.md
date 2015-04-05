@@ -2,9 +2,7 @@
 
 * Add references and resources custom fields to event post
 * Add flexible editor custom field to event post
-* Add option to show only year on event post
 * Replace WP the_title with custom field title value
-
 
 ### 0.0.7: 2015-04-04
 
