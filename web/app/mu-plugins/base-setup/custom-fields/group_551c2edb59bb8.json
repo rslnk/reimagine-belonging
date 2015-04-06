@@ -21,7 +21,7 @@
         {
             "key": "field_551dbef5e5ca7",
             "label": "Start year",
-            "name": "star_year",
+            "name": "start_year",
             "prefix": "",
             "type": "text",
             "instructions": "",
@@ -390,5 +390,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1428276396
+    "modified": 1428340234
 }
