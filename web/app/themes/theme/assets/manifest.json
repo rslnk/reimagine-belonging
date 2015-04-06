@@ -17,6 +17,13 @@
     },
     "modernizr.js": {
       "bower": ["modernizr"]
+    },
+    "ng-events.js": {
+      "files": [
+        "ng/events/app.js"
+      ],
+      "main": true,
+      "bower": ["angular"]
     }
   },
   "config": {

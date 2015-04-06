@@ -72,11 +72,11 @@ var cssTasks = function(filename) {
     .pipe(function() {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
+      // .pipe(function() {
+      //   return $.if('*.less', $.less());
+      // })
       .pipe(function() {
-        return $.if('*.less', $.less());
-      })
-      .pipe(function() {
-        return $.if('*.scss', $.sass({
+        return $.if('*.scss', $.stylus({
           outputStyle: 'nested', // libsass doesn't support expanded yet
           precision: 10,
           includePaths: ['.'],
@@ -262,3 +262,4 @@ gulp.task('wiredep', function() {
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
 });
+
