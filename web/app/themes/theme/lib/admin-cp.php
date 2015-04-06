@@ -12,6 +12,7 @@
   * Rename default WordPress admin menu items
   * Customize WordPress admin menu items order
   * Change post thumbnail meta box title to 'Preview image'
+  * Customize admin columns for posts, pages, events and stories
 
 */
 
@@ -158,13 +159,57 @@ function change_menu_order( $menu_order ) {
 
 }
 
-// Change post thumbnail meta box title to 'Preview image'
-add_action( 'add_meta_boxes', 'change_featured_image_meta_box_title', 10, 2 );
+/*
 
-function change_featured_image_meta_box_title( $post_type, $post ) {
-  $post_types = array ( 'post', 'event', 'story' );
-  // remove original thumbnail image metabox
-  remove_meta_box( 'postimagediv', '', 'side' );
-  // add customized metabox
-  add_meta_box( 'postimagediv', __('Preview Image'), 'post_thumbnail_meta_box', '', 'side', 'high' );
+Customize admin colums
+----------------------
+
+* Add preview image and year columns to events posts list
+* Set columns css width and stylesin edit.php
+* Remove comments column from posts and pages
+
+*/
+
+add_filter( 'manage_event_posts_columns', 'events_columns_filter', 10, 1 );
+
+add_action( 'manage_event_posts_custom_column', 'add_events_columns', 10, 1 );
+add_action( 'admin_enqueue_scripts', 'post_admin_column_resize' );
+add_action( 'manage_posts_columns', 'remove_posts_comments_columns' );
+add_action( 'manage_pages_columns', 'remove_posts_comments_columns' );
+
+// Filter events columns
+function events_columns_filter( $columns ) {
+  $column_thumbnail = array( 'thumbnail' => 'Image' );
+  $column_wordcount = array( 'year' => 'Year' );
+  $columns = array_slice( $columns, 0, 1, true ) + $column_thumbnail + array_slice( $columns, 1, NULL, true );
+  $columns = array_slice( $columns, 0, 2, true ) + $column_wordcount + array_slice( $columns, 2, NULL, true );
+  return $columns;
+}
+
+// Add event post type admin columns
+function add_events_columns( $column ) {
+  global $post;
+  switch ( $column ) {
+    case 'thumbnail':
+      echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
+      break;
+    case 'year':
+      echo get_field( 'start_year', $post->ID );
+      break;
+  }
+}
+
+// Set columns size and styles
+function post_admin_column_resize() { ?>
+  <style type="text/css">
+    .edit-php .fixed .column-year { width: 65px; font-weight: bold; }
+    .edit-php .fixed .column-thumbnail { width: 70px; }
+    .edit-php .fixed .thumbnail img { width: 50px; height: 50px; }
+  </style>
+<?php }
+
+// Remove comments column from posts admin
+function remove_posts_comments_columns( $columns ) {
+    unset( $columns[ 'comments' ] );
+    return $columns;
 }

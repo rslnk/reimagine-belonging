@@ -41,7 +41,7 @@ function register_post_types() {
 
   $post_type      = 'event';
   $slug           = 'history/events';
-  $supported_ui   = 'thumbnail'; // false to hide all default WordPress post editing UI
+  $supported_ui   = array( 'title', 'thumbnail' ); // false to hide all default WordPress post editing UI
 
   $singular       = 'Event';
   $plural         = 'Events';
@@ -201,7 +201,7 @@ function register_taxonomies() {
     'labels'                      => $labels,
     'show_ui'                     => true,
     'meta_box_cb'                 => false, // true to show meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
     'query_var'                   => true,
     //'rewrite'                   => array('slug' => $slug, 'with_front' => false)
   );
@@ -243,7 +243,7 @@ function register_taxonomies() {
     'labels'                     => $labels,
     'show_ui'                    => true,
     'meta_box_cb'                => false, // true to show meta box on post edit page
-    'show_admin_column'          => true,
+    'show_admin_column'          => false,
     'query_var'                  => true,
     'rewrite'                    => array('slug' => $slug, 'with_front' => false)
   );
@@ -286,7 +286,7 @@ function register_taxonomies() {
     'labels'                     => $labels,
     'show_ui'                    => true,
     'meta_box_cb'                => false, // true to show meta box on post edit page
-    'show_admin_column'          => true,
+    'show_admin_column'          => false,
     'query_var'                  => true,
     'rewrite'                    => array('slug' => $slug, 'with_front' => false)
   );
@@ -329,7 +329,7 @@ function register_taxonomies() {
     'labels'                     => $labels,
     'show_ui'                    => true,
     'meta_box_cb'                => false, // true to show meta box on post edit page
-    'show_admin_column'          => true,
+    'show_admin_column'          => false,
     'query_var'                  => true,
     'rewrite'                    => array('slug' => $slug, 'with_front' => false)
   );
@@ -372,7 +372,7 @@ function register_taxonomies() {
     'labels'                     => $labels,
     'show_ui'                    => true,
     'meta_box_cb'                => false, // true to show meta box on post edit page    'meta_box_cb'       => false, // true to show meta box on post edit page
-    'show_admin_column'          => true,
+    'show_admin_column'          => false,
     'query_var'                  => true,
     'rewrite'                    => array('slug' => $slug, 'with_front' => false)
   );

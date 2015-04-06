@@ -91,8 +91,8 @@ class API_Data {
       // 'output_name' => $dates['acf_sub_field'],
 
       // Get and format event start and end dates (month, day)
-      $date_started = strtotime(get_field('date_started',$p->ID));
-      $date_ended = strtotime(get_field('date_ended',$p->ID));
+      $start_date = strtotime(get_field('start_date',$p->ID));
+      $end_date = strtotime(get_field('end_date',$p->ID));
 
       // Get post taxonomies
       $timelines = get_the_terms( $p->ID , 'event_timeline' );
@@ -100,26 +100,33 @@ class API_Data {
       $types = get_the_terms( $p->ID , 'event_type' );
       $groups = get_the_terms( $p->ID , 'event_group' );
       $topics = get_the_terms( $p->ID , 'event_topic' );
-      $tags = get_the_terms( $p->ID , 'event_tag' );
+      $tags = get_the_terms( $p->ID , 'global_tag' );
+
+      // Get WordPress post thumbnail URL (full image)
+      $preview_image_id = get_post_thumbnail_id( $p->ID );
+      $preview_image_url = wp_get_attachment_url($preview_image_id);
 
       // Output event attributes
       $output[] = array(
         'id'                    => $p->ID,
+        'title'                 => $p->post_title,
+        'post_date_gmt'         => $p->post_date_gmt,
+        'subtitle'              => $p->subtitle,
         'permalink'             => get_permalink( $p->ID ),
-        'title'                 => $p->event_title,
-        'subtitle'              => $p->event_subtitle,
 
-        'display_date'          => $p->display_date,
+        'preview_image'         => $preview_image_url,
+
+        'display_date'          => $p->display_dates,
 
         // Event start date
-        'year_event_started'    => $p->year_started,
-        'month_event_started'   => date('F', $date_started),
-        'day_event_started'     => date('d', $date_started),
+        'year_event_started'    => $p->start_year,
+        'month_event_started'   => date('F', $start_date),
+        'day_event_started'     => date('d', $start_date),
 
         // Event end date
-        'year_event_ended'      => $p->year_ended,
-        'month_event_ended'     => date('F', $date_ended),
-        'day_event_ended'       => date('d', $date_ended),
+        'year_event_ended'      => $p->end_year,
+        'month_event_ended'     => date('F', $end_date),
+        'day_event_ended'       => date('d', $end_date),
 
         // Event taxonomy terms
         'timelines'             => $this->terms_array($timelines),
