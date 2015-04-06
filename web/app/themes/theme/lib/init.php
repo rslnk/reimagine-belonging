@@ -30,6 +30,8 @@ function setup() {
   add_theme_support('post-thumbnails');
 
   // Disable intermediate sizes generation on image upload
+  update_option( 'thumbnail_size_h', 250 );
+  update_option( 'thumbnail_size_w', 250 );
   update_option( 'medium_size_h', 0 );
   update_option( 'medium_size_w', 0 );
   update_option( 'large_size_h', 0 );
