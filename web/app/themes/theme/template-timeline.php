@@ -4,4 +4,4 @@
  */
 ?>
 
-<?php print 'This is Timelines template for Angular JS' ?>
+<?php print 'This is Timeline template for Angular JS' ?>
