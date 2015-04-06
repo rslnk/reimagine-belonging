@@ -1,11 +1,16 @@
 ### TO DOs
 
-* /history URL and template for timeline events
+* Sortable columns on WordPpress UI: http://wpdreamer.com/2014/04/how-to-make-your-wordpress-admin-columns-sortable/
 * Default timeline in Site settings to be outputed in API default-settings
-* Rename event_date custom field to event_dates
 * Event relationship fields to output.
 * Add references and resources custom fields to event post
 * Add flexible editor custom field to event post
+
+### 0.0.8: 2015-04-06
+
+* Add event preview image api output
+* Customize admin colums
+* Add page templates
 
 ### 0.0.7: 2015-04-04
 

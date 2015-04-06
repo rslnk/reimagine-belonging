@@ -100,7 +100,11 @@ class API_Data {
       $types = get_the_terms( $p->ID , 'event_type' );
       $groups = get_the_terms( $p->ID , 'event_group' );
       $topics = get_the_terms( $p->ID , 'event_topic' );
-      $tags = get_the_terms( $p->ID , 'event_tag' );
+      $tags = get_the_terms( $p->ID , 'global_tag' );
+
+      // Get WordPress post thumbnail URL (full image)
+      $preview_image_id = get_post_thumbnail_id( $p->ID );
+      $preview_image_url = wp_get_attachment_url($preview_image_id);
 
       // Output event attributes
       $output[] = array(
@@ -109,6 +113,8 @@ class API_Data {
         'post_date_gmt'         => $p->post_date_gmt,
         'subtitle'              => $p->subtitle,
         'permalink'             => get_permalink( $p->ID ),
+
+        'preview_image'         => $preview_image_url,
 
         'display_date'          => $p->display_dates,
 
