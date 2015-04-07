@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "events.js": {
+      "files": ["ng/events/app.constants.js","ng/events/app.js"],
+      "bower": ["angular", "angular-ui-router"]
+    },
     "main.js": {
       "files": [
         "scripts/main.js"
@@ -17,13 +21,6 @@
     },
     "modernizr.js": {
       "bower": ["modernizr"]
-    },
-    "ng-events.js": {
-      "files": [
-        "ng/events/app.js"
-      ],
-      "main": true,
-      "bower": ["angular"]
     }
   },
   "config": {

@@ -1,11 +1,16 @@
 describe("Integration of Events Application", function () {
-  var app, scope, state;
+  var app, scope, state, provide;
 
-  beforeEach(module('eventsApp'));
+  beforeEach(function () { 
+    module('eventsApp.constants', function ($provide) {
+      $provide.constant('templatesPath', '');
+    });
+    module('eventsApp');
+  });
   beforeEach(module('events/templates/timeline.html'));
   beforeEach(module('events/templates/timeline.event.html'));
 
-  beforeEach(inject(function($compile, $rootScope){
+  beforeEach(inject(function($compile, $rootScope) {
     var html = '<div ng-app="eventsApp"><div ui-view></div></div>';
     scope = $rootScope.$new();
     app = $compile(html)(scope);
