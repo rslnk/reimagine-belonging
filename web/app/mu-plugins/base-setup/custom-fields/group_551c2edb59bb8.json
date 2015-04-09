@@ -153,7 +153,7 @@
             "name": "taxonomies",
             "prefix": "",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "<strong>Note:<\/strong> to reorder multiple selections drag items left or right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -316,7 +316,7 @@
             "name": "related_stories",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Select stories related to this events. Use taxonomy filter to narrow search results, or use search to search by story title.",
+            "instructions": "Select stories related to this events. Use taxonomy filter to narrow search results, or use search to search by story title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -349,7 +349,7 @@
             "name": "related_events",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Select similar or related events. Use taxonomy filter to narrow search results, or use search to search by event title.",
+            "instructions": "Select similar or related events. Use taxonomy filter to narrow search results, or use search to search by event title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -390,5 +390,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1428580082
+    "modified": 1428597821
 }
