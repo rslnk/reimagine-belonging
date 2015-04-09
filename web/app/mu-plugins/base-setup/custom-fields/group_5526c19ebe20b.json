@@ -1,0 +1,38 @@
+{
+    "key": "group_5526c19ebe20b",
+    "title": "Label color",
+    "fields": [
+        {
+            "key": "field_5526c1b4590db",
+            "label": "Label color",
+            "name": "taxonomy_term_color",
+            "prefix": "",
+            "type": "color_picker",
+            "instructions": "<br\/>Use semi-dark hues and tones that are in contrast with white text. Examples:  <br \/><br\/><span style=\"height: 25px; padding: 3px 6px ; background-color: #ffb400; font-style: normal; font-weight: normal; letter-spacing: 1px; color: #ffffff;\">#ffb400<\/span><span style=\"margin-left: 12px; height: 25px; padding: 3px 6px; background-color: #58b239; font-style: normal; font-weight: normal; letter-spacing: 1px; color: #ffffff;\">#58b239<\/span><span style=\"margin-left: 12px; height: 25px; padding: 3px 6px; background-color: #7539b2; font-style: normal; font-weight: normal; letter-spacing: 1px; color: #ffffff;\">#7539b2<\/span><span style=\"margin-left: 12px; height: 25px; padding: 3px 6px; background-color: #b2399d; font-style: normal; font-weight: normal; letter-spacing: 1px; color: #ffffff;\">#b2399d<\/span> <br \/><br\/>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#ffb400"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "event_group"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1428609252
+}

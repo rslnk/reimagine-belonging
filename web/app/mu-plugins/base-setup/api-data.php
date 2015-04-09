@@ -59,7 +59,8 @@ class API_Data {
       foreach ( $terms as $term ) {
         $arr[] = array(
           'name'  => $term->name,
-          'slug'  => $term->slug
+          'slug'  => $term->slug,
+          'color' => get_field('taxonomy_term_color',  $term)
         );
       }
       return $arr;
