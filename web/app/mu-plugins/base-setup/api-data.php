@@ -17,6 +17,7 @@
 */
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 0;
 
 $output = null;
 $api = new API_Data();
@@ -32,7 +33,7 @@ switch ($action) {
     break;
 
   case 'event-data':
-    $output = $api->event_data();
+    $output = $api->event_data($id);
     break;
 
   default:
@@ -54,8 +55,63 @@ if ($output) {
 
 die();
 
+class DataFilter {
+  public static function eventSidebarContent ($content) {
+    $result = array();
+
+    foreach ($content as $item) {
+      switch ($item['sidebar_content_type']){
+        case 'image':
+          $i = $item['image'][0];
+          $i['type'] = 'image';
+          $result[] = $i;
+          break;
+        case 'quote':
+          $i = $item['quote'][0];
+          $i['type'] = 'quote';
+          $result[] = $i;
+          break;
+        case 'sidenote':
+          $i = $item['sidenote'][0];
+          $i['type'] = 'sidenote';
+          $result[] = $i;
+          break;
+        case 'event':
+          $i = [];
+          $post = $item['related_event'][0];
+          $i['title'] = $post->post_title;
+          $i['type'] = 'event';
+          $result[] = $i;
+          break;
+        case 'story':
+          // run over getting posts data here
+          $i = [];
+          $post = $item['related_story'][0];
+          $i['title'] = $post->post_title;
+          $i['type'] = 'story';
+          $result[] = $i;
+          break;
+        case 'youtube_video':
+          $i = $item['youtube_video'][0];
+          $i['type'] = 'youtube_video';
+          $result[] = $i;
+          break;
+        case 'oembed';
+          $i = $item['oembed_video'][0];
+          $i['type'] = 'oembed';
+          $result[] = $i;
+          break;
+      }
+    }
+
+    return $result;
+  }
+}
 
 class API_Data {
+  function __construct () {
+    $this->dataFilter = new DataFilter();
+  }
 
   // List taxonomy terms
   function terms_array($terms) {
@@ -167,12 +223,14 @@ class API_Data {
   }
 
   // Output event post
-  function event_data() {
+  function event_data ($id) {
+    if ($id === 0) return false;
 
     $output = array();
 
-    $post_id = 5;
+    $post_id = $id;
     $post = get_post($post_id);
+
 
     // Get and format event start and end dates (month, day)
     $start_date = strtotime(get_field('start_date',$post->ID));
@@ -200,22 +258,10 @@ class API_Data {
     $post_source = $custom_fields['sources'][0];
     $post_resource = $custom_fields['resources'][0];
 
-    // Nested repeater fileds:
-    $sidebar_image = get_sub_field('image');
-    $sidebar_quote = get_sub_field('quote');
-    $sidebar_sidenote = get_sub_field('sidenote');
-    $sidebar_youtube_video = get_sub_field('youtube_video');
-    $sidebar_oembed_video = get_sub_field('oembed_video');
-    $sidebar_related_event = get_sub_field('related_event');
-    $sidebar_related_story = get_sub_field('related_story');
 
-    // Sidebar related posts
-    $related_event = get_sub_field( 'related_event', $post->ID );
-    $related_story = get_sub_field( 'related_story', $post->ID );
+    $rows = get_field('sidebar_content', $post->ID);
 
-    // Related posts
-    $related_events = get_field( 'related_events', $post->ID );
-    $related_stories = get_field( 'related_stories', $post->ID );
+    
 
     // Output event attributes
     $output[] = array(
@@ -257,78 +303,13 @@ class API_Data {
       // Main content
       'event_main_content'                 => $post->main_content,
 
-      // Sidebar Image
-      'sidebar_image_url'                  => $sidebar_image['url'],
-      'sidebar_image_title'                => $sidebar_image['title'],
-      'sidebar_image_caption'              => $sidebar_image['caption'],
-      'display_image_credit'               => $sidebar_image['display_credit'],
-      'sidebar_image_credit'               => $sidebar_image['credit'],
-      'sidebar_image_credit_link'          => $sidebar_image['credit_link'],
-
-      // Sidebar Quote
-      'sidebar_quote_text'                 => $sidebar_quote['text'],
-      'sidebar_quoute_author'              => $sidebar_quote['author'],
-      'sidebar_quoute_source'              => $sidebar_quote['source'],
-
-      // Sidebar Sidenote
-      'sidebar_sidenote_text'              => $sidebar_sidenote['title'],
-      'sidebar_sidenote_caption'           => $sidebar_sidenote['caption'],
-
-      // Sidebar related posts
-      'sidebar_related_story'              => $this->post_data_array($related_story),
-      'sidebar_related_event'              => $this->post_data_array($related_event),
-
-      // Sidebar YouTube video
-      'sidebar_youTube_video_ID'                => $sidebar_youtube_video['id'],
-      'sidebar_youTube_video_title'             => $sidebar_youtube_video['title'],
-      'sidebar_youTube_video_caption'           => $sidebar_youtube_video['caption'],
-      'display_youTube_video_credit'            => $sidebar_youtube_video['display_credit'],
-      'sidebar_youTube_video_credit'            => $sidebar_youtube_video['credit'],
-      'sidebar_youTube_video_credit_link'       => $sidebar_youtube_video['credit_link'],
-
-      // Sidebar oEmbed video
-      'sidebar_oEmbed_video_URL'                => $sidebar_oembed_video['id'],
-      'sidebar_oEmbed_video_hide_controls'      => $sidebar_oembed_video['hide_controls'],
-      'sidebar_oEmbed_video_autohide_controls'  => $sidebar_oembed_video['autohide_controls'],
-      'sidebar_oEmbed_video_hd_quality'         => $sidebar_oembed_video['hd_video_quality'],
-      'sidebar_oEmbed_video_title'              => $sidebar_oembed_video['title'],
-      'sidebar_oEmbed_video_caption'            => $sidebar_oembed_video['caption'],
-      'display_oEmbed_video_credit'             => $sidebar_oembed_video['display_credit'],
-      'sidebar_oEmbed_video_credit'             => $sidebar_oembed_video['credit'],
-      'sidebar_oEmbed_video_credit_link'        => $sidebar_oembed_video['credit_link'],
+      'sidebar'                            => $this->dataFilter->eventSidebarContent(get_field('sidebar_content', $post->ID))
 
       // Related posts
-      'related_stories'                    => $this->post_data_array($related_stories),
-      'related_events'                     => $this->post_data_array($related_events),
 
       // Sources
-      'source_title'                       => $post_source['title'],
-      'source_authors'                     => $post_source['authors'],
-      'source_editors_translators'         => $post_source['editors_translators'],
-      'source_periodical_title'            => $post_source['periodical_title'],
-      'source_location'                    => $post_source['location'],
-      'source_publisher'                   => $post_source['publisher'],
-      'source_publish date'                => $post_source['date_published'],
-      'source_pages'                       => $post_source['pages'],
-      'source_edition'                     => $post_source['pages'],
-      'source_isbn'                        => $post_source['isbn'],
-      'source_date_accessed'               => $post_source['isbn'],
-      'source_date_accessed'               => $post_source['url'],
 
       // Resources
-      'resource_title'                     => $post_resource['title'],
-      'resource_caption'                   => $post_resource['caption'],
-      'resource_authors'                   => $post_resource['authors'],
-      'resource_editors_translators'       => $post_resource['editors_translators'],
-      'resource_periodical_title'          => $post_resource['periodical_title'],
-      'resource_location'                  => $post_resource['location'],
-      'resource_publisher'                 => $post_resource['publisher'],
-      'resource_publish_date'              => $post_resource['date_published'],
-      'resource_pages'                     => $post_resource['pages'],
-      'resource_edition'                   => $post_resource['pages'],
-      'resource_isbn'                      => $post_resource['isbn'],
-      'resource_date_accessed'             => $post_resource['isbn'],
-      'resource_date_accessed'             => $post_resource['url']
 
     );
 
