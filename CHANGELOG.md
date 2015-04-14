@@ -2,8 +2,9 @@
 
 * Add default timeline choice in site options
 * Add 'event impact' settings to site options
-* Event relationship fields to output
+* Add mulitiple authors custom filed to event post
 * Setup .de site deploy
+* Output all event post custom fields
 
 ### 0.0.9: 2015-04-09
 

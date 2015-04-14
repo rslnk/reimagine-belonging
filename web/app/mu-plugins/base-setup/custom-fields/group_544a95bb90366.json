@@ -19,39 +19,9 @@
             "placement": "left"
         },
         {
-            "key": "field_544b9736f9b60",
-            "label": "Subheading",
-            "name": "section_subheading",
-            "prefix": "",
-            "type": "text",
-            "instructions": "Tip: subheadings should be relatively short.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_55244cd3a88f4",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_544b997ef9b63",
             "label": "Text",
-            "name": "section_text",
+            "name": "main_content",
             "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
@@ -66,6 +36,28 @@
             "tabs": "text",
             "toolbar": "full",
             "media_upload": 1
+        },
+        {
+            "key": "field_552d0d37bff26",
+            "label": "Authors",
+            "name": "authors",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_552659cd97585",
@@ -147,7 +139,7 @@
                 {
                     "key": "field_55265f3e303c3",
                     "label": "Image",
-                    "name": "the_image",
+                    "name": "url",
                     "prefix": "",
                     "type": "image",
                     "instructions": "",
@@ -172,7 +164,7 @@
                 {
                     "key": "field_55265f3e303c7",
                     "label": "Credit",
-                    "name": "image_credit",
+                    "name": "credit",
                     "prefix": "",
                     "type": "text",
                     "instructions": "",
@@ -194,7 +186,7 @@
                 {
                     "key": "field_55265f3e303c8",
                     "label": "Credit link",
-                    "name": "image_credit_link",
+                    "name": "credit_link",
                     "prefix": "",
                     "type": "text",
                     "instructions": "",
@@ -358,7 +350,7 @@
                 {
                     "key": "field_544b99dff9b64",
                     "label": "Image",
-                    "name": "sidebar_image",
+                    "name": "image",
                     "prefix": "",
                     "type": "repeater",
                     "instructions": "",
@@ -384,8 +376,8 @@
                     "sub_fields": [
                         {
                             "key": "field_552454efd99bd",
-                            "label": "Image",
-                            "name": "the_image",
+                            "label": "Add Image",
+                            "name": "url",
                             "prefix": "",
                             "type": "image",
                             "instructions": "",
@@ -410,7 +402,7 @@
                         {
                             "key": "field_552447c56db0c",
                             "label": "Image title",
-                            "name": "image_title",
+                            "name": "title",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -432,7 +424,7 @@
                         {
                             "key": "field_552448266db0e",
                             "label": "Caption",
-                            "name": "image_caption",
+                            "name": "caption",
                             "prefix": "",
                             "type": "textarea",
                             "instructions": "",
@@ -454,7 +446,7 @@
                         {
                             "key": "field_552459b255050",
                             "label": "Image credit",
-                            "name": "display_image_credit",
+                            "name": "display_credit",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -471,7 +463,7 @@
                         {
                             "key": "field_552448856db10",
                             "label": "Credit",
-                            "name": "image_credit",
+                            "name": "credit",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -501,7 +493,7 @@
                         {
                             "key": "field_552448b16db12",
                             "label": "Credit link",
-                            "name": "image_credit_link",
+                            "name": "credit_link",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -533,7 +525,7 @@
                 {
                     "key": "field_552449816db14",
                     "label": "Quote",
-                    "name": "sidebar_quote",
+                    "name": "quote",
                     "prefix": "",
                     "type": "repeater",
                     "instructions": "",
@@ -560,7 +552,7 @@
                         {
                             "key": "field_552449a26db15",
                             "label": "Quote",
-                            "name": "quote_text",
+                            "name": "text",
                             "prefix": "",
                             "type": "textarea",
                             "instructions": "",
@@ -590,7 +582,7 @@
                         {
                             "key": "field_552449d96db17",
                             "label": "Quote author",
-                            "name": "quote_author",
+                            "name": "author",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -620,7 +612,7 @@
                         {
                             "key": "field_55244a336db19",
                             "label": "Quote source",
-                            "name": "quote_source",
+                            "name": "source",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -652,7 +644,7 @@
                 {
                     "key": "field_552456cb804b5",
                     "label": "Sidenote",
-                    "name": "sidebar_sidenote",
+                    "name": "sidenote",
                     "prefix": "",
                     "type": "repeater",
                     "instructions": "",
@@ -679,7 +671,7 @@
                         {
                             "key": "field_552456f5804b6",
                             "label": "Title",
-                            "name": "sidenote_title",
+                            "name": "title",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -701,7 +693,7 @@
                         {
                             "key": "field_55245711804b7",
                             "label": "Caption",
-                            "name": "sidenote_caption",
+                            "name": "caption",
                             "prefix": "",
                             "type": "textarea",
                             "instructions": "",
@@ -725,7 +717,7 @@
                 {
                     "key": "field_55244b206db1b",
                     "label": "Related event",
-                    "name": "sidbar_related_event",
+                    "name": "related_event",
                     "prefix": "",
                     "type": "relationship",
                     "instructions": "",
@@ -762,7 +754,7 @@
                 {
                     "key": "field_55244b716db1d",
                     "label": "Related story",
-                    "name": "sidebar_related_story",
+                    "name": "related_story",
                     "prefix": "",
                     "type": "relationship",
                     "instructions": "",
@@ -799,7 +791,7 @@
                 {
                     "key": "field_544bf6a3a80bd",
                     "label": "YouTube Video",
-                    "name": "sidebar_youtube_video",
+                    "name": "youtube_video",
                     "prefix": "",
                     "type": "repeater",
                     "instructions": "Enter YouTube video ID. Copy part that follows after: \"http:\/\/youtu.be\/\". E.g. \"9D05ej8u-gU\".",
@@ -826,7 +818,7 @@
                         {
                             "key": "field_55245e191525d",
                             "label": "Video ID",
-                            "name": "youtube_video_id",
+                            "name": "id",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -848,7 +840,7 @@
                         {
                             "key": "field_55245e591525e",
                             "label": "Title",
-                            "name": "youtube_video_title",
+                            "name": "title",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -870,7 +862,7 @@
                         {
                             "key": "field_55245e881525f",
                             "label": "Caption",
-                            "name": "youtube_video_caption",
+                            "name": "caption",
                             "prefix": "",
                             "type": "textarea",
                             "instructions": "",
@@ -892,7 +884,7 @@
                         {
                             "key": "field_55245f5915260",
                             "label": "Display credit",
-                            "name": "display_youtube_video_credit",
+                            "name": "display_credit",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -909,7 +901,7 @@
                         {
                             "key": "field_55245fa515261",
                             "label": "Credit",
-                            "name": "youtube_video_credit",
+                            "name": "credit",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -939,7 +931,7 @@
                         {
                             "key": "field_55245fc215262",
                             "label": "Credit link",
-                            "name": "youtube_video_credit_link",
+                            "name": "credit_link",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -970,8 +962,8 @@
                 },
                 {
                     "key": "field_544b9a54f9b65",
-                    "label": "oEmbed",
-                    "name": "sidebar_oembed",
+                    "label": "oEmbed video",
+                    "name": "oembed_video",
                     "prefix": "",
                     "type": "repeater",
                     "instructions": "",
@@ -998,7 +990,7 @@
                         {
                             "key": "field_5451b08538b7d",
                             "label": "URL",
-                            "name": "oembed_url",
+                            "name": "url",
                             "prefix": "",
                             "type": "oembed",
                             "instructions": "",
@@ -1015,7 +1007,7 @@
                         {
                             "key": "field_5451aec5e8de6",
                             "label": "Hide controls",
-                            "name": "oembed_hide_controls",
+                            "name": "hide_controls",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -1032,7 +1024,7 @@
                         {
                             "key": "field_5451af9ce8de7",
                             "label": "Video quality",
-                            "name": "oembed_video_quality_hd",
+                            "name": "hd_video_quality",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -1049,7 +1041,7 @@
                         {
                             "key": "field_5451afe2e8de8",
                             "label": "Autohide Controls",
-                            "name": "oembed_autohide_controls",
+                            "name": "autohide_controls",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -1066,7 +1058,7 @@
                         {
                             "key": "field_552460ebca088",
                             "label": "Title",
-                            "name": "oembed_title",
+                            "name": "title",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -1088,7 +1080,7 @@
                         {
                             "key": "field_552460ebca089",
                             "label": "Caption",
-                            "name": "oembed_caption",
+                            "name": "caption",
                             "prefix": "",
                             "type": "textarea",
                             "instructions": "",
@@ -1110,7 +1102,7 @@
                         {
                             "key": "field_552460ebca08a",
                             "label": "Display credit",
-                            "name": "display_oembed_credit",
+                            "name": "display_credit",
                             "prefix": "",
                             "type": "true_false",
                             "instructions": "",
@@ -1127,7 +1119,7 @@
                         {
                             "key": "field_552460ebca08b",
                             "label": "Credit",
-                            "name": "oembed_credit",
+                            "name": "credit",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -1157,7 +1149,7 @@
                         {
                             "key": "field_552460ebca08c",
                             "label": "Credit link",
-                            "name": "oembed_credit_link",
+                            "name": "credit_link",
                             "prefix": "",
                             "type": "text",
                             "instructions": "",
@@ -1210,7 +1202,7 @@
             "name": "sources",
             "prefix": "",
             "type": "repeater",
-            "instructions": "Add resources and additional reading. <strong>Note:<\/strong> to reorder source items drag entry entry by the number on the left side.",
+            "instructions": "Add sources and citations. <strong>Note:<\/strong> to reorder source items drag by entry number displayed on the left side.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1717,7 +1709,7 @@
                 {
                     "key": "field_5526a76db341c",
                     "label": "URL",
-                    "name": "resource_url",
+                    "name": "url",
                     "prefix": "",
                     "type": "text",
                     "instructions": "",
@@ -1789,7 +1781,7 @@
             "name": "resources",
             "prefix": "",
             "type": "repeater",
-            "instructions": "Add resources and additional reading. <strong>Note:<\/strong> to reorder resource items drag entry entry by the number on the left side.",
+            "instructions": "Add resources and additional reading. <strong>Note:<\/strong> to reorder resource items drag by entry the number displayed on the left side.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -2333,7 +2325,7 @@
                 {
                     "key": "field_5526705c4911d",
                     "label": "URL",
-                    "name": "resource_url",
+                    "name": "url",
                     "prefix": "",
                     "type": "text",
                     "instructions": "",
@@ -2411,5 +2403,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1428596977
+    "modified": 1429015953
 }
