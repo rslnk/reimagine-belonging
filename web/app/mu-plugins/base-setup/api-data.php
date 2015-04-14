@@ -149,7 +149,6 @@ class API_Data {
     $arr = array();
     if ( !empty( $posts ) ) {
       foreach ( $posts as $post ) {
-
         // Get WordPress post thumbnail URL (full image)
         $preview_image_id = get_post_thumbnail_id( $post->ID );
         $preview_image_url = wp_get_attachment_url($preview_image_id);
@@ -274,7 +273,7 @@ class API_Data {
     $post_source = $custom_fields['sources'][0];
     $post_resource = $custom_fields['resources'][0];
 
-
+    
     // Output event attributes
     $output[] = array(
 
@@ -315,12 +314,13 @@ class API_Data {
       // Main content
       'event_main_content'                 => $post->main_content,
 
-      'sidebar'                            => $this->dataFilter->eventSidebarContent(get_field('sidebar_content', $post->ID)),
-      'sources'                            => $this->dataFilter->sources(get_field('sources', $post->ID)),
-      'resources'                          => $this->dataFilter->resources(get_field('resources', $post->ID)),
+      'sidebar'                            => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
+      'sources'                            => $this->dataFilter->sources( get_field('sources', $post->ID) ),
+      'resources'                          => $this->dataFilter->resources( get_field('resources', $post->ID) ),
 
       // Related posts
-      /* 'related_posts'                      => $this->dataFilter->relatedPosts(get_field('related_posts', $post->ID)); */
+      'related_stories'                    => $this->post_data_array( $post->related_stories ),
+      'related_events'                     => $this->post_data_array( get_field('related_events', $post->ID ))
 
 
     );
