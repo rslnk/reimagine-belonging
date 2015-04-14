@@ -106,6 +106,22 @@ class DataFilter {
 
     return $result;
   }
+
+  public static function sources ($sources) {
+    $result = array();
+    foreach ($sources as $source) {
+      $result[] = $source;
+    }
+    return $result;
+  }
+
+  public static function resources ($resources) {
+    $result = array();
+    foreach ($resources as $resource) {
+      $result[] = $resource;
+    }
+    return $result;
+  }
 }
 
 class API_Data {
@@ -259,10 +275,6 @@ class API_Data {
     $post_resource = $custom_fields['resources'][0];
 
 
-    $rows = get_field('sidebar_content', $post->ID);
-
-    
-
     // Output event attributes
     $output[] = array(
 
@@ -303,13 +315,13 @@ class API_Data {
       // Main content
       'event_main_content'                 => $post->main_content,
 
-      'sidebar'                            => $this->dataFilter->eventSidebarContent(get_field('sidebar_content', $post->ID))
+      'sidebar'                            => $this->dataFilter->eventSidebarContent(get_field('sidebar_content', $post->ID)),
+      'sources'                            => $this->dataFilter->sources(get_field('sources', $post->ID)),
+      'resources'                          => $this->dataFilter->resources(get_field('resources', $post->ID)),
 
       // Related posts
+      /* 'related_posts'                      => $this->dataFilter->relatedPosts(get_field('related_posts', $post->ID)); */
 
-      // Sources
-
-      // Resources
 
     );
 
