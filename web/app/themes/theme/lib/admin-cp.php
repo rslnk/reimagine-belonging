@@ -200,7 +200,10 @@ function add_events_columns( $column ) {
       echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
       break;
     case 'start_year_column':
-      echo get_field( 'start_year', $post->ID );
+      // Get and format event start and end dates (month, day)
+      $event_date = strtotime(get_field('start_date',$post->ID));
+      $event_year = date('Y', $event_date);
+      echo $event_year;
       break;
   }
 }
@@ -223,7 +226,7 @@ function remove_posts_comments_columns( $columns ) {
 // Register sortable admin columns
 function register_sortable_columns( $post_columns ) {
   $post_columns = array(
-    'start_year_column' => 'start_year'
+    'start_year_column' => 'start_date'
   );
   return $post_columns;
 }
@@ -240,13 +243,13 @@ function sort_columns_by_custom_values( $vars ) {
   if ( isset( $vars['post_type'] ) && 'event' == $vars['post_type'] ) {
 
     // Sort by year column
-    if ( isset( $vars['orderby'] ) && 'start_year' == $vars['orderby'] ) {
+    if ( isset( $vars['orderby'] ) && 'start_date' == $vars['orderby'] ) {
 
       // Merge the query vars with our custom variables
       $vars = array_merge(
         $vars,
         array(
-          'meta_key' => 'start_year',
+          'meta_key' => 'start_date',
           'orderby' => 'meta_value_num'
         )
       );
