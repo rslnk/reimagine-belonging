@@ -38,6 +38,23 @@
             "media_upload": 1
         },
         {
+            "key": "field_552659cd97585",
+            "label": "Note",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "Use &#60h2&#62 - &#60h6&#62 tags to mark text headings. Use &#60b&#62 tag to stylistically offset text and &#60em&#62 for stress emphasis, i.e., something you'd pronounce differently. For more info on semantic markup see <a href=\"http:\/\/html5doctor.com\/i-b-em-strong-element\/\">this guide<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0
+        },
+        {
             "key": "field_552d0d37bff26",
             "label": "Authors",
             "name": "authors",
@@ -58,23 +75,6 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
-        },
-        {
-            "key": "field_552659cd97585",
-            "label": "Note",
-            "name": "",
-            "prefix": "",
-            "type": "message",
-            "instructions": "Use &#60h2&#62 - &#60h6&#62 tags to mark text headings. Use &#60b&#62 tag to stylistically offset text and &#60em&#62 for stress emphasis, i.e., something you'd pronounce differently. For more info on semantic markup see <a href=\"http:\/\/html5doctor.com\/i-b-em-strong-element\/\">this guide<\/a>.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "esc_html": 0
         },
         {
             "key": "field_55265e4a303bc",
@@ -673,7 +673,7 @@
                             "label": "Title",
                             "name": "title",
                             "prefix": "",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -684,9 +684,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
                             "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
                         },
@@ -2403,5 +2403,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429015953
+    "modified": 1429060232
 }

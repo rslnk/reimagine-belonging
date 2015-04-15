@@ -79,15 +79,32 @@ class DataFilter {
         case 'event':
           $i = [];
           $post = $item['related_event'][0];
+
+          // Get WordPress post thumbnail URL (full image)
+          $preview_image_id = get_post_thumbnail_id( $post->ID );
+          $preview_image_url = wp_get_attachment_url($preview_image_id);
+
           $i['title'] = $post->post_title;
+          $i['slug'] = get_permalink( $post->ID );
+          $i['start_date'] = $post->start_date;
+          $i['preview_image'] = $preview_image_url;
           $i['type'] = 'event';
           $result[] = $i;
           break;
         case 'story':
-          // run over getting posts data here
           $i = [];
           $post = $item['related_story'][0];
+
+          // Get WordPress post thumbnail URL (full image)
+          $preview_image_id = get_post_thumbnail_id( $post->ID );
+          $preview_image_url = wp_get_attachment_url($preview_image_id);
+
           $i['title'] = $post->post_title;
+          $i['slug'] = get_permalink( $post->ID );
+          $i['hero'] = $post->hero_name;
+          $i['hero_age'] = $post->hero_age;
+          $i['hero_city'] = $post->hero_city;
+          $i['preview_image'] = $preview_image_url;
           $i['type'] = 'story';
           $result[] = $i;
           break;
@@ -149,6 +166,7 @@ class API_Data {
     $arr = array();
     if ( !empty( $posts ) ) {
       foreach ( $posts as $post ) {
+
         // Get WordPress post thumbnail URL (full image)
         $preview_image_id = get_post_thumbnail_id( $post->ID );
         $preview_image_url = wp_get_attachment_url($preview_image_id);
@@ -157,11 +175,11 @@ class API_Data {
           'post_id'            => $post->ID,
           'post_title'         => $post->post_title,
           'post_slug'          => get_permalink( $post->ID ),
-          'event_start_year'   => $post->start_year,
+          'event_start_year'   => $post->start_date,
           'story_hero'         => $post->hero,
           'hero_age'           => $post->age,
           'hero_city'          => $post->city,
-          'post_preview_image' => $preview_image_url
+          'preview_image'      => $preview_image_url
 
         );
       }
@@ -205,21 +223,15 @@ class API_Data {
       $output[] = array(
 
         // Basic post data
-        'event_id'                    => $post->ID,
-        'event_title'                 => $post->post_title,
-        'event_published_date_gmt'    => $post->post_date_gmt,
-        'event_subtitle'              => $post->subtitle,
-        'event_permalink'             => get_permalink( $post->ID ),
-        'event_preview_image'         => $preview_image_url,
+        'id'                    => $post->ID,
+        'title'                 => $post->post_title,
+        'published_date_gmt'    => $post->post_date_gmt,
+        'subtitle'              => $post->subtitle,
+        'permalink'             => get_permalink( $post->ID ),
+        'preview_image'         => $preview_image_url,
 
         // Event dates
-        'display_event_date'    => $post->display_dates,
-        'event_start_year'      => $post->start_year,
-        'event_start_month'     => date('F', $start_date),
-        'event_start_date'      => date('d', $start_date),
-        'event_end_year'        => $post->end_year,
-        'event_end_month'       => date('F', $end_date),
-        'event_start_date'      => date('d', $end_date),
+        'start_date'            => $post->start_date,
 
         // Event taxonomy terms
         'timelines'             => $this->terms_array($timelines),
@@ -246,11 +258,6 @@ class API_Data {
     $post_id = $id;
     $post = get_post($post_id);
 
-
-    // Get and format event start and end dates (month, day)
-    $start_date = strtotime(get_field('start_date',$post->ID));
-    $end_date = strtotime(get_field('end_date',$post->ID));
-
     // Get post taxonomies
     $timelines = get_the_terms( $post->ID , 'event_timeline' );
     $eras = get_the_terms( $post->ID , 'event_era' );
@@ -269,59 +276,50 @@ class API_Data {
 
     // Repeater fileds:
     $header_image = $custom_fields['header_image'][0];
-    $sidebar_content = $custom_fields['sidebar_content'][0];
-    $post_source = $custom_fields['sources'][0];
-    $post_resource = $custom_fields['resources'][0];
 
-    
     // Output event attributes
     $output[] = array(
 
       // Basic post data
-      'event_id'                           => $post->ID,
-      'event_title'                        => $post->post_title,
-      'event_published_date_gmt'           => $post->post_date_gmt,
-      'event_subtitle'                     => $post->subtitle,
-      'event_permalink'                    => get_permalink( $post->ID ),
-      'event_authors'                      => $post->authors,
-      'event_preview_image'                => $preview_image_url,
+      'id'                           => $post->ID,
+      'title'                        => $post->post_title,
+      'published_date_gmt'           => $post->post_date_gmt,
+      'subtitle'                     => $post->subtitle,
+      'permalink'                    => get_permalink( $post->ID ),
+      'authors'                      => $post->authors,
+      'preview_image'                => $preview_image_url,
 
       // Event dates
-      'display_event_date'                 => $post->display_dates,
-      'event_start_year'                   => $post->start_year,
-      'event_start_month'                  => date('F', $start_date),
-      'event_start_date'                   => date('d', $start_date),
-      'event_end_year'                     => $post->end_year,
-      'event_end_month'                    => date('F', $end_date),
-      'event_start_date'                   => date('d', $end_date),
+      'start_date'                   => $post->start_date,
+      'end_date'                     => $post->end_date,
+      'exact_dates_uknown'           => $post->unknown_date,
 
       // Post taxonomy terms
-      'timelines'                          => $this->terms_array($timelines),
-      'eras'                               => $this->terms_array($eras),
-      'types'                              => $this->terms_array($types),
-      'groups'                             => $this->terms_array($groups),
-      'topics'                             => $this->terms_array($topics),
-      'tags'                               => $this->terms_array($tags),
+      'timelines'                    => $this->terms_array($timelines),
+      'eras'                         => $this->terms_array($eras),
+      'types'                        => $this->terms_array($types),
+      'groups'                       => $this->terms_array($groups),
+      'topics'                       => $this->terms_array($topics),
+      'tags'                         => $this->terms_array($tags),
 
       // Header
-      'display_header_image'               => $post->display_header_image,
-      'header_image_url'                   => $header_image['url'],
-      'header_image_credit'                => $header_image['credit'],
-      'header_image_credit_link'           => $header_image['credit_link'],
-      'display_header_image_overlay'       => $header_image['display_image_overlay'],
-      'header_image_overlay_opacity'       => $header_image['overlay_opacity'],
+      'display_header_image'         => $post->display_header_image,
+      'header_image'                 => $header_image['url'],
+      'header_image_credit'          => $header_image['credit'],
+      'header_image_credit_link'     => $header_image['credit_link'],
+      'display_header_image_overlay' => $header_image['display_image_overlay'],
+      'header_image_overlay_opacity' => $header_image['overlay_opacity'],
 
       // Main content
-      'event_main_content'                 => $post->main_content,
+      'main_content'                 => $post->main_content,
 
-      'sidebar'                            => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
-      'sources'                            => $this->dataFilter->sources( get_field('sources', $post->ID) ),
-      'resources'                          => $this->dataFilter->resources( get_field('resources', $post->ID) ),
+      'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
+      'sources'                      => $this->dataFilter->sources( get_field('sources', $post->ID) ),
+      'resources'                    => $this->dataFilter->resources( get_field('resources', $post->ID) ),
 
       // Related posts
-      'related_stories'                    => $this->post_data_array( $post->related_stories ),
-      'related_events'                     => $this->post_data_array( get_field('related_events', $post->ID ))
-
+      'related_stories'              => $this->post_data_array( $post->related_stories ),
+      'related_events'               => $this->post_data_array( get_field('related_events', $post->ID ))
 
     );
 
