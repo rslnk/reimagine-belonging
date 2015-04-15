@@ -17,6 +17,7 @@
 */
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 0;
 
 $output = null;
 $api = new API_Data();
@@ -29,6 +30,10 @@ switch ($action) {
 
   case 'list-all-stories':
     $output = $api->list_all_events();
+    break;
+
+  case 'event-data':
+    $output = $api->event_data($id);
     break;
 
   default:
@@ -50,22 +55,139 @@ if ($output) {
 
 die();
 
+class DataFilter {
+  public static function eventSidebarContent ($content) {
+    $result = array();
+
+    foreach ($content as $item) {
+      switch ($item['sidebar_content_type']){
+        case 'image':
+          $i = $item['image'][0];
+          $i['type'] = 'image';
+          $result[] = $i;
+          break;
+        case 'quote':
+          $i = $item['quote'][0];
+          $i['type'] = 'quote';
+          $result[] = $i;
+          break;
+        case 'sidenote':
+          $i = $item['sidenote'][0];
+          $i['type'] = 'sidenote';
+          $result[] = $i;
+          break;
+        case 'event':
+          $i = [];
+          $post = $item['related_event'][0];
+
+          // Get WordPress post thumbnail URL (full image)
+          $preview_image_id = get_post_thumbnail_id( $post->ID );
+          $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+          $i['title'] = $post->post_title;
+          $i['slug'] = get_permalink( $post->ID );
+          $i['start_date'] = $post->start_date;
+          $i['preview_image'] = $preview_image_url;
+          $i['type'] = 'event';
+          $result[] = $i;
+          break;
+        case 'story':
+          $i = [];
+          $post = $item['related_story'][0];
+
+          // Get WordPress post thumbnail URL (full image)
+          $preview_image_id = get_post_thumbnail_id( $post->ID );
+          $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+          $i['title'] = $post->post_title;
+          $i['slug'] = get_permalink( $post->ID );
+          $i['hero'] = $post->hero_name;
+          $i['hero_age'] = $post->hero_age;
+          $i['hero_city'] = $post->hero_city;
+          $i['preview_image'] = $preview_image_url;
+          $i['type'] = 'story';
+          $result[] = $i;
+          break;
+        case 'youtube_video':
+          $i = $item['youtube_video'][0];
+          $i['type'] = 'youtube_video';
+          $result[] = $i;
+          break;
+        case 'oembed';
+          $i = $item['oembed_video'][0];
+          $i['type'] = 'oembed';
+          $result[] = $i;
+          break;
+      }
+    }
+
+    return $result;
+  }
+
+  public static function sources ($sources) {
+    $result = array();
+    foreach ($sources as $source) {
+      $result[] = $source;
+    }
+    return $result;
+  }
+
+  public static function resources ($resources) {
+    $result = array();
+    foreach ($resources as $resource) {
+      $result[] = $resource;
+    }
+    return $result;
+  }
+}
 
 class API_Data {
+  function __construct () {
+    $this->dataFilter = new DataFilter();
+  }
 
+  // List taxonomy terms
   function terms_array($terms) {
     $arr = array();
     if ( !empty( $terms ) ) {
       foreach ( $terms as $term ) {
         $arr[] = array(
-          'name'  => $term->name,
-          'slug'  => $term->slug
+          'term_name'  => $term->name,
+          'term_slug'  => $term->slug,
+          'term_color' => get_field('taxonomy_term_color',  $term)
         );
       }
       return $arr;
     }
   }
 
+  // List post data array for related posts output
+  function post_data_array($posts) {
+    $arr = array();
+    if ( !empty( $posts ) ) {
+      foreach ( $posts as $post ) {
+
+        // Get WordPress post thumbnail URL (full image)
+        $preview_image_id = get_post_thumbnail_id( $post->ID );
+        $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+        $arr[] = array(
+          'post_id'            => $post->ID,
+          'post_title'         => $post->post_title,
+          'post_slug'          => get_permalink( $post->ID ),
+          'event_start_year'   => $post->start_date,
+          'story_hero'         => $post->hero,
+          'hero_age'           => $post->age,
+          'hero_city'          => $post->city,
+          'preview_image'      => $preview_image_url
+
+        );
+      }
+      return $arr;
+    }
+  }
+
+  // Output all event posts previews
   function list_all_events() {
 
     $query = new WP_Query(array(
@@ -79,54 +201,37 @@ class API_Data {
 
     while ($query->have_posts()) {
 
-      $p = $query->next_post();
-
-      // Get values from acf repeater fileds
-      // http://www.advancedcustomfields.com/resources/get_fields
-      //
-      // Example:
-      //
-      // $custom_fields = get_fields($p->ID);
-      // $dates = $acf_fields['acf_repeater_field'][0];
-      // 'output_name' => $dates['acf_sub_field'],
+      $post = $query->next_post();
 
       // Get and format event start and end dates (month, day)
-      $start_date = strtotime(get_field('start_date',$p->ID));
-      $end_date = strtotime(get_field('end_date',$p->ID));
+      $start_date = strtotime(get_field('start_date',$post->ID));
+      $end_date = strtotime(get_field('end_date',$post->ID));
 
       // Get post taxonomies
-      $timelines = get_the_terms( $p->ID , 'event_timeline' );
-      $eras = get_the_terms( $p->ID , 'event_era' );
-      $types = get_the_terms( $p->ID , 'event_type' );
-      $groups = get_the_terms( $p->ID , 'event_group' );
-      $topics = get_the_terms( $p->ID , 'event_topic' );
-      $tags = get_the_terms( $p->ID , 'global_tag' );
+      $timelines = get_the_terms( $post->ID , 'event_timeline' );
+      $eras = get_the_terms( $post->ID , 'event_era' );
+      $types = get_the_terms( $post->ID , 'event_type' );
+      $groups = get_the_terms( $post->ID , 'event_group' );
+      $topics = get_the_terms( $post->ID , 'event_topic' );
+      $tags = get_the_terms( $post->ID , 'global_tag' );
 
       // Get WordPress post thumbnail URL (full image)
-      $preview_image_id = get_post_thumbnail_id( $p->ID );
+      $preview_image_id = get_post_thumbnail_id( $post->ID );
       $preview_image_url = wp_get_attachment_url($preview_image_id);
 
       // Output event attributes
       $output[] = array(
-        'id'                    => $p->ID,
-        'title'                 => $p->post_title,
-        'post_date_gmt'         => $p->post_date_gmt,
-        'subtitle'              => $p->subtitle,
-        'permalink'             => get_permalink( $p->ID ),
 
+        // Basic post data
+        'id'                    => $post->ID,
+        'title'                 => $post->post_title,
+        'published_date_gmt'    => $post->post_date_gmt,
+        'subtitle'              => $post->subtitle,
+        'permalink'             => get_permalink( $post->ID ),
         'preview_image'         => $preview_image_url,
 
-        'display_date'          => $p->display_dates,
-
-        // Event start date
-        'year_event_started'    => $p->start_year,
-        'month_event_started'   => date('F', $start_date),
-        'day_event_started'     => date('d', $start_date),
-
-        // Event end date
-        'year_event_ended'      => $p->end_year,
-        'month_event_ended'     => date('F', $end_date),
-        'day_event_ended'       => date('d', $end_date),
+        // Event dates
+        'start_date'            => $post->start_date,
 
         // Event taxonomy terms
         'timelines'             => $this->terms_array($timelines),
@@ -141,6 +246,84 @@ class API_Data {
     }
 
     return $output;
+
+  }
+
+  // Output event post
+  function event_data ($id) {
+    if ($id === 0) return false;
+
+    $output = array();
+
+    $post_id = $id;
+    $post = get_post($post_id);
+
+    // Get post taxonomies
+    $timelines = get_the_terms( $post->ID , 'event_timeline' );
+    $eras = get_the_terms( $post->ID , 'event_era' );
+    $types = get_the_terms( $post->ID , 'event_type' );
+    $groups = get_the_terms( $post->ID , 'event_group' );
+    $topics = get_the_terms( $post->ID , 'event_topic' );
+    $tags = get_the_terms( $post->ID , 'global_tag' );
+
+    // Get WordPress post thumbnail URL (full image)
+    $preview_image_id = get_post_thumbnail_id( $post->ID );
+    $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+    // Get all custom fields attached to the post that are not starting from '_'
+    // http://www.advancedcustomfields.com/resources/get_fields
+    $custom_fields = get_fields($post->ID);
+
+    // Repeater fileds:
+    $header_image = $custom_fields['header_image'][0];
+
+    // Output event attributes
+    $output[] = array(
+
+      // Basic post data
+      'id'                           => $post->ID,
+      'title'                        => $post->post_title,
+      'published_date_gmt'           => $post->post_date_gmt,
+      'subtitle'                     => $post->subtitle,
+      'permalink'                    => get_permalink( $post->ID ),
+      'authors'                      => $post->authors,
+      'preview_image'                => $preview_image_url,
+
+      // Event dates
+      'start_date'                   => $post->start_date,
+      'end_date'                     => $post->end_date,
+      'exact_dates_uknown'           => $post->unknown_date,
+
+      // Post taxonomy terms
+      'timelines'                    => $this->terms_array($timelines),
+      'eras'                         => $this->terms_array($eras),
+      'types'                        => $this->terms_array($types),
+      'groups'                       => $this->terms_array($groups),
+      'topics'                       => $this->terms_array($topics),
+      'tags'                         => $this->terms_array($tags),
+
+      // Header
+      'display_header_image'         => $post->display_header_image,
+      'header_image'                 => $header_image['url'],
+      'header_image_credit'          => $header_image['credit'],
+      'header_image_credit_link'     => $header_image['credit_link'],
+      'display_header_image_overlay' => $header_image['display_image_overlay'],
+      'header_image_overlay_opacity' => $header_image['overlay_opacity'],
+
+      // Main content
+      'main_content'                 => $post->main_content,
+
+      'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
+      'sources'                      => $this->dataFilter->sources( get_field('sources', $post->ID) ),
+      'resources'                    => $this->dataFilter->resources( get_field('resources', $post->ID) ),
+
+      // Related posts
+      'related_stories'              => $this->post_data_array( $post->related_stories ),
+      'related_events'               => $this->post_data_array( get_field('related_events', $post->ID ))
+
+    );
+
+  return $output;
 
   }
 

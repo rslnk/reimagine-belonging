@@ -19,56 +19,56 @@
             "placement": "left"
         },
         {
-            "key": "field_551dbef5e5ca7",
-            "label": "Start year",
-            "name": "start_year",
+            "key": "field_551ffcdb61425",
+            "label": "Start date",
+            "name": "start_date",
             "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "placeholder": "yyyy\/mm\/dd",
             "prepend": "",
             "append": "",
-            "maxlength": 4,
+            "maxlength": 10,
             "readonly": 0,
             "disabled": 0
         },
         {
-            "key": "field_551ffd2861426",
-            "label": "End year",
-            "name": "end_year",
+            "key": "field_551dbf59e5ca9",
+            "label": "End date",
+            "name": "end_date",
             "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
+            "placeholder": "yyyy\/mm\/dd",
             "prepend": "",
             "append": "",
-            "maxlength": 4,
+            "maxlength": 10,
             "readonly": 0,
             "disabled": 0
         },
         {
-            "key": "field_55200146cf5df",
-            "label": "Date",
-            "name": "display_dates",
+            "key": "field_552dacc893c48",
+            "label": "Unknown date?",
+            "name": "unknown_date",
             "prefix": "",
             "type": "true_false",
-            "instructions": "Select If the event has a full date. Note that full dates are only displayed on the event page.",
+            "instructions": "If the exact date is unknown the date and month must be set anyway in order to chronologically display events on the timeline. Checking this box will hide date and month from the event page. Only year will be shown.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -76,60 +76,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Display date?",
+            "message": "Exact date is unknown",
             "default_value": 0
-        },
-        {
-            "key": "field_551ffcdb61425",
-            "label": "Start date",
-            "name": "start_date",
-            "prefix": "",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_55200146cf5df",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j",
-            "return_format": "F j",
-            "first_day": 1
-        },
-        {
-            "key": "field_551dbf59e5ca9",
-            "label": "End date",
-            "name": "end_date",
-            "prefix": "",
-            "type": "date_picker",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_55200146cf5df",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "display_format": "F j",
-            "return_format": "F j",
-            "first_day": 1
         },
         {
             "key": "field_551dc6692d82e",
@@ -153,7 +101,7 @@
             "name": "taxonomies",
             "prefix": "",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "<strong>Note:<\/strong> to reorder multiple selections drag items left or right.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -316,7 +264,7 @@
             "name": "related_stories",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Select stories related to this events. Use taxonomy filter to narrow search results, or use search to search by story title.",
+            "instructions": "Select stories related to this events. Use taxonomy filter to narrow search results, or use search to search by story title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -349,7 +297,7 @@
             "name": "related_events",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Select similar or related events. Use taxonomy filter to narrow search results, or use search to search by event title.",
+            "instructions": "Select similar or related events. Use taxonomy filter to narrow search results, or use search to search by event title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -390,5 +338,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1428340234
+    "modified": 1429059143
 }

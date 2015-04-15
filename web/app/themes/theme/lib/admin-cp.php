@@ -165,7 +165,9 @@ Customize admin colums
 ----------------------
 
 * Add preview image and year columns to events posts list
-* Set columns css width and stylesin edit.php
+* Set columns css width and styles in edit.php
+* Register sortable columns
+* Sort event columns by year
 * Remove comments column from posts and pages
 
 */
@@ -174,13 +176,17 @@ add_filter( 'manage_event_posts_columns', 'events_columns_filter', 10, 1 );
 
 add_action( 'manage_event_posts_custom_column', 'add_events_columns', 10, 1 );
 add_action( 'admin_enqueue_scripts', 'post_admin_column_resize' );
+
+add_filter( 'manage_edit-event_sortable_columns', 'register_sortable_columns' );
+add_action( 'load-edit.php', 'sort_columns' );
+
 add_action( 'manage_posts_columns', 'remove_posts_comments_columns' );
 add_action( 'manage_pages_columns', 'remove_posts_comments_columns' );
 
 // Filter events columns
 function events_columns_filter( $columns ) {
-  $column_thumbnail = array( 'thumbnail' => 'Image' );
-  $column_wordcount = array( 'year' => 'Year' );
+  $column_thumbnail = array( 'thumbnail_column' => 'Image' );
+  $column_wordcount = array( 'start_year_column' => 'Year' );
   $columns = array_slice( $columns, 0, 1, true ) + $column_thumbnail + array_slice( $columns, 1, NULL, true );
   $columns = array_slice( $columns, 0, 2, true ) + $column_wordcount + array_slice( $columns, 2, NULL, true );
   return $columns;
@@ -190,10 +196,10 @@ function events_columns_filter( $columns ) {
 function add_events_columns( $column ) {
   global $post;
   switch ( $column ) {
-    case 'thumbnail':
+    case 'thumbnail_column':
       echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
       break;
-    case 'year':
+    case 'start_year_column':
       echo get_field( 'start_year', $post->ID );
       break;
   }
@@ -202,9 +208,9 @@ function add_events_columns( $column ) {
 // Set columns size and styles
 function post_admin_column_resize() { ?>
   <style type="text/css">
-    .edit-php .fixed .column-year { width: 65px; font-weight: bold; }
-    .edit-php .fixed .column-thumbnail { width: 70px; }
-    .edit-php .fixed .thumbnail img { width: 50px; height: 50px; }
+    .edit-php .fixed .column-start_year_column { width: 75px; font-weight: bold; }
+    .edit-php .fixed .column-thumbnail_column { width: 75px; }
+    .edit-php .fixed .thumbnail_column img { width: 50px; height: 50px; }
   </style>
 <?php }
 
@@ -212,4 +218,39 @@ function post_admin_column_resize() { ?>
 function remove_posts_comments_columns( $columns ) {
     unset( $columns[ 'comments' ] );
     return $columns;
+}
+
+// Register sortable admin columns
+function register_sortable_columns( $post_columns ) {
+  $post_columns = array(
+    'start_year_column' => 'start_year'
+  );
+  return $post_columns;
+}
+
+// Sort columns
+function sort_columns() {
+  add_filter( 'request', 'sort_columns_by_custom_values' );
+}
+
+// Sort event posts by values in sortable admin columns
+function sort_columns_by_custom_values( $vars ) {
+
+  // Check if viewing the 'event' post type
+  if ( isset( $vars['post_type'] ) && 'event' == $vars['post_type'] ) {
+
+    // Sort by year column
+    if ( isset( $vars['orderby'] ) && 'start_year' == $vars['orderby'] ) {
+
+      // Merge the query vars with our custom variables
+      $vars = array_merge(
+        $vars,
+        array(
+          'meta_key' => 'start_year',
+          'orderby' => 'meta_value_num'
+        )
+      );
+    }
+  }
+  return $vars;
 }

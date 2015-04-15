@@ -1,0 +1,2407 @@
+{
+    "key": "group_544a95bb90366",
+    "title": "Article",
+    "fields": [
+        {
+            "key": "field_5524662535c96",
+            "label": "Main",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_544b997ef9b63",
+            "label": "Text",
+            "name": "main_content",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "text",
+            "toolbar": "full",
+            "media_upload": 1
+        },
+        {
+            "key": "field_552659cd97585",
+            "label": "Note",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "Use &#60h2&#62 - &#60h6&#62 tags to mark text headings. Use &#60b&#62 tag to stylistically offset text and &#60em&#62 for stress emphasis, i.e., something you'd pronounce differently. For more info on semantic markup see <a href=\"http:\/\/html5doctor.com\/i-b-em-strong-element\/\">this guide<\/a>.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_552d0d37bff26",
+            "label": "Authors",
+            "name": "authors",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55265e4a303bc",
+            "label": "Header",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_55265eb1303bf",
+            "label": "Header image",
+            "name": "display_header_image",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Display image?",
+            "default_value": 0
+        },
+        {
+            "key": "field_55265f3e303c2",
+            "label": "Image",
+            "name": "header_image",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Add large high quality image. E.g. 1600 x 1200 px.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_55265eb1303bf",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 80,
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": 1,
+            "layout": "block",
+            "button_label": "Add Row",
+            "sub_fields": [
+                {
+                    "key": "field_55265f3e303c3",
+                    "label": "Image",
+                    "name": "url",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_55265f3e303c7",
+                    "label": "Credit",
+                    "name": "credit",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55265f3e303c8",
+                    "label": "Credit link",
+                    "name": "credit_link",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526606ae5bb3",
+                    "label": "Image overlay",
+                    "name": "display_image_overlay",
+                    "prefix": "",
+                    "type": "true_false",
+                    "instructions": "Add an overlay in case header image is too bright.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "Show overlay?",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_552660b5e5bb4",
+                    "label": "Overlay opacity",
+                    "name": "overlay_opacity",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "Choose overlay opacity level. 0.95 \u2014 almost opaque, 0.5 \u2014 almost transparent.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526606ae5bb3",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 35,
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "0.95": "0.95",
+                        "0.9": "0.9",
+                        "0.85": "0.85",
+                        "0.8": "0.8",
+                        "0.75": "0.75",
+                        "0.7": "0.7",
+                        "0.65": "0.65",
+                        "0.6": "0.6",
+                        "0.55": "0.55",
+                        "0.5": "0.5",
+                        "0.45": "0.45",
+                        "0.4": "0.4",
+                        "0.35": "0.35",
+                        "0.3": "0.3",
+                        "0.25": "0.25",
+                        "0.2": "0.2",
+                        "0.15": "0.15",
+                        "0.1": "0.1"
+                    },
+                    "default_value": [
+                        "0.5"
+                    ],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5525b01292823",
+            "label": "Sidebar",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5525b43bfc526",
+            "label": "Sidebar content",
+            "name": "sidebar_content",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Article sidebar can contain multiple objects, however, for aesthetical reasons, its content should not exceed main text height. To reorder objects drag and move entries by the number on the left side.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 60,
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": "",
+            "layout": "block",
+            "button_label": "Add another object",
+            "sub_fields": [
+                {
+                    "key": "field_544aa77b1969c",
+                    "label": "Select element",
+                    "name": "sidebar_content_type",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "none-selected": "Select",
+                        "image": "Image",
+                        "quote": "Quote",
+                        "sidenote": "Sidenote",
+                        "event": "Related event",
+                        "story": "Related story",
+                        "youtube_video": "YouTube Video",
+                        "oembed": "oEmbed"
+                    },
+                    "default_value": {
+                        "": ""
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_544b99dff9b64",
+                    "label": "Image",
+                    "name": "image",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "image"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 1,
+                    "layout": "block",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_552454efd99bd",
+                            "label": "Add Image",
+                            "name": "url",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_552447c56db0c",
+                            "label": "Image title",
+                            "name": "title",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552448266db0e",
+                            "label": "Caption",
+                            "name": "caption",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552459b255050",
+                            "label": "Image credit",
+                            "name": "display_credit",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_552448856db10",
+                            "label": "Credit",
+                            "name": "credit",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_552459b255050",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552448b16db12",
+                            "label": "Credit link",
+                            "name": "credit_link",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_552459b255050",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_552449816db14",
+                    "label": "Quote",
+                    "name": "quote",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "quote"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 1,
+                    "layout": "row",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_552449a26db15",
+                            "label": "Quote",
+                            "name": "text",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_544aa77b1969c",
+                                        "operator": "==",
+                                        "value": "quote"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552449d96db17",
+                            "label": "Quote author",
+                            "name": "author",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_544aa77b1969c",
+                                        "operator": "==",
+                                        "value": "quote"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55244a336db19",
+                            "label": "Quote source",
+                            "name": "source",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_544aa77b1969c",
+                                        "operator": "==",
+                                        "value": "quote"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_552456cb804b5",
+                    "label": "Sidenote",
+                    "name": "sidenote",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "sidenote"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 1,
+                    "layout": "row",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_552456f5804b6",
+                            "label": "Title",
+                            "name": "title",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "br",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55245711804b7",
+                            "label": "Caption",
+                            "name": "caption",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 6,
+                            "new_lines": "wpautop",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_55244b206db1b",
+                    "label": "Related event",
+                    "name": "related_event",
+                    "prefix": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "event"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "event"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 1,
+                    "max": 1,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_55244b716db1d",
+                    "label": "Related story",
+                    "name": "related_story",
+                    "prefix": "",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "story"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "story"
+                    ],
+                    "taxonomy": "",
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 1,
+                    "max": 1,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_544bf6a3a80bd",
+                    "label": "YouTube Video",
+                    "name": "youtube_video",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "Enter YouTube video ID. Copy part that follows after: \"http:\/\/youtu.be\/\". E.g. \"9D05ej8u-gU\".",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "youtube_video"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 1,
+                    "layout": "block",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_55245e191525d",
+                            "label": "Video ID",
+                            "name": "id",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55245e591525e",
+                            "label": "Title",
+                            "name": "title",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55245e881525f",
+                            "label": "Caption",
+                            "name": "caption",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": "wpautop",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55245f5915260",
+                            "label": "Display credit",
+                            "name": "display_credit",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Add credits",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_55245fa515261",
+                            "label": "Credit",
+                            "name": "credit",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_55245f5915260",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_55245fc215262",
+                            "label": "Credit link",
+                            "name": "credit_link",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_55245f5915260",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_544b9a54f9b65",
+                    "label": "oEmbed video",
+                    "name": "oembed_video",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "oembed"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": 1,
+                    "layout": "row",
+                    "button_label": "Add Row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5451b08538b7d",
+                            "label": "URL",
+                            "name": "url",
+                            "prefix": "",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        },
+                        {
+                            "key": "field_5451aec5e8de6",
+                            "label": "Hide controls",
+                            "name": "hide_controls",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Hide controls?",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_5451af9ce8de7",
+                            "label": "Video quality",
+                            "name": "hd_video_quality",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "HD",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_5451afe2e8de8",
+                            "label": "Autohide Controls",
+                            "name": "autohide_controls",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Autohide on?",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_552460ebca088",
+                            "label": "Title",
+                            "name": "title",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552460ebca089",
+                            "label": "Caption",
+                            "name": "caption",
+                            "prefix": "",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": "wpautop",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552460ebca08a",
+                            "label": "Display credit",
+                            "name": "display_credit",
+                            "prefix": "",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Add credits",
+                            "default_value": 0
+                        },
+                        {
+                            "key": "field_552460ebca08b",
+                            "label": "Credit",
+                            "name": "credit",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_552460ebca08a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_552460ebca08c",
+                            "label": "Credit link",
+                            "name": "credit_link",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_552460ebca08a",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "key": "field_5525b0bb71cae",
+            "label": "Sources",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5526a76db340e",
+            "label": "Sources",
+            "name": "sources",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Add sources and citations. <strong>Note:<\/strong> to reorder source items drag by entry number displayed on the left side.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Resource",
+            "sub_fields": [
+                {
+                    "key": "field_5526a76db340f",
+                    "label": "Resource type",
+                    "name": "source_type",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "Select a type of resource.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Select": "Select",
+                        "Book": "Book",
+                        "Periodical": "Periodical",
+                        "Website": "Website",
+                        "Other": "Other"
+                    },
+                    "default_value": {
+                        "Select": "Select"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_5526a76db3410",
+                    "label": "Title",
+                    "name": "title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "\"",
+                    "append": "\"",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3412",
+                    "label": "Authors",
+                    "name": "authors",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "e.g. Clarke, Arthur C.; Simak, Clifford Donald and Bradbury, Ray",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 60,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3413",
+                    "label": "Editors \/ translators",
+                    "name": "editors_translators",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "e.g. ed. Walter Emil Kaegi Jr. and Peter White",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 40,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3414",
+                    "label": "Periodical title",
+                    "name": "periodical_title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Newspaper, magazine or journal title",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3415",
+                    "label": "Location",
+                    "name": "location",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3416",
+                    "label": "Publisher",
+                    "name": "publisher",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3417",
+                    "label": "Date published",
+                    "name": "date_published",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3418",
+                    "label": "Pages",
+                    "name": "pages",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "12.5",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3419",
+                    "label": "Edition",
+                    "name": "edition",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "12.5",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db341a",
+                    "label": "ISBN",
+                    "name": "isbn",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db341b",
+                    "label": "Date accessed",
+                    "name": "date_accessed",
+                    "prefix": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "F j, Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5526a76db341c",
+                    "label": "URL",
+                    "name": "url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        },
+        {
+            "key": "field_55266bda365ad",
+            "label": "Resources",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left"
+        },
+        {
+            "key": "field_55266da1365ae",
+            "label": "Resources",
+            "name": "resources",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "Add resources and additional reading. <strong>Note:<\/strong> to reorder resource items drag by entry the number displayed on the left side.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": 1,
+            "max": "",
+            "layout": "block",
+            "button_label": "Add Resource",
+            "sub_fields": [
+                {
+                    "key": "field_552691df785d6",
+                    "label": "Resource type",
+                    "name": "resource_type",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "Select a type of resource.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Select": "Select",
+                        "Book": "Book",
+                        "Periodical": "Periodical",
+                        "Website": "Website",
+                        "Other": "Other"
+                    },
+                    "default_value": {
+                        "Select": "Select"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_55266fde1135f",
+                    "label": "Title",
+                    "name": "title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "\"",
+                    "append": "\"",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a5a78971d",
+                    "label": "Caption",
+                    "name": "caption",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55266dc5365af",
+                    "label": "Authors",
+                    "name": "authors",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "e.g. Clarke, Arthur C.; Simak, Clifford Donald and Bradbury, Ray",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 60,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526960fde805",
+                    "label": "Editors \/ translators",
+                    "name": "editors_translators",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "e.g. ed. Walter Emil Kaegi Jr. and Peter White",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 40,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_552699ac0fc6f",
+                    "label": "Periodical title",
+                    "name": "periodical_title",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Newspaper, magazine or journal title",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55266fea11360",
+                    "label": "Location",
+                    "name": "location",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55266f88365b0",
+                    "label": "Publisher",
+                    "name": "publisher",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55269648de807",
+                    "label": "Date published",
+                    "name": "date_published",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526702d11362",
+                    "label": "Pages",
+                    "name": "pages",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "12.5",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_552696f9de808",
+                    "label": "Edition",
+                    "name": "edition",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "12.5",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526700b11361",
+                    "label": "ISBN",
+                    "name": "isbn",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_552694de785df",
+                    "label": "Date accessed",
+                    "name": "date_accessed",
+                    "prefix": "",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "F j, Y",
+                    "return_format": "F j, Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5526705c4911d",
+                    "label": "URL",
+                    "name": "url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_552691df785d6",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "tags",
+        "send-trackbacks"
+    ],
+    "modified": 1429060232
+}

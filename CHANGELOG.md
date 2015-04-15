@@ -1,10 +1,22 @@
 ### TO DOs
 
-* Sortable columns on WordPpress UI: http://wpdreamer.com/2014/04/how-to-make-your-wordpress-admin-columns-sortable/
-* Default timeline in Site settings to be outputed in API default-settings
-* Event relationship fields to output.
+* Add default timeline choice in site options
+* Add 'event impact' settings to site options
+* Setup .de site deploy
+
+
+### 0.1.0: 2015-04-14
+
+* Fix event dates custom fields input/output
+* Add mulitiple authors custom filed to event post
+* Output all event post custom fields
+
+### 0.0.9: 2015-04-09
+
+* Add event group taxonomy term color custom field
 * Add references and resources custom fields to event post
-* Add flexible editor custom field to event post
+* Add text editor and sidbar custom fields to event post
+* Sort event posts by year in admin list
 
 ### 0.0.8: 2015-04-06
 
