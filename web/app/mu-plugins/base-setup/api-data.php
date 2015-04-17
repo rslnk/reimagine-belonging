@@ -24,6 +24,10 @@ $api = new API_Data();
 
 switch ($action) {
 
+  case 'site-configuration':
+    $output = $api->site_configuration();
+    break;
+
   case 'list-all-events':
     $output = $api->list_all_events();
     break;
@@ -185,6 +189,61 @@ class API_Data {
       }
       return $arr;
     }
+  }
+
+  // Output all event posts previews
+  function site_configuration() {
+
+    $output = array();
+
+    $timeline = get_field('default_timeline', 'option');
+
+    // Output option pages fields
+    // http://www.advancedcustomfields.com/resources/get-values-from-an-options-page
+
+    $output[] = array(
+
+      // Site settings
+      'default_timeline'      => get_field('default_timeline', 'option'),
+      'site_date_format'      => get_field('site_date_format', 'option'),
+      'site_date_language'    => get_field('site_date_language', 'option'),
+      'google_analytics_id'   => get_field('google_analytics_id', 'option'),
+
+      // Dictionary (UI elemets text & labels)
+
+      // Stories
+      'add_story_banner_text'                 => get_field('stories_add_story_banner_text', 'option'),
+      'total_stories_label'                   => get_field('total_stories_label', 'option'),
+      'flitered_stories_label'                => get_field('flitered_stories_label', 'option'),
+      'stories_search_result_none_message'    => get_field('stories_search_result_none_message', 'option'),
+
+      // Timeline
+      'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
+      'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),
+      'timeline_filtered_events_label'         => get_field('timeline_filtered_events_label', 'option'),
+      'timeline_search_result_none_message'    => get_field('timeline_search_result_none_message', 'option'),
+
+      // Story
+      'story_share_story_label'                => get_field('story_share_story_label', 'option'),
+      'story_related_stories_title'            => get_field('story_related_stories_title', 'option'),
+      'story_related_events_title'             => get_field('story_related_events_title', 'option'),
+
+      // Event
+      'event_impact_counter_label'             => get_field('event_impact_counter_label', 'option'),
+      'event_impact_button_default_label'      => get_field('event_impact_button_default_label', 'option'),
+      'event_impact_button_active_label'       => get_field('event_impact_button_active_label', 'option'),
+      'event_suggest_resource_button_label'    => get_field('event_suggest_resource_button_label', 'option'),
+      'event_related_stories_title'            => get_field('event_related_stories_title', 'option'),
+      'event_related_events_title'             => get_field('event_related_events_title', 'option'),
+
+      // Common
+      'search_label'                           => get_field('search_label', 'option'),
+      'close_button_label'                     => get_field('close_button_label', 'option'),
+
+    );
+
+    return $output;
+
   }
 
   // Output all event posts previews

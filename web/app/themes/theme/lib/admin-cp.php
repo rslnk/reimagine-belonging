@@ -66,25 +66,25 @@ function dashboard_cleanup() {
 if ( function_exists('acf_add_options_page') ) {
 
   acf_add_options_page(array(
-    'page_title'  => 'Site options',
-    'menu_title'  => 'Site',
-    'menu_slug'   => 'site-options',
+    'page_title'  => 'Site settings',
+    'menu_title'  => 'Settings',
+    'menu_slug'   => 'site-settings',
     'capability'  => 'edit_pages',
     'icon_url'    => 'dashicons-admin-settings',
     'redirect'    => false
   ));
 
   acf_add_options_sub_page(array(
-    'page_title'  => 'Footer',
-    'menu_title'  => 'Footer',
-    'parent_slug' => 'site-options',
+    'page_title'  => 'Templates',
+    'menu_title'  => 'Templates',
+    'parent_slug' => 'site-settings',
     'capability'  => 'edit_pages'
   ));
 
   acf_add_options_sub_page(array(
-    'page_title'  => '404 page',
-    'menu_title'  => '404 Page',
-    'parent_slug' => 'site-options',
+    'page_title'  => 'Dictionary',
+    'menu_title'  => 'Dictionary',
+    'parent_slug' => 'site-settings',
     'capability'  => 'edit_pages'
   ));
 }
@@ -152,7 +152,7 @@ function change_menu_order( $menu_order ) {
       'separator1',
       'upload.php',
       'separator2',
-      'site-options', // ACF PRO options page
+      'site-settings', // ACF PRO options page
       'separator-last',
       'profile.php',
   );

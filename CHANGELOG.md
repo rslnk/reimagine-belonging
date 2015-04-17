@@ -1,9 +1,13 @@
 ### TO DOs
 
-* Add default timeline choice in site options
-* Add 'event impact' settings to site options
 * Setup .de site deploy
 
+### 0.1.1: 2015-04-17
+
+* Add default timeline choice option to site settings
+* Add template specific settings to site settings
+* Add Google Analytics ID to site settings
+* Add UI elements text and label field to site settings
 
 ### 0.1.0: 2015-04-14
 
