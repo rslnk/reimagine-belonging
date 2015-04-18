@@ -1,4 +1,8 @@
-angular.module('eventsApp', ['ui.router','eventsApp.constants'])
+angular.module('eventsApp', [
+    'ui.router',
+    'events.constants', 
+    'events.api.service',
+    'events.timeline.controller'])
   .run([
     '$rootScope', 
     '$state', 
@@ -19,7 +23,8 @@ angular.module('eventsApp', ['ui.router','eventsApp.constants'])
       $stateProvider
         .state('timeline', {
           url: '/:timeline',
-          templateUrl: templatesPath + 'events/templates/timeline.html'
+          templateUrl: templatesPath + 'events/templates/timeline.html',
+          controller: 'TimelineController'
         })
         .state('timeline.event', {
           url: '/:event',
@@ -27,5 +32,3 @@ angular.module('eventsApp', ['ui.router','eventsApp.constants'])
         });
     }
   ]);
-
-console.log('xxx');

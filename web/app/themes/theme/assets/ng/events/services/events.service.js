@@ -1,6 +1,4 @@
-'use strict';
-
-angular.module('eventsApp')
+angular.module('events.api.service', [])
   .factory('EventsService', ['$http', function ($http) {
     return {
       get: function () {
@@ -8,5 +6,5 @@ angular.module('eventsApp')
           return response.data;
         });
       }
-    }
+    };
   }]);

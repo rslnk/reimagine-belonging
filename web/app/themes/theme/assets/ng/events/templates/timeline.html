@@ -6,4 +6,13 @@
   <hr/>
   <a ui-sref="timeline.event({ event: 'some-event-one' })">event one</a>
   <a ui-sref="timeline.event({ event: 'some-event-two' })">event two</a>
+  <h4>Topics List</h4>
+  <ul>
+    <li>All Topics</li>
+    <li ng-repeat="topic in events|showTopics">{{ topic.term_name }}</li>
+  </ul>
+  <h4>All Events</h4>
+  <ul>
+    <li ng-repeat="event in events">{{ event.title }}</li>
+  </ul>
 </div>
