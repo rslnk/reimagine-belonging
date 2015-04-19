@@ -1,0 +1,830 @@
+{
+    "key": "group_552fabab3e111",
+    "title": "UI elemets text & labels",
+    "fields": [
+        {
+            "key": "field_5530d8b41355b",
+            "label": "Homepage",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5530dbfaa54a7",
+            "label": "Main title",
+            "name": "homepage_main_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Tip: use &#60strong&#62 tag for the words with strong importance. E.g. \"<strong>Reimagine<\/strong> Belonging\".  ",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 45,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530dc5306697",
+            "label": "Subtitle",
+            "name": "homepage_subtitle",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Add subtitle.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 55,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553125cc746ec",
+            "label": "First button label",
+            "name": "homepage_first_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553125eb746ed",
+            "label": "Second button label",
+            "name": "homepage_second_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5531266b00b26",
+            "label": "Other",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5531102665b73",
+            "label": "Newsletter sign up button label",
+            "name": "homepage_newsletter_sign_up_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Sign up\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553104f26d8db",
+            "label": "Stories",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_553110edd5ac7",
+            "label": "Add story banner text",
+            "name": "stories_add_story_banner_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Add your story\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553111f0f6f20",
+            "label": "Stories filter",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Texts that appear in the stories filter bar.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_553105136d8dc",
+            "label": "Total stories label",
+            "name": "total_stories_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Text label before total number of stories. E.g. \"Stories\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553105826d8dd",
+            "label": "Filtered stories label",
+            "name": "flitered_stories_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Text label before number of filtered stories. E.g. \"Filtered\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553104a06d8da",
+            "label": "Message when there is no search result",
+            "name": "stories_search_result_none_message",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Message that appears when there is no search results to display.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee0604c02",
+            "label": "Timeline",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5530e22430857",
+            "label": "Info banner text",
+            "name": "timeline_info_banner_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"About this Timeline\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5531077eaf1c1",
+            "label": "Events filter",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Texts that appear in the events filter bar.",
+            "esc_html": 0
+        },
+        {
+            "key": "field_5530ee6204c05",
+            "label": "Total events label",
+            "name": "timeline_total_events_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Text label before total number of events. E.g. \"Events\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee2204c04",
+            "label": "Filtered events label",
+            "name": "timeline_filtered_events_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Text label before number of filtered events. E.g. \"Filtered\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5531042e3ca7d",
+            "label": "Message when there is no search result",
+            "name": "timeline_search_result_none_message",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Message that appears when there is no search results to display.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530d7f2530c4",
+            "label": "Story",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_552fae4884838",
+            "label": "Share story",
+            "name": "story_share_story_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Share this story\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fae4884839",
+            "label": "Related stories title",
+            "name": "story_related_stories_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Related stories\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fae488483a",
+            "label": "Related events title",
+            "name": "story_related_events_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Related events\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fd97c4751e",
+            "label": "Event",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_552f9923c3323",
+            "label": "Impact counter",
+            "name": "event_impact_counter_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Impact counter label, e.g \"Impacts\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552f9e1a61fce",
+            "label": "Impact button (default)",
+            "name": "event_impact_button_default_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Were you impacted?\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 40,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552f9e8161fcf",
+            "label": "Impact button (active)",
+            "name": "event_impact_button_active_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Event impacted me\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 40,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fa083b8f50",
+            "label": "Suggest resource button",
+            "name": "event_suggest_resource_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Suggest a resource\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fa0f5b8f51",
+            "label": "Related stories title",
+            "name": "event_related_stories_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Related stories\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fa112b8f52",
+            "label": "Related events title",
+            "name": "event_related_events_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Related events\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530d87d7c1e6",
+            "label": "Footer",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5530dedb01821",
+            "label": "Copyright notice",
+            "name": "footer_copyright_notice",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530fe012e050",
+            "label": "Newsletter",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5530fe842e053",
+            "label": "Sign up button label",
+            "name": "newsletter_sign_up_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530fe172e051",
+            "label": "Sign up success message",
+            "name": "newsletter_sign_up_message_success",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530fe572e052",
+            "label": "Sign up failed message",
+            "name": "newsletter_sign_up_message_error",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530e21030856",
+            "label": "Common",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5530ee1704c03",
+            "label": "Search",
+            "name": "search_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Search text label. E.g. \"Search\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530e23930858",
+            "label": "Close button",
+            "name": "close_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Close button text label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-dictionary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "modified": 1429284684
+}
