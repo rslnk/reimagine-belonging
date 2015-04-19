@@ -4,7 +4,7 @@ angular.module('events.events.filter', [])
       var result = [];
 
       function filterIsSet () {
-        return typeof filter !== 'undefined';
+        return typeof filter !== 'undefined' && (typeof filter.topics !== 'undefined' || typeof filter.searchText !== 'undefined');
       }
 
       function topicsFilterIsSet () {
@@ -21,7 +21,7 @@ angular.module('events.events.filter', [])
             return true;
           }
         }
-        
+
         return false;
       }
 
@@ -34,10 +34,8 @@ angular.module('events.events.filter', [])
       }
 
       function filterEvents () {
-        if (filterIsSet()){
-          if (topicsFilterIsSet()) {
-            filterByTopics();
-          }
+        if (filterIsSet() && topicsFilterIsSet()){
+          filterByTopics();
         } else {
           result = events;
         }

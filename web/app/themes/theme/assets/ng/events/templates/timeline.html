@@ -11,7 +11,7 @@
   </ul>
   <h4>All Events</h4>
   <ul>
-    <li ng-repeat="event in events|showEvents">
+    <li ng-repeat="event in events|showEvents:filter">
       <a ui-sref="timeline.event({ event: event.slug })">{{ event.title }}</a>
     </li>
   </ul>

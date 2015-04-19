@@ -38,6 +38,12 @@ describe("Events Filter", function () {
         expect( withinRange ).toBe(true);
       }
     });
+
+    it('should return all events if no topics are selected', function () {
+      var filter = { topics: [], searchText: '' };
+      var events = eventsFilter(eventsListMock, filter);
+      expect(events.length).toBe(eventsListMock.length);
+    });
   });
 
 });
