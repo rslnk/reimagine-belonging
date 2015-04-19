@@ -4,4 +4,4 @@
  */
 ?>
 
-<?php print 'This is Timeline template for Angular JS' ?>
+<?php the_field('subtitle') ?>
