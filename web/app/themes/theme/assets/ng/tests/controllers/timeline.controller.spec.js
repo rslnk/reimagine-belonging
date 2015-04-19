@@ -1,11 +1,12 @@
-describe('Timeline Controller', function () {
-  var timelineCtrl, scope, EventsService, httpBackend;
+describe('Timeline Main Controller', function () {
+  var timelineCtrl, scope, location, EventsService, httpBackend;
 
   beforeEach(module('events.timeline.controller'));
 
-  beforeEach(inject(function ($controller, $rootScope, $httpBackend) {
+  beforeEach(inject(function ($controller, $rootScope, $location, $httpBackend) {
     scope = $rootScope.$new();
     httpBackend = $httpBackend;
+    location = $location;
     timelineCtrl = $controller('TimelineController', {
       $scope: scope
     });
@@ -42,7 +43,7 @@ describe('Timeline Controller', function () {
 
   });
 
-  describe('when events are loaded', function () {
+  describe('topics filter', function () {
 
     beforeEach(function () {
       httpBackend
@@ -51,6 +52,33 @@ describe('Timeline Controller', function () {
       httpBackend.flush();
     });
 
+    it('should have a topic toggle function defined', function () {
+      expect(scope.toggleTopicInFilter).toBeDefined();
+    });
+
+    it('should add topic to the filter object', function () {
+      var topic = 'test-topic';
+      scope.toggleTopicInFilter(topic);
+      expect(scope.filter.topics.indexOf(topic)).toBeGreaterThan(-1);
+    });
+
+    it('should remove topic from the filter', function () {
+      var topic = 'test-topic';
+      scope.toggleTopicInFilter(topic);
+      expect(scope.filter.topics.indexOf(topic)).toBeGreaterThan(-1);
+      scope.toggleTopicInFilter(topic);
+      expect(scope.filter.topics.indexOf(topic)).toBe(-1);
+    });
+
+    it('should push topic to query string parameter', function () {
+      var topic = 'test-query-param-topic';
+      scope.toggleTopicInFilter(topic);
+      scope.$digest();
+      var searchObject = location.search();
+      expect( searchObject.topics.split(',').indexOf(topic) ).toBeGreaterThan(-1);
+    });
+
   });
+
 
 });
