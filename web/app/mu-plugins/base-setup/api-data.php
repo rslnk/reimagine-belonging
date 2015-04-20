@@ -112,14 +112,9 @@ class DataFilter {
           $i['type'] = 'story';
           $result[] = $i;
           break;
-        case 'youtube_video':
-          $i = $item['youtube_video'][0];
-          $i['type'] = 'youtube_video';
-          $result[] = $i;
-          break;
-        case 'oembed';
-          $i = $item['oembed_video'][0];
-          $i['type'] = 'oembed';
+        case 'video':
+          $i = $item['video'][0];
+          $i['type'] = 'video';
           $result[] = $i;
           break;
       }
