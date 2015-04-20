@@ -4,12 +4,12 @@ angular.module('events.timeline.controller', [
     'events.topics.filter'
   ])
   .controller('TimelineController', [
-      '$scope',
-      '$http',
-      '$location',
-      'EventsService',
-  function ($scope, $http, $location, EventsService) {
-
+    '$scope',
+    '$http',
+    '$location',
+    '$stateParams',
+    'EventsService',
+  function ($scope, $http, $location, $stateParams, EventsService) {
     $scope.events = [];
     $scope.config = {};
     $scope.filter = {
@@ -18,9 +18,11 @@ angular.module('events.timeline.controller', [
     };
 
     $scope.loadEvents = function () {
-      EventsService.get().then(function(response){
-        $scope.events = response;
-      });
+      EventsService
+        .get($stateParams.timeline)
+        .then(function(response){
+          $scope.events = response;
+        });
     };
 
     $scope.toggleTopicInFilter = function (topic) {

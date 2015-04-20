@@ -8,7 +8,8 @@ describe('Timeline Main Controller', function () {
     httpBackend = $httpBackend;
     location = $location;
     timelineCtrl = $controller('TimelineController', {
-      $scope: scope
+      $scope: scope,
+      $stateParams: { timeline: 'germany' }
     });
   }));
 

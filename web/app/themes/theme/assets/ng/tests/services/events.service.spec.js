@@ -20,27 +20,32 @@ describe('Event Service', function () {
   });
 
   describe ('the service api', function () {
-    it ('should have fetch method', function () {
+
+    it ('should have get method', function () {
       expect(eventsService.get).toBeDefined();
     });
 
-    it ('should request API server for a list of all events', function () {
+    it ('should request API server for events', function () {
+      httpBackend
+        .expectGET('/api/?action=list-all-events')
+        .respond(eventsListMock);
+      eventsService.get('united-states');
+      httpBackend.flush();
+    });
+
+    it('should have content for specific country', function () {
       var data;
 
       httpBackend
         .expectGET('/api/?action=list-all-events')
-        .respond([{ foo: 'bar' }]);
+        .respond(eventsListMock);
 
-      eventsService
-        .get()
+      eventsService.get('germany')
         .then(function (response) {
           data = response;
         });
 
       httpBackend.flush();
-
-      expect( data instanceof Array ).toEqual(true);
-      expect( data[0]['foo'] ).toEqual('bar');
     });
   });
 });

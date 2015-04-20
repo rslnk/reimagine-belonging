@@ -1,18 +1,18 @@
 <div>
   <h2>The Timeline</h2>
-  <a ui-sref="timeline({timeline: 'usa'})">usa</a>
+  <a ui-sref="timeline({timeline: 'united-states'})">usa</a>
   <a ui-sref="timeline({timeline: 'germany'})">germany</a>
   <h4>Topics List</h4>
   <ul>
-    <li>All Topics</li>
+    <li ng-click="resetTopicsFilter()">All Topics</li>
     <li ng-repeat="topic in events|showTopics">
       <a ng-click="toggleTopicInFilter(topic.term_slug)">{{ topic.term_name }}</a>
     </li>
   </ul>
-  <h4>All Events</h4>
+  <h4>All Events:</h4>
   <ul>
     <li ng-repeat="event in events|showEvents:filter">
-      <a ui-sref="timeline.event({ event: event.slug })">{{ event.title }}</a>
+      <a ui-sref="timeline.event({ event: event.slug })">{{ event }}</a>
     </li>
   </ul>
   <div ui-view></div>
