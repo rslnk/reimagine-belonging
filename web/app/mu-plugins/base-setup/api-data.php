@@ -196,29 +196,31 @@ class API_Data {
 
     $output = array();
 
-    $timeline = get_field('default_timeline', 'option');
-
     // Output option pages fields
     // http://www.advancedcustomfields.com/resources/get-values-from-an-options-page
 
     $output[] = array(
 
       // Site settings
-      'default_timeline'      => get_field('default_timeline', 'option'),
       'site_date_format'      => get_field('site_date_format', 'option'),
       'site_date_language'    => get_field('site_date_language', 'option'),
       'google_analytics_id'   => get_field('google_analytics_id', 'option'),
+
+      // Timeline settings
+      'default_timeline'      => get_field('default_timeline', 'option'),
 
       // Dictionary (UI elemets text & labels)
 
       // Stories
       'add_story_banner_text'                 => get_field('stories_add_story_banner_text', 'option'),
+      'all_stories_filter_label'              => get_field('all_stories_filter_label', 'option'),
       'total_stories_label'                   => get_field('total_stories_label', 'option'),
       'flitered_stories_label'                => get_field('flitered_stories_label', 'option'),
       'stories_search_result_none_message'    => get_field('stories_search_result_none_message', 'option'),
 
       // Timeline
       'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
+      'all_events_filter_label'                => get_field('timeline_all_events_filter_label', 'option'),
       'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),
       'timeline_filtered_events_label'         => get_field('timeline_filtered_events_label', 'option'),
       'timeline_search_result_none_message'    => get_field('timeline_search_result_none_message', 'option'),

@@ -8,7 +8,7 @@
             "name": "subtitle",
             "prefix": "",
             "type": "text",
-            "instructions": "Use subtitle to extend the meaning of the event main title. Note that this is not an event description, so try to keep it relatively short.",
+            "instructions": "Use subtitle to extend the meaning of the post or page main title. Tip: use &#60strong&#62 tag for the words with strong importance. E.g. \"<strong>Reimagine<\/strong> Belonging\".  ",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -32,6 +32,13 @@
                 "operator": "==",
                 "value": "event"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -40,5 +47,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428276255
+    "modified": 1429347747
 }

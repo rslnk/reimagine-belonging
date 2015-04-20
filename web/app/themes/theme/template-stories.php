@@ -4,4 +4,4 @@
  */
 ?>
 
-<?php print 'This is Stories template for Angular JS' ?>
+<?php the_field('subtitle') ?>
