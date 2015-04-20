@@ -1,4 +1,13 @@
 .wrapper
-  margin 0 80px
+  row()
+  margin 0 10px
+  +media-query($screen, $bp--tablet)
+    margin 0 20px
+  +media-query($screen, $bp--desktop)
+    margin 0 80px
+  +media-query($screen, $bp--desktop--large)
+    margin 0 180px
+
 .wrapper--full
+  row()
   margin 0
