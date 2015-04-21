@@ -595,7 +595,7 @@
                         },
                         {
                             "key": "field_552447c56db0c",
-                            "label": "Image title",
+                            "label": "Title",
                             "name": "title",
                             "prefix": "",
                             "type": "text",
@@ -2207,5 +2207,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429563558
+    "modified": 1429651797
 }
