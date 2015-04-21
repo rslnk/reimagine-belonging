@@ -1,5 +1,6 @@
-### 0.1.2: 2015-04-21
+### 0.1.2: 2015-04-22
 
+* Add title and description custom fields to timeline taxonomy terms
 * Setup En and De production sites deployment
 
 ### 0.1.1: 2015-04-17

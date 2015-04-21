@@ -12,6 +12,7 @@
   * Rename default WordPress admin menu items
   * Customize WordPress admin menu items order
   * Change post thumbnail meta box title to 'Preview image'
+  * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
 
 */
@@ -157,6 +158,27 @@ function change_menu_order( $menu_order ) {
       'profile.php',
   );
 
+}
+
+// Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
+add_action( 'admin_footer-edit-tags.php', 'remove_taxonomy_tag_description' );
+
+function remove_taxonomy_tag_description(){
+  global $current_screen;
+  switch ( $current_screen->id )
+  {
+    case 'edit-category':
+      // WE ARE AT /wp-admin/edit-tags.php?taxonomy=category
+      // OR AT /wp-admin/edit-tags.php?action=edit&taxonomy=category&tag_ID=1&post_type=post
+      break;
+  }
+  ?>
+  <script type="text/javascript">
+  jQuery(document).ready( function($) {
+      $('#tag-description').parent().remove();
+  });
+  </script>
+  <?php
 }
 
 /*
