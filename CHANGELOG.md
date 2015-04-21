@@ -1,5 +1,6 @@
 ### 0.1.2: 2015-04-22
 
+* Update to WordPress 4.1.2
 * Add title and description custom fields to timeline taxonomy terms
 * Setup En and De production sites deployment
 
