@@ -1,6 +1,6 @@
 set :application, 'reimaginebelonging'
 set :rootuser, 'wingsroots'
-set :user, 'deploy'
+set :user, 'wingsroots'
 
 set :scm, :git
 set :repo_url, "git@github.com:rslnk/reimagine-belonging.git"
@@ -13,7 +13,7 @@ set :tmp_dir, "/home/#{fetch(:rootuser)}/tmp"
 
 # Run Composer update through SSHKit command
 # Note that Composer must be installed in root user directory
-SSHKit.config.command_map[:composer] = "php55 -d memory_limit=512M -d allow_url_fopen=1 -d suhosin.executor.include.whitelist=phar /home/#{fetch(:rootuser)}/composer/composer.phar"
+SSHKit.config.command_map[:composer] = "php56 -d memory_limit=512M -d allow_url_fopen=1 -d suhosin.executor.include.whitelist=phar /home/#{fetch(:rootuser)}/composer/composer.phar"
 
 # Branch options
 
@@ -28,7 +28,7 @@ set :log_level, :info
 # it needs to be added to linked_files so it persists across deploys:
 set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')
 set :linked_files, fetch(:linked_files, []).push('.env')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/media')
+set :linked_dirs, fetch(:linked_dirs, []).push('web/media')
 
 namespace :deploy do
   desc 'Restart application'

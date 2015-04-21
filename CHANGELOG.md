@@ -1,6 +1,6 @@
-### TO DOs
+### 0.1.2: 2015-04-21
 
-* Setup .de site deploy
+* Setup En and De production sites deployment
 
 ### 0.1.1: 2015-04-17
 
