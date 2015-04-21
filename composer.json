@@ -70,7 +70,8 @@
     "johnpbloch/wordpress": "4.1.1",
     "roots/soil": "3.0.3",
     "advancedcustomfields/acf-pro": "5.2.2",
-    "roots/wp-h5bp-htaccess": "1.1.0"
+    "roots/wp-h5bp-htaccess": "1.1.0",
+    "wpackagist-plugin/password-protected": "1.9"
   },
   "extra": {
     "installer-paths": {
