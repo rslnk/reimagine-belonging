@@ -1,7 +1,24 @@
 {
     "key": "group_5536c2266ef07",
-    "title": "Timeline taxonomy description",
+    "title": "Timeline about text",
     "fields": [
+        {
+            "key": "field_55376de873210",
+            "label": "<h2>About timeline<\/h2>",
+            "name": "",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Timeline title, introduction text and how to use instruction.",
+            "esc_html": 0
+        },
         {
             "key": "field_5536c3eae96fa",
             "label": "Title",
@@ -73,5 +90,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429656292
+    "modified": 1429696301
 }
