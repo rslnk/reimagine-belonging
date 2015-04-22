@@ -160,6 +160,17 @@ function change_menu_order( $menu_order ) {
 
 }
 
+// Change post thumbnail meta box title to 'Preview image'
+add_action( 'add_meta_boxes', 'change_featured_image_meta_box_title', 10, 2 );
+
+function change_featured_image_meta_box_title( $post_type, $post ) {
+  $post_types = array ( 'post', 'event', 'story' );
+  // remove original thumbnail image metabox
+  remove_meta_box( 'postimagediv', '', 'side' );
+  // add customized metabox
+  add_meta_box( 'postimagediv', __('Preview Image'), 'post_thumbnail_meta_box', '', 'side', 'high' );
+}
+
 // Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
 add_action( 'admin_footer-edit-tags.php', 'remove_taxonomy_tag_description' );
 
