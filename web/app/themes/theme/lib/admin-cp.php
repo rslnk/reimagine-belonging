@@ -219,9 +219,9 @@ add_action( 'manage_pages_columns', 'remove_posts_comments_columns' );
 // Filter events columns
 function events_columns_filter( $columns ) {
   $column_thumbnail = array( 'thumbnail_column' => 'Image' );
-  $column_wordcount = array( 'start_year_column' => 'Year' );
+  $column_start_year = array( 'start_year_column' => 'Year' );
   $columns = array_slice( $columns, 0, 1, true ) + $column_thumbnail + array_slice( $columns, 1, NULL, true );
-  $columns = array_slice( $columns, 0, 2, true ) + $column_wordcount + array_slice( $columns, 2, NULL, true );
+  $columns = array_slice( $columns, 0, 2, true ) + $column_start_year + array_slice( $columns, 2, NULL, true );
   return $columns;
 }
 
@@ -244,9 +244,12 @@ function add_events_columns( $column ) {
 // Set columns size and styles
 function post_admin_column_resize() { ?>
   <style type="text/css">
-    .edit-php .fixed .column-start_year_column { width: 75px; font-weight: bold; }
-    .edit-php .fixed .column-thumbnail_column { width: 75px; }
+    .edit-php .fixed .column-start_year_column { width: 65px; white-space: nowrap; font-weight: bold; }
+    .edit-php .fixed .column-thumbnail_column { width: 50px; }
     .edit-php .fixed .thumbnail_column img { width: 50px; height: 50px; }
+    .edit-php .fixed .column-taxonomy-event_timeline { width: 15%; }
+    .edit-php .fixed .column-taxonomy-event_era { width: 12%; }
+    .edit-php .fixed .column-taxonomy-event_topic { width: 20%; }
   </style>
 <?php }
 
@@ -258,9 +261,11 @@ function remove_posts_comments_columns( $columns ) {
 
 // Register sortable admin columns
 function register_sortable_columns( $post_columns ) {
-  $post_columns = array(
-    'start_year_column' => 'start_date'
-  );
+  $post_columns = [
+    'start_year_column' => 'start_date',
+    'topic_column' => 'event_topic',
+    'era_column' => 'event_era'
+  ];
   return $post_columns;
 }
 
