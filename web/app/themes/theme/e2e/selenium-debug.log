@@ -1,0 +1,32 @@
+22:41:04.699 INFO - Launching a standalone server
+22:41:04.739 INFO - Java: Apple Inc. 20.65-b04-466.1
+22:41:04.739 INFO - OS: Mac OS X 10.10.2 x86_64
+22:41:04.750 INFO - v2.45.0, with Core v2.45.0. Built from revision 5017cb8
+22:41:04.839 INFO - Default driver org.openqa.selenium.ie.InternetExplorerDriver registration is skipped: registration capabilities Capabilities [{platform=WINDOWS, ensureCleanSession=true, browserName=internet explorer, version=}] does not match with current platform: MAC
+22:41:04.876 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+22:41:04.877 INFO - Version Jetty/5.1.x
+22:41:04.878 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+22:41:04.879 INFO - Started HttpContext[/selenium-server,/selenium-server]
+22:41:04.879 INFO - Started HttpContext[/,/]
+22:41:04.933 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@643c0007
+22:41:04.934 INFO - Started HttpContext[/wd,/wd]
+22:41:04.940 INFO - Started SocketListener on 0.0.0.0:4444
+22:41:04.940 INFO - Started org.openqa.jetty.jetty.Server@6262937c
+22:41:05.186 INFO - Executing: [new session: Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]])
+22:41:05.201 INFO - Creating a new session for Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]
+22:41:09.426 INFO - Done: [new session: Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]]
+22:41:09.439 INFO - Executing: [get: http://reimaginebelonging.dev])
+22:41:10.090 INFO - Done: [get: http://reimaginebelonging.dev]
+22:41:10.097 INFO - Executing: [find element: By.cssSelector: h1])
+22:41:10.200 INFO - Done: [find element: By.cssSelector: h1]
+22:41:10.205 INFO - Executing: [get text: 0 [[FirefoxDriver: firefox on MAC (4ee2ecf1-e1f9-9e42-bb0f-7c6af57dddde)] -> css selector: h1]])
+22:41:10.240 INFO - Done: [get text: 0 [[FirefoxDriver: firefox on MAC (4ee2ecf1-e1f9-9e42-bb0f-7c6af57dddde)] -> css selector: h1]]
+22:41:10.245 INFO - Executing: [delete session: 593b3e59-f654-4566-b574-4801ade10a32])
+22:41:10.366 INFO - Done: [delete session: 593b3e59-f654-4566-b574-4801ade10a32]
+22:41:10.373 INFO - Executing: [new session: Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]])
+22:41:10.374 INFO - Creating a new session for Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]
+22:41:13.653 INFO - Done: [new session: Capabilities [{platform=ANY, acceptSslCerts=true, javascriptEnabled=true, browserName=firefox, name=Main Spec}]]
+22:41:13.658 INFO - Executing: [get: http://reimaginebelonging.dev/404])
+22:41:14.348 INFO - Done: [get: http://reimaginebelonging.dev/404]
+22:41:14.352 INFO - Executing: [delete session: d0f72e8d-8833-48d7-8d08-4bff1f547cb1])
+22:41:14.473 INFO - Done: [delete session: d0f72e8d-8833-48d7-8d08-4bff1f547cb1]

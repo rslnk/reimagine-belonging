@@ -1,5 +1,16 @@
 {
   "dependencies": {
+    "events.js": {
+      "files": [
+        "ng/events/services/events.service.js",
+        "ng/events/filters/events.filter.js",
+        "ng/events/filters/topics.filter.js",
+        "ng/events/controllers/timeline.controller.js",
+        "ng/events/app.constants.js",
+        "ng/events/app.js"
+      ],
+      "bower": ["angular", "angular-ui-router", "ng-lodash"]
+    },
     "main.js": {
       "files": [
         "scripts/main.js"
