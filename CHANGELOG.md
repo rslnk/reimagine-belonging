@@ -1,7 +1,7 @@
 ### 0.1.2: 2015-04-22
 
+* Update to WordPress 4.2
 * Update ACF PRO to 5.2.3
-* Update to WordPress 4.1.2
 * Add post types and taxonomies slugs options to Site settings
 * Add title and description custom fields to timeline taxonomy terms
 * Setup En and De production sites deployment
