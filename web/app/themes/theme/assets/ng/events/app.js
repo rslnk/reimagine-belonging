@@ -2,7 +2,9 @@ angular.module('eventsApp', [
     'ui.router',
     'events.constants', 
     'events.api.service',
-    'events.timeline.controller'])
+    'events.timeline.controller',
+    'events.preview.directive'
+  ])
   .run([
     '$rootScope', 
     '$state', 

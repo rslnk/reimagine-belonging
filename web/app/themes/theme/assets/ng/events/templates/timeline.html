@@ -1,8 +1,14 @@
 <div>
-  <h2>The Timeline</h2>
-  <a ui-sref="timeline({timeline: 'united-states'})">usa</a>
-  <a ui-sref="timeline({timeline: 'germany'})">germany</a>
-  <h4>Topics List</h4>
+
+  <ul>
+    <li>
+      <a ui-sref="timeline({timeline: 'united-states'})">usa</a>
+    </li>
+    <li>
+      <a ui-sref="timeline({timeline: 'germany'})">germany</a>
+    </li>
+  </ul>
+
   <ul class="filter-list">
     <li class="filter-list__item filter-list__item--active" ng-click="resetTopicsFilter()">
       <a>All Topics</a>
@@ -11,13 +17,15 @@
       <a ng-click="toggleTopicInFilter(topic.term_slug)">{{ topic.term_name }}</a>
     </li>
   </ul>
-  <h4>All Events:</h4>
-  <ul class="timeline-preview">
-    <li class="timeline-preview__item" ng-repeat="event in events|showEvents:filter">
-      <a ui-sref="timeline.event({ event: event.slug })">
-        {{ event.preview_image }}
-      </a>
-    </li>
+
+  <ul class="event-preview__wrapper">
+      <event-preview ng-repeat="event in events|showEvents:filter"
+        title="{{event.title}}" 
+        slug="{{event.slug}}"
+        image="{{event.preview_image}}"
+        year="2039">
+      </event-preview>
   </ul>
+
   <div ui-view></div>
 </div>
