@@ -66,7 +66,7 @@ var revManifest = path.dist + 'assets.json';
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
 var cssTasks = function(filename) {
-  return lazypipe()
+  lazypipe()
     .pipe(function() {
       return $.if(!enabled.failStyleTask, $.plumber());
     })
@@ -108,7 +108,7 @@ var cssTasks = function(filename) {
 //   .pipe(gulp.dest(path.dist + 'scripts'))
 // ```
 var jsTasks = function(filename) {
-  return lazypipe()
+  lazypipe()
     .pipe(function() {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
@@ -126,7 +126,7 @@ var jsTasks = function(filename) {
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function(directory) {
-  return lazypipe()
+  lazypipe()
     .pipe(gulp.dest, path.dist + directory)
     .pipe(function() {
       return $.if('**/*.{js,css}', browserSync.reload({stream:true}));
@@ -161,7 +161,7 @@ gulp.task('styles', ['wiredep'], function() {
       .pipe(cssTasksInstance)
     );
   });
-  return merged
+  merged
     .pipe(writeToManifest('styles'));
 });
 
@@ -176,7 +176,7 @@ gulp.task('scripts', ['jshint'], function() {
         .pipe(jsTasks(dep.name))
     );
   });
-  return merged
+  merged
     .pipe(writeToManifest('scripts'));
 });
 
@@ -184,7 +184,7 @@ gulp.task('scripts', ['jshint'], function() {
 // `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
 // structure. See: https://github.com/armed/gulp-flatten
 gulp.task('fonts', function() {
-  return gulp.src(globs.fonts)
+  gulp.src(globs.fonts)
     .pipe($.flatten())
     .pipe(gulp.dest(path.dist + 'fonts'));
 });
@@ -192,7 +192,7 @@ gulp.task('fonts', function() {
 // ### Images
 // `gulp images` - Run lossless compression on all the images.
 gulp.task('images', function() {
-  return gulp.src(globs.images)
+  gulp.src(globs.images)
     .pipe($.imagemin({
       progressive: true,
       interlaced: true,
@@ -204,7 +204,7 @@ gulp.task('images', function() {
 // ### Iconify
 // `gulp iconify` - Convert svg files to css classes with png fallback
 gulp.task('iconify', function() {
-  return iconify({
+  iconify({
     src: './assets/icons/*.svg',
     cssOutput: './dist/styles/',
     pngOutput: './dist/icons/',
@@ -216,7 +216,7 @@ gulp.task('iconify', function() {
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
-  return gulp.src([
+  gulp.src([
     'bower.json', 'gulpfile.js'
   ].concat(project.js))
     .pipe($.jshint())
@@ -263,7 +263,7 @@ gulp.task('build', ['styles', 'scripts', 'fonts', 'images', 'iconify']);
 // https://github.com/taptapship/wiredep
 gulp.task('wiredep', function() {
   var wiredep = require('wiredep').stream;
-  return gulp.src(project.css)
+  gulp.src(project.css)
     .pipe(wiredep())
     .pipe($.changed(path.source + 'styles', {
       hasChanged: $.changed.compareSha1Digest
