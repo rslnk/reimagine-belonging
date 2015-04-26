@@ -17,7 +17,8 @@
 */
 
 $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
-$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : 0;
+$id = isset($_REQUEST['id']) ? $_REQUEST['id'] : false;
+$path = isset($_REQUEST['path']) ? $_REQUEST['path'] : false;
 
 $output = null;
 $api = new API_Data();
@@ -37,7 +38,7 @@ switch ($action) {
     break;
 
   case 'event-data':
-    $output = $api->event_data($id);
+    $output = $api->event_data($id, $path);
     break;
 
   default:
@@ -311,13 +312,25 @@ class API_Data {
   }
 
   // Output event post
-  function event_data ($id) {
-    if ($id === 0) return false;
+  function event_data ($id, $path) {
+    if (!$id && !$path) return false;
 
-    $output = array();
+    if ($id) {
+        $post_id = $id;
+        $post = get_post($post_id);
+    } else if ($path) {
+        $args = array(
+          'name' => $path,
+          'post_type' => 'event',
+          'numberposts' => 1
+        );
+        $posts = get_posts($args);
+        $post = $posts[0];
+    }
 
-    $post_id = $id;
-    $post = get_post($post_id);
+    // echo '<pre>';
+    // var_dump ($post);
+    // echo '</pre>';
 
     // Get post taxonomies
     $timelines = get_the_terms( $post->ID , 'event_timeline' );
@@ -339,7 +352,7 @@ class API_Data {
     $header_image = $custom_fields['header_image'][0];
 
     // Output event attributes
-    $output[] = array(
+    $output = array(
 
       // Basic post data
       'id'                           => $post->ID,

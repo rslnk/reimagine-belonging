@@ -3,6 +3,7 @@ angular.module('eventsApp', [
     'events.constants', 
     'events.api.service',
     'events.timeline.controller',
+    'events.event.controller',
     'events.preview.directive',
     'events.countries.directive'
   ])
@@ -31,7 +32,8 @@ angular.module('eventsApp', [
         })
         .state('timeline.event', {
           url: '/:event',
-          templateUrl: templatesPath + 'events/templates/timeline.event.html'
+          templateUrl: templatesPath + 'events/templates/timeline.event.html',
+          controller: 'EventController'
         });
     }
   ]);

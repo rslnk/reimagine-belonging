@@ -48,7 +48,6 @@ angular.module('events.timeline.controller', [
     };
 
     $scope.switchCountry = function (slug) {
-      console.log('switch country controller');
       $state.go('timeline', { timeline: slug });
     };
 
