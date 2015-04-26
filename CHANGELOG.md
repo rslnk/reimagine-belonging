@@ -1,3 +1,7 @@
+### 0.1.3: 2015-04-26
+
+* Add iconify gulp task
+
 ### 0.1.2: 2015-04-22
 
 * Update to WordPress 4.2
