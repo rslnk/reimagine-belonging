@@ -6,6 +6,7 @@ var browserSync = require('browser-sync');
 var gulp        = require('gulp');
 var lazypipe    = require('lazypipe');
 var merge       = require('merge-stream');
+var iconify     = require('gulp-iconify');
 
 // Stylus + koutoSwiss
 var stylus = require('gulp-stylus');
@@ -200,6 +201,18 @@ gulp.task('images', function() {
     .pipe(gulp.dest(path.dist + 'images'));
 });
 
+// ### Iconify
+// `gulp iconify` - Convert svg files to css classes with png fallback
+gulp.task('iconify', function() {
+  return iconify({
+    src: './assets/icons/*.svg',
+    cssOutput: './dist/styles/',
+    pngOutput: './dist/icons/',
+    scssOutput: './dist/scss/',
+    styleTemplate: './assets/icons/_icon_gen.scss.mustache',
+  });
+});
+
 // ### JSHint
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
@@ -243,7 +256,7 @@ gulp.task('watch', function() {
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
-gulp.task('build', ['styles', 'scripts', 'fonts', 'images']);
+gulp.task('build', ['styles', 'scripts', 'fonts', 'images', 'iconify']);
 
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See

@@ -1,16 +1,27 @@
 <?php
 /*
   Plugin Name:  Base Setup
-  Description:  Automatically sets site specific defaults: * Sets upload path to /media; * Sets upload path URL to example.com/media; * Disables year/month folder structure for uploads; * Sets permalink structure to post name; * Creates data api URL; * Sets save/load path to ACF PRO JSON custom fileds;
+  Description:  Automatically sets site specific defaults.
   Version:      1.0.0
   Author:       Ruslan Komjakov
   Author URI:   https://github.com/rslnk
+
+  * Sets upload path to /media;
+  * Sets upload path URL to example.com/media
+  * Disables year/month folder structure for uploads
+  * Sets permalink structure to post name
+  * Creates data api endpoint URL
+  * Sets save/load path to ACF PRO JSON custom fileds
+
 */
+
 
 if (!is_blog_installed()) { return; }
 
 /*
+
   WordPress Setup
+  ---------------
 
   Set uploads path to /media;
   Set uploads URL path to example.com/media;
@@ -18,7 +29,8 @@ if (!is_blog_installed()) { return; }
 
   Based on Roots.io wp-setup.php file
   https://gist.github.com/swalkinshaw/6400708
- */
+
+*/
 
 if ('http://' . $_SERVER['SERVER_NAME'] . '/wp' == get_option('siteurl')) {
   update_option('upload_path', $_SERVER['DOCUMENT_ROOT'] . '/media');
@@ -28,12 +40,15 @@ if ('http://' . $_SERVER['SERVER_NAME'] . '/wp' == get_option('siteurl')) {
 }
 
 /*
+
   API data endpoint
+  -----------------
 
   Creates example.com/api URL and includes custom template
 
   Based on Creating an API Endpoint in WordPress by Ken Snyder
-  http://kendsnyder.com/creating-an-api-endpoint-in-wordpress/
+  http://kendsnyder.com/creating-an-api-endpoint-in-wordpress
+
  */
 
 add_action( 'parse_request', 'create_api_endpoint', 0 );
@@ -49,11 +64,14 @@ function create_api_endpoint() {
 }
 
 /*
+
   ACF PRO Setup
+  -------------
 
   Set custom save/load path to JSON custom fields
   http://www.advancedcustomfields.com/resources/local-json/
- */
+
+*/
 
 add_filter('acf/settings/save_json', 'custom_acf_json_save_point');
 add_filter('acf/settings/load_json', 'custom_acf_json_load_point');

@@ -28,7 +28,7 @@ class NavWalker extends \Walker_Nav_Menu {
   }
 
   public function checkCurrent($classes) {
-    return preg_match('/(current[-_])|active|dropdown/', $classes);
+    return preg_match('/(current[-_])|is-active|has-dropdown/', $classes);
   }
 
   // @codingStandardsIgnoreStart
@@ -57,11 +57,11 @@ class NavWalker extends \Walker_Nav_Menu {
     $element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
     if ($element->is_dropdown) {
-      $element->classes[] = 'dropdown';
+      $element->classes[] = 'has-dropdown';
 
       foreach ($children_elements[$element->ID] as $child) {
         if ($child->current_item_parent || Utils\url_compare($this->archive, $child->url)) {
-          $element->classes[] = 'active';
+          $element->classes[] = 'is-active';
         }
       }
     }
@@ -69,7 +69,7 @@ class NavWalker extends \Walker_Nav_Menu {
     $element->is_active = strpos($this->archive, $element->url);
 
     if ($element->is_active) {
-      $element->classes[] = 'active';
+      $element->classes[] = 'is-active';
     }
 
     parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
@@ -83,14 +83,14 @@ class NavWalker extends \Walker_Nav_Menu {
       $classes = str_replace('current_page_parent', '', $classes);
 
       if (Utils\url_compare($this->archive, $item->url)) {
-        $classes[] = 'active';
+        $classes[] = 'is-active';
       }
     }
 
-    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'active', $classes);
+    $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'is-active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
-    $classes[] = 'menu-' . $slug;
+    $classes[] = 'c-site-nav__item c-site-nav__' . $slug;
 
     $classes = array_unique($classes);
 

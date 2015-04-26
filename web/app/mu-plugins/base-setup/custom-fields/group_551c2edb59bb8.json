@@ -131,6 +131,7 @@
                     "taxonomy": "event_timeline",
                     "field_type": "multi_select",
                     "allow_null": 0,
+                    "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
                     "multiple": 0
@@ -145,13 +146,14 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 25,
                         "class": "",
                         "id": ""
                     },
                     "taxonomy": "event_era",
                     "field_type": "select",
                     "allow_null": 0,
+                    "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
                     "multiple": 0
@@ -166,13 +168,14 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 25,
                         "class": "",
                         "id": ""
                     },
                     "taxonomy": "event_type",
                     "field_type": "select",
                     "allow_null": 0,
+                    "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
                     "multiple": 0
@@ -194,6 +197,7 @@
                     "taxonomy": "event_topic",
                     "field_type": "multi_select",
                     "allow_null": 0,
+                    "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
                     "multiple": 0
@@ -215,7 +219,8 @@
                     "taxonomy": "event_group",
                     "field_type": "multi_select",
                     "allow_null": 0,
-                    "load_save_terms": 1,
+                    "add_term": 1,
+                    "load_save_terms": 0,
                     "return_format": "id",
                     "multiple": 0
                 },
@@ -238,7 +243,8 @@
                     "allow_null": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0
+                    "multiple": 0,
+                    "add_term": 1
                 }
             ]
         },
@@ -338,5 +344,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1429059143
+    "modified": 1429695544
 }

@@ -1,6 +1,14 @@
-### TO DOs
+### 0.1.3: 2015-04-26
 
-* Setup .de site deploy
+* Add iconify gulp task
+
+### 0.1.2: 2015-04-22
+
+* Update to WordPress 4.2
+* Update ACF PRO to 5.2.3
+* Add post types and taxonomies slugs options to Site settings
+* Add title and description custom fields to timeline taxonomy terms
+* Setup En and De production sites deployment
 
 ### 0.1.1: 2015-04-17
 
@@ -61,7 +69,7 @@
 * Referencing Sage ConditionalTagCheck directly
 * Update all dev dependencies
 * Add CHANGELOG.md
-* Update ACF Pro to 5.2.1
+* Update ACF PRO to 5.2.1
 * Update to WordPress 4.1.1
 * Update Bedrock to 1.3.4
 
@@ -81,6 +89,6 @@
 
 * Kouto-Swiss and Stylus
 * Remove Bootstrap and Less
-* Install mu-plugins: Soil 3.0.3, ACF Pro 5.1.8, HTML5 Boilerplate .htaccess for WordPress 1.1.0
+* Install mu-plugins: Soil 3.0.3, ACF PRO 5.1.8, HTML5 Boilerplate .htaccess for WordPress 1.1.0
 * Install Roots 8.0.0
 * Install Bedrock 1.3.1
