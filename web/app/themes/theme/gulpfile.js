@@ -205,10 +205,11 @@ gulp.task('images', function() {
 // `gulp iconify` - Convert svg files to css classes with png fallback
 gulp.task('iconify', function() {
   return iconify({
-    src: './assets/svg/*.svg',
+    src: './assets/icons/*.svg',
     cssOutput: './dist/styles/',
     pngOutput: './dist/icons/',
-    scssOutput: './dist/scss/'
+    scssOutput: './dist/scss/',
+    styleTemplate: './assets/icons/_icon_gen.scss.mustache',
   });
 });
 
