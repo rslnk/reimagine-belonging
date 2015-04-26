@@ -66,7 +66,7 @@ var revManifest = path.dist + 'assets.json';
 //   .pipe(gulp.dest(path.dist + 'styles'))
 // ```
 var cssTasks = function(filename) {
-  lazypipe()
+  return lazypipe()
     .pipe(function() {
       return $.if(!enabled.failStyleTask, $.plumber());
     })
@@ -108,7 +108,7 @@ var cssTasks = function(filename) {
 //   .pipe(gulp.dest(path.dist + 'scripts'))
 // ```
 var jsTasks = function(filename) {
-  lazypipe()
+  return lazypipe()
     .pipe(function() {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
@@ -126,7 +126,7 @@ var jsTasks = function(filename) {
 // If there are any revved files then write them to the rev manifest.
 // See https://github.com/sindresorhus/gulp-rev
 var writeToManifest = function(directory) {
-  lazypipe()
+  return lazypipe()
     .pipe(gulp.dest, path.dist + directory)
     .pipe(function() {
       return $.if('**/*.{js,css}', browserSync.reload({stream:true}));
@@ -152,7 +152,6 @@ gulp.task('styles', ['wiredep'], function() {
 
     if (!enabled.failStyleTask) {
       cssTasksInstance.on('error', function(err) {
-        console.error(err.message);
         this.emit('end');
       });
     }
