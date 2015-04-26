@@ -6,6 +6,7 @@
         "ng/events/filters/events.filter.js",
         "ng/events/filters/topics.filter.js",
         "ng/events/directives/preview.directive.js",
+        "ng/events/directives/countries.directive.js",
         "ng/events/controllers/timeline.controller.js",
         "ng/events/app.constants.js",
         "ng/events/app.js"

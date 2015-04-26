@@ -1,5 +1,5 @@
 angular
-  .module('events.preview.directive', [])
+  .module('events.preview.directive', ['ui.router'])
   .directive('eventPreview', function () {
     return {
       restrict: 'E',

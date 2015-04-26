@@ -1,21 +1,29 @@
 angular.module('events.timeline.controller', [
     'events.api.service',
     'events.events.filter',
-    'events.topics.filter'
+    'events.topics.filter',
+    'ui.router'
   ])
   .controller('TimelineController', [
     '$scope',
     '$http',
     '$location',
+    '$state',
     '$stateParams',
+    'lodash',
     'EventsService',
-  function ($scope, $http, $location, $stateParams, EventsService) {
+  function ($scope, $http, $location, $state, $stateParams, lodash, EventsService) {
     $scope.events = [];
     $scope.config = {};
-    $scope.filter = {
-      topics: [],
-      searchText: ''
-    };
+
+    $scope.filter = { topics: [], searchText: '' };
+
+    $scope.countries = [
+      { name: 'Germany', slug: 'germany' },
+      { name: 'United States', slug: 'united-states' }
+    ];
+
+    $scope.timeline = lodash.findWhere($scope.countries, { slug: $stateParams.timeline });
 
     $scope.loadEvents = function () {
       EventsService
@@ -33,6 +41,19 @@ angular.module('events.timeline.controller', [
       } else {
         $scope.filter.topics.push(topic);
       }
+    };
+
+    $scope.resetTopicsFilter = function () {
+      $scope.filter.topics = [];
+    };
+
+    $scope.switchCountry = function (slug) {
+      console.log('switch country controller');
+      $state.go('timeline', { timeline: slug });
+    };
+
+    $scope.openEvent = function (slug) {
+      $state.go('timeline.event', { event: slug });
     };
 
     $scope.$watch('filter.topics', function () {

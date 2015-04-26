@@ -3,7 +3,8 @@ angular.module('eventsApp', [
     'events.constants', 
     'events.api.service',
     'events.timeline.controller',
-    'events.preview.directive'
+    'events.preview.directive',
+    'events.countries.directive'
   ])
   .run([
     '$rootScope', 

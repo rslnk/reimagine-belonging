@@ -42,6 +42,12 @@ describe('Timeline Main Controller', function () {
       expect(scope.events.length).toBeGreaterThan(0);
     });
 
+    it('should have timeline object on a scope', function () {
+      expect( scope.timeline ).toBeDefined();
+      expect( scope.timeline.slug ).toBeDefined();
+      expect( scope.timeline.name ).toBeDefined();
+    });
+
   });
 
   describe('topics filter', function () {

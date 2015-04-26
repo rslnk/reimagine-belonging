@@ -1,30 +1,26 @@
 <div>
-
-  <ul>
-    <li>
-      <a ui-sref="timeline({timeline: 'united-states'})">usa</a>
-    </li>
-    <li>
-      <a ui-sref="timeline({timeline: 'germany'})">germany</a>
-    </li>
-  </ul>
+  <countries-switcher></countries-switcher>
 
   <ul class="filter-list">
-    <li class="filter-list__item filter-list__item--active" ng-click="resetTopicsFilter()">
-      <a>All Topics</a>
+    <li class="filter-list__item" ng-class="{ 'filter-list__item--active': filter.topics.length === 0 }" ng-click="resetTopicsFilter()">
+      All Topics
     </li>
-    <li class="filter-list__item" ng-repeat="topic in events|showTopics">
-      <a ng-click="toggleTopicInFilter(topic.term_slug)">{{ topic.term_name }}</a>
+    <li class="filter-list__item" 
+      ng-repeat="topic in events|showTopics" 
+      ng-class="{ 'filter-list__item--active': filter.topics.indexOf(topic.term_slug) > -1 }"
+      ng-click="toggleTopicInFilter(topic.term_slug)">
+      {{ topic.term_name }}
     </li>
   </ul>
 
   <ul class="event-preview__wrapper">
-      <event-preview ng-repeat="event in events|showEvents:filter"
-        title="{{event.title}}" 
-        slug="{{event.slug}}"
-        image="{{event.preview_image}}"
-        year="2039">
-      </event-preview>
+    <event-preview 
+      ng-click="openEvent(event.slug)"
+      ng-repeat="event in events|showEvents:filter"
+      title="{{event.title}}" 
+      image="{{event.preview_image}}"
+      year="{{event.year}}">
+    </event-preview>
   </ul>
 
   <div ui-view></div>

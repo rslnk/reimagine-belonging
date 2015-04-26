@@ -15,8 +15,11 @@ angular.module('events.api.service', ['ngLodash'])
           result.map(function (event) {
             if (event.permalink) {
               event.slug = event.permalink.split('/').slice(-2,-1)[0];
+              event.year = event.start_date.split('/')[0];
             }
           });
+
+          result = lodash.sortBy(result, 'year');
 
           return result;
         });
