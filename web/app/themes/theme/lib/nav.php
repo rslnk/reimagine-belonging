@@ -90,8 +90,7 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes = preg_replace('/(current(-menu-|[-_]page[-_])(item|parent|ancestor))/', 'is-active', $classes);
     $classes = preg_replace('/^((menu|page)[-_\w+]+)+/', '', $classes);
 
-    $classes[] = 'c-site-nav__item c-site-nav__' . $slug;
-
+    $classes[] = 'c-site-nav__item--' . $slug;
     $classes = array_unique($classes);
 
     return array_filter($classes, 'Roots\\Sage\\Utils\\is_element_empty');
