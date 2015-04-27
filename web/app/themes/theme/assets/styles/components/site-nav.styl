@@ -1,26 +1,35 @@
-.c-site-nav
+.o-site-nav
   clearfix()
-  font-family $base--font-heading
   line-height $base--line-height
-  text-transform uppercase
   letter-spacing rem(1px)
 
 .c-site-nav__list
   list-style none
   overflow visible
+  +media-query($screen, $bp--tablet)
+    display block
+    margin 0
+    padding 0
+
+.c-site-nav--head
+  text-transform uppercase
+  font-family $base--font-heading
+
+.c-site-nav--footer
+  font-family $base--font-heading
+
+._c-site-nav__list--head
   .is-active a
     color $color--mint
   +media-query($screen, $bp--tablet)
     display block
     float right
-    margin 0
-    padding 0
 
-.c-site-nav__item
+._c-site-nav__list--head li
   +media-query($screen, $bp--tablet)
     float left
 
-.c-site-nav__item a
+._c-site-nav__list--head li a
   display block
   font-size $size--milli
   line-height rem(30px)
@@ -35,3 +44,37 @@
     font-size $size--milli
     padding-right rem(24px)
     padding-left rem(24px)
+
+._c-site-nav__list--footer
+  .is-active a
+    color $color--mint
+  +media-query($screen, $bp--tablet)
+    display block
+    float left
+
+._c-site-nav__list--footer li
+  +media-query($screen, $bp--tablet)
+    float left
+
+._c-site-nav__list--footer li a
+  display block
+  font-size $size--zeta
+  line-height rem(30px)
+  color $color--white
+  &:hover
+    color $color--mint
+  +media-query($screen, $bp--tablet)
+    font-size $size--milli
+    padding-right rem(12px)
+    padding-left rem(12px)
+  +media-query($screen, $bp--desktop)
+    padding-right rem(20px)
+    padding-left rem(20px)
+
+.c-site-nav__list--footer-extra
+  margin-top rem(20px)
+  +media-query($screen, $bp--tablet)
+    margin-top 0
+  +media-query($screen, $bp--tablet--landscape)
+    float right
+    margin-top 0
