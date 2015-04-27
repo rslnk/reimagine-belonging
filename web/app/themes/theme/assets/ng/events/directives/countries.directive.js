@@ -5,7 +5,10 @@ angular
       restrict: 'E',
       replace: true,
       template: '<div class="countries-switcher">'+
-                '<h2 ng-click="ctrl.toggle()">{{ timeline.name }}</h2>'+
+                '<h2 class="o-btn o-btn--mint c-btn--selector" ng-click="ctrl.toggle()">' +
+                    '{{ timeline.name }}' + 
+                    '<span class="u-icon u-icon-arrow-down"></span>'+
+                '</h2>'+
                 '<ul class="countries-switcher__list" ng-show="ctrl.open">'+
                 '<li ng-repeat="country in countries" ng-click="switchCountry(country.slug)">{{ country.name }}</li>'+
                 '</ul>'+

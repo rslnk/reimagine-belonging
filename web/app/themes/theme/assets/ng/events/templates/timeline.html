@@ -1,18 +1,20 @@
-<div>
+<div class="o-wrapper">
   <countries-switcher></countries-switcher>
 
   <ul class="filter-list">
-    <li class="filter-list__item" ng-class="{ 'filter-list__item--active': filter.topics.length === 0 }" ng-click="resetTopicsFilter()">
+    <li class="filter-list__item o-btn o-btn--small o-btn--lightgrey c-btn--filter" ng-class="{ 'filter-list__item--active': filter.topics.length === 0 }" ng-click="resetTopicsFilter()">
       All Topics
     </li>
-    <li class="filter-list__item" 
+    <li class="filter-list__item o-btn o-btn--small o-btn--lightgrey c-btn--filter" 
       ng-repeat="topic in events|showTopics" 
       ng-class="{ 'filter-list__item--active': filter.topics.indexOf(topic.term_slug) > -1 }"
-      ng-click="toggleTopicInFilter(topic.term_slug)">
+      ng-click="toggleTopicInFilter(topic.term_slug)"
+      >
       {{ topic.term_name }}
     </li>
   </ul>
-
+</div>
+<div class="o-wrapper-full">
   <ul class="event-preview__wrapper">
     <event-preview 
       ng-click="openEvent(event.slug)"

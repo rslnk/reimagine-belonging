@@ -11,7 +11,7 @@
         "ng/events/app.constants.js",
         "ng/events/app.js"
       ],
-      "bower": ["angular", "angular-ui-router", "ng-lodash"]
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
     },
     "main.js": {
       "files": [
