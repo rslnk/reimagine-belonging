@@ -1,21 +1,37 @@
 .c-site-nav
-  display block
-  float right
-  overflow visible
-  margin 0
-  padding 0
-  list-style none
-  font-size $size--milli
+  clearfix()
+  font-family $base--font-heading
   line-height $base--line-height
   text-transform uppercase
+  letter-spacing rem(1px)
+
+.c-site-nav__list
+  list-style none
+  overflow visible
+  .is-active a
+    color $color--mint
+  +media-query($screen, $bp--tablet)
+    display block
+    float right
+    margin 0
+    padding 0
 
 .c-site-nav__item
-  display block
-  float right
-  padding-right rem(12px)
-  padding-left rem(12px)
+  +media-query($screen, $bp--tablet)
+    float left
 
 .c-site-nav__item a
+  display block
+  font-size $size--milli
+  line-height rem(30px)
   color $color--ash
   &:hover
     color $color--mint
+  +media-query($screen, $bp--tablet)
+    font-size $size--milli
+    padding-right rem(12px)
+    padding-left rem(12px)
+  +media-query($screen, $bp--desktop)
+    font-size $size--milli
+    padding-right rem(24px)
+    padding-left rem(24px)

@@ -16,7 +16,7 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <main class="o-wrapper--full" role="main">
+    <main role="main">
       <?php include Wrapper\template_path(); ?>
     </main>
     <?php

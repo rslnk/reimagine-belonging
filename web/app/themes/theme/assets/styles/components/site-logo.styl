@@ -1,11 +1,26 @@
 .o-site-logo
   display block
-  float left
   text-indent -9999em
   background-size 100% auto
 
 .c-site-logo--nav
+  display block
+  margin-top rem(20px)
+  margin-bottom rem(20px)
   size 200px 19px
+  +media-query($screen, $bp--tablet)
+    margin-top rem(5px)
+    margin-bottom 0
+    size 180px 19px
+  +media-query($screen, $bp--tablet--landscape)
+    float left
+    margin-top rem(5px)
+    size 200px 19px
 
 .c-site-logo--intro
-  size 1200px 19px
+  display inline
+    size 400px 50px
+  +media-query($screen, $bp--tablet)
+    size 800px 200px
+  +media-query($screen, $bp--desktop)
+    size 1200px 200px
