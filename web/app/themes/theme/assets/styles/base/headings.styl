@@ -5,30 +5,17 @@ h4,
 h5,
 h6,
 .o-heading
+  font-family $base--font-heading
+  font-style normal
+  text-transform uppercase
   color $base-font-color
-  font-family $font--headings
 
 .c-heading--home
-  text-transform uppercase
+  font-size $size--kilo
   font-weight 100
-  letter-spacing 0.1em
-  font-size $beta-size
-  margin-bottom 0
+  letter-spacing rem(2px)
+  color $color--white
   +media-query( $screen, $bp--tablet )
-    font-size $kilo-size
+    font-size $size--kilo
   +media-query( $screen, $bp--desktop )
-    font-size $mega-size
-
-.c-heading--home span
-  display block
-  font-weight 900
-  font-size $kilo-size
-  margin-top .15em
-  +media-query( $screen, $bp--tablet )
-    font-size $sup-sup-giga-size
-    margin-top 0
-  +media-query( $screen, $bp--tablet--landscape )
-    font-size $sup-giga-size
-  +media-query( $screen, $bp--desktop--medium )
-    margin-top auto
-    font-size $giga-size
+    font-size $size--kilo
