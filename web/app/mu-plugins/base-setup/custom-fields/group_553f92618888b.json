@@ -1,10 +1,10 @@
 {
     "key": "group_553f92618888b",
-    "title": "Story info",
+    "title": "Basic info",
     "fields": [
         {
             "key": "field_553f928c2fb78",
-            "label": "General",
+            "label": "Protagonist",
             "name": "",
             "prefix": "",
             "type": "tab",
@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "left"
         },
         {
             "key": "field_553f92f52fb79",
@@ -42,11 +42,11 @@
         },
         {
             "key": "field_553f992db6caa",
-            "label": "Protagonist city",
-            "name": "protagonist_city",
+            "label": "City",
+            "name": "story_city",
             "prefix": "",
             "type": "taxonomy",
-            "instructions": "Select or add a city.",
+            "instructions": "Select city from the list or add a new one.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -301,5 +301,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1430232785
+    "modified": 1430246555
 }
