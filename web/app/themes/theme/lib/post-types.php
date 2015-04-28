@@ -129,7 +129,7 @@ function register_post_types() {
     'labels'                      => $labels,
     'capability_type'             => 'post',
     'menu_position'               => 6, // menu order overwritten in admin-cp.php
-    'menu_icon'                   => 'dashicons-clock',
+    'menu_icon'                   => 'dashicons-format-status',
     'show_ui'                     => true,
   ];
 
