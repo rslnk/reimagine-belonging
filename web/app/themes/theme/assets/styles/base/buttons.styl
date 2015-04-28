@@ -1,4 +1,17 @@
-// reset defaults
+/*
+
+  Site buttons
+  ============
+
+  Markup: <button class="o-btn o-btn--{size} o-btn--{color}"
+
+  1. Reset & defaults
+  2. Size modifiers
+  3. Color modifiers
+
+*/
+
+// 1. Reset & defaults
 button,
 .o-btn
   cursor pointer
@@ -6,8 +19,7 @@ button,
   outline none
   background none
   appearance none
-  -webkit-appearance none
-  -moz-appearance none
+  appearance none
   border-radius 0
   box-shadow none
   &:active,
@@ -16,41 +28,60 @@ button,
 
 .o-btn
   display inline-block
-  padding rem(25px) rem(45px)
   font-family $base--font-heading
   text-transform uppercase
   letter-spacing rem(1px)
-  color $color--white
 
-// Sizes
+// 2. Size modifiers
 .o-btn--small
   padding rem(14px) rem(16px)
+  font-size rem(14px)
+  +media-query($screen, $bp--tablet--landscape)
+    padding rem(14px) rem(16px)
+    font-size rem(18px)
+
+.o-btn--medium
+  padding rem(10px) rem(12px)
+  font-size rem(12px)
+  +media-query($screen, $bp--tablet)
+    padding rem(12px) rem(15px)
+    font-size rem(15px)
+  +media-query($screen, $bp--tablet--landscape)
+    font-size rem(20px)
+  +media-query($screen, $bp--desktop--medium)
+    font-size rem(28px)
 
 .o-btn--large
   padding rem(25px) rem(45px)
+  font-size rem(15px)
+  min-width 70%
+  +media-query($screen, $bp--tablet)
+    font-size rem(18px)
+    min-width rem(265)
+  +media-query($screen, $bp--tablet--landscape)
+    font-size rem(28px)
 
-// Colors
+// 3. Color modifiers
 .o-btn--mint
+  color $color--white
   background-color $color--mint
 
 .o-btn--indigo
+  color $color--white
   background-color $color--indigo
 
 .o-btn--blueberry
+  color $color--white
   background-color $color--blueberry
 
 .o-btn--yolk
+  color $color--white
   background-color $color--yolk
 
 .o-btn--lightgrey
   color $color--dark-gray
   background-color $color--light-gray
 
-// Unique casses
-.c-btn--selector
-  padding rem(12px) rem(20px)
 
-.c-btn--filter
-  padding rem(12px) rem(15px)
 
 
