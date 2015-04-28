@@ -281,11 +281,7 @@
             "post_type": [
                 "story"
             ],
-            "taxonomy": [
-                "story_group:submitted",
-                "story_group:project-stories",
-                "story_group:with-wings-and-roots"
-            ],
+            "taxonomy": "",
             "filters": [
                 "search",
                 "taxonomy"
@@ -344,5 +340,5 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1429695544
+    "modified": 1430247964
 }
