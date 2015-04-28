@@ -12,6 +12,7 @@
   * Rename default WordPress admin menu items
   * Customize WordPress admin menu items order
   * Change post thumbnail meta box title to 'Preview image'
+  * Change story default post format to 'video'
   * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
 
@@ -169,6 +170,14 @@ function change_featured_image_meta_box_title( $post_type, $post ) {
   remove_meta_box( 'postimagediv', '', 'side' );
   // add customized metabox
   add_meta_box( 'postimagediv', __('Preview Image'), 'post_thumbnail_meta_box', '', 'side', 'high' );
+}
+
+// Change story default post format to 'video'
+add_filter( 'option_default_post_format', 'story_default_post_format', 10, 1 );
+
+function story_default_post_format( $format ) {
+  global $post_type;
+  return ( $post_type == 'story' ? 'video' : $format );
 }
 
 // Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
