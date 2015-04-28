@@ -9,8 +9,7 @@
       ng-repeat="topic in events|showTopics" 
       ng-class="{ 'filter-list__item--active': filter.topics.indexOf(topic.term_slug) > -1 }"
       ng-click="toggleTopicInFilter(topic.term_slug)"
-      >
-      {{ topic.term_name }}
+      ng-bind-html="topic.term_name">
     </li>
   </ul>
 </div>

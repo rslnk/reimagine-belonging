@@ -2,7 +2,8 @@ angular.module('events.timeline.controller', [
     'events.api.service',
     'events.events.filter',
     'events.topics.filter',
-    'ui.router'
+    'ui.router',
+    'ngSanitize'
   ])
   .controller('TimelineController', [
     '$scope',

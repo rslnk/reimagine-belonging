@@ -11,7 +11,12 @@
         "ng/events/app.constants.js",
         "ng/events/app.js"
       ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
+      "bower": [
+        "angular",
+        "angular-sanitize",
+        "angular-ui-router",
+        "ng-lodash"
+      ]
     },
     "main.js": {
       "files": [
@@ -26,7 +31,7 @@
       "main": true
     },
     "jquery.js": {
-      "bower": ["jquery"]
+      "bower": ["jquery","owl.carousel"]
     },
     "modernizr.js": {
       "bower": ["modernizr"]

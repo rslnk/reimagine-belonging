@@ -169,9 +169,11 @@ gulp.task('styles', ['wiredep'], function() {
 // and project JS.
 gulp.task('scripts', ['jshint'], function() {
   var merged = merge();
+  console.log( manifest );
   manifest.forEachDependency('js', function(dep) {
     merged.add(
-      gulp.src(dep.globs, {base: 'scripts'})
+      gulp
+        .src(dep.globs, {base: 'scripts'})
         .pipe(jsTasks(dep.name))
     );
   });
@@ -216,7 +218,8 @@ gulp.task('iconify', function() {
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
   gulp.src([
-    'bower.json', 'gulpfile.js'
+    'bower.json', 
+    'gulpfile.js'
   ].concat(project.js))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
