@@ -39,7 +39,7 @@ function setup() {
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats
-  add_theme_support('post-formats', ['image', 'video', 'audio']);
+  add_theme_support('post-formats', ['video', 'audio']);
 
   // Add HTML5 markup for captions
   // http://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
