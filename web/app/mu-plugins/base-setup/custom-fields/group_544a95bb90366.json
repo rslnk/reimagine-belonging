@@ -1,6 +1,6 @@
 {
     "key": "group_544a95bb90366",
-    "title": "Article",
+    "title": "Event article",
     "fields": [
         {
             "key": "field_5524662535c96",
@@ -2207,5 +2207,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429651797
+    "modified": 1430247777
 }

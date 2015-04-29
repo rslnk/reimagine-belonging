@@ -14,16 +14,21 @@
   2. Taxonomies
   ==========
 
-  Event Timeline:   event_timeline
-  Event Era:        event_era
-  Event Type:       event_type
-  Event Group:      event_group
-  Event Topic:      event_topic
+  Event Timeline:      event_timeline
+  Event Era:           event_era
+  Event Type:          event_type
+  Event Group:         event_group
+  Event Topic:         event_topic
 
-  Story Group:      story_group
-  Story Topic:      story_topic
+  Story Topic:         story_topic
+  Story City:          story_city
+  Story Hero:          story_hero
+  Story Group:         story_group
 
-  Shared Tags:      global_tag
+  Shared Tags:         global_tag
+
+
+  * — taxonomy is not public
 
 */
 
@@ -93,7 +98,7 @@ function register_post_types() {
   $post_type      = 'story';
 
   $slug           = get_field('story_slug', 'option');
-  $supported_ui   = ['title', 'thumbnail']; // false to hide all default WordPress post editing UI
+  $supported_ui   = ['title', 'thumbnail', 'post-formats']; // false to hide all default WordPress post editing UI
 
   // Labels
   $singular       = 'Story';
@@ -124,7 +129,7 @@ function register_post_types() {
     'labels'                      => $labels,
     'capability_type'             => 'post',
     'menu_position'               => 6, // menu order overwritten in admin-cp.php
-    'menu_icon'                   => 'dashicons-clock',
+    'menu_icon'                   => 'dashicons-format-status',
     'show_ui'                     => true,
   ];
 
@@ -190,7 +195,7 @@ function register_taxonomies() {
     'public'                      => false,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => true,
@@ -233,7 +238,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -279,7 +284,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -325,7 +330,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => true,
@@ -371,7 +376,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -417,7 +422,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -463,7 +468,53 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
+    'show_admin_column'           => true,
+
+    'hierarchical'                => false,
+    'rewrite'                     => ['slug' => $slug, 'with_front' => true],
+    'sort'                        => false, // whether taxonomy should remember the order in which terms are added to objects
+  ];
+
+  register_taxonomy( $taxonomy, $post_types, $args );
+
+
+  // Story Hero
+  // ==========
+
+  $taxonomy       = 'story_person';
+  $slug           = get_field('one_slug_for_all_story_post_type_taxonomies', 'option');
+  $post_types     = 'story';
+
+  $singular       = 'Person';
+  $plural         = 'People';
+
+  $labels = [
+    'name'                       => __( $plural ),
+    'singular_name'              => __( $singular ),
+    'search_items'               => __( 'Search ' . $plural ),
+    'popular_items'              => __( 'Popular ' . $plural ),
+    'all_items'                  => __( 'All ' . $plural ),
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => __( 'Edit ' . $singular  ),
+    'update_item'                => __( 'Update ' . $singular  ),
+    'add_new_item'               => __( 'Add New ' . $singular ),
+    'new_item_name'              => __( 'Add New ' . $singular . ' Name'),
+    'separate_items_with_commas' => __( 'Separate ' . $plural . ' with commas' ),
+    'add_or_remove_items'        => __( 'Add or remove ' . $plural . ' writers' ),
+    'choose_from_most_used'      => __( 'Choose from the most used ' . $plural ),
+    'not_found'                  => __( 'No ' . $plural  .' found.' ),
+    'menu_name'                  => __(  $plural ),
+  ];
+
+  $args = [
+    'labels'                      => $labels,
+
+    'public'                      => true,
+    'show_ui'                     => true,
+    'show_in_nav_menus'           => false,
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -509,7 +560,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,
@@ -557,7 +608,7 @@ function register_taxonomies() {
     'public'                      => true,
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
-    'meta_box_cb'                 => false, // hide show meta box on post edit page
+    'meta_box_cb'                 => false, // hide meta box on post edit page
     'show_admin_column'           => true,
 
     'hierarchical'                => false,

@@ -1,14 +1,18 @@
- <div class="u-centering-wrapper">
-   <div class="u-centered">
-    <div class="o-wrapper">
-      <h2 class="o-heading c-heading--home t-negative">We encourage you to join us and together</h2>
-      <h1 class="o-site-logo c-site-logo--intro u-icon u-icon-logo-negative">Reimagine Belonging</h1>
-      <a class="o-btn o-btn--large o-btn--mint" href="#">
-        Watch Stories
-      </a>
-      <a class="o-btn o-btn--large o-btn--indigo" href="#">
-        Explore History
-      </a>
+<div class="o-wrapper-row">
+  <div class="u-centering-wrapper">
+    <div class="u-centered">
+      <div class="c-home-intro">
+        <h2 class="o-heading c-heading--home t-negative">We encourage you to join us and together</h2>
+        <h1 class="o-site-logo c-site-logo--intro u-icon u-icon-logo-negative">Reimagine Belonging</h1>
+      </div>
+      <div class="c-home-intro__cta">
+        <a class="o-btn o-btn--small o-btn--mint" href="#">
+          Watch Stories
+        </a>
+        <a class="o-btn o-btn--medium o-btn--lightgrey" href="#">
+          Explore History
+        </a>
+      </div>
     </div>
   </div>
 </div>

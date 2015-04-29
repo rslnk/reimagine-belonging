@@ -1,0 +1,48 @@
+/*
+
+  Site text lists
+  ===============
+
+  Markup: <ul class="o-list o-list--{modifier} c-list--{modifier}">
+            <li class="o-list_item c-list_item--{modifier}">Item 1</list>
+            <li class="o-list_item c-list_item--{modifier}">Item 2</list>
+            <li class="o-list_item c-list_item--{modifier}">Item 3</list>
+          </ul>
+*/
+
+.o-list
+  list-style-position outside
+
+//.o-list_item
+
+// List styles
+.o-list--disc
+  list-style-type disc
+
+.o-list--circle
+  list-style-type circle
+
+.o-list--decimal
+  list-style-type decimal
+
+.o-list--lower-roman
+  list-style-type lower-roman
+
+.o-list--lower-greek
+  list-style-type lower-greek
+
+.o-list--lower-latin
+  list-style-type lower-latin
+
+.o-list--lower-alpha
+  list-style-type lower-alpha
+
+// Specific cases
+.c-list--page-footnotes
+  @extend .o-paragraph
+  font-size $size--zeta
+  line-height 1.6
+
+.c-list--page-footnotes li
+  margin-top rem(5px)
+  line-height 1.6

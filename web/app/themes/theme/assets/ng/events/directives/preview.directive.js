@@ -7,7 +7,7 @@ angular
       template: '<div class="event-preview__item">'+
                   '<span class="event-preview__content">'+
                     '<span class="event-preview__year">{{ year }}</span>' +
-                    '<h4 class="event-preview__title">{{ title }}</h4>' +
+                    '<h4 class="event-preview__title o-heading c-heading--event-preview">{{ title }}</h4>' +
                   '</span>'+
                 '</div>',
       scope: {

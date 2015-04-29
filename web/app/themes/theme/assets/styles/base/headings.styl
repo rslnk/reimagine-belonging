@@ -1,3 +1,12 @@
+/*
+
+  Site headings
+  =============
+
+  Markup: <h1 class="o-heading c-heading--{modifier}">
+
+*/
+
 h1,
 h2,
 h3,
@@ -5,30 +14,111 @@ h4,
 h5,
 h6,
 .o-heading
+  font-family $base--font-heading
+  font-style normal
+  font-weight $weight--thin
+  letter-spacing rem(1px)
+  text-transform uppercase
   color $base-font-color
-  font-family $font--headings
+  strong, em, b
+    font-weight $weight--regular
+
+.c-heading--page-title
+  font-size $size--alpha
+  +media-query( $screen, $bp--tablet )
+    font-size $size--kilo
+  +media-query( $screen, $bp--desktop )
+    font-size $size--mega
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--giga
+
+.c-heading--page-subtitle
+  font-size $size--delta
+  font-weight $weight--regular
+  strong, em, b
+    font-weight $weight--bold
+  +media-query( $screen, $bp--tablet )
+    font-size $size--gamma
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--beta
+
+.c-heading--page-section-title
+  font-size $size--epsilon
+  font-weight $weight--regular
+  letter-spacing rem(3px)
+  strong, em, b
+    font-weight $weight--semibold
+  +media-query( $screen, $bp--tablet )
+    font-size $size--delta
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--gamma
+
+.c-heading--page-sidebar-title
+  font-size $size--beta
+  font-weight $weight--thin
+  line-height 1.2
+  text-transform none
+  strong, em, b
+    font-weight $weight--regular
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--gamma
+    line-height 1.3
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--beta
+
+.c-heading--page-sidebar-note
+  font-size $size--gamma
+  font-weight $weight--thin
+  line-height 1.3
+  strong, em, b
+    font-weight $weight--regular
+  +media-query( $screen, $bp--tablet )
+    font-size $size--alpha
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--kilo
+
+.c-heading--page-sidebar-quote
+  font-size $size--alpha
+  font-weight $weight--thin
+  line-height 1.2
+  text-transform none
+  strong, em, b
+    font-weight $weight--regular
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--beta
+    line-height 1.4
+  +media-query( $screen, $bp--desktop )
+    font-size $size--alpha
+
+.c-heading--event-preview
+  font-size $size--gamma
+  font-weight $weight--light
+  line-height 1.2
+  color $color--white
+  strong, em, b
+    font-weight $weight--semibold
+  +media-query( $screen, $bp--tablet )
+    font-size $size--delta
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--gamma
+
+.c-heading--story-preview
+  font-size $size--gamma
+  font-weight $weight--light
+  line-height 1.2
+  color $color--white
+  strong, em, b
+    font-weight $weight--semibold
+  +media-query( $screen, $bp--tablet )
+    font-size $size--delta
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--gamma
 
 .c-heading--home
-  text-transform uppercase
-  font-weight 100
-  letter-spacing 0.1em
-  font-size $beta-size
-  margin-bottom 0
+  font-size $size--alpha
+  letter-spacing rem(2px)
+  color $color--white
   +media-query( $screen, $bp--tablet )
-    font-size $kilo-size
+    font-size $size--kilo
   +media-query( $screen, $bp--desktop )
-    font-size $mega-size
-
-.c-heading--home span
-  display block
-  font-weight 900
-  font-size $kilo-size
-  margin-top .15em
-  +media-query( $screen, $bp--tablet )
-    font-size $sup-sup-giga-size
-    margin-top 0
-  +media-query( $screen, $bp--tablet--landscape )
-    font-size $sup-giga-size
-  +media-query( $screen, $bp--desktop--medium )
-    margin-top auto
-    font-size $giga-size
+    font-size $size--mega

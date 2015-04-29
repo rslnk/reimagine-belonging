@@ -17,9 +17,9 @@ angular.module('events.events.filter', [])
         });
 
         for (var i = 0, l = ts.length; i < l; i++){
-          if (filter.topics.indexOf(ts[i]) > -1) {
+          // if (filter.topics.indexOf(ts[i]) > -1) {
             return true;
-          }
+          // }
         }
 
         return false;
