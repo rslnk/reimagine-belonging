@@ -14,15 +14,14 @@
   </ul>
 </div>
 <div class="o-wrapper-full">
-  <ul class="event-preview__wrapper">
-    <event-preview 
-      ng-click="openEvent(event.slug)"
-      ng-repeat="event in events|showEvents:filter"
-      title="{{event.title}}" 
-      image="{{event.preview_image}}"
-      year="{{event.year}}">
-    </event-preview>
-  </ul>
-
+  <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">
+      <event-preview
+        carousel-item="" ng-repeat="event in events|showEvents:filter" class="item"
+        ng-click="openEvent(event.slug)"
+        title="{{event.title}}"
+        image="{{event.preview_image}}"
+        year="{{event.year}}">
+      </event-preview>
+  </carousel>
   <div ui-view></div>
 </div>

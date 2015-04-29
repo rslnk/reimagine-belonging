@@ -5,7 +5,8 @@ angular.module('eventsApp', [
     'events.timeline.controller',
     // 'events.event.controller',
     'events.preview.directive',
-    'events.countries.directive'
+    'events.countries.directive',
+    'events.carousel.directive'
   ])
   .run([
     '$rootScope', 

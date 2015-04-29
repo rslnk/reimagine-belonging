@@ -97,6 +97,10 @@ function bower_map_to_cdn($dependency, $fallback) {
 function assets() {
   wp_enqueue_style('sage_css', asset_path('styles/main.css'), false, null);
 
+  wp_enqueue_style('owl.carousel.main', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css', false, null);
+  wp_enqueue_style('owl.carousel.theme', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css', false, null);
+  wp_enqueue_style('owl.carousel.transitions', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.transitions.min.css', false, null);
+
   /**
    * Grab Google CDN's latest jQuery with a protocol relative URL; fallback to local if offline
    * jQuery & Modernizr load in the footer per HTML5 Boilerplate's recommendation: http://goo.gl/nMGR7P
@@ -122,6 +126,8 @@ function assets() {
   wp_enqueue_script('modernizr', asset_path('scripts/modernizr.js'), [], null, true);
   wp_enqueue_script('jquery');
   wp_enqueue_script('sage_js', asset_path('scripts/main.js'), [], null, true);
+
+  wp_enqueue_script('owl_carousel', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js', [], null, true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
 

@@ -4,12 +4,12 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      template: '<li class="event-preview__item">'+
+      template: '<div class="event-preview__item">'+
                   '<span class="event-preview__content">'+
                     '<span class="event-preview__year">{{ year }}</span>' +
                     '<h4 class="event-preview__title">{{ title }}</h4>' +
                   '</span>'+
-                '</li>',
+                '</div>',
       scope: {
         image: '@',
         title: '@',

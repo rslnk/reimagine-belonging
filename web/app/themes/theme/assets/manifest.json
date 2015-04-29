@@ -7,16 +7,12 @@
         "ng/events/filters/topics.filter.js",
         "ng/events/directives/preview.directive.js",
         "ng/events/directives/countries.directive.js",
+        "ng/events/directives/carousel.directive.js",
         "ng/events/controllers/timeline.controller.js",
         "ng/events/app.constants.js",
         "ng/events/app.js"
       ],
-      "bower": [
-        "angular",
-        "angular-sanitize",
-        "angular-ui-router",
-        "ng-lodash"
-      ]
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
     },
     "main.js": {
       "files": [
