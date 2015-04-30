@@ -20,7 +20,7 @@ angular.module('events.timeline.controller', [
     $scope.filter = { topics: [], searchText: '' };
 
     $scope.countries = [
-      { name: 'Germany', slug: 'germany' },
+      { name: 'Deutschland', slug: 'deutschland' },
       { name: 'United States', slug: 'united-states' }
     ];
 
