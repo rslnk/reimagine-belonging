@@ -207,8 +207,24 @@ gulp.task('iconify', function() {
     src: './assets/icons/*.svg',
     cssOutput: './dist/styles/',
     pngOutput: './dist/icons/',
-    scssOutput: './dist/scss/',
     styleTemplate: './assets/icons/_icon_gen.scss.mustache',
+    defaultWidth: '60px',
+    defaultHeight: '60px',
+    svgoOptions: {
+      enabled: false,
+      options: {
+        plugins: [
+            { cleanupAttrs: true },
+            { removeEmptyAttrs: true },
+            { removeXMLProcInst: true },
+            { removeMetadata: true },
+            { removeDoctype: true },
+            { removeUnknownsAndDefaults: true },
+            { mergePaths: false },
+            { convertShapeToPath: true }
+        ]
+      }
+    }
   });
 });
 
