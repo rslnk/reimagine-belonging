@@ -34,6 +34,13 @@
                 "operator": "==",
                 "value": "template-stories.php"
             }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -56,5 +63,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429441687
+    "modified": 1430411334
 }
