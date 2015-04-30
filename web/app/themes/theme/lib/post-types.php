@@ -239,7 +239,7 @@ function register_taxonomies() {
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
     'meta_box_cb'                 => false, // hide meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
 
     'hierarchical'                => false,
     'rewrite'                     => ['slug' => $slug, 'with_front' => true],
@@ -285,7 +285,7 @@ function register_taxonomies() {
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
     'meta_box_cb'                 => false, // hide meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
 
     'hierarchical'                => false,
     'rewrite'                     => ['slug' => $slug, 'with_front' => true],
@@ -377,7 +377,7 @@ function register_taxonomies() {
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
     'meta_box_cb'                 => false, // hide meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
 
     'hierarchical'                => false,
     'rewrite'                     => ['slug' => $slug, 'with_front' => true],
@@ -469,7 +469,7 @@ function register_taxonomies() {
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
     'meta_box_cb'                 => false, // hide meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
 
     'hierarchical'                => false,
     'rewrite'                     => ['slug' => $slug, 'with_front' => true],
@@ -609,7 +609,7 @@ function register_taxonomies() {
     'show_ui'                     => true,
     'show_in_nav_menus'           => false,
     'meta_box_cb'                 => false, // hide meta box on post edit page
-    'show_admin_column'           => true,
+    'show_admin_column'           => false,
 
     'hierarchical'                => false,
     'update_count_callback'       => '_update_post_term_count',

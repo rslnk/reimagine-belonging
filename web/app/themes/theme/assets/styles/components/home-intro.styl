@@ -1,5 +1,15 @@
 .c-home-intro
   display block
 
-.c-home-intro__cta
-  display block
+.c-home-intro__image-cover
+  position absolute 0
+  min-width 100%
+  min-height 100%
+  size auto
+  z-index -101
+  overflow hidden
+  background-repeat no-repeat
+  background-position 70% 100%
+  background-size: cover
+  +media-query($screen, $bp--tablet--portrait)
+    background-position 50% 30%

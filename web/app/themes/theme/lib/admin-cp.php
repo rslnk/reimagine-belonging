@@ -77,13 +77,6 @@ if ( function_exists('acf_add_options_page') ) {
   ));
 
   acf_add_options_sub_page(array(
-    'page_title'  => 'Templates',
-    'menu_title'  => 'Templates',
-    'parent_slug' => 'site-settings',
-    'capability'  => 'edit_pages'
-  ));
-
-  acf_add_options_sub_page(array(
     'page_title'  => 'Dictionary',
     'menu_title'  => 'Dictionary',
     'parent_slug' => 'site-settings',
@@ -215,8 +208,11 @@ Customize admin colums
 */
 
 add_filter( 'manage_event_posts_columns', 'events_columns_filter', 10, 1 );
+add_filter( 'manage_story_posts_columns', 'story_columns_filter', 10, 1 );
 
 add_action( 'manage_event_posts_custom_column', 'add_events_columns', 10, 1 );
+add_action( 'manage_story_posts_custom_column', 'add_stories_columns', 10, 1 );
+
 add_action( 'admin_enqueue_scripts', 'post_admin_column_resize' );
 
 add_filter( 'manage_edit-event_sortable_columns', 'register_sortable_columns' );
@@ -233,6 +229,12 @@ function events_columns_filter( $columns ) {
   $columns = array_slice( $columns, 0, 2, true ) + $column_start_year + array_slice( $columns, 2, NULL, true );
   return $columns;
 }
+// Filter story columns
+function story_columns_filter( $columns ) {
+  $column_thumbnail = array( 'thumbnail_column' => 'Image' );
+  $columns = array_slice( $columns, 0, 1, true ) + $column_thumbnail + array_slice( $columns, 1, NULL, true );
+  return $columns;
+}
 
 // Add event post type admin columns
 function add_events_columns( $column ) {
@@ -246,6 +248,15 @@ function add_events_columns( $column ) {
       $event_date = strtotime(get_field('start_date',$post->ID));
       $event_year = date('Y', $event_date);
       echo $event_year;
+      break;
+  }
+}
+// Add story post type admin columns
+function add_stories_columns( $column ) {
+  global $post;
+  switch ( $column ) {
+    case 'thumbnail_column':
+      echo get_the_post_thumbnail( $post->ID, 'thumbnail' );
       break;
   }
 }

@@ -1,25 +1,44 @@
 .o-site-logo
-  text-indent -9999em
+  text-indent rem(-9999px)
   background-size 100% auto
 
 .c-site-logo--nav
-  display block
+  display inline-block
   margin-top rem(20px)
-  margin-bottom rem(20px)
-  size 200px 19px
+  size rem(220px) rem(25px)
   +media-query($screen, $bp--tablet)
     margin-top rem(5px)
     margin-bottom 0
-    size 180px 19px
+    size rem(180px) rem(19px)
   +media-query($screen, $bp--tablet--landscape)
     float left
     margin-top rem(5px)
-    size 200px 19px
+    size rem(200px) rem(19px)
 
-.c-site-logo--intro
-  display inline-block
-  size 400px 50px
-  +media-query($screen, $bp--tablet)
-    size 800px 200px
+// Reimagine Belonging
+.c-site-logo--home-intro
+  display none
   +media-query($screen, $bp--desktop)
-    size 1200px 200px
+    display block
+    width 100%
+    height rem(135px)
+  +media-query($screen, $bp--desktop--medium)
+    height rem(155px)
+  +media-query($screen, $bp--desktop--large)
+    height rem(165px)
+
+// Reimagine
+// Belonging
+.c-site-logo-alt--home-intro
+  display inline-block
+  size rem(340px) rem(125px)
+  background-size contain
+   +media-query($screen, $bp--mobile--landscape)
+    display inline-block
+    size rem(370px) rem(145px)
+  +media-query($screen, $bp--tablet--portrait)
+    size rem(520px) rem(220px)
+  +media-query($screen, $bp--tablet--landscape)
+    size rem(720px) rem(300px)
+  +media-query($screen, $bp--desktop)
+    display none

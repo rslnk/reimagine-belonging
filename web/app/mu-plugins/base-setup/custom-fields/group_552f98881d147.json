@@ -350,6 +350,66 @@
             "return_format": "object",
             "multiple": 0,
             "add_term": 1
+        },
+        {
+            "key": "field_554263da21825",
+            "label": "Events Filters",
+            "name": "event_filters",
+            "prefix": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "event_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "load_save_terms": 0,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
+            "key": "field_5542637121823",
+            "label": "Stories",
+            "name": "",
+            "prefix": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top"
+        },
+        {
+            "key": "field_5542638021824",
+            "label": "Stories Filters",
+            "name": "story_filters",
+            "prefix": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "story_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "load_save_terms": 0,
+            "return_format": "object",
+            "multiple": 0
         }
     ],
     "location": [
@@ -367,5 +427,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1429884340
+    "modified": 1430414360
 }
