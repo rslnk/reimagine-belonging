@@ -77,13 +77,6 @@ if ( function_exists('acf_add_options_page') ) {
   ));
 
   acf_add_options_sub_page(array(
-    'page_title'  => 'Templates',
-    'menu_title'  => 'Templates',
-    'parent_slug' => 'site-settings',
-    'capability'  => 'edit_pages'
-  ));
-
-  acf_add_options_sub_page(array(
     'page_title'  => 'Dictionary',
     'menu_title'  => 'Dictionary',
     'parent_slug' => 'site-settings',
