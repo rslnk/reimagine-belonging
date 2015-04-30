@@ -5,7 +5,7 @@ angular
       restrict: 'E',
       replace: true,
       template: '<div class="countries-switcher">'+
-                '<h2 class="o-btn o-btn--mint c-btn--selector" ng-click="ctrl.toggle()">' +
+                '<h2 class="o-btn c-btn--mint c-btn--selector" ng-click="ctrl.toggle()">' +
                     '{{ timeline.name }}' + 
                     '<span class="u-icon u-icon-arrow-down"></span>'+
                 '</h2>'+

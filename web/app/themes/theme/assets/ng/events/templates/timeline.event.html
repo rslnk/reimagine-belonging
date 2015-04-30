@@ -1,4 +1,82 @@
-<div>
-  <h4>Event title</h4>
-  <p>Event Body</p>
+<div class="lightbox">
+  <div class="lightbox__wrapper">
+    <!-- close button -->
+
+    <div class="o-wrapper--row event__header" style="background-image: url({{ event.header_image }});">
+      <!-- categories -->
+      <ul>
+        <li ng-repeat="timeline in event.timelines"
+          class="o-btn c-btn--mint c-btn--medium">
+          {{ timeline.term_name }}
+        </li>
+        <li ng-repeat="topic in event.topics" 
+          class="o-btn c-btn--indigo c-btn--medium" 
+          ng-bind-html="topic.term_name">
+        </li>
+        <li ng-repeat="group in event.groups"
+          class="o-btn c-btn--medium"
+          style="background-color: {{ group.term_color }}">
+          {{ group.term_name }}
+        </li>
+      </ul>
+      <!-- header -->
+      <h1>{{ event.title }}</h1>
+      <h2>{{ event.subtitle }}</h2>
+      
+      <!-- impact -->
+      <div>...</div>
+      <!-- soicail shares -->
+      <div>...</div>
+    </div>
+
+    <div class="o-wrapper--row event__content">
+      <div class="event__body">
+        <!-- main content -->
+        <div ng-bind-html="event.main_content"></div>
+      </div>
+      <div class="event__sidebar">
+        <!-- sidebar -->
+      </div>
+    </div>
+    <div class="o-wrapper--row">
+      <h4>Sources</h4>
+      <ul>
+        <li ng-repeat="source in event.sources">
+          {{ source.author }},
+          <a href="{{ source.url }}" target="_blank">{{ source.title }}</a>,
+          {{ source.editors_translators }}
+          {{ source.location }}:
+          {{ source.publisher }}
+          {{ source.date_published }}
+          {{ source.edition }},
+          {{ source.isbn }}
+          Date accessed: {{ source.date_accessed }}
+        </li>
+      </ul>
+      <h4>Resources and additional reading</h4>
+      <ul>
+        <li ng-repeat="resource in resources">
+          {{ resource.title }}
+          {{ resource.caption }}
+          {{ resource.authors }}
+          {{ resource.editors_translators }}
+          {{ resource.periodical_title }}
+          {{ resource.location }}
+          {{ resource.publisher }}
+          {{ resource.date_published }}
+          {{ resource.pages }}
+          {{ resource.edition }}
+          {{ resource.isbn }}
+          {{ resource.date_accessed }}
+          {{ resource.url }}
+        </li>
+      </ul>
+      <h4>Related Events</h4>
+      <ul>
+        <li ng-repeat="related_event in event.related_events">
+          {{ related_event.post_title }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

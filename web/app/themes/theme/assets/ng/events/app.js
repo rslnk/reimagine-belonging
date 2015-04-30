@@ -3,7 +3,7 @@ angular.module('eventsApp', [
     'events.constants', 
     'events.api.service',
     'events.timeline.controller',
-    // 'events.event.controller',
+    'events.event.controller',
     'events.preview.directive',
     'events.countries.directive',
     'events.carousel.directive'

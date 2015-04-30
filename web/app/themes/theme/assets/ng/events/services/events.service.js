@@ -1,6 +1,11 @@
 angular.module('events.api.service', ['ngLodash'])
   .factory('EventsService', ['$http','lodash', function ($http, lodash) {
     return {
+      getEvent: function (path) {
+        return $http.get('/api/?action=event-data&path='+path).then(function (response) {
+          return response.data;
+        });
+      },
       get: function (timeline) {
         return $http.get('/api/?action=list-all-events').then(function (response) {
           var result = [];
