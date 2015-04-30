@@ -11,7 +11,7 @@
           <?php the_field('homepage_first_button_label', 'option') ?>
         </a>
       <?php endif; ?>
-      <?php if(get_field('homepage_second_button_label')) :?>
+      <?php if(get_field('homepage_second_button_label', 'option')) :?>
         <a class="o-btn c-btn--large c-btn--indigo u-margin-left--tablet" href="<?php the_field('homepage_second_button_link', 'option') ?>">
           <?php the_field('homepage_second_button_label', 'option') ?>
         </a>
