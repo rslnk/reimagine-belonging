@@ -6,44 +6,63 @@
 .c-site-nav__list
   list-style none
   overflow visible
+
+.c-site-nav__menu-toggle
+  display inline-block
+  margin-top rem(12px)
+  float right
+  text-indent -9999em
+  size rem(35px)
+  background-size 100% auto
   +media-query($screen, $bp--tablet)
-    display block
-    margin 0
-    padding 0
+    margin-top 0
+    size rem(25px)
+  +media-query($screen, $bp--tablet--landscape)
+    display none
+
 
 .c-site-nav--head
+  font-family $base--font-body
+  font-style normal
+  font-weight $weight--regular
   text-transform uppercase
-  font-family $base--font-heading
 
 .c-site-nav--footer
-  font-family $base--font-heading
+  font-family $base--font-body
+  font-weight $weight--light
 
 ._c-site-nav__list--head
+  float left
   .is-active a
     color $color--mint
-  +media-query($screen, $bp--tablet)
-    display block
+  +media-query($screen, $bp--tablet--landscape)
     float right
 
 ._c-site-nav__list--head li
   +media-query($screen, $bp--tablet)
-    float left
+    // hide menu items on tablet screen
+    display none
+  +media-query($screen, $bp--tablet--landscape)
+    display inline-block
 
 ._c-site-nav__list--head li a
   display block
-  font-size $size--milli
+  font-size $size--zeta
   line-height rem(30px)
-  color $color--ash
-  &:hover
+  color $base--font-color
+  &:hover,
+  &:focus
     color $color--mint
   +media-query($screen, $bp--tablet)
+    font-size $size--micro
+    padding 0 rem(8px)
+  +media-query($screen, $bp--tablet--landscape)
     font-size $size--milli
-    padding-right rem(12px)
-    padding-left rem(12px)
+    padding 0 rem(12px)
   +media-query($screen, $bp--desktop)
-    font-size $size--milli
-    padding-right rem(24px)
-    padding-left rem(24px)
+    padding 0 rem(20px)
+  +media-query($screen, $bp--desktop--medium)
+    padding 0 rem(24px)
 
 ._c-site-nav__list--footer
   .is-active a
@@ -61,7 +80,8 @@
   font-size $size--zeta
   line-height rem(30px)
   color $color--white
-  &:hover
+  &:hover,
+  &:focus
     color $color--mint
   +media-query($screen, $bp--tablet)
     font-size $size--milli
