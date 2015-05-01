@@ -255,6 +255,28 @@
             "disabled": 0
         },
         {
+            "key": "field_55439a2b890ef",
+            "label": "Load more stories button label",
+            "name": "stories_load_more_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Load more stories\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_553104a06d8da",
             "label": "Message when there is no search result",
             "name": "stories_search_result_none_message",
@@ -973,5 +995,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1430493615
+    "modified": 1430493821
 }

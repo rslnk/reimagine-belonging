@@ -212,6 +212,7 @@ class API_Data {
       'all_stories_filter_label'              => get_field('all_stories_filter_label', 'option'),
       'total_stories_label'                   => get_field('total_stories_label', 'option'),
       'flitered_stories_label'                => get_field('flitered_stories_label', 'option'),
+      'stories_load_more_label'               => get_field('stories_load_more_label', 'option'),
       'stories_search_result_none_message'    => get_field('stories_search_result_none_message', 'option'),
 
       // Timeline
@@ -245,7 +246,7 @@ class API_Data {
       'toggle_navigation_button_label'         => get_field('toggle_navigation_button_screen_text', 'option'),
       'close_button_label'                     => get_field('close_button_label', 'option'),
       'next_button_label'                      => get_field('next_button_label', 'option'),
-      'previous_button_label'                  => get_field('previous_button_label', 'option'),
+      'previous_button_label'                  => get_field('previous_button_labelprevious_button_label', 'option'),
 
     );
 
