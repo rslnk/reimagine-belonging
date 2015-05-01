@@ -380,7 +380,8 @@ class API_Data {
       'header_image_overlay_opacity' => $header_image['overlay_opacity'],
 
       // Main content
-      'main_content'                 => $post->main_content,
+      'main_content'                 => get_field('main_content', $post->ID),
+      //'main_content'                 => $post->add_filter('main_content', 'wpautop'),
 
       'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
       'sources'                      => $this->dataFilter->sources( get_field('sources', $post->ID) ),
