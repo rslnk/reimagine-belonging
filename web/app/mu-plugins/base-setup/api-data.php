@@ -221,6 +221,10 @@ class API_Data {
       'timeline_filtered_events_label'         => get_field('timeline_filtered_events_label', 'option'),
       'timeline_search_result_none_message'    => get_field('timeline_search_result_none_message', 'option'),
 
+      // Events and stories filters
+      'event_filters'                          => get_field('event_filters', 'option'),
+      'story_filters'                          => get_field('story_filters', 'option'),
+
       // Story
       'story_share_story_label'                => get_field('story_share_story_label', 'option'),
       'story_related_stories_title'            => get_field('story_related_stories_title', 'option'),
@@ -381,7 +385,6 @@ class API_Data {
 
       // Main content
       'main_content'                 => get_field('main_content', $post->ID),
-      //'main_content'                 => $post->add_filter('main_content', 'wpautop'),
 
       'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
       'sources'                      => $this->dataFilter->sources( get_field('sources', $post->ID) ),
