@@ -822,7 +822,29 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 25,
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_554397fb3dfce",
+            "label": "Toggle navigation button screen text",
+            "name": "toggle_navigation_button_screen_text",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Toggle navigation\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -844,7 +866,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -866,7 +888,51 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_554398443dfcf",
+            "label": "Next button",
+            "name": "next_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "'Next' button text label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_554398703dfd0",
+            "label": "Previous button",
+            "name": "previous_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "'Previous' button text label.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -907,5 +973,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1430492702
+    "modified": 1430493615
 }
