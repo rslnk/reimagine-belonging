@@ -235,6 +235,8 @@ class API_Data {
       'event_impact_button_default_label'      => get_field('event_impact_button_default_label', 'option'),
       'event_impact_button_active_label'       => get_field('event_impact_button_active_label', 'option'),
       'event_suggest_resource_button_label'    => get_field('event_suggest_resource_button_label', 'option'),
+      'event_sources_title'                    => get_field('event_sources_title', 'option'),
+      'event_resources_title'                  => get_field('event_resources_title', 'option'),
       'event_related_stories_title'            => get_field('event_related_stories_title', 'option'),
       'event_related_events_title'             => get_field('event_related_events_title', 'option'),
 
