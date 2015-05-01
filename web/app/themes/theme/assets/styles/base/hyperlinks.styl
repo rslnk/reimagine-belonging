@@ -2,14 +2,13 @@ a
   text-decoration none
   color $color--mint
 
-p,
-.o-list
-  a
-    text-decoration underline
-    color $color--indigo
-    variations = monochrome( $color--indigo )
-    &:hover,
-    &:focus
-      color variations[0]
-    &:visited
-      color $color--dark-gray
+p a,
+.o-list a
+  text-decoration underline
+  color $color--indigo
+  variations = monochrome( $color--indigo )
+  &:hover,
+  &:focus
+    color variations[0]
+  &:visited
+    color $color--dark-gray

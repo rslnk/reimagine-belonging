@@ -7,11 +7,13 @@
         "ng/events/filters/topics.filter.js",
         "ng/events/directives/preview.directive.js",
         "ng/events/directives/countries.directive.js",
+        "ng/events/directives/carousel.directive.js",
         "ng/events/controllers/timeline.controller.js",
+        "ng/events/controllers/event.controller.js",
         "ng/events/app.constants.js",
         "ng/events/app.js"
       ],
-      "bower": ["angular", "angular-ui-router", "ng-lodash"]
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
     },
     "main.js": {
       "files": [
@@ -26,7 +28,7 @@
       "main": true
     },
     "jquery.js": {
-      "bower": ["jquery"]
+      "bower": ["jquery","owl.carousel"]
     },
     "modernizr.js": {
       "bower": ["modernizr"]

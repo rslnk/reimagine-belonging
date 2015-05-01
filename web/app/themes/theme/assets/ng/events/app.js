@@ -3,9 +3,10 @@ angular.module('eventsApp', [
     'events.constants', 
     'events.api.service',
     'events.timeline.controller',
-    // 'events.event.controller',
+    'events.event.controller',
     'events.preview.directive',
-    'events.countries.directive'
+    'events.countries.directive',
+    'events.carousel.directive'
   ])
   .run([
     '$rootScope', 
@@ -23,7 +24,7 @@ angular.module('eventsApp', [
     'templatesPath', 
     function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
       $locationProvider.html5Mode(true);
-      $urlRouterProvider.when('/','/germany');
+      $urlRouterProvider.when('/','/deutschland');
       $stateProvider
         .state('timeline', {
           url: '/:timeline',

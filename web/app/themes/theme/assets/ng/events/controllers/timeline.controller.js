@@ -2,7 +2,8 @@ angular.module('events.timeline.controller', [
     'events.api.service',
     'events.events.filter',
     'events.topics.filter',
-    'ui.router'
+    'ui.router',
+    'ngSanitize'
   ])
   .controller('TimelineController', [
     '$scope',
@@ -19,7 +20,7 @@ angular.module('events.timeline.controller', [
     $scope.filter = { topics: [], searchText: '' };
 
     $scope.countries = [
-      { name: 'Germany', slug: 'germany' },
+      { name: 'Deutschland', slug: 'deutschland' },
       { name: 'United States', slug: 'united-states' }
     ];
 

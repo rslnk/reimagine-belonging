@@ -167,11 +167,12 @@ gulp.task('styles', ['wiredep'], function() {
 // ### Scripts
 // `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
 // and project JS.
-gulp.task('scripts', ['jshint'], function() {
+gulp.task('scripts', function() {
   var merged = merge();
   manifest.forEachDependency('js', function(dep) {
     merged.add(
-      gulp.src(dep.globs, {base: 'scripts'})
+      gulp
+        .src(dep.globs, {base: 'scripts'})
         .pipe(jsTasks(dep.name))
     );
   });
@@ -232,7 +233,8 @@ gulp.task('iconify', function() {
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
   gulp.src([
-    'bower.json', 'gulpfile.js'
+    'bower.json', 
+    'gulpfile.js'
   ].concat(project.js))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -249,7 +251,7 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // `manifest.config.devUrl`. When a modification is made to an asset, run the
 // build step for that asset and inject the changes into the page.
 // See: http://www.browsersync.io
-gulp.task('watch', function() {
+gulp.task('watch', ['build'], function() {
   browserSync({
     proxy: config.devUrl,
     snippetOptions: {
