@@ -242,8 +242,9 @@ class API_Data {
       'event_related_events_title'             => get_field('event_related_events_title', 'option'),
 
       // Common
-      'search_label'                           => get_field('search_label', 'option'),
       'toggle_navigation_button_label'         => get_field('toggle_navigation_button_screen_text', 'option'),
+      'contact_us_button_label'                => get_field('contact_us_button_label', 'option'),
+      'search_label'                           => get_field('search_label', 'option'),
       'close_button_label'                     => get_field('close_button_label', 'option'),
       'next_button_label'                      => get_field('next_button_label', 'option'),
       'previous_button_label'                  => get_field('previous_button_labelprevious_button_label', 'option'),

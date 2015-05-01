@@ -835,12 +835,12 @@
             "placement": "top"
         },
         {
-            "key": "field_5531102665b73",
-            "label": "Newsletter sign up button label",
-            "name": "newsletter_sign_up_button_label",
+            "key": "field_554397fb3dfce",
+            "label": "Toggle navigation button screen text",
+            "name": "toggle_navigation_button_screen_text",
             "prefix": "",
             "type": "text",
-            "instructions": "E.g. \"Sign up\"",
+            "instructions": "E.g. \"Toggle navigation\".",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -857,16 +857,38 @@
             "disabled": 0
         },
         {
-            "key": "field_554397fb3dfce",
-            "label": "Toggle navigation button screen text",
-            "name": "toggle_navigation_button_screen_text",
+            "key": "field_5531102665b73",
+            "label": "Newsletter sign up button label",
+            "name": "newsletter_sign_up_button_label",
             "prefix": "",
             "type": "text",
-            "instructions": "E.g. \"Toggle navigation\".",
+            "instructions": "E.g. \"Sign up\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55439b84ac15c",
+            "label": "Contact us button label",
+            "name": "contact_us_button_label",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Contact us\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -995,5 +1017,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1430493821
+    "modified": 1430494165
 }
