@@ -34,11 +34,15 @@ switch ($action) {
     break;
 
   case 'list-all-stories':
-    $output = $api->list_all_events();
+    $output = $api->list_all_stories();
     break;
 
   case 'event-data':
     $output = $api->event_data($id, $path);
+    break;
+
+  case 'story-data':
+    $output = $api->story_data($id, $path);
     break;
 
   default:
@@ -170,17 +174,18 @@ class API_Data {
         // Get WordPress post thumbnail URL (full image)
         $preview_image_id = get_post_thumbnail_id( $post->ID );
         $preview_image_url = wp_get_attachment_url($preview_image_id);
+        $city   = get_the_terms( $post->ID , 'story_city' );
 
         $arr[] = array(
-          'post_id'            => $post->ID,
-          'post_title'         => $post->post_title,
-          'post_slug'          => get_permalink( $post->ID ),
-          'event_start_year'   => $post->start_date,
-          'story_hero'         => $post->hero,
-          'hero_age'           => $post->age,
-          'hero_city'          => $post->city,
-          'preview_image'      => $preview_image_url
-
+          'post_id'              => $post->ID,
+          'post_title'           => $post->post_title,
+          'post_slug'            => get_permalink( $post->ID ),
+          'format'               => get_post_format( $post->ID ),
+          'preview_image'        => $preview_image_url,
+          'preview_image_color'  => $post->color,
+          'event_start_year'     => $post->start_date,
+          'story_hero'           => $post->protagonist_name,
+          'city'                 => $this->terms_array($city),
         );
       }
       return $arr;
@@ -256,7 +261,7 @@ class API_Data {
 
   }
 
-  // Output all event posts previews
+  // Output all EVENTS (posts previews)
   function list_all_events() {
 
     $query = new WP_Query(array(
@@ -318,7 +323,57 @@ class API_Data {
 
   }
 
-  // Output event post
+  // Output all STORIES (posts previews)
+  function list_all_stories() {
+
+    $query = new WP_Query(array(
+      'post_type' => 'story',
+      'no_found_rows' => true, // counts posts, remove if pagination required
+      'update_post_term_cache' => false, // grabs terms, remove if terms required (category, tag...)
+      'update_post_meta_cache' => false, // grabs post meta, remove if post meta required
+    ));
+
+    $output = array();
+
+    while ($query->have_posts()) {
+
+      $post = $query->next_post();
+
+      // Get post taxonomies
+      $groups = get_the_terms( $post->ID , 'story_group' );
+      $topics = get_the_terms( $post->ID , 'story_topic' );
+      $city   = get_the_terms( $post->ID , 'story_city' );
+      $cities = get_the_terms( $post->ID , 'story_city' );
+      $people = get_the_terms( $post->ID , 'story_person' );
+      $tags   = get_the_terms( $post->ID , 'global_tag' );
+
+      // Get WordPress post thumbnail URL (full image)
+      $preview_image_id = get_post_thumbnail_id( $post->ID );
+      $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+      // Output event attributes
+      $output[] = array(
+
+      // Basic post data
+      'id'                           => $post->ID,
+      'title'                        => $post->post_title,
+      'published_date_gmt'           => $post->post_date_gmt,
+      'permalink'                    => get_permalink( $post->ID ),
+      'format'                       => get_post_format( $post->ID ),
+      'preview_image'                => $preview_image_url,
+      'preview_image_color'          => $post->color,
+      'hero'                         => $post->protagonist_name,
+      'city'                         => $this->terms_array($city),
+      'excerpt'                      => $post->excerpt,
+      );
+
+    }
+
+    return $output;
+
+  }
+
+  // Output EVENT post
   function event_data ($id, $path) {
     if (!$id && !$path) return false;
 
@@ -355,8 +410,13 @@ class API_Data {
     // http://www.advancedcustomfields.com/resources/get_fields
     $custom_fields = get_fields($post->ID);
 
-    // Repeater fileds:
-    $header_image = $custom_fields['header_image'][0];
+    // Check if header repeater filed has subfields:
+    if ( !empty (get_field('header_image')) ) {
+      $header_image = $custom_fields['header_image'];
+    }
+    else {
+      $header_image = null;
+    }
 
     // Output event attributes
     $output = array(
@@ -392,6 +452,7 @@ class API_Data {
       'header_image_overlay_opacity' => $header_image['overlay_opacity'],
 
       // Main content
+      // Note: call needs post ID in order to output tinyMCE content with <p> tags
       'main_content'                 => get_field('main_content', $post->ID),
 
       'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
@@ -401,6 +462,83 @@ class API_Data {
       // Related posts
       'related_stories'              => $this->post_data_array( $post->related_stories ),
       'related_events'               => $this->post_data_array( get_field('related_events', $post->ID ))
+
+    );
+
+  return $output;
+
+  }
+
+  // Output STORY post
+  function story_data ($id, $path) {
+    if (!$id && !$path) return false;
+
+    if ($id) {
+        $post_id = $id;
+        $post = get_post($post_id);
+    } else if ($path) {
+        $args = array(
+          'name' => $path,
+          'post_type' => 'story',
+          'numberposts' => 1
+        );
+        $posts = get_posts($args);
+        $post = $posts[0];
+    }
+
+    // Get post taxonomies
+    $groups = get_the_terms( $post->ID , 'story_group' );
+    $topics = get_the_terms( $post->ID , 'story_topic' );
+    $city   = get_the_terms( $post->ID , 'story_city' );
+    $cities = get_the_terms( $post->ID , 'story_city' );
+    $people = get_the_terms( $post->ID , 'story_person' );
+    $tags   = get_the_terms( $post->ID , 'global_tag' );
+
+    // Get WordPress post thumbnail URL (full image)
+    $preview_image_id = get_post_thumbnail_id( $post->ID );
+    $preview_image_url = wp_get_attachment_url($preview_image_id);
+
+    // Get all custom fields attached to the post that are not starting from '_'
+    // http://www.advancedcustomfields.com/resources/get_fields
+    $custom_fields = get_fields($post->ID);
+
+    // Output event attributes
+    $output = array(
+
+      // Basic post data
+      'id'                           => $post->ID,
+      'title'                        => $post->post_title,
+      'published_date_gmt'           => $post->post_date_gmt,
+      'permalink'                    => get_permalink( $post->ID ),
+      'format'                       => get_post_format( $post->ID ),
+      'preview_image'                => $preview_image_url,
+      'preview_image_color'          => $post->color,
+      'hero'                         => $post->protagonist_name,
+      'city'                         => $this->terms_array($city),
+      'excerpt'                      => $post->excerpt,
+
+      // Post taxonomy terms
+      'groups'                       => $this->terms_array($groups),
+      'topics'                       => $this->terms_array($topics),
+      'cities'                       => $this->terms_array($cities),
+      'people'                       => $this->terms_array($people),
+      'tags'                         => $this->terms_array($tags),
+
+      // If post format is Video
+      'story_video_host'             => $post->story_video_host,
+      'story_video_id'               => $post->story_video_id,
+      'story_oembed_video'           => $post->story_oembed_video,
+
+      // If post format is Audio
+      'story_oembed_audio'           => $post->story_oembed_audio,
+
+      // If post format is Standart (Text)
+      // Note: call needs post ID in order to output tinyMCE content with <p> tags
+      'story_text'                   => get_field('text', $post->ID),
+
+      // Related posts
+      'related_stories'              => $this->post_data_array( get_field('related_stories', $post->ID ) ),
+      'related_events'               => $this->post_data_array( get_field('related_events', $post->ID ) )
 
     );
 
