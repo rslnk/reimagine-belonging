@@ -23,6 +23,10 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
+        $('.js-toggleNavMenu').on('click', function(e) {
+          e.preventDefault();
+          $('.c-site-nav__list').toggle();
+        });
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
@@ -32,6 +36,19 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
+        function resizeHomeBlock () {
+          var elt = $('.js-main-block');
+          var windowH = $(window).height();
+          var footerH = $('footer').height();
+          var headerH = $('header').height();
+          var shift = 100;
+          var h = windowH - headerH - footerH - shift;
+          elt.height(h);
+        }
+
+        resizeHomeBlock();
+
+        $(window).resize(resizeHomeBlock);
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
