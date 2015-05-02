@@ -3,7 +3,7 @@
  * Template Name: Timeline
  */
 ?>
-<main class="o-wrapper--row c-home-intro u-centering-wrapper">
+<main class="o-wrapper--row c-home-intro">
   <div>
     <h1 class="o-heading c-heading--page-title">
       <?php the_field('subtitle') ?>
