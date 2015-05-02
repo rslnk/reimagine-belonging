@@ -55,16 +55,18 @@ button,
   padding rem(25px) rem(40px)
   font-size $size--delta
   letter-spacing rem(2px)
-  min-width 65%
+  min-width 90%
   +media-query($screen, $bp--tablet)
-    min-width rem(250px)
+    min-width rem(220px)
     font-size $size--delta
+  +media-query($screen, $bp--tablet--landscape)
+    min-width rem(240px)
   +media-query($screen, $bp--desktop)
     padding rem(23px) rem(35px)
     min-width rem(260px)
     font-size $size--gamma
   +media-query($screen, $bp--desktop--medium)
-    padding rem(25px) rem(45px)
+    padding rem(21px) rem(50px)
     font-size $size--beta
 
 // 3. Color modifiers
