@@ -598,7 +598,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 30,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -620,7 +620,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 30,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -628,6 +628,28 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_554415979251e",
+            "label": "Date accessed title",
+            "name": "event_date_accessed_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "E.g. \"Date accessed\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -642,7 +664,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 40,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -1017,5 +1039,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1430494165
+    "modified": 1430525657
 }

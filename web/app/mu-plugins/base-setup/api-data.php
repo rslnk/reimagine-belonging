@@ -243,6 +243,7 @@ class API_Data {
       'event_impact_button_active_label'       => get_field('event_impact_button_active_label', 'option'),
       'event_suggest_resource_button_label'    => get_field('event_suggest_resource_button_label', 'option'),
       'event_sources_title'                    => get_field('event_sources_title', 'option'),
+      'event_date_accessed_title'              => get_field('event_date_accessed_title', 'option'),
       'event_resources_title'                  => get_field('event_resources_title', 'option'),
       'event_related_stories_title'            => get_field('event_related_stories_title', 'option'),
       'event_related_events_title'             => get_field('event_related_events_title', 'option'),
@@ -253,7 +254,7 @@ class API_Data {
       'search_label'                           => get_field('search_label', 'option'),
       'close_button_label'                     => get_field('close_button_label', 'option'),
       'next_button_label'                      => get_field('next_button_label', 'option'),
-      'previous_button_label'                  => get_field('previous_button_labelprevious_button_label', 'option'),
+      'previous_button_label'                  => get_field('previous_button_label', 'option'),
 
     );
 
