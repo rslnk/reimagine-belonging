@@ -70,24 +70,23 @@ end
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:update_option_paths'
 
-# Compile assets locally, copy assets to production/staging
-
+# Compile assets locally, copy assets to production/staging `dist/` directory
 set :theme_path, Pathname.new('web/app/themes/theme')
-set :local_app_path, Pathname.new('~/Sites/reimaginebelonging/reimaginebelonging.dev')
+set :local_app_path, Pathname.new(File.dirname(__FILE__)).join('../')
 set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
 
 namespace :assets do
   task :compile do
     run_locally do
       within fetch(:local_theme_path) do
-        #execute :gulp, '--production'
+        execute :gulp, '--production'
       end
     end
   end
 
   task :copy do
     on roles(:web) do
-      upload! fetch(:local_theme_path).join('dist').to_s, release_path.join(fetch(:theme_path)), recursive: true
+      upload! fetch(:local_theme_path).join('dist/').to_s, release_path.join(fetch(:theme_path)), recursive: true
     end
   end
 
