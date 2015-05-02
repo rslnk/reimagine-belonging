@@ -25,7 +25,7 @@
         // JavaScript to be fired on all pages
         $('.js-toggleNavMenu').on('click', function(e) {
           e.preventDefault();
-          $('.c-site-nav__list').toggle();
+          $('._site-nav__list--head').toggle();
         });
       },
       finalize: function() {
