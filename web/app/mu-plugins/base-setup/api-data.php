@@ -204,9 +204,10 @@ class API_Data {
 
       // Site settings
       'site_date_format'      => get_field('site_date_format', 'option'),
-      'site_date_language'    => get_field('site_date_language', 'option'),
+      'site_language'         => get_field('site_language', 'option'),
       'google_analytics_id'   => get_field('google_analytics_id', 'option'),
-      'facebook_id'           => get_field('facebook_id', 'option'),
+      'facebook_app_id'       => get_field('facebook_app_id', 'option'),
+      'twitter_handle'        => get_field('twitter_handle', 'option'),
 
       // Timeline settings
       'default_timeline'      => get_field('default_timeline', 'option'),

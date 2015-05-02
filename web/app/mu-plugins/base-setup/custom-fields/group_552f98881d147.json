@@ -42,8 +42,8 @@
         },
         {
             "key": "field_55439c35698e6",
-            "label": "Facebook ID",
-            "name": "facebook_id",
+            "label": "Facebook App ID",
+            "name": "facebook_app_id",
             "prefix": "",
             "type": "text",
             "instructions": "",
@@ -57,6 +57,28 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5545436518640",
+            "label": "Twitter handle",
+            "name": "twitter_handle",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "@",
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -83,58 +105,44 @@
             "label": "Date format",
             "name": "site_date_format",
             "prefix": "",
-            "type": "select",
-            "instructions": "Select date format.",
+            "type": "text",
+            "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 25,
+                "width": 65,
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "eu_uk_date_format": "29 April 2015",
-                "us_date_format": "April 29th, 2015"
-            },
-            "default_value": {
-                "eu_uk_date_format": "29 April 2015"
-            },
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "disabled": 0,
-            "readonly": 0
+            "default_value": "",
+            "placeholder": "\u041c\u041c\/DD\/YYYY",
+            "prepend": "",
+            "append": "",
+            "maxlength": 10,
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_552fa2ef8a7a6",
-            "label": "Date language",
-            "name": "site_date_language",
+            "label": "Language",
+            "name": "site_language",
             "prefix": "",
-            "type": "select",
-            "instructions": "Select date language.",
+            "type": "text",
+            "instructions": "Set language for site's data output (e.g.. dates). Enter two letters language code. E.g. \"EN\" in accordance with <a href=\"http:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\">ISO 639-1<\/a> nomencalture. See the <a href=\"http:\/\/www.sitepoint.com\/web-foundations\/iso-2-letter-language-codes\/\">list of available codes<\/a>.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 25,
+                "width": 65,
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "site_date_language_en": "English",
-                "site_date_language_de": "German"
-            },
-            "default_value": {
-                "site_date_language_en": "English"
-            },
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
+            "default_value": "",
             "placeholder": "",
-            "disabled": 0,
-            "readonly": 0
+            "prepend": "",
+            "append": "",
+            "maxlength": 2,
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_55383f78904b6",
@@ -449,5 +457,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430494304
+    "modified": 1430602721
 }
