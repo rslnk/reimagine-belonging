@@ -6,13 +6,16 @@
 .c-site-nav__list
   list-style none
   overflow visible
+  margin rem(10px) 0
+  +media-query($screen, $bp--tablet)
+    margin 0
 
 .c-site-nav__menu-toggle
   display inline-block
-  margin-top rem(12px)
+  margin-top rem(9px)
   float right
   text-indent -9999em
-  size rem(35px)
+  size rem(32px)
   background-size 100% auto
   +media-query($screen, $bp--tablet)
     margin-top 0
@@ -30,19 +33,22 @@
   font-family $base--font-body
   font-weight $weight--light
 
-._c-site-nav__list--head
+._site-nav__list--head
   display none
   .is-active a
     color $color--mint
+  +media-query($screen, $bp--tablet)
+    margin-top rem(15px)
   +media-query($screen, $bp--tablet--landscape)
     display block !important
     float right
+    margin-top 0
 
-._c-site-nav__list--head li
+._site-nav__list--head li
   +media-query($screen, $bp--tablet--landscape)
     display inline-block
 
-._c-site-nav__list--head li a
+._site-nav__list--head li a
   display block
   font-size $size--zeta
   line-height rem(30px)
@@ -51,28 +57,27 @@
   &:focus
     color $color--mint
   +media-query($screen, $bp--tablet)
-    font-size $size--micro
-    padding 0 rem(8px)
-  +media-query($screen, $bp--tablet--landscape)
     font-size $size--milli
+    padding 0
+  +media-query($screen, $bp--tablet--landscape)
     padding 0 rem(12px)
   +media-query($screen, $bp--desktop)
     padding 0 rem(20px)
   +media-query($screen, $bp--desktop--medium)
     padding 0 rem(24px)
 
-._c-site-nav__list--footer
+.c-site-nav__list--footer
   .is-active a
     color $color--mint
   +media-query($screen, $bp--tablet)
     display block
     float left
 
-._c-site-nav__list--footer li
+._site-nav__list--footer li
   +media-query($screen, $bp--tablet)
     float left
 
-._c-site-nav__list--footer li a
+._site-nav__list--footer li a
   display block
   font-size $size--zeta
   line-height rem(30px)
