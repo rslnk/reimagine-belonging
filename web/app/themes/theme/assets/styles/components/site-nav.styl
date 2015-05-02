@@ -31,16 +31,14 @@
   font-weight $weight--light
 
 ._c-site-nav__list--head
-  display block
+  display none
   .is-active a
     color $color--mint
   +media-query($screen, $bp--tablet--landscape)
+    display block !important
     float right
 
 ._c-site-nav__list--head li
-  +media-query($screen, $bp--tablet)
-    // hide menu items on tablet screen
-    display none
   +media-query($screen, $bp--tablet--landscape)
     display inline-block
 

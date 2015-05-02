@@ -16,9 +16,7 @@ use Roots\Sage\Wrapper;
       do_action('get_header');
       get_template_part('templates/header');
     ?>
-    <main role="main">
-      <?php include Wrapper\template_path(); ?>
-    </main>
+    <?php include Wrapper\template_path(); ?>
     <?php
       get_template_part('templates/footer');
       wp_footer();
