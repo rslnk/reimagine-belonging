@@ -1,9 +1,9 @@
 .c-home-intro
   min-height 100%
-  padding-top 50px
-  padding-bottom 50px
-  margin-top -50px
-  margin-bottom -50px
+  padding-top rem(50px)
+  padding-bottom rem(50px)
+  margin-top rem(-50px)
+  margin-bottom rem(-50px)
   background-repeat no-repeat
   background-position 70% 100%
   background-size: cover
@@ -12,3 +12,12 @@
 
 .c-home-intro__content
   col(12)
+
+.c-home-intro__buttons-wrap
+  display block
+  +media-query($screen, $bp--tablet--portrait)
+    margin-top rem(25px)
+  +media-query($screen, $bp--tablet--landscape)
+    margin-top rem(20px)
+  +media-query($screen, $bp--desktop--medium)
+    margin-top rem(40px)
