@@ -115,10 +115,14 @@ h6,
     font-size $size--gamma
 
 .c-heading--home
-  font-size $size--alpha
-  letter-spacing rem(2px)
+  margin-top rem(20px)
+  font-size $size--gamma
+  letter-spacing rem(1px)
   color $color--white
   +media-query( $screen, $bp--tablet )
+    letter-spacing rem(2px)
     font-size $size--kilo
   +media-query( $screen, $bp--desktop )
     font-size $size--mega
+  +media-query($screen, $bp--desktop--medium)
+    margin-bottom rem(50px)

@@ -12,3 +12,12 @@
 
 .c-home-intro__content
   col(12)
+
+.c-home-intro__buttons-wrap
+  display block
+  +media-query($screen, $bp--tablet--portrait)
+    margin-top 25px
+  +media-query($screen, $bp--tablet--landscape)
+    margin-top 20px
+  +media-query($screen, $bp--desktop--medium)
+    margin-top 40px
