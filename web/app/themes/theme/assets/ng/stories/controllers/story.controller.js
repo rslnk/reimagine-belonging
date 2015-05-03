@@ -1,11 +1,9 @@
-angular.module('events.event.controller', [
+angular.module('stories.story.controller', [
     'api.service',
-    'events.events.filter',
-    'events.topics.filter',
     'ui.router',
     'ngSanitize'
   ])
-  .controller('EventController', [
+  .controller('StoryController', [
     '$scope',
     '$http',
     '$location',
@@ -18,11 +16,11 @@ angular.module('events.event.controller', [
 
     $scope.loadEvent = function () {
       ApiService
-        .getEvent($stateParams.event)
+        .getStory($stateParams.event)
         .then(function(response){
-          $scope.event = response;
+          $scope.story = response;
         });
     };
 
-    $scope.loadEvent();
+    $scope.loadStory();
   }]);

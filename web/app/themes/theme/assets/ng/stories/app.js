@@ -1,12 +1,10 @@
-angular.module('eventsApp', [
+angular.module('storiesApp', [
     'ui.router',
     'constants', 
     'api.service',
-    'events.timeline.controller',
-    'events.event.controller',
-    'events.preview.directive',
-    'events.countries.directive',
-    'events.carousel.directive'
+    'stories.list.controller',
+    'stories.story.controller',
+    'stories.preview.directive'
   ])
   .run([
     '$rootScope', 
@@ -25,15 +23,15 @@ angular.module('eventsApp', [
     function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
       $locationProvider.html5Mode(true);
       $stateProvider
-        .state('timeline', {
-          url: '/:timeline',
-          templateUrl: templatesPath + 'events/templates/timeline.html',
-          controller: 'TimelineController'
+        .state('list', {
+          url: '/',
+          templateUrl: templatesPath + 'stories/templates/list.html',
+          controller: 'ListController'
         })
-        .state('timeline.event', {
-          url: '/:event',
-          templateUrl: templatesPath + 'events/templates/timeline.event.html',
-          controller: 'EventController'
+        .state('list.story', {
+          url: '/:story',
+          templateUrl: templatesPath + 'stories/templates/story.html',
+          controller: 'StoryController'
         });
     }
   ]);

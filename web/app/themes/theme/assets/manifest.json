@@ -2,7 +2,7 @@
   "dependencies": {
     "events.js": {
       "files": [
-        "ng/events/services/events.service.js",
+        "ng/services/api.service.js",
         "ng/events/filters/events.filter.js",
         "ng/events/filters/topics.filter.js",
         "ng/events/directives/preview.directive.js",
@@ -10,15 +10,25 @@
         "ng/events/directives/carousel.directive.js",
         "ng/events/controllers/timeline.controller.js",
         "ng/events/controllers/event.controller.js",
-        "ng/events/app.constants.js",
+        "ng/constants.js",
         "ng/events/app.js"
-      ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
+      ]
+    },
+    "stories.js": {
+      "files": [
+        "ng/services/api.service.js",
+        "ng/stories/directives/preview.directive.js",
+        "ng/stories/controllers/list.controller.js",
+        "ng/stories/controllers/story.controller.js",
+        "ng/constants.js",
+        "ng/stories/app.js"
+      ]
     },
     "main.js": {
       "files": [
         "scripts/main.js"
       ],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"],
       "main": true
     },
     "main.css": {
