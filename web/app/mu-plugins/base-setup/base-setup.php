@@ -65,6 +65,37 @@ function create_api_endpoint() {
 
 /*
 
+  Events redirects
+  ----------------
+
+  Catches all stories requests.
+  Redirecs to angular app if user-agent is not a bot or a crowler
+  overwice responds with a content.
+
+ */
+
+add_action('parse_request', 'create_stories_proxy', 1);
+
+function create_stories_proxy () {
+  global $wp;
+  if (preg_match("/stories/i", $wp->request)) {
+    require_once( __DIR__ . '/is-bot.php');
+    if (is_bot()){
+      echo 'is a bot';
+    }
+    else {
+      $url = $_SERVER["REQUEST_URI"];
+      $parts = explode('/', rtrim($url, '/'));
+      if (count($parts) > 2) {
+        header('Location: /stories/');
+        exit;
+      }
+    }
+  }
+}
+
+/*
+
   ACF PRO Setup
   -------------
 
