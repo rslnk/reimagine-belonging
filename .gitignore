@@ -10,6 +10,7 @@ sql-dump-*.sql
 .env
 .env.*
 !.env.example
+.DS_Store
 
 # Application
 web/app/themes/theme/dist/*
