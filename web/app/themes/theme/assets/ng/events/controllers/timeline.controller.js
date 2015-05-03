@@ -24,7 +24,25 @@ angular.module('events.timeline.controller', [
       { name: 'United States', slug: 'united-states' }
     ];
 
-    $scope.timeline = lodash.findWhere($scope.countries, { slug: $stateParams.timeline });
+    $scope.timeline = lodash.findWhere($scope.countries, { 
+      slug: $stateParams.timeline 
+    });
+
+    $scope.loadConfig = function () {
+      EventsService
+        .getConfig()
+        .then(function(response) {
+          $scope.siteConfig = response;
+          if ($stateParams.timeline === '') {
+            $state.go('timeline', { 
+              timeline: $scope.siteConfig.default_timeline.slug
+            });
+          } else {
+            $scope.loadEvents();
+          }
+        });
+    };
+
 
     $scope.loadEvents = function () {
       EventsService
@@ -72,5 +90,6 @@ angular.module('events.timeline.controller', [
       }
     }, true);
 
-    $scope.loadEvents();
+    $scope.loadConfig();
+
   }]);

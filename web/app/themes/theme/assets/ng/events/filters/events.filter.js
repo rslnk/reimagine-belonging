@@ -17,29 +17,40 @@ angular.module('events.events.filter', [])
         });
 
         for (var i = 0, l = ts.length; i < l; i++){
-          // if (filter.topics.indexOf(ts[i]) > -1) {
+          if (filter.topics.indexOf(ts[i]) > -1) {
             return true;
-          // }
+          }
         }
 
         return false;
       }
 
       function filterByTopics () {
-        for (var i = 0, l = events.length; i < l; i++) {
-          if (withinTopicsFilter(events[i].topics)) {
-            result.push(events[i]);
+        events.map(function (event) {
+          if (!withinTopicsFilter(event.topics)) {
+            event.hide = true;
           }
-        }
+          else {
+            event.hide = false;
+          }
+        });
+      }
+
+      function showAll () {
+        events.map(function (event) {
+          event.hide = false;
+        });
       }
 
       function filterEvents () {
         if (filterIsSet() && topicsFilterIsSet()){
+          console.log( 'filter' );
           filterByTopics();
         } else {
-          result = events;
+          console.log('show all');
+          showAll();
         }
-        return result;
+        return events;
       }
 
       return filterEvents();

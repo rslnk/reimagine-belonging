@@ -2,14 +2,16 @@
   <countries-switcher></countries-switcher>
 
   <ul class="filter-list">
-    <li class="filter-list__item o-btn c-btn--small c-btn--lightgrey c-btn--filter" ng-class="{ 'filter-list__item--active': filter.topics.length === 0 }" ng-click="resetTopicsFilter()">
-      All Topics
+    <li class="filter-list__item o-btn c-btn--small c-btn--lightgrey c-btn--filter" 
+      ng-class="{ 'filter-list__item--active': filter.topics.length === 0 }" 
+      ng-click="resetTopicsFilter()">
+      {{ siteConfig.all_events_filter_label }}
     </li>
     <li class="filter-list__item o-btn c-btn--small c-btn--lightgrey c-btn--filter" 
-      ng-repeat="topic in events|showTopics" 
-      ng-class="{ 'filter-list__item--active': filter.topics.indexOf(topic.term_slug) > -1 }"
-      ng-click="toggleTopicInFilter(topic.term_slug)"
-      ng-bind-html="topic.term_name">
+      ng-repeat="topic in siteConfig.event_filters" 
+      ng-class="{ 'filter-list__item--active': filter.topics.indexOf(topic.slug) > -1 }"
+      ng-click="toggleTopicInFilter(topic.slug)"
+      ng-bind-html="topic.name">
     </li>
   </ul>
 </div>
@@ -17,9 +19,10 @@
   <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">
       <event-preview
         carousel-item="" 
+        class="item"
+        ng-class="{'event-preview__item--disabled': event.hide === true}"
         ng-repeat="event in events|showEvents:filter" 
         ng-click="openEvent(event.slug)"
-        class="item"
         title="{{event.title}}"
         image="{{event.preview_image}}"
         year="{{event.year}}">
