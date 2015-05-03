@@ -64,16 +64,15 @@
     '404': {
       init: function() {
         // JavaScript to be fired on the 404 page
-        function resizeHomeBlock () {
+        function resize404Block () {
           var elt = $('.js-main-block');
           var windowH = $(window).height();
-          var footerH = $('footer').height();
-          var headerH = $('header').height();
-          var shift = 100;
-          var h = windowH - headerH - footerH - shift;
-          elt.height(h);
+          elt.height(windowH);
         }
 
+        resize404Block();
+
+        $(window).resize(resize404Block);
       }
     }
   };

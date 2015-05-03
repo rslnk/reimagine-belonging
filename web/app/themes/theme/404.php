@@ -4,7 +4,7 @@
     <div class="u-centered">
       <div class="o-wrapper">
         <div class="c-404__content">
-          <div class="c-404-title">
+          <div class="c-404__title">
             <?php if(get_field('404_title', 'option')) :?>
               <h1 class="o-heading c-heading--page-subtitle t-negative">
                 <?php the_field('404_title', 'option') ?>
@@ -16,7 +16,7 @@
               <?php the_field('404_subtitle', 'option') ?>
             </h2>
           <?php endif; ?>
-          <div class="c-404_message"></div>
+          <div class="c-404__message"></div>
             <?php if(get_field('404_text', 'option' )) :?>
               <h3 class="o-heading c-heading--page-sidebar-title t-negative">
                 <?php the_field('404_text', 'option') ?>
