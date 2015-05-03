@@ -75,20 +75,20 @@ angular.module('events.timeline.controller', [
     };
 
     $scope.$watch('filter.topics', function () {
+      $scope.checkTopics();
+    }, true);
+
+    $scope.checkTopics = function () {
       if ($scope.filter.topics.length === 0) {
         $location.search('topics', null);
       } else {
         $location.search('topics', $scope.filter.topics.join(','));
       }
-    }, true);
+    };
 
-    $scope.$watch('filter.searchText', function () {
-      if ($scope.filter.searchText === '') {
-        $location.search('search', null);
-      } else {
-        $location.search('search', $scope.filter.searchText);
-      }
-    }, true);
+    $scope.closeLightbox = function () {
+      $state.go('^');
+    };
 
     $scope.loadConfig();
 

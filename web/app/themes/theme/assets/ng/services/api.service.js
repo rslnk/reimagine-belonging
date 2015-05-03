@@ -36,6 +36,21 @@ angular.module('api.service', ['ngLodash'])
       },
       getStories: function () {
         return $http.get('/api/?action=list-all-stories').then(function (response) {
+          var stories = response.data;
+
+          stories.map(function (story) {
+            if (story.permalink) {
+              story.slug = story.permalink.split('/').slice(-2,-1)[0];
+            }
+          });
+
+          // result = lodash.sortBy(result, 'published_date_gmt');
+
+          return stories;
+        });
+      },
+      getStory: function (path) {
+        return $http.get('/api/?action=story-data&path='+path).then(function (response) {
           return response.data;
         });
       }
