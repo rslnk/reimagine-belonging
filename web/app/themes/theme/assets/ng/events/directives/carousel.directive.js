@@ -5,10 +5,7 @@ angular
       restrict: 'E',
       transclude: false,
       link: function (scope, element) {
-        console.log( 'owl carousel directive link' );
         scope.initCarousel = function (element) {
-          console.log('init carousel');
-
           var defaultOptions = {};
           var customOptions = scope.$eval($(element).attr('data-options'));
           for (var key in customOptions){
