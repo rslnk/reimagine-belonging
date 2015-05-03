@@ -1,21 +1,39 @@
 angular.module('stories.list.controller', [
     'api.service',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'ngCookies'
   ])
   .controller('ListController', [
     '$scope',
     '$http',
     '$location',
+    '$cookies',
+    '$cookieStore',
     '$state',
     '$stateParams',
     'lodash',
     'ApiService',
-  function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
+  function ($scope, $http, $location, $cookies, $cookieStore, $state, $stateParams, lodash, ApiService) {
     $scope.stories = [];
     $scope.config = {};
 
     $scope.filter = { topics: [], searchText: '' };
+
+    var delete_cookie = function(name) {
+          document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    };
+
+    if ($cookies.stories) {
+      var arr = $cookies.stories.split('/');
+      arr.splice(0,2);
+      $location.path(arr.join('/'));
+      delete_cookie('stories');
+    }
+
+    // var cookies = $cookies.get('stories');
+
+    // console.log( cookies );
 
     $scope.loadConfig = function () {
       ApiService

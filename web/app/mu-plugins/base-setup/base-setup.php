@@ -87,6 +87,7 @@ function create_stories_proxy () {
       $url = $_SERVER["REQUEST_URI"];
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
+        setcookie("stories", $url, time()+3600, "/");
         header('Location: /stories/');
         exit;
       }
