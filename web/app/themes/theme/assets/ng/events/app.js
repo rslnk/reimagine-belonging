@@ -1,7 +1,7 @@
 angular.module('eventsApp', [
     'ui.router',
-    'events.constants', 
-    'events.api.service',
+    'constants', 
+    'api.service',
     'events.timeline.controller',
     'events.event.controller',
     'events.preview.directive',
