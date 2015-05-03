@@ -12,8 +12,7 @@
         "ng/events/controllers/event.controller.js",
         "ng/constants.js",
         "ng/events/app.js"
-      ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
+      ]
     },
     "stories.js": {
       "files": [
@@ -22,13 +21,13 @@
         "ng/stories/controllers/story.controller.js",
         "ng/constants.js",
         "ng/stories/app.js"
-      ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"]
+      ]
     },
     "main.js": {
       "files": [
         "scripts/main.js"
       ],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"],
       "main": true
     },
     "main.css": {
