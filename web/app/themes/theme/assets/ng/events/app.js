@@ -24,7 +24,6 @@ angular.module('eventsApp', [
     'templatesPath', 
     function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
       $locationProvider.html5Mode(true);
-      $urlRouterProvider.when('/','/deutschland');
       $stateProvider
         .state('timeline', {
           url: '/:timeline',
