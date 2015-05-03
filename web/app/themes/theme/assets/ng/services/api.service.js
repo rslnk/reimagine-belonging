@@ -11,7 +11,7 @@ angular.module('api.service', ['ngLodash'])
           return response.data;
         });
       },
-      get: function (timeline) {
+      getEvents: function (timeline) {
         return $http.get('/api/?action=list-all-events').then(function (response) {
           var result = [];
           var events = response.data;
@@ -32,6 +32,11 @@ angular.module('api.service', ['ngLodash'])
           result = lodash.sortBy(result, 'year');
 
           return result;
+        });
+      },
+      getStories: function () {
+        return $http.get('/api/?action=list-all-stories').then(function (response) {
+          return response.data;
         });
       }
     };
