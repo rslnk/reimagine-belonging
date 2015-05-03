@@ -1,5 +1,5 @@
 angular.module('events.timeline.controller', [
-    'events.api.service',
+    'api.service',
     'events.events.filter',
     'events.topics.filter',
     'ui.router',
@@ -12,8 +12,8 @@ angular.module('events.timeline.controller', [
     '$state',
     '$stateParams',
     'lodash',
-    'EventsService',
-  function ($scope, $http, $location, $state, $stateParams, lodash, EventsService) {
+    'ApiService',
+  function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
     $scope.events = [];
     $scope.config = {};
 
@@ -45,7 +45,7 @@ angular.module('events.timeline.controller', [
 
 
     $scope.loadEvents = function () {
-      EventsService
+      ApiService
         .get($stateParams.timeline)
         .then(function(response){
           $scope.events = response;

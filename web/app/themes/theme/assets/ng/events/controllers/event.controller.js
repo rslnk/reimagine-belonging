@@ -1,5 +1,5 @@
 angular.module('events.event.controller', [
-    'events.api.service',
+    'api.service',
     'events.events.filter',
     'events.topics.filter',
     'ui.router',
@@ -12,12 +12,12 @@ angular.module('events.event.controller', [
     '$state',
     '$stateParams',
     'lodash',
-    'EventsService',
-  function ($scope, $http, $location, $state, $stateParams, lodash, EventsService) {
+    'ApiService',
+  function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
     $scope.event = {};
 
     $scope.loadEvent = function () {
-      EventsService
+      ApiService
         .getEvent($stateParams.event)
         .then(function(response){
           $scope.event = response;
