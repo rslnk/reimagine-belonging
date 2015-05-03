@@ -195,12 +195,11 @@ class API_Data {
   // Output all event posts previews
   function site_configuration() {
 
-    $output = array();
 
     // Output option pages fields
     // http://www.advancedcustomfields.com/resources/get-values-from-an-options-page
 
-    $output[] = array(
+    $output = array(
 
       // Site settings
       'site_date_format'      => get_field('site_date_format', 'option'),
