@@ -3,7 +3,7 @@ angular.module('stories.list.controller', [
     'ui.router',
     'ngSanitize'
   ])
-  .controller('TimelineController', [
+  .controller('ListController', [
     '$scope',
     '$http',
     '$location',
