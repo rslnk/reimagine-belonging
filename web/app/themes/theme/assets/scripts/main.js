@@ -59,6 +59,21 @@
       init: function() {
         // JavaScript to be fired on the about us page
       }
+    },
+    // 404 page
+    '404': {
+      init: function() {
+        // JavaScript to be fired on the 404 page
+        function resize404Block () {
+          var elt = $('.js-main-block');
+          var windowH = $(window).height();
+          elt.height(windowH);
+        }
+
+        resize404Block();
+
+        $(window).resize(resize404Block);
+      }
     }
   };
 
