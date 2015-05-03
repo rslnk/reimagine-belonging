@@ -1,0 +1,15 @@
+.c-page__content
+  col(12)
+  +media-query($screen, $bp--tablet--landscape)
+    col(8)
+  +media-query($screen, $bp--desktop)
+    col(7)
+
+.c-page__sidebar
+  margin-bottom rem(45px)
+  +media-query($screen, $bp--tablet--landscape)
+    col(4)
+    margin-bottom 0
+    padding-left rem(15px)
+  +media-query($screen, $bp--desktop)
+    col(5)

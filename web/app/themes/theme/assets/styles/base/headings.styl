@@ -32,6 +32,12 @@ h6,
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--giga
 
+// Temporary solution for the_content scope
+h2,
+h3,
+h4,
+h5,
+h6,
 .c-heading--page-subtitle
   font-size $size--delta
   font-weight $weight--regular
@@ -76,6 +82,10 @@ h6,
     font-size $size--alpha
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--kilo
+
+.c-heading--page-sidebar-note--mint
+  margin-top rem(45px)
+  color $color--mint
 
 .c-heading--page-sidebar-quote
   font-size $size--alpha
