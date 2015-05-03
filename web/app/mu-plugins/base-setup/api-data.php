@@ -209,6 +209,7 @@ class API_Data {
       'twitter_handle'        => get_field('twitter_handle', 'option'),
 
       // Timeline settings
+      'timelines'             => get_field('public_timelines', 'option'),
       'default_timeline'      => get_field('default_timeline', 'option'),
 
       // Dictionary (UI elemets text & labels)

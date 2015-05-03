@@ -360,6 +360,28 @@
             "placement": "top"
         },
         {
+            "key": "field_5545e6608cdaf",
+            "label": "Public timelines",
+            "name": "public_timelines",
+            "prefix": "",
+            "type": "taxonomy",
+            "instructions": "Timelines selected here will appear in the dropdown on \"history\" page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "event_timeline",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "load_save_terms": 0,
+            "return_format": "object",
+            "multiple": 0
+        },
+        {
             "key": "field_552f98afc3321",
             "label": "Default Timeline",
             "name": "default_timeline",
@@ -383,7 +405,7 @@
         },
         {
             "key": "field_554263da21825",
-            "label": "Events Filters",
+            "label": "Events filters",
             "name": "event_filters",
             "prefix": "",
             "type": "taxonomy",
@@ -457,5 +479,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430602721
+    "modified": 1430645072
 }
