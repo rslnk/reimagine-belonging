@@ -10,5 +10,4 @@
     <link type="text/css" rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/styles/icons.svg.css"/>
     <?php wp_head(); ?>
     <base href="/history/"></base>
-    <script src='/app/themes/theme/dist/scripts/events.js'></script>
   </head>
