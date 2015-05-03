@@ -44,10 +44,8 @@ angular.module('events.events.filter', [])
 
       function filterEvents () {
         if (filterIsSet() && topicsFilterIsSet()){
-          console.log( 'filter' );
           filterByTopics();
         } else {
-          console.log('show all');
           showAll();
         }
         return events;
