@@ -46,7 +46,7 @@ angular.module('events.timeline.controller', [
 
     $scope.loadEvents = function () {
       ApiService
-        .get($stateParams.timeline)
+        .getEvents($stateParams.timeline)
         .then(function(response){
           $scope.events = response;
         });
