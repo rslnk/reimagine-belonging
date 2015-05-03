@@ -14,9 +14,9 @@ angular.module('stories.story.controller', [
   function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
     $scope.event = {};
 
-    $scope.loadEvent = function () {
+    $scope.loadStory = function () {
       ApiService
-        .getStory($stateParams.event)
+        .getStory($stateParams.story)
         .then(function(response){
           $scope.story = response;
         });

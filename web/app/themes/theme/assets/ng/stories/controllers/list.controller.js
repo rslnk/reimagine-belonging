@@ -44,10 +44,18 @@ angular.module('stories.list.controller', [
 
     $scope.loadStories = function () {
       ApiService
-        .getStories($stateParams.timeline)
+        .getStories()
         .then(function(response){
           $scope.stories = response;
         });
+    };
+
+    $scope.closeLightbox = function () {
+      $state.go('^');
+    };
+
+    $scope.openStory = function (slug) {
+      $state.go('list.story', { story: slug });
     };
 
   }]);

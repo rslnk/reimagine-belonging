@@ -29,7 +29,7 @@ angular.module('storiesApp', [
           controller: 'ListController'
         })
         .state('list.story', {
-          url: '/:story',
+          url: ':story',
           templateUrl: templatesPath + 'stories/templates/story.html',
           controller: 'StoryController'
         });

@@ -1,3 +1,42 @@
-<div class="o-wrapper">
-  <p>story</p>
+<div class="lightbox">
+  <div class="lightbox__wrapper">
+    <div class="lightbox__close" ng-click="closeLightbox()">Close</div>
+    <!-- close button -->
+
+    <div class="o-wrapper--row event__header">
+      <h1>{{ story.title }}</h1>
+      <ul>
+        <li ng-repeat="topic in story.topics" 
+          class="o-btn c-btn--indigo c-btn--medium" 
+          ng-bind-html="topic.term_name">
+        </li>
+      </ul>
+      <h2>{{ story.hero }}</h2>
+      <!-- soicail shares -->
+      <div>...</div>
+    </div>
+
+    <div class="o-wrapper--row event__content">
+      <div class="event__body">
+        <!-- main content -->
+        <div>Video content</div>
+      </div>
+    </div>
+    <div class="o-wrapper--row">
+      <h4>Related Stories</h4>
+      <ul>
+        <li ng-repeat="related_story in story.related_stories">
+          {{ related_story.title }}
+        </li>
+      </ul>
+    </div>
+    <div class="o-wrapper--row">
+      <h4>Related Events</h4>
+      <ul>
+        <li ng-repeat="related_event in story.related_events">
+          {{ related_events.title }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
