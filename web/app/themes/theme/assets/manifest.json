@@ -28,7 +28,7 @@
       "files": [
         "scripts/main.js"
       ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash"],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies"],
       "main": true
     },
     "main.css": {
