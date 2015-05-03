@@ -2,8 +2,8 @@ angular.module('storiesApp', [
     'ui.router',
     'constants', 
     'api.service',
-    // 'stories.list.controller',
-    // 'stories.story.controller',
+    'stories.list.controller',
+    'stories.story.controller',
     // 'stories.preview.directive'
   ])
   .run([

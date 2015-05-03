@@ -29,7 +29,7 @@ angular.module('events.timeline.controller', [
     });
 
     $scope.loadConfig = function () {
-      EventsService
+      ApiService
         .getConfig()
         .then(function(response) {
           $scope.siteConfig = response;

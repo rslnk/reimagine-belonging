@@ -1,6 +1,11 @@
 angular.module('api.service', ['ngLodash'])
   .factory('ApiService', ['$http','lodash', function ($http, lodash) {
     return {
+      getConfig: function () {
+        return $http.get('/api/?action=site-configuration').then(function (response) {
+          return response.data;
+        });
+      },
       getEvent: function (path) {
         return $http.get('/api/?action=event-data&path='+path).then(function (response) {
           return response.data;
