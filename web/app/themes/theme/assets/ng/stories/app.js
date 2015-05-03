@@ -4,7 +4,7 @@ angular.module('storiesApp', [
     'api.service',
     'stories.list.controller',
     'stories.story.controller',
-    // 'stories.preview.directive'
+    'stories.preview.directive'
   ])
   .run([
     '$rootScope', 

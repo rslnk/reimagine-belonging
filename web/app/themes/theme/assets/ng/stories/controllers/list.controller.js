@@ -21,9 +21,33 @@ angular.module('stories.list.controller', [
       ApiService
         .getConfig()
         .then(function(response){
-          console.log( response );
+          $scope.siteConfig = response;
+          $scope.loadStories();
         });
     };
 
     $scope.loadConfig();
+
+    $scope.toggleTopicInFilter = function (topic) {
+      var i = $scope.filter.topics.indexOf(topic);
+
+      if (i > -1) {
+          $scope.filter.topics.splice(i,1);
+      } else {
+        $scope.filter.topics.push(topic);
+      }
+    };
+
+    $scope.resetTopicsFilter = function () {
+      $scope.filter.topics = [];
+    };
+
+    $scope.loadStories = function () {
+      ApiService
+        .getStories($stateParams.timeline)
+        .then(function(response){
+          $scope.stories = response;
+        });
+    };
+
   }]);
