@@ -9,5 +9,10 @@
     <link type="text/css" rel="stylesheet" href="http://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/dist/styles/icons.svg.css"/>
     <?php wp_head(); ?>
-    <base href="/history/"></base>
+    <?php if (is_page_template('template-timeline.php') || is_page_template('template-stories.php')) { 
+      $parts = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));
+      $base = $parts[1];
+      ?>
+      <base href="/<?php echo $base; ?>/"></base>
+    <?php } ?>
   </head>
