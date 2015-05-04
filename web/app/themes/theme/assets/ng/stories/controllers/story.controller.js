@@ -26,5 +26,7 @@ angular.module('stories.story.controller', [
         });
     };
 
+    $scope.shareUrl = $location.absUrl();
+
     $scope.loadStory();
   }]);

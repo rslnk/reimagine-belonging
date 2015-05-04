@@ -80,10 +80,7 @@ function create_stories_proxy () {
   global $wp;
   if (preg_match("/stories/i", $wp->request)) {
     require_once( __DIR__ . '/is-bot.php');
-    if (is_bot()){
-      echo 'is a bot';
-    }
-    else {
+    if (!is_bot()){
       $url = $_SERVER["REQUEST_URI"];
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
@@ -113,10 +110,7 @@ function create_history_proxy () {
   global $wp;
   if (preg_match("/history/i", $wp->request)) {
     require_once( __DIR__ . '/is-bot.php');
-    if (is_bot()){
-      echo 'is a bot';
-    }
-    else {
+    if (!is_bot()){
       $url = $_SERVER["REQUEST_URI"];
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
