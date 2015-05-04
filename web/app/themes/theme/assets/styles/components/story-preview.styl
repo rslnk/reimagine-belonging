@@ -1,0 +1,18 @@
+// this block should be moved out of here later
+.stories-previews__wrapper
+  margin-left 3px
+
+.story-preview__item
+  float left
+  height 200px
+  width 100%
+  background green
+  border-bottom solid 1px white
+  border-left solid 1px white
+
+  +media-query($screen, $bp--tablet)
+    width 50%
+  +media-query($screen, $bp--desktop)
+    width 25%
+  +media-query($screen, $bp--desktop--medium)
+    width 20%
