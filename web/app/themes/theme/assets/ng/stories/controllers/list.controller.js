@@ -1,21 +1,38 @@
 angular.module('stories.list.controller', [
     'api.service',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'ngCookies',
+    'stories.list.filter'
   ])
   .controller('ListController', [
     '$scope',
     '$http',
     '$location',
+    '$cookies',
+    '$cookieStore',
     '$state',
     '$stateParams',
     'lodash',
     'ApiService',
-  function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
+  function ($scope, $http, $location, $cookies, $cookieStore, $state, $stateParams, lodash, ApiService) {
     $scope.stories = [];
     $scope.config = {};
 
     $scope.filter = { topics: [], searchText: '' };
+
+    var delete_cookie = function(name) {
+          document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    };
+
+    if ($cookies.stories && !$cookies.stories.match('false')) {
+      var arr = $cookies.stories.split('/');
+      if (arr.length > 2){
+        arr.splice(0,2);
+        $location.path(arr.join('/'));
+        delete_cookie('stories');
+      }
+    }
 
     $scope.loadConfig = function () {
       ApiService
@@ -30,7 +47,6 @@ angular.module('stories.list.controller', [
 
     $scope.toggleTopicInFilter = function (topic) {
       var i = $scope.filter.topics.indexOf(topic);
-
       if (i > -1) {
           $scope.filter.topics.splice(i,1);
       } else {
@@ -52,6 +68,18 @@ angular.module('stories.list.controller', [
 
     $scope.closeLightbox = function () {
       $state.go('^');
+    };
+
+    $scope.$watch('filter.topics', function () {
+      $scope.checkTopics();
+    }, true);
+
+    $scope.checkTopics = function () {
+      if ($scope.filter.topics.length === 0) {
+        $location.search('topics', null);
+      } else {
+        $location.search('topics', $scope.filter.topics.join(','));
+      }
     };
 
     $scope.openStory = function (slug) {
