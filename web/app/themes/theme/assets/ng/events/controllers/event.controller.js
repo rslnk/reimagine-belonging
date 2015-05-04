@@ -24,5 +24,7 @@ angular.module('events.event.controller', [
         });
     };
 
+    $scope.shareUrl = $location.absUrl();
+
     $scope.loadEvent();
   }]);
