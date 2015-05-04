@@ -367,6 +367,14 @@ class API_Data {
       'hero'                         => $post->protagonist_name,
       'city'                         => $this->terms_array($city),
       'excerpt'                      => $post->excerpt,
+
+      // Post taxonomy terms
+      'groups'                       => $this->terms_array($groups),
+      'topics'                       => $this->terms_array($topics),
+      'cities'                       => $this->terms_array($cities),
+      'people'                       => $this->terms_array($people),
+      'tags'                         => $this->terms_array($tags),
+
       );
 
     }
