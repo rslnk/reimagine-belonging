@@ -17,9 +17,8 @@
   <div class="o-wrapper--row">
     <story-preview 
       ng-click="openStory(story.slug)"
-      ng-repeat="story in stories">
+      ng-repeat="story in stories|showStories:filter">
     </story-preview>
-
   </div>
 
   <div ui-view></div>
