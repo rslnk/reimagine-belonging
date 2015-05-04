@@ -17,6 +17,7 @@
     "stories.js": {
       "files": [
         "ng/services/api.service.js",
+        "ng/stories/filters/list.filter.js",
         "ng/stories/directives/preview.directive.js",
         "ng/stories/controllers/list.controller.js",
         "ng/stories/controllers/story.controller.js",

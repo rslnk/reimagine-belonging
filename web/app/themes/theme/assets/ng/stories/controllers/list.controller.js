@@ -2,7 +2,8 @@ angular.module('stories.list.controller', [
     'api.service',
     'ui.router',
     'ngSanitize',
-    'ngCookies'
+    'ngCookies',
+    'stories.list.filter'
   ])
   .controller('ListController', [
     '$scope',
@@ -24,11 +25,13 @@ angular.module('stories.list.controller', [
           document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
     };
 
-    if ($cookies.stories) {
+    if ($cookies.stories && !$cookies.stories.match('false')) {
       var arr = $cookies.stories.split('/');
-      arr.splice(0,2);
-      $location.path(arr.join('/'));
-      delete_cookie('stories');
+      if (arr.length > 2){
+        arr.splice(0,2);
+        $location.path(arr.join('/'));
+        delete_cookie('stories');
+      }
     }
 
     // var cookies = $cookies.get('stories');
