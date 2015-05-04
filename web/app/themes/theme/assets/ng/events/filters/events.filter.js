@@ -27,7 +27,7 @@ angular.module('events.events.filter', [])
 
       function filterByTopics () {
         events.map(function (event) {
-          if (!withinTopicsFilter(event.topics)) {
+          if (!event.topics || !withinTopicsFilter(event.topics)) {
             event.hide = true;
           }
           else {
