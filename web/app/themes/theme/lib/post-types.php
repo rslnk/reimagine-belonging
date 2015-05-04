@@ -97,7 +97,7 @@ function register_post_types() {
 
   $post_type      = 'story';
 
-  $slug           = get_field('story_slug', 'option');
+  $slug           = get_field('story_post_type_slug', 'option');
   $supported_ui   = ['title', 'thumbnail', 'post-formats']; // false to hide all default WordPress post editing UI
 
   // Labels
