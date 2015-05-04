@@ -14,6 +14,10 @@
       ng-bind-html="topic.name">
     </li>
   </ul>
+  <ul class="filter-counter">
+    <li class="filter-counter__item">Events: {{ events.length }}</li>
+    <li class="filter-counter__item" ng-show="events.length != (events|filter: {hide: false}).length">Filtered: {{ (events|filter: {hide: false}).length}} </li>
+  </ul>
 </div>
 <div class="o-wrapper--row">
   <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">

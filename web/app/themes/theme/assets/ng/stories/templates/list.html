@@ -12,6 +12,10 @@
         ng-bind-html="topic.name">
       </li>
     </ul>
+    <ul class="filter-counter">
+      <li class="filter-counter__item">Stories: {{ stories.length }}</li>
+      <li class="filter-counter__item" ng-show="stories.length != (stories|filter: {hide: false}).length">Filtered: {{ (stories|filter: {hide: false}).length}} </li>
+    </ul>
   </div>
   <div class="o-wrapper--row stories-previews__wrapper">
     <story-preview 
