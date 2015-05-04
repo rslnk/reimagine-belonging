@@ -27,6 +27,16 @@
           e.preventDefault();
           $('._site-nav__list--head').toggle();
         });
+        
+        // all mess here is just a warkaround to fix the lightbox for the berline milestone
+        function setLightboxHeight () {
+          $('.lightbox').height($('main').height() + 100);
+        }
+
+        $(window).resize(function () {
+          setLightboxHeight();
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired
