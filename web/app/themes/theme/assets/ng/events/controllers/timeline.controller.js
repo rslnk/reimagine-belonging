@@ -3,17 +3,19 @@ angular.module('events.timeline.controller', [
     'events.events.filter',
     'events.topics.filter',
     'ui.router',
-    'ngSanitize'
+    'ngSanitize',
+    'ngCookies'
   ])
   .controller('TimelineController', [
     '$scope',
     '$http',
     '$location',
+    '$cookies',
     '$state',
     '$stateParams',
     'lodash',
     'ApiService',
-  function ($scope, $http, $location, $state, $stateParams, lodash, ApiService) {
+  function ($scope, $http, $location, $cookies, $state, $stateParams, lodash, ApiService) {
     $scope.events = [];
     $scope.config = {};
 
@@ -28,12 +30,28 @@ angular.module('events.timeline.controller', [
       slug: $stateParams.timeline 
     });
 
+    var delete_cookie = function(name) {
+          document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    };
+
+    var cookieAccess = false;
+
+    if ($cookies.history && !$cookies.history.match('false')) {
+      var arr = $cookies.history.split('/');
+      if (arr.length > 2){
+        cookieAccess = true;
+        arr.splice(0,2);
+        $location.path(arr.join('/'));
+        delete_cookie('history');
+      }
+    }
+
     $scope.loadConfig = function () {
       ApiService
         .getConfig()
         .then(function(response) {
           $scope.siteConfig = response;
-          if ($stateParams.timeline === '') {
+          if ($stateParams.timeline === '' && cookieAccess === false) {
             $state.go('timeline', { 
               timeline: $scope.siteConfig.default_timeline.slug
             });

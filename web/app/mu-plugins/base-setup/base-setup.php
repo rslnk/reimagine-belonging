@@ -95,6 +95,42 @@ function create_stories_proxy () {
   }
 }
 
+
+/*
+
+  History redirects
+  ----------------
+
+  Catches all history pages requests.
+  Redirecs to angular app if user-agent is not a bot or a crowler
+  overwice responds with a content.
+
+ */
+
+add_action('parse_request', 'create_history_proxy', 2);
+
+function create_history_proxy () {
+  global $wp;
+  if (preg_match("/history/i", $wp->request)) {
+    require_once( __DIR__ . '/is-bot.php');
+    if (is_bot()){
+      echo 'is a bot';
+    }
+    else {
+      $url = $_SERVER["REQUEST_URI"];
+      $parts = explode('/', rtrim($url, '/'));
+      if (count($parts) > 2) {
+        setcookie("history", $url, time()+3600, "/");
+        header('Location: /history/');
+        exit;
+      }
+    }
+  }
+}
+
+
+
+
 /*
 
   ACF PRO Setup
