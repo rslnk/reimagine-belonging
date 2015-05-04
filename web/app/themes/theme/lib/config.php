@@ -19,7 +19,8 @@ add_theme_support('jquery-cdn');            // Enable to load jQuery from the Go
  */
 if (!defined('GOOGLE_ANALYTICS_ID')) {
   // Format: UA-XXXXX-Y (Note: Universal Analytics only)
-  define('GOOGLE_ANALYTICS_ID', '');
+  $ID = get_field('google_analytics_id', 'option');
+  define('GOOGLE_ANALYTICS_ID', $ID);
 }
 
 if (!defined('WP_ENV')) {
