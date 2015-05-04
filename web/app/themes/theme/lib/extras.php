@@ -29,6 +29,16 @@ function excerpt_more() {
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
+// Get Facebook SDK App values from admin
+// Output Facebooks JavaScript SDK
+function facebook_sdk() {
+  if (get_field('facebook_app_id', 'option')) {
+    $app_id = get_field('facebook_app_id', 'option');
+    $language = get_field('facebook_plugins_language', 'option');
+  echo '<div id="fb-root"></div>';
+  echo '<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/' . $language . '/sdk.js#xfbml=1&version=v2.3&appId=' . $app_id . '"; fjs.parentNode.insertBefore(js, fjs); }(document, \'script\', \'facebook-jssdk\'));</script>';
+  }
+}
 
 /*
 

@@ -1,4 +1,4 @@
-<main class="o-wrapper--row c-home-intro" style="background-image: url(<? echo get_template_directory_uri() ?>/assets/images/homepage-intro-image--1.0.jpg);">
+<main class="o-wrapper--row c-home-intro" style="background-image: url(<? echo get_template_directory_uri() ?>/dist/images/homepage-intro-image--1.0.jpg);">
 
   <div class="u-centering-wrapper js-main-block">
     <div class="u-centered">
