@@ -16,6 +16,7 @@
   </div>
   <div class="o-wrapper--row">
     <story-preview 
+      class="story"
       ng-click="openStory(story.slug)"
       ng-class="{'story-preview__item--disabled': story.hide === true}"
       ng-repeat="story in stories|showStories:filter">
