@@ -6,12 +6,28 @@ angular
       transclude: false,
       link: function (scope, element) {
         scope.initCarousel = function (element) {
-          var defaultOptions = {};
+          var defaultOptions = {
+            touchDrag: false,
+            mouseDrag: false,
+            navigation: true,
+            navigationText: ["prev","next"]
+          };
           var customOptions = scope.$eval($(element).attr('data-options'));
           for (var key in customOptions){
             defaultOptions[key] = customOptions[key];
           }
-          $(element).owlCarousel(defaultOptions);
+
+          var owl = $(element).owlCarousel(defaultOptions);
+
+          $('.owl-carousel__arrow--next').click(function (e) {
+            e.preventDefault();
+            owl.trigger('owl.next');
+          });
+
+          $('.owl-carousel__arrow--prev').click(function (e) {
+            e.preventDefault();
+            owl.trigger('owl.prev');
+          });
         };
       }
     };
