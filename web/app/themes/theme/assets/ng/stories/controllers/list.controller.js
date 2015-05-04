@@ -64,6 +64,10 @@ angular.module('stories.list.controller', [
         .getStories()
         .then(function(response){
           $scope.stories = response;
+          // remove jquery stuff from ng app!!!! workaround for the berline milestone
+          setTimeout(function () {
+            $('.lightbox').height($('main').height() + 100);
+          }, 250);
         });
     };
 
