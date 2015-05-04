@@ -34,10 +34,6 @@ angular.module('stories.list.controller', [
       }
     }
 
-    // var cookies = $cookies.get('stories');
-
-    // console.log( cookies );
-
     $scope.loadConfig = function () {
       ApiService
         .getConfig()
@@ -51,7 +47,6 @@ angular.module('stories.list.controller', [
 
     $scope.toggleTopicInFilter = function (topic) {
       var i = $scope.filter.topics.indexOf(topic);
-
       if (i > -1) {
           $scope.filter.topics.splice(i,1);
       } else {
@@ -73,6 +68,18 @@ angular.module('stories.list.controller', [
 
     $scope.closeLightbox = function () {
       $state.go('^');
+    };
+
+    $scope.$watch('filter.topics', function () {
+      $scope.checkTopics();
+    }, true);
+
+    $scope.checkTopics = function () {
+      if ($scope.filter.topics.length === 0) {
+        $location.search('topics', null);
+      } else {
+        $location.search('topics', $scope.filter.topics.join(','));
+      }
     };
 
     $scope.openStory = function (slug) {

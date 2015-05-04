@@ -27,11 +27,13 @@ angular.module('stories.list.filter', [])
 
       function filterByTopics () {
         stories.map(function (story) {
-          if (!story.topics && !withinTopicsFilter(story.topics)) {
+          if (!story.topics || !withinTopicsFilter(story.topics)) {
             story.hide = true;
+            console.log('hide');
           }
           else {
             story.hide = false;
+            console.log('show');
           }
         });
       }
