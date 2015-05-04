@@ -3,7 +3,8 @@ angular.module('stories.list.controller', [
     'ui.router',
     'ngSanitize',
     'ngCookies',
-    'stories.list.filter'
+    'stories.list.filter',
+    'anguvideo'
   ])
   .controller('ListController', [
     '$scope',

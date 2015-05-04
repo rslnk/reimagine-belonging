@@ -19,6 +19,7 @@ angular.module('stories.story.controller', [
         .getStory($stateParams.story)
         .then(function(response){
           $scope.story = response;
+          $scope.story.video_url = 'http://vimeo.com/' + $scope.story.story_video_id;
         });
     };
 
