@@ -47,21 +47,5 @@
         <!-- sidebar -->
       </div>
     </div>
-    <div class="o-wrapper--row">
-      <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_sources_title }}</h4>
-      <ul class="o-list o-list--disc c-list--page-footnotes">
-        <li ng-repeat="source in event.sources">
-          {{ source.authors }},
-          <a href="{{ source.url }}" target="_blank">{{ source.title }}</a>,
-          {{ source.editors_translators }}
-          {{ source.location }}:
-          {{ source.publisher }}
-          {{ source.date_published }}
-          {{ source.edition }},
-          {{ source.isbn }}
-          Date accessed: {{ source.date_accessed }}
-        </li>
-      </ul>
-    </div>
   </div>
 </div>
