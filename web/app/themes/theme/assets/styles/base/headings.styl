@@ -32,6 +32,13 @@ h6,
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--giga
 
+.c-heading--story-title
+  font-size $size--alpha
+  +media-query( $screen, $bp--desktop )
+    font-size $size--kilo
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--mega
+
 // Temporary solution for the_content scope
 h2,
 h3,

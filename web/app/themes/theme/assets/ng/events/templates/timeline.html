@@ -16,7 +16,7 @@
   </ul>
   <ul class="filter-counter">
     <li class="filter-counter__item">{{ siteConfig.timeline_total_events_label }}: <strong>{{ events.length }}</strong></li>
-    <li class="filter-counter__item" ng-show="events.length != (events|filter: {hide: false}).length">Filtered: <strong>{{ (events|filter: {hide: false}).length}}</strong></li>
+    <li class="filter-counter__item" ng-show="events.length != (events|filter: {hide: false}).length">{{ siteConfig.timeline_filtered_events_label }}: <strong>{{ (events|filter: {hide: false}).length}}</strong></li>
   </ul>
 </div>
 <div class="o-wrapper--row">

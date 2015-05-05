@@ -9,12 +9,28 @@
 .lightbox__wrapper
   position relative
   float left
-  margin 80px
+  margin 15px
+  padding 0 rem(15px)
   background white
+  +media-query($screen, $bp--tablet)
+    margin 40px
+    padding rem(20px) rem(30px)
+  +media-query($screen, $bp--desktop)
+    margin 60px
+    padding rem(20px) rem(80px)
+  +media-query($screen, $bp--desktop--large)
+    padding rem(20px) rem(100px)
 
 .lightbox__close
   absolute rem(10px) rem(10px) false false
-  size rem(30px) rem(30px)
-  background red
-  border solid 3px green
+  size rem(20px) rem(20px)
   z-index 1000
+  background-size 100%
+  text-indent rem(-9999px)
+  cursor pointer
+  +media-query($screen, $bp--tablet)
+    absolute rem(20px) rem(20px) false false
+    size rem(40px) rem(40px)
+  +media-query($screen, $bp--desktop)
+    absolute rem(20px) rem(20px) false false
+    size rem(50px) rem(50px)

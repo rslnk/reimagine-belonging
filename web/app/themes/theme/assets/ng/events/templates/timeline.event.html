@@ -1,38 +1,39 @@
 <div class="lightbox">
   <div class="lightbox__wrapper">
-    <div class="lightbox__close" ng-click="closeLightbox()">Close</div>
+    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
     <!-- close button -->
 
-    <div class="o-wrapper--row event__header" style="background-image: url({{ event.header_image }});">
+    <div class="o-wrapper--row event__header" >
       <!-- categories -->
-      <ul>
+      <ul class="c-categories-chain c-categories-chain--story">
         <li ng-repeat="timeline in event.timelines"
-          class="o-btn c-btn--mint c-btn--medium">
+          class="c-categories-chain__item o-btn c-btn--mint c-btn--small">
           {{ timeline.term_name }}
         </li>
-        <li ng-repeat="topic in event.topics" 
-          class="o-btn c-btn--indigo c-btn--medium" 
+        <li ng-repeat="topic in event.topics"
+          class="c-categories-chain__item o-btn c-btn--indigo c-btn--small"
           ng-bind-html="topic.term_name">
         </li>
         <li ng-repeat="group in event.groups"
-          class="o-btn c-btn--medium"
+          class="c-categories-chain__item o-btn c-btn--small"
           style="background-color: {{ group.term_color }}">
           {{ group.term_name }}
         </li>
       </ul>
       <!-- header -->
-      <h1>{{ event.title }}</h1>
-      <h2>{{ event.subtitle }}</h2>
-      
-      <!-- impact -->
+      <h1 class="o-heading c-heading--page-title">{{ event.title }}</h1>
+
+      <!-- impact
       <div>...</div>
+      -->
+
       <!-- soicail shares -->
-      <ul>
-        <li>
-          <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+      <ul class="o-social-icons o-social-icons__list">
+        <li class="o-social-icons__item">
+          <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
-        <li>
-          <a href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+        <li class="o-social-icons__item">
+          <a class="o-icons-list__link u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
       </ul>
     </div>
@@ -47,10 +48,10 @@
       </div>
     </div>
     <div class="o-wrapper--row">
-      <h4>Sources</h4>
-      <ul>
+      <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_sources_title }}</h4>
+      <ul class="o-list o-list--disc c-list--page-footnotes">
         <li ng-repeat="source in event.sources">
-          {{ source.author }},
+          {{ source.authors }},
           <a href="{{ source.url }}" target="_blank">{{ source.title }}</a>,
           {{ source.editors_translators }}
           {{ source.location }}:
@@ -59,30 +60,6 @@
           {{ source.edition }},
           {{ source.isbn }}
           Date accessed: {{ source.date_accessed }}
-        </li>
-      </ul>
-      <h4>Resources and additional reading</h4>
-      <ul>
-        <li ng-repeat="resource in resources">
-          {{ resource.title }}
-          {{ resource.caption }}
-          {{ resource.authors }}
-          {{ resource.editors_translators }}
-          {{ resource.periodical_title }}
-          {{ resource.location }}
-          {{ resource.publisher }}
-          {{ resource.date_published }}
-          {{ resource.pages }}
-          {{ resource.edition }}
-          {{ resource.isbn }}
-          {{ resource.date_accessed }}
-          {{ resource.url }}
-        </li>
-      </ul>
-      <h4>Related Events</h4>
-      <ul>
-        <li ng-repeat="related_event in event.related_events">
-          {{ related_event.post_title }}
         </li>
       </ul>
     </div>
