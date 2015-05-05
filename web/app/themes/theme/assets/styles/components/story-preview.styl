@@ -3,16 +3,30 @@
   margin-left 3px
 
 .story-preview__item
+  position relative
   float left
-  height 200px
+  height 300px
   width 100%
-  background green
+  background $color--blueberry
+  background-size: cover
   border-bottom solid 1px white
   border-left solid 1px white
-
+  &:hover,
+  &:focus
+    cursor pointer
+    opacity: 0.80
   +media-query($screen, $bp--tablet)
     width 50%
+    height rem(350px)
   +media-query($screen, $bp--desktop)
     width 25%
+    height rem(300px)
   +media-query($screen, $bp--desktop--medium)
     width 20%
+
+.story-preview__content
+  position absolute
+  bottom rem(30px)
+
+.story-preview__item--disabled
+  opacity: 0.5
