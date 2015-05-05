@@ -5,5 +5,16 @@
 
 .filter-counter__item
   float left
-  margin-right rem(10px)
+  margin-right rem(20px)
+  font-family $base--font-heading
+  font-size $size--zeta
+  font-style normal
+  font-weight $weight--thin
+  letter-spacing rem(1px)
   text-transform uppercase
+  color $color--dark-gray
+  strong
+    font-weight $weight--regular
+    color $color--carbon-black
+  +media-query($screen, $bp--tablet--landscape)
+    font-size $size--delta
