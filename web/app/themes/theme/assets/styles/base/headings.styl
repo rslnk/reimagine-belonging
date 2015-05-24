@@ -32,6 +32,13 @@ h6,
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--giga
 
+.c-heading--story-title
+  font-size $size--alpha
+  +media-query( $screen, $bp--desktop )
+    font-size $size--kilo
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--mega
+
 // Temporary solution for the_content scope
 h2,
 h3,
@@ -113,6 +120,7 @@ h6,
     font-size $size--gamma
 
 .c-heading--story-preview
+  padding rem(20px)
   font-size $size--gamma
   font-weight $weight--light
   line-height 1.2
@@ -121,6 +129,8 @@ h6,
     font-weight $weight--semibold
   +media-query( $screen, $bp--tablet )
     font-size $size--delta
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--gamma
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--gamma
 

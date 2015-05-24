@@ -5,8 +5,15 @@
 .event-preview__item
   position relative
   float left
-  size 100% 200px
+  size 100% 260px
   background-size cover
+  background-color $color--lemon
+  border-bottom solid 1px white
+  border-left solid 1px white
+  &:hover,
+  &:focus
+    cursor pointer
+    opacity: 0.80
 
 .event-preview__item--disabled
   opacity 0.5
@@ -18,8 +25,13 @@
 .event-preview__year
   float left
   width 100%
-  margin-bottom 1em
+  margin-bottom rem(5px)
+  font-family $base--font-heading
+  font-weight $weight--thin
+  font-size $size--delta
+  color $color--white
 
 .event-preview__title
   float left
   width 100%
+

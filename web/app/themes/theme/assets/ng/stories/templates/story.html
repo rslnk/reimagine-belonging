@@ -1,61 +1,34 @@
 <div class="lightbox">
   <div class="lightbox__wrapper">
-    <div class="lightbox__close" ng-click="closeLightbox()">Close</div>
+    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
     <!-- close button -->
 
-
-
-    asdasdasd
-    as
-    das
-    d
-    asdadas
-
-
-    <div class="o-wrapper--row event__header">
-      <h1>{{ story.title }}</h1>
-      <ul>
-        <li ng-repeat="topic in story.topics" 
-          class="o-btn c-btn--indigo c-btn--medium" 
+    <div class="o-wrapper--row story__header">
+      <ul class="c-categories-chain">
+        <li ng-repeat="topic in story.topics"
+          class="c-categories-chain__item o-btn c-btn--blueberry c-btn--small"
           ng-bind-html="topic.term_name">
         </li>
       </ul>
-      <h2>{{ story.hero }}</h2>
+      <h2 class="o-heading c-heading--page-title"><strong>{{ story.hero }} </strong></h2>
+      <h1 class="o-heading c-heading--story-title">{{ story.title }}</h1>
       <!-- soicail shares -->
-      <ul>
-        <li>
-          <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+      <ul class="o-social-icons o-social-icons__list">
+        <li class="o-social-icons__item">
+          <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
-        <li>
-          <a href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+        <li class="o-social-icons__item">
+          <a class="o-icons-list__link u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
       </ul>
     </div>
-
     <div class="o-wrapper--row event__content">
-      <div class="event__body">
+      <div class="story__body">
         <!-- main content -->
-        <div>Video content</div>
-        <p>{{ story.story_video_id }}</p>
-        <p>{{ story.video_url }}</p>
-        <anguvideo ng-model="story.video_url" width="100%" height="350px"></anguvideo>
+        <div class="u-video-container">
+          <anguvideo ng-model="story.video_url" width="100%"></anguvideo>
+        </div>
       </div>
-    </div>
-    <div class="o-wrapper--row">
-      <h4>Related Stories</h4>
-      <ul>
-        <li ng-repeat="related_story in story.related_stories">
-          {{ related_story.title }}
-        </li>
-      </ul>
-    </div>
-    <div class="o-wrapper--row">
-      <h4>Related Events</h4>
-      <ul>
-        <li ng-repeat="related_event in story.related_events">
-          {{ related_events.title }}
-        </li>
-      </ul>
     </div>
   </div>
 </div>
