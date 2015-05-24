@@ -23,8 +23,8 @@ describe('Countries Block Directive', function () {
       scope = $rootScope.$new();
       compile = $compile;
     });
-  })
-  
+  });
+
   beforeEach(function () {
     scope.countries = [
       { name: 'Germany', slug: 'germany' },
