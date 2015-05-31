@@ -987,7 +987,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 30,
+                        "width": 40,
                         "class": "",
                         "id": ""
                     },
@@ -1010,11 +1010,50 @@
                     "readonly": 0
                 },
                 {
-                    "key": "field_5526a76db3410",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
+                    "key": "field_5526a76db3417",
+                    "label": "Date published",
+                    "name": "date_published",
+                    "type": "date_picker",
+                    "instructions": "Select date",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5526a76db341b",
+                    "label": "Date accessed",
+                    "name": "date_accessed",
+                    "type": "date_picker",
+                    "instructions": "Select date",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -1047,7 +1086,53 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_5526a76db3410",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Book, article or website title",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 65,
                         "class": "",
                         "id": ""
                     },
@@ -1055,106 +1140,6 @@
                     "placeholder": "",
                     "prepend": "\"",
                     "append": "\"",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526a76db3412",
-                    "label": "Authors",
-                    "name": "authors",
-                    "type": "text",
-                    "instructions": "e.g. Clarke, Arthur C.; Simak, Clifford Donald and Bradbury, Ray",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 60,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526a76db3413",
-                    "label": "Editors \/ translators",
-                    "name": "editors_translators",
-                    "type": "text",
-                    "instructions": "e.g. ed. Walter Emil Kaegi Jr. and Peter White",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 40,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
                     "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
@@ -1176,7 +1161,7 @@
                         ]
                     ],
                     "wrapper": {
-                        "width": 30,
+                        "width": 35,
                         "class": "",
                         "id": ""
                     },
@@ -1189,10 +1174,123 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5526a76db3415",
-                    "label": "Location",
-                    "name": "location",
+                    "key": "field_5526a76db341c",
+                    "label": "URL",
+                    "name": "url",
                     "type": "text",
+                    "instructions": "Source link",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "!=",
+                                "value": "Select"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5526a76db3412",
+                    "label": "Author",
+                    "name": "author",
+                    "type": "repeater",
+                    "instructions": "Add one or more authors",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Author",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b7ee08f6a8",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b7eef8f6a9",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_556b80469f57d",
+                    "label": "Add collaborators",
+                    "name": "display_collaborators",
+                    "type": "checkbox",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -1209,10 +1307,252 @@
                                 "operator": "==",
                                 "value": "Periodical"
                             }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
                         ]
                     ],
                     "wrapper": {
-                        "width": 25,
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "Editor": "Editor",
+                        "Translator": "Translator"
+                    },
+                    "default_value": {
+                        "": ""
+                    },
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_556b7fa46268a",
+                    "label": "Editor",
+                    "name": "editor",
+                    "type": "repeater",
+                    "instructions": "Add one or more editors.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b80469f57d",
+                                "operator": "==",
+                                "value": "Editor"
+                            },
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "!=",
+                                "value": "Website"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Editor",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b7fa46268b",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b7fa46268c",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_556b7ff66268e",
+                    "label": "Translator",
+                    "name": "translator",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b80469f57d",
+                                "operator": "==",
+                                "value": "Translator"
+                            },
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "!=",
+                                "value": "Website"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Translator",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b7ff66268f",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b7ff662690",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_556b82bef393b",
+                    "label": "Additional info",
+                    "name": "display_additional_info",
+                    "type": "true_false",
+                    "instructions": "Location, Publisher, Edition, Pages, ISBN",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_5526a76db3415",
+                    "label": "Location",
+                    "name": "location",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Book"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -1237,6 +1577,11 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
@@ -1244,61 +1589,16 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
                     "wrapper": {
                         "width": 50,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526a76db3417",
-                    "label": "Date published",
-                    "name": "date_published",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 25,
                         "class": "",
                         "id": ""
                     },
@@ -1323,6 +1623,11 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
@@ -1330,6 +1635,11 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1359,6 +1669,11 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
@@ -1366,6 +1681,11 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1395,107 +1715,16 @@
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b82bef393b",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
                     "wrapper": {
                         "width": 25,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526a76db341b",
-                    "label": "Date accessed",
-                    "name": "date_accessed",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 25,
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "F j, Y",
-                    "return_format": "F j, Y",
-                    "first_day": 1
-                },
-                {
-                    "key": "field_5526a76db341c",
-                    "label": "URL",
-                    "name": "url",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_5526a76db340f",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -1525,7 +1754,7 @@
             "placement": "left"
         },
         {
-            "key": "field_55266da1365ae",
+            "key": "field_556b9179bb856",
             "label": "Resources",
             "name": "resources",
             "type": "repeater",
@@ -1543,15 +1772,15 @@
             "button_label": "Add Resource",
             "sub_fields": [
                 {
-                    "key": "field_552691df785d6",
-                    "label": "Resource type",
+                    "key": "field_556b917abb857",
+                    "label": "Source type",
                     "name": "resource_type",
                     "type": "select",
                     "instructions": "Select a type of resource.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": 30,
+                        "width": 40,
                         "class": "",
                         "id": ""
                     },
@@ -1574,44 +1803,129 @@
                     "readonly": 0
                 },
                 {
-                    "key": "field_55266fde1135f",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
+                    "key": "field_556b917abb858",
+                    "label": "Date published",
+                    "name": "date_published",
+                    "type": "date_picker",
+                    "instructions": "Select date",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Other"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": "",
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_556b917abb859",
+                    "label": "Date accessed",
+                    "name": "date_accessed",
+                    "type": "date_picker",
+                    "instructions": "Select date",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 25,
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "d\/m\/Y",
+                    "first_day": 1
+                },
+                {
+                    "key": "field_556b917abb85a",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Book, article or website title",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Website"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 65,
                         "class": "",
                         "id": ""
                     },
@@ -1624,25 +1938,47 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5526a5a78971d",
-                    "label": "Caption",
-                    "name": "caption",
+                    "key": "field_556b917abb85b",
+                    "label": "Periodical title",
+                    "name": "periodical_title",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Newspaper, magazine or journal title",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "Website"
+                                "value": "Periodical"
                             }
-                        ],
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 35,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_556b917abb85c",
+                    "label": "URL",
+                    "name": "url",
+                    "type": "text",
+                    "instructions": "Source link",
+                    "required": 0,
+                    "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Other"
+                                "field": "field_556b917abb857",
+                                "operator": "!=",
+                                "value": "Select"
                             }
                         ]
                     ],
@@ -1660,136 +1996,323 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_55266dc5365af",
-                    "label": "Authors",
-                    "name": "authors",
-                    "type": "text",
-                    "instructions": "e.g. Clarke, Arthur C.; Simak, Clifford Donald and Bradbury, Ray",
+                    "key": "field_556b917abb85d",
+                    "label": "Author",
+                    "name": "author",
+                    "type": "repeater",
+                    "instructions": "Add one or more authors",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Other"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 60,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Author",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b917abb85e",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b917abb85f",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
                 },
                 {
-                    "key": "field_5526960fde805",
-                    "label": "Editors \/ translators",
-                    "name": "editors_translators",
-                    "type": "text",
-                    "instructions": "e.g. ed. Walter Emil Kaegi Jr. and Peter White",
+                    "key": "field_556b917abb860",
+                    "label": "Add collaborators",
+                    "name": "display_collaborators",
+                    "type": "checkbox",
+                    "instructions": "",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Other"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 40,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "choices": {
+                        "Editor": "Editor",
+                        "Translator": "Translator"
+                    },
+                    "default_value": {
+                        "": ""
+                    },
+                    "layout": "horizontal"
                 },
                 {
-                    "key": "field_552699ac0fc6f",
-                    "label": "Periodical title",
-                    "name": "periodical_title",
-                    "type": "text",
-                    "instructions": "Newspaper, magazine or journal title",
+                    "key": "field_556b917abb861",
+                    "label": "Editor",
+                    "name": "editor",
+                    "type": "repeater",
+                    "instructions": "Add one or more editors.",
                     "required": 0,
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb860",
                                 "operator": "==",
-                                "value": "Periodical"
+                                "value": "Editor"
+                            },
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "!=",
+                                "value": "Website"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 30,
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Editor",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b917abb862",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b917abb863",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
                 },
                 {
-                    "key": "field_55266fea11360",
+                    "key": "field_556b917abb864",
+                    "label": "Translator",
+                    "name": "translator",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b917abb860",
+                                "operator": "==",
+                                "value": "Translator"
+                            },
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "!=",
+                                "value": "Website"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": 1,
+                    "max": "",
+                    "layout": "table",
+                    "button_label": "Add Translator",
+                    "sub_fields": [
+                        {
+                            "key": "field_556b917abb865",
+                            "label": "First Name",
+                            "name": "first_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_556b917abb866",
+                            "label": "Last Name",
+                            "name": "last_name",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 50,
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
+                },
+                {
+                    "key": "field_556b917abb867",
+                    "label": "Additional info",
+                    "name": "display_additional_info",
+                    "type": "true_false",
+                    "instructions": "Location, Publisher, Edition, Pages, ISBN",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Book"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Periodical"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "Other"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0
+                },
+                {
+                    "key": "field_556b917abb868",
                     "label": "Location",
                     "name": "location",
                     "type": "text",
@@ -1798,21 +2321,31 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 25,
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -1825,7 +2358,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_55266f88365b0",
+                    "key": "field_556b917abb869",
                     "label": "Publisher",
                     "name": "publisher",
                     "type": "text",
@@ -1834,16 +2367,26 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1861,57 +2404,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_55269648de807",
-                    "label": "Date published",
-                    "name": "date_published",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 25,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526702d11362",
+                    "key": "field_556b917abb86a",
                     "label": "Pages",
                     "name": "pages",
                     "type": "text",
@@ -1920,16 +2413,26 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1947,7 +2450,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_552696f9de808",
+                    "key": "field_556b917abb86b",
                     "label": "Edition",
                     "name": "edition",
                     "type": "text",
@@ -1956,16 +2459,26 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ],
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Periodical"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
@@ -1983,7 +2496,7 @@
                     "disabled": 0
                 },
                 {
-                    "key": "field_5526700b11361",
+                    "key": "field_556b917abb86c",
                     "label": "ISBN",
                     "name": "isbn",
                     "type": "text",
@@ -1992,110 +2505,19 @@
                     "conditional_logic": [
                         [
                             {
-                                "field": "field_552691df785d6",
+                                "field": "field_556b917abb857",
                                 "operator": "==",
                                 "value": "Book"
+                            },
+                            {
+                                "field": "field_556b917abb867",
+                                "operator": "==",
+                                "value": "1"
                             }
                         ]
                     ],
                     "wrapper": {
                         "width": 25,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_552694de785df",
-                    "label": "Date accessed",
-                    "name": "date_accessed",
-                    "type": "date_picker",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 25,
-                        "class": "",
-                        "id": ""
-                    },
-                    "display_format": "F j, Y",
-                    "return_format": "F j, Y",
-                    "first_day": 1
-                },
-                {
-                    "key": "field_5526705c4911d",
-                    "label": "URL",
-                    "name": "url",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Book"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Periodical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Website"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_552691df785d6",
-                                "operator": "==",
-                                "value": "Other"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -2137,5 +2559,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1433106612
+    "modified": 1433113022
 }
