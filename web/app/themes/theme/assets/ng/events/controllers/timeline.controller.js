@@ -38,7 +38,7 @@ angular.module('events.timeline.controller', [
 
     $scope.toggleTopicInFilter = function (topic) {
       var i = $scope.filter.topics.indexOf(topic);
-
+      console.log('toggle topic');
       if (i > -1) {
           $scope.filter.topics.splice(i,1);
       } else {

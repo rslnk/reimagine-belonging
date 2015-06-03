@@ -2,31 +2,16 @@ angular
   .module('events.carousel.directive', [])
   .directive('carousel', function () {
     return {
-      restrict: 'E',
+      restrict: 'A',
       transclude: false,
-      link: function (scope, element) {
+      link: function (scope, element, attrs) {
+        scope.$watch('filter', function () {
+          console.log('xxx');
+          scope.initCarousel(element);
+        }, true);
         scope.initCarousel = function (element) {
-          var defaultOptions = {
-            touchDrag: false,
-            mouseDrag: false,
-            navigation: true,
-            navigationText: ["prev","next"]
-          };
-          var customOptions = scope.$eval($(element).attr('data-options'));
-          for (var key in customOptions){
-            defaultOptions[key] = customOptions[key];
-          }
-
-          var owl = $(element).owlCarousel(defaultOptions);
-
-          $('.owl-carousel__arrow--next').click(function (e) {
-            e.preventDefault();
-            owl.trigger('owl.next');
-          });
-
-          $('.owl-carousel__arrow--prev').click(function (e) {
-            e.preventDefault();
-            owl.trigger('owl.prev');
+          $(element).itemslide({
+            duration: 150
           });
         };
       }

@@ -129,6 +129,7 @@ function assets() {
   wp_enqueue_script('events_js', asset_path('scripts/events.js'), [], null, true);
   wp_enqueue_script('stories_js', asset_path('scripts/stories.js'), [], null, true);
   wp_enqueue_script('owl_carousel', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js', [], null, true);
+  wp_enqueue_script('itemslide', 'http://itemslide.github.io/dist/itemslide.min.js', [], null, true);
 
   wp_enqueue_style('icons_svg_css', asset_path('styles/icons.svg.css'), false, null);
   wp_enqueue_style('fonts_css', 'http://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css', false, null);

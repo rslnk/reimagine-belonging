@@ -31,6 +31,7 @@ angular.module('events.events.filter', [])
             event.hide = true;
           }
           else {
+            result.push(event);
             event.hide = false;
           }
         });
@@ -39,6 +40,7 @@ angular.module('events.events.filter', [])
       function showAll () {
         events.map(function (event) {
           event.hide = false;
+          result.push(event);
         });
       }
 
@@ -48,7 +50,9 @@ angular.module('events.events.filter', [])
         } else {
           showAll();
         }
-        return events;
+        // return events;
+        console.log(result.length);
+        return result;
       }
 
       return filterEvents();

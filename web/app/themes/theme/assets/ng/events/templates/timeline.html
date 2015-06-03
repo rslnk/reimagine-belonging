@@ -20,24 +20,15 @@
   </ul>
 </div>
 <div class="o-wrapper--row">
-  <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">
-      <event-preview
-        carousel-item=""
-        class="item"
-        ng-class="{'event-preview__item--disabled': event.hide === true}"
-        ng-repeat="event in events|showEvents:filter"
-        ng-click="openEvent(event.slug)"
-        title="{{event.title}}"
-        image="{{event.preview_image}}"
-        year="{{event.year}}">
-      </event-preview>
-  </carousel>
-  <div class="o-wrapper">
-    <div class="owl-carousel__arrows-wrapper">
-      <div class="time-line"></div>
-      <a href="#" class="owl-carousel__arrow owl-carousel__arrow--prev carousel-nav__item u-icon u-icon-arrow-left-yolk"></a>
-      <a href="#" class="owl-carousel__arrow owl-carousel__arrow--next carousel-nav__item u-icon u-icon-arrow-right-yolk"></a>
-    </div>
-  </div>
+  <ul class="itemslide__carousel" carousel>
+      <li carousel-item ng-repeat="event in events|showEvents:filter">
+        <event-preview
+          title="{{event.title}}"
+          image="{{event.preview_image}}"
+          year="{{event.year}}"
+          ng-click="openEvent(event.slug)">
+        </event-preview>
+      </li>
+  </ul>
   <div ui-view></div>
 </div>
