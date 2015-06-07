@@ -192,7 +192,7 @@ app/
         │   ├── styles          - CSS styles
         │   └── manifest.json
         ├── dist/               - Distributives
-        ├── e2e/                - Build tests for AngularJS apps
+        ├── e2e/                - End to end tests
         ├── lib/                - Site config
         ├── templates/          — WordPress content templates
         ├── gulpfile.js         — Build script
