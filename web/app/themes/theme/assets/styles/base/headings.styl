@@ -9,7 +9,7 @@
 
 h1,
 h2,
-h3,
+//h3,
 h4,
 h5,
 h6,
@@ -41,7 +41,7 @@ h6,
 
 // Temporary solution for the_content scope
 h2,
-h3,
+//h3,
 h4,
 h5,
 h6,
@@ -123,17 +123,17 @@ h6,
     font-size $size--gamma
 
 .c-heading--story-preview
-  padding rem(20px)
   font-size $size--gamma
-  font-weight $weight--light
-  line-height 1.2
+  font-weight $weight--thin
+  line-height 1.35
+  //text-transform none
   color $color--white
   strong, em, b
     font-weight $weight--semibold
   +media-query( $screen, $bp--tablet )
-    font-size $size--delta
-  +media-query( $screen, $bp--tablet--landscape )
     font-size $size--gamma
+  +media-query( $screen, $bp--desktop )
+    font-size $size--delta
   +media-query( $screen, $bp--desktop--medium )
     font-size $size--gamma
 
