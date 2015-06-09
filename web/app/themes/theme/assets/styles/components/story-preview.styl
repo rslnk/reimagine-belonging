@@ -1,14 +1,14 @@
 // this block should be moved out of here later
 .stories-previews__wrapper
-  //margin-left 3px
+  margin-left 3px
 
 .story-preview__item
   position relative
   float left
   width 100%
   padding-bottom 100%
-  border-bottom solid 1px white
-  border-left solid 1px white
+  border solid rem(1px) white
+  padding rem(1px)
   background $color--blueberry
   background-position center
   background-size cover
@@ -17,7 +17,7 @@
     cursor pointer
     .story-preview__image-overlay--solid
       background-color $color--mint
-      opacity .4
+      opacity .3
 
   +media-query($screen, $bp--tablet)
     width 50%
@@ -37,7 +37,7 @@
   position absolute
   size 100%
   padding rem(25px)
-  background-image linear-gradient(45deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, .4) 45%, rgba(0, 0, 0, 0) 70%)
+  background-image linear-gradient(45deg, rgba(0, 0, 0, .8) 10%, rgba(0, 0, 0, 0) 60%)
 
 .story-preview__item--disabled
   opacity: .5
@@ -74,11 +74,21 @@
   size rem(35px)
   background-size: 100% auto
 
-
 .story-preview__image-overlay--solid
-  //background-color $color--mint
-  background-color $color--white
-  opacity .1
+  &.red
+    background-image linear-gradient(0deg, rgba(232, 22, 198, .4) 10%, rgba(232, 22, 198, .1) 70%)
+  &.orange
+    background-image linear-gradient(0deg, rgba(224, 118, 20, .4) 10%, rgba(236, 168, 98, .1) 70%)
+  &.yellow
+    background-image linear-gradient(0deg, rgba(236, 195, 51, .4) 10%, rgba(236, 195, 51, .1) 70%)
+  &.green
+    background-image linear-gradient(0deg, rgba(10, 144, 116, .4) 10%, rgba(10, 144, 116, .25) 70%)
+  &.blue
+    background-image linear-gradient(0deg, rgba(18, 225, 238, .4) 10%, rgba(18, 225, 238, .15) 70%)
+  &.indigo
+    background-image linear-gradient(0deg, rgba(19, 142, 231, .4) 10%, rgba(19, 142, 231, .1) 70%)
+  &.violet
+    background-image linear-gradient(0deg, rgba(47, 65, 224, .4) 10%, rgba(47, 65, 224, .1) 70%)
 
 .story-preview__image-overlay--gradient
   //background-image linear-gradient(45deg, rgba(0, 0, 0, .9) 10%, rgba(0, 0, 0, .4) 45%, rgba(0, 0, 0, 0) 70%)

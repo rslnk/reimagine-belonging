@@ -5,8 +5,7 @@ angular
       restrict: 'E',
       replace: true,
       template: '<div class="story-preview__item" style="background-image: url({{story.preview_image}})">'+
-                  '<div class="story-preview__image-overlay story-preview__image-overlay--gradient" style="color: {{ color[story.color]}};"></div>' +
-                  '<div class="story-preview__image-overlay story-preview__image-overlay--solid"></div>' +
+                  '<div class="story-preview__image-overlay story-preview__image-overlay--solid {{ story.preview_image_color }}"></div>' +
                   '<div class="story-preview__content">'+
                     '<div class="story-title">' +
                       '<h2 class="o-heading c-heading--story-preview">{{ story.title }}</h2>' +
