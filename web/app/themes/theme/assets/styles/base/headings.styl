@@ -123,19 +123,40 @@ h6,
     font-size $size--gamma
 
 .c-heading--story-preview
-  font-size $size--gamma
+  font-size $size--alpha
   font-weight $weight--thin
-  line-height 1.35
-  //text-transform none
+  line-height 1.15
+  text-transform none
   color $color--white
+  display inline
+  background-size 200% // background size for 'marker highlight' animation
+  transition: .5s ease-in-out
+  background-position 0 0
+  // Gradient colors for 'marker highlight' animation on .story-preview__title rollover
+  &.red
+    background-image linear-gradient(90deg, rgba(233, 66, 78, 0) 50%, rgba(233, 66, 78, .65) 50%)
+  &.orange
+    background-image linear-gradient(90deg, rgba(255, 115, 20, 0) 50%, rgba(254, 137, 41, .65) 50%)
+  &.yellow
+    background-image linear-gradient(90deg, rgba(250, 207, 26, 0) 50%, rgba(250, 207, 26, .65) 50%)
+  &.green
+    background-image linear-gradient(90deg, rgba(66, 255, 221, 0) 50%, rgba(66, 255, 221, .65) 50%)
+  &.blue
+    background-image linear-gradient(90deg, rgba(0, 201, 255, 0) 50%, rgba(0, 201, 255, .65) 50%)
+  &.indigo
+    background-image linear-gradient(90deg, rgba(47, 65, 224, 0) 50%, rgba(47, 65, 224, .65) 50%)
+  &.violet
+    background-image linear-gradient(90deg, rgba(158, 0, 255, 0) 50%, rgba(120, 0, 255, .65) 50%)
   strong, em, b
     font-weight $weight--semibold
+  +media-query( $screen, $bp--mobile--landscape )
+    font-size $size--kilo
   +media-query( $screen, $bp--tablet )
     font-size $size--gamma
-  +media-query( $screen, $bp--desktop )
-    font-size $size--delta
-  +media-query( $screen, $bp--desktop--medium )
-    font-size $size--gamma
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--beta
+  +media-query( $screen, $bp--desktop--large )
+    font-size $size--alpha
 
 .c-heading--home
   margin-top rem(20px)
