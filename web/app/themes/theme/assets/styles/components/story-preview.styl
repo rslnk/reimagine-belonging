@@ -1,32 +1,138 @@
-// this block should be moved out of here later
-.stories-previews__wrapper
-  margin-left 3px
-
 .story-preview__item
   position relative
   float left
-  height 300px
+  // default preview proportions
   width 100%
-  background $color--blueberry
-  background-size: cover
-  border-bottom solid 1px white
-  border-left solid 1px white
-  &:hover,
-  &:focus
-    cursor pointer
-    opacity: 0.80
+  padding-bottom 80%
+  background-position center
+  background-size cover
+  // preview proportions on different screens
+  +media-query($screen, $bp--mobile--landscape)
+    width 100%
+    padding-bottom 60%
   +media-query($screen, $bp--tablet)
-    width 50%
-    height rem(350px)
+    width 33.333333333333336%
+    padding-bottom 33.333333333333336%
   +media-query($screen, $bp--desktop)
     width 25%
-    height rem(300px)
+    padding-bottom 25%
   +media-query($screen, $bp--desktop--medium)
     width 20%
-
-.story-preview__content
-  position absolute
-  bottom rem(30px)
+    padding-bottom 20%
+  // image fallback colors
+  &.red
+    background-color #f6312b
+  &.orange
+    background-color #e07614
+  &.yellow
+    background-color #ffa800
+  &.green
+    background-color #12eeda
+  &.blue
+    background-color #00c9ff
+  &.indigo
+    background-color #2f41e0
+  &.violet
+    background-color #e51bcb
 
 .story-preview__item--disabled
-  opacity: 0.5
+  opacity: .5
+
+.story-preview__content
+  display block
+  position absolute
+  size 100%
+  padding rem(25px)
+  overflow hidden
+  background-image linear-gradient(180deg, rgba(0, 0, 0, .5) 10%, rgba(0, 0, 0, 0) 80%)
+  &:hover
+    cursor pointer
+    // 'marker highlight' heading animation on rollover
+    .c-heading--story-preview
+      background-position -100%
+    // play icon scale animation n rollover
+    .story-preview__icon
+      transform scale(1.1)
+
+.story-preview__color-overlay
+  display block
+  position absolute
+  size 100%
+  opacity .75
+  &:hover
+    background-color rgba(255, 255, 255, .9)
+  &.red
+    background-image linear-gradient(0deg, rgba(246, 49, 43, .4) 10%, rgba(246, 49, 43, .1) 50%)
+  &.orange
+    background-image linear-gradient(0deg, rgba(224, 118, 20, .4) 10%, rgba(236, 168, 98, .1) 50%)
+  &.yellow
+    background-image linear-gradient(0deg, rgba(255, 168, 0, .4) 10%, rgba(255, 168, 0, .1) 50%)
+  &.green
+    background-image linear-gradient(0deg, rgba(18, 238, 218, .4) 10%, rgba(18, 238, 218, .15) 50%)
+  &.blue
+    background-image linear-gradient(0deg, rgba(0, 201, 255, .4) 10%, rgba(0, 201, 255, .1) 50%)
+  &.indigo
+    background-image linear-gradient(0deg, rgba(47, 65, 224, .4) 10%, rgba(19, 142, 231, .1) 50%)
+  &.violet
+    background-image linear-gradient(0deg, rgba(232, 22, 198, .4) 10%, rgba(232, 22, 198, .1) 50%)
+
+.story-preview__title
+  display block
+  hyphens auto
+
+.story-preview__hero
+  absolute false false rem(35px)
+  font-family $base--font-heading
+  font-size $size--gamma
+  font-style normal
+  font-weight $weight--thin
+  letter-spacing rem(2px)
+  text-transform uppercase
+  color $color--white
+  strong, em, b
+    font-weight $weight--regular
+  +media-query($screen, $bp--mobile--landscape)
+    font-size $size--gamma
+    bottom rem(45px)
+  +media-query($screen, $bp--tablet)
+    font-size $size--epsilon
+    bottom rem(25px)
+  +media-query($screen, $bp--tablet--landscape)
+    font-size $size--delta
+    bottom rem(25px)
+  +media-query($screen, $bp--desktop)
+    font-size $size--epsilon
+  +media-query($screen, $bp--desktop--medium)
+    font-size $size--epsilon
+  +media-query($screen, $bp--desktop--large)
+    font-size $size--delta
+    bottom rem(30px)
+
+.story-preview__icon
+  display block
+  absolute false rem(30px) rem(25px) false
+  position absolute
+  size rem(45px)
+  background-size: 100%
+  transition: .2s ease-in-out
+  &:hover
+    cursor pointer
+    transform scale(1.1)
+  +media-query($screen, $bp--mobile--landscape)
+    size rem(50px)
+    absolute false rem(25px) rem(35px) false
+  +media-query($screen, $bp--tablet)
+    display none
+  +media-query($screen, $bp--tablet--landscape)
+    display block
+    size rem(40px)
+    absolute false rem(25px) rem(15px) false
+  +media-query($screen, $bp--desktop)
+    size rem(38px)
+    absolute false rem(25px) rem(15px) false
+  +media-query($screen, $bp--desktop--medium)
+    size rem(38px)
+    absolute false rem(25px) rem(15px) false
+  +media-query($screen, $bp--desktop--large)
+    size rem(45px)
+    absolute false rem(30px) rem(19px) false

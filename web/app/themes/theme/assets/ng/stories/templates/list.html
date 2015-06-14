@@ -17,7 +17,7 @@
       <li class="filter-counter__item" ng-show="stories.length != (stories|filter: {hide: false}).length">{{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|filter: {hide: false}).length}}</strong></li>
     </ul>
   </div>
-  <div class="o-wrapper--row stories-previews__wrapper">
+  <div class="c-wrapper--row">
     <story-preview
       class="story-preview__item"
       ng-click="openStory(story.slug)"
