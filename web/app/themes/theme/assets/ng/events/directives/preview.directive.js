@@ -19,7 +19,12 @@ angular
         slug: '@'
       },
       link: function (scope, element, attr) {
-        element.css('background-image', 'url('+attr.image+')');
+        var imgArr = attr.image.split('.');
+        imgArr[imgArr.length-2] += '-250x250';
+        var previewImgPath = imgArr.join('.');
+
+        element.css('background-image', 'url('+ previewImgPath +')');
+
       }
     };
   });
