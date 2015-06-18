@@ -6,6 +6,12 @@ angular.module('api.service', ['ngLodash'])
           return response.data;
         });
       },
+      getConfigSync: function () {
+        var req = new XMLHttpRequest();
+        req.open('GET', '/api/?action=site-configuration', false);
+        req.send(null);
+        return req;
+      },
       getEvent: function (path) {
         return $http.get('/api/?action=event-data&path='+path).then(function (response) {
           return response.data;

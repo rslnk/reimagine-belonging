@@ -5,11 +5,13 @@ describe('Timeline Main Controller', function () {
 
   beforeEach(inject(function ($controller, $rootScope, $location, $httpBackend) {
     scope = $rootScope.$new();
+    $rootScope.config = configMock;
+
     httpBackend = $httpBackend;
     location = $location;
     timelineCtrl = $controller('TimelineController', {
       $scope: scope,
-      $stateParams: { timeline: 'germany' }
+      $stateParams: { timeline: 'united-states' }
     });
   }));
 
@@ -29,8 +31,8 @@ describe('Timeline Main Controller', function () {
       expect(scope.filter).toEqual({ topics: [], searchText: ''});
     });
 
-    it ('should have empty config object', function () {
-      expect(scope.config).toEqual({});
+    it ('should have config object', function () {
+      expect(scope.config).toEqual(configMock);
     });
 
     it ('should load events', function () {
@@ -86,6 +88,5 @@ describe('Timeline Main Controller', function () {
     });
 
   });
-
 
 });
