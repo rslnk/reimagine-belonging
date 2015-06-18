@@ -23,13 +23,11 @@ describe('Countries Block Directive', function () {
       scope = $rootScope.$new();
       compile = $compile;
     });
-  })
-  
+  });
+
   beforeEach(function () {
-    scope.countries = [
-      { name: 'Germany', slug: 'germany' },
-      { name: 'United States', slug: 'united-states' }
-    ];
+    scope.countries = configMock.timelines;
+    scope.siteConfig = configMock;
     scope.timeline = { name: 'United States', slug: 'united-states' };
     element = createDirective();
     controller = element.controller('countriesSwitcher');
@@ -37,12 +35,10 @@ describe('Countries Block Directive', function () {
 
 
   describe('when created', function (){
-    it('should have all countries except the active one in list', function () {
+    it('should have countries list', function () {
       var list = element.find('li');
       for (var i = 0, l = scope.countries.length; i < l; i++) {
-        if (scope.countries[i].slug !== scope.timeline.slug){
-          expect(angular.element(list[i]).text()).toContain(scope.countries[i].name);
-        }
+        expect(angular.element(list[i]).text()).toContain(scope.countries[i].name);
       }
     });
 
