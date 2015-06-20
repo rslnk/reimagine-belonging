@@ -61,5 +61,10 @@
         </div>
       </div>
     </div>
+    <ul class="o-wrapper--row">
+      <li ng-click="openEvent(item.slug)" ng-repeat="item in event.related_events">
+        <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
+      </li>
+    </ul>
   </div>
 </div>
