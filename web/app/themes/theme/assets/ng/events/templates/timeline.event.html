@@ -1,7 +1,7 @@
 <div class="lightbox">
   <div class="lightbox__wrapper">
-    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
     <!-- close button -->
+    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
 
     <div class="o-wrapper--row event__header" >
       <!-- categories -->
@@ -45,6 +45,20 @@
       </div>
       <div class="event__sidebar">
         <!-- sidebar -->
+        <div ng-repeat="item in event.sidebar" ng-switch="item.type">
+          <div ng-switch-when="video">
+            <h4>{{ item.title }}</h4>
+            <iframe class="event__sidebar-video" ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen></iframe>
+            <p>{{ item.caption }}</p>
+            <a href="{{ item.credit_link }}">
+              {{ item.credit }}
+            </a>
+          </div>
+          <div ng-switch-when="sidenote">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.caption }}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
