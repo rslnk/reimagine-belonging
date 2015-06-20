@@ -35,6 +35,17 @@ angular.module('events.event.controller', [
               }
             }
           });
+
+          $scope.event.related_events.map(function (item) {
+            if (item.preview_image) {
+              var imgArr = item.preview_image.split('.');
+              imgArr[imgArr.length-2] += '-250x250';
+              item.previewImgPath = imgArr.join('.');
+            }
+
+            var slugArr = item.post_slug.split('/');
+            item.slug = slugArr[slugArr.length-2];
+          });
         });
     };
 
