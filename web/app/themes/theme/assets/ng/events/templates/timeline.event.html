@@ -88,7 +88,7 @@
     <div class="o-wrapper--row">
       <h4>Resources</h4>
       <ul>
-        <li ng-repeat="item in event.resources" ng-switch="item.source_type">
+        <li ng-repeat="item in event.resources" ng-switch="item.resource_type">
           <span ng-switch-when="Periodical">
             <span ng-if="item.title">
               <a href="{{ item.url }}">{{ item.title }}</a>
