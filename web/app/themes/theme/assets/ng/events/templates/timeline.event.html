@@ -27,7 +27,7 @@
       <div>...</div>
       -->
 
-      <!-- soicail shares -->
+      <!-- social shares -->
       <ul class="o-social-icons o-social-icons__list">
         <li class="o-social-icons__item">
           <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
@@ -50,9 +50,7 @@
             <h4>{{ item.title }}</h4>
             <iframe class="event__sidebar-video" ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen></iframe>
             <p>{{ item.caption }}</p>
-            <a href="{{ item.credit_link }}">
-              {{ item.credit }}
-            </a>
+            <a href="{{ item.credit_link }}">{{ item.credit }}</a>
           </div>
           <div ng-switch-when="sidenote">
             <h4>{{ item.title }}</h4>
@@ -61,6 +59,57 @@
         </div>
       </div>
     </div>
+
+    <div class="o-wrapper--row">
+      <h4>Sources</h4>
+      <ul>
+        <li ng-repeat="item in event.sources" ng-switch="item.source_type">
+          <span ng-switch-when="Periodical">
+            <span ng-if="item.title">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </span>
+            <span ng-if="item.authors">
+              {{ item.authors }}
+            </span>
+          </span>
+
+          <span ng-switch-when="Book">
+            <span ng-if="item.title">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </span>
+            <span ng-if="item.authors">
+              {{ item.authors }}
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="o-wrapper--row">
+      <h4>Resources</h4>
+      <ul>
+        <li ng-repeat="item in event.resources" ng-switch="item.resource_type">
+          <span ng-switch-when="Periodical">
+            <span ng-if="item.title">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </span>
+            <span ng-if="item.authors">
+              {{ item.authors }}
+            </span>
+          </span>
+
+          <span ng-switch-when="Book">
+            <span ng-if="item.title">
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            </span>
+            <span ng-if="item.authors">
+              {{ item.authors }}
+            </span>
+          </span>
+        </li>
+      </ul>
+    </div>
+
     <ul class="o-wrapper--row">
       <li ng-click="openEvent(item.slug)" ng-repeat="item in event.related_events">
         <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
