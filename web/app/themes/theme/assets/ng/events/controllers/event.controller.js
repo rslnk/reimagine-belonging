@@ -55,11 +55,15 @@ angular.module('events.event.controller', [
           if ($scope.event.sources) {
             $scope.event.sources.map(function (item) {
               if (item.author) {
-                item.authors = convertPeople(item.author);
+                item.authors = convertContributors(item.author);
+              }
+
+              if (item.editor) {
+                item.editors = convertContributors(item.editor);
               }
 
               if (item.translator) {
-                item.translators = convertPeople(item.translator);
+                item.translators = convertContributors(item.translator);
               }
             });
           }
@@ -68,16 +72,20 @@ angular.module('events.event.controller', [
           if ($scope.event.resources) {
             $scope.event.resources.map(function (item) {
               if (item.author) {
-                item.authors = convertPeople(item.author);
+                item.authors = convertContributors(item.author);
+              }
+
+              if (item.editor) {
+                item.editors = convertContributors(item.editor);
               }
 
               if (item.translator) {
-                item.translators = convertPeople(item.translator);
+                item.translators = convertContributors(item.translator);
               }
             });
           }
 
-          function convertPeople (list) {
+          function convertContributors (list) {
             var arr = [];
             var i;
             var l = list.length;
