@@ -128,7 +128,8 @@ class DataFilter {
     return $result;
   }
 
-  public static function sources ($sources) {
+  public static function eventArticleSources ($sources) {
+    if (!$sources) return null;
     $result = array();
     foreach ($sources as $source) {
       $result[] = $source;
@@ -136,7 +137,8 @@ class DataFilter {
     return $result;
   }
 
-  public static function resources ($resources) {
+  public static function eventArticleResources ($resources) {
+    if (!$resources) return null;
     $result = array();
     foreach ($resources as $resource) {
       $result[] = $resource;
@@ -242,12 +244,19 @@ class API_Data {
       'event_impact_counter_label'             => get_field('event_impact_counter_label', 'option'),
       'event_impact_button_default_label'      => get_field('event_impact_button_default_label', 'option'),
       'event_impact_button_active_label'       => get_field('event_impact_button_active_label', 'option'),
-      'event_suggest_resource_button_label'    => get_field('event_suggest_resource_button_label', 'option'),
-      'event_sources_title'                    => get_field('event_sources_title', 'option'),
-      'event_date_accessed_title'              => get_field('event_date_accessed_title', 'option'),
-      'event_resources_title'                  => get_field('event_resources_title', 'option'),
+
       'event_related_stories_title'            => get_field('event_related_stories_title', 'option'),
       'event_related_events_title'             => get_field('event_related_events_title', 'option'),
+
+      'event_sources_title'                    => get_field('event_sources_title', 'option'),
+      'event_resources_title'                  => get_field('event_resources_title', 'option'),
+      'event_source_editors'                  => get_field('event_source_editors_title', 'option'),
+      'event_source_translators'              => get_field('event_source_translators_title', 'option'),
+      'event_source_edition'                  => get_field('event_source_edition_title', 'option'),
+      'event_source_volume'                   => get_field('event_source_volume_title', 'option'),
+      'event_source_pages'                    => get_field('event_source_pages_title', 'option'),
+      'event_source_date_accessed'             => get_field('event_date_accessed_title', 'option'),
+      'event_add_resource_button_label'        => get_field('event_suggest_resource_button_label', 'option'),
 
       // Common
       'toggle_navigation_button_label'         => get_field('toggle_navigation_button_screen_text', 'option'),
@@ -465,9 +474,12 @@ class API_Data {
       // Note: call needs post ID in order to output tinyMCE content with <p> tags
       'main_content'                 => get_field('main_content', $post->ID),
 
+      // Sidebar
       'sidebar'                      => $this->dataFilter->eventSidebarContent( get_field('sidebar_content', $post->ID) ),
-      'sources'                      => $this->dataFilter->sources( get_field('sources', $post->ID) ),
-      'resources'                    => $this->dataFilter->resources( get_field('resources', $post->ID) ),
+
+      // Article Sources and Resources
+      'sources'                      => $this->dataFilter->eventArticleSources( get_field('sources', $post->ID) ),
+      'resources'                    => $this->dataFilter->eventArticleResources( get_field('resources', $post->ID) ),
 
       // Related posts
       'related_stories'              => $this->post_data_array( $post->related_stories ),
