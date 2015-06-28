@@ -129,7 +129,7 @@
               {{ item.location }}:
             </span>
             <span ng-if="item.publisher">
-              {{ item.publisher }},
+              {{ item.publisher }}.
             </span>
             <span ng-if="item.pages">
               {{ siteConfig.event_source_pages }} {{ item.pages }}.
@@ -142,7 +142,7 @@
             </span>
           </span>
 
-          <span ng-switch-when="website">
+          <span ng-switch-when="webpage">
             <span ng-if="item.title">
               "<a href="{{ item.url }}">{{ item.title }}</a>".
             </span>
@@ -263,7 +263,7 @@
               {{ item.location }}:
             </span>
             <span ng-if="item.publisher">
-              {{ item.publisher }},
+              {{ item.publisher }}.
             </span>
             <span ng-if="item.pages">
               {{ siteConfig.event_source_pages }} {{ item.pages }}.
@@ -276,7 +276,7 @@
             </span>
           </span>
 
-          <span ng-switch-when="website">
+          <span ng-switch-when="webpage">
             <span ng-if="item.title">
               "<a href="{{ item.url }}">{{ item.title }}</a>".
             </span>
