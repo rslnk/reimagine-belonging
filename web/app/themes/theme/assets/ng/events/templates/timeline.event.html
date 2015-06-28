@@ -146,6 +146,9 @@
             <span ng-if="item.title">
               "<a href="{{ item.url }}">{{ item.title }}</a>".
             </span>
+            <span ng-if="item.webpage_name">
+              <em>{{ item.webpage_name }}</em>.
+            </span>
             <span ng-if="item.date_accessed">
               {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
             </span>
@@ -279,6 +282,9 @@
           <span ng-switch-when="webpage">
             <span ng-if="item.title">
               "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.webpage_name">
+              <em>{{ item.webpage_name }}</em>.
             </span>
             <span ng-if="item.date_accessed">
               {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
