@@ -1231,6 +1231,35 @@
                     "disabled": 0
                 },
                 {
+                    "key": "field_558f515862d46",
+                    "label": "Webpage name",
+                    "name": "webpage_name",
+                    "type": "text",
+                    "instructions": "Wikipedia",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5526a76db340f",
+                                "operator": "==",
+                                "value": "webpage"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
                     "key": "field_558759e5b7923",
                     "label": "Contributor type",
                     "name": "contributor_type",
@@ -2154,6 +2183,35 @@
                     "disabled": 0
                 },
                 {
+                    "key": "field_558f51d662d47",
+                    "label": "Webpage name",
+                    "name": "webpage_name",
+                    "type": "text",
+                    "instructions": "Wikipedia",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_556b917abb857",
+                                "operator": "==",
+                                "value": "webpage"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": 30,
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
                     "key": "field_558c71cbc8425",
                     "label": "Contributor type",
                     "name": "contributor_type",
@@ -2819,5 +2877,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1435450507
+    "modified": 1435456946
 }
