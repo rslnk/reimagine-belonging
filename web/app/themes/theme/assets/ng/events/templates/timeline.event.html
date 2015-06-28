@@ -1,7 +1,7 @@
 <div class="lightbox">
   <div class="lightbox__wrapper">
-    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
     <!-- close button -->
+    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
 
     <div class="o-wrapper--row event__header" >
       <!-- categories -->
@@ -27,7 +27,7 @@
       <div>...</div>
       -->
 
-      <!-- soicail shares -->
+      <!-- social shares -->
       <ul class="o-social-icons o-social-icons__list">
         <li class="o-social-icons__item">
           <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
@@ -45,7 +45,292 @@
       </div>
       <div class="event__sidebar">
         <!-- sidebar -->
+        <div ng-repeat="item in event.sidebar" ng-switch="item.type">
+          <div ng-switch-when="video">
+            <h4>{{ item.title }}</h4>
+            <iframe class="event__sidebar-video" ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen></iframe>
+            <p>{{ item.caption }}</p>
+            <a href="{{ item.credit_link }}">{{ item.credit }}</a>
+          </div>
+          <div ng-switch-when="sidenote">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.caption }}</p>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="o-wrapper--row">
+      <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_sources_title }}</h4>
+      <!-- Sources -->
+      <ol class="o-list o-list--decimal c-list--page-footnotes">
+        <li ng-repeat="item in event.sources" ng-switch="item.source_type">
+          <span ng-switch-when="book">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.chapter">
+              "<a href="{{ item.url }}">{{ item.chapter }}</a>".
+            </span>
+            <span ng-if="item.title">
+              <em><a href="{{ item.url }}">{{ item.title }}</a></em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.volume">
+              {{ siteConfig.event_source_volume }} {{ item.volume }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }},
+            </span>
+            <span ng-if="item.year_published">
+              {{ item.year_published }}.
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="article">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.periodical_title">
+              <em>{{ item.periodical_title }}</em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }}.
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="webpage">
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="other">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.periodical_title">
+              <em>{{ item.periodical_title }}</em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.volume">
+              {{ siteConfig.event_source_volume}} {{ item.volume }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }},
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="o-wrapper--row">
+      <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_resources_title }}</h4>
+      <!-- Resources -->
+      <ol class="o-list o-list--decimal c-list--page-footnotes">
+        <li ng-repeat="item in event.resources" ng-switch="item.resource_type">
+          <span ng-switch-when="book">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.chapter">
+              "<a href="{{ item.url }}">{{ item.chapter }}</a>".
+            </span>
+            <span ng-if="item.title">
+              <em><a href="{{ item.url }}">{{ item.title }}</a></em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.volume">
+              {{ siteConfig.event_source_volume }} {{ item.volume }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }},
+            </span>
+            <span ng-if="item.year_published">
+              {{ item.year_published }}.
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="article">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.periodical_title">
+              <em>{{ item.periodical_title }}</em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }}.
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="webpage">
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+
+          <span ng-switch-when="other">
+            <span ng-if="item.authors">
+              {{ item.authors }}.
+            </span>
+            <span ng-if="item.title">
+              "<a href="{{ item.url }}">{{ item.title }}</a>".
+            </span>
+            <span ng-if="item.periodical_title">
+              <em>{{ item.periodical_title }}</em>.
+            </span>
+            <span ng-if="item.editors">
+              {{ siteConfig.event_source_editors }} {{ item.editors }}.
+            </span>
+            <span ng-if="item.translators">
+              {{ siteConfig.event_source_translators }} {{ item.translators }}.
+            </span>
+            <span ng-if="item.edition">
+              {{ siteConfig.event_source_edition}} {{ item.edition }}.
+            </span>
+            <span ng-if="item.volume">
+              {{ siteConfig.event_source_volume}} {{ item.volume }}.
+            </span>
+            <span ng-if="item.location">
+              {{ item.location }}:
+            </span>
+            <span ng-if="item.publisher">
+              {{ item.publisher }},
+            </span>
+            <span ng-if="item.pages">
+              {{ siteConfig.event_source_pages }} {{ item.pages }}.
+            </span>
+            <span ng-if="item.isbn">
+              {{ item.isbn }}.
+            </span>
+            <span ng-if="item.date_accessed">
+              {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+            </span>
+          </span>
+        </li>
+      </ol>
+    </div>
+
+    <ul class="o-wrapper--row">
+      <li ng-click="openEvent(item.slug)" ng-repeat="item in event.related_events">
+        <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
+      </li>
+    </ul>
   </div>
 </div>
