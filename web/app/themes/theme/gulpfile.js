@@ -113,12 +113,13 @@ var jsTasks = function(filename) {
       return $.if(enabled.maps, $.sourcemaps.init());
     })
     .pipe($.concat, filename)
-    .pipe($.uglify)
+    // .pipe($.uglify)
     .pipe(function() {
       return $.if(enabled.rev, $.rev());
     })
     .pipe(function() {
-      return $.if(enabled.maps, $.sourcemaps.write('.'));
+      // return $.if(enabled.maps, $.sourcemaps.write('.'));
+      return $.sourcemaps.write('.');
     })();
 };
 
