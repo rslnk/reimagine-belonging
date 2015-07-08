@@ -1,0 +1,17 @@
+.o-footnotes
+  col(12)
+  +media-query($screen, $bp--desktop)
+    col(6)
+
+.c-footnotes__list
+  @extend .o-paragraph
+  font-size $size--zeta
+  line-height 1.6
+  +media-query($screen, $bp--desktop)
+    font-size $size--epsilon
+
+.c-footnotes__list-item
+  margin-top rem(5px)
+  line-height 1.6
+  +media-query($screen, $bp--desktop)
+    margin-top rem(8px)
