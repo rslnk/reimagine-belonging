@@ -3,7 +3,7 @@
   Site text lists
   ===============
 
-  Markup: <ul class="o-list o-list--{modifier} c-list--{modifier}">
+  Markup: <ul class="o-list o-list--{modifier}">
             <li class="o-list_item c-list_item--{modifier}">Item 1</list>
             <li class="o-list_item c-list_item--{modifier}">Item 2</list>
             <li class="o-list_item c-list_item--{modifier}">Item 3</list>
@@ -14,7 +14,6 @@
   list-style-position outside
   margin-left rem(25px)
 
-// List styles
 .o-list--disc
   list-style-type disc
 
@@ -35,14 +34,3 @@
 
 .o-list--lower-alpha
   list-style-type lower-alpha
-
-// Specific cases
-// List of event entry sources and resources
-.c-list--page-footnotes
-  @extend .o-paragraph
-  font-size $size--zeta
-  line-height 1.6
-
-.c-list--page-footnotes li
-  margin-top rem(5px)
-  line-height 1.6
