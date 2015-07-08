@@ -973,7 +973,7 @@
                 "class": "",
                 "id": ""
             },
-            "min": 1,
+            "min": "",
             "max": "",
             "layout": "block",
             "button_label": "+ Add Source",
@@ -995,8 +995,8 @@
                         "none": "Select",
                         "book": "Book",
                         "article": "Article (print or online)",
-                        "webpage": "Webpage",
-                        "other": "Miscellaneous"
+                        "website": "Website",
+                        "misc": "Miscellaneous"
                     },
                     "default_value": {
                         "none": "none"
@@ -1035,7 +1035,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -1065,12 +1065,12 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "!=",
-                                "value": "webpage"
+                                "value": "website"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 15,
+                        "width": 20,
                         "class": "",
                         "id": ""
                     },
@@ -1199,7 +1199,7 @@
                     "label": "Periodical or website title",
                     "name": "periodical_title",
                     "type": "text",
-                    "instructions": "The New Yorker \/ YouTube",
+                    "instructions": "The New Yorker \/ Readymag",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -1213,7 +1213,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -1232,8 +1232,8 @@
                 },
                 {
                     "key": "field_558f515862d46",
-                    "label": "Webpage name",
-                    "name": "webpage_name",
+                    "label": "Website name",
+                    "name": "website_name",
                     "type": "text",
                     "instructions": "Wikipedia",
                     "required": 0,
@@ -1242,7 +1242,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "webpage"
+                                "value": "website"
                             }
                         ]
                     ],
@@ -1285,7 +1285,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -1352,7 +1352,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558759e5b7923",
@@ -1371,7 +1371,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Author",
@@ -1466,7 +1466,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558759e5b7923",
@@ -1485,7 +1485,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Editor",
@@ -1580,7 +1580,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558759e5b7923",
@@ -1599,7 +1599,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Translator",
@@ -1710,7 +1710,7 @@
                             {
                                 "field": "field_5526a76db340f",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -1925,7 +1925,7 @@
                 "class": "",
                 "id": ""
             },
-            "min": "",
+            "min": 0,
             "max": "",
             "layout": "block",
             "button_label": "+ Add Resource",
@@ -1947,8 +1947,8 @@
                         "none": "Select",
                         "book": "Book",
                         "article": "Article (print or online)",
-                        "webpage": "Webpage",
-                        "other": "Miscellaneous"
+                        "website": "Website",
+                        "misc": "Miscellaneous"
                     },
                     "default_value": {
                         "none": "none"
@@ -1987,7 +1987,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -2017,12 +2017,12 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "!=",
-                                "value": "webpage"
+                                "value": "website"
                             }
                         ]
                     ],
                     "wrapper": {
-                        "width": 15,
+                        "width": 20,
                         "class": "",
                         "id": ""
                     },
@@ -2151,7 +2151,7 @@
                     "label": "Periodical or website title",
                     "name": "periodical_title",
                     "type": "text",
-                    "instructions": "The New Yorker \/ YouTube",
+                    "instructions": "The New Yorker \/ Readymag",
                     "required": 0,
                     "conditional_logic": [
                         [
@@ -2165,7 +2165,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -2184,8 +2184,8 @@
                 },
                 {
                     "key": "field_558f51d662d47",
-                    "label": "Webpage name",
-                    "name": "webpage_name",
+                    "label": "Website name",
+                    "name": "website_name",
                     "type": "text",
                     "instructions": "Wikipedia",
                     "required": 0,
@@ -2194,7 +2194,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "webpage"
+                                "value": "website"
                             }
                         ]
                     ],
@@ -2237,7 +2237,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -2304,7 +2304,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558c71cbc8425",
@@ -2323,7 +2323,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Author",
@@ -2418,7 +2418,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558c71cbc8425",
@@ -2437,7 +2437,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Editor",
@@ -2532,7 +2532,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             },
                             {
                                 "field": "field_558c71cbc8425",
@@ -2551,7 +2551,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "min": 1,
+                    "min": "",
                     "max": "",
                     "layout": "block",
                     "button_label": "+ Add Translator",
@@ -2662,7 +2662,7 @@
                             {
                                 "field": "field_556b917abb857",
                                 "operator": "==",
-                                "value": "other"
+                                "value": "misc"
                             }
                         ]
                     ],
@@ -2877,5 +2877,5 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1435456946
+    "modified": 1436312496
 }
