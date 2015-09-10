@@ -5,11 +5,11 @@ web/.htaccess
 # WP-CLI
 db-sync
 sql-dump-*.sql
+web/*.sql
 
 # Dotenv
 .env
 .env.*
-!.env.example
 .DS_Store
 
 # Application
@@ -41,7 +41,3 @@ node_modules
 # Vagrant
 bin
 .vagrant
-
-# Sublime Text project
-*.sublime-workspace
-*.sublime-project

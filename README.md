@@ -27,12 +27,13 @@ You are welcome to contribute to any of these repositories including [this one](
 
 This website is build with WordPress, using [Bedrock](https://roots.io/bedrock) development stack and [Sage](ttps://roots.io/sage) as a base/starter theme and [AngularJS](https://angularjs.org) for dynamic HTML views used in [Stories Collection](http://www.reimaginebelonging.com/stories) and in [Timeline](http://www.reimaginebelonging.com/stories) events.
 
-### Features
+### Utilizes
+
+Reimag Belonging website utilizes the following features:
 
 * [WordPress](https://wordpress.org) for website's content management
 * [Bedrock](https://roots.io/bedrock) development tools and WordPress project structure
 * [Composer](http://getcomposer.org) for dependency management
-* [Capistrano](http://www.capistranorb.com) for automated deployment
 * [Vagrant](https://www.vagrantup.com) and [Ansible](https://github.com/roots/bedrock-ansible) for server environments
 * [Gulp](http://gulpjs.com) build script for automated workflow
 * [Bower](http://bower.io) for front-end package management
@@ -46,49 +47,20 @@ This website is build with WordPress, using [Bedrock](https://roots.io/bedrock) 
 
 ## Installation and development setup
 
-The following documentation contains step by step instructions on how to install project on your local machine and should help you get started with [Reimagine Belonging](http://www.reimaginebelonging.com) website development.
+The following documentation contains step by step instructions on how to install project on your local machine and should help you get started with [Reimagine Belonging](http://www.reimaginebelonging.org) website development.
 
 ### Requirements
 
 * Git
 * PHP >= 5.4
-* Ruby >= 1.9 (for Capistrano)
 * Node.js >= 0.10 — [Install](https://nodejs.org/download)
 * npm >=2.1.5 — [Install](https://www.npmjs.com/package/latest-version)
 * Gulp (`npm install -g gulp`)
 * Bower (`npm install -g bower`)
-* Ansible >= 1.8 (except 1.9.1 - see this [bug](https://github.com/roots/bedrock-ansible/issues/205)) - [Install](http://docs.ansible.com/intro_installation.html) • [Docs](http://docs.ansible.com/)
-* Virtualbox >= 4.3.10 - [Install](https://www.virtualbox.org/wiki/Downloads)
-* Vagrant >= 1.5.4 - [Install](http://www.vagrantup.com/downloads.html) • [Docs](https://docs.vagrantup.com/v2/)
-* vagrant-bindfs >= 0.3.1 - [Install](https://github.com/gael-ian/vagrant-bindfs#installation) • [Docs](https://github.com/gael-ian/vagrant-bindfs) (Windows users may skip this)
-* vagrant-hostsupdater - [Install](https://github.com/cogitatio/vagrant-hostsupdater#installation) • [Docs](https://github.com/cogitatio/vagrant-hostsupdater)
 
 ### Development server
 
-For your WordPress ready local server we recommend using [bedrock-ansible](https://github.com/roots/bedrock-ansible). This will ensure development & production parity and will allow you to create development environment with a single command line.
-
-To install this repo and setup your WordPress ready local server follow these steps:
-
-1. Create a project directory: `mkdir reimaginebelonging.com && cd reimaginebelonging.com`
-2. Clone bedrock-ansible: `git clone --depth=1 git@github.com:roots/bedrock-ansible.git ansible && rm -rf ansible/.git`
-3. Clone this repo: `git clone --depth=1 git@github.com:rslnk/reimagine-belonging.git site`
-4. Move `Vagrantfile` to root: `mv ansible/Vagrantfile .` and update the [ANSIBLE_PATH](https://github.com/roots/roots-example-project.com/blob/master/Vagrantfile#L6) to `'ansible'`.
-5. Go to `ansible/` dir and run `ansible-galaxy install -r requirements.yml` to install external Ansible roles/packages.
-6. Install `vagrant plugin install vagrant-hostsupdater`. This [Vagrant plugin](https://github.com/cogitatio/vagrant-hostsupdater#installation) adds an entry to your /etc/hosts file on the host system.
-7. Install `vagrant plugin install vagrant-bindfs`. A [Vagrant plugin](https://github.com/gael-ian/vagrant-bindfs#installation) to automate bindfs mount in the VM.
-8. Edit `group_vars/development` and add your local WordPress site. We recommend setting dev URL to `reimaginebelonging.dev`.
-9. Run `vagrant up` from `reimaginebelonging.com/` dir.
-
-You should now have the following directories:
-
-```
-reimaginebelonging.com/   - Primary folder for this project
-├── Vagrantfile
-├── ansible/              - bedrock-ansible repo renamed to just `ansible`
-└── site/                 - reimagine-belonging repo renamed to just `site`
-```
-
-Note on `.env` files: You **do not** need a configured `.env` file. bedrock-ansible will automatically create and configure one.
+To setup development machine compatible with all Reimagine Belonging websites clone/fork our [trellis-reimaginebelonging](https://bitbucket.org/rslnk/trellis-reimaginebelonging/overview) solution. Ask project's administrator to provide you with an access to this repo.
 
 ### Development setup
 
@@ -110,7 +82,7 @@ We recommend you update to the latest version of npm: `npm install -g npm@latest
 
 You now have all the necessary dependencies to run the build process.
 
-## Project structure & configuration
+## Project structure
 
 Reimagine Belonging website utilizes [Bedrock project organization](https://github.com/roots/bedrock/wiki/Folder-structure), which is similar to putting WordPress in its own subdirectory:
 
@@ -126,15 +98,10 @@ site/
 ├── composer.json
 ├── config/
 │   ├── application.php
-│   ├── deploy/
-│   │   ├── staging.rb
-│   │   └── production.rb
-│   ├── deploy.rb
 │   └── environments/
 │       ├── development.php
 │       ├── staging.php
 │       └── production.php
-├── Gemfile
 ├── vendor/
 └── web/
     ├── app/
@@ -148,11 +115,7 @@ site/
     └── wp/
 ```
 
-### Configuration files
-
-`config/application.php` is the main config file that contains what `wp-config.php` usually would. Base options are set in there.
-
-For environment specific configuration, use the files under `config/environments`.
+Note: `config/application.php` is the main config file that contains what `wp-config.php` usually would. Base options are set in there.
 
 ## Website development
 
@@ -192,11 +155,7 @@ app/
         │   ├── styles          - CSS styles
         │   └── manifest.json
         ├── dist/               - Distributives
-<<<<<<< HEAD
-        ├── e2e/                - Build tests for AngularJS apps
-=======
         ├── e2e/                - End to end tests
->>>>>>> fb093873a5a77b9aa443be04e841d89f2ac793ed
         ├── lib/                - Site config
         ├── templates/          — WordPress content templates
         ├── gulpfile.js         — Build script
@@ -212,20 +171,6 @@ All plugins required for Reimagine Belonging to run delcared in `/composer.json`
 Whenever a new plugin is being added or the WordPress version updated, a `composer update` command should be run in order to install new packages.
 
 `plugins`, and `mu-plugins` are Git ignored by default since Composer manages them. Custom plugins that *aren't* managed by Composer, are whitelisted in `/.gitignore` file.
-
-## Deployment
-
-[Capistrano](http://www.capistranorb.com/) is used as a deployment method to deploy Reimagine Belonging website to a remote server. It allows to deploy or rollback deployments in one command.
-
-**Available deployment commands:**
-
-* `cap production_en deploy`
-* `cap production_de deploy`
-* `cap staging deploy`
-
-To rollback a deploy use `cap production_en deploy:rollback`
-
-Composer support is built-in so when you run a deploy, `composer install` is automatically run. Capistrano has a great [deploy flow](http://www.capistranorb.com/documentation/getting-started/flow/) that you can hook into and extend it.
 
 ## Must-use plugins
 
