@@ -49,11 +49,7 @@ var enabled = {
   // Disable source maps when `--production`
   maps: !argv.production,
   // Fail styles task on error when `--production`
-  failStyleTask: argv.production,
-  // Fail due to JSHint warnings only when `--production`
-  failJSHint: argv.production,
-  // Strip debug statments from javascript when `--production`
-  stripJSDebug: argv.production
+  failStyleTask: argv.production
 };
 
 // Path to the compiled assets manifest in the dist directory
@@ -118,11 +114,6 @@ var jsTasks = function(filename) {
     })
     .pipe($.concat, filename)
     // .pipe($.uglify)
-    // .pipe($.uglify, {
-    //   compress: {
-    //     'drop_debugger': enabled.stripJSDebug
-    //   }
-    // })
     .pipe(function() {
       return $.if(enabled.rev, $.rev());
     })
@@ -248,7 +239,7 @@ gulp.task('jshint', function() {
   ].concat(project.js))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(enabled.failJSHint, jshint.reporter('fail')));
+    .pipe($.jshint.reporter('fail'));
 });
 
 // ### Clean
