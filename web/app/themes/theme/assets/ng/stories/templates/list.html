@@ -14,7 +14,9 @@
     </ul>
     <ul class="filter-counter">
       <li class="filter-counter__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
-      <li class="filter-counter__item" ng-show="stories.length != (stories|filter: {hide: false}).length">{{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|filter: {hide: false}).length}}</strong></li>
+      <li class="filter-counter__item" ng-show="stories.length != (stories|showStories:filter).length">
+        {{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|showStories:filter).length}}</strong>
+      </li>
     </ul>
   </div>
   <div class="c-wrapper--row">
