@@ -6,7 +6,6 @@
             "key": "field_553f9f8688f0b",
             "label": "Video service",
             "name": "story_video_host",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -30,7 +29,6 @@
             "key": "field_553f9f8688f0c",
             "label": "Video ID",
             "name": "story_video_id",
-            "prefix": "",
             "type": "text",
             "instructions": "Enter YouTube or Vimeo video ID. Copy part of the video's URL that contains ID. E.g. http:\/\/youtu.be\/<strong style=\"color:#000;\">9D05ej8u-gU<\/strong>.",
             "required": 0,
@@ -67,7 +65,6 @@
             "key": "field_553faa19f7019",
             "label": "Embeded video",
             "name": "story_oembed_video",
-            "prefix": "",
             "type": "oembed",
             "instructions": "",
             "required": 0,
@@ -109,5 +106,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430236144
+    "active": 1,
+    "description": "",
+    "modified": 1442015306,
+    "local": "json"
 }

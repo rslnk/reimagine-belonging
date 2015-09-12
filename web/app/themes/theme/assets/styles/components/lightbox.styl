@@ -1,16 +1,18 @@
-.lightbox
+.o-lightbox
   position absolute
   z-index 1000
   top 0
   right 0
   width 100%
+  max-width 100%
+  overflow-x hidden
   background-color rgba(0, 0, 0, .5)
   +media-query($screen, $bp--tablet)
-    padding 40px
+    padding rem(40px)
   +media-query($screen, $bp--desktop)
-    padding 60px
+    padding rem(60px)
 
-.lightbox__wrapper
+.o-lightbox__wrapper
   position relative
   float left
   width 100%
@@ -18,21 +20,42 @@
   background white
   +media-query($screen, $bp--tablet)
     padding rem(20px) rem(30px)
+    padding-top rem(5px)
   +media-query($screen, $bp--desktop)
+    padding rem(20px) rem(60px)
+    padding-top rem(5px)
+  +media-query($screen, $bp--desktop--medium)
     padding rem(20px) rem(80px)
   +media-query($screen, $bp--desktop--large)
     padding rem(20px) rem(100px)
 
-.lightbox__close
+//.c-lightbox__wrapper--event
+
+.c-lightbox__wrapper--story
+  +media-query($screen, $bp--tablet)
+    padding rem(20px) rem(30px)
+    padding-top rem(5px)
+  +media-query($screen, $bp--desktop)
+    padding rem(20px) rem(30px)
+    padding-top rem(5px)
+  +media-query($screen, $bp--desktop--medium)
+    padding rem(20px) rem(60px)
+  +media-query($screen, $bp--desktop--large)
+    padding rem(20px) rem(80px)
+
+.c-lightbox__close
   absolute rem(10px) rem(10px) false false
-  size rem(20px) rem(20px)
+  size rem(20px)
   z-index 1000
   background-size 100%
   text-indent rem(-9999px)
   cursor pointer
   +media-query($screen, $bp--tablet)
     absolute rem(20px) rem(20px) false false
-    size rem(40px) rem(40px)
+    size rem(30px)
   +media-query($screen, $bp--desktop)
     absolute rem(20px) rem(20px) false false
-    size rem(50px) rem(50px)
+    size rem(35px)
+  +media-query($screen, $bp--desktop--medium)
+    absolute rem(20px) rem(20px) false false
+    size rem(45px)

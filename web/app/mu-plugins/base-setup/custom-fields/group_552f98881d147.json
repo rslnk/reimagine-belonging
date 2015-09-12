@@ -6,7 +6,6 @@
             "key": "field_553120b800006",
             "label": "General",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_55310397638c3",
             "label": "Google Analytics ID",
             "name": "google_analytics_id",
-            "prefix": "",
             "type": "text",
             "instructions": "Format: UA-XXXXX-Y.",
             "required": 0,
@@ -44,7 +43,6 @@
             "key": "field_55473f7f6b091",
             "label": "Google \u00adsite \u00adverification",
             "name": "google\u00adsite\u00adverification_id",
-            "prefix": "",
             "type": "text",
             "instructions": "Add Google site verification number.",
             "required": 0,
@@ -66,7 +64,6 @@
             "key": "field_55439c35698e6",
             "label": "Facebook App ID",
             "name": "facebook_app_id",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -88,7 +85,6 @@
             "key": "field_5547409311978",
             "label": "Facebook plugins language",
             "name": "facebook_plugins_language",
-            "prefix": "",
             "type": "text",
             "instructions": "Format: en_US.",
             "required": 0,
@@ -110,7 +106,6 @@
             "key": "field_5545436518640",
             "label": "Twitter handle",
             "name": "twitter_handle",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -132,7 +127,6 @@
             "key": "field_553120e300008",
             "label": "Date & Language",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -142,13 +136,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_552fa1a1f9cca",
             "label": "Date format",
             "name": "site_date_format",
-            "prefix": "",
             "type": "text",
             "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format.",
             "required": 0,
@@ -170,7 +164,6 @@
             "key": "field_552fa2ef8a7a6",
             "label": "Language",
             "name": "site_language",
-            "prefix": "",
             "type": "text",
             "instructions": "Set language for site's data output (e.g.. dates). Enter two letters language code. E.g. \"EN\" in accordance with <a href=\"http:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\">ISO 639-1<\/a> nomencalture. See the <a href=\"http:\/\/www.sitepoint.com\/web-foundations\/iso-2-letter-language-codes\/\">list of available codes<\/a>.",
             "required": 0,
@@ -192,7 +185,6 @@
             "key": "field_55383f78904b6",
             "label": "Links structure",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -202,13 +194,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_55383cf70495d",
             "label": "<h2>Event and story posts slugs<\/h2>",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -225,7 +217,6 @@
             "key": "field_55383c05d2050",
             "label": "Event post slug",
             "name": "event_post_type_slug",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -247,7 +238,6 @@
             "key": "field_55383ccd0495b",
             "label": "Event posts slug base",
             "name": "event_post_type_slug_base",
-            "prefix": "",
             "type": "text",
             "instructions": "E.g. \"history\/\". <strong>Note:<\/strong> base slug must have a forward trailing slash. If left empty event post slug will be automatically used as a base instead. E.g. \"\/event\".",
             "required": 0,
@@ -269,7 +259,6 @@
             "key": "field_55383ce90495c",
             "label": "Story posts slug",
             "name": "story_post_type_slug",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -291,7 +280,6 @@
             "key": "field_5538e976f9cb0",
             "label": "<h2>Taxonomies slugs<\/h2>",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -308,7 +296,6 @@
             "key": "field_5538eaf6f9cb4",
             "label": "Event post taxonomies slug",
             "name": "one_slug_for_all_event_post_type_taxonomies",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -330,7 +317,6 @@
             "key": "field_5538eb18f9cb5",
             "label": "Story post taxonomies slug",
             "name": "one_slug_for_all_story_post_type_taxonomies",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -352,7 +338,6 @@
             "key": "field_553a4361158f1",
             "label": "Global tags",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -369,7 +354,6 @@
             "key": "field_5538eb3df9cb6",
             "label": "Tag slug",
             "name": "global_tag_slug",
-            "prefix": "",
             "type": "text",
             "instructions": "E.g. \"tag\".",
             "required": 1,
@@ -391,7 +375,6 @@
             "key": "field_553120d400007",
             "label": "Timeline",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -401,13 +384,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5545e6608cdaf",
             "label": "Public timelines",
             "name": "public_timelines",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "Timelines selected here will appear in the dropdown on \"history\" page.",
             "required": 0,
@@ -423,13 +406,14 @@
             "add_term": 0,
             "load_save_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "multiple": 0,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
             "key": "field_552f98afc3321",
             "label": "Default Timeline",
             "name": "default_timeline",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "Select default Timeline.",
             "required": 0,
@@ -445,13 +429,14 @@
             "load_save_terms": 0,
             "return_format": "object",
             "multiple": 0,
-            "add_term": 1
+            "add_term": 1,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
             "key": "field_554263da21825",
             "label": "Events filters",
             "name": "event_filters",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -467,13 +452,14 @@
             "add_term": 0,
             "load_save_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "multiple": 0,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
             "key": "field_5542637121823",
             "label": "Stories",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -483,13 +469,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5542638021824",
             "label": "Stories Filters",
             "name": "story_filters",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "",
             "required": 0,
@@ -505,7 +491,9 @@
             "add_term": 0,
             "load_save_terms": 0,
             "return_format": "object",
-            "multiple": 0
+            "multiple": 0,
+            "load_terms": 0,
+            "save_terms": 0
         }
     ],
     "location": [
@@ -523,5 +511,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430734265
+    "active": 1,
+    "description": "",
+    "modified": 1442015306,
+    "local": "json"
 }

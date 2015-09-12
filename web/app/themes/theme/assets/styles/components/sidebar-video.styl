@@ -1,0 +1,21 @@
+//.c-sidebar-video
+
+.c-sidebar-video__title
+  margin-top rem(15px)
+  margin-bottom rem(12px)
+  font-size $size--centi
+  font-weight $weight--regular
+  line-height 1.2
+  letter-spacing 0
+  text-transform none !important
+  strong, em, b
+    font-weight $weight--semibold
+  +media-query( $screen, $bp--tablet--landscape )
+    line-height 1.3
+  +media-query( $screen, $bp--desktop )
+    font-size $size--milli
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--deci
+
+.c-sidebar-video__caption
+  color $color--dark-gray

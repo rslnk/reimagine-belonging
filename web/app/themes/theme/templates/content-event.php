@@ -9,7 +9,7 @@
         <h2 class="post-subtitle"><?php the_field('subtitle'); ?></h2>
       <?php endif; ?>
     </header>
-    <div class="post-content">
+    <div class="o-wp-editor">
       <?php the_field('main_content'); ?>
     </div>
     <footer></footer>

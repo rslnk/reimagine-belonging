@@ -1,12 +1,35 @@
-.story__header
+.c-story__header
   padding-top rem(20px)
+  margin-bottom rem(30px)
   background-size cover
 
-.story__content
+.c-story__content
   background white
+  padding 0
+
+.c-story__body
+  padding-bottom rem(40px)
   col(12)
+  +media-query($screen, $bp--desktop)
+    col(8)
+  +media-query($screen, $bp--desktop--medium)
+    col(9)
 
-//.story__body
-
-//.story__sidebar
-  //col(3)
+//.c-story__video
+.c-story__hero
+  margin-top rem(5px)
+  margin-bottom rem(20px)
+  font-family $base--font-heading
+  font-weight $weight--thin
+  font-size $size--pico
+  text-transform uppercase
+  letter-spacing rem(1.6px)
+  +media-query($screen, $bp--tablet)
+    margin-top rem(15px)
+    margin-bottom rem(25px)
+  +media-query($screen, $bp--desktop)
+    margin-top rem(15px)
+    margin-bottom 0
+    font-size $size--micro
+  +media-query($screen, $bp--desktop--medium)
+    font-size $size--milli

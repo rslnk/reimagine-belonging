@@ -1,34 +1,58 @@
-<div class="lightbox">
-  <div class="lightbox__wrapper">
-    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
+<div class="o-lightbox">
+  <div class="o-lightbox__wrapper c-lightbox__wrapper--story">
+    <div class="c-lightbox__close u-icon u-icon-close-medium-gray" ng-click="closeLightbox()">Close</div>
     <!-- close button -->
 
-    <div class="o-wrapper--row story__header">
+    <div class="o-wrapper--row c-story__header">
       <ul class="c-categories-chain">
         <li ng-repeat="topic in story.topics"
           class="c-categories-chain__item o-btn c-btn--blueberry c-btn--small"
           ng-bind-html="topic.term_name">
         </li>
       </ul>
-      <h2 class="o-heading c-heading--page-title"><strong>{{ story.hero }} </strong></h2>
       <h1 class="o-heading c-heading--story-title">{{ story.title }}</h1>
+      <h2 class="c-story__hero"><strong>{{ story.hero }}</strong>, {{ story.city[0].term_name }}</h2>
+
       <!-- soicail shares -->
-      <ul class="o-social-icons o-social-icons__list">
+      <!-- <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
-      </ul>
+      </ul> -->
     </div>
-    <div class="o-wrapper--row story__content">
-      <div class="story__body">
+
+    <div class="o-wrapper--row c-story__content">
+      <div class="c-story__body o-wp-editor">
         <!-- main content -->
-        <div class="u-video-container">
-          <anguvideo ng-model="story.video_url" width="100%"></anguvideo>
+        <div class="u-video-container c-story__video">
+          <anguvideo ng-model="story.video_url"></anguvideo>
         </div>
       </div>
+      <!-- sidebar -->
+      <div class="c-story__sidebar">
+        <div ng-if="story.excerpt" class="c-story__quote">
+          <div class="u-icon u-icon-quotation-mark-blueberry c-sidebar-quote__icon c-sidebar-quote__icon--story"></div>
+          <h2 ng-bind-html="story.excerpt" class="o-heading c-sidebar-quote__text c-sidebar-quote__text--story"></h2>
+          <div class="c-sidebar-quote__author-block c-sidebar-quote__author-block--story">
+            <span class="c-sidebar-quote__dash">—</span>
+            <span class="c-sidebar-quote__author">{{ story.hero }}<span>, {{ story.city[0].term_name }}</span></span>
+          </div>
+          <div class="u-icon u-icon-closed-captions"></div>
+        </div>
+        <!-- soicail shares -->
+        <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
+          <li class="o-social-icons__item">
+            <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+          </li>
+          <li class="o-social-icons__item">
+            <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          </li>
+        </ul>
+      </div>
+    </div>
     </div>
   </div>
 </div>

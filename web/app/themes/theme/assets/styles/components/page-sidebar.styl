@@ -1,0 +1,29 @@
+.c-page__sidebar
+  padding-bottom rem(30px)
+
+  // Scope style page sidebar paragraphs
+  p
+    @extend .o-paragraph
+    color $color--dark-gray
+  +media-query($screen, $bp--tablet--landscape)
+    col(4)
+    padding-bottom rem(50px)
+    padding-left rem(20px)
+  +media-query($screen, $bp--desktop)
+    col(5)
+    padding-left rem(35px)
+
+// Scope style page sidebar lists text
+.c-page__sidebar-list
+  @extend .o-paragraph
+  padding-left rem(20px)
+  color $color--dark-gray
+  +media-query($screen, $bp--tablet)
+    padding 0
+    margin-left rem(10px)
+    font-size $size--femto
+  +media-query($screen, $bp--desktop)
+    font-size $size--pico
+
+.c-page__sidebar-item
+  @extend .c-footnotes__list-item

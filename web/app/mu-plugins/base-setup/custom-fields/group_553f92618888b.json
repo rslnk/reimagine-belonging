@@ -6,7 +6,6 @@
             "key": "field_553f928c2fb78",
             "label": "Protagonist",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -16,13 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left"
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_553f92f52fb79",
             "label": "Protagonist name",
             "name": "protagonist_name",
-            "prefix": "",
             "type": "text",
             "instructions": "The name of the key character of the story. Protagonist's name is displayed on the story preview.",
             "required": 0,
@@ -44,7 +43,6 @@
             "key": "field_553f992db6caa",
             "label": "City",
             "name": "story_city",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "Select city from the list or add a new one.",
             "required": 0,
@@ -60,13 +58,14 @@
             "add_term": 1,
             "load_save_terms": 0,
             "return_format": "id",
-            "multiple": 0
+            "multiple": 0,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
             "key": "field_553fae200f0e1",
             "label": "Excerpt",
             "name": "excerpt",
-            "prefix": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -88,7 +87,6 @@
             "key": "field_553f9261b524e",
             "label": "Classification",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -98,13 +96,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left"
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_553f9261b5345",
             "label": "Story classification",
             "name": "taxonomies",
-            "prefix": "",
             "type": "repeater",
             "instructions": "<strong>Note:<\/strong> to reorder multiple selections drag items left or right.",
             "required": 0,
@@ -123,7 +121,6 @@
                     "key": "field_553f9261c8140",
                     "label": "Groups",
                     "name": "groups",
-                    "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -139,13 +136,14 @@
                     "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0
+                    "multiple": 0,
+                    "load_terms": 0,
+                    "save_terms": 1
                 },
                 {
                     "key": "field_553f9261c78ee",
                     "label": "Topics",
                     "name": "topics",
-                    "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -161,13 +159,14 @@
                     "add_term": 0,
                     "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0
+                    "multiple": 0,
+                    "load_terms": 0,
+                    "save_terms": 1
                 },
                 {
                     "key": "field_553f9261bf9d4",
                     "label": "Cities",
                     "name": "cities",
-                    "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -183,13 +182,14 @@
                     "add_term": 1,
                     "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0
+                    "multiple": 0,
+                    "load_terms": 0,
+                    "save_terms": 1
                 },
                 {
                     "key": "field_553f946ab9a12",
                     "label": "People",
                     "name": "people",
-                    "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -205,13 +205,14 @@
                     "add_term": 1,
                     "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0
+                    "multiple": 0,
+                    "load_terms": 0,
+                    "save_terms": 1
                 },
                 {
                     "key": "field_553f9261c85d8",
                     "label": "Tags",
                     "name": "tags",
-                    "prefix": "",
                     "type": "taxonomy",
                     "instructions": "",
                     "required": 0,
@@ -227,7 +228,9 @@
                     "load_save_terms": 1,
                     "return_format": "id",
                     "multiple": 0,
-                    "add_term": 1
+                    "add_term": 1,
+                    "load_terms": 0,
+                    "save_terms": 1
                 }
             ]
         },
@@ -235,7 +238,6 @@
             "key": "field_553f9261b5438",
             "label": "Related",
             "name": "",
-            "prefix": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -245,13 +247,13 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "left"
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_553f9261b551b",
             "label": "Related Stories",
             "name": "related_stories",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select stories related to this events. Use taxonomy filter to narrow search results, or use search to search by story title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
@@ -264,7 +266,7 @@
             "post_type": [
                 "story"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "taxonomy"
@@ -280,7 +282,6 @@
             "key": "field_553f9261b5601",
             "label": "Related Events",
             "name": "related_events",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select similar or related events. Use taxonomy filter to narrow search results, or use search to search by event title. Reorder multiple selections by dragging items up or down.",
             "required": 0,
@@ -293,7 +294,7 @@
             "post_type": [
                 "event"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "taxonomy"
@@ -323,5 +324,7 @@
     "hide_on_screen": [
         "page_attributes"
     ],
-    "modified": 1430249943
+    "active": 1,
+    "description": "Story basic information",
+    "modified": 1442324685
 }

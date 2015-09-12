@@ -4,7 +4,7 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="story-preview__item {{ story.preview_image_color }}" style="background-image: url({{story.preview_image}})">'+
+      template: '<div class="u-image-container u-image-ratio--square story-preview__item {{ story.preview_image_color }}" style="background-image: url({{story.preview_image}})">'+
                   '<div class="story-preview__color-overlay {{ story.preview_image_color }}"></div>' +
                   '<div class="story-preview__content">'+
                     '<div class="story-preview__title">' +

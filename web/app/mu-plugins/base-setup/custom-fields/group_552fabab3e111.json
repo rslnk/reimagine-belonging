@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5530dbfaa54a7",
@@ -156,7 +157,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_553110edd5ac7",
@@ -297,7 +299,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5530e22430857",
@@ -417,7 +420,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_552fae4884838",
@@ -495,7 +499,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_552f9923c3323",
@@ -820,7 +825,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5530dedb01821",
@@ -856,7 +862,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5546834c8a367",
@@ -934,7 +941,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_5530fe842e053",
@@ -1012,7 +1020,8 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top"
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_554397fb3dfce",
@@ -1190,5 +1199,8 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1435364443
+    "active": 1,
+    "description": "",
+    "modified": 1442015305,
+    "local": "json"
 }

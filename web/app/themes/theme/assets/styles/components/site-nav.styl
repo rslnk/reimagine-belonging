@@ -50,21 +50,25 @@
 
 ._site-nav__list--head li a
   display block
-  font-size $size--zeta
+  font-size $size--pico
   line-height rem(30px)
   color $base--font-color
   &:hover,
   &:focus
     color $color--mint
   +media-query($screen, $bp--tablet)
-    font-size $size--milli
     padding 0
+    font-size $size--femto
   +media-query($screen, $bp--tablet--landscape)
     padding 0 rem(12px)
   +media-query($screen, $bp--desktop)
     padding 0 rem(20px)
   +media-query($screen, $bp--desktop--medium)
     padding 0 rem(24px)
+
+._site-nav__list--head li:last-of-type a
+  // Remove right padding from the last element of navigation
+  padding-right 0
 
 .c-site-nav__list--footer
   .is-active a
@@ -79,20 +83,24 @@
 
 ._site-nav__list--footer li a
   display block
-  font-size $size--zeta
+  font-size $size--pico
   line-height rem(30px)
   color $color--white
   &:hover,
   &:focus
     color $color--mint
   +media-query($screen, $bp--tablet)
-    font-size $size--milli
+    font-size $size--femto
     padding-right rem(12px)
     padding-left rem(12px)
   +media-query($screen, $bp--desktop)
     padding-right rem(20px)
     padding-left rem(20px)
 
+._site-nav__list--footer li:first-of-type a
+  // Remove left padding from the first element of navigation
+  padding-left 0
+  
 .c-site-nav__list--footer-extra
   margin-top rem(20px)
   +media-query($screen, $bp--tablet)

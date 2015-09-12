@@ -6,7 +6,6 @@
             "key": "field_5532202ba30ac",
             "label": "Note",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -63,5 +62,8 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1430411334
+    "active": 1,
+    "description": "",
+    "modified": 1442015305,
+    "local": "json"
 }

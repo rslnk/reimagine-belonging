@@ -213,7 +213,7 @@ gulp.task('iconify', function() {
     defaultWidth: '60px',
     defaultHeight: '60px',
     svgoOptions: {
-      enabled: false,
+      enabled: true,
       options: {
         plugins: [
             { cleanupAttrs: true },
