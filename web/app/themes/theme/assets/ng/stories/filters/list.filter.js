@@ -29,7 +29,7 @@ angular.module('stories.list.filter', [])
         result = [];
 
         stories.forEach(function (story) {
-          if (!story.topics || !withinTopicsFilter(story.topics)) {
+          if (withinTopicsFilter(story.topics)) {
             result.push(story);
           }
         });
