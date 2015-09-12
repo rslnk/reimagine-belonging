@@ -32,11 +32,13 @@ angular.module('stories.list.controller', [
 
     if ($cookies.stories && !$cookies.stories.match('false')) {
       var arr = $cookies.stories.split('/');
-      if (arr.length > 2){
+      if (arr.length > 2 && !$cookies.stories.match('topics')){
         arr.splice(0,2);
         $location.path(arr.join('/'));
-        delete_cookie('stories');
+      } else {
+        $location.path();
       }
+      delete_cookie('stories');
     }
 
     $scope.loadConfig = function () {
@@ -51,6 +53,8 @@ angular.module('stories.list.controller', [
     $scope.loadConfig();
 
     $scope.toggleTopicInFilter = function (topic) {
+      $scope.page = 0;
+
       var i = $scope.filter.topics.indexOf(topic);
       if (i > -1) {
           $scope.filter.topics.splice(i,1);
