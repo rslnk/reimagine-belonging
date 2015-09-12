@@ -31,7 +31,7 @@
   <div ui-view></div>
 
   <div class="c-wrapper--row">
-    <ul class="pagination">
+    <ul class="pagination" ng-show="(stories|showStories:filter).length > perPage">
       <li ng-click="prevPage()" ng-show="page > 0">Previous</li>
       <li ng-repeat="(k, v) in getPages() track by $index" 
           ng-click="toPage(k)" 
