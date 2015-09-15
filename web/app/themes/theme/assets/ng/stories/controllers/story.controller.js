@@ -21,7 +21,7 @@ angular.module('stories.story.controller', [
           $scope.story = response;
           $scope.story.video_url = 'http://vimeo.com/' + $scope.story.story_video_id;
 
-          $('.lightbox').height($('main').height() + 100);
+          $('.o-lightbox').height($('main').height() + 100);
           $('html, body').animate({ scrollTop: 0 }, 200);
         });
     };

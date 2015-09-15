@@ -213,7 +213,7 @@ gulp.task('iconify', function() {
     defaultWidth: '60px',
     defaultHeight: '60px',
     svgoOptions: {
-      enabled: false,
+      enabled: true,
       options: {
         plugins: [
             { cleanupAttrs: true },
@@ -234,7 +234,7 @@ gulp.task('iconify', function() {
 // `gulp jshint` - Lints configuration JSON and project JS.
 gulp.task('jshint', function() {
   gulp.src([
-    'bower.json', 
+    'bower.json',
     'gulpfile.js'
   ].concat(project.js))
     .pipe($.jshint())
@@ -294,4 +294,3 @@ gulp.task('wiredep', function() {
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
 });
-

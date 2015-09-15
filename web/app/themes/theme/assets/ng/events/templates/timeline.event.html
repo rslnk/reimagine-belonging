@@ -1,17 +1,17 @@
-<div class="lightbox">
-  <div class="lightbox__wrapper">
+<div class="o-lightbox">
+  <div class="o-lightbox__wrapper">
     <!-- close button -->
-    <div class="lightbox__close u-icon u-icon-close" ng-click="closeLightbox()">Close</div>
+    <div class="c-lightbox__close u-icon u-icon-close-medium-gray" ng-click="closeLightbox()">Close</div>
 
-    <div class="o-wrapper--row event__header" >
+    <div class="o-wrapper--row c-event__header" >
       <!-- categories -->
-      <ul class="c-categories-chain c-categories-chain--story">
+      <ul class="c-categories-chain c-categories-chain--event">
         <li ng-repeat="timeline in event.timelines"
-          class="c-categories-chain__item o-btn c-btn--mint c-btn--small">
+          class="c-categories-chain__item o-btn c-btn--small c-btn--mint">
           {{ timeline.term_name }}
         </li>
         <li ng-repeat="topic in event.topics"
-          class="c-categories-chain__item o-btn c-btn--indigo c-btn--small"
+          class="c-categories-chain__item o-btn c-btn--small c-btn--indigo"
           ng-bind-html="topic.term_name">
         </li>
         <li ng-repeat="group in event.groups"
@@ -21,53 +21,74 @@
         </li>
       </ul>
       <!-- header -->
-      <h1 class="o-heading c-heading--page-title">{{ event.title }}</h1>
-
+      <h1 class="o-heading c-heading--event-title">{{ event.title }}</h1>
+      <div class="c-event__date">
+        <time datetime="{{ event.start_date  }}">{{ event.start_date  }}</time><time ng-if="event.end_date" datetime="{{ event.end_date  }}"> — {{ event.end_date  }}</time>
+      </div>
       <!-- impact
       <div>...</div>
       -->
 
       <!-- social shares -->
-      <ul class="o-social-icons o-social-icons__list">
+      <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
       </ul>
     </div>
 
-    <div class="o-wrapper--row event__content">
-      <div class="event__body">
+    <div class="o-wrapper--row">
+      <div class="c-event__body c-event__content o-wp-editor">
         <!-- main content -->
         <div ng-bind-html="event.main_content"></div>
       </div>
-      <div class="event__sidebar">
+      <div class="c-event__sidebar">
         <!-- sidebar -->
         <div ng-repeat="item in event.sidebar" ng-switch="item.type">
-          <div ng-switch-when="video">
-            <h4>{{ item.title }}</h4>
-            <iframe class="event__sidebar-video" ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen></iframe>
-            <p>{{ item.caption }}</p>
-            <a href="{{ item.credit_link }}">{{ item.credit }}</a>
+          <div ng-switch-when="video" class="c-sidebar-video">
+            <div class="u-video-container">
+              <anguvideo>
+                <iframe ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen></iframe>
+              </anguvideo>
+            </div>
+            <a ng-if="item.credit_link || item.credit" class="c-media-credits" href="{{ item.credit_link }}">{{ item.credit }}</a>
+            <h4 class="o-heading c-sidebar-video__title">{{ item.title }}</h4>
+            <p class="o-paragraph c-paragraph--sidebar c-sidebar-video__caption">{{ item.caption }}</p>
           </div>
-          <div ng-switch-when="sidenote">
-            <h4>{{ item.title }}</h4>
-            <p>{{ item.caption }}</p>
+          <div ng-switch-when="sidenote" class="c-sidebar-note">
+            <h4 ng-bind-html="item.title" class="o-heading c-sidebar-note__text c-sidebar-note__text--event">{{ item.title }}</h4>
+            <p class="o-paragraph c-paragraph--sidebar c-sidebar-note__caption">{{ item.caption }}</p>
+          </div>
+          <div ng-switch-when="quote" class="c-sidebar-quote">
+            <div class="u-icon u-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
+            <h4 ng-bind-html="item.text" class="o-heading c-sidebar-quote__text">{{ item.text }}</h4>
+            <div ng-if="item.author" class="c-sidebar-quote__author-block">
+              <span class="c-sidebar-quote__dash">—</span>
+              <span class="c-sidebar-quote__author">{{ item.author }}<span ng-if="item.source">, </span></span>
+              <span ng-if="item.source" class="c-sidebar-quote__source">{{ item.source }}</span>
+            </div>
+          </div>
+          <div ng-switch-when="image" class="c-sidebar-image">
+            <div class="u-image-container u-image-ratio--8x2 c-sidebar-image__item" style="background-image: url({{item.url}})"></div>
+            <a ng-if="item.credit_link || item.credit" class="c-media-credits" href="{{ item.credit_link }}">{{ item.credit }}</a>
+            <h4 ng-bind-html="item.title" class="o-heading c-sidebar-image__title">{{ item.title }}</h4>
+            <p class="o-paragraph c-paragraph--sidebar c-sidebar-image__caption">{{ item.caption }}</p>
           </div>
         </div>
       </div>
     </div>
     <div class="o-wrapper--row">
       <div ng-if="event.sources" class="o-footnotes c-footnotes--sources">
-        <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_sources_title }}</h4>
+        <h4 class="o-heading c-heading--section-title">{{ siteConfig.event_sources_title }}</h4>
         <!-- Sources -->
         <ol class="o-list o-list--decimal c-footnotes__list">
           <li ng-repeat="item in event.sources" ng-switch="item.source_type" class="c-footnotes__list-item">
             <span ng-switch-when="book">
-              <span ng-if="item.contributor_type && item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author!='0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.chapter">
                 "{{ item.chapter }}".
@@ -78,11 +99,11 @@
               <span ng-if="item.title && !item.url">
                 <em>{{ item.title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editor && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translator && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.
@@ -117,8 +138,8 @@
             </span>
 
             <span ng-switch-when="article">
-              <span ng-if="item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author!='0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.title && item.url">
                 "<a href="{{ item.url }}">{{ item.title }}</a>".
@@ -129,11 +150,11 @@
               <span ng-if="item.periodical_title">
                 <em>{{ item.periodical_title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editors && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translators && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.
@@ -180,8 +201,8 @@
             </span>
 
             <span ng-switch-when="misc">
-              <span ng-if="item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author=!'0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.title && item.url">
                 "<a href="{{ item.url }}">{{ item.title }}</a>".
@@ -192,11 +213,11 @@
               <span ng-if="item.periodical_title">
                 <em>{{ item.periodical_title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editors && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translators && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.
@@ -237,13 +258,13 @@
       </div>
 
       <div ng-if="event.resources" class="o-footnotes c-footnotes--resources">
-        <h4 class="o-heading c-heading--page-section-title">{{ siteConfig.event_resources_title }}</h4>
+        <h4 class="o-heading c-heading--section-title">{{ siteConfig.event_resources_title }}</h4>
         <!-- Resources -->
         <ol class="o-list o-list--decimal c-footnotes__list">
           <li ng-repeat="item in event.resources" ng-switch="item.resource_type" class=" c-footnotes__list-item">
             <span ng-switch-when="book">
-              <span ng-if="item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author=!'0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.chapter">
                 "{{ item.chapter }}".
@@ -254,11 +275,11 @@
               <span ng-if="item.title && !item.url">
                 <em>{{ item.title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editors && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translators && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.
@@ -293,8 +314,8 @@
             </span>
 
             <span ng-switch-when="article">
-              <span ng-if="item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author!='0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.title && item.url">
                 "<a href="{{ item.url }}">{{ item.title }}</a>".
@@ -305,11 +326,11 @@
               <span ng-if="item.periodical_title">
                 <em>{{ item.periodical_title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editors && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translators && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.
@@ -356,8 +377,8 @@
             </span>
 
             <span ng-switch-when="misc">
-              <span ng-if="item.authors">
-                {{ item.authors }}
+              <span ng-if="item.authors && item.author!='0'">
+                {{ item.authors }}.
               </span>
               <span ng-if="item.title && item.url">
                 "<a href="{{ item.url }}">{{ item.title }}</a>".
@@ -368,11 +389,11 @@
               <span ng-if="item.periodical_title">
                 <em>{{ item.periodical_title }}</em>.
               </span>
-              <span ng-if="item.editors">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}
+              <span ng-if="item.editors && item.editor!='0'">
+                {{ siteConfig.event_source_editors }} {{ item.editors }}.
               </span>
-              <span ng-if="item.translators">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}
+              <span ng-if="item.translators && item.translator!='0'">
+                {{ siteConfig.event_source_translators }} {{ item.translators }}.
               </span>
               <span ng-if="item.edition">
                 {{ siteConfig.event_source_edition}} {{ item.edition }}.

@@ -1,26 +1,36 @@
-.event__header
+.c-event__header
   padding-top rem(20px)
+  margin-bottom rem(20px)
   background-size cover
+  +media-query($screen, $bp--tablet)
+    margin-bottom rem(30px)
 
-.event__content
+.c-event__content
   background white
+  +media-query($screen, $bp--desktop)
+    padding-bottom rem(30px)
 
-.event__body
+.c-event__body
   col(12)
   +media-query($screen, $bp--desktop)
     col(8)
 
-.event__sidebar
+.c-event__body--full
   col(12)
-  +media-query($screen, $bp--desktop)
-    col(4)
 
-.event__sidebar-video
-  width 100%
-  height 300px
+.c-event__date
+  margin-top rem(5px)
+  margin-bottom rem(20px)
+  font-family $base--font-heading
+  font-weight $weight--thin
+  font-size $size--pico
+  letter-spacing rem(1.6px)
   +media-query($screen, $bp--tablet)
-    height 500px
+    margin-top rem(15px)
+    margin-bottom rem(25px)
   +media-query($screen, $bp--desktop)
-    height 200px
-  +media-query($screen, $bp--desktop-large)
-    height 300px
+    margin-top rem(20px)
+    margin-bottom rem(30px)
+    font-size $size--micro
+  +media-query($screen, $bp--desktop--medium)
+    font-size $size--milli

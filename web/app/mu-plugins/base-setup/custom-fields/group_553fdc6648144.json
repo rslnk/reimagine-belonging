@@ -6,7 +6,6 @@
             "key": "field_553fdc773ebb4",
             "label": "Select color",
             "name": "color",
-            "prefix": "",
             "type": "select",
             "instructions": "Assign color to the preview image.",
             "required": 0,
@@ -52,5 +51,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430249259
+    "active": 1,
+    "description": "",
+    "modified": 1442015305,
+    "local": "json"
 }

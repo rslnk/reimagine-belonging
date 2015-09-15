@@ -6,7 +6,6 @@
             "key": "field_55376de873210",
             "label": "<h2>About timeline<\/h2>",
             "name": "",
-            "prefix": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -23,7 +22,6 @@
             "key": "field_5536c3eae96fa",
             "label": "Title",
             "name": "taxonomy_title",
-            "prefix": "",
             "type": "text",
             "instructions": "Tip: use &#60strong&#62 tag for the words with strong importance. E.g. \"<strong>United States<\/strong> migration, citizenship and belonging timeline\".  ",
             "required": 0,
@@ -45,7 +43,6 @@
             "key": "field_5536c2960376b",
             "label": "Description",
             "name": "timeline_description",
-            "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -90,5 +87,8 @@
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1429696301
+    "active": 1,
+    "description": "",
+    "modified": 1442015305,
+    "local": "json"
 }

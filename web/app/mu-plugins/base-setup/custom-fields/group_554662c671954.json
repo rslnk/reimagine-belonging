@@ -6,7 +6,6 @@
             "key": "field_554662cd7b677",
             "label": "Sidenote title",
             "name": "page_sidenote_title",
-            "prefix": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -28,7 +27,6 @@
             "key": "field_554663597b67a",
             "label": "Sidenote text",
             "name": "page_sidenote_text",
-            "prefix": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -42,7 +40,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 5,
-            "new_lines": "br",
+            "new_lines": "wpautop",
             "readonly": 0,
             "disabled": 0
         }
@@ -72,5 +70,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430676373
+    "active": 1,
+    "description": "",
+    "modified": 1442147364
 }

@@ -1,20 +1,28 @@
-.filter-counter
+.c-filter-counter
   float left
   width 100%
   margin rem(20px) auto
 
-.filter-counter__item
+.c-filter-counter__item
   float left
   margin-right rem(20px)
   font-family $base--font-heading
-  font-size $size--zeta
+  font-size $size--femto
   font-style normal
   font-weight $weight--thin
-  letter-spacing rem(1px)
+  letter-spacing rem(0.5px)
   text-transform uppercase
-  color $color--dark-gray
+  color $color--medium-gray
   strong
     font-weight $weight--regular
     color $color--carbon-black
-  +media-query($screen, $bp--tablet--landscape)
-    font-size $size--delta
+  +media-query($screen, $bp--tablet)
+    margin-right rem(25px)
+    font-size $size--pico
+    letter-spacing rem(1px)
+  +media-query($screen, $bp--desktop)
+    margin-right rem(30px)
+    font-size $size--nano
+  +media-query($screen, $bp--desktop--medium)
+    margin-right rem(40px)
+    font-size $size--micro

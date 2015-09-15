@@ -6,7 +6,6 @@
             "key": "field_553fac90329d5",
             "label": "Text",
             "name": "text",
-            "prefix": "",
             "type": "wysiwyg",
             "instructions": "",
             "required": 0,
@@ -42,5 +41,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430247720
+    "active": 1,
+    "description": "",
+    "modified": 1442015307,
+    "local": "json"
 }

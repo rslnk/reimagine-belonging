@@ -6,7 +6,7 @@ angular
       replace: true,
       template: '<div class="countries-switcher">'+
                 '<h2 class="o-btn c-btn--mint c-btn--selector" ng-click="ctrl.toggle()">' +
-                    '{{ timeline.name }}' + 
+                    '{{ timeline.name }}' +
                     '<span class="u-icon u-icon-arrow-down-negative countries-switcher__icon"></span>'+
                 '</h2>'+
                 '<ul class="countries-switcher__list" ng-show="ctrl.open">'+

@@ -4,7 +4,7 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      template: '<div class="event-preview__item">'+
+      template: '<div class="u-image-container u-image-ratio--square event-preview__item">'+
                   '<div class="event-preview__image-overlay event-preview__image-overlay--gradient"></div>' +
                   '<div class="event-preview__image-overlay event-preview__image-overlay--solid"></div>' +
                   '<div class="event-preview__content">'+

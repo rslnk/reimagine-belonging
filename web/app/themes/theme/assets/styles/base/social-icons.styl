@@ -1,5 +1,6 @@
 .o-social-icons
   display block
+  width 100%
 
 .o-social-icons__list
   float left
@@ -7,10 +8,11 @@
 .c-social-icons__list--site-footer
   margin-top rem(10px)
   margin-bottom rem(10px)
-  float left
   +media-query($screen, $bp--tablet)
     margin 0
     float right
+
+//.c-social-icons__list--post-share
 
 .o-social-icons__item
   float left
@@ -18,9 +20,20 @@
 .o-icons-list__link
   display block
   margin-right rem(15px)
-  size rem(45px)
+  size rem(50px)
   background-size 100%
   text-indent rem(-9999px)
+
+.c-icons-list__link--post-share
+  margin-right rem(10px)
+  size rem(30px)
+  +media-query($screen, $bp--tablet)
+    margin-right rem(15px)
+    size rem(32px)
+  +media-query($screen, $bp--desktop)
+    size rem(32px)
+  +media-query($screen, $bp--desktop--medium)
+    size rem(36px)
 
 .c-icons-list__link--footer
   display block

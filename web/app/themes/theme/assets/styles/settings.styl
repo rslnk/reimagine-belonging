@@ -78,7 +78,7 @@
 // Setup standard widths to pass to media queries
 //
 
-$bp--mobile--portrait    = min-width 0
+$bp--mobile--portrait    = min-width 0px
 $bp--mobile--landscape   = min-width 400px
 $bp--tablet--portrait    = min-width 550px
 $bp--tablet--landscape   = min-width 767px
@@ -100,7 +100,8 @@ $color--white            = #ffffff
 $color--black            = #000000
 
 $color--light-gray       = #eeeef1
-$color--dark-gray        = #9b9ba5
+$color--medium-gray      = #9b9ba5
+$color--dark-gray        = #757580
 
 $color--carbon-black     = #232326
 $color--mint             = #33d1dc
@@ -122,23 +123,33 @@ $font--headings          = 'Proxima Nova W01', $font--main
 // 4. FONT SIZES
 //
 
-// Basic
-$size--alpha             = rem(36px)
-$size--beta              = rem(30px)
-$size--gamma             = rem(22px)
-$size--delta             = rem(18px)
-$size--epsilon           = rem(16px)
-$size--zeta              = rem(14px)
+// Extra small
+
+$size--yocto             = rem(6px)
+$size--zepto             = rem(8px)
+$size--atto              = rem(10px)
+$size--femto             = rem(12px)
+
+// Medium
+$size--pico              = rem(14px)
+$size--nano              = rem(16px)
+$size--micro             = rem(18px)
+$size--milli             = rem(20px)
+$size--centi             = rem(22px)
+$size--deci              = rem(24px)
+$size--deca              = rem(26px)
+$size--hecto             = rem(28px)
 
 // Extra large
-$size--giga              = rem(80px)
-$size--mega              = rem(65px)
-$size--kilo              = rem(45px)
+$size--kilo              = rem(30px)
+$size--mega              = rem(36px)
+$size--giga              = rem(40px)
+$size--tera              = rem(45px)
+$size--peta              = rem(55px)
+$size--exa               = rem(65px)
+$size--zetta             = rem(75px)
+$size--yotta             = rem(80px)
 
-// Extra small
-$size--milli             = rem(12px)
-$size--micro             = rem(10px)
-$size--nano              = rem(8px)
 
 //
 // 5. FONT WEIGHTS
@@ -160,7 +171,7 @@ $weight--black           = 900
 $base--font-heading      = $font--headings
 $base--font-body         = $font--main
 $base--font-color        = $color--carbon-black
-$base--font-size         = $size--epsilon
+$base--font-size         = $size--pico
 $base--line-height       = 1.2
 $base--spacing           = rem($base--line-height)
 $base--margin            = rem(25px)

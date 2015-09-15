@@ -8,6 +8,7 @@ angular.module('stories.list.controller', [
   ])
   .controller('ListController', [
     '$scope',
+    '$filter',
     '$http',
     '$location',
     '$cookies',
@@ -16,9 +17,12 @@ angular.module('stories.list.controller', [
     '$stateParams',
     'lodash',
     'ApiService',
-  function ($scope, $http, $location, $cookies, $cookieStore, $state, $stateParams, lodash, ApiService) {
+  function ($scope, $filter, $http, $location, $cookies, $cookieStore, $state, $stateParams, lodash, ApiService) {
     $scope.stories = [];
     $scope.config = {};
+
+    $scope.page = 0;
+    $scope.perPage = 15;
 
     $scope.filter = { topics: [], searchText: '' };
 
@@ -28,11 +32,13 @@ angular.module('stories.list.controller', [
 
     if ($cookies.stories && !$cookies.stories.match('false')) {
       var arr = $cookies.stories.split('/');
-      if (arr.length > 2){
+      if (arr.length > 2 && !$cookies.stories.match('topics')){
         arr.splice(0,2);
         $location.path(arr.join('/'));
-        delete_cookie('stories');
+      } else {
+        $location.path();
       }
+      delete_cookie('stories');
     }
 
     $scope.loadConfig = function () {
@@ -47,6 +53,8 @@ angular.module('stories.list.controller', [
     $scope.loadConfig();
 
     $scope.toggleTopicInFilter = function (topic) {
+      $scope.page = 0;
+
       var i = $scope.filter.topics.indexOf(topic);
       if (i > -1) {
           $scope.filter.topics.splice(i,1);
@@ -66,7 +74,7 @@ angular.module('stories.list.controller', [
           $scope.stories = response;
           // remove jquery stuff from ng app!!!! workaround for the berline milestone
           setTimeout(function () {
-            $('.lightbox').height($('main').height() + 100);
+            $('.o-lightbox').height($('main').height() + 100);
           }, 250);
         });
     };
@@ -89,6 +97,34 @@ angular.module('stories.list.controller', [
 
     $scope.openStory = function (slug) {
       $state.go('list.story', { story: slug });
+    };
+
+    $scope.getPages = function () {
+      var total = $filter('showStories')($scope.stories, $scope.filter).length;
+      var pages = Math.ceil(total/$scope.perPage);
+      return new Array( pages );
+    };
+
+    $scope.nextPage = function () {
+      $scope.page += 1;
+    };
+
+    $scope.prevPage = function () {
+      $scope.page -= 1;
+    };
+
+    $scope.toPage = function (page) {
+      $scope.page = page;
+    };
+
+    $scope.inPaginatorScope = function (i) {
+      var min = $scope.page*$scope.perPage;
+      var max = min + $scope.perPage;
+      return (i >= min && i < max);
+    };
+
+    $scope.activePage = function (i) {
+      return (i === $scope.page);
     };
 
   }]);

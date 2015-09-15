@@ -6,7 +6,6 @@
             "key": "field_553fe1105c9f0",
             "label": "Embeded audio",
             "name": "story_oembed_audio",
-            "prefix": "",
             "type": "oembed",
             "instructions": "",
             "required": 0,
@@ -40,5 +39,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430503081
+    "active": 1,
+    "description": "",
+    "modified": 1442015307,
+    "local": "json"
 }

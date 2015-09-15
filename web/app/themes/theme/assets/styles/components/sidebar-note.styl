@@ -1,0 +1,29 @@
+//.c-sidebar-note
+
+.c-sidebar-note__text
+  margin-bottom rem(15px)
+  font-weight $weight--thin
+  line-height 1.3
+  color $color--mint
+  strong, em, b
+    font-weight $weight--regular
+
+.c-sidebar-note__text--event
+  font-size $size--micro
+  +media-query( $screen, $bp--tablet )
+    font-size $size--deci
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--mega
+
+.c-sidebar-note__text--page
+  font-size $size--centi
+  +media-query( $screen, $bp--tablet )
+    font-size $size--deca
+  +media-query( $screen, $bp--desktop )
+    font-size $size--mega
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--tera
+    line-height 1.2
+
+.c-sidebar-note__caption
+  color $color--dark-gray

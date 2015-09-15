@@ -1,0 +1,34 @@
+.c-pagination
+  float left
+  width 100%
+  margin rem(20px) auto
+
+.c-pagination__icon
+  margin-right rem(30px)
+  display inline-block
+  size rem(25px)
+  background-size: 100%
+
+.c-pagination__item
+  display inline-block
+  margin-right rem(20px)
+  font-family $base--font-heading
+  font-size $size--femto
+  font-style normal
+  font-weight $weight--thin
+  letter-spacing rem(0.5px)
+  text-transform uppercase
+  color $color--medium-gray
+  strong
+    font-weight $weight--regular
+    color $color--carbon-black
+  +media-query($screen, $bp--tablet)
+    margin-right rem(15px)
+    font-size $size--pico
+    letter-spacing rem(1px)
+  +media-query($screen, $bp--desktop)
+    margin-right rem(20px)
+    font-size $size--nano
+  +media-query($screen, $bp--desktop--medium)
+    margin-right rem(20px)
+    font-size $size--micro
