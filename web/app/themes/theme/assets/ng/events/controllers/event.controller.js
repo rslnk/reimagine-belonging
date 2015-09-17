@@ -58,6 +58,7 @@ angular.module('events.event.controller', [
           if ($scope.event.sources) {
             $scope.event.sources.map(function (item) {
               if (item.author) {
+                console.log('hellow');
                 item.authors = convertContributors(item.author);
               }
 

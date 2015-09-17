@@ -23,7 +23,9 @@
       <!-- header -->
       <h1 class="o-heading c-heading--event-title">{{ event.title }}</h1>
       <div class="c-event__date">
-        <time datetime="{{ event.start_date  }}">{{ event.start_date  }}</time><time ng-if="event.end_date" datetime="{{ event.end_date  }}"> — {{ event.end_date  }}</time>
+        <dateformat thedate="{{event.start_date}}" lang="EN" unknown="{{event.exact_dates_uknown}}"></dateformat>
+        <span ng-show="event.end_date"> &mdash; </span>
+        <dateformat ng-show="event.end_date" thedate="{{event.end_date}}" lang="EN" unknown="{{event.exact_dates_uknown}}"></dateformat>
       </div>
       <!-- impact
       <div>...</div>

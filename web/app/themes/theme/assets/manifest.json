@@ -8,6 +8,7 @@
         "ng/events/directives/preview.directive.js",
         "ng/events/directives/countries.directive.js",
         "ng/events/directives/carousel.directive.js",
+        "ng/events/directives/dateformat.directive.js",
         "ng/events/controllers/timeline.controller.js",
         "ng/events/controllers/event.controller.js",
         "ng/constants.js",
