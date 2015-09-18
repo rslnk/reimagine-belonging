@@ -1,8 +1,22 @@
 .c-site-head
   position relative
-  z-index 1000
+  z-index 100
   border-bottom solid 1px #f3f3f3
   background-color $color--white
   +media-query( $screen, $bp--tablet )
     padding-top: rem(10px)
     padding-bottom: rem(10px)
+
+.c-site-head--home
+  width 100%
+  position absolute
+  padding 0
+  top rem(15px)
+  border-bottom none
+  background-color transparent
+  +media-query( $screen, $bp--tablet )
+    top rem(25px)
+  +media-query( $screen, $bp--desktop )
+    top rem(35px)
+  +media-query( $screen, $bp--desktop--medium )
+    top rem(40px)

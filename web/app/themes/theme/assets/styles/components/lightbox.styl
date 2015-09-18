@@ -6,11 +6,15 @@
   width 100%
   max-width 100%
   overflow-x hidden
-  background-color rgba(0, 0, 0, .5)
+  background-color rgba(0, 0, 0, .65)
   +media-query($screen, $bp--tablet)
     padding rem(40px)
   +media-query($screen, $bp--desktop)
     padding rem(60px)
+  +media-query($screen, $bp--desktop--medium)
+    padding rem(60px) rem(80px)
+  +media-query($screen, $bp--desktop--large)
+    padding rem(60px) rem(120px)
 
 .o-lightbox__wrapper
   position relative
@@ -27,7 +31,7 @@
   +media-query($screen, $bp--desktop--medium)
     padding rem(20px) rem(80px)
   +media-query($screen, $bp--desktop--large)
-    padding rem(20px) rem(100px)
+    padding rem(20px) rem(80px)
 
 //.c-lightbox__wrapper--event
 

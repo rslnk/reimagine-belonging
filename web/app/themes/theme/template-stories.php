@@ -1,13 +1,11 @@
 <?php
 /**
- * Template Name: Stories
+ * Template Name: Stories (Angular app)
  */
 ?>
-<main class="o-wrapper--row">
+<main class="o-row">
   <div class="o-wrapper">
-    <h1 class="o-heading c-heading--page-title">
-      <?php the_field('subtitle') ?>
-    </h1>
+    <?php get_template_part('templates/page', 'head'); ?>
   </div>
   <div ng-app="storiesApp">
     <div ui-view></div>
