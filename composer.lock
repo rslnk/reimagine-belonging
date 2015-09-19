@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1c51b629c19c1dd0580303bbfdf8dcee",
+    "hash": "b9f06e6fc378f129972025017dda1fca",
     "packages": [
         {
             "name": "advancedcustomfields/acf-pro",
@@ -297,26 +297,6 @@
                 "environment"
             ],
             "time": "2015-05-30 16:15:01"
-        },
-        {
-            "name": "wpackagist-plugin/password-protected",
-            "version": "2.0.1",
-            "source": {
-                "type": "svn",
-                "url": "http://plugins.svn.wordpress.org/password-protected/",
-                "reference": "tags/2.0.1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/password-protected.2.0.1.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/password-protected/"
         }
     ],
     "packages-dev": [],
