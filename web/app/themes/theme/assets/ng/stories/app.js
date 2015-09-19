@@ -1,24 +1,25 @@
 angular.module('storiesApp', [
     'ui.router',
-    'constants', 
+    'constants',
     'api.service',
     'stories.list.controller',
-    'stories.story.controller'
+    'stories.story.controller',
+    'stories.preview.directive'
   ])
   .run([
-    '$rootScope', 
-    '$state', 
-    '$stateParams', 
+    '$rootScope',
+    '$state',
+    '$stateParams',
     function($rootScope, $state, $stateParams){
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
     }
   ])
   .config([
-    '$stateProvider', 
-    '$urlRouterProvider', 
+    '$stateProvider',
+    '$urlRouterProvider',
     '$locationProvider',
-    'templatesPath', 
+    'templatesPath',
     function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
       $locationProvider.html5Mode(true);
       $stateProvider
