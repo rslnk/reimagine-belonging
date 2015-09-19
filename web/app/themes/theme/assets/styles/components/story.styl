@@ -8,12 +8,16 @@
   padding 0
 
 .c-story__body
-  padding-bottom rem(40px)
+  padding-bottom rem(20px)
   col(12)
+  +media-query($screen, $bp--tablet)
+    padding-bottom rem(25px)
   +media-query($screen, $bp--desktop)
     col(8)
+    padding-bottom rem(35px)
   +media-query($screen, $bp--desktop--medium)
     col(9)
+    padding-bottom rem(40px)
 
 //.c-story__video
 .c-story__hero
@@ -24,6 +28,8 @@
   font-size $size--pico
   text-transform uppercase
   letter-spacing rem(1.6px)
+  strong, em
+    font-weight $weight--semibold
   +media-query($screen, $bp--tablet)
     margin-top rem(15px)
     margin-bottom rem(25px)

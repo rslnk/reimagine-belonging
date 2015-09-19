@@ -14,10 +14,12 @@
       ng-bind-html="topic.name">
     </li>
   </ul>
-  <ul class="c-filter-counter">
-    <li class="c-filter-counter__item">{{ siteConfig.timeline_total_events_label }}: <strong>{{ events.length }}</strong></li>
-    <li class="c-filter-counter__item" ng-show="events.length != (events|filter: {hide: false}).length">{{ siteConfig.timeline_filtered_events_label }}: <strong>{{ (events|filter: {hide: false}).length}}</strong></li>
-  </ul>
+  <div class="o-story-filter-results">
+    <ul class="c-story-filter-results__counter">
+      <li class="c-filter-results__item">{{ siteConfig.timeline_total_events_label }}: <strong>{{ events.length }}</strong></li>
+      <li class="c-filter-results__item" ng-show="events.length != (events|filter: {hide: false}).length">{{ siteConfig.timeline_filtered_events_label }}: <strong>{{ (events|filter: {hide: false}).length}}</strong></li>
+    </ul>
+  </div>
 </div>
 <div class="o-row">
   <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">

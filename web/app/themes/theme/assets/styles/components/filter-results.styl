@@ -1,0 +1,66 @@
+.o-story-filter-results
+  display block
+  font-family $base--font-heading
+  font-size $size--femto
+  font-style normal
+  font-weight $weight--thin
+  letter-spacing rem(0.5px)
+  text-transform uppercase
+  color $color--medium-gray
+  clearfix()
+  strong
+    font-weight $weight--regular
+    color $color--carbon-black
+  +media-query($screen, $bp--tablet)
+    font-size $size--pico
+    letter-spacing rem(1px)
+  +media-query($screen, $bp--desktop)
+    font-size $size--nano
+  +media-query($screen, $bp--desktop--medium)
+    letter-spacing rem(2px)
+    font-size $size--micro
+
+.c-story-filter-results__counter
+  float left
+  width 100%
+  margin rem(20px) auto
+  +media-query($screen, $bp--tablet)
+    width 50%
+
+.c-story-filter-results__item
+  float left
+  margin-right rem(20px)
+  +media-query($screen, $bp--tablet)
+    margin-right rem(25px)
+  +media-query($screen, $bp--desktop)
+    margin-right rem(30px)
+  +media-query($screen, $bp--desktop--medium)
+    margin-right rem(40px)
+
+.c-story-filter-results__pagination
+  float left
+  margin-bottom rem(20px)
+  +media-query($screen, $bp--tablet)
+    float right
+    margin rem(20px) 0
+    width auto
+
+// Should be moved to a separate file
+.c-pagination__item
+  cursor pointer
+  float left
+  margin-right rem(10px)
+  padding 0 rem(2px)
+  strong
+    font-weight $weight--regular
+    color $color--carbon-black
+  +media-query($screen, $bp--tablet)
+    margin-right rem(10px)
+  +media-query($screen, $bp--desktop)
+    margin-right rem(13px)
+  +media-query($screen, $bp--desktop--medium)
+    margin-right rem(15px)
+
+.c-pagination__item--active
+  font-weight $weight--regular
+  color $color--carbon-black

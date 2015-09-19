@@ -84,6 +84,22 @@
             },
             "width": "",
             "height": ""
+        },
+        {
+            "key": "field_55fcc971a1bf7",
+            "label": "Subtitles",
+            "name": "subtitles_notification",
+            "type": "true_false",
+            "instructions": "Show on subtitles notification for this video",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show on subtitles notification?",
+            "default_value": 0
         }
     ],
     "location": [
@@ -108,6 +124,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1442015306,
-    "local": "json"
+    "modified": 1442630132
 }
