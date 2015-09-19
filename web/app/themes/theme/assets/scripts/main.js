@@ -23,14 +23,38 @@
     'common': {
       init: function() {
         // JavaScript to be fired on all pages
-        $('.js-toggleNavMenu').on('click', function(e) {
+
+        // Make footer stick to the bottom of the page
+        // using this solution http://jsfiddle.net/ed4xe1z9/
+        function makeFooterSticky() {
+          $('main').css('padding-bottom', $('footer').height());
+          $('footer').css('margin-top', - $('footer').height());
+        }
+
+        if ( $(window).width() >= 550) {
+          // Script for large screens
+
+          makeFooterSticky();
+
+          $(window).resize(function () {
+            makeFooterSticky();
+          });
+
+        }
+        else {
+          // Script to run on small screens
+          //
+        }
+
+        // Toggle head navigation menu on mobile screen
+        $('.js-toggle-nav-menu').on('click', function(e) {
           e.preventDefault();
-          $('._site-nav__list--head').toggle();
+          $('.c-site-nav__list--head').toggle();
         });
-        
-        // all mess here is just a warkaround to fix the lightbox for the berline milestone
+
+        // all mess here is just a warkaround to fix the lightbox for the berlin milestone
         function setLightboxHeight () {
-          $('.lightbox').height($('main').height() + 100);
+          $('.o-lightbox').height($('main').height() + 100);
         }
 
         $(window).resize(function () {
@@ -46,19 +70,32 @@
     'home': {
       init: function() {
         // JavaScript to be fired on the home page
-        function resizeHomeBlock () {
+
+        // Fit homepage content to viewport height
+        function setHomepageHeight () {
           var elt = $('.js-main-block');
           var windowH = $(window).height();
           var footerH = $('footer').height();
           var headerH = $('header').height();
-          var shift = 100;
-          var h = windowH - headerH - footerH - shift;
+          var h = windowH - footerH;
           elt.height(h);
         }
 
-        resizeHomeBlock();
+        function setHomepageContentMargin () {
+          var windowH = $(window).height();
+          var footerH = $('footer').height();
+          var contentH = $('.js-content-block').height();
+          var mt = (windowH - footerH)/1.65 - contentH/2;
+          $('.js-content-block').css('margin-top', mt);
+        }
 
-        $(window).resize(resizeHomeBlock);
+        setHomepageHeight();
+        setHomepageContentMargin();
+
+        $(window).resize( function() {
+          setHomepageHeight();
+          setHomepageContentMargin();
+        });
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

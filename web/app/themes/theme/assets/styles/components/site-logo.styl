@@ -16,6 +16,16 @@
     margin-top rem(6px)
     size rem(200px) rem(19px)
 
+.c-site-logo--nav--home
+  +media-query($screen, $bp--tablet)
+    float left
+    //margin-top rem(6px)
+    size rem(300px) rem(28px)
+  +media-query($screen, $bp--desktop)
+    float left
+    //margin-top rem(6px)
+    size rem(250px) rem(25px)
+
 // Reimagine Belonging
 .c-site-logo--home-intro
   display none
@@ -31,7 +41,8 @@
 // Reimagine
 // Belonging
 .c-site-logo-alt--home-intro
-  display inline-block
+  //display inline-block
+  display none
   size rem(290px) rem(110px)
   background-size contain
    +media-query($screen, $bp--mobile--landscape)

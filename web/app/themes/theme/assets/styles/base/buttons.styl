@@ -30,6 +30,7 @@ button,
   font-family $base--font-heading
   font-weight $weight--thin
   text-transform uppercase
+  text-align center
 
 // 2. Size modifiers
 .c-btn--small
@@ -60,21 +61,23 @@ button,
     font-size $size--micro
 
 .c-btn--large
-  padding rem(25px) rem(40px)
-  font-size $size--nano
+  padding rem(23px) rem(36px)
+  font-size $size--micro
   letter-spacing rem(2px)
-  min-width 90%
   +media-query($screen, $bp--tablet)
-    min-width rem(220px)
-    font-size $size--nano
-  +media-query($screen, $bp--tablet--landscape)
-    min-width rem(240px)
-  +media-query($screen, $bp--desktop)
-    padding rem(23px) rem(35px)
-    min-width rem(260px)
+    padding rem(16px) rem(24px)
+    min-width rem(160px)
     font-size $size--femto
+  +media-query($screen, $bp--tablet--landscape)
+    padding rem(19px) rem(26px)
+    min-width rem(200px)
+    font-size $size--pico
+  +media-query($screen, $bp--desktop)
+    padding rem(19px) rem(26px)
+    min-width rem(200px)
+    font-size $size--pico
   +media-query($screen, $bp--desktop--medium)
-    padding rem(21px) rem(50px)
+    padding rem(22px) rem(34px)
     font-size $size--centi
 
 // 3. Color modifiers

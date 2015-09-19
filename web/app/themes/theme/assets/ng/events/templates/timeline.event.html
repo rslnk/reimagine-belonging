@@ -3,7 +3,7 @@
     <!-- close button -->
     <div class="c-lightbox__close u-icon u-icon-close-medium-gray" ng-click="closeLightbox()">Close</div>
 
-    <div class="o-wrapper--row c-event__header" >
+    <div class="c-event__header" >
       <!-- categories -->
       <ul class="c-categories-chain c-categories-chain--event">
         <li ng-repeat="timeline in event.timelines"
@@ -42,7 +42,7 @@
       </ul>
     </div>
 
-    <div class="o-wrapper--row">
+    <div class="o-row">
       <div class="c-event__body c-event__content o-wp-editor">
         <!-- main content -->
         <div ng-bind-html="event.main_content"></div>
@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-    <div class="o-wrapper--row">
+    <div class="o-row">
       <div ng-if="event.sources" class="o-footnotes c-footnotes--sources">
         <h4 class="o-heading c-heading--section-title">{{ siteConfig.event_sources_title }}</h4>
         <!-- Sources -->
@@ -436,7 +436,7 @@
       </div>
     </div>
 
-    <ul class="o-wrapper--row">
+    <ul class="o-row">
       <li ng-click="openEvent(item.slug)" ng-repeat="item in event.related_events">
         <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
       </li>
