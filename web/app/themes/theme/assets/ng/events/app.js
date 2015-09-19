@@ -7,7 +7,8 @@ angular.module('eventsApp', [
     'events.event.controller',
     'events.preview.directive',
     'events.countries.directive',
-    'events.carousel.directive'
+    'events.carousel.directive',
+    'events.dateformat.directive'
   ])
   .run([
     '$rootScope', 
