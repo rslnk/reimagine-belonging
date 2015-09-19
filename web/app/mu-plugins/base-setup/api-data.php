@@ -223,6 +223,8 @@ class API_Data {
       'flitered_stories_label'                => get_field('flitered_stories_label', 'option'),
       'stories_load_more_label'               => get_field('stories_load_more_label', 'option'),
       'stories_search_result_none_message'    => get_field('stories_search_result_none_message', 'option'),
+      'story_cc_notice_title'                 => get_field('story_cc_notice_title', 'option'),
+      'story_cc_notice_text'                  => get_field('story_cc_notice_text', 'option'),
 
       // Timeline
       'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
@@ -550,6 +552,9 @@ class API_Data {
       'story_video_host'             => $post->story_video_host,
       'story_video_id'               => $post->story_video_id,
       'story_oembed_video'           => $post->story_oembed_video,
+
+      // If post subtitles notification is checked
+      'subtitles_notification'       => $post->subtitles_notification,
 
       // If post format is Audio
       'story_oembed_audio'           => $post->story_oembed_audio,

@@ -12,14 +12,22 @@
         ng-bind-html="topic.name">
       </li>
     </ul>
-    <ul class="c-filter-counter">
-      <li class="c-filter-counter__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
-      <li class="c-filter-counter__item" ng-show="stories.length != (stories|showStories:filter).length">
-        {{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|showStories:filter).length}}</strong>
-      </li>
-    </ul>
+    <div class="o-story-filter-results">
+      <ul class="c-story-filter-results__counter">
+        <li class="c-story-filter-results__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
+        <li class="c-story-filter-results__item" ng-show="stories.length != (stories|showStories:filter).length">
+          {{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|showStories:filter).length}}</strong>
+        </li>
+      </ul>
+      <ul class="c-story-filter-results__pagination" ng-show="(stories|showStories:filter).length > perPage">
+        <li class="c-story-filter-results__item">Pages:</li>
+        <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item c-pagination__item--stories"
+            ng-click="toPage(k)"
+            ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}</li>
+      </ul>
+    </div>
   </div>
-  <div class="c-wrapper--row">
+  <div class="o-row">
     <story-preview
       class="story-preview__item"
       ng-click="openStory(story.slug)"
@@ -27,15 +35,4 @@
       ng-repeat="(k, story) in stories|showStories:filter" ng-show="inPaginatorScope(k)">
     </story-preview>
   </div>
-
   <div ui-view></div>
-
-  <div class="o-wrapper c-wrapper--row">
-    <ul class="c-pagination c-pagination--stories" ng-show="(stories|showStories:filter).length > perPage">
-      <li ng-click="prevPage()" ng-show="page > 0" class="c-pagination__item c-pagination__icon u-icon u-icon-arrow-left"></li>
-      <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item "
-          ng-click="toPage(k)"
-          ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}</li>
-      <li ng-click="nextPage()" ng-show="page < (getPages()).length-1" class="c-pagination__icon u-icon u-icon-arrow-right"></li>
-    </ul>
-  </div>
