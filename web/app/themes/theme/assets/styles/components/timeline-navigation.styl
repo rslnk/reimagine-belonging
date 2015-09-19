@@ -1,3 +1,7 @@
+.o-timeline_events-preview
+  display block
+  clearfix()
+
 .owl-carousel
   float left
 
@@ -8,6 +12,8 @@
   height rem(50px)
   float left
   text-align center
+  +media-query($screen, $bp--tablet)
+    margin-bottom rem(40px)
   +media-query($screen, $bp--desktop)
     margin-bottom rem(40px)
   +media-query($screen, $bp--desktop--medium)

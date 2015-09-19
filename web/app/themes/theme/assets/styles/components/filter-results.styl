@@ -1,5 +1,6 @@
-.o-story-filter-results
+.o-filter-results
   display block
+  min-height rem(50px)
   font-family $base--font-heading
   font-size $size--femto
   font-style normal
@@ -20,14 +21,14 @@
     letter-spacing rem(2px)
     font-size $size--micro
 
-.c-story-filter-results__counter
+.c-filter-results__counter
   float left
   width 100%
   margin rem(20px) auto
   +media-query($screen, $bp--tablet)
     width 50%
 
-.c-story-filter-results__item
+.c-filter-results__item
   float left
   margin-right rem(20px)
   +media-query($screen, $bp--tablet)
@@ -37,7 +38,7 @@
   +media-query($screen, $bp--desktop--medium)
     margin-right rem(40px)
 
-.c-story-filter-results__pagination
+.c-filter-results__pagination
   float left
   margin-bottom rem(20px)
   +media-query($screen, $bp--tablet)

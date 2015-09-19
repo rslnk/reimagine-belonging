@@ -12,15 +12,15 @@
         ng-bind-html="topic.name">
       </li>
     </ul>
-    <div class="o-story-filter-results">
-      <ul class="c-story-filter-results__counter">
-        <li class="c-story-filter-results__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
-        <li class="c-story-filter-results__item" ng-show="stories.length != (stories|showStories:filter).length">
+    <div class="o-filter-results">
+      <ul class="c-filter-results__counter">
+        <li class="c-filter-results__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
+        <li class="c-filter-results__item" ng-show="stories.length != (stories|showStories:filter).length">
           {{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|showStories:filter).length}}</strong>
         </li>
       </ul>
-      <ul class="c-story-filter-results__pagination" ng-show="(stories|showStories:filter).length > perPage">
-        <li class="c-story-filter-results__item">Pages:</li>
+      <ul class="c-filter-results__pagination" ng-show="(stories|showStories:filter).length > perPage">
+        <li class="c-filter-results__item">Pages:</li>
         <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item c-pagination__item--stories"
             ng-click="toPage(k)"
             ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}</li>
