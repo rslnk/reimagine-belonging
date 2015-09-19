@@ -232,13 +232,14 @@
     font-size $size--centi
 
 .c-heading--story-preview
+  //backface-visibility hidden
   font-size $size--kilo
   font-weight $weight--thin
   line-height 1.15
   text-transform none
   color $color--white
   display inline
-  background-size 200% // background size for 'marker highlight' animation
+  background-size 201% // background size for 'marker highlight' animation
   transition: .5s ease-in-out
   background-position 0 0
   // Gradient colors for 'marker highlight' animation on .story-preview__title rollover

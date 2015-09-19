@@ -44,10 +44,7 @@
     cursor pointer
     // 'marker highlight' heading animation on rollover
     .c-heading--story-preview
-      background-position -100%
-    // play icon scale animation n rollover
-    .story-preview__icon
-      transform scale(1.1)
+      background-position -99%
 
 .story-preview__color-overlay
   display block
@@ -107,10 +104,8 @@
   position absolute
   size rem(45px)
   background-size: 100%
-  transition: .2s ease-in-out
   &:hover
     cursor pointer
-    transform scale(1.1)
   +media-query($screen, $bp--mobile--landscape)
     size rem(50px)
     absolute false rem(25px) rem(35px) false
