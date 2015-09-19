@@ -3,15 +3,17 @@
 
 .c-home__image
   // Set background image so that it looks good on every screen
-  background-position 80% 0
+  background-position 65% 0
   +media-query($screen, $bp--mobile--landscape)
     background-position 90% 20%
   +media-query($screen, $bp--tablet)
     background-position 80% 50%
   +media-query($screen, $bp--tablet--landscape)
-    background-position 90% 0
+    background-position 70% 0
   +media-query($screen, $bp--desktop)
-    background-position 50% 0
+    background-position 0
+  +media-query($screen, $bp--desktop--large)
+    background-position 50% 20%
 
 .c-home__content
   position relative
@@ -21,7 +23,7 @@
   +media-query($screen, $bp--tablet)
     height auto
   +media-query($screen, $bp--tablet--landscape)
-    height rem(120px) // same in order to keep design neat on vertical iPad
+    height rem(60px) // same in order to keep design neat on vertical iPad
   +media-query($screen, $bp--desktop)
     height auto
 
@@ -46,11 +48,21 @@
   padding-bottom 0 // fix uneven padding
   font-size $size--kilo
   background-color rgba(239, 239, 241, 0.3)
+  +media-query($screen, $bp--mobile--landscape)
+    margin-right rem(2px)
+    margin-bottom rem(2px)
+    padding rem(8px) rem(10px)
+    font-size $size--femto
   +media-query($screen, $bp--tablet)
     margin-right rem(4px)
     margin-bottom rem(4px)
     padding rem(12px) rem(13px)
     font-size $size--deca
+  +media-query($screen, $bp--desktop)
+    margin-right rem(2px)
+    margin-bottom rem(2px)
+    padding rem(10px) rem(12px)
+    font-size $size--deci
   +media-query($screen, $bp--desktop--medium)
     margin-right rem(4px)
     margin-bottom rem(4px)

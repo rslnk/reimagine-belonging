@@ -11,7 +11,7 @@ use Roots\Sage\Wrapper;
     <?php
       // Add extra classes and styles to the site wrapper on the homepage
       $home_wrapper_classes = 'u-image-container c-home__image';
-      $home_wrapper_syle = 'style="background-image: url(' . get_template_directory_uri()  . '/dist/images/homepage-intro-image--1.0.jpg);"';
+      $home_wrapper_syle = 'style="background-image: url(' . get_template_directory_uri()  . '/dist/images/homepage-intro-image--1.1.jpg);"';
     ?>
     <div class="o-site-wrapper <?php if(is_front_page()) echo $home_wrapper_classes ?>" <?php if(is_front_page()) echo $home_wrapper_syle ?>>
       <!--[if lt IE 9]>
