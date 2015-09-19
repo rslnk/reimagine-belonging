@@ -61,15 +61,15 @@
             "disabled": 0
         },
         {
-            "key": "field_55439c35698e6",
-            "label": "Facebook App ID",
-            "name": "facebook_app_id",
+            "key": "field_5547409311978",
+            "label": "Facebook admin ID",
+            "name": "facebook_user_id",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 60,
+                "width": 33,
                 "class": "",
                 "id": ""
             },
@@ -82,23 +82,44 @@
             "disabled": 0
         },
         {
-            "key": "field_5547409311978",
-            "label": "Facebook plugins language",
-            "name": "facebook_plugins_language",
+            "key": "field_55439c35698e6",
+            "label": "Facebook App ID",
+            "name": "facebook_app_id",
             "type": "text",
-            "instructions": "Format: en_US.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 40,
+                "width": 33,
                 "class": "",
                 "id": ""
             },
-            "default_value": "en_US",
-            "placeholder": "en_US",
+            "default_value": "",
+            "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": 5,
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd9d761aeae",
+            "label": "Facebook Page ID",
+            "name": "facebook_page_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 33,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -165,11 +186,11 @@
             "label": "Language",
             "name": "site_language",
             "type": "text",
-            "instructions": "Set language for site's data output (e.g.. dates). Enter two letters language code. E.g. \"EN\" in accordance with <a href=\"http:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\">ISO 639-1<\/a> nomencalture. See the <a href=\"http:\/\/www.sitepoint.com\/web-foundations\/iso-2-letter-language-codes\/\">list of available codes<\/a>.",
+            "instructions": "Set language for site's data output (e.g.. dates). Enter two letters language code. E.g. \"en_US\" in accordance with <a href=\"http:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\">ISO 639-1<\/a> nomencalture. See the <a href=\"http:\/\/www.sitepoint.com\/web-foundations\/iso-2-letter-language-codes\/\">list of available codes<\/a>.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 65,
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -177,7 +198,152 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": 2,
+            "maxlength": 5,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd9f50bc947",
+            "label": "Alternative language",
+            "name": "site_language_alt",
+            "type": "text",
+            "instructions": "Set site's alternative language. <br\/>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 5,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd8c8954514",
+            "label": "Meta",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_55fd8ca354515",
+            "label": "Site name",
+            "name": "meta_site_name",
+            "type": "text",
+            "instructions": "The name which should be displayed for the overall site, e.g. \"REIMAGINE BELONGING.ORG\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd8d6654516",
+            "label": "Default title",
+            "name": "meta_title_default",
+            "type": "text",
+            "instructions": "The title that should appear if no other titles available",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd8fd5c17c3",
+            "label": "Author",
+            "name": "meta_author_default",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_55fd8dbf54517",
+            "label": "Default image",
+            "name": "meta_image_default",
+            "type": "image",
+            "instructions": "The image that should appear if no other image is available",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_55fd8dff54518",
+            "label": "Default description",
+            "name": "meta_description_default",
+            "type": "textarea",
+            "instructions": "A one to two sentence description of the website",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 2,
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -513,6 +679,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1442015306,
-    "local": "json"
+    "modified": 1442684822
 }
