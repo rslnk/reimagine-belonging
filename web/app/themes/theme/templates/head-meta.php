@@ -54,9 +54,15 @@
 ?>" />
 <meta property="og:locale" content="<?php the_field('site_language', 'option') ?>" />
 <meta property="og:locale:alternate" content="<?php the_field('site_language_alt', "option") ?>" />
-<meta property="fb:admins" content="<?php the_field('facebook_user_id', 'option') ?>" />
-<meta property="fb:app_id" content="<?php the_field('facebook_app_id', 'option') ?>" />
-<meta property="fb:page_id" content="<?php the_field('facebook_page_id', 'option') ?>" />
+<?php if(get_field('facebook_user_id', 'option')): ?>
+  <meta property="fb:admins" content="<?php the_field('facebook_user_id', 'option') ?>" />
+<?php endif;?>
+<?php if(get_field('facebook_app_id', 'option')): ?>
+  <meta property="fb:app_id" content="<?php the_field('facebook_app_id', 'option') ?>" />
+<?php endif;?>
+<?php if(get_field('facebook_page_id', 'option')): ?>
+  <meta property="fb:page_id" content="<?php the_field('facebook_page_id', 'option') ?>" />
+<?php endif;?>
 
 <!-- Twitter Summary Card with Large Image -->
 <meta name="twitter:card" content="summary_large_image">
