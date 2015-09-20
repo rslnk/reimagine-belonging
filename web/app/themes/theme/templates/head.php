@@ -1,7 +1,6 @@
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
   <head>
-    <link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= esc_url(get_feed_link()); ?>">
     <?php wp_head(); ?>
     <?php if (is_page_template('template-timeline.php') || is_page_template('template-stories.php')) {
       $parts = explode('/', rtrim($_SERVER['REQUEST_URI'], '/'));

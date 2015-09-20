@@ -1,9 +1,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="alternate" type="application/rss+xml" title="<?= get_bloginfo('name'); ?> Feed" href="<?= esc_url(get_feed_link()); ?>">
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/dist/images/meta/favicon-32.png" type="image/x-icon">
 
-<?php if(get_field('google­site­verification_id', 'option')) : ?>
+<?php if(get_field('google­site­verification_id', 'option')): ?>
   <meta name="google-site-verification" content="<?php the_field('google­site­verification_id', 'option'); ?>">
 <?php endif; ?>
 
@@ -19,7 +18,7 @@
 
 <!-- Facebook meta for OpenGraph -->
 <meta property="og:type" content="<?php
-  if (is_single() || is_page()): echo 'article';
+  if (is_single()): echo 'article';
   else: echo 'website';
   endif;
 ?>" />
@@ -31,12 +30,17 @@
   else: the_title();
   endif;
 ?>"/>
-<meta property="og:url" content="<?php the_permalink() ?>" />
+<meta property="og:url" content="<?php
+  if(is_front_page()): echo home_url();
+  else: the_permalink();
+  endif;
+?>" />
 <meta property="og:image" content="<?php
   // check if post has thumbnail
   if(has_post_thumbnail($post->ID)): echo wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ));
   // for everything else use default image that should be set from WP admin
-  else: the_field('meta_image_default', 'option');;
+  // attach site url in order to show non-relative image path
+  else: bloginfo('url') . the_field('meta_image_default', 'option');
   endif;
 ?>"/>
 <meta property="og:description" content="<?php
@@ -77,6 +81,7 @@
   // check if post has thumbnail
   if(has_post_thumbnail($post->ID)): echo wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ));
   // for everything else use default image that should be set from WP admin
-  else: the_field('meta_image_default', 'option');;
+  // attach site url in order to show non-relative image path
+  else: bloginfo('url') . the_field('meta_image_default', 'option');
   endif;
-?>" />
+?>"/>
