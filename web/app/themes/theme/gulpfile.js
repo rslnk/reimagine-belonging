@@ -209,7 +209,7 @@ gulp.task('iconify', function() {
     src: './assets/icons/*.svg',
     cssOutput: './dist/styles/',
     pngOutput: './dist/icons/',
-    styleTemplate: './assets/icons/_icon_gen.scss.mustache',
+    styleTemplate: './assets/icons/_icon_gen.mustache',
     defaultWidth: '60px',
     defaultHeight: '60px',
     svgoOptions: {
