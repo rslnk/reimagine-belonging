@@ -921,7 +921,7 @@
         },
         {
             "key": "field_5546833b8a366",
-            "label": "Not found",
+            "label": "Page not found",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -960,27 +960,6 @@
             "key": "field_554683808a368",
             "label": "Subtitle",
             "name": "404_subtitle",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 5,
-            "new_lines": "br",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_554683978a369",
-            "label": "Text",
-            "name": "404_text",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -1274,5 +1253,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels for",
-    "modified": 1443041855
+    "modified": 1443124282
 }
