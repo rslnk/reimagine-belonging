@@ -29,13 +29,18 @@ function setup() {
   // http://codex.wordpress.org/Function_Reference/add_image_size
   add_theme_support('post-thumbnails');
 
-  // Disable intermediate sizes generation on image upload
-  update_option( 'thumbnail_size_h', 250 );
-  update_option( 'thumbnail_size_w', 250 );
-  update_option( 'medium_size_h', 0 );
-  update_option( 'medium_size_w', 0 );
-  update_option( 'large_size_h', 0 );
-  update_option( 'large_size_w', 0 );
+  // Custom 'thumbnail' image preview size
+  update_option('thumbnail_size_w', 250);
+  update_option('thumbnail_size_h', 250);
+
+  // Custom 'medium' image preview size
+  update_option('medium_size_w', 800);
+  update_option('medium_size_h', 9999);
+
+  // Custom 'large' image preview size
+  update_option('large_size_w', 1200);
+  update_option('large_size_h', 9999);
+
 
   // Add post formats
   // http://codex.wordpress.org/Post_Formats

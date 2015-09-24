@@ -16,6 +16,7 @@
   * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
   * Force move Yoast SEO Plugin metabox to bottom
+  * Force hide notifications from Yoast Plugin
 
 */
 
@@ -326,8 +327,11 @@ function sort_columns_by_custom_values( $vars ) {
 
 /*
 
- Move Yoast to bottom
-----------------------
+ Yoast Plugin Clean-up
+ ----------------------
+
+ * Move plugin metabox to bottom
+ * Hide plugin notifications
 
 */
 
@@ -336,3 +340,11 @@ add_filter( 'wpseo_metabox_prio', 'move_yoast_metabox_to_bottom');
 function move_yoast_metabox_to_bottom() {
 	return 'low';
 }
+
+add_action( 'admin_init', function() {
+    if ( class_exists( 'Yoast_Notification_Center' ) ) {
+        $yoast_nc = Yoast_Notification_Center::get();
+        remove_action( 'admin_notices', array( $yoast_nc, 'display_notifications' ) );
+        remove_action( 'all_admin_notices', array( $yoast_nc, 'display_notifications' ) );
+    }
+});
