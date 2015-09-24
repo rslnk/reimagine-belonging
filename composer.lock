@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9f06e6fc378f129972025017dda1fca",
+    "hash": "f2e90ac2443412e04c631854d81fae0d",
+    "content-hash": "8a9924c1b4a410ff66002e8db50f55c6",
     "packages": [
         {
             "name": "advancedcustomfields/acf-pro",
@@ -200,31 +201,20 @@
         {
             "name": "roots/soil",
             "version": "3.4.0",
-            "dist": {
-                "type": "zip",
-                "url": "https://github.com/roots/soil/archive/master.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "type": "wordpress-muplugin"
-        },
-        {
-            "name": "roots/wp-h5bp-htaccess",
-            "version": "1.1.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/roots/wp-h5bp-htaccess.git",
-                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864"
+                "url": "https://github.com/roots/soil.git",
+                "reference": "adaf4a0941224dfeab470a123d59dd925fc65004"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/wp-h5bp-htaccess/zipball/d0f9b5bdadec33169b0074c9a26f610886c61864",
-                "reference": "d0f9b5bdadec33169b0074c9a26f610886c61864",
+                "url": "https://api.github.com/repos/roots/soil/zipball/adaf4a0941224dfeab470a123d59dd925fc65004",
+                "reference": "adaf4a0941224dfeab470a123d59dd925fc65004",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "~1.0",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
             },
             "type": "wordpress-plugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -235,22 +225,20 @@
                 {
                     "name": "Scott Walkinshaw",
                     "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw",
-                    "role": "Roots/Bedrock developer"
+                    "homepage": "https://github.com/swalkinshaw"
                 },
                 {
                     "name": "Ben Word",
                     "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs",
-                    "role": "Roots/Bedrock developer"
+                    "homepage": "https://github.com/retlehs"
                 }
             ],
-            "description": "HTML5 Boilerplate's .htaccess for WordPress",
-            "homepage": "http://roots.io/plugins/html5-boilerplate-htaccess/",
+            "description": "Clean up WordPress markup, relative URLs, nice search",
+            "homepage": "https://roots.io/plugins/soil/",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2014-06-07 21:14:41"
+            "time": "2015-04-29 04:46:56"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -297,6 +285,26 @@
                 "environment"
             ],
             "time": "2015-05-30 16:15:01"
+        },
+        {
+            "name": "wpackagist-plugin/wordpress-seo",
+            "version": "2.3.5",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
+                "reference": "tags/2.3.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         }
     ],
     "packages-dev": [],
