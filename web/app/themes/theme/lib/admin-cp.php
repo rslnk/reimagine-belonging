@@ -15,6 +15,7 @@
   * Change story default post format to 'video'
   * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
+  * Force move Yoast SEO Plugin metabox to bottom
 
 */
 
@@ -81,6 +82,13 @@ if ( function_exists('acf_add_options_page') ) {
     'menu_title'  => 'Dictionary',
     'parent_slug' => 'site-settings',
     'capability'  => 'edit_pages'
+  ));
+
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Advanced settigns',
+    'menu_title'  => 'Advanced',
+    'parent_slug' => 'site-settings',
+    'capability'  => 'activate_plugins' // This page must be accessible only by admins
   ));
 }
 
@@ -314,4 +322,17 @@ function sort_columns_by_custom_values( $vars ) {
     }
   }
   return $vars;
+}
+
+/*
+
+ Move Yoast to bottom
+----------------------
+
+*/
+
+add_filter( 'wpseo_metabox_prio', 'move_yoast_metabox_to_bottom');
+
+function move_yoast_metabox_to_bottom() {
+	return 'low';
 }

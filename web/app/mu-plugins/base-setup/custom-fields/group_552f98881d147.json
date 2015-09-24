@@ -19,6 +19,48 @@
             "endpoint": 0
         },
         {
+            "key": "field_552fa2ef8a7a6",
+            "label": "Language",
+            "name": "site_language",
+            "type": "text",
+            "instructions": "Format: \"en_US\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 5,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fa1a1f9cca",
+            "label": "Date format",
+            "name": "site_date_format",
+            "type": "text",
+            "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 75,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "\u041c\u041c\/DD\/YYYY",
+            "prepend": "",
+            "append": "",
+            "maxlength": 10,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_55310397638c3",
             "label": "Google Analytics ID",
             "name": "google_analytics_id",
@@ -27,7 +69,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 40,
+                "width": 100,
                 "class": "",
                 "id": ""
             },
@@ -40,30 +82,25 @@
             "disabled": 0
         },
         {
-            "key": "field_55473f7f6b091",
-            "label": "Google \u00adsite \u00adverification",
-            "name": "google\u00adsite\u00adverification_id",
-            "type": "text",
-            "instructions": "Add Google site verification number.",
+            "key": "field_553120e300008",
+            "label": "Social",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 60,
+                "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_5547409311978",
-            "label": "Facebook admin ID",
-            "name": "facebook_user_id",
+            "key": "field_55439c35698e6",
+            "label": "Facebook App ID",
+            "name": "facebook_app_id",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -82,9 +119,9 @@
             "disabled": 0
         },
         {
-            "key": "field_55439c35698e6",
-            "label": "Facebook App ID",
-            "name": "facebook_app_id",
+            "key": "field_5547409311978",
+            "label": "Facebook admin ID",
+            "name": "facebook_user_id",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -139,399 +176,6 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "@",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_553120e300008",
-            "label": "Date & Language",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_552fa1a1f9cca",
-            "label": "Date format",
-            "name": "site_date_format",
-            "type": "text",
-            "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 65,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "\u041c\u041c\/DD\/YYYY",
-            "prepend": "",
-            "append": "",
-            "maxlength": 10,
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_552fa2ef8a7a6",
-            "label": "Language",
-            "name": "site_language",
-            "type": "text",
-            "instructions": "Set language for site's data output (e.g.. dates). Enter two letters language code. E.g. \"en_US\" in accordance with <a href=\"http:\/\/en.wikipedia.org\/wiki\/List_of_ISO_639-1_codes\">ISO 639-1<\/a> nomencalture. See the <a href=\"http:\/\/www.sitepoint.com\/web-foundations\/iso-2-letter-language-codes\/\">list of available codes<\/a>.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 5,
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55fd9f50bc947",
-            "label": "Alternative language",
-            "name": "site_language_alt",
-            "type": "text",
-            "instructions": "Set site's alternative language. <br\/>",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 5,
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55fd8c8954514",
-            "label": "Meta",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_55fd8ca354515",
-            "label": "Site name",
-            "name": "meta_site_name",
-            "type": "text",
-            "instructions": "The name which should be displayed for the overall site, e.g. \"REIMAGINE BELONGING.ORG\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55fd8d6654516",
-            "label": "Default title",
-            "name": "meta_title_default",
-            "type": "text",
-            "instructions": "The title that should appear if no other titles available",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55fd8fd5c17c3",
-            "label": "Author",
-            "name": "meta_author_default",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55fd8dbf54517",
-            "label": "Default image",
-            "name": "meta_image_default",
-            "type": "image",
-            "instructions": "The image that should appear if no other image is available",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_55fd8dff54518",
-            "label": "Default description",
-            "name": "meta_description_default",
-            "type": "textarea",
-            "instructions": "A one to two sentence description of the website",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 100,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 2,
-            "new_lines": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55383f78904b6",
-            "label": "Links structure",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_55383cf70495d",
-            "label": "<h2>Event and story posts slugs<\/h2>",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "<strong style=\"color:#000;\">Caution:<\/strong> changing event and story post slugs overwrites URL structure for these post types. In order for changes to take effect WordPress permalink rules must be flushed. Contact site administrator.\r\n\r\nEvent and story slugs appear in URL before each post slugs. E.g. \"www.example.com\/<strong>story<\/strong>\/story-post-name\". For the event post slug there is an optional base slug, that could be used to provide better URL semantics. E.g. \"www.example.com\/<strong>history<\/strong>\/event\/event-post-name.",
-            "esc_html": 0
-        },
-        {
-            "key": "field_55383c05d2050",
-            "label": "Event post slug",
-            "name": "event_post_type_slug",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "event",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55383ccd0495b",
-            "label": "Event posts slug base",
-            "name": "event_post_type_slug_base",
-            "type": "text",
-            "instructions": "E.g. \"history\/\". <strong>Note:<\/strong> base slug must have a forward trailing slash. If left empty event post slug will be automatically used as a base instead. E.g. \"\/event\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "history\/",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55383ce90495c",
-            "label": "Story posts slug",
-            "name": "story_post_type_slug",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "story",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5538e976f9cb0",
-            "label": "<h2>Taxonomies slugs<\/h2>",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "All event taxonomies use the same slug which is used instead of individual taxonomy slug. For example: defining 'events' slug (note plural case) for all event post taxonomies will result in:\r\n\r\n ..\/events\/united-states                    (for 'timeline' taxonomy term)\r\n ..\/events\/identity-and-belonging   (for 'topic' taxonomy term)\r\n\r\nNote: avoid having identical post type and taxonomy slugs. Use singular slugs for custom post types and plural for taxonomies. Eg. 'event' for custom post type and 'events' slug for this post type taxonomies\r\n\r\n<strong>Note:<\/strong> having identical slugs for post types and their taxonomies will result in 'page not found' error.",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5538eaf6f9cb4",
-            "label": "Event post taxonomies slug",
-            "name": "one_slug_for_all_event_post_type_taxonomies",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "events",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5538eb18f9cb5",
-            "label": "Story post taxonomies slug",
-            "name": "one_slug_for_all_story_post_type_taxonomies",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "stories",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_553a4361158f1",
-            "label": "Global tags",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Global tags are shared between event and story posts. Add slug for individual tag. E.g. example.com\/<strong>tag<\/strong>\/new-york",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5538eb3df9cb6",
-            "label": "Tag slug",
-            "name": "global_tag_slug",
-            "type": "text",
-            "instructions": "E.g. \"tag\".",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "tag",
-            "prepend": "",
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -679,5 +323,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1442684822
+    "modified": 1443095608
 }
