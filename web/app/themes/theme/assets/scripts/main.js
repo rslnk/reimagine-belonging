@@ -108,18 +108,18 @@
       }
     },
     // 404 page
-    '404': {
+    'error404': {
       init: function() {
         // JavaScript to be fired on the 404 page
-        function resize404Block () {
+        function fullHeight404Page () {
           var elt = $('.js-main-block');
           var windowH = $(window).height();
           elt.height(windowH);
         }
 
-        resize404Block();
+        fullHeight404Page();
 
-        $(window).resize(resize404Block);
+        $(window).resize(fullHeight404Page);
       }
     }
   };

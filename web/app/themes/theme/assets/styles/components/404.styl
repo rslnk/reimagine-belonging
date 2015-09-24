@@ -1,20 +1,36 @@
-.c-404
-  min-height 100%
-  padding-top rem(50px)
-  padding-bottom rem(50px)
-  margin-top 0
-  margin-bottom 0
-  background-repeat no-repeat
-  background-position 70% 100%
-  background-size: cover
-  +media-query($screen, $bp--tablet--portrait)
-    background-position 50% 30%
+.error404 // default WP/sage body class
+  background-color: $color--indigo
+
+//.c-404
 
 .c-404__content
-  col(12)
+  +media-query( $screen, $bp--tablet )
+    col(8)
+    offset(2)
+  +media-query( $screen, $bp--desktop--medium )
+    col(6)
+    offset(3)
+  +media-query( $screen, $bp--desktop--large )
+    col(8)
+    offset(2)
 
 .c-404__title
-  margin rem(50px) 0
+  font-weight $weight--medium
+  font-size $size--kilo
+  color $color--white
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--tera
+  +media-query( $screen, $bp--desktop--large )
+    font-size $size--exa
 
-.c-404__message
-  margin-top rem(50px)
+.c-404__subtitle
+  text-transform normal
+  font-size $size--pico
+  line-height 1.6
+  color $color--white
+  a
+    color $color--mint
+    &:visited
+      color $color--mint
+  +media-query( $screen, $bp--tablet--landscape )
+    font-size $size--milli
