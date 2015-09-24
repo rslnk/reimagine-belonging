@@ -1,6 +1,6 @@
 {
     "key": "group_552fabab3e111",
-    "title": "UI elemets text & labels",
+    "title": "Dictionary",
     "fields": [
         {
             "key": "field_5530d8b41355b",
@@ -19,46 +19,74 @@
             "endpoint": 0
         },
         {
-            "key": "field_5530dbfaa54a7",
-            "label": "Logo title",
-            "name": "homepage_logo_title",
-            "type": "text",
-            "instructions": "Add text to homepage logotype (invisible). E.g. Reimagine Belonging.  ",
+            "key": "field_5602d17cee495",
+            "label": "Homepage title",
+            "name": "homepage_title",
+            "type": "flexible_content",
+            "instructions": "To follow design guidelines homepage title must be split into separate word blocks. Enter each word or set of words into individual field. Add an extra line to force a line break.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 60,
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55425c0d60035",
-            "label": "Subtitle",
-            "name": "homepage_subtitle",
-            "type": "text",
-            "instructions": "Subtitle appears above Reimagine Belonging logo image. E.g. \"Together We Can\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "button_label": "Add Line",
+            "min": "",
+            "max": "",
+            "layouts": [
+                {
+                    "key": "5602d19c5de9f",
+                    "name": "word_blocks",
+                    "label": "Line",
+                    "display": "table",
+                    "sub_fields": [
+                        {
+                            "key": "field_5602d171726ce",
+                            "label": "Word blocks",
+                            "name": "line_wrapper",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": 60,
+                                "class": "",
+                                "id": ""
+                            },
+                            "min": "",
+                            "max": "",
+                            "layout": "table",
+                            "button_label": "Add Word",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5602d31ee8296",
+                                    "label": "Words",
+                                    "name": "block",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": "",
+                                    "readonly": 0,
+                                    "disabled": 0
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            ]
         },
         {
             "key": "field_553125cc746ec",
@@ -1228,20 +1256,23 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
+        "permalink",
         "the_content",
         "excerpt",
         "custom_fields",
         "discussion",
         "comments",
         "revisions",
+        "slug",
         "author",
         "format",
+        "page_attributes",
         "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1442629624
+    "description": "Set UI text and labels for",
+    "modified": 1443041855
 }
