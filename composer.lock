@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2e90ac2443412e04c631854d81fae0d",
-    "content-hash": "8a9924c1b4a410ff66002e8db50f55c6",
+    "hash": "fea8f17a026b67270514418ea491d915",
+    "content-hash": "9c502f583abf290ec57370d892b14d33",
     "packages": [
         {
             "name": "advancedcustomfields/acf-pro",
@@ -200,16 +200,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "adaf4a0941224dfeab470a123d59dd925fc65004"
+                "reference": "4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/adaf4a0941224dfeab470a123d59dd925fc65004",
-                "reference": "adaf4a0941224dfeab470a123d59dd925fc65004",
+                "url": "https://api.github.com/repos/roots/soil/zipball/4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0",
+                "reference": "4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0",
                 "shasum": ""
             },
             "require": {
@@ -233,12 +233,12 @@
                     "homepage": "https://github.com/retlehs"
                 }
             ],
-            "description": "Clean up WordPress markup, relative URLs, nice search",
+            "description": "A WordPress plugin which contains a collection of modules to apply theme-agnostic front-end modifications",
             "homepage": "https://roots.io/plugins/soil/",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-04-29 04:46:56"
+            "time": "2015-09-24 17:30:00"
         },
         {
             "name": "vlucas/phpdotenv",
