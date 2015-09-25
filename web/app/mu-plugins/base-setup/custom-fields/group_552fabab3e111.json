@@ -352,7 +352,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 5,
-            "new_lines": "wpautop",
+            "new_lines": "br",
             "readonly": 0,
             "disabled": 0
         },
@@ -1253,5 +1253,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels for",
-    "modified": 1443124282
+    "modified": 1443148136
 }

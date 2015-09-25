@@ -51,7 +51,7 @@ function facebook_sdk() {
 
 */
 
-function list_custom_taxonomies_terms(){
+function list_categories(){
   global $wp_query, $post;
   // get post by post id
   $post = get_post($post->ID);
@@ -65,15 +65,14 @@ function list_custom_taxonomies_terms(){
     // get the terms related to post
     $terms = get_the_terms($post->ID, $taxonomy_slug);
     if (!empty($terms)) {
-      $out[] = "\n<ul>";
+      $out[] = '<ul class="c-categories-chain c-categories-chain--event">';
       foreach ( $terms as $term ) {
         $out[] =
-          '  <li><a href="'
-        .    get_term_link( $term->slug, $taxonomy_slug ) .'">'
-        .    $term->name
-        . "</a></li>\n";
+        '<li class="c-categories-chain__item o-btn c-btn--small c-btn--indigo">'
+        . $term->name
+        . '</li>';
       }
-      $out[] = "</ul>\n";
+      $out[] = "</ul>";
     }
   }
   echo implode('', $out );

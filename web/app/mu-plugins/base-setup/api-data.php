@@ -252,11 +252,11 @@ class API_Data {
 
       'event_sources_title'                    => get_field('event_sources_title', 'option'),
       'event_resources_title'                  => get_field('event_resources_title', 'option'),
-      'event_source_editors'                  => get_field('event_source_editors_title', 'option'),
-      'event_source_translators'              => get_field('event_source_translators_title', 'option'),
-      'event_source_edition'                  => get_field('event_source_edition_title', 'option'),
-      'event_source_volume'                   => get_field('event_source_volume_title', 'option'),
-      'event_source_pages'                    => get_field('event_source_pages_title', 'option'),
+      'event_source_editors'                   => get_field('event_source_editors_title', 'option'),
+      'event_source_translators'               => get_field('event_source_translators_title', 'option'),
+      'event_source_edition'                   => get_field('event_source_edition_title', 'option'),
+      'event_source_volume'                    => get_field('event_source_volume_title', 'option'),
+      'event_source_pages'                     => get_field('event_source_pages_title', 'option'),
       'event_source_date_accessed'             => get_field('event_date_accessed_title', 'option'),
       'event_add_resource_button_label'        => get_field('event_suggest_resource_button_label', 'option'),
 
