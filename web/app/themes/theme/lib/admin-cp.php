@@ -15,8 +15,7 @@
   * Change story default post format to 'video'
   * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
-  * Force move Yoast SEO Plugin metabox to bottom
-  * Force hide notifications from Yoast Plugin
+  * Force Yoast SEO plugin metabox to apper on the bottom of the page/post
 
 */
 
@@ -325,15 +324,8 @@ function sort_columns_by_custom_values( $vars ) {
   return $vars;
 }
 
-/*
 
- Yoast Plugin Clean-up
- ----------------------
-
- * Move plugin metabox to bottom
- * Hide plugin notifications
-
-*/
+// Move Yoast SEO plugin metabox to bottom
 
 add_filter( 'wpseo_metabox_prio', 'move_yoast_metabox_to_bottom');
 

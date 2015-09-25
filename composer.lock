@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fea8f17a026b67270514418ea491d915",
-    "content-hash": "9c502f583abf290ec57370d892b14d33",
+    "hash": "d94a8245ad59d2d80703fd22ddd262e8",
+    "content-hash": "a649f42cf9d1f07a48078f6c40596062",
     "packages": [
         {
             "name": "advancedcustomfields/acf-pro",
@@ -285,6 +285,26 @@
                 "environment"
             ],
             "time": "2015-05-30 16:15:01"
+        },
+        {
+            "name": "wpackagist-plugin/so-clean-up-wp-seo",
+            "version": "1.7",
+            "source": {
+                "type": "svn",
+                "url": "http://plugins.svn.wordpress.org/so-clean-up-wp-seo/",
+                "reference": "tags/1.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/so-clean-up-wp-seo/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",

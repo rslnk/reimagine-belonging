@@ -58,11 +58,12 @@
     "johnpbloch/wordpress": "4.3.1",
     "advancedcustomfields/acf-pro": "5.3.0",
     "roots/soil": "3.5.0",
-    "wpackagist-plugin/wordpress-seo": "2.3.5"
+    "wpackagist-plugin/wordpress-seo": "2.3.5",
+    "wpackagist-plugin/so-clean-up-wp-seo": "1.7"
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/soil"],
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin", "roots/soil", "wpackagist-plugin/so-clean-up-wp-seo"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
     },
