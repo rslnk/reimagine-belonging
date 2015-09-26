@@ -110,12 +110,21 @@ function create_history_proxy () {
   global $wp;
   if (preg_match("/history/i", $wp->request)) {
     require_once( __DIR__ . '/is-bot.php');
-    if (!is_bot()){
-      $url = $_SERVER["REQUEST_URI"];
-      $parts = explode('/', rtrim($url, '/'));
+
+    $url = $_SERVER["REQUEST_URI"];
+    $parts = explode('/', rtrim($url, '/'));
+
+    if (is_bot()){
       if (count($parts) > 2) {
         setcookie("history", $url, time()+3600, "/");
         header('Location: /history/');
+        exit;
+      }
+    } else {
+      $countries = array('united-states','germany');
+
+      if (count($parts) > 2 && in_array($parts[2], $countries)) {
+        header('Location: /history/events/'.$parts[3]);
         exit;
       }
     }
