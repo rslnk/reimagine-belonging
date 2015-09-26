@@ -15,6 +15,8 @@
 
 */
 
+require_once('api-data.class.php');
+
 
 if (!is_blog_installed()) { return; }
 
@@ -114,14 +116,21 @@ function create_history_proxy () {
     $url = $_SERVER["REQUEST_URI"];
     $parts = explode('/', rtrim($url, '/'));
 
-    if (is_bot()){
+    if (!is_bot()){
       if (count($parts) > 2) {
         setcookie("history", $url, time()+3600, "/");
         header('Location: /history/');
         exit;
       }
     } else {
-      $countries = array('united-states','germany');
+      $api = new API_Data();
+      $output = $api->site_configuration();
+      $countries = array();
+
+      foreach($output['timelines'] as $value) {
+        $v = (array) $value;
+        array_push($countries, $v['slug']);
+      }
 
       if (count($parts) > 2 && in_array($parts[2], $countries)) {
         header('Location: /history/events/'.$parts[3]);
