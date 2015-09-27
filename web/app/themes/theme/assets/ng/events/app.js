@@ -1,7 +1,7 @@
 angular.module('eventsApp', [
     'ui.router',
     'ngCookies',
-    'constants', 
+    'constants',
     'api.service',
     'events.timeline.controller',
     'events.event.controller',
@@ -11,9 +11,9 @@ angular.module('eventsApp', [
     'events.dateformat.directive'
   ])
   .run([
-    '$rootScope', 
-    '$state', 
-    '$stateParams', 
+    '$rootScope',
+    '$state',
+    '$stateParams',
     '$cookies',
     '$location',
     'ApiService',
@@ -30,12 +30,12 @@ angular.module('eventsApp', [
         document.cookie = name + '=;path=/;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
       };
 
-      if ($cookies.history && !$cookies.history.match('false')) {
-        var arr = $cookies.history.split('/');
+      if ($cookies.events && !$cookies.events.match('false')) {
+        var arr = $cookies.events.split('/');
         if (arr.length > 2){
           arr.splice(0,2);
           $location.path(arr.join('/'));
-          delete_cookie('history');
+          delete_cookie('events');
         }
       } else {
         if( $location.path() === '/') {
@@ -46,10 +46,10 @@ angular.module('eventsApp', [
     }
   ])
   .config([
-    '$stateProvider', 
-    '$urlRouterProvider', 
+    '$stateProvider',
+    '$urlRouterProvider',
     '$locationProvider',
-    'templatesPath', 
+    'templatesPath',
     function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
       $locationProvider.html5Mode(true);
       $stateProvider

@@ -63,7 +63,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1442015305,
-    "local": "json"
+    "description": "Custom template use notification + hides WP editor",
+    "modified": 1444390738
 }

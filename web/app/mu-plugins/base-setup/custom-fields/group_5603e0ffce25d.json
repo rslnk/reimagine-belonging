@@ -3,8 +3,8 @@
     "title": "Advanced Site Settings",
     "fields": [
         {
-            "key": "field_55383f78904b6",
-            "label": "Links structure",
+            "key": "field_561550e24b883",
+            "label": "Posts URLs",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,8 +19,8 @@
             "endpoint": 0
         },
         {
-            "key": "field_55383cf70495d",
-            "label": "<h2>Event and story posts slugs<\/h2>",
+            "key": "field_5615515eb7257",
+            "label": "Events and Stories URLs",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "<strong style=\"color:#000;\">Caution:<\/strong> changing event and story post slugs overwrites URL structure for these post types. In order for changes to take effect WordPress permalink rules must be flushed. Contact site administrator.\r\n\r\nEvent and story slugs appear in URL before each post slugs. E.g. \"www.example.com\/<strong>story<\/strong>\/story-post-name\". For the event post slug there is an optional base slug, that could be used to provide better URL semantics. E.g. \"www.example.com\/<strong>history<\/strong>\/event\/event-post-name.",
+            "message": "Events and stories slugs appear in URL before each post slugs. <strong>Example:<\/strong> reimaginebelonging.org\/<strong>stories<\/strong>\/story-post-name. <br\/>For Events posts there is an optional base slug, that could be used to provide better URL semantics. <strong>Example:<\/strong> reimaginebelonging.org\/<strong>history<\/strong>\/events\/event-post-name.\r\n<br\/><br\/>\r\n<strong style=\"color:#000;\">Caution:<\/strong> changing events and stories slugs overwrites URL structure for these post types. In order for changes to take effect WordPress permalink rules must be flushed. If you don't have access to WordPress basic settings contact site administrator.",
             "esc_html": 0
         },
         {
@@ -43,13 +43,13 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "event",
-            "prepend": "",
+            "default_value": "events",
+            "placeholder": "",
+            "prepend": "\/",
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -60,17 +60,17 @@
             "label": "Event posts slug base",
             "name": "event_post_type_slug_base",
             "type": "text",
-            "instructions": "E.g. \"history\/\". <strong>Note:<\/strong> base slug must have a forward trailing slash. If left empty event post slug will be automatically used as a base instead. E.g. \"\/event\".",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "history\/",
-            "prepend": "",
+            "default_value": "history",
+            "placeholder": "",
+            "prepend": "\/",
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -85,108 +85,13 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "story",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5538e976f9cb0",
-            "label": "<h2>Taxonomies slugs<\/h2>",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "All event taxonomies use the same slug which is used instead of individual taxonomy slug. For example: defining 'events' slug (note plural case) for all event post taxonomies will result in:\r\n\r\n ..\/events\/united-states                    (for 'timeline' taxonomy term)\r\n ..\/events\/identity-and-belonging   (for 'topic' taxonomy term)\r\n\r\nNote: avoid having identical post type and taxonomy slugs. Use singular slugs for custom post types and plural for taxonomies. Eg. 'event' for custom post type and 'events' slug for this post type taxonomies\r\n\r\n<strong>Note:<\/strong> having identical slugs for post types and their taxonomies will result in 'page not found' error.",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5538eaf6f9cb4",
-            "label": "Event post taxonomies slug",
-            "name": "one_slug_for_all_event_post_type_taxonomies",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "events",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5538eb18f9cb5",
-            "label": "Story post taxonomies slug",
-            "name": "one_slug_for_all_story_post_type_taxonomies",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "stories",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_553a4361158f1",
-            "label": "Global tags",
-            "name": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Global tags are shared between event and story posts. Add slug for individual tag. E.g. example.com\/<strong>tag<\/strong>\/new-york",
-            "esc_html": 0
-        },
-        {
-            "key": "field_5538eb3df9cb6",
-            "label": "Tag slug",
-            "name": "global_tag_slug",
-            "type": "text",
-            "instructions": "E.g. \"tag\".",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "tag",
-            "prepend": "",
+            "default_value": "stories",
+            "placeholder": "",
+            "prepend": "\/",
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -209,6 +114,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1443095706
+    "description": "Site Settings: Event and Story custom post types url",
+    "modified": 1444390570
 }

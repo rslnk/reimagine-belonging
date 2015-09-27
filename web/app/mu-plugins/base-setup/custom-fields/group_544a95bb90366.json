@@ -2883,7 +2883,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1442015306,
-    "local": "json"
+    "description": "Event post content + sidebar",
+    "modified": 1444391190
 }

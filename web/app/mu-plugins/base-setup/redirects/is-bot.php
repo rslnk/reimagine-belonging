@@ -1,4 +1,7 @@
 <?php
+
+namespace BaseSetup\Redirects\UserAgentCheck;
+
 function is_bot() {
     $spiders = array(
         "abot",
