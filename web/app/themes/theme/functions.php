@@ -22,6 +22,7 @@ $sage_includes = [
   'lib/extras.php',                // Custom functions
   'lib/admin-cp.php',              // Custom WordPress admin panel modifications
   'lib/post-types.php',            // Custom post types
+  'lib/post-taxonomies.php',       // Custom taxonomies
 ];
 
 foreach ($sage_includes as $file) {

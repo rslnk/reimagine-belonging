@@ -341,7 +341,6 @@
         "page_attributes"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1442015305,
-    "local": "json"
+    "description": "Event post: title, dates, classification, related",
+    "modified": 1444391426
 }

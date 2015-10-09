@@ -88,7 +88,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1442015305,
-    "local": "json"
+    "description": "Events timelines description text field",
+    "modified": 1444391590
 }
