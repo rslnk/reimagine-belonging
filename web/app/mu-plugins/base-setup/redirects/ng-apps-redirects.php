@@ -56,9 +56,9 @@ function create_events_proxy () {
   // Check if events_slug_base is set:
   if (!empty(get_field('event_post_type_slug_base'))) {
 
-    $subject = "/$events_slug_base/i";
+    $base = "/$events_slug_base/i";
 
-    if (preg_match($subject, $wp->request)) {
+    if (preg_match($base, $wp->request)) {
 
       if (!UserAgentCheck\is_bot()) {
         if (count($parts) > 2) {
@@ -79,9 +79,9 @@ function create_events_proxy () {
   }
   // If events_slug_base is not set just use events_slug:
   else {
-    $subject = "/$events_slug/i";
+    $base = "/$events_slug/i";
 
-    if (preg_match($subject, $wp->request)) {
+    if (preg_match($base, $wp->request)) {
 
       if (!UserAgentCheck\is_bot()) {
         if (count($parts) > 2) {
@@ -109,14 +109,14 @@ function create_stories_proxy () {
   global $wp;
 
   $stories_slug  = get_field('story_post_type_slug', 'option');
-  $subject       = "/$stories_slug/i";
+  $base          = "/$stories_slug/i";
 
-  if (preg_match("$subject", $wp->request)) {
+  if (preg_match($base, $wp->request)) {
     if (!UserAgentCheck\is_bot()){
       $url = $_SERVER["REQUEST_URI"];
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
-        setcookie("$stories_slug", $url, time()+3600, "/");
+        setcookie("stories", $url, time()+3600, "/");
         header('Location: /' . $stories_slug . '/');
         exit;
       }
