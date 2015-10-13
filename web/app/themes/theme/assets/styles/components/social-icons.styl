@@ -5,34 +5,9 @@
 .o-social-icons__list
   float left
 
-.c-social-icons__list--site-footer
-  width 100%
-  margin-top rem(5px)
-  margin-bottom rem(15px)
-  text-align center
-  +media-query($screen, $bp--tablet)
-    margin 0
-    float right
-    padding rem(12px) 0
-    width auto
-
-//.c-social-icons__list--post-share
-
 .o-social-icons__item
   float left
   display block
-
-.o-social-icons__item--site-footer
-  display inline-block
-  float none
-  padding-left rem(15px)
-  +media-query($screen, $bp--tablet)
-    float left
-    display block
-
-.o-social-icons__item--site-footer:first-of-type
-  // Remove right margin from the first icon
-  padding-left 0
 
 .o-icons-list__link
   display block
@@ -50,13 +25,3 @@
     size rem(32px)
   +media-query($screen, $bp--desktop--medium)
     size rem(36px)
-
-.c-icons-list__link--site-footer
-  display block
-  size rem(20px)
-  background-size 100%
-  text-indent rem(-9999px)
-  +media-query($screen, $bp--tablet)
-    size rem(23px)
-  +media-query($screen, $bp--desktop--medium)
-    size rem(28px)

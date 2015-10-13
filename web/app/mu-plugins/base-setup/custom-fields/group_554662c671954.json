@@ -61,6 +61,11 @@
                 "param": "page_template",
                 "operator": "!=",
                 "value": "template-stories.php"
+            },
+            {
+                "param": "page",
+                "operator": "!=",
+                "value": "7"
             }
         ]
     ],
@@ -72,5 +77,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Single page sidebar note (temporary solution)",
-    "modified": 1444391468
+    "modified": 1444752087
 }
