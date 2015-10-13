@@ -7,7 +7,11 @@
       <?= Roots\Sage\Extras\list_categories(); ?>
 
       <h1 class="o-heading c-heading--story-title"><?php the_title(); ?></h1>
-      <h2 class="c-story__hero"><strong><?php the_field('protagonist_name'); ?></strong></h2>
+      <?php
+        $story_post_cities 		= wp_get_object_terms($post->ID, 'story_city');
+        $city_name        		= $story_post_cities[0]->name;
+       ?>
+       <h2 class="c-story__hero"><strong><?php the_field('protagonist_name');  echo ', ' ?></strong><?php echo $city_name; ?></h2>
 
     </header>
 
