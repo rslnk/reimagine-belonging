@@ -21,11 +21,11 @@ use BaseSetup\Redirects\UserAgentCheck;
   <div class="o-wrapper">
     <?php get_template_part('templates/page', 'head'); ?>
   </div>
-  <?php if(!BaseSetup\Redirects\UserAgentCheck\is_bot()): ?>
+  <?php if(!UserAgentCheck\is_bot()): ?>
     <div ng-app="eventsApp">
       <div ui-view></div>
     </div>
   <?php else: ?>
-    <div>hellow, crawler or bot</div>
+    <?php get_template_part('templates/content', 'events'); ?>
   <?php endif; ?>
 </main>

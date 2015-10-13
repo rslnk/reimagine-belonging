@@ -26,6 +26,6 @@ use BaseSetup\Redirects\UserAgentCheck;
       <div ui-view></div>
     </div>
   <?php else: ?>
-    <div>hellow, crawler or bot</div>
+    <?php get_template_part('templates/content', 'stories'); ?>
   <?php endif; ?>
 </main>
