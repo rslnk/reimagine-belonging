@@ -15,6 +15,7 @@
   * Change story default post format to 'video'
   * Hide WordPress default description filed on 'event_timeline' taxonomy terms edit page
   * Customize admin columns for posts, pages, events and stories
+  * Hide 'Preview changes' and 'Post view' buttons in 'event' and 'stories' post type admin
   * Force Yoast SEO plugin metabox to apper on the bottom of the page/post
 
 */
@@ -324,9 +325,22 @@ function sort_columns_by_custom_values( $vars ) {
   return $vars;
 }
 
+// Hide 'Preview changes' and  'Post view' buttons
+add_action( 'admin_head-post-new.php', 'posttype_admin_css' );
+add_action( 'admin_head-post.php', 'posttype_admin_css' );
+
+function posttype_admin_css() {
+    global $post_type;
+    $post_types = [
+          /* set post types */
+          'event',
+          'story'
+    ];
+    if(in_array($post_type, $post_types))
+    echo '<style type="text/css">#post-preview, #minor-publishing-actions{display: none;}</style>';
+}
 
 // Move Yoast SEO plugin metabox to bottom
-
 add_filter( 'wpseo_metabox_prio', 'move_yoast_metabox_to_bottom');
 
 function move_yoast_metabox_to_bottom() {
