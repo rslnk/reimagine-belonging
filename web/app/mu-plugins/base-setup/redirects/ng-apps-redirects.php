@@ -43,6 +43,9 @@ function create_events_proxy () {
   $events_full_slug = PostTypes\GetEventPostTypeSlug();
 
   $url = $_SERVER["REQUEST_URI"];
+  if(substr($url, -1) == '/') {
+    $url = substr($url, 0, -1);
+  }
   $parts = explode('/', rtrim($url, '/'));
 
   $timelines = get_terms( 'event_timeline' );
@@ -114,6 +117,9 @@ function create_stories_proxy () {
   if (preg_match($base, $wp->request)) {
     if (!UserAgentCheck\is_bot()){
       $url = $_SERVER["REQUEST_URI"];
+      if(substr($url, -1) == '/') {
+        $url = substr($url, 0, -1);
+      }      
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
         setcookie("stories", $url, time()+3600, "/");

@@ -25,13 +25,13 @@ $the_query = new WP_Query([
 
             <?php
               // Construct Event posts URL
-              // Example: reimaginebelonging.org/<stories-app-slug>/<post-slug>
+              // Example: reimaginebelonging.org/<stories-app-slug>/<post-slug>/
 
               $site_url             = get_bloginfo('url');
               $story_post_slug      = PostTypes\GetStoryPostTypeSlug();
               $story_post_name      = $post->post_name;
 
-              $angular_app_permalink  = $site_url . '/' . $story_post_slug . '/' . $story_post_name;
+              $angular_app_permalink  = $site_url . '/' . $story_post_slug . '/' . $story_post_name . '/';
             ?>
 
             <h2 class="o-heading c-heading--story-preview" style="color:<?php the_field('color', $post->ID); ?>">

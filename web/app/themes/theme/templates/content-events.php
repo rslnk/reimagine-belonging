@@ -36,7 +36,7 @@ $the_query = new WP_Query([
 
             <?php
               // Construct Event posts URL
-              // Example: reimaginebelonging.org/<events-app-slug>/<timeline-slug>/<post-slug>
+              // Example: reimaginebelonging.org/<events-app-slug>/<timeline-slug>/<post-slug>/
 
               $event_post_timelines = wp_get_object_terms($post->ID, 'event_timeline');
               $timeline_slug        = $event_post_timelines[0]->slug;
@@ -46,7 +46,7 @@ $the_query = new WP_Query([
               $event_post_slug      = PostTypes\GetEventPostTypeSlug();
               $event_post_name      = $post->post_name;
 
-              $angular_app_permalink  = $site_url . '/' . $event_post_slug . '/' . $timeline_slug . '/' . $event_post_name;
+              $angular_app_permalink  = $site_url . '/' . $event_post_slug . '/' . $timeline_slug . '/' . $event_post_name . '/';
             ?>
 
             <h3 class="o-heading c-heading--story-preview">

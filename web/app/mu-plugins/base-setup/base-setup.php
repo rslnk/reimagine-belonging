@@ -24,7 +24,6 @@ require_once('media-uploads.php');
 require_once('api/api.php');
 require_once('redirects/ng-apps-base.php');
 require_once('redirects/ng-apps-redirects.php');
+require_once('redirects/permalink-structure.php');
 require_once('redirects/is-bot.php');
 require_once('custom-fields/acf-custom-path.php');
-
-update_option('permalink_structure', '/%postname%/');
