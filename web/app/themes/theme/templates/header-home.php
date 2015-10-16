@@ -1,5 +1,3 @@
-<?php use Roots\Sage\Nav\NavWalker; ?>
-
 <header class="c-site-head c-site-head--home">
   <div class="o-wrapper">
     <nav class="o-site-nav c-site-nav--head">
@@ -9,7 +7,7 @@
       <a class="c-site-nav__menu-toggle c-site-nav__menu-toggle--home js-toggle-nav-menu u-icon u-icon-menu-mint"></a>
       <?php
         if (has_nav_menu('primary_navigation')) :
-          wp_nav_menu(['theme_location' => 'primary_navigation', 'walker' => new NavWalker(), 'menu_class' => 'o-site-nav__list c-site-nav__list--head c-site-nav__list--head--home']);
+          wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'o-site-nav__list c-site-nav__list--head c-site-nav__list--head--home']);
         endif;
       ?>
     </nav>

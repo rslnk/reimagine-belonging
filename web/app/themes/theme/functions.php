@@ -10,18 +10,14 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/utils.php',                 // Utility functions
-  'lib/init.php',                  // Initial theme setup and constants
-  'lib/wrapper.php',               // Theme wrapper class
-  'lib/config.php',                // Configuration
+  'lib/admin-cp.php',              // WordPress admin panel modifications
   'lib/assets.php',                // Scripts and stylesheets
-  'lib/titles.php',                // Page titles
-  'lib/nav.php',                   // Custom nav modifications
-  'lib/gallery.php',               // Custom [gallery] modifications
   'lib/extras.php',                // Custom functions
-  'lib/admin-cp.php',              // Custom WordPress admin panel modifications
+  'lib/nav.php',                   // Custom nav modifications
   'lib/post-types.php',            // Custom post types
   'lib/post-taxonomies.php',       // Custom taxonomies
+  'lib/setup.php',                 // Theme functions
+  'lib/wrapper.php',               // Theme wrapper class
 ];
 
 foreach ($sage_includes as $file) {

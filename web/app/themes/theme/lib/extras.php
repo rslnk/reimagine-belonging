@@ -2,7 +2,7 @@
 
 namespace Roots\Sage\Extras;
 
-use Roots\Sage\Config;
+use Roots\Sage\Setup;
 
 // Add <body> classes
 function body_class($classes) {
@@ -12,29 +12,16 @@ function body_class($classes) {
       $classes[] = basename(get_permalink());
     }
   }
-
-  // Add class if sidebar is active
-  if (Config\display_sidebar()) {
-    $classes[] = 'sidebar-primary';
-  }
-
   return $classes;
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
-
-
-// Clean up the_excerpt()
-function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
-}
-add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 
 // Get Facebook SDK App values from admin
 // Output Facebooks JavaScript SDK
 function facebook_sdk() {
   if (get_field('facebook_app_id', 'option')) {
-    $app_id = get_field('facebook_app_id', 'option');
-    $language = get_field('facebook_plugins_language', 'option');
+    $app_id   = get_field('facebook_app_id', 'option');
+    $language = get_field('site_language', 'option');
   echo '<div id="fb-root"></div>';
   echo '<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/' . $language . '/sdk.js#xfbml=1&version=v2.3&appId=' . $app_id . '"; fjs.parentNode.insertBefore(js, fjs); }(document, \'script\', \'facebook-jssdk\'));</script>';
   }
@@ -50,7 +37,6 @@ function facebook_sdk() {
   http://codex.wordpress.org/Function_Reference/get_the_terms
 
 */
-
 function list_categories(){
   global $wp_query, $post;
   // get post by post id
@@ -60,7 +46,7 @@ function list_categories(){
   // get post type taxonomies
   $taxonomies = get_object_taxonomies( $post_type, 'objects' );
 
-  $out = array();
+  $out = [];
   foreach ($taxonomies as $taxonomy_slug => $taxonomy){
     // get the terms related to post
     $terms = get_the_terms($post->ID, $taxonomy_slug);
