@@ -1,6 +1,5 @@
 <?php
 
-use Roots\Sage\Config;
 use Roots\Sage\Wrapper;
 
 ?>
@@ -13,9 +12,6 @@ use Roots\Sage\Wrapper;
       </div>
     <![endif]-->
     <?php include Wrapper\template_path(); ?>
-    <?php
-      //get_template_part('templates/footer');
-      wp_footer();
-    ?>
+    <?php wp_footer(); ?>
   </body>
 </html>

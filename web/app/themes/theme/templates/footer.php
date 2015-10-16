@@ -1,11 +1,9 @@
-<?php use Roots\Sage\Nav\NavWalker; ?>
-
-<footer class="c-site-footer" role="contentinfo">
+<footer class="c-site-footer">
   <div class="o-wrapper">
     <nav class="o-site-nav c-site-nav--footer">
       <?php
       if (has_nav_menu('secondary_navigation')) :
-        wp_nav_menu(['theme_location' => 'secondary_navigation', 'walker' => new NavWalker(), 'menu_class' => 'o-site-nav__list c-site-nav__list--footer']);
+        wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'o-site-nav__list c-site-nav__list--footer']);
       endif;
       ?>
       <ul class="c-site-footer__social-icons">

@@ -22,8 +22,8 @@ angular.module('events.timeline.controller', [
 
     $scope.filter = { topics: [], searchText: '' };
 
-    $scope.timeline = lodash.findWhere($scope.siteConfig.timelines, { 
-      slug: $stateParams.timeline 
+    $scope.timeline = lodash.findWhere($scope.siteConfig.timelines, {
+      slug: $stateParams.timeline
     });
 
     $scope.loadEvents = function () {

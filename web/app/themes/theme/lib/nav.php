@@ -2,7 +2,22 @@
 
 namespace Roots\Sage\Nav;
 
-use Roots\Sage\Utils;
+// Compare URL against relative URL
+function url_compare($url, $rel) {
+ $url = trailingslashit($url);
+ $rel = trailingslashit($rel);
+ if ((strcasecmp($url, $rel) === 0) || root_relative_url($url) == $rel) {
+   return true;
+ } else {
+   return false;
+ }
+}
+
+// Check if element is empty
+function is_element_empty($element) {
+ $element = trim($element);
+ return !empty($element);
+}
 
 /**
  * Cleaner walker for wp_nav_menu()
@@ -12,8 +27,8 @@ use Roots\Sage\Utils;
  *   <li id="menu-item-9" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9"><a href="/sample-page/">Sample Page</a></l
  *
  * NavWalker example output:
- *   <li class="menu-home"><a href="/">Home</a></li>
- *   <li class="menu-sample-page"><a href="/sample-page/">Sample Page</a></li>
+ *   <li class="c-site-nav__item c-site-nav__item--home"><a href="/">Home</a></li>
+ *   <li class="c-site-nav__item c-site-nav__item--sample-page"><a href="/sample-page/">Sample Page</a></li>
  */
 class NavWalker extends \Walker_Nav_Menu {
   private $cpt; // Boolean, is current post a custom post type
@@ -32,31 +47,10 @@ class NavWalker extends \Walker_Nav_Menu {
   }
 
   // @codingStandardsIgnoreStart
-  function start_lvl(&$output, $depth = 0, $args = []) {
-    $output .= "\n<ul class=\"dropdown-menu\">\n";
-  }
-
-  function start_el(&$output, $item, $depth = 0, $args = [], $id = 0) {
-    $item_html = '';
-    parent::start_el($item_html, $item, $depth, $args);
-
-    if ($item->is_dropdown && ($depth === 0)) {
-      $item_html = str_replace('<a', '<a class="dropdown-toggle" data-toggle="dropdown" data-target="#"', $item_html);
-      $item_html = str_replace('</a>', ' <b class="caret"></b></a>', $item_html);
-    } elseif (stristr($item_html, 'li class="divider')) {
-      $item_html = preg_replace('/<a[^>]*>.*?<\/a>/iU', '', $item_html);
-    } elseif (stristr($item_html, 'li class="dropdown-header')) {
-      $item_html = preg_replace('/<a[^>]*>(.*)<\/a>/iU', '$1', $item_html);
-    }
-
-    $item_html = apply_filters('sage/wp_nav_menu_item', $item_html);
-    $output .= $item_html;
-  }
-
   function display_element($element, &$children_elements, $max_depth, $depth = 0, $args, &$output) {
-    $element->is_dropdown = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
+    $element->is_subitem = ((!empty($children_elements[$element->ID]) && (($depth + 1) < $max_depth || ($max_depth === 0))));
 
-    if ($element->is_dropdown) {
+    if ($element->is_subitem) {
       $element->classes[] = 'has-dropdown';
 
       foreach ($children_elements[$element->ID] as $child) {
@@ -70,6 +64,12 @@ class NavWalker extends \Walker_Nav_Menu {
 
     if ($element->is_active) {
       $element->classes[] = 'is-active';
+    }
+
+    if ($depth === 0) {
+      $element->classes[] = 'c-site-nav__item';
+    } else {
+      $element->classes[] = 'c-site-nav__sub-item';
     }
 
     parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
@@ -93,7 +93,7 @@ class NavWalker extends \Walker_Nav_Menu {
     $classes[] = 'c-site-nav__item--' . $slug;
     $classes = array_unique($classes);
 
-    return array_filter($classes, 'Roots\\Sage\\Utils\\is_element_empty');
+    return array_filter($classes);
   }
 }
 
@@ -111,8 +111,8 @@ function nav_menu_args($args = '') {
     $nav_menu_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
   }
 
-  if (!$args['depth']) {
-    $nav_menu_args['depth'] = 2;
+  if (!$args['walker']) {
+    $nav_menu_args['walker'] = new NavWalker();
   }
 
   return array_merge($args, $nav_menu_args);

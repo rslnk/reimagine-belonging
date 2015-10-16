@@ -42,9 +42,6 @@
     },
     "jquery.js": {
       "bower": ["jquery","owl.carousel"]
-    },
-    "modernizr.js": {
-      "bower": ["modernizr"]
     }
   },
   "config": {
