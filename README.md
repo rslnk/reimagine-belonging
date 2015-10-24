@@ -174,6 +174,12 @@ We recommend you update to the latest version of npm: `npm install -g npm@latest
 
 You now have all the necessary dependencies to run the build process. To start working on the development or run building process use:
 
+**Note**: If you'll run into `gulp-sass` no bindings error when running gulp tasks, remove `gulp-sass` from `gulp-iconify` dependencies and install it
+separately:
+
+1. `rm -rf node_modules/gulp-iconify/node_modules/gulp-sass/`
+2. `npm install gulp-sass`
+
 ### Available Gulp commands
 
 * `gulp` — Compile and optimize the files in your assets directory
