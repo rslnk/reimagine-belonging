@@ -5,7 +5,9 @@ use Roots\Sage\Wrapper;
 
 ?>
 
-<?php get_template_part('templates/head'); ?>
+<!doctype html>
+<html <?php language_attributes(); ?>>
+  <?php get_template_part('templates/head'); ?>
   <body <?php body_class(); ?>>
     <?php
       // Add extra classes and styles to the site wrapper on the homepage
