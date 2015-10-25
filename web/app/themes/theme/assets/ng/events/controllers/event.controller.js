@@ -6,101 +6,80 @@ angular.module('events.event.controller', [
     'ngSanitize'
   ])
   .controller('EventController', [
+    '$rootScope',
     '$scope',
     '$http',
     '$sce',
     '$location',
     '$state',
     '$stateParams',
+    '$filter',
     'lodash',
     'ApiService',
-  function ($scope, $http, $sce, $location, $state, $stateParams, lodash, ApiService) {
+    'EventService',
+  function (
+    $rootScope,
+    $scope,
+    $http,
+    $sce,
+    $location,
+    $state,
+    $stateParams,
+    $filter,
+    lodash,
+    ApiService,
+    EventService
+  ) {
     $scope.event = {};
 
     $scope.trustSrc = function(src) {
       return $sce.trustAsResourceUrl(src);
     };
 
-    $scope.loadEvent = function () {
-      ApiService
-        .getEvent($stateParams.event)
-        .then(function(response) {
-          $scope.event = response;
+    ApiService
+      .getEvent($stateParams.event)
+      .then(function(response) {
+        $scope.event = response;
 
-          if ($scope.event.sidebar) {
-            $scope.event.sidebar.map(function (item) {
-              if (item.type === 'video' && item.video_host) {
-                switch (item.video_host) {
-                  case 'youtube':
-                    item.videoUrl = 'http://www.youtube.com/embed/'+item.id+'?modestbranding=0&nologo=1&iv_load_policy=3&autoplay=0&showinfo=0&controls=1&cc_load_policy=1&rel=0';
-                    break;
-                  case 'vimeo':
-                    item.videoUrl = 'https://player.vimeo.com/video/'+item.id+'?title=0&byline=0';
-                    break;
-                }
-              }
-            });
-          }
+        $scope.event.sidebar = EventService.sidebar($scope.event.sidebar);
+        $scope.event.related_events = EventService.relatedEvents($scope.event.related_events);
+        $scope.event.sources = EventService.sources($scope.event.sources);
+        $scope.event.resources = EventService.sources($scope.event.resources);
 
-          if ($scope.event.related_events) {
-            $scope.event.related_events.map(function (item) {
-              if (item.preview_image) {
-                var imgArr = item.preview_image.split('.');
-                imgArr[imgArr.length-2] += '-250x250';
-                item.previewImgPath = imgArr.join('.');
-              }
-
-              var slugArr = item.post_slug.split('/');
-              item.slug = slugArr[slugArr.length-2];
-            });
-          }
-
-          if ($scope.event.sources) {
-            $scope.event.sources.map(function (item) {
-              if (item.author) {
-                console.log('hellow');
-                item.authors = convertContributors(item.author);
-              }
-
-              if (item.editor) {
-                item.editors = convertContributors(item.editor);
-              }
-
-              if (item.translator) {
-                item.translators = convertContributors(item.translator);
-              }
-            });
-          }
-
-          if ($scope.event.resources) {
-            $scope.event.resources.map(function (item) {
-              if (item.author) {
-                item.authors = convertContributors(item.author);
-              }
-
-              if (item.editor) {
-                item.editors = convertContributors(item.editor);
-              }
-
-              if (item.translator) {
-                item.translators = convertContributors(item.translator);
-              }
-            });
-          }
-
-          function convertContributors (list) {
-            var arr = [];
-            var i;
-            var l = list.length;
-            for (i = 0; i < l; i++) {
-              arr.push(list[i].first_name + ' ' + list[i].last_name);
-            }
-            return arr.join(', ');
-          }
-        });
-    };
+      });
 
     $scope.shareUrl = $location.absUrl();
 
-    $scope.loadEvent();
+    $scope.next = function () {
+      var currentEvent = lodash.find($scope.events, function (event) {
+        return event.slug === $stateParams.event;
+      });
+
+      var i = lodash.indexOf($scope.events, currentEvent);
+
+      if (i === $scope.events.length) {
+        i = 0;
+      }
+
+      var nextEvent = $scope.events[i+1];
+
+      $state.go('timeline.event', { event: nextEvent.slug });
+    };
+
+    $scope.prev = function () {
+      var currentEvent = lodash.find($scope.events, function (event) {
+        return event.slug === $stateParams.event;
+      });
+
+      var i = lodash.indexOf($scope.events, currentEvent);
+
+      if (i === 0) {
+        i = $scope.events.length;
+      }
+
+      var prevEvent = $scope.events[i-1];
+
+      $state.go('timeline.event', { event: prevEvent.slug });
+    };
+
   }]);

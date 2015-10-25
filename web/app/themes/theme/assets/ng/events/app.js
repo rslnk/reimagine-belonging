@@ -3,6 +3,7 @@ angular.module('eventsApp', [
     'ngCookies',
     'constants',
     'api.service',
+    'event.service',
     'events.timeline.controller',
     'events.event.controller',
     'events.preview.directive',
@@ -17,7 +18,8 @@ angular.module('eventsApp', [
     '$cookies',
     '$location',
     'ApiService',
-    function($rootScope, $state, $stateParams, $cookies, $location, ApiService){
+    'EventService',
+    function($rootScope, $state, $stateParams, $cookies, $location, ApiService, EventService){
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
 
