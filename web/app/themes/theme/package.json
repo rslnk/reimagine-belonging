@@ -1,15 +1,15 @@
 {
-  "name": "sage",
-  "version": "8.1.1",
-  "author": "Ben Word <ben@benword.com>",
-  "homepage": "https://roots.io/sage/",
+  "name": "reimagine-belonging",
+  "version": "1.2.0",
+  "author": "Ruslan Komjakov <ruslan.komjakov@gmail.com>",
+  "homepage": "https://reimaginebelonging.org",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git://github.com/roots/sage.git"
+    "url": "git://github.com/rslnk/reimagine-belonging.git"
   },
   "bugs": {
-    "url": "https://github.com/roots/sage/issues"
+    "url": "https://github.com/rslnk/reimagine-belonging.git/issues"
   },
   "licenses": [
     {
@@ -27,28 +27,26 @@
     "npm": ">=2.1.5"
   },
   "devDependencies": {
-    "asset-builder": "^1.0.2",
-    "browser-sync": "^2.4.0",
+    "asset-builder": "^1.1.0",
+    "browser-sync": "^2.8.2",
     "del": "^2.0.2",
-    "gulp": "^3.8.11",
-    "gulp-autoprefixer": "^3.0.1",
-    "gulp-changed": "^1.2.1",
-    "gulp-concat": "^2.5.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-changed": "^1.3.0",
+    "gulp-concat": "^2.6.0",
     "gulp-flatten": "0.2.0",
     "gulp-iconify": "^0.3.0",
     "gulp-if": "^2.0.0",
-    "gulp-imagemin": "^2.2.1",
-    "gulp-jshint": "^1.9.4",
-    "gulp-load-plugins": "^1.0.0-rc.1",
-    "gulp-minify-css": "^1.0.0",
-    "gulp-plumber": "^1.0.0",
-    "gulp-protractor": "1.0.0",
-    "gulp-rename": "^1.2.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-rev": "^6.0.1",
-    "gulp-sourcemaps": "^1.5.1",
-    "gulp-stylus": "^2.0.1",
-    "gulp-uglify": "^1.1.0",
-    "imagemin-pngcrush": "^4.0.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-stylus": "^2.1.0",
+    "gulp-uglify": "^1.2.0",
     "jasmine-core": "^2.2.0",
     "jshint-stylish": "^2.0.1",
     "karma": "^0.13.10",
@@ -58,11 +56,12 @@
     "kouto-swiss": "^0.11.10",
     "lazypipe": "^1.0.1",
     "merge-stream": "^1.0.0",
+    "minimist": "^1.1.3",
     "nightwatch": "^0.8.3",
     "phantomjs": "^1.9.16",
     "protractor": "^2.0.0",
+    "run-sequence": "^1.1.2",
     "traverse": "^0.6.6",
-    "wiredep": "^3.0.0-beta",
-    "yargs": "^3.6.0"
+    "wiredep": "^2.2.2"
   }
 }
