@@ -3,6 +3,7 @@
     "events.js": {
       "files": [
         "ng/services/api.service.js",
+        "ng/services/event.service.js",
         "ng/events/filters/events.filter.js",
         "ng/events/filters/topics.filter.js",
         "ng/events/directives/preview.directive.js",
