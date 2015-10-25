@@ -39,9 +39,6 @@
         "styles/main.styl"
       ],
       "main": true
-    },
-    "jquery.js": {
-      "bower": ["jquery","owl.carousel"]
     }
   },
   "config": {
