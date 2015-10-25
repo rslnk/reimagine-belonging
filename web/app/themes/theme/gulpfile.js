@@ -86,7 +86,11 @@ var cssTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(function() {
-      return gulpif('*.styl', stylus());
+      return gulpif('*.styl', stylus({
+        precision: 10,
+        includePaths: ['.'],
+        errLogToConsole: !enabled.failStyleTask
+      }));
     })
     .pipe(concat, filename)
     .pipe(minifyCss, {
@@ -271,6 +275,7 @@ gulp.task('watch', function() {
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'ng/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
+  gulp.watch([path.source + 'icons/**/*'], ['iconify']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
@@ -281,7 +286,7 @@ gulp.task('watch', function() {
 gulp.task('build', function(callback) {
   runSequence('styles',
               'scripts',
-              ['fonts', 'images', 'iconify'],
+              ['fonts', 'iconify', 'images'],
               callback);
 });
 
