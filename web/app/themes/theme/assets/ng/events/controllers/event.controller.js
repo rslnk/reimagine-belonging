@@ -46,6 +46,12 @@ angular.module('events.event.controller', [
         $scope.event.sources = EventService.sources($scope.event.sources);
         $scope.event.resources = EventService.sources($scope.event.resources);
 
+        // Temporary jquery solution
+        // - Sets lightbox height
+        // - Moves body content up when lightbox content is called
+        // - Lightbox height on window resize function is set in `scripts/main.js`
+        $('.js-lightbox').height($(window).height());
+        $('html, body').animate({ scrollTop: 0 }, 200);
       });
 
     $scope.shareUrl = $location.absUrl();

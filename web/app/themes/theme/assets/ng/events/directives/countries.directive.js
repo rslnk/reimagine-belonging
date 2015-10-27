@@ -7,7 +7,7 @@ angular
       template: '<div class="countries-switcher">'+
                 '<h2 class="o-btn c-btn--selector c-btn--mint" ng-click="ctrl.toggle()">' +
                     '{{ timeline.name }}' +
-                    '<span class="u-icon u-icon-arrow-down-negative countries-switcher__icon"></span>'+
+                    '<span class="o-icon c-icon-arrow-down-negative countries-switcher__icon"></span>'+
                 '</h2>'+
                 '<ul class="countries-switcher__list" ng-show="ctrl.open">'+
                 '<li class="o-btn c-btn--medium c-btn--mint" ng-repeat="country in siteConfig.timelines" ng-click="switchCountry(country.slug)">{{ country.name }}</li>'+

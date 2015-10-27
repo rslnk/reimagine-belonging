@@ -5,16 +5,17 @@
   right 0
   width 100%
   max-width 100%
+  min-height 100%
   overflow-x hidden
   background-color rgba(0, 0, 0, .65)
   +media-query($screen, $bp--tablet)
-    padding rem(40px)
+    padding rem(40px) 0
   +media-query($screen, $bp--desktop)
-    padding rem(60px)
+    padding rem(60px) 0
   +media-query($screen, $bp--desktop--medium)
-    padding rem(60px) rem(80px)
+    padding rem(60px) 0
   +media-query($screen, $bp--desktop--large)
-    padding rem(60px) rem(120px)
+    padding rem(60px) 0
 
 .o-lightbox__wrapper
   position relative
@@ -25,6 +26,7 @@
   +media-query($screen, $bp--tablet)
     padding rem(20px) rem(30px)
     padding-top rem(5px)
+    width 90%
   +media-query($screen, $bp--desktop)
     padding rem(20px) rem(60px)
     padding-top rem(5px)
@@ -32,13 +34,13 @@
     padding rem(20px) rem(80px)
   +media-query($screen, $bp--desktop--large)
     padding rem(20px) rem(80px)
+    width 80%
 
 //.c-lightbox__wrapper--event
 
 .c-lightbox__wrapper--story
   +media-query($screen, $bp--tablet)
     padding rem(20px) rem(30px)
-    padding-top rem(5px)
   +media-query($screen, $bp--desktop)
     padding rem(20px) rem(30px)
     padding-top rem(5px)
@@ -47,13 +49,33 @@
   +media-query($screen, $bp--desktop--large)
     padding rem(20px) rem(80px)
 
-.c-lightbox__close
+.c-lightbox__nav-wrapper
+  display none // temporary disable navigation on mobile screen
+  z-index 100
+  min-height 100%
+  cursor pointer
+  +media-query($screen, $bp--tablet)
+    display block // display navigation starting from tablet screen size
+    position relative
+    width 5%
+  +media-query($screen, $bp--desktop--large)
+    width 10%
+
+.c-lightbox__nav-wrapper--left
+  +media-query($screen, $bp--mobile--landscape)
+    float left
+
+.c-lightbox__nav-wrapper--right
+  +media-query($screen, $bp--mobile--landscape)
+    float right
+
+.c-lightbox__nav
+  z-index 9999
+  cursor pointer
+
+.c-lightbox__nav--close
   absolute rem(10px) rem(10px) false false
   size rem(20px)
-  z-index 1000
-  background-size 100%
-  text-indent rem(-9999px)
-  cursor pointer
   +media-query($screen, $bp--tablet)
     absolute rem(20px) rem(20px) false false
     size rem(30px)
@@ -63,3 +85,43 @@
   +media-query($screen, $bp--desktop--medium)
     absolute rem(20px) rem(20px) false false
     size rem(45px)
+
+.c-lightbox__nav--prev,
+.c-lightbox__nav--next
+  position fixed
+  bottom 50%
+  size rem(45px)
+  +media-query($screen, $bp--tablet)
+    size rem(25px)
+  +media-query($screen, $bp--tablet--landscape)
+    size rem(30px)
+  +media-query($screen, $bp--desktop)
+    size rem(40px)
+  +media-query($screen, $bp--desktop--medium)
+    size rem(50px)
+  +media-query($screen, $bp--desktop--large)
+    size rem(65px)
+
+.c-lightbox__nav--prev
+  +media-query($screen, $bp--tablet)
+    left rem(3px)
+  +media-query($screen, $bp--tablet--landscape)
+    left rem(5px)
+  +media-query($screen, $bp--desktop)
+    left rem(6px)
+  +media-query($screen, $bp--desktop--medium)
+    left rem(12px)
+  +media-query($screen, $bp--desktop--large)
+    left rem(55px)
+
+.c-lightbox__nav--next
+  +media-query($screen, $bp--tablet)
+    right rem(3px)
+  +media-query($screen, $bp--tablet--landscape)
+    right rem(5px)
+  +media-query($screen, $bp--desktop)
+    right rem(6px)
+  +media-query($screen, $bp--desktop--medium)
+    right rem(12px)
+  +media-query($screen, $bp--desktop--large)
+    right rem(55px)

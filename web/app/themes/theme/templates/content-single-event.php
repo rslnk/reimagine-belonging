@@ -32,10 +32,10 @@
       </div>
       <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
       </ul>
     </header>
@@ -94,7 +94,7 @@
             <?php if(get_sub_field('sidebar_content_type') == 'quote'): ?>
               <div class="c-sidebar-quote">
                 <?php while( have_rows('quote') ): the_row(); ?>
-                  <div class="u-icon u-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
+                  <div class="o-icon c-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
                   <h4 class="o-heading c-sidebar-quote__text"><?php the_sub_field('text'); ?></h4>
                   <div class="c-sidebar-quote__author-block">
                     <span class="c-sidebar-quote__dash">—</span>

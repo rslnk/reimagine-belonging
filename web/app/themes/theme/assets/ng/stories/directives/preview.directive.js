@@ -13,7 +13,7 @@ angular
                     '<div class="story-preview__hero">'+
                       '<h3><strong>{{ story.hero }}</strong>, {{ story.city[0].term_name }}</h3>' +
                     '</div>'+
-                    '<div class="story-preview__icon u-icon u-icon-play-negative"></div>' +
+                    '<div class="story-preview__icon o-icon c-icon-play-negative"></div>' +
                   '</div>'+
                 '</div>',
       link: function (scope, element) {

@@ -22,8 +22,8 @@
             "key": "field_552fa2ef8a7a6",
             "label": "Language",
             "name": "site_language",
-            "type": "text",
-            "instructions": "Format: \"en_US\".",
+            "type": "select",
+            "instructions": "Dates and social media plugins",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -31,13 +31,20 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "choices": {
+                "en_US": "English",
+                "de_DE": "German"
+            },
+            "default_value": {
+                "en_EN": "en_EN"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
             "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 5,
-            "readonly": 0,
-            "disabled": 0
+            "disabled": 0,
+            "readonly": 0
         },
         {
             "key": "field_552fa1a1f9cca",
@@ -323,5 +330,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1444391014
+    "modified": 1445949885
 }

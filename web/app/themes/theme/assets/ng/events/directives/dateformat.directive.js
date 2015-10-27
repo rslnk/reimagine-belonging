@@ -12,8 +12,8 @@ angular
       template: '<time>{{ format() }}</time>',
       controller: function ($scope) {
         var months = {
-          'EN': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-          'DE': ['Januar', 'Februar', 'March', 'April', "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember "],
+          'en_US': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+          'de_DE': ['Januar', 'Februar', 'March', 'April', "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember "],
         };
 
         $scope.format = function () {

@@ -1,9 +1,22 @@
-<div class="o-lightbox">
-  <div class="o-lightbox__wrapper">
+<div class="o-lightbox js-lightbox">
+
+  <div ng-click="prev()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--left js-lightbox-nav-wrapper">
+    <div class="c-lightbox__nav c-lightbox__nav--prev o-icon c-icon-arrow-left-negative">
+      {{ siteConfig.previous_button_label }}
+    </div>
+  </div>
+
+  <div ng-click="next()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--right">
+    <div class="c-lightbox__nav c-lightbox__nav--next o-icon c-icon-arrow-right-negative">
+      {{ siteConfig.next_button_label }}
+    </div>
+  </div>
+
+  <div ng-cloak ng-show="event.main_content" class="o-lightbox__wrapper js-lightbox-wrapper">
     <!-- close button -->
-    <div ng-click="prev()">Prev</div>
-    <div ng-click="next()">Next</div>
-    <div class="c-lightbox__close u-icon u-icon-close-medium-gray" ng-click="closeLightbox()">Close</div>
+    <div class="c-lightbox__nav c-lightbox__nav--close o-icon c-icon-close-medium-gray" ng-click="closeLightbox()">
+      {{ siteConfig.close_button_label }}
+    </div>
 
     <div class="c-event__header" >
       <!-- categories -->
@@ -24,10 +37,10 @@
       </ul>
       <!-- header -->
       <h1 class="o-heading c-heading--event-title">{{ event.title }}</h1>
-      <div class="c-event__date">
-        <dateformat thedate="{{event.start_date}}" lang="EN" unknown="{{event.exact_dates_uknown}}"></dateformat>
+      <div ng-show="event.start_date" class="c-event__date">
+        <dateformat thedate="{{event.start_date}}" lang="{{siteConfig.site_language}}" unknown="{{event.exact_dates_uknown}}"></dateformat>
         <span ng-show="event.end_date"> &mdash; </span>
-        <dateformat ng-show="event.end_date" thedate="{{event.end_date}}" lang="EN" unknown="{{event.exact_dates_uknown}}"></dateformat>
+        <dateformat ng-show="event.end_date" thedate="{{event.end_date}}" lang="{{siteConfig.site_language}}" unknown="{{event.exact_dates_uknown}}"></dateformat>
       </div>
       <!-- impact
       <div>...</div>
@@ -36,10 +49,10 @@
       <!-- social shares -->
       <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
         </li>
         <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share u-icon u-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
         </li>
       </ul>
     </div>
@@ -67,7 +80,7 @@
             <p class="o-paragraph c-paragraph--sidebar c-sidebar-note__caption">{{ item.caption }}</p>
           </div>
           <div ng-switch-when="quote" class="c-sidebar-quote">
-            <div class="u-icon u-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
+            <div class="o-icon c-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
             <h4 ng-bind-html="item.text" class="o-heading c-sidebar-quote__text">{{ item.text }}</h4>
             <div ng-if="item.author" class="c-sidebar-quote__author-block">
               <span class="c-sidebar-quote__dash">—</span>

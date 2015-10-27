@@ -21,7 +21,11 @@ angular.module('stories.story.controller', [
           $scope.story = response;
           $scope.story.video_url = 'http://vimeo.com/' + $scope.story.story_video_id;
 
-          $('.o-lightbox').height($('main').height() + 100);
+          // Temporary jquery solution
+          // - Sets lightbox height
+          // - Moves body content up when lightbox content is called
+          // - Lightbox height on window resize function is set in `scripts/main.js`
+          $('.js-lightbox').height($('main').height() + 100);
           $('html, body').animate({ scrollTop: 0 }, 200);
         });
     };

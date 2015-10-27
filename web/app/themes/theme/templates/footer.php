@@ -8,10 +8,10 @@
       ?>
       <ul class="c-site-footer__social-icons">
         <li>
-          <a class="o-icons-list__link u-icon u-icon-facebook-negative" href="https://www.facebook.com/withWINGSandROOTS">Facebook</a>
+          <a class="o-icons-list__link o-icon c-icon-facebook-negative" href="https://www.facebook.com/withWINGSandROOTS">Facebook</a>
         </li>
         <li>
-          <a class="o-icons-list__link u-icon u-icon-twitter-negative" href="https://www.twitter.com/wingsrootsfilm">Twitter</a>
+          <a class="o-icons-list__link o-icon c-icon-twitter-negative" href="https://www.twitter.com/wingsrootsfilm">Twitter</a>
         </li>
       </ul>
       <?php if(get_field('footer_language_switcher_text', 'option') && get_field('footer_language_switcher_url', 'option')): ?>

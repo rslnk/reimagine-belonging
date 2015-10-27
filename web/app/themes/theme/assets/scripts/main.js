@@ -31,6 +31,15 @@
           $('footer').css('margin-top', - $('footer').height());
         }
 
+        // all mess here is just a warkaround to fix the lightbox for the berlin milestone
+        // Lightbox height is temporary set in:
+        // - ng/stories/controllers/story.controller.js
+        // - ng/events/controllers/event.controller.js
+        function setLightboxHeight() {
+          $('.js-lightbox').height($('main').height() + 100);
+          $('.js-lightbox-nav-wrapper').height($('main').height() + 100);
+        }
+
         if ( $(window).width() >= 550) {
           // Script for large screens
 
@@ -38,6 +47,7 @@
 
           $(window).resize(function () {
             makeFooterSticky();
+            setLightboxHeight();
           });
 
         }
@@ -46,19 +56,10 @@
           //
         }
 
-        // Toggle head navigation menu on mobile screen
+        // Toggle head navigation menu on mobile/tablet screen
         $('.js-toggle-nav-menu').on('click', function(e) {
           e.preventDefault();
           $('.c-site-nav__list--head').toggle();
-        });
-
-        // all mess here is just a warkaround to fix the lightbox for the berlin milestone
-        function setLightboxHeight () {
-          $('.o-lightbox').height($('main').height() + 100);
-        }
-
-        $(window).resize(function () {
-          setLightboxHeight();
         });
 
       },
