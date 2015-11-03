@@ -1,5 +1,6 @@
 angular.module('event.service', ['ngLodash'])
   .service('EventService', ['$http','lodash', function ($http, lodash) {
+
     var convertContributors = function (list) {
       var arr = [];
       var i;
@@ -44,6 +45,23 @@ angular.module('event.service', ['ngLodash'])
       }
 
       return events;
+    };
+
+    this.relatedStories = function (stories) {
+      if (stories) {
+        stories.map(function (item) {
+          if (item.preview_image) {
+            var imgArr = item.preview_image.split('.');
+            imgArr[imgArr.length-2] += '-250x250';
+            item.previewImgPath = imgArr.join('.');
+          }
+
+          var slugArr = item.post_slug.split('/');
+          item.slug = slugArr[slugArr.length-2];
+        });
+      }
+
+      return stories;
     };
 
     this.sources = function (sources) {

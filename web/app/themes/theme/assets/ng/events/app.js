@@ -19,7 +19,15 @@ angular.module('eventsApp', [
     '$location',
     'ApiService',
     'EventService',
-    function($rootScope, $state, $stateParams, $cookies, $location, ApiService, EventService){
+    function(
+      $rootScope,
+      $state,
+      $stateParams,
+      $cookies,
+      $location,
+      ApiService,
+      EventService
+    ){
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
 
@@ -52,7 +60,12 @@ angular.module('eventsApp', [
     '$urlRouterProvider',
     '$locationProvider',
     'templatesPath',
-    function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
+    function(
+      $stateProvider,
+      $urlRouterProvider,
+      $locationProvider,
+      templatesPath
+    ) {
       $locationProvider.html5Mode(true);
       $stateProvider
         .state('timeline', {
