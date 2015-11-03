@@ -43,6 +43,7 @@ angular.module('events.event.controller', [
 
         $scope.event.sidebar = EventService.sidebar($scope.event.sidebar);
         $scope.event.related_events = EventService.relatedEvents($scope.event.related_events);
+        $scope.event.related_stories = EventService.relatedStories($scope.event.related_stories);
         $scope.event.sources = EventService.sources($scope.event.sources);
         $scope.event.resources = EventService.sources($scope.event.resources);
 

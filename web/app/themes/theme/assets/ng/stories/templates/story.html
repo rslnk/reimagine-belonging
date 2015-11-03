@@ -1,13 +1,13 @@
 <div class="o-lightbox js-lightbox">
 
-  <div ng-click="closeLightbox()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--left js-lightbox-nav-wrapper">
-    <div class="c-lightbox__nav c-lightbox__nav--prev o-icon _c-icon-arrow-left-negative">
+  <div ng-click="prev()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--left js-lightbox-nav-wrapper">
+    <div class="c-lightbox__nav c-lightbox__nav--prev o-icon c-icon-arrow-left-negative">
       {{ siteConfig.previous_button_label }}
     </div>
   </div>
 
-  <div ng-click="closeLightbox()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--right">
-    <div class="c-lightbox__nav c-lightbox__nav--next o-icon _c-icon-arrow-right-negative">
+  <div ng-click="next()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--right">
+    <div class="c-lightbox__nav c-lightbox__nav--next o-icon c-icon-arrow-right-negative">
       {{ siteConfig.next_button_label }}
     </div>
   </div>

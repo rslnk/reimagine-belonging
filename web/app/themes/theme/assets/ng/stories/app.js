@@ -1,7 +1,9 @@
 angular.module('storiesApp', [
     'ui.router',
+    'ngCookies',
     'constants',
     'api.service',
+    'story.service',
     'stories.list.controller',
     'stories.story.controller',
     'stories.preview.directive'
@@ -10,7 +12,19 @@ angular.module('storiesApp', [
     '$rootScope',
     '$state',
     '$stateParams',
-    function($rootScope, $state, $stateParams){
+    '$cookies',
+    '$location',
+    'ApiService',
+    'StoryService',
+    function(
+      $rootScope,
+      $state,
+      $stateParams,
+      $cookies,
+      $location,
+      ApiService,
+      StoryService
+    ){
       $rootScope.$state = $state;
       $rootScope.$stateParams = $stateParams;
     }
@@ -20,7 +34,12 @@ angular.module('storiesApp', [
     '$urlRouterProvider',
     '$locationProvider',
     'templatesPath',
-    function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
+    function(
+      $stateProvider,
+      $urlRouterProvider,
+      $locationProvider,
+      templatesPath
+    ) {
       $locationProvider.html5Mode(true);
       $stateProvider
         .state('list', {

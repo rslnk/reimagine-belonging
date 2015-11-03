@@ -451,10 +451,19 @@
       </div>
     </div>
 
-    <!-- <ul class="o-row">
+    <!-- <h2>Related Stories</h2>
+    <ul class="o-row">
+      <li ng-click="openStory(item.slug)" ng-repeat="item in event.related_stories">
+        <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
+      </li>
+    </ul>
+
+    <h2>Related Events</h2>
+    <ul class="o-row">
       <li ng-click="openEvent(item.slug)" ng-repeat="item in event.related_events">
         <img ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}} " />
       </li>
     </ul> -->
+
   </div>
 </div>
