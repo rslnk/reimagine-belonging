@@ -1,6 +1,9 @@
 <header class="c-site-head">
   <div class="o-wrapper">
     <nav class="o-site-nav c-site-nav--head">
+      <a class="c-donate-button">
+        Donate
+      </a>
       <a href="<?= esc_url(home_url('/')); ?>" class="o-site-logo c-site-logo--nav o-icon c-icon-logo">
         <?php bloginfo('name'); ?>
       </a>
