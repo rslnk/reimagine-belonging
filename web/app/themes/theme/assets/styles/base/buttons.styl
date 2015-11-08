@@ -84,22 +84,42 @@ button,
 .c-btn--mint
   color $color--white
   background-color $color--mint
+  variations = monochrome( $color--mint )
+  &:hover,
+  &:focus
+    background-color variations[1]
 
 .c-btn--indigo
   color $color--white
   background-color $color--indigo
+  variations = monochrome( $color--indigo )
+  &:hover,
+  &:focus
+    background-color variations[1]
 
 .c-btn--blueberry
   color $color--white
   background-color $color--blueberry
+  variations = monochrome( $color--blueberry )
+  &:hover,
+  &:focus
+    background-color variations[1]
 
 .c-btn--yolk
   color $color--white
   background-color $color--yolk
+  variations = monochrome( $color--yolk )
+  &:hover,
+  &:focus
+    background-color variations[1]
 
 .c-btn--lightgray
   color $color--medium-gray
   background-color $color--light-gray
+  variations = monochrome( $color--light-gray )
+  &:hover,
+  &:focus
+    background-color variations[1]
 
 // Unique casses
 .c-btn--selector
@@ -114,3 +134,24 @@ button,
     font-size $size--deca
   +media-query($screen, $bp--desktop--medium)
     font-size $size--kilo
+
+.c-btn--paypal
+  padding rem(23px) rem(36px)
+  width 100%
+  background-color #fcc600
+  variations = monochrome( #fcc600 )
+  &:hover,
+  &:focus
+    background-color variations[1]
+  +media-query($screen, $bp--tablet)
+    padding rem(16px) rem(24px)
+    width auto
+    min-width rem(160px)
+  +media-query($screen, $bp--tablet--landscape)
+    padding rem(15px) rem(26px)
+    min-width rem(200px)
+  +media-query($screen, $bp--desktop)
+    padding rem(15px) rem(26px)
+  +media-query($screen, $bp--desktop--medium)
+    padding rem(18px) rem(54px)
+    min-width rem(300px)

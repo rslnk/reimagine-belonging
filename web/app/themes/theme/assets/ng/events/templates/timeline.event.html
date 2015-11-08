@@ -1,4 +1,4 @@
-<div class="o-lightbox js-lightbox">
+<div class="o-lightbox c-lightbox--event js-lightbox">
 
   <div ng-click="prev()" class="c-lightbox__nav-wrapper c-lightbox__nav-wrapper--left js-lightbox-nav-wrapper">
     <div class="c-lightbox__nav c-lightbox__nav--prev o-icon c-icon-arrow-left-negative">
@@ -12,7 +12,7 @@
     </div>
   </div>
 
-  <div ng-cloak ng-show="event.main_content" class="o-lightbox__wrapper js-lightbox-wrapper">
+  <div ng-cloak ng-show="event.main_content" class="o-lightbox__content-wrapper c-lightbox__content-wrapper--event">
     <!-- close button -->
     <div class="c-lightbox__nav c-lightbox__nav--close o-icon c-icon-close-medium-gray" ng-click="closeLightbox()">
       {{ siteConfig.close_button_label }}

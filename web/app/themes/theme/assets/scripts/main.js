@@ -40,6 +40,17 @@
           $('.js-lightbox-nav-wrapper').height($('main').height() + 100);
         }
 
+
+        $('.js-lightbox-open').on('click', function (e) {
+          e.preventDefault();
+           $('.js-lightbox--donate').show();
+        });
+
+        $('.js-lightbox-close').on('click', function (e) {
+          e.preventDefault();
+           $('.js-lightbox--donate').hide();
+        });
+
         if ( $(window).width() >= 550) {
           // Script for large screens
 

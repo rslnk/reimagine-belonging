@@ -1,13 +1,13 @@
 .c-site-nav__menu-toggle
   display inline-block
-  margin-top rem(6px)
+  margin-top rem(8px)
   float right
   text-indent -9999em
-  size rem(38px)
+  size rem(32px)
   background-size 100% auto
   +media-query($screen, $bp--tablet)
     margin-top 0
-    size rem(25px)
+    size rem(30px)
   +media-query($screen, $bp--tablet--landscape)
     display none
 
@@ -15,8 +15,8 @@
   // Due to design lemitations the homepage toggle icon disappears on the desktop
   // rather than on tablet-landscape screen
   +media-query($screen, $bp--tablet)
-    margin-top rem(-2px)
-    size rem(42px)
+    margin-top rem(3px)
+    size rem(35px)
   +media-query($screen, $bp--tablet--landscape)
     display block
   +media-query($screen, $bp--desktop)

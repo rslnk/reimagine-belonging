@@ -22,3 +22,5 @@
     </nav>
   </div>
 </footer>
+
+<?php get_template_part('templates/modal', 'donate'); ?>
