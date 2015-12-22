@@ -8,9 +8,8 @@ $webroot_dir = $root_dir . '/web';
 $dotenv = new Dotenv\Dotenv($root_dir);
 if (file_exists($root_dir . '/.env')) {
   $dotenv->load();
+  $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
 }
-
-$dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
 
 /**
  * Set up our global environment constant and load its config first
@@ -64,9 +63,9 @@ define('NONCE_SALT', getenv('NONCE_SALT'));
  * Custom Settings
  */
 define('AUTOMATIC_UPDATER_DISABLED', true);
-define('DISABLE_WP_CRON', true);
-define('DISALLOW_FILE_MODS', true);
-define('IMAGE_EDIT_OVERWRITE', true);
+define('DISABLE_WP_CRON', getenv('DISABLE_WP_CRON') ?: false);
+define('DISALLOW_FILE_EDIT', true);
+define('WP_DEFAULT_THEME', 'theme');
 
 /**
  * Bootstrap WordPress
