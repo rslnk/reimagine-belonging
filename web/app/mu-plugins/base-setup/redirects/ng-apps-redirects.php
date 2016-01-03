@@ -2,7 +2,7 @@
 
 use BaseSetup\API\Data;
 use BaseSetup\Redirects\UserAgentCheck;
-use Theme\Lib\PostTypes;
+use ReBe\Lib\PostTypes;
 
 /*
 
@@ -119,7 +119,7 @@ function create_stories_proxy () {
       $url = $_SERVER["REQUEST_URI"];
       if(substr($url, -1) == '/') {
         $url = substr($url, 0, -1);
-      }      
+      }
       $parts = explode('/', rtrim($url, '/'));
       if (count($parts) > 2) {
         setcookie("stories", $url, time()+3600, "/");

@@ -1,7 +1,7 @@
 <?php
 
-use Roots\Sage\Extras;
-use Roots\Sage\Wrapper;
+use ReBe\Extras;
+use ReBe\Wrapper;
 
 ?>
 
@@ -17,7 +17,7 @@ use Roots\Sage\Wrapper;
     <div class="o-site-wrapper <?php if(is_front_page()) echo $home_wrapper_classes ?>" <?php if(is_front_page()) echo $home_wrapper_syle ?>>
       <!--[if lt IE 9]>
         <div class="alert alert-warning">
-          <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'sage'); ?>
+          <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.', 'rebe'); ?>
         </div>
       <![endif]-->
       <?php Extras\facebook_sdk(); ?>

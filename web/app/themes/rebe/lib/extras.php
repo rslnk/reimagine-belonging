@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Extras;
+namespace ReBe\Extras;
 
-use Roots\Sage\Setup;
+use ReBe\Setup;
 
 // Add <body> classes
 function body_class($classes) {

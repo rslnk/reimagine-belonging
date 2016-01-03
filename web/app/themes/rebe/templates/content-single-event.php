@@ -1,10 +1,10 @@
-<?php use Roots\Sage\Utils; ?>
+<?php use ReBe\Utils; ?>
 
 <?php while (have_posts()) : the_post(); ?>
   <article class="o-wrapper">
     <header class="c-event__header">
 
-      <?= Roots\Sage\Extras\list_categories(); ?>
+      <?= ReBe\Extras\list_categories(); ?>
 
       <h1 class="o-heading c-heading--event-title"><?php the_title(); ?></h1>
       <?php if (get_field('subtitle')): ?>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Theme\Lib\PostTypes;
+namespace ReBe\Lib\PostTypes;
 
 /*
 

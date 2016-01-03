@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Setup;
+namespace ReBe\Setup;
 
-use Roots\Sage\Assets;
+use ReBe\Assets;
 
 /**
  * Theme setup
@@ -21,10 +21,6 @@ $gai = get_field('google_analytics_id', 'option');  // Get Google Analytics ID f
 add_theme_support('soil-google-analytics', $gai);   // Enable H5BP's Google Analytics snippet
 
 function setup() {
-  // Make theme available for translation
-  // Community translations can be found at https://github.com/roots/sage-translations
-  load_theme_textdomain('sage', get_template_directory() . '/lang');
-
   // Enable plugins to manage the document title
   // http://codex.wordpress.org/Function_Reference/add_theme_support#Title_Tag
   add_theme_support('title-tag');
@@ -32,8 +28,8 @@ function setup() {
   // Register wp_nav_menu() menus
   // http://codex.wordpress.org/Function_Reference/register_nav_menus
   register_nav_menus([
-    'primary_navigation'    => __('Primary Navigation', 'sage'),
-    'secondary_navigation'  => __('Secondary Navigation', 'sage')
+    'primary_navigation'    => __('Primary Navigation', 'rebe'),
+    'secondary_navigation'  => __('Secondary Navigation', 'rebe')
   ]);
 
   // Enable post thumbnails
@@ -63,8 +59,8 @@ add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+  wp_enqueue_style('rebe/css', Assets\asset_path('styles/main.css'), false, null);
+  wp_enqueue_script('rebe/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 
   // Angular apps (this must be contatinated into main.js required on corresponding templates!)
   wp_enqueue_script('events/js', Assets\asset_path('scripts/events.js'), [], null, true);

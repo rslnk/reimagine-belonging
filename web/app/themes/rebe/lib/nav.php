@@ -1,6 +1,6 @@
 <?php
 
-namespace Roots\Sage\Nav;
+namespace ReBe\Nav;
 
 // Compare URL against relative URL
 function url_compare($url, $rel) {
