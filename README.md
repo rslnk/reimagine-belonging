@@ -127,7 +127,7 @@ To setup your development machine fully compatible with the latests Reimagine Be
 
 ## Website development
 
-Reimagine Belonging WordPress theme files are stored in `web/app/themes/theme/`.
+Reimagine Belonging WordPress theme files are stored in `web/app/themes/rebe/`.
 
 ```
 app/
@@ -140,20 +140,20 @@ app/
 │   └── register-theme-directory.php
 ├── plugins/
 └── themes/
-    └── theme/                  - Reimagine Belonging WordPpress theme includes build script, templates and assets
-        ├── assets/             - Build assets
+    └── rebe/                   -  Reimagine Belonging WordPpress theme includes build script, templates and assets
+        ├── assets/              - Build assets
         │   ├── icons/           - svg icons
         │   ├── images/          - Images
         │   ├── ng/              - AngularJS apps
         │   ├── scripts/         - JavaScripts
         │   ├── styles/          - CSS styles
         │   └── manifest.json
-        ├── dist/               - Distributives
-        ├── e2e/                - End to end tests
-        ├── lib/                - Site config
-        ├── templates/          — WordPress content templates
-        ├── gulpfile.js         — Build script
-        └── packages.json       — Build dependencies
+        ├── dist/                - Distributives
+        ├── e2e/                 - End to end tests
+        ├── lib/                 - Site config
+        ├── templates/           — WordPress content templates
+        ├── gulpfile.js          — Build script
+        └── packages.json        — Build dependencies
 ```
 
 This project uses [Gulp](http://gulpjs.com) as its build system and [Bower](http://bower.io) to manage front-end packages. To get started with the building process make sure your development machine meets the following requirements:
@@ -169,7 +169,7 @@ We recommend you update to the latest version of npm: `npm install -g npm@latest
 **Install Gulp, Bower and build dependencies:**
 
 1. Install [Gulp](http://gulpjs.com) and [Bower](http://bower.io) globally with `npm install -g gulp bower`
-2. Navigate to the theme directory `web/app/themes/theme/`, then run `npm install`
+2. Navigate to the theme directory `web/app/themes/rebe/`, then run `npm install`
 3. Run `bower install`
 
 You now have all the necessary dependencies to run the build process. To start working on the development or run building process use:

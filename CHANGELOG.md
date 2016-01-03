@@ -1,3 +1,7 @@
+### HEAD
+
+* Rename theme folder to `rebe`
+
 ### 0.1.3: 2015-04-26
 
 * Add iconify gulp task

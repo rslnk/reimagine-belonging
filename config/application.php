@@ -65,7 +65,7 @@ define('NONCE_SALT', getenv('NONCE_SALT'));
 define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', getenv('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
-define('WP_DEFAULT_THEME', 'theme');
+define('WP_DEFAULT_THEME', 'rebe');
 
 /**
  * Bootstrap WordPress
