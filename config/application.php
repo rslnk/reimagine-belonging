@@ -60,6 +60,14 @@ define('LOGGED_IN_SALT', getenv('LOGGED_IN_SALT'));
 define('NONCE_SALT', getenv('NONCE_SALT'));
 
 /**
+* Amazon S3 and Cloudfront plugin authentication and settings
+*/
+define('AWS_ACCESS_KEY_ID', getenv('AWS_ACCESS_KEY_ID'));
+define('AWS_SECRET_ACCESS_KEY', getenv('AWS_SECRET_ACCESS_KEY'));
+define('AS3CF_BUCKET', getenv('AS3CF_BUCKET'));
+define('AS3CF_REGION', getenv('AS3CF_REGION'));
+
+/**
  * Custom Settings
  */
 define('AUTOMATIC_UPDATER_DISABLED', true);

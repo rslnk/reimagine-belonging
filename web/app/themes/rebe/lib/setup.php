@@ -32,6 +32,9 @@ function setup() {
     'secondary_navigation'  => __('Secondary Navigation', 'rebe')
   ]);
 
+  # Disable year/month uploads folders
+  update_option('uploads_use_yearmonth_folders', false);
+  
   // Enable post thumbnails
   // http://codex.wordpress.org/Post_Thumbnails
   // http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size

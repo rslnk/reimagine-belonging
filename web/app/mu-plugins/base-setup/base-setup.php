@@ -20,7 +20,6 @@
 if (!is_blog_installed()) { return; }
 
 // Base Setup files
-require_once('media-uploads.php');
 require_once('api/api.php');
 require_once('redirects/ng-apps-base.php');
 require_once('redirects/ng-apps-redirects.php');

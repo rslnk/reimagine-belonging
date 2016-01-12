@@ -1,5 +1,6 @@
 ### HEAD
 
+* Add `amazon-s3-and-cloudfront` plugin for media files offload
 * Rename theme folder to `rebe`
 
 ### 0.1.3: 2015-04-26
