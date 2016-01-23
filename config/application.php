@@ -71,7 +71,7 @@ define('AS3CF_REGION', getenv('AS3CF_REGION'));
  * Custom Settings
  */
 define('AUTOMATIC_UPDATER_DISABLED', true);
-define('DISABLE_WP_CRON', getenv('DISABLE_WP_CRON') ?: false);
+define('DISABLE_WP_CRON', getenv('DISABLE_WP_CRON') == 'true');
 define('DISALLOW_FILE_EDIT', true);
 define('WP_POST_REVISIONS', false);
 define('WP_DEFAULT_THEME', 'rebe');
