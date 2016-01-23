@@ -4,12 +4,12 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "52f748558bdede4df89b21310b7a3bc2",
-    "content-hash": "722be2b48ed4bc7a5918a6cbe6d14a5c",
+    "hash": "cc05201ff829f596ca6a520fabd541b4",
+    "content-hash": "59eb4a6e7e108f2fdb938897bb4d6ec1",
     "packages": [
         {
             "name": "advancedcustomfields/acf-pro",
-            "version": "5.3.0",
+            "version": "5.3.3",
             "dist": {
                 "type": "zip",
                 "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzYwMTd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMjkgMDA6MTM6MDg=",
@@ -203,16 +203,16 @@
         },
         {
             "name": "roots/soil",
-            "version": "3.5.0",
+            "version": "3.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/soil.git",
-                "reference": "4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0"
+                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/soil/zipball/4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0",
-                "reference": "4e9ad4562e1592c49f1f3a26c4dad1e00500c0c0",
+                "url": "https://api.github.com/repos/roots/soil/zipball/8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
+                "reference": "8b534d4b271033d22b8fa0d055c740f7f9c4ca58",
                 "shasum": ""
             },
             "require": {
@@ -241,7 +241,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-09-24 17:30:00"
+            "time": "2015-12-24 19:42:34"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -336,15 +336,15 @@
         },
         {
             "name": "wpackagist-plugin/so-clean-up-wp-seo",
-            "version": "1.7",
+            "version": "1.7.5",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/so-clean-up-wp-seo/",
-                "reference": "tags/1.7"
+                "reference": "tags/1.7.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/so-clean-up-wp-seo.1.7.5.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -356,15 +356,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "2.3.5",
+            "version": "3.0.7",
             "source": {
                 "type": "svn",
                 "url": "http://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/2.3.5"
+                "reference": "tags/3.0.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.2.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.0.7.zip",
                 "reference": null,
                 "shasum": null
             },
