@@ -5,7 +5,7 @@
         <?php bloginfo('name'); ?>
       </a>
       <?php if (get_field('donate_button_label', 'option')): ?>
-        <div class="c-donate-button js-lightbox-open">
+        <div class="c-donate-button c-donate-button js-lightbox-open--donate">
           <div class="c-donate-button__text">
             <?php the_field('donate_button_label', 'option'); ?>
           </div>

@@ -1,5 +1,13 @@
 # CHANGELOG
 
+##  Checkpoint Charlie Grant Report
+
+-   Fix lightbox class position propery
+-   Give `Donation` button js class a unique name
+-   Add `Workshops` page content
+-   Add `Book a workshop` modal template
+-   Add 'Workshops' page template and styles
+
 ## HEAD
 
 -   Set default DB_CHARSET to utf8mb4

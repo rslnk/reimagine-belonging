@@ -1,0 +1,31 @@
+/*
+
+  Site lead text
+  ==============
+
+  Markup: <p class="o-lead c-lead--{modifier}">Some text here</p>
+
+*/
+
+.o-lead
+  font-size $size--micro
+  font-weight $weight--thin
+  line-height 1.4
+  text-transform none
+  strong, em, b
+    font-weight $weight--regular
+  +media-query( $screen, $bp--tablet )
+    font-size $size--deca
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--mega
+
+.c-lead--small
+  font-size $size--nano
+  font-weight $weight--thin
+  line-height 1.6
+  strong, em, b
+    font-weight $weight--medium
+  +media-query( $screen, $bp--tablet )
+    font-size $size--milli
+  +media-query( $screen, $bp--desktop--medium )
+    font-size $size--deci

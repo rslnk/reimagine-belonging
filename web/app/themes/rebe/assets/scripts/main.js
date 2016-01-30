@@ -18,7 +18,7 @@
 
   // Use this variable to set up the common and page specific functions. If you
   // rename this variable, you will also need to rename the namespace below.
-  var ReBe = {
+  var Sage = {
     // All pages
     'common': {
       init: function() {
@@ -31,6 +31,9 @@
           $('footer').css('margin-top', - $('footer').height());
         }
 
+        // $('.js-lightbox').height($('main').height() + 100);
+        // $('html, body').animate({ scrollTop: 0 }, 200);
+
         // all mess here is just a warkaround to fix the lightbox for the berlin milestone
         // Lightbox height is temporary set in:
         // - ng/stories/controllers/story.controller.js
@@ -40,21 +43,33 @@
           $('.js-lightbox-nav-wrapper').height($('main').height() + 100);
         }
 
-
-        $('.js-lightbox-open').on('click', function (e) {
+        // 'Donate' lighbox toggle
+        $('.js-lightbox-open--donate').on('click', function (e) {
           e.preventDefault();
-           $('.js-lightbox--donate').show();
+          $('.js-lightbox--donate').show();
         });
 
         $('.js-lightbox-close').on('click', function (e) {
           e.preventDefault();
-           $('.js-lightbox--donate').hide();
+          $('.js-lightbox--donate').hide();
+        });
+
+        // 'Book a workshop' lighbox toggle
+        $('.js-lightbox-open--book-a-workshop').on('click', function (c) {
+          c.preventDefault();
+          $('.js-lightbox--book-a-workshop').show();
+        });
+
+        $('.js-lightbox-close').on('click', function (c) {
+          c.preventDefault();
+          $('.js-lightbox--book-a-workshop').hide();
         });
 
         if ( $(window).width() >= 550) {
           // Script for large screens
 
           makeFooterSticky();
+          setLightboxHeight();
 
           $(window).resize(function () {
             makeFooterSticky();
@@ -114,9 +129,9 @@
       }
     },
     // About us page, note the change from about-us to about_us.
-    'about_us': {
+    'workshops': {
       init: function() {
-        // JavaScript to be fired on the about us page
+        // JavaScript to be fired on the Workshops page
       }
     },
     // 404 page
@@ -141,7 +156,7 @@
   var UTIL = {
     fire: function(func, funcname, args) {
       var fire;
-      var namespace = ReBe;
+      var namespace = Sage;
       funcname = (funcname === undefined) ? 'init' : funcname;
       fire = func !== '';
       fire = fire && namespace[func];
