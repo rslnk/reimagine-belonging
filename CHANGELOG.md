@@ -2,6 +2,8 @@
 
 ##  Checkpoint Charlie Grant Report
 
+-   Add `How-to` page content
+-   Add `How-to` page template and styles
 -   Fix lightbox class position propery
 -   Give `Donation` button js class a unique name
 -   Add `Workshops` page content
