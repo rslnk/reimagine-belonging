@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## HEAD
+
+-  Update to Bedrock 1.5.3
+-  Update to WordPress 4.4.2
+
 ##  Checkpoint Charlie Grant Report
 
 -   Add `How-to` page content
