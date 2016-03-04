@@ -14,17 +14,11 @@ web/.htaccess
 
 # Theme
 web/app/themes/rebe/dist
-web/app/themes/rebe/templates
+!web/app/themes/rebe/templates
 web/app/themes/rebe/bower_components
 web/app/themes/rebe/node_modules
 web/app/themes/rebe/npm-debug.log
 web/app/themes/rebe/vendor
-web/app/themes/sage/dist
-web/app/themes/sage/templates
-web/app/themes/sage/bower_components
-web/app/themes/sage/node_modules
-web/app/themes/sage/npm-debug.log
-web/app/themes/sage/vendor
 
 # WP-CLI
 db-sync

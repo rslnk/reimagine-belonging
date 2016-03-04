@@ -79,7 +79,7 @@ define('AUTOMATIC_UPDATER_DISABLED', true);
 define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
 define('DISALLOW_FILE_EDIT', true);
 define('WP_POST_REVISIONS', false);
-define('WP_DEFAULT_THEME', 'sage');
+define('WP_DEFAULT_THEME', 'rebe');
 
 /**
  * Bootstrap WordPress

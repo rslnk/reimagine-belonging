@@ -1,31 +1,49 @@
 sudo: false
 language: php
 php:
-  - nightly
+  - 7.0
   - 5.6
   - 5.5
-  - 5.4
-  - hhvm
+  - nightly
+
+env:
+  - TRAVIS_NODE_VERSION="4.2" CXX="g++-4.8"
+  - TRAVIS_NODE_VERSION="5.3" CXX="g++-4.8"
 
 matrix:
   allow_failures:
+    - php: 5.5
     - php: nightly
 
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.8
+
 cache:
+  apt: true
   directories:
+    - $HOME/.composer/cache
     - bower_components
     - node_modules
+    - vendor
 
 install:
-  - npm install -g npm@latest
-  - npm install -g bower gulp jscs
-  - npm install
-  - composer self-update && composer --version
+  - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION
+  - travis_retry npm install -g npm@latest
+  - travis_retry npm install -g bower gulp eslint
+  - node -v && npm -v && bower -v && gulp -v
+  - npm rebuild
+  - travis_retry npm install
+  - travis_retry composer self-update && composer --version
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - composer global require squizlabs/php_codesniffer
+  - travis_retry composer global require squizlabs/php_codesniffer --prefer-dist
+  - travis_retry composer global require phpmd/phpmd --prefer-dist
+  - travis_retry composer install -o --prefer-dist --no-interaction
 
 script:
   - npm run build
-  - npm run jshint
-  - npm run jscs
-  - phpcs --standard=ruleset.xml --extensions=php -n -s .
+  - phpcs -n
+  - phpmd src text cleancode,codesize,controversial,design,naming,unusedcode
