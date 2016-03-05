@@ -21,7 +21,7 @@ var stylus       = require('gulp-stylus');
 var uglify       = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
-var manifest = require('asset-builder')('./assets/manifest.json');
+var manifest = require('asset-builder')('./src/assets/manifest.json');
 
 // `path` - Paths to base asset directories. With trailing slashes.
 // - `path.source` - Path to the source files. Default: `assets/`
@@ -102,7 +102,7 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'assets/styles/'
+        sourceRoot: 'src/assets/styles/'
       }));
     })();
 };
@@ -131,7 +131,7 @@ var jsTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'assets/scripts/'
+        sourceRoot: 'src/assets/scripts/'
       }));
     })();
 };
@@ -217,10 +217,10 @@ gulp.task('images', function() {
 // `gulp iconify` - Convert svg files to css classes with png fallback
 gulp.task('iconify', function() {
   iconify({
-    src: './assets/icons/*.svg',
+    src: './src/assets/icons/*.svg',
     cssOutput: './dist/styles/',
     pngOutput: './dist/icons/',
-    styleTemplate: './assets/icons/_icon_gen.mustache',
+    styleTemplate: './src/assets/icons/_icon_gen.mustache',
     defaultWidth: '60px',
     defaultHeight: '60px',
     svgoOptions: {
@@ -264,20 +264,19 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{lib,templates}/**/*.php', '*.php'],
+    files: ['{src,templates}/**/*.php', '*.php'],
     proxy: config.devUrl,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
     }
   });
-  gulp.watch([path.source + 'styles/**/*'], ['styles']);
+  gulp.watch([path.source + 'assets/styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-  gulp.watch([path.source + 'ng/**/*'], ['jshint', 'scripts']);
   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
   gulp.watch([path.source + 'icons/**/*'], ['iconify']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
-  gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
+  gulp.watch(['bower.json', './src/assets/manifest.json'], ['build']);
 });
 
 // ### Build

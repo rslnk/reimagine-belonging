@@ -1,0 +1,30 @@
+.timeline-switcher
+  float left
+
+.timeline-switcher__icon
+  display inline-block
+  margin-left rem(12px)
+  margin-bottom rem(-4px)
+  background-size 100% auto
+  size rem(20px)
+  +media-query($screen, $bp--tablet)
+    size rem(25px)
+    margin-bottom rem(-5px)
+  +media-query($screen, $bp--desktop)
+    margin-left rem(15px)
+    size rem(30px)
+  +media-query($screen, $bp--desktop--medium)
+    margin-bottom rem(-6px)
+    margin-left rem(18px)
+    size rem(34px)
+
+.timeline-switcher__list
+  position absolute
+
+.timeline-switcher li
+  float left
+  margin-right rem(1px)
+  margin-top rem(1px)
+  &:hover,
+  &:focus
+    background-color: #00c2df

@@ -1,0 +1,53 @@
+{
+  "dependencies": {
+    "events.js": {
+      "files": [
+        "scripts/services/api.service.js",
+        "scripts/services/event.service.js",
+        "scripts/events/filters/events.filter.js",
+        "scripts/events/filters/topics.filter.js",
+        "scripts/events/directives/preview.directive.js",
+        "scripts/events/directives/timeline.switcher.directive.js",
+        "scripts/events/directives/timeline.carousel.directive.js",
+        "scripts/events/directives/dateformat.directive.js",
+        "scripts/events/controllers/timeline.controller.js",
+        "scripts/events/controllers/event.controller.js",
+        "scripts/constants.js",
+        "scripts/events/app.js"
+      ]
+    },
+    "stories.js": {
+      "files": [
+        "scripts/services/api.service.js",
+        "scripts/services/story.service.js",
+        "scripts/stories/filters/list.filter.js",
+        "scripts/stories/directives/preview.directive.js",
+        "scripts/stories/directives/ngvideo.directive.js",
+        "scripts/stories/controllers/list.controller.js",
+        "scripts/stories/controllers/story.controller.js",
+        "scripts/constants.js",
+        "scripts/stories/app.js"
+      ]
+    },
+    "main.js": {
+      "files": [
+        "scripts/main.js"
+      ],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies"],
+      "main": true
+    },
+    "main.css": {
+      "files": [
+        "styles/main.styl"
+      ],
+      "main": true
+    }
+  },
+  "paths": {
+    "source": "src/assets/",
+    "dist": "dist/"
+  },
+  "config": {
+    "devUrl": "http://reimaginebelonging.dev"
+  }
+}

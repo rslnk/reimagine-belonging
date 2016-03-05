@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## 1.8.0 March 6th, 2016
+
+-   Set ng-apps templates path to `src/views/ng-apps`
+-   Move `HTML` out of ng-apps directives to separtate template files
+-   Revise AngularJS directives names
+-   Remove outdated tests
+-   Move AngularJS files from `ng/` to `scripts/`
+-   Move `assets/` to `src/`
+
 ## 1.7.0 March 5th, 2016
 
 -   Better templates organization
