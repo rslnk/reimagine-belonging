@@ -1,17 +1,17 @@
-<div class="o-lightbox c-lightbox--book-a-workshop _js-lightbox--book-a-workshop">
-  <div class="o-lightbox__content-wrapper c-lightbox__content-wrapper--donate">
+<div class="o-overlay c-workshop__lightbox _js-lightbox--book-a-workshop">
+  <div class="o-overlay__content c-workshop-modal">
 
-    <div class="c-lightbox__nav c-lightbox__nav--close o-icon c-icon-close-medium-gray js-lightbox-close">
+    <div class="c-post-navigation c-post-navigation__close o-icon c-icon-close t-medium-gray js-lightbox-close">
       <?php the_field('close_button_label', 'option'); ?>
     </div>
 
-    <h1 class="o-heading c-donate-modal__title">
+    <h1 class="o-heading c-workshop-modal__title">
       Book A Workshop
     </h1>
-    <p class="o-paragraph c-donate-modal__text">
+    <p class="o-paragraph c-workshop-modal__text">
       Some text
     </p>
-    <a class="o-btn c-btn--large c-btn--indigo" a href="#">
+    <a class="o-btn o-btn--large t-indigo--focus" a href="#">
       Book now
     </a>
     <div class="xxxxx">

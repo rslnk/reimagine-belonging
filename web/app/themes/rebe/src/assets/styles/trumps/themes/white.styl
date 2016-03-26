@@ -1,0 +1,15 @@
+/**
+ * White theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-white
+  color color--carbon-black
+  background-color color--white
+
+.t-white--focus
+  @extend .t-white
+  variations = monochrome(color--white)
+  &:hover
+  &:focus
+    background-color variations[1]

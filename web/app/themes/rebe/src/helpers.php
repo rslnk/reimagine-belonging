@@ -160,10 +160,10 @@ function list_categories()
         // get the terms related to post
         $terms = get_the_terms($post->ID, $taxonomy_slug);
         if (!empty($terms)) {
-            $out[] = '<ul class="c-categories-chain c-categories-chain--event">';
+            $out[] = '<ul class="c-categories-list">';
             foreach ($terms as $term) {
                 $out[] =
-                '<li class="c-categories-chain__item o-btn c-btn--small c-btn--indigo">'
+                '<li class="c-categories-list__item">'
                 . $term->name
                 . '</li>';
             }

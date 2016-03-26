@@ -1,0 +1,64 @@
+/**
+ * Story preview (wrapper)
+ *
+ *    Styles preview item as a square box
+ *
+ *    Wraps:
+ *      .c-story-preview__gradient
+ *      .c-story-preview__content
+ *
+ *    Color:
+ *    Each story has a color variable assigned to it. This variable's value is passed to
+ *    the story preview item elements as CSS class modifier, like `--{{ story.preview_image_color }}`.
+ *
+ *    Color modifiers:
+ *    To style story preview based on assigned color we use
+ *    predifined color modifiers for the following elements:
+ *
+ *    .c-story-preview            — color modifiers for the background image fallback
+ *    .c-story-preview__gradient  — color modifiers for gradient overlaying the background image
+ *    .c-story-preview__title     — color modifiers for title highlight animation on hover
+ *
+ */
+.c-story-preview
+  padding-bottom 80% /* aspect ration */
+  +media-query(mediatype, bp-mobile--landscape)
+    padding-bottom 65%
+  +media-query(mediatype, bp-tablet)
+    padding-bottom 33.333333333333336%
+    span(1/3)
+  +media-query(mediatype, bp-desktop)
+    padding-bottom 25%
+    span(1/4)
+  +media-query(mediatype, bp-desktop--medium)
+    span(1/5)
+    padding-bottom 20%
+
+// Color modifiers
+.c-story-preview--red
+  @extend .c-story-preview
+  background-color #f6312b
+
+.c-story-preview--orange
+  @extend .c-story-preview
+  background-color #e07614
+
+.c-story-preview--yellow
+  @extend .c-story-preview
+  background-color #ffa800
+
+.c-story-preview--green
+  @extend .c-story-preview
+  background-color #12eeda
+
+.c-story-preview--blue
+  @extend .c-story-preview
+  background-color #00c9ff
+
+.c-story-preview--indigo
+  @extend .c-story-preview
+  background-color #2f41e0
+
+.c-story-preview--violet
+  @extend .c-story-preview
+  background-color #e51bcb

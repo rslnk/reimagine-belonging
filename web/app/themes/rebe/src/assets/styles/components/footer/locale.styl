@@ -1,0 +1,38 @@
+/**
+ *  Footer locale
+ */
+.c-locale
+  stack() /* on top of legal */
+  margin-bottom rem(50px) /* between locale and legal */
+  +media-query(mediatype, bp-desktop)
+    unstack()
+    column(4/12)
+    shift(8/12) /* shift left, swapping position with legal */
+    margin-bottom 0
+    text-align right /* move locale content (link) to right */
+    margin-top rem(-15px) /* vertically aligns button with legal secton */
+
+.c-locale__button
+  @extend .o-btn
+  margin 0
+  padding rem(12px) rem(12px)
+  color color--lavender + 50%
+  border rem(1px) solid color--lavender + 50% /* darker color is an optical fix */
+  &:hover
+  &:focus
+    border rem(1px) solid color--lavender + 60%
+    color color--lavender + 60%
+
+.c-locale__text
+  font-family base--font-body
+  text-transform none
+  font-size size--pico
+  font-weight weight--thin
+  letter-spacing rem(.5px)
+
+.c-locale__icon
+  display inline-block
+  margin-left rem(5px)  /* between icon and text */
+  vertical-align middle /* align icon with text */
+  font-size rem(20px)
+  transform rotate(-90deg) /* rotate arrow icon '>' */

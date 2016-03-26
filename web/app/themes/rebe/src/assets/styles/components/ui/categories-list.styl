@@ -1,0 +1,15 @@
+/**
+ * Categories list
+ */
+.c-categories-list
+  display block
+  clearfix()
+
+.c-categories-list__item
+    display inline-block
+    float left
+    margin-right rem(2px)
+    margin-top rem(2px)
+    // Let's add buttons behavior and style
+    // btn is disabled untill filter functionallity is implemented in the post view
+    @extend .o-btn, .o-btn--small, .o-btn--disabled

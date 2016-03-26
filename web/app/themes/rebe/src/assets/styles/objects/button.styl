@@ -1,0 +1,66 @@
+/**
+ * Button object
+ */
+.o-btn
+  cursor pointer
+  display inline-block
+  font-family base--font-heading
+  font-weight weight--thin
+  text-transform uppercase
+  transition all .35s ease-in /* transition animation */
+
+.o-btn--disabled
+  cursor default
+
+.o-btn--xsmall
+  padding rem(3px) rem(6px)
+
+.o-btn--small
+  padding rem(7px) rem(9px)
+  font-size size--atto
+  letter-spacing rem(1px)
+  +media-query(mediatype, bp-tablet)
+    padding rem(10px) rem(12px)
+  +media-query(mediatype, bp-desktop)
+    padding rem(10px) rem(12px)
+    font-size size--femto
+  +media-query(mediatype, bp-desktop--medium)
+    padding rem(11px) rem(14px)
+    padding-bottom rem(10px)
+    font-size size--pico
+
+.o-btn--medium
+  padding rem(6px) rem(8px)
+  font-size size--femto
+  letter-spacing rem(0.5px)
+  +media-query(mediatype, bp-tablet)
+    padding rem(12px) rem(15px)
+    font-size size--pico
+    letter-spacing rem(1px)
+  +media-query(mediatype, bp-desktop)
+    font-size size--nano
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--micro
+
+.o-btn--large
+  padding rem(23px) rem(36px)
+  font-size size--micro
+  letter-spacing rem(2px)
+  +media-query(mediatype, bp-tablet)
+    padding rem(16px) rem(24px)
+    min-width rem(160px)
+    font-size size--femto
+  +media-query(mediatype, bp-tablet--landscape)
+    padding rem(19px) rem(26px)
+    min-width rem(200px)
+    font-size size--pico
+  +media-query(mediatype, bp-desktop)
+    padding rem(19px) rem(26px)
+    min-width rem(200px)
+    font-size size--pico
+  +media-query(mediatype, bp-desktop--medium)
+    padding rem(22px) rem(34px)
+    font-size size--centi
+
+.o-btn--xlarge
+  padding rem(20px) rem(40px)

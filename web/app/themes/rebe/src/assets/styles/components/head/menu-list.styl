@@ -1,0 +1,53 @@
+/*
+ * Site head navigation menu list
+ *
+ * Menu list on mobile screen are hidden by default and appear only when menu is toggled.
+ * Menu items on mobile screen are stacked on top of each other
+ * and appear on color--indigo background
+*/
+.c-head-menu__list
+  @extend .o-ui-list
+  display none /* hide on mobile-size screens */
+  // Active menu item
+  .is-active a
+    color color--mint
+  +media-query(mediatype, bp-desktop)
+    // Show menu items on tablet/desctop screens
+    display block
+    position relative
+    float right
+    margin-top 0
+    padding 0
+    width auto
+
+.c-head-menu__list
+
+  .c-menu__item
+    display inline-block
+
+  .c-menu__item a
+    //@extend .o-btn
+    color base--font-color
+    &:hover
+    &:focus
+      color color--mint
+    +media-query(mediatype, bp-tablet--landscape)
+      font-size size--femto
+      padding-right rem(12px)
+    +media-query(mediatype, bp-desktop)
+      padding-right rem(20px)
+    +media-query(mediatype, bp-desktop--medium)
+      padding-right rem(24px)
+
+
+.c-head-menu__list--home
+  @extend .c-head-menu__list
+  // Adjusting the rest of the menu items for homepage
+  // Menu items are hidden on mobile screen and tablet!
+  //margin-top rem(10px)
+  // +media-query(mediatype, bp-tablet)
+  //   margin-top rem(60px)
+  // +media-query(mediatype, bp-tablet--landscape)
+  //   display none
+  // +media-query(mediatype, bp-desktop)
+  //   display block /* show menu items on descktop screens */

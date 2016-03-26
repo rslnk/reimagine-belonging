@@ -3,176 +3,6 @@
     "title": "Dictionary",
     "fields": [
         {
-            "key": "field_5530d8b41355b",
-            "label": "Homepage",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5602d17cee495",
-            "label": "Homepage title",
-            "name": "homepage_title",
-            "type": "flexible_content",
-            "instructions": "To follow design guidelines homepage title must be split into separate word blocks. Enter each word or set of words into individual field. Add an extra line to force a line break.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 60,
-                "class": "",
-                "id": ""
-            },
-            "button_label": "Add Line",
-            "min": "",
-            "max": "",
-            "layouts": [
-                {
-                    "key": "5602d19c5de9f",
-                    "name": "word_blocks",
-                    "label": "Line",
-                    "display": "table",
-                    "sub_fields": [
-                        {
-                            "key": "field_5602d171726ce",
-                            "label": "Word blocks",
-                            "name": "line_wrapper",
-                            "type": "repeater",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": 60,
-                                "class": "",
-                                "id": ""
-                            },
-                            "min": "",
-                            "max": "",
-                            "layout": "table",
-                            "button_label": "Add Word",
-                            "sub_fields": [
-                                {
-                                    "key": "field_5602d31ee8296",
-                                    "label": "Words",
-                                    "name": "block",
-                                    "type": "text",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "default_value": "",
-                                    "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": "",
-                                    "readonly": 0,
-                                    "disabled": 0
-                                }
-                            ]
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                }
-            ]
-        },
-        {
-            "key": "field_553125cc746ec",
-            "label": "First button label",
-            "name": "homepage_first_button_label",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5531250dc2fae",
-            "label": "First button link",
-            "name": "homepage_first_button_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_553125eb746ed",
-            "label": "Second button label",
-            "name": "homepage_second_button_label",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5531254ac2faf",
-            "label": "Second button link",
-            "name": "homepage_second_button_link",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_553104f26d8db",
             "label": "Stories",
             "name": "",
@@ -257,6 +87,27 @@
             "name": "flitered_stories_label",
             "type": "text",
             "instructions": "Text label before number of filtered stories. E.g. \"Filtered\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 35,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57002e67c71e7",
+            "label": "Pagination label",
+            "name": "stories_pagination_label",
+            "type": "text",
+            "instructions": "Pagination text label. E.g. \"Pages\".",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -691,7 +542,8 @@
                 "id": ""
             },
             "message": "Labels and titles for information displayed in event entries sources and resources.",
-            "esc_html": 0
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
             "key": "field_554394e8a2381",
@@ -899,21 +751,126 @@
             "endpoint": 0
         },
         {
-            "key": "field_5530dedb01821",
-            "label": "Copyright notice",
-            "name": "footer_copyright_notice",
+            "key": "field_57002b53cd532",
+            "label": "Directory section 1",
+            "name": "footer_directory_section_title_1",
             "type": "text",
-            "instructions": "",
+            "instructions": "Footer directory section title. Section 1.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 25,
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57002c17cd533",
+            "label": "Directory section 2",
+            "name": "footer_directory_section_title_2",
+            "type": "text",
+            "instructions": "Footer directory section title. Section 2.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57002c38cd534",
+            "label": "Directory section 3",
+            "name": "footer_directory_section_title_3",
+            "type": "text",
+            "instructions": "Footer directory section title. Section 3.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57002cb79499e",
+            "label": "Directory section 4",
+            "name": "footer_directory_section_title_4",
+            "type": "text",
+            "instructions": "Footer directory section title. Section 4.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530dedb01821",
+            "label": "Copyright notice",
+            "name": "footer_copyright_notice_part_1",
+            "type": "text",
+            "instructions": "Text before after year.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": 2016,
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57002b29cd531",
+            "label": "Copyright notice",
+            "name": "footer_copyright_notice_part_2",
+            "type": "text",
+            "instructions": "Text appears after year.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": 2016,
             "append": "",
             "maxlength": "",
             "readonly": 0,
@@ -921,35 +878,14 @@
         },
         {
             "key": "field_561d2b3078c74",
-            "label": "Language switcher",
-            "name": "footer_language_switcher_text",
+            "label": "Alternative locale button text",
+            "name": "footer_alternative_locale_button_text",
             "type": "text",
             "instructions": "Example: English language",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_561d2b8778c75",
-            "label": "Language switcher (copy)",
-            "name": "footer_language_switcher_url",
-            "type": "text",
-            "instructions": "Example: http:\/\/reimaginebelonging.org",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -1178,30 +1114,9 @@
             "disabled": 0
         },
         {
-            "key": "field_563fc43078e0e",
-            "label": "PayPal donation button url",
-            "name": "donate_modal_paypal_button_url",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 100,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_563d6036acd94",
             "label": "Tax deductible option text",
-            "name": "donate_modal_payment_option1_text",
+            "name": "donate_payment_option_2_text",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -1221,29 +1136,8 @@
         },
         {
             "key": "field_563d6107acd95",
-            "label": "Tax deductible option button label",
-            "name": "donate_modal_payment_option1_button_label",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_563d612eacd96",
-            "label": "Tax deductible option button link",
-            "name": "donate_modal_payment_option1_button_link",
+            "label": "Tax deductible option button text",
+            "name": "donate_payment_option_1_button_text",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -1263,8 +1157,8 @@
         },
         {
             "key": "field_5530e21030856",
-            "label": "Common",
-            "name": "",
+            "label": "Common UI & Accessibility",
+            "name": "common",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1423,6 +1317,69 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_5700370d9d2fa",
+            "label": "Facebook page url label",
+            "name": "facebook_page_url_label",
+            "type": "text",
+            "instructions": "Example: Follow us on Facebook",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 30,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_570038209d2fc",
+            "label": "Twitter account url label",
+            "name": "twitter_account_url_label",
+            "type": "text",
+            "instructions": "Example: Follow us on Twitter",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 30,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57003ca83999c",
+            "label": "Vimeo account url label",
+            "name": "vimeo_account_url_label",
+            "type": "text",
+            "instructions": "Example: Follow us on Vimeo",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 30,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -1457,6 +1414,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "Set UI text and labels for",
-    "modified": 1447019064
+    "description": "Set UI text and labels",
+    "modified": 1459727780
 }

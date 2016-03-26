@@ -1,0 +1,13 @@
+/**
+ * Page sidebar
+ *
+ *    - Wrapped inside `c-page__content`
+ *    - Stacks under main content on mobile screen
+ *    - Displayed next to main content on desktop screen
+*/
+.c-page__sidebar
+  clearfix()
+  stack()
+  +media-query(mediatype, bp-tablet--landscape)
+    unstack()
+    column(3/8)

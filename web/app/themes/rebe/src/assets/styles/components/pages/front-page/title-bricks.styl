@@ -1,0 +1,49 @@
+.c-home-title
+  margin 0
+  font-family font--headings
+  font-weight weight--thin
+  letter-spacing rem(1px)
+  font-size 0
+  text-transform uppercase
+  color color--white
+  clearfix()
+
+.c-home-title__line
+  display block
+
+.c-home-title__block
+  display inline-block
+  margin-right rem(3px)
+  margin-bottom rem(3px)
+  padding rem(2px) rem(5px)
+  padding-bottom 0 /* fix uneven padding */
+  font-size size--kilo
+  //background-color rgba(239, 239, 241, 0.3)
+  background-color rgba(color--mint, 0.8)
+  +media-query(mediatype, bp-mobile--landscape)
+    margin-right rem(2px)
+    margin-bottom rem(2px)
+    padding rem(8px) rem(10px)
+    font-size size--femto
+  +media-query(mediatype, bp-tablet)
+    margin-right rem(4px)
+    margin-bottom rem(4px)
+    padding rem(12px) rem(13px)
+    font-size size--deca
+  +media-query(mediatype, bp-desktop)
+    margin-right rem(2px)
+    margin-bottom rem(2px)
+    padding rem(10px) rem(12px)
+    font-size size--deci
+  +media-query(mediatype, bp-desktop--medium)
+    margin-right rem(4px)
+    margin-bottom rem(4px)
+    padding rem(11px) rem(20px)
+    padding-top rem(14px) // fix uneven padding
+    font-size size--giga
+  +media-query(mediatype, bp-desktop--large)
+    margin-right rem(5px)
+    margin-bottom rem(5px)
+    padding rem(10px) rem(23px)
+    padding-top rem(13px) // fix uneven padding
+    font-size size--tera

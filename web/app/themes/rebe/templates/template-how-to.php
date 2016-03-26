@@ -9,6 +9,6 @@
  */
 
 ?>
-<main class="o-row">
+<main class="c-guide">
   <?php get_template_part('content/how-to'); ?>
 </main>

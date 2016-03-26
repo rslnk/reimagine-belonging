@@ -46,7 +46,7 @@ angular.module('stories.story.controller', [
         // - Sets lightbox height
         // - Moves body content up when lightbox content is called
         // - Lightbox height on window resize function is set in `scripts/main.js`
-        $('.js-lightbox').height($('main').height() + 100);
+        //$('.js-lightbox').height($('main').height() + 100);
         $('html, body').animate({ scrollTop: 0 }, 200);
       });
 

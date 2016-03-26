@@ -1,32 +1,62 @@
-<div class="o-wrapper js-wrapper-block">
+<div class="c-events__head js-wrapper-block">
+
+  <!-- timeline switcher-->
   <timeline-switcher></timeline-switcher>
 
-  <ul class="c-filter-list">
-    <li class="c-filter-list__item o-btn c-btn--medium c-btn--lightgray"
-      ng-class="{ 'c-filter-list__item--active--indigo': filter.topics.length === 0 }"
-      ng-click="resetTopicsFilter()">
-      {{ siteConfig.all_events_filter_label }}
-    </li>
-    <li class="c-filter-list__item o-btn c-btn--medium c-btn--lightgray"
-      ng-repeat="topic in siteConfig.event_filters"
-      ng-class="{ 'c-filter-list__item--active--indigo': filter.topics.indexOf(topic.slug) > -1 }"
-      ng-click="toggleTopicInFilter(topic.slug)"
-      ng-bind-html="topic.name">
-    </li>
-  </ul>
-  <div class="o-filter-results">
-    <ul class="c-filter-results__counter">
-      <li class="c-filter-results__item">{{ siteConfig.timeline_total_events_label }}: <strong>{{ events.length }}</strong></li>
-      <li class="c-filter-results__item" ng-show="events.length != (events|filter: {hide: false}).length">{{ siteConfig.timeline_filtered_events_label }}: <strong>{{ (events|filter: {hide: false}).length}}</strong></li>
+  <!-- categories filter -->
+  <div class="c-categories-filter">
+
+    <!-- categories list -->
+    <ul class="c-categories-filter__list">
+
+      <!-- 'all topics' button -->
+      <li class="c-categories-filter__item"
+        ng-class="{ 'c-categories-filter__active--events': filter.topics.length === 0 }"
+        ng-click="resetTopicsFilter()">
+        {{ siteConfig.all_events_filter_label }}
+      </li>
+
+      <!-- topics -->
+      <li class="c-categories-filter__item"
+        ng-repeat="topic in siteConfig.event_filters"
+        ng-class="{ 'c-categories-filter__active--events': filter.topics.indexOf(topic.slug) > -1 }"
+        ng-click="toggleTopicInFilter(topic.slug)"
+        ng-bind-html="topic.name">
+      </li>
+
     </ul>
+
   </div>
+
+  <!-- filter dashboard -->
+  <div class="c-dashboard">
+
+    <ul class="o-ui-list c-dashboard__info">
+      <!-- total entries -->
+      <li class="c-dashboard__posts-total">
+        {{ siteConfig.timeline_total_events_label }}:
+        <strong>{{ events.length }}</strong>
+      </li>
+      <!-- filtered entries -->
+      <li class="c-dashboard__posts-filtered" ng-show="events.length != (events|filter: {hide: false}).length">
+        {{ siteConfig.timeline_filtered_events_label }}:
+        <strong>{{ (events|filter: {hide: false}).length}}</strong>
+      </li>
+    </ul>
+
+  </div>
+
 </div>
-<div class="o-row o-timeline_events-preview">
-  <carousel ng-if="filter.topics" class="owl-carousel" data-options="{ navigation: false, pagination: true, rewindnav : false }">
+
+<!-- events list (timeline)  -->
+<div class="c-events__list">
+
+  <!-- timeline events corousel -->
+  <carousel ng-if="filter.topics" class="c-timeline-events" data-options="{ navigation: false, pagination: true, rewindnav : false }">
       <event-preview
         carousel-item=""
-        class="item"
-        ng-class="{'event-preview__item--disabled': event.hide === true}"
+        class="c-event-preview"
+        ng-class="{'c-event-preview--disabled': event.hide === true}"
         ng-repeat="event in events|showEvents:filter"
         ng-click="openEvent(event.slug)"
         title="{{event.title}}"
@@ -34,12 +64,14 @@
         year="{{event.year}}">
       </event-preview>
   </carousel>
-  <div class="o-wrapper">
-    <div class="owl-carousel__arrows-wrapper">
-      <div class="time-line"></div>
-      <a href="#" class="owl-carousel__arrow owl-carousel__arrow--prev carousel-nav__item o-icon c-icon-arrow-left-yolk"></a>
-      <a href="#" class="owl-carousel__arrow owl-carousel__arrow--next carousel-nav__item o-icon c-icon-arrow-right-yolk"></a>
-    </div>
+
+  <!-- timeline events navigation -->
+  <div class="c-timeline-navigation">
+    <a href="#" class="o-icon c-icon-arrow--circle c-timeline-navigation__previous js-timeline-navigation__previous"></a>
+    <div class="c-timeline-navigation__line"></div>
+    <a href="#" class="o-icon c-icon-arrow--circle c-timeline-navigation__next js-timeline-navigation__next"></a>
   </div>
+
   <div ui-view></div>
+
 </div>

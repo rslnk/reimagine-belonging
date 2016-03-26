@@ -1,8 +1,12 @@
 <div class="o-hero c-hero--how-to">
 	<div class="u-centering-wrapper">
 		<div class="u-centered">
-			<div class="o-wrapper">
-				<h2 class="o-heading c-hero__title">
+			<div class="o-content-wrapper">
+				<h2 class="o-heading o-hero__title
+.c-hero--products
+  background-color #e72939
+.c-hero--products
+  background-color #e72939">
 					Practical <strong>guide</strong> to reimaginebelonging.org
 				</h2>
 			</div>
@@ -12,14 +16,14 @@
 <!-- .o-hero -->
 
 <div class="c-how-to-intro">
-	<div class="o-wrapper">
+	<div class="o-content-wrapper">
 
 		<div class="c-how-to-intro__about">
 			<p class="o-paragraph o-lead">
 				<strong>reimaginebelonging.org</strong> provides educators and activists with <strong>tools</strong> to help them address
 				topics of migration, racism, and identity in their work.
 			</p>
-			<p class="o-paragraph o-lead c-lead--small">
+			<p class="o-paragraph o-lead o-lead--small">
 				We have created a <strong>video tutorial</strong>
 				on how to navigate the website, and <strong>FAQs</strong> to answer the
 				most common questions about the website and the Wings and Roots
@@ -43,11 +47,11 @@
 			</div>
 		</div><!-- .c-workshops-intro__featured -->
 
-	</div> <!-- o-wrapper -->
+	</div> <!-- o-content-wrapper -->
 </div> <!-- c-workshops-page__intro -->
 
 <div class="c-how-to-faq">
-	<div class="o-wrapper">
+	<div class="o-content-wrapper">
 
 		<div class="row">
 

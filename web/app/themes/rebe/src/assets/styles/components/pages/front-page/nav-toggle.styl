@@ -1,0 +1,10 @@
+.c-home__menu-toggle
+  // Due to design lemitations the homepage toggle icon disappears on the desktop
+  // rather than on tablet-landscape screen
+  +media-query(mediatype, bp-tablet)
+    margin-top rem(3px)
+    size rem(35px)
+  +media-query(mediatype, bp-tablet--landscape)
+    display block
+  +media-query(mediatype, bp-desktop)
+    display none // on homepage toggle icon is hidden on desktop screen

@@ -1,0 +1,39 @@
+/**
+ * Share post
+ *
+ * Block for post sharing options, contains icons
+ *
+ *    extends `o-ui-list`
+*/
+.c-post-share__list
+  @extend .o-ui-list
+  float left
+  width 100%
+
+.c-post-share__item
+  float left
+  display block
+  margin-right rem(10px)
+
+.c-post-share__link
+  @extend .o-btn
+  display block
+  font-size rem(30px)
+  +media-query(mediatype, bp-tablet)
+    margin-right rem(5px)
+    font-size rem(32px)
+  +media-query(mediatype, bp-desktop--medium)
+    font-size rem(36px)
+
+// Modifiers
+.c-post-share__link--event
+  @extend .c-post-share__link
+  color color--indigo
+  &:hover
+    color color--indigo + 50
+
+.c-post-share__link--story
+  @extend .c-post-share__link
+  color color--blueberry
+  &:hover
+    color color--blueberry + 50

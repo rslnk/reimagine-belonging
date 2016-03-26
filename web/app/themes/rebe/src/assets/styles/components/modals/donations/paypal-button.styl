@@ -1,0 +1,20 @@
+.c-donate__paypal-button
+  padding rem(23px) rem(36px)
+  width 100%
+  background-color #fcc600
+  variations = monochrome(#fcc600)
+  &:hover
+  &:focus
+    background-color variations[1]
+  +media-query(mediatype, bp-tablet)
+    padding rem(16px) rem(24px)
+    width auto
+    min-width rem(160px)
+  +media-query(mediatype, bp-tablet--landscape)
+    padding rem(15px) rem(26px)
+    min-width rem(200px)
+  +media-query(mediatype, bp-desktop)
+    padding rem(15px) rem(26px)
+  +media-query(mediatype, bp-desktop--medium)
+    padding rem(18px) rem(54px)
+    min-width rem(300px)

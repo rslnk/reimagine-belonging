@@ -1,11 +1,18 @@
-<div class="timeline-switcher">
-  <h2 class="o-btn c-btn--selector c-btn--mint" ng-click="ctrl.toggle()">
-    {{ timeline.name }}
-    <span class="o-icon c-icon-arrow-down-negative timeline-switcher__icon"></span>
-  </h2>
-  <ul class="timeline-switcher__list" ng-show="ctrl.open">
-    <li class="o-btn c-btn--medium c-btn--mint" ng-repeat="country in siteConfig.timelines" ng-click="switchTimeline(country.slug)">
+<div class="c-timeline-switcher">
+
+  <div class="c-timeline-switcher__selector" ng-click="ctrl.toggle()">
+    <h2 class="c-timeline-switcher__timeline">
+      {{ timeline.name }}
+    </h2>
+    <div class="o-icon c-icon-arrow--circle c-timeline-switcher__icon">
+      <span class="u-visually-hidden">Select Timeline</span>
+    </div>
+  </div>
+
+  <ul class="ui-list c-timeline-switcher__list" ng-show="ctrl.open">
+    <li class="c-timeline-switcher__item" ng-repeat="country in siteConfig.timelines" ng-click="switchTimeline(country.slug)">
       {{ country.name }}
     </li>
   </ul>
+
 </div>

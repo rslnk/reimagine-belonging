@@ -1,16 +1,42 @@
 # CHANGELOG
 
-## 1.8.0 March 6th, 2016
+## 1.7.0 March 9th, 2016
 
+-   Rename home tagline and buttons option fields
+-   Move home tagline options out of 'Dictionary' to 'Site Settings'
+-   Move home buttons options out of 'Dictionary' to 'Site Settings'
+-   Rename donate buttons option fields
+-   Move donate buttons options out of 'Dictionary' to 'Site Settings'
+-   Rename language switcher options fileds to `locale`
+-   Move language switcher options out of 'Dictionary' to 'Site Settings'
+-   Move social links options out of 'Dictionary' to 'Site Settings'
+-   Add missing UI accesibilty options to 'Dictionary'
+-   Add footer directory sections titles options to 'Dictionary'
+-   Add social links url and alt text options to 'Dictionary'
+-   Register additional menus
+-   Add new large footer with multiple menus and mobile navigation
+-   Revise mobile menu: add modal menu for mobile screens
+-   Add individual color backdrops to 'story' view
+-   Add hover states and animation to main UI elements
+-   Remove JavaScript functions for lightbox height
+-   Drop lightbox class name in favour of `o-overlay` with new properties
+-   Improve closed caption notice design
+-   Improve `<blockquote`> design
+-   Update event year design in 'event' view
+-   Update 'event' footnotes layout
+-   Update 'event' cateogories list desing
+-   Fix 'events' and 'stories' categories filter hover effect
+-   Switch to Jeet grid system
+-   Update icons desing, markup and style properties
+-   Drop `gulp-iconify` in faovour of `gulp-iconfont`
+-   Refactor style class names and namespaces
+-   Refactor styles structure (inspired by [Harry Roberts](http://csswizardry.com/) ITSCC)
 -   Set ng-apps templates path to `src/views/ng-apps`
 -   Move `HTML` out of ng-apps directives to separtate template files
 -   Revise AngularJS directives names
 -   Remove outdated tests
 -   Move AngularJS files from `ng/` to `scripts/`
 -   Move `assets/` to `src/`
-
-## 1.7.0 March 5th, 2016
-
 -   Better templates organization
 -   Drop `event_post_type_slug_base` option
 -   `setup.php` is now one place for all theme related settings

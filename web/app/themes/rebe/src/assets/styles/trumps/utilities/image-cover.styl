@@ -1,0 +1,43 @@
+/**
+ * Applies background image cover to an element
+ *
+ *    Must be used together with ratio modifier!
+ *    example `<div class="u-image-cover u-image-cover--4x3" style="background-image: url("image.png")">`
+*/
+.u-image-cover
+  position relative
+  background-repeat no-repeat
+  background-position center
+  background-size cover
+
+/**
+* Landscape
+*/
+.u-image-cover--4x3
+  width 100%
+  padding-bottom 75%
+
+.u-image-cover--16x9
+  width 100%
+  padding-bottom: 56.25%;
+
+.u-image-cover--3x2
+  width 100%
+  padding-bottom 66.66%
+
+.u-image-cover--8x2
+  padding-bottom 62.5%
+
+/**
+ * Portrait
+*/
+.u-image-cover--3x4
+  width 75%
+  padding-bottom 100%
+
+/*
+ * Square image
+*/
+.u-image-cover--square
+  width 100%
+  padding-bottom 100%

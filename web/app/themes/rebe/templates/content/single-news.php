@@ -4,7 +4,7 @@
       <h1 class="entry-title"><?php the_title(); ?></h1>
       <?php get_template_part('components/entry-meta'); ?>
     </header>
-    <div class="o-wp-editor">
+    <div class="s-headings s-paragraphs s-links s-text-lists">
       <?php the_content(); ?>
     </div>
     <footer>

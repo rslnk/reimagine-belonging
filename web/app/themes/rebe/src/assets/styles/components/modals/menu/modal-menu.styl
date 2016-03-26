@@ -1,0 +1,22 @@
+/**
+ * Modal menu
+ *
+ *    Menu is toggled by a button in site header that appears on screens smaller than desktop
+ */
+.c-modal-menu
+  @extend .o-overlay
+  display none /* hidden untill menu is toggled */
+  background-color rgba(color--indigo, .95)
+
+.c-modal-menu__close
+  @extend .o-btn
+  absolute rem(30px) rem(30px) false false
+  font-size rem(40px)
+  color color--indigo + 70%
+  +media-query(mediatype, bp-tablet)
+    absolute rem(50px) rem(50px) false false
+    font-size rem(60px)
+  // Change icon color on hover/focus
+  &:hover
+    color color--white
+    transform rotate(90deg) /* cool rotation effect! */

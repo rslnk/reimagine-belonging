@@ -1,9 +1,18 @@
-<?php while (have_posts()) : the_post(); ?>
-  <main class="o-row">
-    <div class="o-wrapper">
-      <?php get_template_part('components/page-head'); ?>
-      <?php get_template_part('content/page'); ?>
-      <?php get_template_part('components/sidebar-page'); ?>
+<?php while(have_posts()): the_post(); ?>
+
+    <div class="c-page">
+
+        <?php get_template_part('components/page-head'); ?>
+
+        <div class="o-content-wrapper">
+
+            <div class="c-page__content">
+                <?php get_template_part('content/page'); ?>
+                <?php get_template_part('components/sidebar-page'); ?>
+            </div>
+
+        </div>
+
     </div>
-  </main>
+
 <?php endwhile; ?>

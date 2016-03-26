@@ -1,0 +1,64 @@
+/**
+ * Closed Captions notice
+ *
+ *    c-closed-captions-notice
+ *        - c-closed-captions-notice__icon
+ *        - cc-closed-captions-notice__content
+ *            - c-closed-captions-notice__title
+ *            - c-closed-captions-notice__text
+ */
+.c-closed-captions-notice
+  margin-bottom rem(20px) /* between notice and other sidebar content */
+  padding rem(25px) 0 0 0 /* between notice content and its border lines */
+  border-top rem(1px) solid color--light-gray
+  border-bottom rem(1px) solid color--light-gray
+  clearfix()
+
+.c-closed-captions-notice__icon
+  column(1/8)
+  font-size rem(35px)
+  margin-top rem(-5px) /* fix quote icon top alignment */
+  color color--medium-gray
+  +media-query(mediatype, bp-tablet)
+    margin-top rem(-10px)
+    font-size rem(55px)
+  +media-query(mediatype, bp-desktop)
+    stack()
+    margin-top rem(-6px)
+    margin-bottom rem(15px) /* between icon and content */
+    font-size rem(30px)
+  +media-query(mediatype, bp-desktop--medium)
+    margin-top rem(-9px)
+    font-size rem(45px)
+
+.c-closed-captions-notice__content
+  column(7/8)
+  +media-query(mediatype, bp-desktop)
+    stack()
+
+.c-closed-captions-notice__title
+  @extend .o-heading
+  margin-bottom rem(8px) /* between title and text */
+  font-size size--pico
+  font-weight weight--semibold
+  text-transform none
+  letter-spacing normal
+  line-height 1.2
+  +media-query(mediatype, bp-tablet)
+    margin-bottom rem(10px)
+    font-size size--pico
+  +media-query(mediatype, bp-desktop)
+    font-size size--femto
+  +media-query(mediatype, bp-desktop--medium)
+    margin-bottom rem(8px)
+    font-size size--micro
+
+.c-closed-captions-notice__text
+  @extend .o-paragraph--small
+  color color--dark-gray
+  font-size size--atto
+  line-height 1.5
+  +media-query(mediatype, bp-tablet)
+    font-size size--femto
+  +media-query(mediatype, bp-desktop)
+    line-height 1.7

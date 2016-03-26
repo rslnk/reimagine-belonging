@@ -1,38 +1,74 @@
-  <div class="o-wrapper">
-    <ul class="c-filter-list">
-      <li class="c-filter-list__item o-btn c-btn--medium c-btn--lightgray"
-        ng-class="{ 'c-filter-list__item--active--blueberry': filter.topics.length === 0 }"
+<div class="c-stories__head">
+
+  <!-- categories filter list -->
+  <div class="c-categories-filter">
+
+    <!-- categories list -->
+    <ul class="c-categories-filter__list">
+
+      <!-- 'all topics' button -->
+      <li class="c-categories-filter__item"
+        ng-class="{ 'c-categories-filter__active--stories': filter.topics.length === 0 }"
         ng-click="resetTopicsFilter()">
         {{ siteConfig.all_stories_filter_label }}
       </li>
-      <li class="c-filter-list__item o-btn c-btn--medium c-btn--lightgray"
+
+      <!-- topics -->
+      <li class="c-categories-filter__item"
         ng-repeat="topic in siteConfig.story_filters"
-        ng-class="{ 'c-filter-list__item--active--blueberry': filter.topics.indexOf(topic.slug) > -1 }"
+        ng-class="{ 'c-categories-filter__active--stories': filter.topics.indexOf(topic.slug) > -1 }"
         ng-click="toggleTopicInFilter(topic.slug)"
         ng-bind-html="topic.name">
       </li>
+
     </ul>
-    <div class="o-filter-results">
-      <ul class="c-filter-results__counter">
-        <li class="c-filter-results__item">{{ siteConfig.total_stories_label }}: <strong>{{ stories.length }}</strong></li>
-        <li class="c-filter-results__item" ng-show="stories.length != (stories|showStories:filter).length">
-          {{ siteConfig.flitered_stories_label }}: <strong>{{ (stories|showStories:filter).length}}</strong>
-        </li>
-      </ul>
-      <ul class="c-filter-results__pagination" ng-show="(stories|showStories:filter).length > perPage">
-        <li class="c-filter-results__item">Pages:</li>
-        <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item c-pagination__item--stories"
-            ng-click="toPage(k)"
-            ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}</li>
-      </ul>
+
+  </div>
+
+  <!-- filter dashboard -->
+  <div class="c-dashboard">
+
+    <ul class="o-ui-list c-dashboard__info">
+      <!-- total entries -->
+      <li class="c-dashboard__posts-total">
+        {{ siteConfig.total_stories_label }}:
+        <strong>{{ stories.length }}</strong>
+      </li>
+      <!-- filtered entries -->
+      <li class="c-dashboard__posts-filtered" ng-show="stories.length != (stories|showStories:filter).length">
+        {{ siteConfig.flitered_stories_label }}:
+        <strong>{{ (stories|showStories:filter).length}}</strong>
+      </li>
+    </ul>
+
+    <!-- pagination -->
+    <div class="c-dashboard__pagination" ng-show="(stories|showStories:filter).length > perPage">
+      <div class="c-pagination--dashboard">
+        <div class="c-pagination__label">
+          Pages:
+        </div>
+        <ul class="c-pagination__list">
+          <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item"
+              ng-click="toPage(k)"
+              ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}
+          </li>
+        </ul>
+      </div>
     </div>
+
   </div>
-  <div class="o-row">
-    <story-preview
-      class="story-preview__item"
-      ng-click="openStory(story.slug)"
-      ng-class="{'story-preview__item--disabled': story.hide === true}"
-      ng-repeat="(k, story) in stories|showStories:filter" ng-show="inPaginatorScope(k)">
-    </story-preview>
-  </div>
-  <div ui-view></div>
+
+</div>
+
+<!-- stories list -->
+<div class="c-stories__list">
+
+  <story-preview
+    ng-click="openStory(story.slug)"
+    ng-class="{'c-story-preview--disabled': story.hide === true}"
+    ng-repeat="(k, story) in stories|showStories:filter" ng-show="inPaginatorScope(k)">
+  </story-preview>
+
+</div>
+
+<div ui-view></div>

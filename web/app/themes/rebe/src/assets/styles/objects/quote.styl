@@ -1,0 +1,75 @@
+/**
+ * Quote
+ *
+ *    - o-quote
+ *      - o-quote__icon
+ *      - o-quote__content
+ *        - o-quote__text
+ *        - o-quote__meta
+ *          - o-quote__author
+ *          - o-quote__source
+*/
+.o-quote
+  clearfix()
+  margin-top rem(20px) /* compensate hanging quote mark negative space */
+  margin-bottom rem(20px) /* between quote and other content */
+  +media-query(mediatype, bp-tablet)
+    margin-top rem(35px)
+  +media-query(mediatype, bp-desktop)
+    margin-top 0
+    margin-bottom rem(30px) /* between quote and other content */
+
+.o-quote__icon
+  unstack()
+  column(1/8)
+  margin-top rem(-10px) /* hanging quote mark (optical alignment) */
+  font-size rem(40px)
+  +media-query(mediatype, bp-tablet)
+    margin-top rem(-20px)
+    font-size rem(55px)
+  +media-query(mediatype, bp-desktop)
+    stack()
+    margin-top rem(-15px)
+    margin-bottom rem(15px) /* between icon and quote text */
+    font-size rem(45px)
+  +media-query(mediatype, bp-desktop--medium)
+    margin-top rem(-20px)
+    margin-bottom rem(15px)
+    font-size rem(55px)
+  +media-query(mediatype, bp-desktop--large)
+    margin-top rem(-30px)
+    margin-bottom rem(20px)
+    font-size rem(70px)
+
+.o-quote__content
+  column(7/8)
+
+.o-quote__text
+  margin-bottom rem(20px) /* space between text and meta block */
+  font-weight weight--thin
+  strong
+  em
+  b
+    font-weight weight--regular
+  +media-query(mediatype, bp-desktop)
+    stack()
+
+.o-quote__meta
+  float right
+  @extend .o-paragraph
+  margin-bottom 0 /* overwrite `.o-paragraph` */
+  line-height 1.2
+  text-align right
+
+.o-quote__author
+  padding-left rem(3px) /* between dash symbol and author name */
+  text-align right
+
+.o-quote__source
+  margin-top rem(10px) /* between source and author name */
+  font-size size--femto
+  line-height 1.2
+  +media-query(mediatype, bp-tablet)
+    display block /* takes whole block */
+    padding-left rem(21px)
+    text-indent 0

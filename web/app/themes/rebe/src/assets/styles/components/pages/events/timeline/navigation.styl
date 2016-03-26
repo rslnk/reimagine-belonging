@@ -1,0 +1,41 @@
+.c-timeline-navigation
+  @extend .o-content-wrapper
+  position relative
+  display block
+  //margin-bottom rem(80px)
+  width 100%
+  height rem(50px)
+  //float left
+  //text-align center
+  background-color hotpink
+  // +media-query(mediatype, bp-tablet)
+  //   margin-bottom rem(40px)
+  // +media-query(mediatype, bp-desktop)
+  //   margin-bottom rem(40px)
+  // +media-query(mediatype, bp-desktop--medium)
+  //   margin-bottom rem(50px)
+
+.c-timeline-navigation__previous
+.c-timeline-navigation__next
+  @extend .o-btn
+  position absolute
+  top 0
+  display block
+  font-size rem(38px) /* arrow icon size */
+  color color--yolk   /* arrow icon color */
+  margin-top -21px    /* arrow icon alignment with timeline line */
+  // Chamge icon color on hover/focus
+  &:hover
+  &:focus
+    color color--lemon
+  +media-query(mediatype, bp-tablet)
+    margin-top -28px
+    font-size rem(50px)
+
+.c-timeline-navigation__previous
+  left 0
+  transform rotate(90deg) /* rotate arrow icon '<' */
+
+.c-timeline-navigation__next
+  right 0
+  transform rotate(-90deg) /* rotate arrow icon '>' */

@@ -1,0 +1,92 @@
+/*
+ * Style headings in submitted content (i.e. via WordPress editor)
+*/
+.s-headings
+  h2
+  h3
+  h4
+  h5
+  h6
+    @extend .o-heading
+    margin-top rem(30px)
+    margin-bottom rem(10px)
+
+.s-headings
+  h2
+    font-size size--deci
+    font-weight weight--regular
+    line-height 1.3
+    strong, em, b
+      font-weight weight--semibold
+    +media-query( mediatype, bp-tablet )
+      margin-top rem(35px)
+      margin-bottom rem(20px)
+      font-size size--centi
+    +media-query( mediatype, bp-desktop )
+      margin-top rem(40px)
+      margin-bottom rem(15px)
+      font-size size--deca
+    +media-query( mediatype, bp-desktop--medium )
+      font-size size--kilo
+
+  h2:first-of-type
+  h3:first-of-type
+    margin-top 0
+
+  h3
+    font-size size--centi
+    font-weight weight--light
+    line-height 1.2
+    +media-query( mediatype, bp-tablet )
+      margin-top rem(30px)
+      margin-bottom rem(15px)
+      font-size size--micro
+    +media-query( mediatype, bp-desktop )
+      font-size size--milli
+      font-weight weight--light
+    +media-query( mediatype, bp-desktop--medium )
+      margin-bottom rem(20px)
+      font-size size--deci
+  h4
+    font-size size--micro
+    font-weight weight--light
+    line-height 1.2
+    +media-query( mediatype, bp-tablet )
+      margin-top rem(30px)
+      margin-bottom rem(10px)
+      font-size size--nano
+    +media-query( mediatype, bp-desktop )
+      font-size size--micro
+    +media-query( mediatype, bp-desktop--medium )
+      margin-bottom rem(15px)
+      font-size size--milli
+  h5
+    margin-bottom rem(8px)
+    font-size size--nano
+    font-weight weight--light
+    line-height 1.2
+    +media-query( mediatype, bp-tablet )
+      margin-top rem(30px)
+      margin-bottom rem(10px)
+      font-size size--pico
+    +media-query( mediatype, bp-desktop )
+      font-size size--nano
+    +media-query( mediatype, bp-desktop--medium )
+      margin-bottom rem(15px)
+      font-size size--micro
+  h6
+    margin-bottom rem(8px)
+    font-size size--nano
+    font-weight weight--semibold
+    text-transform none
+    letter-spacing normal
+    line-height 1.2
+    +media-query( mediatype, bp-tablet )
+      margin-top rem(30px)
+      margin-bottom rem(15px)
+      font-size size--pico
+    +media-query( mediatype, bp-desktop )
+      font-size size--nano
+    +media-query( mediatype, bp-desktop--medium )
+      margin-bottom rem(12px)
+      font-size size--micro

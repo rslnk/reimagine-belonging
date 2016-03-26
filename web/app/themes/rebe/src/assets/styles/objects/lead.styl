@@ -1,0 +1,32 @@
+/**
+ *  Lead object
+ *
+ *    Use to style an opening paragraph of a post, or page.
+ *    link: https://en.wikipedia.org/wiki/Lead_paragraph
+ */
+.o-lead
+  font-size size--micro
+  font-weight weight--thin
+  line-height 1.4
+  text-transform none
+  strong
+  em
+  b
+    font-weight weight--regular
+  +media-query(mediatype, bp-tablet)
+    font-size size--deca
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--mega
+
+.o-lead--small
+  font-size size--nano
+  font-weight weight--thin
+  line-height 1.6
+  strong
+  em
+  b
+    font-weight weight--medium
+  +media-query(mediatype, bp-tablet)
+    font-size size--milli
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--deci

@@ -28,16 +28,15 @@ add_action('parse_request', function() {
  * Theme assets
  */
 add_action('wp_enqueue_scripts', function () {
-    // Main styles and scripts
+    // Main styles
     wp_enqueue_style('rebe/main.css', asset_path('styles/main.css'), false, null);
+    // Maing scripts and Angular apps
     wp_enqueue_script('rebe/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    // Angular apps
     wp_enqueue_script('events/js', asset_path('scripts/events.js'), [], null, true);
     wp_enqueue_script('stories/js', asset_path('scripts/stories.js'), [], null, true);
-    // Fonts and icons
+    // External fonts
     wp_enqueue_style('fonts/css', 'http://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css', false, null);
     wp_enqueue_style('google/fonts/css', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700', false, null);
-    wp_enqueue_style('rebe/icons/svg/css', asset_path('styles/icons.svg.css'), false, null);
     // OWL Carousel (used for Events timeline)
     wp_enqueue_style('owl.carousel.main', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css', false, null);
     wp_enqueue_style('owl.carousel.theme', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css', false, null);
@@ -93,8 +92,13 @@ add_action('after_setup_theme', function () {
      * @link http://codex.wordpress.org/Function_Reference/register_nav_menus
      */
     register_nav_menus([
-        'primary_navigation'    => __('Primary Navigation', 'rebe'),
-        'secondary_navigation'  => __('Secondary Navigation', 'rebe')
+        'modal_navigation'     => __('Modal menu', 'rebe'),
+        'primary_navigation'   => __('Primary Navigation', 'rebe'),
+        'optional_navigation'  => __('Optional Navigation', 'rebe'),
+        'directory_section_1'  => __('Footer Directory 1', 'rebe'),
+        'directory_section_2'  => __('Footer Directory 2', 'rebe'),
+        'directory_section_3'  => __('Footer Directory 3', 'rebe'),
+        'directory_section_4'  => __('Footer Directory 4', 'rebe')
     ]);
 
     /**
@@ -103,10 +107,10 @@ add_action('after_setup_theme', function () {
      * @link http://codex.wordpress.org/Function_Reference/register_nav_menus
      */
     new NavWalker([
-        'active_class'        => 'is-active',
-        'dropdown_class'      => 'has-dropdown',
-        'menu_item_class'     => 'c-site-nav__item',
-        'menu_sub_item_class' => 'c-site-nav__sub-item'
+        'menu_item_class'     => 'c-menu__item',
+        'active_class'        => 'c-menu__item--active',
+        'menu_sub_item_class' => 'c-menu__subitem',
+        'dropdown_class'      => 'c-menu__dropdown'
     ]);
 });
 

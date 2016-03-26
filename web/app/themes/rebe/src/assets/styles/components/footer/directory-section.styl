@@ -1,0 +1,45 @@
+/**
+ *  Footer directory section
+ *
+ *   Footer directory list sections
+ *   Sections are stacked on mobie screens,
+ *   layed out as 4 columns on screens larger than medium tablets.
+ */
+.c-directory__section
+  position relative
+  stack()
+  margin-bottom rem(30px)
+  +media-query(mediatype, bp-tablet--landscape)
+    unstack()
+    column(1/4)
+    margin-bottom 0
+
+  // When drectory list is expanded
+  // rotate toggle icon from '+' to 'x'
+  .is-expanded
+    transform rotate(45deg)
+
+.c-directory__section-title
+  @extend .o-heading
+  margin-bottom rem(20px)
+  font-weight weight--regular
+  font-size size--nano
+  letter-spacing rem(3px)
+  text-transform uppercase
+  color color--gray
+  +media-query(mediatype, bp-tablet--landscape)
+    font-size size--pico
+    letter-spacing rem(1.5px)
+  +media-query(mediatype, bp-desktop)
+    font-size size--nano
+    letter-spacing rem(3px)
+
+// Toggle icon
+.c-directory__section-toggle
+  @extend .o-btn
+  // position icon next to section title
+  absolute -2px 0 false false
+  font-size rem(20px)
+  color color--lavender + 50%
+  +media-query(mediatype, bp-tablet--landscape)
+    display none /* hide toggle icon */

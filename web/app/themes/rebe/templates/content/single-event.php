@@ -1,10 +1,11 @@
 <?php while (have_posts()) : the_post(); ?>
-  <article class="o-wrapper">
-    <header class="c-event__header">
+  <article class="c-event">
+      
+    <header class="c-event__hero">
 
       <?= App\list_categories(); ?>
 
-      <h1 class="o-heading c-heading--event-title"><?php the_title(); ?></h1>
+      <h1 class="c-event__title"><?php the_title(); ?></h1>
       <?php if (get_field('subtitle')): ?>
         <h2 class="post-subtitle"><?php the_field('subtitle'); ?></h2>
       <?php endif; ?>
@@ -28,18 +29,24 @@
         <span> &mdash; </span>
         <dateformat><?php echo $end_date; ?></dateformat>
       </div>
-      <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
-        <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+      <!-- share event -->
+      <ul class="c-post-share__list">
+        <li class="c-post-share__item">
+          <a class="o-icon c-icon-facebook--circle c-post-share__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+            <span class="u-visually-hidden">Share on Facebook</span>
+          </a>
         </li>
-        <li class="o-social-icons__item">
-          <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+        <li class="c-post-share__item">
+          <a class="o-icon c-icon-twitter--circle c-post-share__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+            <span class="u-visually-hidden">Share on Twitter</span>
+          </a>
         </li>
       </ul>
     </header>
-    <div class="o-row">
 
-      <div class="c-event__body c-event__content o-wp-editor">
+    <div class="c-event__content">
+
+      <div class="c-event__main s-headings s-paragraphs s-links s-text-lists">
         <?php the_field('main_content'); ?>
       </div>
 
@@ -48,7 +55,7 @@
           <div class="c-event__sidebar">
 
             <?php if(get_sub_field('sidebar_content_type') == 'video'): ?>
-              <div class="c-sidebar-video">
+              <div class="c-media-block">
                 <?php while( have_rows('video') ): the_row(); ?>
                   <?php if(get_sub_field('video_host') == 'youtube'): ?>
                     <div class="u-video-container">
@@ -65,50 +72,50 @@
                       <?php the_sub_field('credit'); ?>
                     </a>
                   <?php endif; ?>
-                  <h4 class="o-heading c-sidebar-video__title"><?php the_sub_field('title'); ?></h4>
-                  <p class="o-paragraph c-paragraph--sidebar c-sidebar-video__caption"><?php the_sub_field('caption'); ?></p>
+                  <h4 class="o-heading c-media-block__title"><?php the_sub_field('title'); ?></h4>
+                  <p class="c-media-block__caption"><?php the_sub_field('caption'); ?></p>
                 <?php endwhile; ?>
               </div>
             <?php endif; ?>
 
             <?php if(get_sub_field('sidebar_content_type') == 'image'): ?>
-              <div class="c-sidebar-image">
+              <div class="c-media-block">
                 <?php while( have_rows('image') ): the_row(); ?>
                   <?php if(get_sub_field('url')): ?>
-                    <div class="u-image-container u-image-ratio--4x3 c-sidebar-image__item" style="background-image: url(<?php the_sub_field('url'); ?>)"></div>
+                    <div class="u-image-cover u-image-cover--4x3 c-media-block__placeholder" style="background-image: url(<?php the_sub_field('url'); ?>)"></div>
                   <?php endif; ?>
 
                   <?php if (get_sub_field('credit')): ?>
-                    <a class="c-media-credits" href="<?php the_sub_field('credit_link'); ?>">
+                    <a class="c-media-block__credits" href="<?php the_sub_field('credit_link'); ?>">
                       <?php the_sub_field('credit'); ?>
                     </a>
                   <?php endif; ?>
-                  <h4 class="o-heading c-sidebar-image__title"><?php the_sub_field('title'); ?></h4>
-                  <p class="o-paragraph c-paragraph--sidebar c-sidebar-image__caption"><?php the_sub_field('caption'); ?></p>
+                  <h4 class="c-media-block__title"><?php the_sub_field('title'); ?></h4>
+                  <p class="c-media-block__caption"><?php the_sub_field('caption'); ?></p>
                 <?php endwhile; ?>
               </div>
             <?php endif; ?>
 
             <?php if(get_sub_field('sidebar_content_type') == 'quote'): ?>
-              <div class="c-sidebar-quote">
+              <blockquote class="c-event-quote">
                 <?php while( have_rows('quote') ): the_row(); ?>
-                  <div class="o-icon c-icon-quotation-mark-mint c-sidebar-quote__icon"></div>
-                  <h4 class="o-heading c-sidebar-quote__text"><?php the_sub_field('text'); ?></h4>
-                  <div class="c-sidebar-quote__author-block">
-                    <span class="c-sidebar-quote__dash">—</span>
-                    <span class="c-sidebar-quote__author"><?php the_sub_field('author'); ?><span>, </span></span>
-                    <span class="c-sidebar-quote__source"><?php the_sub_field('source'); ?></span>
+                  <div class="o-icon c-icon-quote c-event-quote__icon"></div>
+                  <h4 class="c-event-quote__text"><?php the_sub_field('text'); ?></h4>
+                  <div class="c-event-quote__meta">
+                    <span>—</span>
+                    <span class="o-quote__author"><?php the_sub_field('author'); ?><span>, </span></span>
+                    <span class="o-quote__source"><?php the_sub_field('source'); ?></span>
                   </div>
                 <?php endwhile; ?>
-              </div>
+              </blockquote>
             <?php endif; ?>
 
             <?php if(get_sub_field('sidebar_content_type') == 'sidenote'): ?>
               <div class="c-sidebar-sidenote">
                 <?php while( have_rows('sidenote') ): the_row(); ?>
-                  <div class="c-sidebar-note">
-                    <h4 class="o-heading c-sidebar-note__text c-sidebar-note__text--event"><?php the_sub_field('title'); ?></h4>
-                    <p class="o-paragraph c-paragraph--sidebar c-sidebar-note__caption"><?php the_sub_field('caption'); ?></p>
+                  <div class="o-sidenote">
+                    <h4 class="c-event__sidenote-title"><?php the_sub_field('title'); ?></h4>
+                    <p class="c-event__sidenote-caption"><?php the_sub_field('caption'); ?></p>
                   </div>
                 <?php endwhile; ?>
               </div>
@@ -121,16 +128,16 @@
 
     </div>
 
-    <div class="o-row">
+    <div class="c-post-footnotes">
 
       <?php if(get_field('sources')): ?>
-        <div class="o-footnotes c-footnotes--sources">
-          <h4 class="o-heading c-heading--section-title"><?php the_field('event_sources_title', 'option'); ?></h4>
-            <ol class="o-list o-list--decimal c-footnotes__list">
+        <div class="c-post-footnotes__column">
+          <h4 class="c-section-title"><?php the_field('event_sources_title', 'option'); ?></h4>
+            <ol class="c-references__list">
 
             <?php while( have_rows('sources') ): the_row(); ?>
 
-                <li class="c-footnotes__list-item">
+                <li class="c-references__item">
 
                   <?php if( get_sub_field('author') ): ?>
                     <?php while( have_rows('author') ): the_row(); ?>
@@ -224,14 +231,14 @@
         </div>
       <?php endif; ?>
 
-      <?php if(get_field('sources')): ?>
-        <div class="o-footnotes c-footnotes--resources">
-          <h4 class="o-heading c-heading--section-title"><?php the_field('event_resources_title', 'option'); ?></h4>
-            <ol class="o-list o-list--decimal c-footnotes__list">
+      <?php if(get_field('resources')): ?>
+        <div class="c-post-footnotes__column">
+          <h4 class="c-section-title"><?php the_field('event_resources_title', 'option'); ?></h4>
+            <ol class="c-references__list">
 
             <?php while( have_rows('resources') ): the_row(); ?>
 
-                <li class="c-footnotes__list-item">
+                <li class="c-references__item">
 
                   <?php if( get_sub_field('author') ): ?>
                     <?php while( have_rows('author') ): the_row(); ?>

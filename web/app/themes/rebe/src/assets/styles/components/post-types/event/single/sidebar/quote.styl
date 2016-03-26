@@ -1,0 +1,37 @@
+/**
+ * Event quote
+ */
+.c-event-quote
+  @extend .o-quote
+
+.c-event-quote__icon
+  @extend .o-quote__icon
+  color color--mint
+
+.c-event-quote__content
+  @extend .o-quote__content
+
+.c-event-quote__text
+  @extend .o-heading
+  @extend .o-quote__text
+  font-size size--milli
+  line-height 1.2
+  color color--carbon-black
+  text-transform none /* overwrites `.o-heading` defaults */
+  +media-query(mediatype, bp-tablet)
+    font-size size--deci
+    line-height 1.4
+  +media-query(mediatype, bp-desktop)
+    font-size size--centi
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--deca
+    line-height 1.45
+  +media-query(mediatype, bp-desktop--large)
+    line-height 1.35
+    font-size size--kilo
+
+.c-event-quote__meta
+  @extend .o-quote__meta
+
+.c-event-quote__author
+  font-weight weight--medium

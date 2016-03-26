@@ -1,0 +1,11 @@
+.c-home__content
+  position relative
+  display block
+  float left
+  height rem(180px) // add extra height so JS adds desired padding on mobile screen
+  +media-query(mediatype, bp-tablet)
+    height auto
+  +media-query(mediatype, bp-tablet--landscape)
+    height rem(60px) // same in order to keep design neat on vertical iPad
+  +media-query(mediatype, bp-desktop)
+    height auto

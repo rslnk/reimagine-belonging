@@ -1,23 +1,28 @@
 // ## Globals
 var argv         = require('minimist')(process.argv.slice(2));
+var async        = require('async');
 var browserSync  = require('browser-sync').create();
 var changed      = require('gulp-changed');
 var concat       = require('gulp-concat');
-var flatten      = require('gulp-flatten');
+var consolidate  = require('gulp-consolidate');
+var eslint       = require('gulp-eslint');
 var gulp         = require('gulp');
 var gulpif       = require('gulp-if');
-var iconify      = require('gulp-iconify');
+var iconfont     = require('gulp-iconfont');
 var imagemin     = require('gulp-imagemin');
-var jshint       = require('gulp-jshint');
-var lazypipe     = require('lazypipe');
+var jeet         = require('jeet');
 var koutoSwiss   = require('kouto-swiss');
+var lazypipe     = require('lazypipe');
+var less         = require('gulp-less');
 var merge        = require('merge-stream');
-var minifyCss    = require('gulp-minify-css');
+var cssNano      = require('gulp-cssnano');
 var plumber      = require('gulp-plumber');
 var rev          = require('gulp-rev');
 var runSequence  = require('run-sequence');
-var sourcemaps   = require('gulp-sourcemaps');
+var runTimestamp = Math.round(Date.now()/1000);
+var sass         = require('gulp-sass');
 var stylus       = require('gulp-stylus');
+var sourcemaps   = require('gulp-sourcemaps');
 var uglify       = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
@@ -58,8 +63,8 @@ var enabled = {
   maps: !argv.production,
   // Fail styles task on error when `--production`
   failStyleTask: argv.production,
-  // Fail due to JSHint warnings only when `--production`
-  failJSHint: argv.production,
+  // Fail due to ESLint warnings only when `--production`
+  failESLint: argv.production,
   // Strip debug statments from javascript when `--production`
   stripJSDebug: argv.production
 };
@@ -86,16 +91,22 @@ var cssTasks = function(filename) {
       return gulpif(enabled.maps, sourcemaps.init());
     })
     .pipe(function() {
-      return gulpif('*.styl', stylus({
+      return gulpif('*.styl', stylus());
+    })
+    .pipe(function() {
+      return gulpif('*.less', less());
+    })
+    .pipe(function() {
+      return gulpif('*.scss', sass({
+        outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
         includePaths: ['.'],
         errLogToConsole: !enabled.failStyleTask
       }));
     })
     .pipe(concat, filename)
-    .pipe(minifyCss, {
-      advanced: false,
-      rebase: false
+    .pipe(cssNano, {
+      safe: true
     })
     .pipe(function() {
       return gulpif(enabled.rev, rev());
@@ -121,7 +132,7 @@ var jsTasks = function(filename) {
     })
     .pipe(concat, filename)
     .pipe(uglify, {
-      mangle: false,
+      mangle: !enabled.maps,
       compress: {
         'drop_debugger': enabled.stripJSDebug
       }
@@ -168,7 +179,7 @@ gulp.task('styles', ['wiredep'], function() {
       });
     }
     merged.add(gulp.src(dep.globs, {base: 'styles'})
-      .pipe(stylus({ use: [ koutoSwiss() ] }))
+      .pipe(stylus({ use: [ jeet(), koutoSwiss() ] }))
       .pipe(cssTasksInstance));
   });
   return merged
@@ -176,9 +187,9 @@ gulp.task('styles', ['wiredep'], function() {
 });
 
 // ### Scripts
-// `gulp scripts` - Runs JSHint then compiles, combines, and optimizes Bower JS
+// `gulp scripts` - Runs ESLint then compiles, combines, and optimizes Bower JS
 // and project JS.
-gulp.task('scripts', ['jshint'], function() {
+gulp.task('scripts', ['lint'], function() {
   var merged = merge();
   manifest.forEachDependency('js', function(dep) {
     merged.add(
@@ -190,14 +201,59 @@ gulp.task('scripts', ['jshint'], function() {
     .pipe(writeToManifest('scripts'));
 });
 
-// ### Fonts
-// `gulp fonts` - Grabs all the fonts and outputs them in a flattened directory
-// structure. See: https://github.com/armed/gulp-flatten
-gulp.task('fonts', function() {
-  return gulp.src(globs.fonts)
-    .pipe(flatten())
-    .pipe(gulp.dest(path.dist + 'fonts'))
-    .pipe(browserSync.stream());
+// ### IconFont
+// `gulp iconfont` - Converts svg icons into font, generates .styl css objects
+// and components classes. For svg icons optimization options
+// see: https://www.npmjs.com/package/gulp-iconfont
+gulp.task('iconfont', function(done){
+
+  var fontName        = 'ReBeIconFont';
+  var fontPath        = '../fonts/';
+  var objectsClass    = 'o-icon';
+  var componentsClass = 'c-icon';
+
+  var iconStream = gulp.src(['./src/assets/icons/*.svg'])
+    .pipe(iconfont({
+      fontName: fontName,
+      formats: ['ttf', 'eot', 'woff'],
+      timestamp: Math.round(Date.now() / 1000),
+      normalize: true,  /* fix possible icon height difference */
+      fontHeight: 1001 /* fix possible icon convertion issues */
+     }));
+    async.parallel([
+      // Generate icons CSS objects classes
+      function GenerateIconCssObjects(cb) {
+        iconStream.on('glyphs', function(glyphs, options) {
+          gulp.src('./src/assets/styles/templates/_icon.styl') /* objects template */
+            .pipe(consolidate('lodash', {
+              glyphs: glyphs,
+              fontName: fontName,
+              fontPath: fontPath,
+              className: objectsClass
+            }))
+            .pipe(gulp.dest('./src/assets/styles/objects/'))
+            .on('finish', cb);
+        });
+      },
+      // Generate icons CSS components classes
+      function GenerateIconCssComponents(cb) {
+        iconStream.on('glyphs', function(glyphs, options) {
+          gulp.src('./src/assets/styles/templates/_icons.styl') /* components template */
+            .pipe(consolidate('lodash', {
+              glyphs: glyphs,
+              className: componentsClass
+            }))
+            .pipe(gulp.dest('./src/assets/styles/components/common'))
+            .on('finish', cb);
+        });
+      },
+      // Output web fonts
+      function outputFonts(cb) {
+        iconStream
+          .pipe(gulp.dest('./dist/fonts/'))
+          .on('finish', cb);
+      }
+    ], done);
 });
 
 // ### Images
@@ -213,43 +269,15 @@ gulp.task('images', function() {
     .pipe(browserSync.stream());
 });
 
-// ### Iconify
-// `gulp iconify` - Convert svg files to css classes with png fallback
-gulp.task('iconify', function() {
-  iconify({
-    src: './src/assets/icons/*.svg',
-    cssOutput: './dist/styles/',
-    pngOutput: './dist/icons/',
-    styleTemplate: './src/assets/icons/_icon_gen.mustache',
-    defaultWidth: '60px',
-    defaultHeight: '60px',
-    svgoOptions: {
-      enabled: true,
-      options: {
-        plugins: [
-            { cleanupAttrs: true },
-            { removeEmptyAttrs: true },
-            { removeXMLProcInst: true },
-            { removeMetadata: true },
-            { removeDoctype: true },
-            { removeUnknownsAndDefaults: true },
-            { mergePaths: false },
-            { convertShapeToPath: true }
-        ]
-      }
-    }
-  });
-});
-
-// ### JSHint
-// `gulp jshint` - Lints configuration JSON and project JS.
-gulp.task('jshint', function() {
+// ### ESLint
+// `gulp lint` - Lints configuration JSON and project JS.
+gulp.task('lint', function() {
   return gulp.src([
-    'bower.json', 'gulpfile.js'
+    'gulpfile.js'
   ].concat(project.js))
-    .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(gulpif(enabled.failJSHint, jshint.reporter('fail')));
+    .pipe(eslint())
+    .pipe(eslint.format())
+    .pipe(gulpif(enabled.failESLint, eslint.failAfterError()));
 });
 
 // ### Clean
@@ -264,29 +292,31 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{src,templates}/**/*.php', '*.php'],
+    files: ['{src,templates}/**/*.php', 'src/views/**/*.html'],
     proxy: config.devUrl,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
     }
   });
-  gulp.watch([path.source + 'assets/styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-  gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
-  gulp.watch([path.source + 'icons/**/*'], ['iconify']);
+  gulp.watch([path.source + 'icons/**/*'], ['iconfont', 'styles']);
+  gulp.watch([path.source + 'styles/**/*'], ['styles']);
+  gulp.watch([path.source + 'scripts/**/*'], ['lint', 'scripts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
-  gulp.watch(['bower.json', './src/assets/manifest.json'], ['build']);
+  gulp.watch(['bower.json', 'src/assets/manifest.json'], ['build']);
 });
 
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
-  runSequence('styles',
-              'scripts',
-              ['fonts', 'iconify', 'images'],
-              callback);
+  runSequence(
+    'iconfont',
+    'styles',
+    'scripts',
+    'images',
+    callback
+  );
 });
 
 // ### Wiredep

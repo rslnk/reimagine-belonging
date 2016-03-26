@@ -1,0 +1,15 @@
+/*
+ * Lightgray theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-lightgray
+  color color--medium-gray
+  background-color color--light-gray
+
+.t-lightgray--focus
+  @extend .t-lightgray
+  variations = monochrome(color--light-gray)
+  &:hover
+  &:focus
+    background-color variations[1]

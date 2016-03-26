@@ -1,0 +1,15 @@
+/**
+ * Event post sidenote title
+ *
+*/
+.c-event__sidenote-title
+  @extend .o-heading, .o-sidenote__title
+  color color--mint
+  font-size size--micro
+  +media-query( mediatype, bp-tablet )
+    font-size size--deci
+  +media-query( mediatype, bp-desktop--medium )
+    font-size size--mega
+
+.c-event__sidenote-caption
+  @extend .o-paragraph--small, .o-sidenote__caption

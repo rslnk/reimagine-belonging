@@ -24,24 +24,20 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-        // Make footer stick to the bottom of the page
-        // using this solution http://jsfiddle.net/ed4xe1z9/
-        function makeFooterSticky() {
-          $('main').css('padding-bottom', $('footer').height());
-          $('footer').css('margin-top', - $('footer').height());
-        }
+        // Toggle modal menu
+        $(function () {
+            $('.js-modal-menu-open, .js-modal-menu-close').click(function () {
+                $($(this).attr('data-target')).toggle();
+            });
+        });
 
-        // $('.js-lightbox').height($('main').height() + 100);
-        // $('html, body').animate({ scrollTop: 0 }, 200);
-
-        // all mess here is just a warkaround to fix the lightbox for the berlin milestone
-        // Lightbox height is temporary set in:
-        // - ng/stories/controllers/story.controller.js
-        // - ng/events/controllers/event.controller.js
-        function setLightboxHeight() {
-          $('.js-lightbox').height($('main').height() + 100);
-          $('.js-lightbox-nav-wrapper').height($('main').height() + 100);
-        }
+        // Toggle footer directory section
+        $(function () {
+            $('.js-directory-section-toggle').click(function () {
+                $($(this).attr('data-target')).toggle();
+                $($(this)).toggleClass('is-expanded');
+            });
+        });
 
         // 'Donate' lighbox toggle
         $('.js-lightbox-open--donate').on('click', function (e) {
@@ -65,28 +61,16 @@
           $('.js-lightbox--book-a-workshop').hide();
         });
 
+        $('.o-overlay').on('scroll touchmove mousewheel', function (event) {
+            event.preventDefault();
+        });
+
         if ( $(window).width() >= 550) {
           // Script for large screens
-
-          makeFooterSticky();
-          setLightboxHeight();
-
-          $(window).resize(function () {
-            makeFooterSticky();
-            setLightboxHeight();
-          });
-
         }
         else {
           // Script to run on small screens
-          //
         }
-
-        // Toggle head navigation menu on mobile/tablet screen
-        $('.js-toggle-nav-menu').on('click', function(e) {
-          e.preventDefault();
-          $('.c-site-nav__list--head').toggle();
-        });
 
       },
       finalize: function() {
@@ -98,31 +82,33 @@
       init: function() {
         // JavaScript to be fired on the home page
 
-        // Fit homepage content to viewport height
-        function setHomepageHeight () {
-          var elt = $('.js-main-block');
-          var windowH = $(window).height();
-          var footerH = $('footer').height();
-          var headerH = $('header').height();
-          var h = windowH - footerH;
-          elt.height(h);
+        // Set homepage container height to viewport height
+        function setHomepageContainerHeight() {
+          var elt = $('.js-home');
+          var windowHeight = $(window).height();
+          var homepageContainerHeight = windowHeight;
+          elt.height(homepageContainerHeight);
         }
 
-        function setHomepageContentMargin () {
-          var windowH = $(window).height();
-          var footerH = $('footer').height();
-          var contentH = $('.js-content-block').height();
-          var mt = (windowH - footerH)/1.65 - contentH/2;
-          $('.js-content-block').css('margin-top', mt);
+        // Set homepage content top margin
+        function setHomepageContentMargin() {
+          var windowHeight = $(window).height();
+          //var footerHeihgt = $('footer').height();
+          var contentHeight = $('.js-home-content').height();
+          var contentMarginTop = (windowHeight - contentHeight)/1.2;
+          $('.js-home-content').css('margin-top', contentMarginTop);
         }
 
-        setHomepageHeight();
+        // Apply homepage container hight and content top margin
+        setHomepageContainerHeight();
         setHomepageContentMargin();
 
+        // Update homepage container hight and content top margin on window resize
         $(window).resize( function() {
-          setHomepageHeight();
+          setHomepageContainerHeight();
           setHomepageContentMargin();
         });
+
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS

@@ -68,6 +68,43 @@
             "disabled": 0
         },
         {
+            "key": "field_561d2b8778c75",
+            "label": "Alternative locale URL",
+            "name": "site_alternative_locale_url",
+            "type": "text",
+            "instructions": "Example: http:\/\/reimaginebelonging.de",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 30,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_553120e300008",
+            "label": "Services",
+            "name": "services",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
             "key": "field_55310397638c3",
             "label": "Google Analytics ID",
             "name": "google_analytics_id",
@@ -89,22 +126,6 @@
             "disabled": 0
         },
         {
-            "key": "field_553120e300008",
-            "label": "Social",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
             "key": "field_55439c35698e6",
             "label": "Facebook App ID",
             "name": "facebook_app_id",
@@ -113,7 +134,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -134,7 +155,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -155,7 +176,28 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 33,
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_570037be9d2fb",
+            "label": "Facebook page URL",
+            "name": "facebook_page_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -176,7 +218,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
@@ -187,6 +229,87 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_570038569d2fd",
+            "label": "Twitter account URL",
+            "name": "twitter_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57003cd03999d",
+            "label": "Vimeo page URL",
+            "name": "vimeo_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5542637121823",
+            "label": "Stories",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5542638021824",
+            "label": "Stories Filters",
+            "name": "story_filters",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "story_topic",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "load_save_terms": 0,
+            "return_format": "object",
+            "multiple": 0,
+            "load_terms": 0,
+            "save_terms": 0
         },
         {
             "key": "field_553120d400007",
@@ -274,9 +397,9 @@
             "save_terms": 0
         },
         {
-            "key": "field_5542637121823",
-            "label": "Stories",
-            "name": "",
+            "key": "field_5701364d60eed",
+            "label": "Misc",
+            "name": "misc",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -290,27 +413,67 @@
             "endpoint": 0
         },
         {
-            "key": "field_5542638021824",
-            "label": "Stories Filters",
-            "name": "story_filters",
-            "type": "taxonomy",
+            "key": "field_563fc43078e0e",
+            "label": "PayPal donation button url",
+            "name": "donate_payment_option_1_button_url",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": 50,
                 "class": "",
                 "id": ""
             },
-            "taxonomy": "story_topic",
-            "field_type": "multi_select",
-            "allow_null": 0,
-            "add_term": 0,
-            "load_save_terms": 0,
-            "return_format": "object",
-            "multiple": 0,
-            "load_terms": 0,
-            "save_terms": 0
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_563d612eacd96",
+            "label": "Tax deductible option button url",
+            "name": "donate_payment_option_2_button_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_570138221591b",
+            "label": "Newsletter subscription form URL",
+            "name": "newsletter_subscription_form_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         }
     ],
     "location": [
@@ -330,5 +493,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1445949885
+    "modified": 1459727473
 }

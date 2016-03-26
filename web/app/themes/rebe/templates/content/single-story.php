@@ -1,21 +1,22 @@
 <?php while (have_posts()) : the_post(); ?>
-  <article class="o-wrapper">
+  <article class="c-story">
+
     <header class="c-story__header">
 
       <?= Apps\list_categories(); ?>
 
-      <h1 class="o-heading c-heading--story-title"><?php the_title(); ?></h1>
+      <h1 class="c-story__title"><?php the_title(); ?></h1>
       <?php
         $story_post_cities 		= wp_get_object_terms($post->ID, 'story_city');
         $city_name        		= $story_post_cities[0]->name;
        ?>
-       <h2 class="c-story__hero"><strong><?php the_field('protagonist_name');  echo ', ' ?></strong><?php echo $city_name; ?></h2>
+       <h2 class="c-story__protagonist"><strong><?php the_field('protagonist_name');  echo ', ' ?></strong><?php echo $city_name; ?></h2>
 
     </header>
 
-    <div class="o-row c-story__content">
+    <div class="c-story__content">
 
-      <div class="c-story__body o-wp-editor">
+      <div class="c-story__main s-headings s-paragraphs s-links s-text-lists">
         <div class="u-video-container c-story__video">
 
           <?php if(get_field('story_video_host') == 'youtube'): ?>
@@ -34,34 +35,43 @@
       </div>
 
       <div class="c-story__sidebar">
+
+          <?php if(get_field('excerpt')): ?>
+            <div class="c-story-quote">
+              <div class="o-icon c-icon-quote c-event-quote__icon"></div>
+              <h2 class="c-story-quote__text"><?php the_field('excerpt'); ?></h2>
+              <div class="c-story-quote__meta">
+                <span>—</span>
+                <span class="c-story-quote__author"><?php the_field('protagonist_name'); ?></span>
+                <span class="c-story-quote__city"><?php echo $city_name; ?></span>
+              </div>
+            </div>
+          <?php endif; ?>
+
         <?php if(get_field('subtitles_notification') == 1): ?>
           <div class="c-closed-captions-notice">
             <div class="o-icon c-icon-closed-captions c-closed-captions-notice__icon"></div>
-            <div class="c-closed-captions-notice__wrapper">
-              <h3 class="o-heading c-closed-captions-notice__title"><?php the_field('story_cc_notice_title', 'option') ?></h3>
-              <p class="o-paragraph c-paragraph--sidebar c-closed-captions-notice__text"><?php the_field('story_cc_notice_text', 'option') ?></p>
+            <div class="c-closed-captions-notice__content">
+              <h3 class="c-closed-captions-notice__title"><?php the_field('story_cc_notice_title', 'option') ?></h3>
+              <p class="c-closed-captions-notice__text"><?php the_field('story_cc_notice_text', 'option') ?></p>
             </div>
           </div>
         <?php endif; ?>
-        <?php if(get_field('excerpt')): ?>
-          <div class="c-story__quote">
-            <div class="o-icon c-icon-quotation-mark-blueberry c-sidebar-quote__icon c-sidebar-quote__icon--story"></div>
-            <h2 class="o-heading c-sidebar-quote__text c-sidebar-quote__text--story"><?php the_field('excerpt'); ?></h2>
-            <div class="c-sidebar-quote__author-block c-sidebar-quote__author-block--story">
-              <span class="c-sidebar-quote__dash">—</span>
-              <span class="c-sidebar-quote__author"><?php the_field('protagonist_name'); ?></span>
-            </div>
-          </div>
-        <?php endif; ?>
-        <!-- soicail shares -->
-        <ul class="o-social-icons o-social-icons__list c-social-icons__list--post-share">
-          <li class="o-social-icons__item">
-            <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-facebook" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook Share</a>
+
+        <!-- share story -->
+        <ul class="c-post-share__list">
+          <li class="c-post-share__item">
+            <a class="o-icon c-icon-facebook--circle c-post-share__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+              <span class="u-visually-hidden">Share on Facebook</span>
+            </a>
           </li>
-          <li class="o-social-icons__item">
-            <a class="o-icons-list__link c-icons-list__link--post-share o-icon c-icon-twitter" href="http://www.twitter.com/share?url={{ shareUrl }}">Tweet</a>
+          <li class="c-post-share__item">
+            <a class="o-icon c-icon-twitter--circle c-post-share__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+              <span class="u-visually-hidden">Share on Twitter</span>
+            </a>
           </li>
         </ul>
+
       </div> <!-- sidebar_content -->
 
     </div>

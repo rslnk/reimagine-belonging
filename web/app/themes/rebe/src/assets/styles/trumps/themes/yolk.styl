@@ -1,0 +1,15 @@
+/**
+ * Yolk theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-yolk
+  color color--white
+  background-color color--yolk
+
+.t-yolk--focus
+  @extend .t-yolk
+  variations = monochrome(color--yolk)
+  &:hover
+  &:focus
+    background-color variations[1]

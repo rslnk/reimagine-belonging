@@ -1,0 +1,15 @@
+/*
+ * Medium-gray theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-medium-gray
+  color color--dark-gray
+  background-color color--medium-gray
+
+.t-medium-gray--focus
+  @extend .t-medium-gray
+  variations = monochrome(color--medium-gray)
+  &:hover
+  &:focus
+    background-color variations[1]

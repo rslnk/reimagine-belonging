@@ -1,0 +1,25 @@
+/**
+ * Story preview icon
+ */
+.c-story-preview__icon
+  @extend .o-btn
+  display block
+  absolute false rem(30px) rem(25px) false
+  position absolute
+  // 'play' icon size and color
+  font-size rem(45px)
+  color color--white
+  +media-query(mediatype, bp-mobile--landscape)
+    font-size rem(50px)
+    absolute false rem(25px) rem(35px) false
+  +media-query(mediatype, bp-tablet)
+    display none /* hide icon, story preview is too small */
+  +media-query(mediatype, bp-tablet--landscape)
+    display block  /* display icon */
+    font-size rem(40px)
+    absolute false rem(25px) rem(15px) false
+  +media-query(mediatype, bp-desktop)
+    font-size rem(38px)
+  +media-query(mediatype, bp-desktop--large)
+    font-size rem(45px)
+    absolute false rem(30px) rem(19px) false

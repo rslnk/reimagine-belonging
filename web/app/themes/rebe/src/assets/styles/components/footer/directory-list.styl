@@ -1,0 +1,30 @@
+/**
+ *  Footer directory list (footer menus)
+ *
+ *   Directory lists collapsed (hidden) on mobile screens by default,
+ *   and expanded when section title icon is toggled.
+ *   Displayed on screens larger than medium tablet.
+ */
+.c-directory__list
+  @extend .o-ui-list
+  display none /* hidden until toggled */
+  font-family base--font-body
+  font-weight weight--thin
+  font-size size--pico
+  letter-spacing rem(.8px)
+  +media-query(mediatype, bp-tablet--landscape)
+    display block /* display list on screens bigger than tablet */
+
+  .c-menu__item
+    padding rem(8px) 0 /* vertical space between menu items */
+
+  .c-menu__item a
+    padding rem(3px) 0 /* extends link's 'sensitive' zone */
+    transition color .2s ease-in /* color transition animation */
+    color color--lavender + 50%
+    &:hover
+    &:focus
+      color color--lavender + 75%
+
+  .c-menu__item--active a
+    color color--blueberry + 20%

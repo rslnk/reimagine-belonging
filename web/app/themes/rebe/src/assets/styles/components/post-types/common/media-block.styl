@@ -1,0 +1,57 @@
+/**
+ * Media Block
+ *
+ *    Structures and syles media content and its metadata (such as image or video, title, caption
+ *    and credits).
+ *
+ *    - .c-media-block
+ *      - .c-media-block__placeholder
+ *      - .c-media-block__placeholder
+ *      - .c-media-block__title
+ *      - .c-media-block__caption
+*/
+.c-media-block
+  clearfix()
+  margin-bottom rem(30px)
+
+.c-media-block__placeholder
+  background-color color--light-gray
+  float none
+
+.c-media-block__credits
+  @extend .o-text-link
+  margin-top rem(8px)
+  display block
+  font-family base--font-body
+  font-size size--atto
+  font-style normal
+  font-weight weight--light
+  color color--dark-gray
+  line-height 1.7
+  &:hover
+  &:focus
+    color color--medium-gray
+
+.c-media-block__title
+  @extend .o-heading
+  margin-top rem(15px)
+  margin-bottom rem(12px)
+  font-size size--centi
+  font-weight weight--regular
+  line-height 1.2
+  letter-spacing 0
+  text-transform none
+  strong
+  em
+  b
+    font-weight weight--semibold
+  +media-query(mediatype, bp-tablet--landscape)
+    line-height 1.3
+  +media-query(mediatype, bp-desktop)
+    font-size size--milli
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--deci
+
+.c-media-block__caption
+  @extend .o-paragraph--small
+  color color--dark-gray

@@ -1,0 +1,73 @@
+/**
+ * Timeline switcher (selector)
+ *
+ *    - c-timeline-switcher
+ *      - c-timeline-switcher__selector
+ *      - c-timeline-switcher__icon
+ *      - c-timeline-switcher__list
+ *         - c-timeline-switcher__item
+ */
+.c-timeline-switcher
+  float left
+  clearfix()
+
+.c-timeline-switcher__selector
+  @extend .o-btn
+  clearfix()
+  display block
+  padding rem(10px) /* padding defines size of the switcher selector */
+  background-color color--mint
+  color color--white
+  // Background on hover/focus
+  &:hover
+  &:focus
+    background-color color--mint - 8%
+  +media-query(mediatype, bp-tablet)
+    padding rem(16px) rem(18px) rem(18px) rem(18px)
+  +media-query(mediatype, bp-desktop)
+    padding rem(18px) rem(20px)
+
+.c-timeline-switcher__timeline /* active timeline name */
+  float left
+  display inline-block
+  margin-top rem(4px) /* fix vertically alignment with icon */
+  font-size size--nano
+  letter-spacing rem(1px)
+  +media-query(mediatype, bp-tablet)
+    font-size size--centi
+  +media-query(mediatype, bp-desktop)
+    font-size size--deca
+  +media-query(mediatype, bp-desktop--medium)
+    margin-top rem(4px)
+    font-size size--kilo
+
+.c-timeline-switcher__icon
+  float right
+  margin-top rem(1px) /* fix vertical alignment */
+  margin-left rem(12px) /* between icon and timeline name */
+  font-size rem(20px)
+  +media-query(mediatype, bp-tablet)
+    font-size rem(25px)
+  +media-query(mediatype, bp-desktop)
+    margin-left rem(15px)
+    font-size size--kilo
+  +media-query(mediatype, bp-desktop--medium)
+    margin-left rem(18px)
+    font-size size--mega
+
+// Timelines list in switcher selector
+.c-timeline-switcher__list
+  position absolute
+
+.c-timeline-switcher__item
+  @extend .o-btn, .o-btn--medium
+  float left
+  margin-right rem(1px)
+  margin-top rem(1px)
+  letter-spacing rem(2px)
+  color color--white
+  background-color color--mint
+  transition background-color .2s ease-in
+  &:hover
+  &:focus
+    background-color color--mint - 5%

@@ -1,0 +1,42 @@
+/**
+ * Categories filter
+ */
+
+//.c-categories-filter
+
+.c-categories-filter__list
+  @extend .o-ui-list
+  display inline-block
+  clearfix()
+
+.c-categories-filter__item
+    display inline-block
+    float left
+    margin-right rem(2px)
+    margin-top rem(2px)
+    color color--dark-gray
+    background-color color--light-gray
+    // Let's add buttons behavior and style
+    @extend .o-btn, .o-btn--medium
+    // Background on hover/focus
+    &:hover
+    &:focus
+      color color--dark-gray - 5%
+      background-color color--light-gray - 5%
+
+// Active items modifiers
+.c-categories-filter__active--events
+  color color--white
+  background-color color--indigo
+  &:hover
+  &:focus
+    color color--white
+    background-color color--indigo - 10%
+
+.c-categories-filter__active--stories
+  color color--white
+  background-color color--blueberry
+  &:hover
+  &:focus
+    color color--white
+    background-color color--blueberry - 10%

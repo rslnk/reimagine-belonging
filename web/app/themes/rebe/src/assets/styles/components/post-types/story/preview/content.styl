@@ -1,0 +1,24 @@
+/**
+ * Story preview content
+ *
+ *    - Wraps the following story preview content:
+ *      .c-story-preview__title
+ *      .c-story-preview__hero
+ *      .c-story-preview__icon
+ *
+ *    - Has dark gradient applyed to the top
+ *    - Triggers title animation when hovered
+ *
+ */
+.c-story-preview__content
+  @extend .o-btn
+  display block
+  position absolute
+  size 100%
+  padding rem(25px)
+  overflow hidden
+  background-image linear-gradient(180deg, rgba(color--black, 0.5) 10%, rgba(color--black, 0) 80%)
+  &:hover
+  &:focus
+    .c-story-preview__title
+      background-position -99% /* set's property that triggers title background animation */

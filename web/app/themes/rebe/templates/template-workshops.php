@@ -9,6 +9,6 @@
  */
 
 ?>
-<main class="o-row">
+<main class="c-workshops">
   <?php get_template_part('content/workshops'); ?>
 </main>

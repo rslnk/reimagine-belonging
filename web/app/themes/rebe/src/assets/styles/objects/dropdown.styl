@@ -1,0 +1,19 @@
+/**
+ * Dropdown object
+ */
+.o-dropdown
+  display inline-block
+  font-family base--font-heading
+  text-transform uppercase
+  letter-spacing rem(1px)
+
+.o-dropdown__icon
+  display inline-block
+
+.o-dropdown--large
+  padding rem(12px) rem(20px)
+  font-size rem(20px)
+  +media-query(mediatype, bp-tablet)
+    font-size rem(40px)
+  +media-query(mediatype, bp-tablet--landscape)
+    font-size rem(60px)

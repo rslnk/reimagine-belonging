@@ -1,0 +1,15 @@
+/**
+ * Lemon theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-lemon
+  color color--white
+  background-color color--lemon
+
+.t-lemon--focus
+  @extend .t-lemon
+  variations = monochrome(color--lemon)
+  &:hover
+  &:focus
+    background-color variations[1]

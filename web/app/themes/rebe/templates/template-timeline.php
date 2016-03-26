@@ -13,10 +13,8 @@ use ReBe\Routing\UserAgent;
  * @see assets/ng/events
  */
 ?>
-<main class="o-row">
-    <div class="o-wrapper">
-        <?php get_template_part('components/page-head'); ?>
-    </div>
+<main class="c-events__content">
+    <?php get_template_part('components/page-head'); ?>
     <?php
     // Output content for crawlers
     if (UserAgent::check('crawler')): get_template_part('content/events'); ?>

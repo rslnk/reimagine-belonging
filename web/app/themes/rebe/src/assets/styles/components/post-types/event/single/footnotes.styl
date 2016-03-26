@@ -1,0 +1,22 @@
+/**
+ * Post footnotes
+ *
+ *    Wrapps event `sources` and `resources` refences lists
+ *    Two columns on desktop screen
+*/
+.c-post-footnotes
+  width 100%
+  padding-top rem(30px)
+  border-top rem(1px) solid color--light-gray
+
+.c-post-footnotes__column
+  stack()
+  +media-query(mediatype, bp-desktop)
+    unstack()
+    column(1/2)
+
+// Add space between two colums when they are stacked
+.c-post-footnotes__column:first-of-type
+  margin-bottom rem(30px)
+  +media-query(mediatype, bp-desktop)
+    margin-bottom 0

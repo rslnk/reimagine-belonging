@@ -1,0 +1,20 @@
+/**
+ * References lists
+ *
+ *    Style for event sources & resources list
+ *
+*/
+.c-references__list
+  @extend .o-text-list, .o-text-list--decimal
+  @extend .o-paragraph
+  margin-left rem(15px) /* no need for hanging punctuation here! */
+  font-size size--pico
+  line-height 1.4
+  +media-query(mediatype, bp-desktop)
+    font-size size--pico
+
+.c-references__item
+  margin-top rem(5px)
+  line-height 1.4
+  +media-query(mediatype, bp-desktop)
+    margin-top rem(6px)

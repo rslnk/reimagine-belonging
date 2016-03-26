@@ -1,0 +1,31 @@
+/**
+ * Mobile menu list
+ *
+ */
+.c-modal-menu__list
+  @extend .o-ui-list
+  position relative
+
+  .c-menu__item
+    padding rem(10px) 0 /* space between menu items */
+    +media-query(mediatype, bp-mobile--landscape)
+      padding rem(15px) 0
+    +media-query(mediatype, bp-tablet)
+      padding rem(20px) 0
+
+  .c-menu__item a
+    @extend .o-btn
+    font-size size--micro
+    letter-spacing rem(2px)
+    color color--white
+    &:hover
+    &:focus
+      color color--mint + 20%
+      letter-spacing rem(8px)
+    +media-query(mediatype, bp-mobile--landscape)
+      font-size size--deca
+    +media-query(mediatype, bp-tablet)
+      font-size size--mega
+
+  .c-menu__item--active a
+    color color--mint

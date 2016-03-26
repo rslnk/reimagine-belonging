@@ -1,0 +1,15 @@
+/**
+ * Indigo theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-indigo
+  color color--white
+  background-color color--indigo
+
+.t-indigo--focus
+  @extend .t-indigo
+  variations = monochrome(color--indigo)
+  &:hover
+  &:focus
+    background-color variations[1]

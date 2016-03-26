@@ -1,25 +1,57 @@
-<footer class="c-site-footer">
-  <div class="o-wrapper">
-    <nav class="o-site-nav c-site-nav--footer">
-      <?php
-      if (has_nav_menu('secondary_navigation')) :
-        wp_nav_menu(['theme_location' => 'secondary_navigation', 'menu_class' => 'o-site-nav__list c-site-nav__list--footer']);
-      endif;
-      ?>
-      <ul class="c-site-footer__social-icons">
-        <li>
-          <a class="o-icons-list__link o-icon c-icon-facebook-negative" href="https://www.facebook.com/withWINGSandROOTS">Facebook</a>
-        </li>
-        <li>
-          <a class="o-icons-list__link o-icon c-icon-twitter-negative" href="https://www.twitter.com/wingsrootsfilm">Twitter</a>
-        </li>
-      </ul>
-      <?php if(get_field('footer_language_switcher_text', 'option') && get_field('footer_language_switcher_url', 'option')): ?>
-        <div class="c-site-footer__language-switcher">
-          <a href="<?php the_field('footer_language_switcher_url', 'option'); ?>"><?php the_field('footer_language_switcher_text', 'option'); ?></a>
+<footer class="c-footer js-footer">
+
+    <div class="c-footer__content">
+
+        <?php
+            // Get footer menus
+            get_template_part('components/footer-directory');
+        ?>
+
+
+        <div class="c-locale">
+            <?php
+                // Get locale
+                if(get_field('site_alternative_locale_url', 'option') && get_field('footer_alternative_locale_button_text', 'option')):?>
+
+                <a href="<?php the_field('site_alternative_locale_url', 'option'); ?>" class="c-locale__button">
+                    <span class="c-locale__text"><?php the_field('footer_alternative_locale_button_text', 'option'); ?></span>
+                    <span class="o-icon c-icon-arrow--circle c-locale__icon"></span>
+                </a>
+            <?php endif; ?>
         </div>
-      <?php endif; ?>
-    </nav>
-  </div>
+
+
+        <div class="c-footer__legal">
+
+            <?php
+                // Get 'legal links' navigation
+                if (has_nav_menu('optional_navigation')) :
+                    wp_nav_menu([
+                    'theme_location' => 'optional_navigation',
+                    'menu_class'     => 'c-legal-links__list'
+                ]);
+                endif;
+            ?>
+
+            <?php if (get_field('footer_copyright_notice_part_1', 'option')): ?>
+
+                <div class="c-copyright-notice">
+                    <span><?php the_field('footer_copyright_notice_part_1', 'option'); ?></span>
+                    <span> <?php echo date("Y") ?> </span>
+                    <span><?php the_field('footer_copyright_notice_part_2', 'option'); ?></span>
+                </div>
+
+            <?php endif; ?>
+
+        </div>
+
+    </div>
+
 </footer>
-<?php get_template_part('components/modal-donate'); ?>
+
+<?php
+  // Include mobile menu overlay
+  get_template_part('components/modal-menu');
+  // Include 'donations' modal
+  get_template_part('components/modal-donate');
+?>

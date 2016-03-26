@@ -1,0 +1,28 @@
+/*
+ * Content wrapper
+ *
+ *    Container object that is used as main site content wrapper
+ *
+ *    To center the container we're using `center()` jeet mixin. To restore the rules
+ *    applied by the `center()` mixin, use the `uncenter()` mixin.
+ *    See: http://jeet.gs/
+ */
+
+ // Horizontally centered, with left/right paddings
+.o-content-wrapper
+  center(pad:15px)
+  +media-query(mediatype, bp-tablet)
+    center(pad:25px)
+  +media-query(mediatype, bp-desktop)
+    center(pad:80px)
+  +media-query(mediatype, bp-desktop--large)
+    center(max-width:1600px, pad:140px)
+  // margin 0 rem(15px)
+  // +media-query(mediatype, bp-tablet)
+  //   margin 0 rem(25px)
+  // +media-query(mediatype, bp-desktop)
+  //   margin 0 rem(80px)
+  // +media-query(mediatype, bp-desktop--large)
+  //   margin 0 rem(140px)
+
+//.o-content-wrapper--4K

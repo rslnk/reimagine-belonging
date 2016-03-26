@@ -1,0 +1,16 @@
+/**
+ * Event post title
+*/
+.c-event__title
+  @extend .o-heading
+  font-weight weight--regular
+  text-transform none
+  font-size size--deci
+  line-height 1.2
+  +media-query(mediatype, bp-tablet)
+    font-size size--tera
+  +media-query(mediatype, bp-desktop)
+    font-size size--tera
+  +media-query(mediatype, bp-desktop--medium)
+    font-size size--zetta
+    line-height 1

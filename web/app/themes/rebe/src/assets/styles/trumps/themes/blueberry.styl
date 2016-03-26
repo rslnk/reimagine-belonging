@@ -1,0 +1,14 @@
+/**
+ * Blueberry theme
+ *
+ *    --foucs modifier changes background color on element hover/focus
+*/
+.t-blueberry
+  color color--white
+  background-color color--blueberry
+
+.t-blueberry--focus
+  @extend .t-blueberry
+  &:hover
+  &:focus
+    background-color color--blueberry + 10%
