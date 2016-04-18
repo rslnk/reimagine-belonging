@@ -4,33 +4,29 @@
  *    Site head (header)
  *
  *    --home modifier
- *      Due to significally different front page (home) layout and style
- *      head is positioned and styled differently from the rest of the pages:
- *
- *      - absolute position
+ *      - larger height
  *      - transparent background
+ *      - no border
  */
 .c-head
   position relative
-  z-index 100
-  border-bottom solid rem(1px) #f3f3f3
-  background-color color--white
-  +media-query(mediatype, bp-tablet)
-    padding-top rem(10px)
-    padding-bottom rem(10px)
+  z-index 99
+
+  height rem(50px)
+
+  background-color $white
+  border-bottom solid rem(1px) $gray--light
 
 .c-head--home
-  position absolute
-  top rem(15px)
-  z-index 100
-  padding 0
-  width 100%
+  position relative
+  z-index 99
   background-color transparent
-  +media-query(mediatype, bp-tablet)
-    top rem(25px)
-    padding-top: rem(10px)
-    padding-bottom: rem(10px)
-  +media-query(mediatype, bp-desktop)
-    top rem(35px)
-  +media-query(mediatype, bp-desktop--medium)
-    top rem(40px)
+
+  +between('xs', 's')
+    height rem(50px)
+
+  +between('s', 'l')
+    height rem(80px)
+
+  +above('l')
+    height rem(100px)

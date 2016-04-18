@@ -46,11 +46,11 @@
 
 .o-quote__text
   margin-bottom rem(20px) /* space between text and meta block */
-  font-weight weight--thin
+  font-weight $thin
   strong
   em
   b
-    font-weight weight--regular
+    font-weight $regular
   +media-query(mediatype, bp-desktop)
     stack()
 
@@ -67,7 +67,7 @@
 
 .o-quote__source
   margin-top rem(10px) /* between source and author name */
-  font-size size--femto
+  font-size $femto
   line-height 1.2
   +media-query(mediatype, bp-tablet)
     display block /* takes whole block */

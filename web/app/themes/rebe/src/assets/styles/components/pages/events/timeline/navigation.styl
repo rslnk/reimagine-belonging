@@ -1,5 +1,5 @@
 .c-timeline-navigation
-  @extend .o-content-wrapper
+  @extend .o-centered-content
   position relative
   display block
   //margin-bottom rem(80px)
@@ -22,12 +22,12 @@
   top 0
   display block
   font-size rem(38px) /* arrow icon size */
-  color color--yolk   /* arrow icon color */
+  color $yolk   /* arrow icon color */
   margin-top -21px    /* arrow icon alignment with timeline line */
   // Chamge icon color on hover/focus
   &:hover
   &:focus
-    color color--lemon
+    color $lemon
   +media-query(mediatype, bp-tablet)
     margin-top -28px
     font-size rem(50px)

@@ -1,7 +1,7 @@
 <div class="o-hero c-hero--workshops">
 	<div class="u-centering-wrapper u-image-cover" style="background-image: url(<?php  echo get_template_directory_uri() . '/dist/images/workshops--berlin--grace.jpg'; ?>);">
 		<div class="u-centered">
-			<div class="o-content-wrapper">
+			<div class="o-centered-content">
 				<h2 class="o-heading o-hero__title
 .c-hero--products
   background-color #e72939
@@ -20,7 +20,7 @@
 <!-- / Workshops page hero -->
 
 <div class="c-workshops-intro">
-	<div class="o-content-wrapper">
+	<div class="o-centered-content">
 
 		<div class="c-workshops-intro__about">
 			<p class="o-paragraph o-lead">
@@ -94,14 +94,14 @@
 
 		</div><!-- .c-workshops-intro__featured -->
 
-	</div> <!-- o-content-wrapper -->
+	</div> <!-- o-centered-content -->
 </div> <!-- c-workshops-page__intro -->
 
 
 <!-- List of workshops -->
 
 <div class="c-workshop-list">
-	<div class="o-content-wrapper">
+	<div class="o-centered-content">
 
 		<h2 class="o-heading c-page-subtitle c-workshop-list__title">
 			Workshops
@@ -191,7 +191,7 @@
 			</a>
 		</div>
 
-	</div><!-- .o-content-wrapper -->
+	</div><!-- .o-centered-content -->
 </div><!-- .c-workshop-list -->
 
 <!-- Book a Workshop Modal -->

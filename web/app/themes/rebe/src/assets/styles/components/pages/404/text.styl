@@ -2,16 +2,17 @@
  * 404 page text
  */
 .c-404__text
-  font-size size--pico
+  font-size $pico
   line-height 1.6
   text-transform normal
-  color color--white
+  color $white
+  
   +media-query(mediatype, bp-tablet--landscape)
-    font-size size--milli
+    font-size $milli
 
   // Make link `mint` color, so it doesn't gets lost
   // on the bright background
   a
-    color color--mint
+    color $mint
     &:visited
-      color color--mint
+      color $mint

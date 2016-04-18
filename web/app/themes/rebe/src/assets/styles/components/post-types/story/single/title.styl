@@ -1,15 +1,15 @@
 .c-story__title
   @extend .o-heading
-  font-size size--centi
-  font-weight weight--regular
+  font-size $centi
+  font-weight $regular
   text-transform none
   letter-spacing 0
   line-height 1.2
   +media-query(mediatype, bp-tablet)
-    font-size size--mega
+    font-size $mega
   +media-query(mediatype, bp-desktop)
     margin-left rem(-3px)
-    font-size size--giga
+    font-size $giga
   +media-query(mediatype, bp-desktop--medium)
     line-height 1
     font-size size--exa

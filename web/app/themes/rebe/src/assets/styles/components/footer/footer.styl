@@ -2,9 +2,12 @@
  *  Site footer
  */
 .c-footer
-  width 100%
-  padding-top rem(60px) /* footer content top padding */
-  padding-bottom rem(40px) /* footer content bottom padding */
-  background-color color--eggplant
-  border-top rem(15px) solid color--blueberry - 70%
   clearfix()
+  width 100%
+  padding-top rem(40px) /* footer content top padding */
+  padding-bottom rem(40px) /* footer content bottom padding */
+  background-color $eggplant
+  border-top rem(15px) solid $blueberry - 70%
+
+  +media-query(mediatype, bp-tablet)
+    padding-top rem(60px)

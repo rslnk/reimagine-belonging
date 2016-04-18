@@ -1,21 +1,15 @@
+/**
+ * Head Logo
+ */
 .c-head__logo
-  margin-top rem(15px)
-  margin-bottom rem(14px)
-  size rem(211px) rem(20px)
-  //background-color color--carbon-black
-  background-image url(../images/logo/logo.svg)
-
-  +media-query(mediatype, bp-tablet)
-    float left
-    margin-top rem(6px)
-    margin-bottom 0
-    size rem(200px) rem(19px)
+  float left
+  height rem(20px) // logo size
+  fill $carbon-black
 
 .c-head__logo--home
   @extend .c-head__logo
-  background-color color--white
-  +media-query(mediatype, bp-tablet)
-    size rem(300px) rem(28px)
-  +media-query(mediatype, bp-desktop)
-    float left
-    size rem(250px) rem(25px)
+
+  fill $white
+
+  +above('m')
+    height rem(25px) // homepage logo is a bit bigger on tablet/desktop screens

@@ -4,7 +4,7 @@
 
         <?php get_template_part('components/page-head'); ?>
 
-        <div class="o-content-wrapper">
+        <div class="o-centered-content">
 
             <div class="c-page__content">
                 <?php get_template_part('content/page'); ?>

@@ -1,7 +1,7 @@
 <div class="o-hero c-hero--how-to">
 	<div class="u-centering-wrapper">
 		<div class="u-centered">
-			<div class="o-content-wrapper">
+			<div class="o-centered-content">
 				<h2 class="o-heading o-hero__title
 .c-hero--products
   background-color #e72939
@@ -16,7 +16,7 @@
 <!-- .o-hero -->
 
 <div class="c-how-to-intro">
-	<div class="o-content-wrapper">
+	<div class="o-centered-content">
 
 		<div class="c-how-to-intro__about">
 			<p class="o-paragraph o-lead">
@@ -47,11 +47,11 @@
 			</div>
 		</div><!-- .c-workshops-intro__featured -->
 
-	</div> <!-- o-content-wrapper -->
+	</div> <!-- o-centered-content -->
 </div> <!-- c-workshops-page__intro -->
 
 <div class="c-how-to-faq">
-	<div class="o-content-wrapper">
+	<div class="o-centered-content">
 
 		<div class="row">
 

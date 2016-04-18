@@ -39,38 +39,9 @@
             });
         });
 
-        // 'Donate' lighbox toggle
-        $('.js-lightbox-open--donate').on('click', function (e) {
-          e.preventDefault();
-          $('.js-lightbox--donate').show();
-        });
-
-        $('.js-lightbox-close').on('click', function (e) {
-          e.preventDefault();
-          $('.js-lightbox--donate').hide();
-        });
-
-        // 'Book a workshop' lighbox toggle
-        $('.js-lightbox-open--book-a-workshop').on('click', function (c) {
-          c.preventDefault();
-          $('.js-lightbox--book-a-workshop').show();
-        });
-
-        $('.js-lightbox-close').on('click', function (c) {
-          c.preventDefault();
-          $('.js-lightbox--book-a-workshop').hide();
-        });
-
-        $('.o-overlay').on('scroll touchmove mousewheel', function (event) {
+        $('.js-modal-menu').on('scroll touchmove mousewheel', function (event) {
             event.preventDefault();
         });
-
-        if ( $(window).width() >= 550) {
-          // Script for large screens
-        }
-        else {
-          // Script to run on small screens
-        }
 
       },
       finalize: function() {
@@ -78,61 +49,59 @@
       }
     },
     // Home page
-    'home': {
+    'js_home': {
       init: function() {
         // JavaScript to be fired on the home page
 
-        // Set homepage container height to viewport height
-        function setHomepageContainerHeight() {
-          var elt = $('.js-home');
-          var windowHeight = $(window).height();
-          var homepageContainerHeight = windowHeight;
-          elt.height(homepageContainerHeight);
-        }
+        var BackgroundImage   = $('.js-background-image');
 
-        // Set homepage content top margin
-        function setHomepageContentMargin() {
-          var windowHeight = $(window).height();
-          //var footerHeihgt = $('footer').height();
-          var contentHeight = $('.js-home-content').height();
-          var contentMarginTop = (windowHeight - contentHeight)/1.2;
-          $('.js-home-content').css('margin-top', contentMarginTop);
+        // Set home background image height to window height
+        function setBackgroundImageHeigh() {
+            BackgroundImage.height($(window).height());
         }
 
         // Apply homepage container hight and content top margin
-        setHomepageContainerHeight();
-        setHomepageContentMargin();
+        setBackgroundImageHeigh();
 
-        // Update homepage container hight and content top margin on window resize
-        $(window).resize( function() {
-          setHomepageContainerHeight();
-          setHomepageContentMargin();
-        });
+        // Listen to screen orientation changes
+        window.addEventListener("orientationchange", function() {
+            setBackgroundImageHeigh();
+        }, false);
+
+        // Listen for screen resize changes
+        window.addEventListener("resize", function() {
+          setBackgroundImageHeigh();
+        }, false);
 
       },
       finalize: function() {
         // JavaScript to be fired on the home page, after the init JS
       }
     },
-    // About us page, note the change from about-us to about_us.
-    'workshops': {
-      init: function() {
-        // JavaScript to be fired on the Workshops page
-      }
-    },
     // 404 page
-    'error404': {
+    'js_404': {
       init: function() {
         // JavaScript to be fired on the 404 page
-        function fullHeight404Page () {
-          var elt = $('.js-main-block');
-          var windowH = $(window).height();
-          elt.height(windowH);
+
+        // Set page container height to window height
+        function setPageHeight() {
+          var PageContainer = $('.js-404');
+          var windowHeight = $(window).height();
+          PageContainer.height(windowHeight);
         }
 
-        fullHeight404Page();
+        setPageHeight();
 
-        $(window).resize(fullHeight404Page);
+        // Listen to screen orientation changes
+        window.addEventListener("orientationchange", function() {
+            setPageHeight();
+        }, false);
+
+        // Listen for screen resize changes
+        window.addEventListener("resize", function() {
+          setPageHeight();
+        }, false);
+
       }
     }
   };

@@ -9,7 +9,7 @@
  */
 
  // Horizontally centered, with left/right paddings
-.o-content-wrapper
+.o-centered-content
   center(pad:15px)
   +media-query(mediatype, bp-tablet)
     center(pad:25px)
@@ -17,12 +17,7 @@
     center(pad:80px)
   +media-query(mediatype, bp-desktop--large)
     center(max-width:1600px, pad:140px)
-  // margin 0 rem(15px)
-  // +media-query(mediatype, bp-tablet)
-  //   margin 0 rem(25px)
-  // +media-query(mediatype, bp-desktop)
-  //   margin 0 rem(80px)
-  // +media-query(mediatype, bp-desktop--large)
-  //   margin 0 rem(140px)
-
-//.o-content-wrapper--4K
+  +media-query(mediatype, bp-desktop--xlarge)
+    center(max-width:1920px, pad:100px)
+  +media-query(mediatype, bp-desktop--4k)
+    center(max-width:2000px, pad:80px)

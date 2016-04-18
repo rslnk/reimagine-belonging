@@ -1,0 +1,11 @@
+/**
+ * Call-to-action buttons wrapper
+ */
+.c-home__cta
+
+  +below('m')
+    display none // hide cta buttons
+
+  +above('m', orientation: portrait)
+    display block // show cta button
+    margin-right rem(15px)

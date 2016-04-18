@@ -10,11 +10,11 @@
 .c-story-preview__title
   @extend .o-heading  
   display inline
-  font-size size--kilo
-  font-weight weight--thin
+  font-size $kilo
+  font-weight $thin
   line-height 1.15
   text-transform none
-  color color--white
+  color $white
   hyphens auto
   transition: .5s ease-in-out /* animation defaults */
   background-size 201% /* initial postion before animation starts */
@@ -22,15 +22,15 @@
   strong
   em
   b
-    font-weight weight--semibold
+    font-weight $semibold
   +media-query(mediatype, bp-mobile--landscape)
-    font-size size--mega
+    font-size $mega
   +media-query(mediatype, bp-tablet)
-    font-size size--centi
+    font-size $centi
   +media-query(mediatype, bp-desktop)
     font-size size--deca
   +media-query(mediatype, bp-desktop--large)
-    font-size size--mega
+    font-size $mega
 
 /**
  * Color modifiers

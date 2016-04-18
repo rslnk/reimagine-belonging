@@ -1,28 +1,28 @@
 .o-paragraph
   margin-bottom rem(15px)
-  font-family base--font-body
-  font-weight weight--light
-  font-size base--font-size
+  font-family $base-body-font
+  font-weight $light
+  font-size $base-font-size
   line-height 1.8
   strong
   b
-    font-weight weight--semibold
+    font-weight $semibold
   em
   i
     font-style: italic
   +media-query(mediatype, bp-tablet--landscape)
     margin-bottom rem(20px)
-    font-size size--nano
+    font-size $nano
 
 .o-paragraph--small
   @extend .o-paragraph
   +media-query(mediatype, bp-tablet--landscape)
-    font-size size--femto
+    font-size $femto
     line-height 1.6
   +media-query(mediatype, bp-desktop)
-    font-size size--pico
+    font-size $pico
     line-height 1.7
   +media-query(mediatype, bp-desktop--medium)
-    font-size size--nano
+    font-size $nano
   +media-query(mediatype, bp-desktop--large)
-    font-size size--nano
+    font-size $nano

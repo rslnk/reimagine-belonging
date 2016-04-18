@@ -3,7 +3,19 @@
 */
 .c-event__date
   display inline-block
-  color color--white
-  background-color color--yolk
-  @extend .o-btn, .o-btn--medium, .o-btn--disabled
-  margin-top rem(2px)
+  padding rem(8px) rem(10px)
+  margin-top rem(20px)
+
+  font-family $base-heading-font
+  font-weight $thin
+  font-size $nano
+  letter-spacing rem(1px)
+  color $white
+  background-color $yolk
+
+  +media-query(mediatype, bp-tablet)
+    padding rem(12px) rem(16px)
+    font-size $milli
+  +media-query(mediatype, bp-desktop--medium)
+    margin-top rem(45px)
+    font-size size--deca

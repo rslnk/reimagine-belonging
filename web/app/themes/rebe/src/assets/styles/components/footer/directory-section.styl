@@ -22,16 +22,16 @@
 .c-directory__section-title
   @extend .o-heading
   margin-bottom rem(20px)
-  font-weight weight--regular
-  font-size size--nano
+  font-weight $regular
+  font-size $nano
   letter-spacing rem(3px)
   text-transform uppercase
-  color color--gray
+  color $gray
   +media-query(mediatype, bp-tablet--landscape)
-    font-size size--pico
+    font-size $pico
     letter-spacing rem(1.5px)
   +media-query(mediatype, bp-desktop)
-    font-size size--nano
+    font-size $nano
     letter-spacing rem(3px)
 
 // Toggle icon
@@ -40,6 +40,6 @@
   // position icon next to section title
   absolute -2px 0 false false
   font-size rem(20px)
-  color color--lavender + 50%
+  color $lavender + 50%
   +media-query(mediatype, bp-tablet--landscape)
     display none /* hide toggle icon */

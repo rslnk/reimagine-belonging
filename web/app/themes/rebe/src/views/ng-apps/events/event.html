@@ -25,32 +25,36 @@
     <div class="c-event__hero">
 
       <!-- categories list (timelines) -->
-      <ul class="c-categories-list">
+      <div class="c-event__categories">
 
-        <li ng-repeat="timeline in event.timelines"
-          class="c-categories-list__item t-mint">
-          {{ timeline.term_name }}
-        </li>
+        <ul class="c-categories-list">
 
-      </ul>
+          <li ng-repeat="timeline in event.timelines"
+            class="c-categories-list__item t-mint">
+            {{ timeline.term_name }}
+          </li>
 
-      <!-- categories list (topics & groups)-->
-      <ul class="c-categories-list">
+        </ul>
 
-        <!-- topics -->
-        <li ng-repeat="topic in event.topics"
-          class="c-categories-list__item t-indigo"
-          ng-bind-html="topic.term_name">
-        </li>
+        <!-- categories list (topics & groups)-->
+        <ul class="c-categories-list">
 
-        <!-- groups -->
-        <li ng-repeat="group in event.groups"
-          class="c-categories-list__item t-yolk"
-          style="background-color: {{ group.term_color }}">
-          {{ group.term_name }}
-        </li>
+          <!-- topics -->
+          <li ng-repeat="topic in event.topics"
+            class="c-categories-list__item t-indigo"
+            ng-bind-html="topic.term_name">
+          </li>
 
-      </ul>
+          <!-- groups -->
+          <li ng-repeat="group in event.groups"
+            class="c-categories-list__item t-yolk"
+            style="background-color: {{ group.term_color }}">
+            {{ group.term_name }}
+          </li>
+
+        </ul>
+
+      </div>
 
       <!-- event date -->
       <div ng-show="event.start_date" class="c-event__date">
@@ -60,24 +64,6 @@
       </div>
 
       <h1 class="c-event__title">{{ event.title }}</h1>
-
-      <!-- impact
-      <div>...</div>
-      -->
-
-      <!-- share event -->
-      <ul class="c-post-share__list">
-        <li class="c-post-share__item">
-          <a class="o-icon c-icon-facebook--circle c-post-share__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
-            <span class="u-visually-hidden">Share on Facebook</span>
-          </a>
-        </li>
-        <li class="c-post-share__item">
-          <a class="o-icon c-icon-twitter--circle c-post-share__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
-            <span class="u-visually-hidden">Share on Twitter</span>
-          </a>
-        </li>
-      </ul>
 
     </div>
 
@@ -107,7 +93,7 @@
           </div>
 
           <!-- sidebar sidenote -->
-          <div ng-switch-when="sidenote" class="o-sidenote">
+          <div ng-switch-when="sidenote" class="c-event__sidenote">
             <h4 ng-bind-html="item.title" class="c-event__sidenote-title">{{ item.title }}</h4>
             <p class="c-event__sidenote-caption">{{ item.caption }}</p>
           </div>
@@ -140,6 +126,27 @@
             <h4 ng-bind-html="item.title" class="c-media-block__title">{{ item.title }}</h4>
             <p class="c-media-block__caption">{{ item.caption }}</p>
           </div>
+
+        </div>
+
+        <!-- share event -->
+        <div class="c-event__share">
+
+          <ul class="c-post-share__list">
+
+            <h4 class="c-post-share__label">Share event:</h4>
+
+            <li class="c-post-share__item">
+              <a class="o-icon c-icon-facebook--circle c-post-share__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+                <span class="u-visually-hidden">Share on Facebook</span>
+              </a>
+            </li>
+            <li class="c-post-share__item">
+              <a class="o-icon c-icon-twitter--circle c-post-share__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+                <span class="u-visually-hidden">Share on Twitter</span>
+              </a>
+            </li>
+          </ul>
 
         </div>
 

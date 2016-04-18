@@ -1,0 +1,24 @@
+/**
+ * Modal menu 'close' icon
+ */
+.c-modal-menu__close
+  @extend .o-btn
+
+  color $indigo + 70%
+
+  +below('m', orientation: portrait)
+    absolute rem(25px) rem(25px) false false
+    font-size rem(35px)
+
+  +below('l', orientation: landscape)
+    absolute rem(20px) rem(20px) false false
+    font-size rem(40px)
+
+  +above('m', orientation: portrait)
+    absolute rem(50px) rem(50px) false false
+    font-size rem(50px)
+
+  &:hover
+  &:focus
+    color $white
+    transform rotate(90deg) /* cool rotation effect! */

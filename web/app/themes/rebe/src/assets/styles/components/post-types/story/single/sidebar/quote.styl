@@ -6,7 +6,7 @@
 
 .c-story-quote__icon
   @extend .o-quote__icon
-  color color--blueberry
+  color $blueberry
   // The following overwrites `.o-quote__icon` properties
   // Specificly enlarges icon size starting from desktop screen size
   +media-query(mediatype, bp-desktop)
@@ -28,28 +28,28 @@
 .c-story-quote__text
   @extend .o-heading
   @extend .o-quote__text
-  font-size size--milli
+  font-size $milli
   line-height 1.2
-  color color--dark-gray
+  color $gray--dark
   text-transform none /* overwrites `.o-heading` defaults */
   em
   strong
-    color color--blueberry
+    color $blueberry
   +media-query(mediatype, bp-tablet)
-    font-size size--deci
+    font-size $deci
     line-height 1.4
   +media-query(mediatype, bp-desktop)
-    font-size size--centi
+    font-size $centi
   +media-query(mediatype, bp-desktop--medium)
     font-size size--deca
     line-height 1.45
   +media-query(mediatype, bp-desktop--large)
     line-height 1.35
-    font-size size--kilo
+    font-size $kilo
 
 .c-story-quote__meta
   @extend .o-quote__meta
   float left
 
 .c-story-quote__author
-  font-weight weight--medium
+  font-weight $medium

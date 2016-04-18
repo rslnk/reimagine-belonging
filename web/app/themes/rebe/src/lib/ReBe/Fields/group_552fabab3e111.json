@@ -20,8 +20,8 @@
         },
         {
             "key": "field_553110edd5ac7",
-            "label": "Add story banner text",
-            "name": "stories_add_story_banner_text",
+            "label": "\"Add story\" button label",
+            "name": "stories_add_story_button_label",
             "type": "text",
             "instructions": "E.g. \"Add your story\".",
             "required": 0,
@@ -40,8 +40,25 @@
             "disabled": 0
         },
         {
+            "key": "field_5707afa6cdab9",
+            "label": "Filter labels",
+            "name": "_copy",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_55339055eafeb",
-            "label": "All stories filter label",
+            "label": "\"All stories\" label",
             "name": "all_stories_filter_label",
             "type": "text",
             "instructions": "All stories filter text label. E.g. \"All stories\".",
@@ -62,7 +79,7 @@
         },
         {
             "key": "field_553105136d8dc",
-            "label": "Total stories label",
+            "label": "\"Total stories\" label",
             "name": "total_stories_label",
             "type": "text",
             "instructions": "Text label before total number of stories. E.g. \"Stories\".",
@@ -83,7 +100,7 @@
         },
         {
             "key": "field_553105826d8dd",
-            "label": "Filtered stories label",
+            "label": "\"Filtered stories\" label",
             "name": "flitered_stories_label",
             "type": "text",
             "instructions": "Text label before number of filtered stories. E.g. \"Filtered\".",
@@ -104,8 +121,8 @@
         },
         {
             "key": "field_57002e67c71e7",
-            "label": "Pagination label",
-            "name": "stories_pagination_label",
+            "label": "\"Pages\" label",
+            "name": "stories_filter_pagination_label",
             "type": "text",
             "instructions": "Pagination text label. E.g. \"Pages\".",
             "required": 0,
@@ -124,15 +141,31 @@
             "disabled": 0
         },
         {
-            "key": "field_55439a2b890ef",
-            "label": "Load more stories button label",
-            "name": "stories_load_more_label",
-            "type": "text",
-            "instructions": "E.g. \"Load more stories\".",
+            "key": "field_5530ee0604c02",
+            "label": "Timeline",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 100,
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5707ad58e9be9",
+            "label": "Timeline switcher",
+            "name": "timeline_switcher_label",
+            "type": "text",
+            "instructions": "Accessibility text. E.g. \"Select Timeline\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -145,15 +178,132 @@
             "disabled": 0
         },
         {
-            "key": "field_553104a06d8da",
-            "label": "Message when there is no search result",
-            "name": "stories_search_result_none_message",
+            "key": "field_5530e22430857",
+            "label": "\"About Timeline\" button text",
+            "name": "timeline_info_button_text",
             "type": "text",
-            "instructions": "Message that appears when there is no search results to display.",
+            "instructions": "E.g. \"About this Timeline\".",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 100,
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5707aef9e1795",
+            "label": "Filter labels",
+            "name": "filter_labels",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_55339103eafec",
+            "label": "\"All events\" label",
+            "name": "timeline_all_events_filter_label",
+            "type": "text",
+            "instructions": "All events filter text label. E.g. \"All events\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee6204c05",
+            "label": "\"Total events\" label",
+            "name": "timeline_total_events_label",
+            "type": "text",
+            "instructions": "Text label before total number of events. E.g. \"Events\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee2204c04",
+            "label": "\"Filtered events\" label",
+            "name": "timeline_filtered_events_label",
+            "type": "text",
+            "instructions": "Text label before number of filtered events. E.g. \"Filtered\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530d7f2530c4",
+            "label": "Story",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_552fae4884838",
+            "label": "Share story",
+            "name": "story_share_story_label",
+            "type": "text",
+            "instructions": "E.g. \"Share this story\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -204,164 +354,6 @@
             "maxlength": "",
             "rows": 5,
             "new_lines": "br",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530ee0604c02",
-            "label": "Timeline",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_5530e22430857",
-            "label": "Info banner text",
-            "name": "timeline_info_banner_text",
-            "type": "text",
-            "instructions": "E.g. \"About this Timeline\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_55339103eafec",
-            "label": "All events filter label",
-            "name": "timeline_all_events_filter_label",
-            "type": "text",
-            "instructions": "All events filter text label. E.g. \"All events\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 100,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530ee6204c05",
-            "label": "Total events label",
-            "name": "timeline_total_events_label",
-            "type": "text",
-            "instructions": "Text label before total number of events. E.g. \"Events\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530ee2204c04",
-            "label": "Filtered events label",
-            "name": "timeline_filtered_events_label",
-            "type": "text",
-            "instructions": "Text label before number of filtered events. E.g. \"Filtered\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 50,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5531042e3ca7d",
-            "label": "Message when there is no search result",
-            "name": "timeline_search_result_none_message",
-            "type": "text",
-            "instructions": "Message that appears when there is no search results to display.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 100,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530d7f2530c4",
-            "label": "Story",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_552fae4884838",
-            "label": "Share story",
-            "name": "story_share_story_label",
-            "type": "text",
-            "instructions": "E.g. \"Share this story\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 25,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -1415,5 +1407,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1459727780
+    "modified": 1460132976
 }

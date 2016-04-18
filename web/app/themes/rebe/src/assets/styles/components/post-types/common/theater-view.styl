@@ -7,14 +7,14 @@
 */
 .c-theater-view
   @extend .o-overlay
-  background-color rgba(color--black, .65) /* dark backdrop */
+  background-color rgba($black, .65) /* dark backdrop */
 
 // Theater container for the actual content
 // Ads margins, paddings and background for the
 .c-theater-view__content
   position relative
   float left
-  background-color color--white
+  background-color $white
   padding rem(15px) /* padding around post content */
   width 100% /* sets content width, no post navigation on the sides */
   +media-query(mediatype, bp-tablet)

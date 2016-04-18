@@ -1,0 +1,54 @@
+/**
+ * Donate button
+ *
+ *  Button appears in site header
+ *
+*/
+.c-donate-button
+  position relative
+  float right
+  margin-top rem(10px)
+  margin-left rem(10px)
+  color $carbon-black
+  border rem(1px) solid $carbon-black
+  cursor pointer
+  &:hover
+  &:focus
+    color $mint
+    border rem(1px) solid $mint
+  +media-query(mediatype, bp-tablet)
+    margin-top 0
+  +media-query(mediatype, bp-tablet--landscape)
+    display inline-block
+    margin-left rem(40px)
+  +media-query(mediatype, bp-desktop)
+    margin-top 0
+
+.c-donate-button--home
+  display block
+  margin-top rem(10px)
+  color $white
+  border-color $white
+  &:hover
+  &:focus
+    color $mint
+    border-color $mint
+  +media-query(mediatype, bp-tablet)
+    margin-top rem(4px)
+    font-size $milli
+  +media-query(mediatype, bp-tablet--landscape)
+    font-size $centi
+  +media-query(mediatype, bp-desktop)
+    margin-top rem(2px)
+    font-size $femto
+
+.c-donate-button__text
+  padding rem(6px) rem(10px)
+  font-family $base-body-font
+  font-style normal
+  font-weight $regular
+  letter-spacing rem(1px)
+  text-transform uppercase
+  font-size $femto
+  +media-query(mediatype, bp-tablet)
+    padding rem(8px) rem(10px)

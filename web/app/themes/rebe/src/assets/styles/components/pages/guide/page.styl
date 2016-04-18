@@ -18,18 +18,18 @@
   display block
   padding-top rem(80px)
   padding-bottom rem(100px)
-  background-color color--indigo
+  background-color $indigo
   min-height rem(400px)
 
 .c-how-to-faq__title
   padding-bottom rem(45px)
-  font-size size--deci
+  font-size $deci
   line-height 1.2
-  color color--white  
+  color $white
   +media-query(mediatype, bp-tablet)
     font-size size--tera
   +media-query(mediatype, bp-desktop)
-    font-size size--peta
+    font-size $peta
   +media-query(mediatype, bp-desktop--medium)
     font-size size--yotta
     line-height 1
@@ -38,20 +38,20 @@
   col(6)
   @extend .o-heading
   line-height 1.3
-  font-weight weight--regular
+  font-weight $regular
   text-transform none
-  color color--white
+  color $white
 
 .c-how-to-faq__item
   padding rem(7px) 0
   padding-right rem(20px)
 
 .c-how-to-faq__question
-  font-size size--deci
+  font-size $deci
 
 .c-how-to-faq__answer
   @extend .o-paragraph
   margin-bottom rem(20px)
-  font-size size--nano
+  font-size $nano
   line-height 1.6
-  color color--white
+  color $white

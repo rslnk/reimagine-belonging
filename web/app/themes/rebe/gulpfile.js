@@ -1,29 +1,31 @@
 // ## Globals
-var argv         = require('minimist')(process.argv.slice(2));
-var async        = require('async');
-var browserSync  = require('browser-sync').create();
-var changed      = require('gulp-changed');
-var concat       = require('gulp-concat');
-var consolidate  = require('gulp-consolidate');
-var eslint       = require('gulp-eslint');
-var gulp         = require('gulp');
-var gulpif       = require('gulp-if');
-var iconfont     = require('gulp-iconfont');
-var imagemin     = require('gulp-imagemin');
-var jeet         = require('jeet');
-var koutoSwiss   = require('kouto-swiss');
-var lazypipe     = require('lazypipe');
-var less         = require('gulp-less');
-var merge        = require('merge-stream');
-var cssNano      = require('gulp-cssnano');
-var plumber      = require('gulp-plumber');
-var rev          = require('gulp-rev');
-var runSequence  = require('run-sequence');
-var runTimestamp = Math.round(Date.now()/1000);
-var sass         = require('gulp-sass');
-var stylus       = require('gulp-stylus');
-var sourcemaps   = require('gulp-sourcemaps');
-var uglify       = require('gulp-uglify');
+var argv              = require('minimist')(process.argv.slice(2));
+var async             = require('async');
+var browserSync       = require('browser-sync').create();
+var changed           = require('gulp-changed');
+var concat            = require('gulp-concat');
+var consolidate       = require('gulp-consolidate');
+var eslint            = require('gulp-eslint');
+var gulp              = require('gulp');
+var gulpif            = require('gulp-if');
+var iconfont          = require('gulp-iconfont');
+var imagemin          = require('gulp-imagemin');
+var imageminPngquant  = require('imagemin-pngquant');
+var jeet              = require('jeet');
+var koutoSwiss        = require('kouto-swiss');
+var lazypipe          = require('lazypipe');
+var less              = require('gulp-less');
+var merge             = require('merge-stream');
+var cssNano           = require('gulp-cssnano');
+var plumber           = require('gulp-plumber');
+var rev               = require('gulp-rev');
+var rupture           = require('rupture');
+var runSequence       = require('run-sequence');
+var runTimestamp      = Math.round(Date.now()/1000);
+var sass              = require('gulp-sass');
+var stylus            = require('gulp-stylus');
+var sourcemaps        = require('gulp-sourcemaps');
+var uglify            = require('gulp-uglify');
 
 // See https://github.com/austinpray/asset-builder
 var manifest = require('asset-builder')('./src/assets/manifest.json');
@@ -179,7 +181,7 @@ gulp.task('styles', ['wiredep'], function() {
       });
     }
     merged.add(gulp.src(dep.globs, {base: 'styles'})
-      .pipe(stylus({ use: [ jeet(), koutoSwiss() ] }))
+      .pipe(stylus({ use: [ koutoSwiss(), jeet(), rupture() ] }))
       .pipe(cssTasksInstance));
   });
   return merged
@@ -218,7 +220,7 @@ gulp.task('iconfont', function(done){
       formats: ['ttf', 'eot', 'woff'],
       timestamp: Math.round(Date.now() / 1000),
       normalize: true,  /* fix possible icon height difference */
-      fontHeight: 1001 /* fix possible icon convertion issues */
+      fontHeight: 1001  /* fix possible icon convertion issues */
      }));
     async.parallel([
       // Generate icons CSS objects classes
@@ -243,7 +245,7 @@ gulp.task('iconfont', function(done){
               glyphs: glyphs,
               className: componentsClass
             }))
-            .pipe(gulp.dest('./src/assets/styles/components/common'))
+            .pipe(gulp.dest('./src/assets/styles/components/ui-blocks'))
             .on('finish', cb);
         });
       },
@@ -263,6 +265,7 @@ gulp.task('images', function() {
     .pipe(imagemin({
       progressive: true,
       interlaced: true,
+      use: [imageminPngquant()],
       svgoPlugins: [{removeUnknownsAndDefaults: false}, {cleanupIDs: false}]
     }))
     .pipe(gulp.dest(path.dist + 'images'))

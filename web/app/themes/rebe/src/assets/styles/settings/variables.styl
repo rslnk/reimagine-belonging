@@ -1,126 +1,129 @@
-//
-// 1. BREAKPOINTS AND MEDIA QUERIES
-// Setup standard widths to pass to media queries
-//
-
-mediatype              = only screen
-
-bp-mobile--portrait    = min-width 0px
-bp-mobile--landscape   = min-width 400px
-bp-tablet--portrait    = min-width 550px
-bp-tablet--landscape   = min-width 767px
-bp-desktop--small      = min-width 1024px
-bp-desktop--medium     = min-width 1280px
-bp-desktop--large      = min-width 1600px
-
-// Common aliases
-bp-mobile              = bp-mobile--portrait
-bp-tablet              = bp-tablet--portrait
-bp-desktop             = bp-desktop--small
 
 //
 // 2. COLORS
 //
 
-color--white            = #ffffff
-color--black            = #000000
+$white              = #ffffff
+$black              = #000000
+$carbon-black       = #232326
 
-color--light-gray       = #eeeef1
-color--gray             = #cdcdd7
-color--medium-gray      = #9b9ba5
-color--dark-gray        = #757580
+$gray--light        = #eeeef1
+$gray               = #cdcdd7
+$gray--medium       = #9b9ba5
+$gray--dark         = #757580
 
-color--carbon-black     = #232326
-color--eggplant         = #05041b
-color--indigo           = #2418b7
-color--blueberry        = #6231d2
-color--lavender         = #53527e
-color--mint             = #33d1dc
-color--lemon            = #ffcc00
-color--yolk             = #ffb400
-
-color--red              = #e9424e
+$eggplant           = #05041b
+$indigo             = #2418b7
+$blueberry          = #6231d2
+$lavender           = #53527e
+$mint               = #33d1dc
+$lemon              = #ffcc00
+$yolk               = #ffc122
+$strawberry         = #e9424e
 
 //
 // 3. TYPEFACES
 //
 
-font--main              = 'Open Sans', font-stack( "Helvetica" )
-font--headings          = 'Proxima Nova W01', font--main
+$main-font          = 'Open Sans', font-stack('Helvetica')
+$heading-font       = 'Proxima Nova W01', $main-font
 
 //
 // 4. FONT SIZES
 //
 
 // Extra small
-size--yocto             = rem(6px)
-size--zepto             = rem(8px)
-
+$yocto              = rem(6px)
+$zepto              = rem(8px)
 // Small
-size--atto              = rem(10px)
-size--femto             = rem(12px)
-
+$atto               = rem(10px)
+$femto              = rem(12px)
 // Base
-size--pico              = rem(14px)
-size--nano              = rem(16px)
-size--micro             = rem(18px)
-
+$pico               = rem(14px)
+$nano               = rem(16px)
+$micro              = rem(18px)
 // Medium
-size--milli             = rem(20px)
-size--centi             = rem(22px)
-size--deci              = rem(24px)
-size--deca              = rem(26px)
-size--hecto             = rem(28px)
-size--kilo              = rem(30px)
-
+$milli              = rem(20px)
+$centi              = rem(22px)
+$deci               = rem(24px)
+$deca               = rem(26px)
+$hecto              = rem(28px)
+$kilo               = rem(30px)
 // Large
-size--mega              = rem(36px)
-size--giga              = rem(40px)
-size--tera              = rem(45px)
-size--peta              = rem(55px)
-
+$mega               = rem(36px)
+$giga               = rem(40px)
+$tera               = rem(45px)
+$peta               = rem(50px)
 // Extra large
-size--exa               = rem(65px)
-size--zetta             = rem(75px)
-size--yotta             = rem(80px)
-
-// Common allies
-size--xsmall            = size--zepto
-size--small             = size--femto
-size--base              = size--nano
-size--medium            = size--deci
-size--large             = size--tera
-size--xlarge            = size--yotta
+$exa                = rem(65px)
+$zetta              = rem(75px)
+$yotta              = rem(80px)
 
 //
 // 5. FONT WEIGHTS
 //
 
-weight--thin            = 100
-weight--light           = 300
-weight--regular         = 400
-weight--medium          = 500
-weight--semibold        = 600
-weight--bold            = 700
-weight--extrabold       = 800
-weight--black           = 900
+$thin               = 100
+$light              = 300
+$regular            = 400
+$medium             = 500
+$semibold           = 600
+$bold               = 700
+$extrabold          = 800
 
 //
 // 6. BASE STYLES
 //
 
-base--font-heading      = font--headings
-base--font-body         = font--main
-base--font-color        = color--carbon-black
-base--font-size         = size--base
-base--line-height       = 1.5
-base--spacing-unit      = rem(base--line-height)
+$base-heading-font  = $heading-font
+$base-body-font     = $main-font
+$base-font-size     = $nano
+$base-font-color    = $carbon-black
+$base-line-height   = 1.5
+$base-spacing-unit  = rem($base-line-height)
+
+//
+// 1. MEDIA QUERIES SCALE
+// Media queries with Rupture @see: https://github.com/jenius/rupture#api-documentation
+//
+// Note: Rapture is set to use em units for it's breakpoints,
+// since 1em = 1rem, all 'px' values tranlated to 'rem' for project consistency;
+//
+
+// @stylint off
+
+rupture.scale          = 0    rem(400px)  rem(600px)  rem(800px)  rem(1050px)  rem(1800px)  rem(2560px)
+//                       └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
+rupture.scale-names    =     'xs'        's'         'm'         'l'         'xl'        'hd'     'ultra-hd'
+
+rupture.enable-em-breakpoints   = true
+rupture.base-font-size          = $base-font-size
+rupture.retina-density          = 1.25
+rupture.density-queries         = 'webkit' 'dpi'
+
+// Remove start: ------------------------------>
+mediatype              = only screen
+bp-mobile--portrait    = min-width 0
+bp-mobile--landscape   = min-width 400px
+bp-tablet--portrait    = min-width 550px
+bp-tablet--landscape   = min-width 767px
+bp-desktop--small      = min-width 1024px
+bp-desktop--medium     = min-width 1280px
+bp-desktop--large      = min-width 1600px
+bp-desktop--xlarge     = min-width 1920px
+bp-desktop--4k         = min-width 2560px
+// Common aliases
+bp-mobile              = bp-mobile--portrait
+bp-tablet              = bp-tablet--portrait
+bp-desktop             = bp-desktop--small
+//remove end ----------------------------------<
+// @stylint on
 
 //
 // 8. DEBUG STYLING
 //
 
-debug-mode = false
+$debug-mode = false
 
 //
 // 8. DEFAULT ENVIRONMENT
@@ -129,4 +132,4 @@ debug-mode = false
 // Set this variable to anything other than 'development' to manually override.
 //
 
-environment ?= 'development'
+$environment ?= 'development'

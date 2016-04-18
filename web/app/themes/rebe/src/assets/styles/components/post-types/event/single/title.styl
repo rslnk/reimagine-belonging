@@ -3,14 +3,17 @@
 */
 .c-event__title
   @extend .o-heading
-  font-weight weight--regular
-  text-transform none
-  font-size size--deci
+
+  font-weight $regular
+  font-size $kilo
   line-height 1.2
+
   +media-query(mediatype, bp-tablet)
+    margin-top rem(20px)
     font-size size--tera
   +media-query(mediatype, bp-desktop)
     font-size size--tera
   +media-query(mediatype, bp-desktop--medium)
-    font-size size--zetta
+    margin-top rem(30px)
+    font-size $zetta
     line-height 1

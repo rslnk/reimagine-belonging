@@ -1,73 +1,97 @@
 /**
- * Timeline switcher (selector)
+ * Timeline switcher
  *
  *    - c-timeline-switcher
- *      - c-timeline-switcher__selector
- *      - c-timeline-switcher__icon
+ *      - c-timeline-switcher__active
+ *        - c-timeline-switcher__timeline
+ *        - c-timeline-switcher__icon
  *      - c-timeline-switcher__list
  *         - c-timeline-switcher__item
  */
 .c-timeline-switcher
   float left
+  margin-bottom rem(2px) /* between switcher and topics filter */
   clearfix()
 
-.c-timeline-switcher__selector
+  font-family $base-heading-font
+  font-weight $thin
+  text-transform uppercase
+
+// Active timeline / button
+.c-timeline-switcher__active
   @extend .o-btn
+
   clearfix()
   display block
-  padding rem(10px) /* padding defines size of the switcher selector */
-  background-color color--mint
-  color color--white
-  // Background on hover/focus
+
+  padding rem(14px) /* affects element size */
+  background-color $mint
+  letter-spacing rem(1px)
+  color $white
+
   &:hover
   &:focus
-    background-color color--mint - 8%
-  +media-query(mediatype, bp-tablet)
-    padding rem(16px) rem(18px) rem(18px) rem(18px)
-  +media-query(mediatype, bp-desktop)
-    padding rem(18px) rem(20px)
+    background-color $mint - 10%
 
-.c-timeline-switcher__timeline /* active timeline name */
-  float left
-  display inline-block
-  margin-top rem(4px) /* fix vertically alignment with icon */
-  font-size size--nano
-  letter-spacing rem(1px)
   +media-query(mediatype, bp-tablet)
-    font-size size--centi
+    padding rem(18px)
+  +media-query(mediatype, bp-desktop)
+    padding rem(20px)
+
+// Active timeline name
+.c-timeline-switcher__timeline
+  vertical-align bottom /* vertical alignment with icon */
+  font-size $micro /* affects element size */
+
+  +media-query(mediatype, bp-tablet)
+    font-size $centi
   +media-query(mediatype, bp-desktop)
     font-size size--deca
   +media-query(mediatype, bp-desktop--medium)
-    margin-top rem(4px)
-    font-size size--kilo
+    font-size $kilo
 
 .c-timeline-switcher__icon
-  float right
-  margin-top rem(1px) /* fix vertical alignment */
-  margin-left rem(12px) /* between icon and timeline name */
+  display inline-block
+  margin-left rem(10px)
+  vertical-align middle
   font-size rem(20px)
+
   +media-query(mediatype, bp-tablet)
     font-size rem(25px)
   +media-query(mediatype, bp-desktop)
-    margin-left rem(15px)
-    font-size size--kilo
+    font-size rem(30px)
+    margin-left rem(12px)
   +media-query(mediatype, bp-desktop--medium)
-    margin-left rem(18px)
-    font-size size--mega
+    font-size rem(32px)
+    margin-left rem(14px)
 
-// Timelines list in switcher selector
+// Timelines list
 .c-timeline-switcher__list
+  @extend .o-ui-list
   position absolute
 
 .c-timeline-switcher__item
-  @extend .o-btn, .o-btn--medium
+  @extend .o-btn
+
   float left
   margin-right rem(1px)
   margin-top rem(1px)
-  letter-spacing rem(2px)
-  color color--white
-  background-color color--mint
+  padding rem(8px) rem(10px) /* affects element size */
+  font-size $pico      /* affects element size */
+  letter-spacing rem(1.2px)
+  color $white
+  background-color $mint
   transition background-color .2s ease-in
+
   &:hover
   &:focus
-    background-color color--mint - 5%
+    background-color $mint - 8%
+
+  +media-query(mediatype, bp-tablet)
+    padding rem(12px) rem(16px)
+    font-size $micro
+  +media-query(mediatype, bp-desktop)
+    font-size $milli
+  +media-query(mediatype, bp-desktop--medium)
+    font-size $centi
+    padding rem(14px) rem(18px)

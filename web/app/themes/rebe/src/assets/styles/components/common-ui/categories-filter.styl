@@ -1,0 +1,51 @@
+/**
+ * Categories filter (list)
+ */
+.c-categories-filter__list
+  @extend .o-ui-list
+  display inline-block
+
+.c-categories-filter__item
+    @extend .o-btn, .o-btn--medium
+
+    display inline-block
+    float left
+    margin-right rem(2px) /* space between items */
+    margin-bottom rem(2px) /* space between items */
+
+    font-family $base-heading-font
+    font-weight $thin
+    font-size $pico
+    letter-spacing rem(.5px)
+    color $gray--dark + 20%
+    background-color $gray--light
+
+    +media-query(mediatype, bp-tablet)
+      font-size $nano
+    +media-query(mediatype, bp-desktop--medium)
+      font-size $milli
+      letter-spacing rem(.8px)
+
+    &:hover
+    &:focus
+      color $gray--dark
+      background-color $gray--light - 5%
+
+// Active items modifiers
+.c-categories-filter__active--events
+  color $white
+  background-color $indigo
+
+  &:hover
+  &:focus
+    color $white
+    background-color $indigo - 10%
+
+.c-categories-filter__active--stories
+  color $white
+  background-color $blueberry
+
+  &:hover
+  &:focus
+    color $white
+    background-color $blueberry - 10%

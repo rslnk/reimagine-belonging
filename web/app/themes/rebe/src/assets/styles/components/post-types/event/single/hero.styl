@@ -1,10 +1,6 @@
 /**
  * Event post hero
- *
- *    extends: `o-hero`
- *    example: `o-hero c-event__hero`
 */
 .c-event__hero
-  margin-bottom rem(20px)
-  +media-query(mediatype, bp-tablet)
-    padding-bottom rem(45px)
+  @extend .o-hero
+  margin-bottom rem(25px)

@@ -1,0 +1,41 @@
+.c-pagination
+  display block
+
+.c-pagination__list
+  @extend .o-ui-list
+  float right
+
+.c-pagination__item
+  cursor pointer
+  float left
+  margin-right rem(10px)
+  padding 0 rem(2px)
+  &:hover
+  &:focus
+    color $gray--dark
+  +media-query(mediatype, bp-tablet)
+    margin-right rem(10px)
+  +media-query(mediatype, bp-desktop)
+    margin-right rem(13px)
+  +media-query(mediatype, bp-desktop--medium)
+    margin-right rem(15px)
+
+.c-pagination__item:last-of-type
+  margin-right 0
+
+.c-pagination__item--active
+  font-weight $regular
+  color $carbon-black
+  &:hover
+  &:focus
+    cursor default /* disable pointer */
+
+.c-pagination__label
+  float left
+  margin-right rem(10px)
+
+// Modifiers
+.c-pagination--dashboard
+  float left /* when stacks, see `.c-dashboard__pagination` */
+  +media-query(mediatype, bp-tablet)
+    float right
