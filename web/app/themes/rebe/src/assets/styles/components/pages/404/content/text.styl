@@ -1,0 +1,22 @@
+/**
+ * 404 page text
+ */
+.c-404__text
+  font-weight $thin
+  line-height 1.6
+  text-transform normal
+  color $white
+
+  +below('l')
+    font-size $pico
+
+  +above('l')
+    font-size $milli
+
+  // Make link `mint` color, so it doesn't gets lost
+  // on the bright background
+  a
+    color $mint
+
+    &:visited
+      color $mint

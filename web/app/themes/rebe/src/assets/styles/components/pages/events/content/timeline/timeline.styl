@@ -1,0 +1,24 @@
+/**
+ * Timeline (events list)
+ *
+ *    Timeline spans to 100% of the view port on all screens
+ *    except for 4k (<2560px) displays, where list is centered with the other content
+ *
+ *    Wraps:
+ *      - `c-timeline__events`
+ *      - `c-timeline__navigation`
+ *
+ *    Note: we are using Owl Carousel as a temporary solution to mimic timeline functionaliy,
+ *    Some classes introduced by Owl Carousel are overwritten.
+ *
+ */
+.c-timeline
+  clearfix()
+
+  +below('uhd')
+    width 100%
+
+  +above('uhd')
+    // make sure max-width and pad equal to
+    // `o-centered-content` class
+    center(max-width:2000px, pad:80px)

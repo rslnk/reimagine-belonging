@@ -19,12 +19,12 @@ angular
 
           var owl = $(element).owlCarousel(defaultOptions);
 
-          $('.js-timeline-navigation__next').click(function (e) {
+          $('.js-timeline__next').click(function (e) {
             e.preventDefault();
             owl.trigger('owl.next');
           });
 
-          $('.js-timeline-navigation__previous').click(function (e) {
+          $('.js-timeline__previous').click(function (e) {
             e.preventDefault();
             owl.trigger('owl.prev');
           });

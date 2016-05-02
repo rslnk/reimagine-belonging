@@ -1,0 +1,26 @@
+/**
+ * Pagination list item
+ */
+.c-pagination__item
+  cursor pointer
+  float left
+  padding 0 rem(2px)
+
+  &:hover
+  &:focus
+    color $gray--dark
+
+  +below('m')
+    margin-right rem(10px)
+
+  +between('m', 'l')
+    margin-right rem(10px)
+
+  +between('l', 'xl')
+    margin-right rem(13px)
+
+  +above('xl')
+    margin-right rem(15px)
+
+  &:last-of-type
+    margin-right 0

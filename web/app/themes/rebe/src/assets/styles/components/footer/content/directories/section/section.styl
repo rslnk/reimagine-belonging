@@ -1,0 +1,26 @@
+/**
+ *  Footer directory section
+ *
+ *   Wraps:
+ *      - `c-directories__title`
+ *      - `c-directories__toggle`
+ *      - `c-directories__list`
+ *
+ *   Sections are stacked on small screens, and layed out as 4 columns on larger screens.
+ *
+ */
+.c-directories__section
+  position relative
+
+  +below('m')
+    stack()
+    margin-bottom rem(30px)
+
+  +above('m')
+    column(1/4)
+    margin-bottom 0
+
+  // When drectory list is expanded
+  // rotate toggle icon from '+' to 'x'
+  .is-expanded
+    transform rotate(45deg)

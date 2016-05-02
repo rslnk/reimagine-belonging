@@ -1,22 +1,24 @@
 <div class="c-stories__head">
 
+  <h1 class="c-stories__title" ng-bind-html="siteConfig.stories_page_title"></h1>
+
   <!-- categories filter list -->
-  <div class="c-categories-filter">
+  <div class="c-categories-filter" ng-cloak ng-show="siteConfig.story_filters" >
 
     <!-- categories list -->
-    <ul class="c-categories-filter__list">
+    <ul class="c-category-filter__list">
 
       <!-- 'all topics' button -->
-      <li class="c-categories-filter__item"
-        ng-class="{ 'c-categories-filter__active--stories': filter.topics.length === 0 }"
+      <li class="c-category-filter__item"
+        ng-class="{ 'is-active--stories': filter.topics.length === 0 }"
         ng-click="resetTopicsFilter()">
         {{ siteConfig.all_stories_filter_label }}
       </li>
 
       <!-- topics -->
-      <li class="c-categories-filter__item"
+      <li class="c-category-filter__item"
         ng-repeat="topic in siteConfig.story_filters"
-        ng-class="{ 'c-categories-filter__active--stories': filter.topics.indexOf(topic.slug) > -1 }"
+        ng-class="{ 'is-active--stories': filter.topics.indexOf(topic.slug) > -1 }"
         ng-click="toggleTopicInFilter(topic.slug)"
         ng-bind-html="topic.name">
       </li>
@@ -26,9 +28,9 @@
   </div>
 
   <!-- filter dashboard -->
-  <div class="c-dashboard">
+  <div class="c-dashboard" ng-cloak ng-show="siteConfig.total_stories_label" >
 
-    <ul class="o-ui-list c-dashboard__info">
+    <ul class="c-dashboard__info">
       <!-- total entries -->
       <li class="c-dashboard__posts-total">
         {{ siteConfig.total_stories_label }}:
@@ -50,7 +52,7 @@
         <ul class="c-pagination__list">
           <li ng-repeat="(k, v) in getPages() track by $index" class="c-pagination__item"
               ng-click="toPage(k)"
-              ng-class="{'c-pagination__item--active': k === page }">{{ k+1 }}
+              ng-class="{'is-active': k === page }">{{ k+1 }}
           </li>
         </ul>
       </div>

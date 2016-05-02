@@ -1,0 +1,21 @@
+/**
+ * Closed Captions notice title
+ */
+.c-closed-captions-notice__title
+  @extend .o-heading
+
+  margin-bottom rem(8px) // between title and text
+
+  font-weight $semibold
+  text-transform none
+  letter-spacing normal
+  line-height 1.2
+
+  // Portrait screens
+  +below('m', orientation: portrait)
+    font-size $pico
+
+  // Landscape screens
+  +above('s', orientation: landscape)
+    margin-bottom rem(10px)
+    font-size $nano

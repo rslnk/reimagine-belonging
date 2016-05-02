@@ -1,0 +1,34 @@
+/**
+ *  Footer directory list (footer menus list)
+ */
+.c-directories__list
+  @extend .o-ui-list
+
+  font-family $base-body-font
+  font-weight $thin
+  font-size $pico
+  letter-spacing rem(.8px)
+
+  +below('m')
+    display none // hide list on small mobile screens, toggled on icon tap/click
+
+  +above('m')
+    display block
+
+  // Menu item
+  .c-menu__item
+    padding rem(8px) 0 // vertical space between menu items
+
+    // Menu item link
+    a
+      padding rem(3px) 0 // extends link's 'sensitive' zone
+      transition color .2s ease-in // color transition animation
+      color $lavender + 50%
+      &:hover
+      &:focus
+        color $lavender + 75%
+
+  // Active menu item link
+  .is-active
+    a
+      color $blueberry + 20%

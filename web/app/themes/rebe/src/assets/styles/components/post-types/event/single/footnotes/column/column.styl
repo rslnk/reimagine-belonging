@@ -1,0 +1,26 @@
+/**
+ * Footnotes column
+ *
+ *    Wraps:
+ *      - `c-footnotes__title`
+ *      - `c-footnotes__list`
+ *
+ *    Two columns layout on large screens,
+ *    on small screens — stacked.
+*/
+.c-footnotes__column
+
+  +below('l')
+    stack()
+
+  +above('l')
+    column(1/2)
+
+  // Add bottom margin to the first column when stacked
+  &:first-of-type
+
+    +below('l')
+      margin-bottom rem(30px)
+
+    +above('l')
+      margin-bottom 0

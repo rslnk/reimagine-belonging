@@ -1,0 +1,26 @@
+/**
+ * Story post title
+ */
+.c-story__title
+  @extend .o-heading
+
+  font-weight $regular
+  text-transform none
+  letter-spacing 0
+  line-height 1.2
+
+  +below('s')
+    font-size $deca
+
+  +between('s', 'm')
+    font-size $hecto
+
+  +between('m', 'l')
+    font-size $mega
+
+  +between('l', 'hd')
+    font-size $peta
+
+  +above('hd')
+    font-size $exa
+    line-height 1

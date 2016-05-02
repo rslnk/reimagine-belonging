@@ -1,0 +1,68 @@
+/**
+ * Story preview title
+ *
+ *    Animation effect:
+ *    The story preview title has a special highlight animation effect
+ *    on .c-story-preview__content element hover.
+ *
+ *    The basic higlight animation effect explained here: http://wesbos.com/css-highlight-animation/
+ */
+.c-story-preview__title
+  @extend .o-heading
+
+  display inline
+
+  font-weight $thin
+  text-transform none
+  line-height 1.2
+  color $white
+
+  // Initial background postion for focus/hover animation
+  // @see `c-story-preview__content`
+  background-size 201%
+  background-position 0 0
+
+  transition .5s ease-in-out // animation defaults
+
+  strong
+  em
+  b
+    font-weight $semibold
+
+  +between('xs', 'm', orientation: landscape)
+    font-size $mega
+
+  +between('xs', 'm', orientation: portrait)
+    font-size $kilo
+
+  +between('m', 'l')
+    font-size $centi
+
+  +between('l', 'xl')
+    font-size $deca
+
+  +above('xl')
+    font-size $kilo
+
+
+// Color modifiers
+.c-story-preview__title--red
+  background-image linear-gradient(90deg, rgba($rose, 0) 50%, rgba($rose, .65) 50%)
+
+.c-story-preview__title--orange
+  background-image linear-gradient(90deg, rgba($orange, 0) 50%, rgba(saturation($orange, 150%), .65) 50%)
+
+.c-story-preview__title--yellow
+  background-image linear-gradient(90deg, rgba($yolk, 0) 50%, rgba(saturation($yolk, 135%), .65) 50%)
+
+.c-story-preview__title--green
+  background-image linear-gradient(90deg, rgba($mint, 0) 50%, rgba(saturation($mint, 125%), .65) 50%)
+
+.c-story-preview__title--blue
+  background-image linear-gradient(90deg, rgba($sky, 0) 50%, rgba($sky, .65) 50%)
+
+.c-story-preview__title--indigo
+  background-image linear-gradient(90deg, rgba($indigo, 0) 50%, rgba(saturation($indigo, 130%), .5) 50%)
+
+.c-story-preview__title--violet
+  background-image linear-gradient(90deg, rgba($violet, 0) 50%, rgba($violet, .65) 50%)

@@ -1,0 +1,23 @@
+/**
+ * Events head title
+ */
+ .c-events__title
+   @extend .o-heading
+
+   line-height 1.2
+
+   +below('s')
+     font-size $hecto
+
+   +between('s', 'm')
+     font-size $mega
+
+   +between('m', 'l')
+     font-size $tera
+
+   +between('l', 'xl')
+     font-size $exa
+
+   +above('xl')
+     font-size $yotta
+     line-height 1

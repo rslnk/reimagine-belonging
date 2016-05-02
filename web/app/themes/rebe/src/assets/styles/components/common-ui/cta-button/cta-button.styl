@@ -1,0 +1,51 @@
+/**
+ * CTA button
+ *
+ *   Wraps:
+ *      - `c-cta-button__label`
+ *      - `c-cta-button__icon`
+ *
+ */
+.c-cta-button
+  @extend .o-btn
+
+  text-align center
+
+// Home modifier
+.c-cta-button--home
+  @extend .c-cta-button
+
+  display inline-block
+  margin-right rem(15px) // space between buttons
+
+  &:last-of-type
+    margin-right 0
+
+  background-color $indigo // color fallback
+  background-color rgba($indigo, .95)
+  border rem(1px) solid $indigo + 10%
+
+  &:hover
+  &:focus
+    background-color $indigo - 5
+
+  +below('xl')
+    padding rem(20px)
+
+  +above('xl')
+    padding rem(22px)
+
+  +at('hd')
+    margin-right rem(30px)
+    padding rem(30px)
+
+    &:last-of-type
+      margin-right 0
+
+    // Modify label and icon size
+    .c-cta-button__label
+      font-size $giga
+
+    .c-cta-button__icon
+      margin-right rem(25px)
+      font-size rem(55px)

@@ -12,12 +12,12 @@ $the_query = new WP_Query([
 
 <?php if( $the_query->have_posts() ): ?>
 
-  <div class="c-events__list">
+  <div class="c-timeline">
     <?php while( $the_query->have_posts() ): $the_query->the_post(); ?>
 
       <div class="u-image-cover u-image-cover--square c-story-preview" style="background-image: url(<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>)">
-        <div class="c-event-preview__image-overlay c-event-preview__image-overlay--gradient"></div>
-        <div class="c-event-preview__image-overlay c-event-preview__image-overlay--solid"></div>
+        <div class="c-event-preview__image-overlay c-event-preview__gradient"></div>
+        <div class="c-event-preview__image-overlay c-event-preview__solid-color"></div>
         <div class="c-event-preview__content">
           <?php
             // Get and format event year

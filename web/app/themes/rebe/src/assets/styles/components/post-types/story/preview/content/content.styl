@@ -1,0 +1,25 @@
+/**
+ * Story preview content
+ *
+ *    Wraps:
+ *      - `c-story-preview__caption`
+ *
+ */
+.c-story-preview__content
+  @extend .o-btn
+
+  display block
+  position absolute
+  overflow hidden
+
+  size 100%
+
+  // Top semi-transparent dark gradient
+  // Increases contrast for title readability
+  background-image linear-gradient(180deg, rgba($black, .5) 10%, rgba($black, 0) 50%)
+
+  +below('xl')
+    padding rem(20px)
+
+  +above('xl')
+    padding rem(25px)

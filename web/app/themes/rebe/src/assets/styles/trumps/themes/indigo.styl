@@ -9,7 +9,7 @@
 
 .t-indigo--focus
   @extend .t-indigo
-  variations = monochrome($indigo)
+
   &:hover
   &:focus
-    background-color variations[1]
+    background-color $indigo - 10%

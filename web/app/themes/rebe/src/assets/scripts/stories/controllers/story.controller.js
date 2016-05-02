@@ -42,12 +42,8 @@ angular.module('stories.story.controller', [
         $scope.story.related_events = StoryService.relatedEvents($scope.story.related_events);
         $scope.story.related_stories = StoryService.relatedStories($scope.story.related_stories);
 
-        // Temporary jquery solution
-        // - Sets lightbox height
-        // - Moves body content up when lightbox content is called
-        // - Lightbox height on window resize function is set in `scripts/main.js`
-        //$('.js-lightbox').height($('main').height() + 100);
-        $('html, body').animate({ scrollTop: 0 }, 200);
+        // Temporary solution, otherwise we should avoid jQury in angular!
+        $('.js-content').fadeToggle('fast');
       });
 
     $scope.shareUrl = $location.absUrl();

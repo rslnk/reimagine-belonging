@@ -1,0 +1,42 @@
+/**
+ * Timeline switcher
+ *
+ *    Wraps:
+ *      - `is__active`
+ *        - `c-timeline-switcher__timeline`
+ *        - `c-timeline-switcher__icon`
+ *      - `c-timeline-switcher__list`
+ *        - `c-timeline-switcher__item`
+ *
+ */
+.c-timeline-switcher
+  float left
+  margin-bottom rem(2px) // between switcher and topics filter
+  clearfix()
+
+  font-family $base-heading-font
+  font-weight $thin
+  text-transform uppercase
+
+  .is-active
+    @extend .o-btn
+
+    clearfix()
+    display block
+
+    background-color $mint
+    letter-spacing rem(1px)
+    color $white
+
+    &:hover
+    &:focus
+      background-color $mint - 10%
+
+    +below('m')
+      padding rem(14px) // affects element size
+
+    +between('m', 'l')
+      padding rem(18px)
+
+    +above('l')
+      padding rem(20px)

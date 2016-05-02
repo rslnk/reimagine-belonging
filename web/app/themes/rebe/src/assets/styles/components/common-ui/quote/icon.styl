@@ -1,0 +1,53 @@
+/**
+ * Quote icon
+ */
+.c-quote__icon
+
+  +below('m')
+    stack()
+    margin-bottom rem(10px) // between icon and content
+    font-size rem(40px) // icon size
+
+  +between('m', 'l')
+    column(1/8)
+    margin-top rem(-15px) // 'hanging' quote mark
+    font-size rem(45px)
+
+  +between('l', 'xl')
+    stack()
+    margin-bottom rem(15px) // between icon and quote text
+    font-size rem(45px)
+
+  +between('xl', 'hd')
+    font-size rem(55px)
+
+  +above('hd')
+    margin-bottom rem(20px)
+    font-size rem(70px)
+
+// Event modifier
+.c-quote__icon--event
+  @extend .c-quote__icon
+
+  color $mint
+
+// Story modifier
+.c-quote__icon--story
+  @extend .c-quote__icon
+
+  color $blueberry
+
+  +between('l', 'xl')
+    margin-top rem(-25px) // 'hanging' quote mark
+    margin-bottom rem(15px)
+    font-size rem(45px)
+
+  +between('xl', 'hd')
+    margin-top rem(-40px)
+    margin-bottom rem(25px)
+    font-size rem(65px)
+
+  +above('hd')
+    margin-top rem(-45px)
+    margin-bottom rem(25px)
+    font-size rem(80px)

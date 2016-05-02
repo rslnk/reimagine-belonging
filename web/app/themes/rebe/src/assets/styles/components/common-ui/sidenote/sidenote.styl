@@ -1,0 +1,18 @@
+/**
+ * Sidenote
+ *
+ *    - c-sidenote
+ *      - c-sidenote__title
+ *      - c-sidenote__caption
+*/
+.c-sidenote
+  clearfix()
+
+  +below('l')
+    margin-bottom rem(15px) // space between sidenote and other sidebar objects
+
+  +between('l', 'hd')
+    margin-bottom rem(20px)
+
+  +above('hd')
+    margin-bottom rem(40px)

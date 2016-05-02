@@ -1,0 +1,25 @@
+/**
+ * Event post title
+*/
+.c-event__title
+  @extend .o-heading
+
+  margin 0 // overwrites default heading margin
+  font-weight $regular
+  line-height 1.2
+
+  +below('m')
+    font-size $hecto
+
+  +between('m', 'l')
+    font-size $giga
+
+  +between('l', 'xl')
+    font-size $tera
+
+  +between('xl', 'hd')
+    font-size $exa
+
+  +above('hd')
+    font-size $zetta
+    line-height 1

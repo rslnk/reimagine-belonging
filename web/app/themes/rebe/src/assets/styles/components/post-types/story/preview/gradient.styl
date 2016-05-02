@@ -1,42 +1,33 @@
 /**
- * Story preview gradient
+ * Preview gradient
  *
- *    The gradient is semi-transparent and lays over ]
- *    preview's background image
+ *    Color gradient overlaying preview image
  */
-.c-story-preview__gradient
+.c-strory-preview__gradient
   display block
   position absolute
   size 100%
-  opacity .75
-  &:hover
-    background-color rgba(255, 255, 255, .9)
 
-// Color modifiers
-.c-story-preview__gradient--red
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(246, 49, 43, .4) 10%, rgba(246, 49, 43, .1) 50%)
+  transition .5s ease-in // on `.c-story-preview__content` hover/focus
 
-.c-story-preview__gradient--orange
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(224, 118, 20, .4) 10%, rgba(236, 168, 98, .1) 50%)
+// Color gradient modifiers
+.c-strory-preview__gradient--violet
+  background-image linear-gradient(0deg, rgba($raspberry, .5) 0, rgba($raspberry, .0) 80%)
 
-.c-story-preview__gradient--yellow
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(255, 168, 0, .4) 10%, rgba(255, 168, 0, .1) 50%)
+.c-strory-preview__gradient--indigo
+  background-image linear-gradient(0deg, rgba(saturation($indigo, 120%), .5) 0, rgba($indigo, .0) 80%)
 
-.c-story-preview__gradient--green
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(18, 238, 218, .4) 10%, rgba(18, 238, 218, .15) 50%)
+.c-strory-preview__gradient--blue
+  background-image linear-gradient(0deg, rgba($sky, .5) 0, rgba($sky, .0) 80%)
 
-.c-story-preview__gradient--blue
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(0, 201, 255, .4) 10%, rgba(0, 201, 255, .1) 50%)
+.c-strory-preview__gradient--green
+  background-image linear-gradient(0deg, rgba(saturation($mint, 120%), .5) 0, rgba($mint, .0) 80%)
 
-.c-story-preview__gradient--indigo
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(47, 65, 224, .4) 10%, rgba(19, 142, 231, .1) 50%)
+.c-strory-preview__gradient--yellow
+  background-image linear-gradient(0deg, rgba(saturation($yolk, 150%), .5) 0, rgba($yolk, .0) 80%)
 
-.c-story-preview__gradient--violet
-  @extend .c-story-preview__gradient
-  background-image linear-gradient(0deg, rgba(232, 22, 198, .4) 10%, rgba(232, 22, 198, .1) 50%)
+.c-strory-preview__gradient--orange
+  background-image linear-gradient(0deg, rgba($orange, .5) 0, rgba($orange, .0) 80%)
+
+.c-strory-preview__gradient--red
+  background-image linear-gradient(0deg, rgba($rose, .5) 0, rgba($rose, .0) 80%)

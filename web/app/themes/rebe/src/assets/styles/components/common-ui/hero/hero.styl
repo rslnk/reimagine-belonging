@@ -1,0 +1,23 @@
+/**
+ * Hero (page hero)
+ *
+ *   Wraps:
+ *      - `c-hero__title`
+ *
+ */
+.c-hero
+  display block
+  clearfix()
+
+// Event modifier
+.c-hero--event
+  @extend .c-hero
+
+  +below('l')
+    margin-bottom rem(25px)
+
+  +between('l', 'xl')
+    margin-bottom rem(45px)
+
+  +above('hd')
+    margin-bottom rem(60px)

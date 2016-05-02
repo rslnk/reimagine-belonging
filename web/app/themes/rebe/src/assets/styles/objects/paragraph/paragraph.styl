@@ -1,0 +1,23 @@
+/**
+ * Paragraph
+ */
+.o-paragraph
+  font-family $base-body-font
+  font-weight $light
+  line-height 1.8
+
+  strong
+  b
+    font-weight $semibold
+
+  em
+  i
+    font-style italic
+
+  +below('m')
+    margin-bottom rem(15px)
+    font-size $base-font-size
+
+  +above('m')
+    margin-bottom rem(20px)
+    font-size $nano

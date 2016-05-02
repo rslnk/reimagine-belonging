@@ -1,0 +1,28 @@
+/*
+ * Centered content (container/wrapper)
+ *
+ *    Container for main site content
+ *
+ *    To center the container we're using `center()` jeet mixin. To restore the rules
+ *    applied by the `center()` mixin, use the `uncenter()` mixin.
+ *    See: http://jeet.gs/
+ */
+.o-centered-content
+
+  +below('m')
+    center(pad:15px) // horizontally center, left/right paddings
+
+  +between('m', 'l')
+    center(pad:rem(25px))
+
+  +between('l', 'xl')
+    center(pad:rem(80px))
+
+  +between('xl', 'hd')
+    center(max-width:rem(1600px), pad:rem(140px))
+
+  +between('hd', 'uhd')
+    center(max-width:rem(1920px), pad:rem(100px))
+
+  +above('uhd')
+    center(max-width:rem(2000px), pad:rem(80px))

@@ -1,0 +1,70 @@
+/**
+ * Quote text
+ */
+.c-quote__text
+  @extend .o-heading
+
+  margin-bottom rem(20px) // space between text and meta block
+  font-weight $thin
+
+  strong
+  em
+  b
+    font-weight $regular
+
+  +above('l')
+    stack()
+
+// Event modifier
+.c-quote__text--event
+  @extend .c-quote__text
+
+  color $carbon-black
+
+  +below('m')
+    font-size $centi
+    line-height 1.2
+
+  +between('m', 'l')
+    font-size $deci
+    line-height 1.4
+
+  +between('l', 'xl')
+    font-size $centi
+
+  +between('xl', 'hd')
+    font-size $deca
+    line-height 1.45
+
+  +above('hd')
+    font-size $kilo
+    line-height 1.35
+
+// Sttory modifier
+.c-quote__text--story
+  @extend .c-quote__text
+
+  color $gray--dark
+
+  em
+  strong
+    color $blueberry
+
+  +below('m')
+    font-size $milli
+    line-height 1.2
+
+  +between('m', 'l')
+    font-size $deci
+    line-height 1.4
+
+  +between('l', 'xl')
+    font-size $centi
+
+  +between('xl', 'hd')
+    font-size $deca
+    line-height 1.45
+
+  +above('hd')
+    font-size $kilo
+    line-height 1.35

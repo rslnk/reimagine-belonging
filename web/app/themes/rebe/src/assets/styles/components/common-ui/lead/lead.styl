@@ -1,0 +1,46 @@
+/**
+ *  Lead object
+ *
+ *    Use to style an opening paragraph of a post, or page.
+ *    link: https://en.wikipedia.org/wiki/Lead_paragraph
+ */
+.c-lead
+  @extend .o-heading
+
+  font-weight $thin
+  line-height 1.4
+
+  strong
+  em
+  b
+    font-weight $regular
+
+  +below('m')
+    font-size $micro
+
+  +between('m', 'xl')
+    font-size $deca
+
+  +above('xl')
+    font-size $mega
+
+// Size modifier
+.c-lead--small
+  @extend .c-lead
+
+  font-weight $thin
+  line-height 1.6
+
+  strong
+  em
+  b
+    font-weight $medium
+
+  +below('m')
+    font-size $nano
+
+  +between('m', 'xl')
+    font-size $milli
+
+  +above('xl')
+    font-size $deci

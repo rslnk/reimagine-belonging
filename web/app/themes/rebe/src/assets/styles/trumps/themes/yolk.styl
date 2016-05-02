@@ -9,7 +9,7 @@
 
 .t-yolk--focus
   @extend .t-yolk
-  variations = monochrome($yolk)
+
   &:hover
   &:focus
-    background-color variations[1]
+    background-color $yolk - 10%

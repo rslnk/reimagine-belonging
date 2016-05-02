@@ -1,98 +1,111 @@
-<div class="c-theater-view c-story__theater-backdrop--{{ story.preview_image_color }} js-lightbox">
+<div class="c-theater-view c-story__theater-backdrop--{{ story.preview_image_color }} js-overlay">
 
-  <!-- lightbox navigation -->
-  <div ng-click="prev()" class="c-post-navigation__wrapper--left">
-    <div class="o-icon c-icon-arrow--circle c-post-navigation__previous">
+  <!-- post navigation -->
+  <div ng-click="prev()" class="c-post-navigation--left js-post-navigation">
+    <div class="c-icon-arrow-left--circle is-previous">
       <span class="u-visually-hidden">{{ siteConfig.previous_button_label }}</span>
     </div>
   </div>
-  <div ng-click="next()" class="c-post-navigation__wrapper--right">
-    <div class="o-icon c-icon-arrow--circle c-post-navigation__next">
+
+  <div ng-click="next()" class="c-post-navigation--right js-post-navigation">
+    <div class="c-icon-arrow-right--circle is-next">
       <span class="u-visually-hidden">{{ siteConfig.next_button_label }}</span>
     </div>
   </div>
 
   <!-- Theater content -->
-  <div ng-cloak ng-show="story.video_url" class="c-theater-view__content">
+  <div ng-cloak ng-show="story.video_url" class="c-story c-theater-view__content js-content">
 
-    <!-- close button -->
-    <div class="o-icon c-icon-close--circle c-post-navigation__close" ng-click="closeLightbox()">
-      <span class="u-visually-hidden">{{ siteConfig.close_button_label }}</span>
-    </div>
+    <div >
 
-    <!-- story header -->
-    <div class="c-story__header">
+      <!-- close button -->
+      <div class="c-icon-close--circle c-post-navigation__close" ng-click="closeLightbox()">
+        <span class="u-visually-hidden">{{ siteConfig.close_button_label }}</span>
+      </div>
 
-      <!-- categories list -->
-      <ul class="c-categories-list">
-        <li ng-repeat="topic in story.topics"
-          class="c-categories-list__item t-blueberry"
-          ng-bind-html="topic.term_name">
-        </li>
-      </ul>
+      <!-- story header -->
+      <div class="c-story__head">
 
-      <h1 class="o-heading c-story__title">{{ story.title }}</h1>
+        <!-- categories list (timelines) -->
+        <div class="c-story__categories">
 
-    </div>
+          <!-- categories list (topics & groups)-->
+          <ul class="c-categories__list">
 
-    <!-- story post content -->
-    <div class="c-story__content">
+            <!-- topics -->
+            <li ng-repeat="topic in story.topics"
+              class="c-categories__item t-blueberry"
+              ng-bind-html="topic.term_name">
+            </li>
 
-      <!-- main content -->
-      <div class="c-story__main s-headings s-paragraphs s-links s-text-lists">
+          </ul>
 
-        <!-- video content -->
-        <div class="c-story__video u-video-container">
-          <ngvideo ng-model="story.video_url"></ngvideo>
         </div>
+
+        <h1 class="o-heading c-story__title">{{ story.title }}</h1>
 
       </div>
 
-      <!-- sidebar -->
-      <div class="c-story__sidebar">
+      <!-- story post content -->
+      <div class="c-story__content">
 
-        <!-- protagonist/hero quote (excerpt) -->
-        <blockquote ng-if="story.excerpt" class="c-story-quote">
-          <div class="o-icon c-icon-quote c-story-quote__icon"></div>
-          <div class="c-story-quote__content">
-            <h2 ng-bind-html="story.excerpt" class="c-story-quote__text"></h2>
-            <div class="c-story-quote__meta">
-              <span class="c-story-quote__author">
-                {{ story.hero }},
-              </span>
-              <span class="c-story-quote__city">
-                {{ story.city[0].term_name }}
-              </span>
-            </div>
-          </div>
-        </blockquote>
+        <!-- main content -->
+        <div class="c-story__main s-headings s-paragraphs s-links s-text-lists">
 
-        <!-- video closed caption notice -->
-        <div ng-if="story.subtitles_notification == 1" class="c-closed-captions-notice">
-          <div class="o-icon c-icon-closed-captions c-closed-captions-notice__icon"></div>
-          <div class="c-closed-captions-notice__content">
-            <h3 ng-bind-html="siteConfig.story_cc_notice_title" class="c-closed-captions-notice__title"></h3>
-            <p ng-bind-html="siteConfig.story_cc_notice_text" class="c-closed-captions-notice__text"></p>
+          <!-- video content -->
+          <div class="c-story__video u-video-container">
+            <ngvideo ng-model="story.video_url"></ngvideo>
           </div>
+
         </div>
 
-        <!-- share story -->
-        <ul class="c-post-share__list">
-          <li class="c-post-share__item">
-            <a class="o-icon c-icon-facebook--circle c-post-share__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
-              <span class="u-visually-hidden">Share on Facebook</span>
-            </a>
-          </li>
-          <li class="c-post-share__item">
-            <a class="o-icon c-icon-twitter--circle c-post-share__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
-              <span class="u-visually-hidden">Share on Twitter</span>
-            </a>
-          </li>
-        </ul>
+        <!-- sidebar -->
+        <div class="c-story__sidebar">
 
-      </div><!-- .c-story__sidebar -->
+          <!-- protagonist/hero quote (excerpt) -->
+          <blockquote ng-if="story.excerpt" class="c-quote--story">
+            <div class="c-icon-quote c-quote__icon--story"></div>
+            <div class="c-quote__content">
+              <h2 ng-bind-html="story.excerpt" class="c-quote__text--story"></h2>
+              <div class="c-quote__meta--story">
+                <span class="c-quote__author">
+                  <strong>{{ story.hero }}</strong>,
+                </span>
+                <span>
+                  {{ story.city[0].term_name }}
+                </span>
+              </div>
+            </div>
+          </blockquote>
 
-    </div><!-- .c-story__content -->
+          <!-- video closed caption notice -->
+          <div ng-if="story.subtitles_notification == 1" class="c-closed-captions-notice">
+            <div class="c-icon-closed-captions c-closed-captions-notice__icon"></div>
+            <div class="c-closed-captions-notice__content">
+              <h3 ng-bind-html="siteConfig.story_cc_notice_title" class="c-closed-captions-notice__title"></h3>
+              <p ng-bind-html="siteConfig.story_cc_notice_text" class="c-closed-captions-notice__text"></p>
+            </div>
+          </div>
+
+          <!-- share story -->
+          <ul class="c-post-sharing__list">
+            <li class="c-post-sharing__item">
+              <a class="c-icon-facebook--circle c-post-sharing__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+                <span class="u-visually-hidden">Share on Facebook</span>
+              </a>
+            </li>
+            <li class="c-post-sharing__item">
+              <a class="c-icon-twitter--circle c-post-sharing__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+                <span class="u-visually-hidden">Share on Twitter</span>
+              </a>
+            </li>
+          </ul>
+
+        </div><!-- .c-story__sidebar -->
+
+      </div><!-- .c-story__content -->
+
+    </div>
 
   </div><!-- c-theater__content-wrapper--post -->
 </div><!-- .o-overlay -->

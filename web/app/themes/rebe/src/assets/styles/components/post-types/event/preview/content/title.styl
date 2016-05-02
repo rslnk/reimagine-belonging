@@ -1,0 +1,35 @@
+/**
+ * Event preview title
+ */
+.c-event-preview__title
+  @extend .o-heading
+
+  display block
+
+  font-weight $thin
+  text-transform none
+  color $white
+
+  strong
+  em
+  b
+    font-weight $semibold
+
+  +below('m')
+    font-size $deca
+    line-height 1.2
+
+  +between('m', 'l')
+    font-size $centi
+    line-height 1.35
+
+  +between('l', 'xl')
+    font-size $micro
+
+  +between('xl', 'hd')
+    font-size $deci
+    line-height 1.35
+
+  +above('hd')
+    font-size $deca
+    line-height 1.2

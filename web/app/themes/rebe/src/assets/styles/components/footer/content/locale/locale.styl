@@ -1,0 +1,19 @@
+/**
+ *  Footer locale (container)
+ *
+ *   Wraps:
+ *      - `c-locale__button`
+ *
+ */
+.c-locale
+
+  +below('xl')
+    stack() // on top of legal
+    margin-bottom rem(50px) // between locale and legal
+
+  +above('xl')
+    column(4/12)
+    shift(8/12) // shift left, swap position with legal
+    margin-bottom 0
+    margin-top rem(-15px) // vertically aligns button with legal secton
+    text-align right // move locale content (link) to right

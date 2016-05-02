@@ -1,0 +1,18 @@
+/**
+ *  Footer legal section
+ *
+ *   Wraps:
+ *      - `c-legal__links`
+ *
+ */
+.c-legal
+  font-weight $light
+  font-size $femto
+  letter-spacing rem(1px)
+
+  +below('xl')
+    stack() // under locale
+
+  +above('xl')
+    column(8/12)
+    shift(-4/12) // shift right, swap position with locale

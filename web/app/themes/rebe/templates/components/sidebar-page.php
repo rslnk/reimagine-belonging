@@ -1,15 +1,15 @@
 <div class="c-page__sidebar">
 
-  <div class="o-sidenote">
+  <div class="c-sidenote">
 
     <?php if(get_field('page_sidenote_title')) :?>
-      <h2 class="o-heading o-sidenote__title--page">
+      <h2 class="c-sidenote__title--page">
         <?php the_field('page_sidenote_title') ?>
       </h2>
     <?php endif; ?>
 
     <?php if(get_field('page_sidenote_text')) :?>
-      <div class="o-sidenote__caption s-paragraphs--small s-links">
+      <div class="c-sidenote__caption s-paragraphs--small s-links">
         <?php the_field('page_sidenote_text') ?>
       </div>
     <?php endif; ?>

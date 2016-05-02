@@ -1,0 +1,15 @@
+/**
+ * Page main (aka 'main content')
+ *
+ *    - Stacks on top of sidebar on small screens
+ *    - Displayed next to sidebar on larger screens
+ */
+.c-page__main
+
+  +below('l')
+    stack()
+    margin-bottom rem(30px) // between main and sidebar content
+
+  +above('l')
+    column(5/8)
+    margin-bottom 0

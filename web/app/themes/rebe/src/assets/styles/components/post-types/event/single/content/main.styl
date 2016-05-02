@@ -1,0 +1,15 @@
+/**
+ * Event post main (aka 'main content')
+ *
+ *    - Stacks on top of sidebar on small screens
+ *    - Displayed next to sidebar on larger screens
+ */
+.c-event__main
+
+  +below('l')
+    stack()
+    margin-bottom rem(30px) // space between main and sidebar
+
+  +above('l')
+    column(2/3)
+    margin-bottom 0

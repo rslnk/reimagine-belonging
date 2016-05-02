@@ -1,10 +1,12 @@
 .o-text-link
   text-decoration none
   color $indigo
-  transition all .35s ease /* color transitions */
+  transition all .35s ease // global color transitions
+
   &:hover
   &:focus
-    color $indigo + 50
     text-decoration underline
+    color $indigo + 50
+
   &:visited
     color $gray--dark-gray

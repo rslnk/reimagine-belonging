@@ -1,0 +1,16 @@
+/**
+ * Closed Captions notice text
+ */
+.c-closed-captions-notice__text
+  @extend .o-paragraph, .o-paragraph--small
+
+  margin-bottom 0 // remove default paragraph margin
+
+  color $gray--dark
+
+  +below('m')
+    font-size $atto
+    line-height 1.5
+
+  +above('m')
+    font-size $femto

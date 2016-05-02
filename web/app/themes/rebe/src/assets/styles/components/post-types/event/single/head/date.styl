@@ -1,0 +1,28 @@
+/**
+ * Event post date
+*/
+.c-event__date
+  display inline-block
+  clearfix()
+
+  font-family $base-heading-font
+  font-weight $thin
+  letter-spacing rem(1px)
+  color $white
+
+  background-color $yolk
+
+  +below('m')
+    margin-bottom rem(20px) // between year and title
+    padding rem(8px) rem(10px)
+    font-size $nano
+
+  +between('m', 'hd')
+    margin-bottom rem(25px)
+    padding rem(10px) rem(14px)
+    font-size $milli
+
+  +above('hd')
+    margin-bottom rem(25px)
+    padding rem(10px) rem(14px)
+    font-size $deci

@@ -4,10 +4,14 @@
 .c-footer
   clearfix()
   width 100%
-  padding-top rem(40px) /* footer content top padding */
-  padding-bottom rem(40px) /* footer content bottom padding */
+
   background-color $eggplant
   border-top rem(15px) solid $blueberry - 70%
 
-  +media-query(mediatype, bp-tablet)
+  +below('xl')
+    padding-top rem(40px) // footer content top padding
+    padding-bottom rem(40px) // footer content bottom padding
+
+  +above('xl')
     padding-top rem(60px)
+    padding-bottom rem(40px)

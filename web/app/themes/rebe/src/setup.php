@@ -108,7 +108,7 @@ add_action('after_setup_theme', function () {
      */
     new NavWalker([
         'menu_item_class'     => 'c-menu__item',
-        'active_class'        => 'c-menu__item--active',
+        'active_class'        => 'is-active',
         'menu_sub_item_class' => 'c-menu__subitem',
         'dropdown_class'      => 'c-menu__dropdown'
     ]);

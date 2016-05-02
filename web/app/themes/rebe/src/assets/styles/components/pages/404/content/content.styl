@@ -1,0 +1,32 @@
+/**
+ * 404 page content
+ *
+ *    Wraps:
+ *      - `c-404__title`
+ *      - `c-404__text`
+ *
+ */
+.c-404__content
+  align(both)
+  text-align center
+
+  +between('xs', 'm', orientation: landscape)
+    width rem(350px)
+
+  +between('m', 'l', orientation: landscape)
+    width rem(500px)
+
+  +between('xs', 'm', orientation: portrait)
+    width 80%
+
+  +between('l', 'xl')
+    width rem(640px)
+
+  +between('xl', 'hd')
+    width rem(860px)
+
+  +between('hd', 'uhd')
+    width rem(940px)
+
+  +above('uhd')
+    width rem(1040px)

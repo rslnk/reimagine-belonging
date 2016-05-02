@@ -1,0 +1,23 @@
+/**
+ *  Footer directory title (menu list title)
+ */
+.c-directories__title
+  @extend .o-heading
+
+  margin-bottom rem(20px)
+
+  font-weight $regular
+  text-transform uppercase
+  color $gray
+
+  +below('l')
+    font-size $nano
+    letter-spacing rem(3px)
+
+  +at('l')
+    font-size $pico
+    letter-spacing rem(1.5px)
+
+  +above('xl')
+    font-size $nano
+    letter-spacing rem(3px)

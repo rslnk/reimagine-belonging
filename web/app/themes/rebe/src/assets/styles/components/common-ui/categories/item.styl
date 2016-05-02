@@ -1,0 +1,27 @@
+/**
+ * Categories list item
+ */
+.c-categories__item
+    @extend .o-btn, .o-btn--small, .o-btn--disabled
+
+    display inline-block
+    float left
+    margin-right rem(2px) // horizontal space between items
+    margin-bottom rem(2px) // vertical space between items
+
+    font-family $base-heading-font
+    font-weight $thin
+
+    +between('xs', 'm')
+      font-size $femto
+      letter-spacing rem(.5px)
+
+    +between('m', 'l')
+      font-size $pico
+      letter-spacing rem(1px)
+
+    +between('l', 'xl')
+      font-size $nano
+
+    +above('xl')
+      font-size $micro

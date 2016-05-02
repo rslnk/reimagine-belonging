@@ -1,0 +1,23 @@
+/**
+ * Event preview content
+ *
+ *    Wraps:
+ *      - `c-event-preview__year`
+ *      - `c-event-preview__title`
+ */
+.c-event-preview__content
+  display block
+  position absolute
+  bottom rem(20px) // compensates `c-event-preview__strip` height
+
+  //border-right solid rem(1px) rgba($white, .3)
+
+  width 100%
+
+  transition all .3s ease-in // on `.c-event-preview` hover/focus
+
+  +below('l')
+    padding rem(20px)
+
+  +above('l')
+    padding rem(25px)

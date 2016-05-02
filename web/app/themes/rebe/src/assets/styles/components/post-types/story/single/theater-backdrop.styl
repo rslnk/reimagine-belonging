@@ -1,37 +1,42 @@
 /**
  *  Story theater view mode backdrop
- *
  */
-
-// Background transition aniamtion
 .c-story__theater-backdrop
+  // Background transition aniamtion
   transition background-color 1s ease-in-out
 
 // Background color modifiers
 .c-story__theater-backdrop--red
   @extend .c-story__theater-backdrop
-  background-color rgba(246, 49, 43, .75)
+
+  background-color rgba($rose, .75)
 
 .c-story__theater-backdrop--orange
   @extend .c-story__theater-backdrop
-  background-color rgba(224, 118, 20, .85)
+
+  background-color rgba($orange, .85)
 
 .c-story__theater-backdrop--yellow
   @extend .c-story__theater-backdrop
+
   background-color rgba($yolk, .85)
 
 .c-story__theater-backdrop--green
   @extend .c-story__theater-backdrop
-  background-color rgba(18, 238, 218, .85)
+
+  background-color rgba($mint, .85)
 
 .c-story__theater-backdrop--blue
   @extend .c-story__theater-backdrop
-  background-color rgba(0, 201, 255, .75)
+
+  background-color rgba($sky, .75)
 
 .c-story__theater-backdrop--indigo
   @extend .c-story__theater-backdrop
-  background-color rgba(47, 65, 224, .85)
+
+  background-color rgba($indigo, .85)
 
 .c-story__theater-backdrop--violet
   @extend .c-story__theater-backdrop
-  background-color rgba(232, 22, 198, .75)
+
+  background-color rgba(saturation($violet, 70%), .75)

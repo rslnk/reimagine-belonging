@@ -1,0 +1,34 @@
+/**
+ * Timeline switcher items (available timelines)
+ */
+ .c-timeline-switcher__item
+    @extend .o-btn
+
+    float left
+    margin-right rem(1px) // space between items
+    margin-top rem(1px)
+
+    padding rem(8px) rem(10px) // affects element size
+
+    letter-spacing rem(1.2px)
+    color $white
+    background-color $mint
+    transition background-color .2s ease-in
+
+    &:hover
+    &:focus
+      background-color $mint - 8%
+
+    +above('l')
+      font-size $pico // affects element size
+
+    +between('l', 'xl')
+      padding rem(12px) rem(16px)
+      font-size $micro
+
+    +between('xl', 'hd')
+      font-size $milli
+
+    +above('hd')
+      padding rem(14px) rem(18px)
+      font-size $centi

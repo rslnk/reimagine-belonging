@@ -1,0 +1,16 @@
+/**
+ *  Theater view
+ *
+ *    Styles `o-overlay` layer to create distraction-free view
+ *    for modal media content.
+ *
+*/
+.c-theater-view
+  @extend .o-overlay
+
+  background-color $black // alpha-channel fallback
+  background-color rgba($black, .7) // dark backdrop
+
+  +above('m')
+    padding-top 3.5%
+    padding-bottom 3.5%

@@ -27,7 +27,8 @@
         // Toggle modal menu
         $(function () {
             $('.js-modal-menu-open, .js-modal-menu-close').click(function () {
-                $($(this).attr('data-target')).toggle();
+                $($(this).attr('data-target')).fadeToggle();
+                $('.js-modal-menu').toggleClass('is-overlay');
             });
         });
 
@@ -39,7 +40,8 @@
             });
         });
 
-        $('.js-modal-menu').on('scroll touchmove mousewheel', function (event) {
+        // Prevent overlay scroll
+        $('.is-overlay').on('scroll touchmove mousewheel', function (event) {
             event.preventDefault();
         });
 
@@ -53,10 +55,9 @@
       init: function() {
         // JavaScript to be fired on the home page
 
-        var BackgroundImage   = $('.js-background-image');
-
         // Set home background image height to window height
         function setBackgroundImageHeigh() {
+            var BackgroundImage   = $('.js-background-image');
             BackgroundImage.height($(window).height());
         }
 
@@ -90,6 +91,7 @@
           PageContainer.height(windowHeight);
         }
 
+        // Apply page height
         setPageHeight();
 
         // Listen to screen orientation changes

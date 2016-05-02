@@ -1,0 +1,23 @@
+/**
+ * Media Block
+ *
+ *    Structures and syles media content and its metadata (such as image or video, title, caption
+ *    and credits).
+ *
+ *    Wraps:
+ *      - `.c-media-block__placeholder`
+ *      - `.c-media-block__credits`
+ *      - `.c-media-block__title`
+ *      - `.c-media-block__caption`
+*/
+.c-media-block
+  clearfix()
+
+  +below('l')
+    margin-bottom rem(15px) // space between media-block and other sidebar objects
+
+  +between('l', 'hd')
+    margin-bottom rem(20px)
+
+  +above('hd')
+    margin-bottom rem(40px)

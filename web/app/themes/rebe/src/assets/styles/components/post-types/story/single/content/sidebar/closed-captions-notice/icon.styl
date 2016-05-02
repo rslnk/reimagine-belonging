@@ -1,0 +1,39 @@
+/**
+ * Closed Captions notice icon
+ */
+.c-closed-captions-notice__icon
+
+  color $gray--medium
+
+  // Portrait screens
+  +below('m', orientation: portrait)
+    stack()
+
+    margin-bottom rem(10px)
+    font-size rem(25px) // icon size
+
+  +above('m', orientation: portrait)
+    column(1/8)
+
+    margin-top rem(-5px) // fix quote icon top alignment
+    margin-bottom 0
+    font-size rem(35px)
+
+  // Landscape screens
+  +between('s', 'l', orientation: landscape)
+    column(1/8)
+
+    margin-top rem(-5px) // fix quote icon top alignment
+    margin-bottom 0
+    font-size rem(35px)
+
+  +between('l', 'hd')
+    stack()
+
+    margin-top rem(-6px)
+    margin-bottom rem(15px) // between icon and content
+    font-size rem(30px)
+
+  +above('hd')
+    margin-top rem(-9px)
+    font-size rem(45px)

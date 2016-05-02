@@ -1,0 +1,20 @@
+/**
+ *  Footer directory (container)
+ *
+ *   Wraps:
+ *      - `c-directories__section`
+ *
+ */
+.c-directories
+  clearfix()
+
+  +below('xl')
+    stack()
+    margin-bottom rem(30px) // between direcories and legal sections
+
+  +above('xl')
+    column(8/12)
+    margin-bottom rem(65px)
+
+  +above('hd')
+    column(9/12)

@@ -1,0 +1,28 @@
+/**
+ * Post 'close' icon
+ */
+.c-post-navigation__close
+  @extend .o-btn
+
+  color $gray
+
+  &:hover
+  &:focus
+    color $gray - 30
+    transform rotate(90deg) // icon rotation animation effect
+
+  +below('m')
+    absolute rem(10px) rem(10px) false false
+    font-size rem(25px)
+
+  +between('m', 'l')
+    absolute rem(20px) rem(20px) false false
+    font-size rem(30px)
+
+  +between('l', 'xl')
+    absolute rem(20px) rem(20px) false false
+    font-size rem(35px)
+
+  +above('xl')
+    absolute rem(20px) rem(20px) false false
+    font-size rem(45px)

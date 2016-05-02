@@ -1,0 +1,12 @@
+/**
+ *  Directory toggle icon
+ */
+.c-directories__toggle
+  @extend .o-btn
+
+  absolute -2px 0 false false // position icon next to section title
+  font-size rem(20px)
+  color $lavender + 50%
+
+  +above('m')
+    display none // hide toggle icon on larger screens

@@ -1,0 +1,62 @@
+/*
+ * Site header menu list
+*/
+.c-header__list
+  @extend .o-ui-list
+
+  display none // hide menu on small screens
+  position relative
+  float right // float list to the right edge
+  width auto
+  line-height 0 // ensures there's no extra vertical space around the list
+
+  font-family $base-body-font
+  font-weight thin
+  letter-spacing rem(1.5px)
+  text-transform uppercase
+
+  +above('l')
+    display block // display menu on screens larger then mobile/tablet
+
+  // Menu item
+  .c-menu__item
+    display inline-block
+    padding-right rem(20px) // space between menu items
+    line-height 20px // must be equal to logo height, to ensure accurate vertical alignment
+
+    +above('xl')
+      padding-right rem(25px) // bigger padding between items on larger screens
+
+    &:last-of-type
+      padding-right 0
+
+    // Menu item link
+    a
+      font-size $femto
+      color $base-font-color
+      transition color .2s ease-in
+
+      &:hover
+      &:focus
+        color $mint
+
+  // Active menu link
+  .is-active
+    a
+      color $mint
+
+// Home modifier
+// Menu items are slightly bigger on the homepage
+.c-header__list--home
+  @extend .c-header__list
+
+  .c-menu__item
+    line-height 25px // must be equal to logo height, to ensure accurate vertical alignment
+
+    +above('xl')
+      padding-right rem(28px) // bigger padding between items on larger screens
+
+    // Active menu link
+    a
+      font-size $pico
+      color $gray--light

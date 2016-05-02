@@ -1,64 +1,90 @@
 /**
- * Story preview (wrapper)
- *
- *    Styles preview item as a square box
+ * Story preview
  *
  *    Wraps:
- *      .c-story-preview__gradient
- *      .c-story-preview__content
+ *      - `c-strory-preview__gradient, c-strory-preview__gradient--{color-modifier}`
+ *      - `c-story-preview__content`
  *
- *    Color:
+ *    Focus/hover:
+ *      - Triggers title animation
+ *      - Changes color gradient opacity
+ *
+ *    Color modifiers:
+ *
  *    Each story has a color variable assigned to it. This variable's value is passed to
  *    the story preview item elements as CSS class modifier, like `--{{ story.preview_image_color }}`.
  *
- *    Color modifiers:
  *    To style story preview based on assigned color we use
  *    predifined color modifiers for the following elements:
  *
- *    .c-story-preview            — color modifiers for the background image fallback
- *    .c-story-preview__gradient  — color modifiers for gradient overlaying the background image
- *    .c-story-preview__title     — color modifiers for title highlight animation on hover
+ *    .c-story-preview--{color}          - color modifiers for the background image fallback
+ *    .c-strory-preview__gradient--color - color modifiers for gradient overlaying the background image
+ *    .c-story-preview__title--color     - color modifiers for title highlight animation on hover
  *
  */
 .c-story-preview
-  padding-bottom 80% /* aspect ration */
-  +media-query(mediatype, bp-mobile--landscape)
+  position relative
+
+  transition .5s ease-in-out
+
+  // Animation effects for child elements
+  &:hover
+  &:focus
+
+    // trigger title background animation
+    .c-story-preview__title
+      background-position -99%
+
+    // decrease gradient intensitiy
+    .c-strory-preview__gradient
+      opacity .45
+
+  // Aspect ratios
+  +between('xs', 'm', orientation: landscape)
     padding-bottom 65%
-  +media-query(mediatype, bp-tablet)
-    padding-bottom 33.333333333333336%
+
+  +between('xs', 'm', orientation: portrait)
+    padding-bottom 80%
+
+  // Only square ratio starting from 'm' size
+  +between('m', 'l')
     span(1/3)
-  +media-query(mediatype, bp-desktop)
-    padding-bottom 25%
+    padding-bottom 33.333333333333336%
+
+  +between('l', 'xl')
     span(1/4)
-  +media-query(mediatype, bp-desktop--medium)
+    padding-bottom 25%
+
+  +between('xl', 'hd')
     span(1/5)
     padding-bottom 20%
 
-// Color modifiers
+  +between('hd', 'uhd')
+    span(1/6)
+    padding-bottom 16.666666666666668%
+
+  +above('uhd')
+    span(1/6)
+    padding-bottom 16.5%
+
+// Fallback color modifiers
 .c-story-preview--red
-  @extend .c-story-preview
-  background-color #f6312b
+  background-color $rose
 
 .c-story-preview--orange
-  @extend .c-story-preview
-  background-color #e07614
+  background-color $orange
 
 .c-story-preview--yellow
-  @extend .c-story-preview
-  background-color #ffa800
+  background-color $yolk
 
 .c-story-preview--green
-  @extend .c-story-preview
-  background-color #12eeda
+  background-color $mint
 
 .c-story-preview--blue
-  @extend .c-story-preview
-  background-color #00c9ff
+  background-color $sky
 
 .c-story-preview--indigo
-  @extend .c-story-preview
-  background-color #2f41e0
+  background-color $indigo
 
 .c-story-preview--violet
-  @extend .c-story-preview
-  background-color #e51bcb
+  background-color $violet

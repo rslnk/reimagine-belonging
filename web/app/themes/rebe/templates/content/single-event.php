@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <article class="c-event">
       
-    <header class="c-event__hero">
+    <header class="c-hero--event">
 
       <?= App\list_categories(); ?>
 
@@ -30,14 +30,14 @@
         <dateformat><?php echo $end_date; ?></dateformat>
       </div>
       <!-- share event -->
-      <ul class="c-post-share__list">
-        <li class="c-post-share__item">
-          <a class="o-icon c-icon-facebook--circle c-post-share__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+      <ul class="c-post-sharing__list">
+        <li class="c-post-sharing__item">
+          <a class="o-icon c-icon-facebook--circle c-post-sharing__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
             <span class="u-visually-hidden">Share on Facebook</span>
           </a>
         </li>
-        <li class="c-post-share__item">
-          <a class="o-icon c-icon-twitter--circle c-post-share__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+        <li class="c-post-sharing__item">
+          <a class="o-icon c-icon-twitter--circle c-post-sharing__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
             <span class="u-visually-hidden">Share on Twitter</span>
           </a>
         </li>
@@ -97,14 +97,14 @@
             <?php endif; ?>
 
             <?php if(get_sub_field('sidebar_content_type') == 'quote'): ?>
-              <blockquote class="c-event-quote">
+              <blockquote class="c-quote">
                 <?php while( have_rows('quote') ): the_row(); ?>
-                  <div class="o-icon c-icon-quote c-event-quote__icon"></div>
-                  <h4 class="c-event-quote__text"><?php the_sub_field('text'); ?></h4>
-                  <div class="c-event-quote__meta">
+                  <div class="o-icon c-icon-quote c-quote__icon--event"></div>
+                  <h4 class="c-quote__text"><?php the_sub_field('text'); ?></h4>
+                  <div class="c-quote__meta">
                     <span>—</span>
-                    <span class="o-quote__author"><?php the_sub_field('author'); ?><span>, </span></span>
-                    <span class="o-quote__source"><?php the_sub_field('source'); ?></span>
+                    <span class="c-quote__author"><?php the_sub_field('author'); ?><span>, </span></span>
+                    <span class="c-quote__source"><?php the_sub_field('source'); ?></span>
                   </div>
                 <?php endwhile; ?>
               </blockquote>
@@ -113,9 +113,9 @@
             <?php if(get_sub_field('sidebar_content_type') == 'sidenote'): ?>
               <div class="c-sidebar-sidenote">
                 <?php while( have_rows('sidenote') ): the_row(); ?>
-                  <div class="o-sidenote">
-                    <h4 class="c-event__sidenote-title"><?php the_sub_field('title'); ?></h4>
-                    <p class="c-event__sidenote-caption"><?php the_sub_field('caption'); ?></p>
+                  <div class="c-sidenote">
+                    <h4 class="c-sidenote-title"><?php the_sub_field('title'); ?></h4>
+                    <p class="c-sidenote__caption"><?php the_sub_field('caption'); ?></p>
                   </div>
                 <?php endwhile; ?>
               </div>
@@ -128,16 +128,16 @@
 
     </div>
 
-    <div class="c-post-footnotes">
+    <div class="c-footnotes">
 
       <?php if(get_field('sources')): ?>
-        <div class="c-post-footnotes__column">
-          <h4 class="c-section-title"><?php the_field('event_sources_title', 'option'); ?></h4>
-            <ol class="c-references__list">
+        <div class="c-footnotes__column">
+          <h4 class="c-footnotes__title"><?php the_field('event_sources_title', 'option'); ?></h4>
+            <ol class="c-footnotes__list">
 
             <?php while( have_rows('sources') ): the_row(); ?>
 
-                <li class="c-references__item">
+                <li class="c-footnotes__item">
 
                   <?php if( get_sub_field('author') ): ?>
                     <?php while( have_rows('author') ): the_row(); ?>
@@ -232,13 +232,13 @@
       <?php endif; ?>
 
       <?php if(get_field('resources')): ?>
-        <div class="c-post-footnotes__column">
-          <h4 class="c-section-title"><?php the_field('event_resources_title', 'option'); ?></h4>
-            <ol class="c-references__list">
+        <div class="c-footnotes__column">
+          <h4 class="c-footnotes__title"><?php the_field('event_resources_title', 'option'); ?></h4>
+            <ol class="c-footnotes__list">
 
             <?php while( have_rows('resources') ): the_row(); ?>
 
-                <li class="c-references__item">
+                <li class="c-footnotes__item">
 
                   <?php if( get_sub_field('author') ): ?>
                     <?php while( have_rows('author') ): the_row(); ?>

@@ -1,0 +1,40 @@
+/**
+ *  Theater view content
+ *
+ *    Theater container for the actual content
+ *    Adds margins, paddings and background
+*/
+.c-theater-view__content
+  position relative
+  min-height 600px
+
+  background-color $white
+
+  +below('m')
+    center(rem(600px), pad: rem(15px))
+    padding-top rem(15px)
+    padding-bottom rem(15px)
+    width 100%
+
+  +between('m', 'l')
+    center(rem(860px), pad: rem(30px))
+    padding-top rem(30px)
+    padding-bottom rem(30px)
+    width 90%
+
+  +between('l', 'xl')
+    center(rem(1050px), pad: rem(40px))
+    padding-top rem(30px)
+    padding-bottom rem(30px)
+    width 90%
+
+  +between('xl', 'uhd')
+    center(rem(1200px), pad: rem(80px))
+    padding-top rem(40px)
+    padding-bottom rem(40px)
+    width 80%
+
+  +above('uhd')
+    center(rem(1660px), pad: rem(100px))
+    padding-top rem(60px)
+    padding-bottom rem(60px)

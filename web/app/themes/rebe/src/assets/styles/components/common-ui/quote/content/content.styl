@@ -1,0 +1,18 @@
+/**
+ * Quote content
+ *
+ *    Wraps:
+ *      - `c-quote__content`
+ *        - `c-quote__text`
+ *        - `c-quote__meta`
+ */
+.c-quote__content
+
+  +below('m')
+    stack()
+
+  +between('m', 'l')
+    column(7/8)
+
+  +above('l')
+    stack()

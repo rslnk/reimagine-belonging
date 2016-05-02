@@ -15,6 +15,7 @@ class Dictionary
         $data = [
 
             // Stories page
+            'stories_page_title'                     => get_field('stories_page_title', 'option'),
             'add_story_banner_text'                  => get_field('stories_add_story_banner_text', 'option'),
             'all_stories_filter_label'               => get_field('all_stories_filter_label', 'option'),
             'total_stories_label'                    => get_field('total_stories_label', 'option'),
@@ -23,6 +24,7 @@ class Dictionary
             'stories_search_result_none_message'     => get_field('stories_search_result_none_message', 'option'),
 
             // Events page (Timeline)
+            'timeline_page_title'                    => get_field('timeline_page_title', 'option'),
             'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
             'all_events_filter_label'                => get_field('timeline_all_events_filter_label', 'option'),
             'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),

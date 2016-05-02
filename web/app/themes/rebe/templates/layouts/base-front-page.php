@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
   <?php get_template_part('components/head'); ?>
   <body class="c-home js-home">
-    <div class="c-home__background js-background-image">
+    <div class="has-background js-background-image">
       <?php
         do_action('get_header');
         get_template_part('components/header');

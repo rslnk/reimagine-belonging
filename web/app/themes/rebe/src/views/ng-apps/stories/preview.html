@@ -1,17 +1,14 @@
-<div class="c-story-preview--{{ story.preview_image_color }} u-image-cover" style="background-image: url({{story.preview_image}})">
-  <div class="c-story-preview__gradient--{{ story.preview_image_color }}"></div>
+<div class="c-story-preview c-story-preview--{{ story.preview_image_color }} u-image-cover" style="background-image: url({{story.preview_image}})">
+  <div class="c-strory-preview__gradient c-strory-preview__gradient--{{ story.preview_image_color }}"></div>
   <div class="c-story-preview__content">
-    <h2 class="c-story-preview__title c-story-preview__title--{{ story.preview_image_color }}">
-      {{ story.title }}
-    </h2>
-    <div class="c-story-preview__hero">
-      <h3>
+    <div class="c-story-preview__caption">
+      <h2 class="c-story-preview__title c-story-preview__title--{{ story.preview_image_color }}">
+        {{ story.title }}
+      </h2>
+      <h3 class="c-story-preview__protagonist">
         <strong>{{ story.hero }}</strong>,
         {{ story.city[0].term_name }}
       </h3>
-    </div>
-    <div class="o-icon c-icon-play--circle c-story-preview__icon">
-      <span class="u-visually-hidden">Open Story</span>
     </div>
   </div>
 </div>

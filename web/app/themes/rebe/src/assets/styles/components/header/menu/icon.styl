@@ -1,0 +1,27 @@
+/**
+ * Site header menu icon (menu toggle)
+ */
+.c-header__menu-icon
+  @extend .o-btn
+
+  float right
+  transform rotate(-90deg) // rotate icon vertically
+
+  font-size rem(30px) // icon size
+  line-height rem(20px) // required for vertical alignment with the logo
+  color $mint // icon color
+
+  &:hover
+  &:focus
+    color $mint + 50
+
+  +above('l')
+    display none // hide icon on larger screens
+
+// Home modifier
+.c-header__menu-icon--home
+  @extend .c-header__menu-icon
+
+  +above('m')
+    font-size rem(32px)
+    line-height rem(25px) // required for vertical alignment with the logo

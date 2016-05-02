@@ -1,7 +1,7 @@
 <?php while (have_posts()) : the_post(); ?>
   <article class="c-story">
 
-    <header class="c-story__header">
+    <header class="c-story__head">
 
       <?= Apps\list_categories(); ?>
 
@@ -37,13 +37,13 @@
       <div class="c-story__sidebar">
 
           <?php if(get_field('excerpt')): ?>
-            <div class="c-story-quote">
-              <div class="o-icon c-icon-quote c-event-quote__icon"></div>
-              <h2 class="c-story-quote__text"><?php the_field('excerpt'); ?></h2>
-              <div class="c-story-quote__meta">
+            <div class="c-quote">
+              <div class="o-icon c-icon-quote c-quote__icon--event"></div>
+              <h2 class="c-quote__text--story"><?php the_field('excerpt'); ?></h2>
+              <div class="c-quote__meta--story">
                 <span>—</span>
-                <span class="c-story-quote__author"><?php the_field('protagonist_name'); ?></span>
-                <span class="c-story-quote__city"><?php echo $city_name; ?></span>
+                <span class="c-quote__author--story"><?php the_field('protagonist_name'); ?></span>
+                <span class="c-quote__city"><?php echo $city_name; ?></span>
               </div>
             </div>
           <?php endif; ?>
@@ -59,14 +59,14 @@
         <?php endif; ?>
 
         <!-- share story -->
-        <ul class="c-post-share__list">
-          <li class="c-post-share__item">
-            <a class="o-icon c-icon-facebook--circle c-post-share__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+        <ul class="c-post-sharing__list">
+          <li class="c-post-sharing__item">
+            <a class="o-icon c-icon-facebook--circle c-post-sharing__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
               <span class="u-visually-hidden">Share on Facebook</span>
             </a>
           </li>
-          <li class="c-post-share__item">
-            <a class="o-icon c-icon-twitter--circle c-post-share__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+          <li class="c-post-sharing__item">
+            <a class="o-icon c-icon-twitter--circle c-post-sharing__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
               <span class="u-visually-hidden">Share on Twitter</span>
             </a>
           </li>

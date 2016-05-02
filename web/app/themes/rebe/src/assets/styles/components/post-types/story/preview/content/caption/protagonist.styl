@@ -1,0 +1,34 @@
+/**
+ * Story preview protagonist (hero)
+ *
+ *   Also styles protagonist's location (city)
+ */
+.c-story-preview__protagonist
+  position absolute
+  bottom 0
+
+  font-family $base-heading-font
+  font-weight $thin
+  font-style normal
+  letter-spacing rem(1px)
+  text-transform uppercase
+  color $white
+
+  strong
+  em
+  b
+    font-weight $regular
+
+  +below('m')
+    font-size $nano
+    letter-spacing rem(1.2px)
+
+  +between('m', 'l')
+    font-size $pico
+
+  +between('l', 'xl')
+    font-size $pico
+
+  +above('xl')
+    letter-spacing rem(2px)
+    font-size $micro

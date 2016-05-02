@@ -1,0 +1,15 @@
+/**
+ * Timeline switcher (active) timeline
+ */
+.c-timeline-switcher__timeline
+  vertical-align bottom // vertical alignment with icon
+  font-size $micro // affects element size
+
+  +between('l', 'xl')
+    font-size $centi
+
+  +between('xl', 'hd')
+    font-size $deca
+
+  +above('hd')
+    font-size $kilo

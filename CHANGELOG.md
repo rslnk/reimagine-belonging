@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## 1.8.0
+
+-   Add 'events' and 'stories' page titles to side dictionary
+-   Update default page head desing
+-   Improve h2-h6 scope styles when used in WordPress editor
+-   Drop 'play' icon from 'story' preview
+-   Improve 'story' previews colors, font size and animations
+-   Improve timeline and 'event' preview design, add animations
+-   Move post sharing options to sidebar
+-   Adapt to new homepage design
+-   Add improved logotype
+-   Improve typography (shift from uppercase)
+-   Improve all existing styles
+-   Add `.stylintrc` — stylus linter rules
+-   Improve `.styl` files commentaries
+-   Split styles and reorganize by directories
+-   Improve design addaptation to mobile portrait/landscape and hd screens
+-   Switch from Kouto-Swiss media queries to Rupture
+
 ## 1.7.0 March 9th, 2016
 
 -   Rename home tagline and buttons option fields

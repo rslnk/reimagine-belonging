@@ -1,0 +1,36 @@
+/**
+ * Dashboard (filter information) container
+ *
+ *   Wraps:
+ *      - `c-dashboard__info`
+ *      - `c-dashboard__pagination`
+ *
+ */
+.c-dashboard
+  clearfix()
+  margin-bottom rem(20px) // between dashboard and entries list
+
+  font-family $base-heading-font
+  font-weight $thin
+  font-style normal
+  text-transform uppercase
+  color $gray--medium
+
+  strong
+    font-weight $regular
+    color $carbon-black
+
+  +below('m')
+    font-size $femto
+    letter-spacing rem(.5px)
+
+  +between('m', 'l')
+    font-size $pico
+    letter-spacing rem(1px)
+
+  +between('l', 'xl')
+    font-size $nano
+
+  +above('xl')
+    letter-spacing rem(2px)
+    font-size $micro

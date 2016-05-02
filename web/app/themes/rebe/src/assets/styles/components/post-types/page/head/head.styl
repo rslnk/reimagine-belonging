@@ -1,0 +1,23 @@
+/**
+ * Page head
+ *
+ *    Wraps:
+ *      - `c-page__title`
+*/
+.c-page__head
+  position relative
+  clearfix()
+  width 100%
+
+  background-color $mint
+
+  +below('l')
+    min-height rem(180px)
+    margin-bottom 30px
+
+  +above('l')
+    min-height rem(340px)
+    margin-bottom 40px
+
+  .c-page__head-content
+    @extend .o-centered-content

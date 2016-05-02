@@ -1,0 +1,14 @@
+/**
+ * Event preview image overlay
+ */
+.c-event-preview__gradient
+  display block
+  position absolute
+
+  size 100% // spans across entire preview
+
+  background-image linear-gradient(0deg, rgba(5, 7, 24, .9) 0, rgba(5, 7, 24, 0) 60%)
+
+  // Ideally this should be moved elsewhere
+  // but for now the best visual result is achieved, so we're keeping it here.
+  border-right solid rem(1px) rgba($white, .3)

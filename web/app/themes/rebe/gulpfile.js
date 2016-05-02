@@ -231,7 +231,7 @@ gulp.task('iconfont', function(done){
               glyphs: glyphs,
               fontName: fontName,
               fontPath: fontPath,
-              className: objectsClass
+              objectsClass: objectsClass
             }))
             .pipe(gulp.dest('./src/assets/styles/objects/'))
             .on('finish', cb);
@@ -243,9 +243,10 @@ gulp.task('iconfont', function(done){
           gulp.src('./src/assets/styles/templates/_icons.styl') /* components template */
             .pipe(consolidate('lodash', {
               glyphs: glyphs,
-              className: componentsClass
+              objectsClass: objectsClass,              
+              componentsClass: componentsClass
             }))
-            .pipe(gulp.dest('./src/assets/styles/components/ui-blocks'))
+            .pipe(gulp.dest('./src/assets/styles/components/common-ui'))
             .on('finish', cb);
         });
       },

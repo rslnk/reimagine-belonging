@@ -1,0 +1,42 @@
+/**
+ * Modal menu list
+ */
+.c-modal-menu__list
+  @extend .o-ui-list
+
+  text-align center
+
+  // Menu item link
+  .c-menu__item
+    font-family $base-heading-font
+    font-weight $light
+
+    +below('m', orientation: landscape)
+      display inline-block // inline menu items
+      padding rem(10px)
+      font-size $centi
+
+    +below('m', orientation: portrait)
+      padding rem(10px) 0
+      font-size $centi
+
+    +above('m', orientation: portrait)
+      padding rem(20px) 0
+      font-size $mega
+
+    // Menu item link
+    a
+      @extend .o-btn
+
+      letter-spacing rem(2px)
+      color $white
+
+      &:hover
+      &:focus
+        color $mint + 20%
+        letter-spacing rem(8px)
+
+  // Active menu item link
+  .is-active
+    a
+      color $mint

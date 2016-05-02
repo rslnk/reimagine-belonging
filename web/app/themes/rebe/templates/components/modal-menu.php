@@ -1,6 +1,6 @@
 <div class="c-modal-menu js-modal-menu">
 
-    <a class="o-icon c-icon-close--circle c-modal-menu__close js-modal-menu-close" data-target=".js-modal-menu"></a>
+    <a class="c-icon-close--circle c-modal-menu__close js-modal-menu-close" data-target=".js-modal-menu"></a>
 
     <nav class="c-modal-menu__content">
 

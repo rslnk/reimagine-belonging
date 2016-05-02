@@ -9,7 +9,7 @@
 
 .t-medium-gray--focus
   @extend .t-medium-gray
-  variations = monochrome($gray--medium)
+
   &:hover
   &:focus
-    background-color variations[1]
+    background-color $gray--medium - 10%

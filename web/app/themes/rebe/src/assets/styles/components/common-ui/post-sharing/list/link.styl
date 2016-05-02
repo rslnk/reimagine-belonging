@@ -1,0 +1,32 @@
+/**
+ * Post sharing link
+ */
+.c-post-sharing__link
+  @extend .o-btn
+
+  +below('m')
+    font-size rem(30px)
+
+  +between('m', 'hd')
+    font-size rem(32px)
+
+  +above('hd')
+    font-size rem(36px)
+
+// Event post modifier
+.c-post-sharing__link--event
+  @extend .c-post-sharing__link
+
+  color $indigo
+
+  &:hover
+    color $indigo + 50
+
+// Story post modifier
+.c-post-sharing__link--story
+  @extend .c-post-sharing__link
+
+  color $blueberry
+
+  &:hover
+    color $blueberry + 50

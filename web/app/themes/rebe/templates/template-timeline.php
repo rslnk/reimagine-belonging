@@ -14,7 +14,6 @@ use ReBe\Routing\UserAgent;
  */
 ?>
 <main class="c-events__content">
-    <?php get_template_part('components/page-head'); ?>
     <?php
     // Output content for crawlers
     if (UserAgent::check('crawler')): get_template_part('content/events'); ?>

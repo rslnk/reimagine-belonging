@@ -2,91 +2,97 @@
  * Style headings in submitted content (i.e. via WordPress editor)
 */
 .s-headings
+
   h2
   h3
   h4
   h5
   h6
     @extend .o-heading
-    margin-top rem(30px)
-    margin-bottom rem(10px)
+
+    font-weight $regular
+    line-height 1.2
+
+    strong
+    em
+    b
+      font-weight $semibold
+
+    +below('l')
+      margin-bottom rem(10px)
+
+    +above('l')
+      margin-bottom rem(20px)
 
 .s-headings
+
   h2
-    font-size $deci
-    font-weight $regular
     line-height 1.3
-    strong, em, b
-      font-weight $semibold
-    +media-query( mediatype, bp-tablet )
-      margin-top rem(35px)
-      margin-bottom rem(20px)
-      font-size $centi
-    +media-query( mediatype, bp-desktop )
-      margin-top rem(40px)
-      margin-bottom rem(15px)
-      font-size size--deca
-    +media-query( mediatype, bp-desktop--medium )
+
+    +below('m')
+      font-size $deci
+
+    +between('m', 'l')
+      font-size $deca
+
+    +between('l', 'hd')
+      font-size $hecto
+
+    +above('hd')
       font-size $kilo
 
-  h2:first-of-type
-  h3:first-of-type
-    margin-top 0
-
   h3
-    font-size $centi
-    font-weight $light
-    line-height 1.2
-    +media-query( mediatype, bp-tablet )
-      margin-top rem(30px)
-      margin-bottom rem(15px)
-      font-size $micro
-    +media-query( mediatype, bp-desktop )
-      font-size $milli
-      font-weight $light
-    +media-query( mediatype, bp-desktop--medium )
-      margin-bottom rem(20px)
+
+    +below('m')
+      font-size $centi
+
+    +between('m', 'l')
       font-size $deci
+
+    +between('l', 'hd')
+      font-size $deca
+
+    +above('hd')
+      font-size $hecto
+
   h4
-    font-size $micro
-    font-weight $light
-    line-height 1.2
-    +media-query( mediatype, bp-tablet )
-      margin-top rem(30px)
-      margin-bottom rem(10px)
-      font-size $nano
-    +media-query( mediatype, bp-desktop )
-      font-size $micro
-    +media-query( mediatype, bp-desktop--medium )
-      margin-bottom rem(15px)
+
+    +below('m')
       font-size $milli
+
+    +between('m', 'l')
+      font-size $centi
+
+    +between('l', 'hd')
+      font-size $deci
+
+    +above('hd')
+      font-size $deca
+
   h5
-    margin-bottom rem(8px)
-    font-size $nano
-    font-weight $light
-    line-height 1.2
-    +media-query( mediatype, bp-tablet )
-      margin-top rem(30px)
-      margin-bottom rem(10px)
-      font-size $pico
-    +media-query( mediatype, bp-desktop )
-      font-size $nano
-    +media-query( mediatype, bp-desktop--medium )
-      margin-bottom rem(15px)
+
+    +below('m')
       font-size $micro
+
+    +between('m', 'l')
+      font-size $milli
+
+    +between('l', 'hd')
+      font-size $centi
+
+    +above('hd')
+      font-size $deci
+
   h6
-    margin-bottom rem(8px)
-    font-size $nano
-    font-weight $semibold
-    text-transform none
-    letter-spacing normal
-    line-height 1.2
-    +media-query( mediatype, bp-tablet )
-      margin-top rem(30px)
-      margin-bottom rem(15px)
-      font-size $pico
-    +media-query( mediatype, bp-desktop )
+
+    +below('m')
       font-size $nano
-    +media-query( mediatype, bp-desktop--medium )
-      margin-bottom rem(12px)
-      font-size $micro
+
+    +between('m', 'l')
+      font-size $milli
+
+    +between('l', 'hd')
+      font-size $centi
+
+    +above('hd')
+      font-size $deci

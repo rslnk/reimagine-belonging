@@ -1,0 +1,26 @@
+/**
+ * Event preview year
+ */
+.c-event-preview__year
+  display inline-block
+
+  font-family $base-heading-font
+  font-weight $thin
+  color $white
+
+  background-color rgba($yolk, .8)
+
+  +below('xl')
+    margin-bottom rem(15px)
+    padding rem(6px) rem(8px)
+    font-size $nano
+    letter-spacing rem(2px)
+
+  +between('xl', 'hd')
+    margin-bottom rem(15px)
+    padding rem(6px) rem(8px)
+    font-size $milli
+    letter-spacing rem(2px)
+
+  +above('hd')
+    font-size $centi

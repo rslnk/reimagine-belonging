@@ -3,23 +3,31 @@
 // 2. COLORS
 //
 
+// Monochrome
 $white              = #ffffff
 $black              = #000000
-$carbon-black       = #232326
 
+// Shades of gray
 $gray--light        = #eeeef1
 $gray               = #cdcdd7
 $gray--medium       = #9b9ba5
 $gray--dark         = #757580
 
-$eggplant           = #05041b
-$indigo             = #2418b7
+// Spectrum
+$raspberry          = #e816c6
+$violet             = #7800ff
 $blueberry          = #6231d2
 $lavender           = #53527e
+$indigo             = #2418b7
+$eggplant           = #05041b
+$carbon-black       = #232326
+$sky                = #0084ff
 $mint               = #33d1dc
 $lemon              = #ffcc00
 $yolk               = #ffc122
+$orange             = #e07614
 $strawberry         = #e9424e
+$rose               = #e72939
 
 //
 // 3. TYPEFACES
@@ -94,29 +102,13 @@ $base-spacing-unit  = rem($base-line-height)
 
 rupture.scale          = 0    rem(400px)  rem(600px)  rem(800px)  rem(1050px)  rem(1800px)  rem(2560px)
 //                       └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────
-rupture.scale-names    =     'xs'        's'         'm'         'l'         'xl'        'hd'     'ultra-hd'
+rupture.scale-names    =     'xs'        's'         'm'         'l'         'xl'        'hd'       'uhd'
 
 rupture.enable-em-breakpoints   = true
 rupture.base-font-size          = $base-font-size
 rupture.retina-density          = 1.25
 rupture.density-queries         = 'webkit' 'dpi'
 
-// Remove start: ------------------------------>
-mediatype              = only screen
-bp-mobile--portrait    = min-width 0
-bp-mobile--landscape   = min-width 400px
-bp-tablet--portrait    = min-width 550px
-bp-tablet--landscape   = min-width 767px
-bp-desktop--small      = min-width 1024px
-bp-desktop--medium     = min-width 1280px
-bp-desktop--large      = min-width 1600px
-bp-desktop--xlarge     = min-width 1920px
-bp-desktop--4k         = min-width 2560px
-// Common aliases
-bp-mobile              = bp-mobile--portrait
-bp-tablet              = bp-tablet--portrait
-bp-desktop             = bp-desktop--small
-//remove end ----------------------------------<
 // @stylint on
 
 //

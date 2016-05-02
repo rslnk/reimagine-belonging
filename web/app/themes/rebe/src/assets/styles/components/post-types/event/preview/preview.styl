@@ -1,9 +1,69 @@
+/**
+ * Event preview
+ *
+ *    Wraps:
+ *      - `c-event-preview__gradient`
+ *      - `c-event-preview__content`
+ *
+ *    Note: this class has nested `is-disabled` class. As a temporary solution `is-disabled` class
+ *    is not applyied dynamically (as it should be), so by default it set to `opacity: 0`.
+ *    When filter is applied, a `c-event-preview--disabled` modifier is added by Angular, thereofore
+ *    we describe `is-disabled` class one more time under this modifier. This solution is clumsy and
+ *    and should be reworked when the timeline functionality is refactored.
+ *
+ *    `is-in-focus` nested class helps to create animation on preview item hover/focus.
+ *
+ */
 .c-event-preview
-  float left
-  border-bottom solid rem(1px) $white
-  border-left solid rem(1px) $white
-  background-color $lemon
-  transition opacity .3s ease-in
+  @extend .o-btn
 
+  position relative
+  float left
+
+  background-color $yolk // image fallback
+
+  // Conditional class (see note above)
+  .is-disabled
+    opacity 0
+    transition opacity .3s ease-in-out
+
+  // This sub-class presets our preview hover/focus animation
+  .is-in-focus
+    display block
+    position absolute
+    bottom 0
+
+    width 100%
+
+    height 20px
+    height 0 // initial position
+
+    background-image linear-gradient(0deg, rgba($yolk, 1) 5%, rgba($yolk, .65) 100%)
+
+    transition all .3s ease-in-out
+
+  &:hover
+  &:focus
+
+    // Move content up
+    .c-event-preview__content
+      bottom 30%
+
+    // Fill preview with solid color (from bottom up)
+    .is-in-focus
+      height 100%
+
+// Disabled modifier
 .c-event-preview--disabled
-  opacity 0.5
+  cursor default
+
+  .is-disabled
+      opacity .7
+
+      position absolute
+      z-index 99
+      size 100% // spans across entire preview
+
+      background-color: $lemon + 30%
+
+      transition opacity .3s ease-in-out

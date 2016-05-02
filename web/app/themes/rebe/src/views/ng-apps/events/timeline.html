@@ -1,5 +1,7 @@
 <div class="c-events__head js-wrapper-block">
 
+  <h1 class="c-events__title" ng-bind-html="siteConfig.timeline_page_title"></h1>
+
   <!-- timeline switcher-->
   <timeline-switcher></timeline-switcher>
 
@@ -7,19 +9,19 @@
   <div class="c-categories-filter">
 
     <!-- categories list -->
-    <ul class="c-categories-filter__list">
+    <ul class="c-category-filter__list">
 
       <!-- 'all topics' button -->
-      <li class="c-categories-filter__item"
-        ng-class="{ 'c-categories-filter__active--events': filter.topics.length === 0 }"
+      <li class="c-category-filter__item"
+        ng-class="{ 'is-active--events': filter.topics.length === 0 }"
         ng-click="resetTopicsFilter()">
         {{ siteConfig.all_events_filter_label }}
       </li>
 
       <!-- topics -->
-      <li class="c-categories-filter__item"
+      <li class="c-category-filter__item"
         ng-repeat="topic in siteConfig.event_filters"
-        ng-class="{ 'c-categories-filter__active--events': filter.topics.indexOf(topic.slug) > -1 }"
+        ng-class="{ 'is-active--events': filter.topics.indexOf(topic.slug) > -1 }"
         ng-click="toggleTopicInFilter(topic.slug)"
         ng-bind-html="topic.name">
       </li>
@@ -31,7 +33,7 @@
   <!-- filter dashboard -->
   <div class="c-dashboard">
 
-    <ul class="o-ui-list c-dashboard__info">
+    <ul class="c-dashboard__info">
       <!-- total entries -->
       <li class="c-dashboard__posts-total">
         {{ siteConfig.timeline_total_events_label }}:
@@ -48,11 +50,13 @@
 
 </div>
 
+<div ui-view></div>
+
 <!-- events list (timeline)  -->
-<div class="c-events__list">
+<div class="c-timeline">
 
   <!-- timeline events corousel -->
-  <carousel ng-if="filter.topics" class="c-timeline-events" data-options="{ navigation: false, pagination: true, rewindnav : false }">
+  <carousel ng-if="filter.topics" class="c-timeline__events" data-options="{ items: 5, touchDrag: true, navigation: false, pagination: true, rewindnav: false }">
       <event-preview
         carousel-item=""
         class="c-event-preview"
@@ -66,12 +70,11 @@
   </carousel>
 
   <!-- timeline events navigation -->
-  <div class="c-timeline-navigation">
-    <a href="#" class="o-icon c-icon-arrow--circle c-timeline-navigation__previous js-timeline-navigation__previous"></a>
-    <div class="c-timeline-navigation__line"></div>
-    <a href="#" class="o-icon c-icon-arrow--circle c-timeline-navigation__next js-timeline-navigation__next"></a>
+  <div class="c-timeline__navigation">
+    <a href="#" class="c-icon-arrow-left--circle is-previous js-timeline__previous"></a>
+    <div class="c-timeline__line"></div>
+    <a href="#" class="c-icon-arrow-right--circle is-next js-timeline__next"></a>
   </div>
 
-  <div ui-view></div>
 
 </div>

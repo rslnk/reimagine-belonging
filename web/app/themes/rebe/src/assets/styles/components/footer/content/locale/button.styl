@@ -1,0 +1,28 @@
+/**
+ *  Footer locale button
+ */
+.c-locale__button
+  @extend .o-btn
+
+  margin 0
+  padding rem(12px) rem(12px)
+  color $lavender + 50%
+  border rem(1px) solid $lavender + 50% // darker color is an optical fix
+
+  &:hover
+  &:focus
+    color $lavender + 60%
+    border rem(1px) solid $lavender + 60%
+
+  .c-locale__text
+    font-family $base-body-font
+    font-weight $thin
+    font-size $pico
+    letter-spacing rem(.5px)
+
+  .c-locale__icon
+    display inline-block
+    margin-left rem(5px) // between icon and text
+    vertical-align middle // align icon with text
+    font-size rem(20px)
+    transform rotate(-90deg) // rotate arrow icon '>'

@@ -1,0 +1,31 @@
+/**
+ * Category filter list item
+ */
+.c-category-filter__item
+    @extend .o-btn, .o-btn--medium
+
+    display inline-block
+    float left
+    margin-right rem(2px) // horizontal space between items
+    margin-bottom rem(2px) // vertical space between items
+
+    font-family $base-heading-font
+    font-weight $thin
+    color $gray--dark + 20%
+    background-color $gray--light
+
+    &:hover
+    &:focus
+      color $gray--dark
+      background-color $gray--light - 5%
+
+    +below('m')
+      font-size $pico
+      letter-spacing rem(.5px)
+
+    +between('m', 'l')
+      font-size $nano
+
+    +above('xl')
+      font-size $milli
+      letter-spacing rem(.8px)

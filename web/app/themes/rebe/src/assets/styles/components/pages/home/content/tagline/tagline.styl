@@ -1,0 +1,20 @@
+/**
+ * Home tagline
+ *
+ *   Wraps:
+ *      - `c-tagline__line`
+ *
+ */
+.c-tagline
+  clearfix()
+  display block
+  font-size 0 // fixes child inline-block padding
+
+  +below('m')
+    margin-bottom rem(30px)
+
+  +between('m', 'xl')
+    margin-bottom rem(45px)
+
+  +above('xl')
+    margin-bottom rem(65px)

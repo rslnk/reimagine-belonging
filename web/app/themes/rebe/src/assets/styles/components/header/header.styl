@@ -1,0 +1,30 @@
+/**
+ * Site header
+ *
+ *    Wraps:
+ *      - `c-header__menu`
+ *
+ */
+.c-header
+  position relative
+  z-index 99
+
+  height rem(50px)
+
+  background-color $white
+  border-bottom solid rem(1px) $gray--light
+
+// Home modifier
+.c-header--home
+  position relative
+  z-index 99
+  background-color transparent
+
+  +between('xs', 's')
+    height rem(50px)
+
+  +between('s', 'l')
+    height rem(80px)
+
+  +above('l')
+    height rem(100px)

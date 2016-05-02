@@ -1,0 +1,40 @@
+.c-timeline__navigation
+  @extend .o-centered-content
+
+  position relative
+
+  +below('xl')
+    margin-top rem(20px)
+    margin-bottom rem(30px)
+
+    height rem(40px)
+
+  +above('xl')
+    margin-top rem(15px)
+    margin-bottom rem(80px)
+
+    height rem(50px)
+
+  // Navigation arrows
+  .is-previous
+  .is-next
+    @extend .o-btn
+
+    color $yolk // arrow icon color
+
+    &:hover
+    &:focus
+      color $lemon
+      transform scale(1.1)
+
+    +below('l')
+      font-size rem(40px) // icon size
+
+    +above('l')
+      font-size rem(50px)
+
+  .is-previous
+    float left
+
+  .is-next
+    float right

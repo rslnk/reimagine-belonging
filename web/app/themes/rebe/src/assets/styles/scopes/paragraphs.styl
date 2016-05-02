@@ -2,9 +2,15 @@
  * Style paragraphs in submitted content (i.e. via WordPress editor)
 */
 .s-paragraphs
+
   p
     @extend .o-paragraph
 
-.s-paragraphs--small
-  p
-    @extend .o-paragraph--small
+    +below('l')
+      margin-bottom rem(20px)
+
+    +above('l')
+      margin-bottom rem(30px)
+
+    &:last-of-type
+      margin-bottom 0

@@ -1,0 +1,31 @@
+/**
+ * Workshop preview title
+ */
+.c-workshop-preview__title
+  @extend .o-heading
+
+  float left
+  width 100%
+
+  font-weight $medium
+  text-transform none
+  color $carbon-black
+
+  strong
+  em
+  b
+    font-weight $semibold
+
+  +below('m')
+    font-size $deca
+    line-height 1.2
+
+  +between('m', 'l')
+    font-size $centi
+    line-height 1.35
+
+  +between('l', 'xl')
+    font-size $micro
+
+  +above('xl')
+    font-size $centi

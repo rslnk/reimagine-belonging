@@ -1,0 +1,15 @@
+/**
+ * Event post content (layout)
+ *
+ *    Wraps:
+ *      - `c-event__main`
+ *      - `c-event__sidebar`
+*/
+.c-event__content
+  center()
+
+  +below('xl')
+    margin-bottom rem(30px) // between main content and footnotes
+
+  +above('xl')
+    margin-bottom rem(70px)

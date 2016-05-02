@@ -1,0 +1,17 @@
+/**
+ * Page content
+ *
+ *    Wraps:
+ *      - `c-page__main`
+ *      - `c-page__sidebar`
+*/
+.c-page__content
+  @extend .o-centered-content
+
+  clearfix()
+
+  +below('l')
+    padding-bottom rem(30px) // ensure that footer doesn't stick right to the content
+
+  +above('l')
+    padding-bottom rem(80px)

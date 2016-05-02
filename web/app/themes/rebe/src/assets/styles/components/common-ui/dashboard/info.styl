@@ -1,0 +1,25 @@
+.c-dashboard__info
+  @extend .o-ui-list
+
+  margin-top rem(20px)
+
+  +below('s')
+    stack()
+
+  +above('s')
+    column(1/2)
+
+  // Style text & labels
+  .c-dashboard__posts-total
+  .c-dashboard__posts-filtered
+    float left
+    margin-right rem(20px)
+
+    +between('m', 'l')
+      margin-right rem(25px)
+
+    +between('l', 'xl')
+      margin-right rem(30px)
+
+    +above('xl')
+      margin-right rem(40px)

@@ -1,0 +1,25 @@
+/**
+ * Quote meta
+ *
+ *    `c-quote__meta`
+ *      `c-quote__author`
+ *      `c-quote__source`
+ */
+.c-quote__meta
+  @extend .o-paragraph
+
+  float right
+  margin-bottom 0 // overwrites `.o-paragraph`
+
+  text-align right
+  line-height 1.2
+  color $gray--dark
+
+  strong
+    font-weight $medium
+
+// Story modifier
+.c-quote__meta--story
+  @extend .c-quote__meta
+
+  float left

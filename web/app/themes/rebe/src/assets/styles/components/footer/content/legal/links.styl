@@ -1,0 +1,40 @@
+/**
+ *  Footer legal section links
+ */
+.c-legal__links
+  @extend .o-ui-list
+
+  +below('xl')
+    stack() // above copyright notice
+    margin-bottom rem(30px) // between list and copyright notice
+
+  +above('xl')
+    column(7/12)
+    shift(5/12) // shift right, swap position with copyright notice
+    margin-bottom 0
+
+  .c-menu__item
+    display inline-block // display legal links as inline blocks
+    padding-right rem(8px) // between menu items
+    line-height 1.8
+
+    &:last-of-type
+      padding-right 0
+
+    +above('m')
+      padding-right rem(20px)
+
+    // Menu item link
+    a
+      padding rem(3px) 0 // expand link's 'sensitive' zone
+      transition color .2s ease-in // color transition animation
+      color $lavender + 35%
+
+      &:hover
+      &:focus
+        color $lavender + 50%
+
+  // Menu item active link
+  .is-active
+    a
+      color $blueberry + 20%

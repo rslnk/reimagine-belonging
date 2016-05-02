@@ -1,0 +1,31 @@
+/**
+ * Timeline (horizontal) Line
+ */
+.c-timeline__line
+  align(both)
+  min-width 50%
+  border-bottom rem(1px) solid $gray--light - 5%
+
+  +below('m', orientation: portrait)
+    width 65%
+
+  +between('m', 'l', orientation: portrait)
+    width 80%
+
+  +below('m', orientation: landscape)
+    width 75%
+
+  +between('m', 'l')
+    width 80%
+
+  +between('l', 'xl')
+    width 70%
+
+  +between('xl', 'hd')
+    width 70%
+
+  +between('hd', 'uhd')
+    width 82%
+
+  +above('uhd')
+    width 85%

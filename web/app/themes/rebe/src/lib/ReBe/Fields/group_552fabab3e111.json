@@ -19,6 +19,27 @@
             "endpoint": 0
         },
         {
+            "key": "field_573dbbc641d09",
+            "label": "Stories page title",
+            "name": "stories_page_title",
+            "type": "text",
+            "instructions": "E.g. \"Stories of Belonging\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_553110edd5ac7",
             "label": "\"Add story\" button label",
             "name": "stories_add_story_button_label",
@@ -155,6 +176,27 @@
             },
             "placement": "top",
             "endpoint": 0
+        },
+        {
+            "key": "field_573dbc0141d0a",
+            "label": "Timeline page title",
+            "name": "timeline_page_title",
+            "type": "text",
+            "instructions": "E.g. \"History of Migration, Citizenship and Belonging\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
         },
         {
             "key": "field_5707ad58e9be9",
@@ -1407,5 +1449,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1460132976
+    "modified": 1463663676
 }

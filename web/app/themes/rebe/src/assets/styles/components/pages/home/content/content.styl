@@ -1,0 +1,22 @@
+/**
+ * Home content
+ *
+ *   Wraps:
+ *      - `c-tagline`
+ *      - `c-home__cta`
+ *      - `c-home__tanya-image`
+ *
+ */
+.c-home__content
+  @extend .o-centered-content
+
+  align(vertical)
+  margin-top rem(-30px) // compensate header menu height
+  position relative
+  z-index 1 // make sure content stays on top of the image
+
+  +below('s', orientation: portrait)
+    margin-top 20% // place content slightly bellow center
+
+  +between('m', 'l', orientation: portrait)
+    margin-top 15%

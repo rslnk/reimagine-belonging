@@ -1,0 +1,20 @@
+/**
+ * Event categories/hero
+ *
+ *    Wraps:
+ *      - `c-event__categories`
+ *      - `c-event__date`
+ *      - `c-event__title`
+*/
+.c-event__head
+  display block
+  clearfix()
+
+  +below('l')
+    margin-bottom rem(25px)
+
+  +between('l', 'xl')
+    margin-bottom rem(45px)
+
+  +above('hd')
+    margin-bottom rem(60px)

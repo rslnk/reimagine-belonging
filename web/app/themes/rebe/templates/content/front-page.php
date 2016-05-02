@@ -10,7 +10,7 @@
             // Check if blocks entered in multiple line. Wrap each line of blocks
             // into individual <ul>
             ?>
-            <div class="c-tagline__linebreak">
+            <div class="c-tagline__line">
               <?php while( have_rows('line_wrapper')): the_row(); ?>
                 <span class="c-tagline__word"><?php the_sub_field('block'); ?></span>
               <?php endwhile; ?>
@@ -24,13 +24,13 @@
   <div class="c-home__cta">
     <?php if(get_field('front_page_first_button_text')):?>
       <a class="c-cta-button--home" href="/<?php the_field('front_page_first_button_url', 'option'); ?>">
-        <span class="o-icon c-icon-play--circle c-cta-button__icon"></span>
+        <span class="c-icon-play--circle c-cta-button__icon"></span>
         <span class="c-cta-button__label"><?php the_field('front_page_first_button_text'); ?></span>
       </a>
     <?php endif; ?>
     <?php if(get_field('front_page_second_button_text')):?>
       <a class="c-cta-button--home" href="/<?php the_field('front_page_second_button_url', 'option'); ?>">
-        <span class="o-icon c-icon-time--circle c-cta-button__icon"></span>
+        <span class="c-icon-time--circle c-cta-button__icon"></span>
         <span class="c-cta-button__label"><?php the_field('front_page_second_button_text'); ?></span>
       </a>
     <?php endif; ?>

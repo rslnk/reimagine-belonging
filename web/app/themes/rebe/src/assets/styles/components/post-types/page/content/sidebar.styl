@@ -1,0 +1,15 @@
+/**
+ * Page sidebar
+ *
+ *    - Wrapped inside `c-page__content`
+ *    - Stacks under main content on small screens
+ *    - Displayed next to main content on larger screens
+*/
+.c-page__sidebar
+  clearfix()
+
+  +below('l')
+    stack()
+
+  +above('l')
+    column(3/8)

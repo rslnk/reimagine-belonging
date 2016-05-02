@@ -1,0 +1,82 @@
+/**
+ * Post-to-post navigation
+ */
+.c-post-navigation
+  @extend .o-btn
+
+  height 100%
+  height 100vh
+
+  transition all .2s ease-in-out
+
+  +below('m')
+    display none // navigation is hidden on small screens
+
+  +between('m', 'l')
+    display block // show navigation
+    width 5%
+
+  +between('l', 'xl')
+    width 5%
+
+  +between('xl', 'hd')
+    width 13.5%
+
+  +above('hd')
+    width 18%
+
+  .is-previous
+  .is-next
+    @extend .o-btn
+
+    align(both)
+
+    color rgba($white, .65)
+
+    &:hover
+    &:focus
+      color $white
+
+    +below('m')
+      font-size rem(45px)
+
+    +between('m', 'l')
+      font-size rem(25px)
+
+    +between('l', 'xl')
+      font-size rem(30px)
+
+    +between('xl', 'hd')
+      font-size rem(55px)
+
+    +between('hd', 'uhd')
+      font-size rem(65px)
+
+    +above('uhd')
+      font-size rem(85px)
+
+.c-post-navigation--left
+  @extend .c-post-navigation
+
+  fixed 0 false false 0
+
+  &:hover
+  &:focus
+    background-image linear-gradient(90deg, rgba($black .2) 0, rgba($black, 0) 100%)
+
+    .is-previous
+    .is-next
+      color $white
+
+.c-post-navigation--right
+  @extend .c-post-navigation
+
+  fixed 0 0 false false
+
+  &:hover
+  &:focus
+    background-image linear-gradient(-90deg, rgba($black .2) 0, rgba($black, 0) 100%)
+
+    .is-previous
+    .is-next
+      color $white

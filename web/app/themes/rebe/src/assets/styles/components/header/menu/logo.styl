@@ -1,0 +1,16 @@
+/**
+ * Site header logo
+ */
+.c-header__logo
+  float left
+  height rem(20px) // logo size
+  fill $carbon-black
+
+// Home modifier
+.c-header__logo--home
+  @extend .c-header__logo
+
+  fill $white
+
+  +above('m')
+    height rem(25px) // homepage logo is a bit bigger on tablet/desktop screens

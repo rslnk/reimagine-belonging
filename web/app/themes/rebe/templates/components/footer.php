@@ -21,14 +21,14 @@
         </div>
 
 
-        <div class="c-footer__legal">
+        <div class="c-legal">
 
             <?php
                 // Get 'legal links' navigation
                 if (has_nav_menu('optional_navigation')) :
                     wp_nav_menu([
                     'theme_location' => 'optional_navigation',
-                    'menu_class'     => 'c-legal-links__list'
+                    'menu_class'     => 'c-legal__links'
                 ]);
                 endif;
             ?>
@@ -50,8 +50,6 @@
 </footer>
 
 <?php
-  // Include mobile menu overlay
+  // Mobile menu modal
   get_template_part('components/modal-menu');
-  // Include 'donations' modal
-  get_template_part('components/modal-donate');
 ?>

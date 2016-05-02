@@ -1,0 +1,19 @@
+/**
+ * Pagination
+ *
+ *   Wraps:
+ *      - `c-pagination__label`
+ *      - `c-pagination__list`
+ *
+ */
+.c-pagination
+  display block
+
+// Dashboard modifier
+.c-pagination--dashboard
+
+  +below('m')
+    float left // when stacks, see `.c-dashboard__pagination`
+
+  +above('m')
+    float right
