@@ -35,7 +35,7 @@
       "type": "package",
       "package": {
         "name": "advancedcustomfields/acf-pro",
-        "version": "5.3.3",
+        "version": "5.3.8",
         "type": "wordpress-muplugin",
         "dist": {
           "type": "zip",
@@ -48,14 +48,14 @@
     "php": ">=5.5",
     "composer/installers": "~1.0.12",
     "vlucas/phpdotenv": "^2.0.1",
-    "johnpbloch/wordpress": "4.4.2",
+    "johnpbloch/wordpress": "4.5.2",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "^1.0",
-    "advancedcustomfields/acf-pro": "5.3.3",
+    "advancedcustomfields/acf-pro": "5.3.8",
     "roots/soil": "3.6.2",
-    "wpackagist-plugin/amazon-s3-and-cloudfront": "0.9.12",
-    "wpackagist-plugin/amazon-web-services": "0.3.4",
-    "wpackagist-plugin/wordpress-seo": "3.1",
+    "wpackagist-plugin/amazon-s3-and-cloudfront": "1.0.3",
+    "wpackagist-plugin/amazon-web-services": "0.3.5",
+    "wpackagist-plugin/wordpress-seo": "3.2.5",
     "wpackagist-plugin/so-clean-up-wp-seo": "1.7.5"
   },
   "extra": {

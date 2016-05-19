@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## HEAD
+
+-  Update `amazon-s3-and-cloudfront` and `wordpress-seo` plugins
+-  Update to ACF Pro 5.3.8
+-  Update to WordPress 4.5.2
+
 ## 1.8.0
 
 -   Add 'events' and 'stories' page titles to side dictionary
