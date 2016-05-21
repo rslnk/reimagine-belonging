@@ -1,0 +1,46 @@
+div.c-directories
+  
+  // Footer directory section 1
+  - if (has_nav_menu('directory_section_1')) :
+      div.c-directories__section
+        - if (get_field('footer_directory_section_title_1', 'option')) :
+            h4.c-directories__title
+              - the_field('footer_directory_section_title_1', 'option')
+            div(data-target=".js-directory-list-1").c-icon-plus--circle.c-directories__toggle.js-directory-section-toggle
+        - endif
+        - wp_nav_menu(['theme_location' => 'directory_section_1', 'menu_class' => 'c-directories__list js-directory-list-1'])
+  - endif
+
+  // Footer directory section 2
+  - if (has_nav_menu('directory_section_1')) :
+      div.c-directories__section
+        - if (get_field('footer_directory_section_title_2', 'option')) :
+            h4.c-directories__title
+              - the_field('footer_directory_section_title_2', 'option')
+            div(data-target=".js-directory-list-2").c-icon-plus--circle.c-directories__toggle.js-directory-section-toggle
+        - endif
+        - wp_nav_menu(['theme_location' => 'directory_section_2', 'menu_class' => 'c-directories__list js-directory-list-2'])
+  - endif
+
+  // Footer directory section 3
+  - if (has_nav_menu('directory_section_3')) :
+      div.c-directories__section
+        - if (get_field('footer_directory_section_title_3', 'option')) :
+            h4.c-directories__title
+              - the_field('footer_directory_section_title_3', 'option')
+            div(data-target=".js-directory-list-3").c-icon-plus--circle.c-directories__toggle.js-directory-section-toggle
+        - endif
+        - wp_nav_menu(['theme_location' => 'directory_section_3', 'menu_class' => 'c-directories__list js-directory-list-3'])
+  - endif
+
+  // Footer directory section 4
+  - if (has_nav_menu('directory_section_4')) :
+      div.c-directories__section
+        - if (get_field('footer_directory_section_title_4', 'option')) :
+            h4.c-directories__title
+              - the_field('footer_directory_section_title_4', 'option')
+            div(data-target=".js-directory-list-4").c-icon-plus--circle.c-directories__toggle.js-directory-section-toggle
+        - endif
+        - wp_nav_menu(['theme_location' => 'directory_section_4', 'menu_class' => 'c-directories__list js-directory-list-4'])
+        - get_template_part('templates/partials/footer/social-links') // Get social links
+  - endif

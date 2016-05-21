@@ -1,0 +1,11 @@
+main.c-404__content.js-content
+
+  - if(get_field('404_title', 'option')) :
+      h1.c-404__title
+        - the_field('404_title', 'option')
+  - endif
+
+  - if(get_field('404_subtitle', 'option' )) :
+      p.c-404__text
+        - the_field('404_subtitle', 'option')
+  - endif

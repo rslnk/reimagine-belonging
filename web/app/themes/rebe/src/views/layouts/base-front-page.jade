@@ -1,0 +1,18 @@
+//- Front page (home) specific layout
+ 
+doctype html
+
+//- Note: 'gulp-jade-php' doesn't support php functions inside tag, 
+//- bypassing by using an actual html tag.
+<html <? language_attributes(); ?>>
+
+include ../partials/head.jade
+
+body.c-home.js-home
+  div.has-background.js-background-image
+    include ../partials/header.jade
+    - include App\template_unwrap()
+
+  include ../partials/footer/footer.jade
+
+</html>

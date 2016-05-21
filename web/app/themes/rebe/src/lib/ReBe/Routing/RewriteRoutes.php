@@ -10,15 +10,17 @@ class RewriteRoutes {
 
     /**
      * Catches HTTP requests to an entry of a specific post type and based on
-     * user agent (defaults to 'browser') rerouts request to a post type base (slug).
-     * Necessary for enries dynamic view (i.e. AngularJS app)
+     * user agent (defaults to 'browser') re-routs request to a post type base (slug).
+     * This solution mimics Single Page Application routing (like Angular UI-router),
+     * poviding navigation within the application part of the page while stil
+     * updating URL.
      *
      * @param   string    $post_type_slug
      * @param   string    $taxonomy
      * @param   string    $agent
      * @uses UserAgent class
     */
-    public static function reroute_posts_to_post_type_base($post_type_slug, $taxonomy = null, $agent = null)
+    public static function post_type_ui_routing($agent = null, $post_type_slug, $taxonomy = null)
     {
         global $wp;
 
@@ -60,12 +62,6 @@ class RewriteRoutes {
                 if (count($parts) > 2) {
                     setcookie("$post_type_slug", $uri, time()+3600, "/");
                     header('Location: /' . $post_type_slug . '/');
-                    exit;
-                }
-            } else {
-                // Construct new URI using post type slug and taxomomy term slug
-                if (count($parts) > 2 && in_array($parts[2], $slugs)) {
-                    header('Location: /' . $post_type_slug . '/'. $parts[3]);
                     exit;
                 }
             }

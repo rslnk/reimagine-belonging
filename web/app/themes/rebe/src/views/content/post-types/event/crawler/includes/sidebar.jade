@@ -1,0 +1,11 @@
+aside     
+  - if(get_field('sidebar_content')) :
+    - while( have_rows('sidebar_content')) : the_row()
+
+      include ./sidebar/video.jade
+      include ./sidebar/image.jade
+      include ./sidebar/quote.jade
+      include ./sidebar/sidenote.jade
+
+    - endwhile
+  - endif

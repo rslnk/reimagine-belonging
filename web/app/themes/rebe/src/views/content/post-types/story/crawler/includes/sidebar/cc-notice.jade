@@ -1,0 +1,7 @@
+- if(get_field('subtitles_notification') == 1) :
+  div
+    h3
+      - the_field('story_cc_notice_title', 'option')
+    p
+      - the_field('story_cc_notice_text', 'option')
+- endif

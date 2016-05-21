@@ -1,0 +1,21 @@
+ul.c-social-links__list
+  - if(get_field('facebook_page_url', 'option')) :
+      li.c-social-links__item
+        a(href!="<?php the_field('facebook_page_url', 'option'); ?>").c-icon-facebook--circle.c-social-links__icon
+          span.u-visually-hidden
+            - the_field('facebook_page_url_label', 'option')
+  - endif
+
+  - if(get_field('twitter_url', 'option')) :
+      li.c-social-links__item
+        a(href!="<?php the_field('twitter_url', 'option'); ?>").c-icon-twitter--circle.c-social-links__icon
+          span.u-visually-hidden
+            - the_field('twitter_account_url_label', 'option')
+  - endif
+
+  - if(get_field('vimeo_url', 'option')) :
+      li.c-social-links__item
+        a(href!="<?php the_field('vimeo_url', 'option'); ?>").c-icon-vimeo--circle.c-social-links__icon
+          span.u-visually-hidden
+            - the_field('vimeo_account_url_label', 'option')
+  - endif

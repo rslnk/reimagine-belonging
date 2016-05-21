@@ -4,8 +4,8 @@
     "fields": [
         {
             "key": "field_553104f26d8db",
-            "label": "Stories",
-            "name": "",
+            "label": "Stories page",
+            "name": "stories_page",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -163,8 +163,8 @@
         },
         {
             "key": "field_5530ee0604c02",
-            "label": "Timeline",
-            "name": "",
+            "label": "Events page",
+            "name": "events_page",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -179,7 +179,7 @@
         },
         {
             "key": "field_573dbc0141d0a",
-            "label": "Timeline page title",
+            "label": "Events page title",
             "name": "timeline_page_title",
             "type": "text",
             "instructions": "E.g. \"History of Migration, Citizenship and Belonging\".",
@@ -1449,5 +1449,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1463663676
+    "modified": 1463777413
 }

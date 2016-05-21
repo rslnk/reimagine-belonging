@@ -12,7 +12,7 @@ angular.module('ngvideo', [])
                 height: '@'
             },
             replace: true,
-            templateUrl:  '/app/themes/rebe/src/views/ng-apps/stories/video.html',
+            templateUrl:  '/app/themes/rebe/src/views/partials/ng/video.html',
             link: function (scope) {
                 var embedFriendlyUrl = "",
                     urlSections,

@@ -1,0 +1,17 @@
+- if(get_sub_field('sidebar_content_type') == 'image') :
+  - while(have_rows('image')) : the_row()
+    div
+      - if(get_sub_field('url')) :
+        <div class="u-image-cover u-image-cover--4x3 c-media-block__placeholder" style="background-image: url(<?php the_sub_field('url'); ?>)"></div>
+      - endif
+
+      - if (get_sub_field('credit')) :
+        a(href!="<?php the_sub_field('credit_link'); ?>")
+          - the_sub_field('credit')
+      - endif
+      h4
+        - the_sub_field('title')
+      p
+        - the_sub_field('caption')
+  - endwhile
+- endif

@@ -4,7 +4,7 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '/app/themes/rebe/src/views/ng-apps/events/preview.html',
+      templateUrl: '/app/themes/rebe/src/views/content/post-types/event/ng/preview.html',
       scope: {
         image: '@',
         title: '@',

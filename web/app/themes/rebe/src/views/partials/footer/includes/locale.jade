@@ -1,0 +1,7 @@
+div.c-locale
+  - if(get_field('site_alternative_locale_url', 'option') && get_field('footer_alternative_locale_button_text', 'option')) : // Get locale
+    a(href!="<?php the_field('site_alternative_locale_url', 'option'); ?>").c-locale__button
+      span.c-locale__text
+        - the_field('footer_alternative_locale_button_text', 'option')
+      span.c-icon-arrow--circle.c-locale__icon  
+  - endif

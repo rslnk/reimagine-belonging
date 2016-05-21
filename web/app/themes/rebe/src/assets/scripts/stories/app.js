@@ -44,12 +44,12 @@ angular.module('storiesApp', [
       $stateProvider
         .state('list', {
           url: '/',
-          templateUrl: templatesPath + 'stories/list.html',
+          templateUrl: templatesPath + 'content/pages/stories/ng/list.html',
           controller: 'ListController'
         })
         .state('list.story', {
           url: ':story',
-          templateUrl: templatesPath + 'stories/story.html',
+          templateUrl: templatesPath + 'content/post-types/story/ng/single.html',
           controller: 'StoryController'
         });
     }

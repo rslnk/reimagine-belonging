@@ -1,0 +1,11 @@
+footer.c-footer.js-footer
+  div.c-footer__content
+    include ./includes/directories.jade
+    include ./includes/locale.jade
+    include ./includes/legal.jade
+
+//- Modal stuff starts
+include ../mobile-menu.jade
+//- Modal stuff ends
+
+- wp_footer()

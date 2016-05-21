@@ -1,0 +1,14 @@
+div.c-legal
+  - if (has_nav_menu('optional_navigation')) :
+    - wp_nav_menu(['theme_location' => 'optional_navigation', 'menu_class' => 'c-legal__links'])
+  - endif
+  
+  - if (get_field('footer_copyright_notice_part_1', 'option')):
+      div.c-copyright-notice
+        span
+          - the_field('footer_copyright_notice_part_1', 'option')
+        span
+          - echo date("Y")
+        span
+          - the_field('footer_copyright_notice_part_2', 'option')
+  - endif

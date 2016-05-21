@@ -1,0 +1,25 @@
+:php
+  use ReBe\Routing\UserAgent;
+  
+  /**
+   * Template Name: Stories
+   *
+   * Lists all 'story' post type entries.
+   *
+   * Depending on user agent check this template outputs two separate views:
+   * Content for crawlers and AngularJS view if user agent is NOT a crawler.
+   * @uses events app (AngularJS)
+   * @see assets/ng/events
+   */
+  
+main.c-stories__content
+
+  - if (UserAgent::check('crawler')) : 
+    - get_template_part('content/pages/stories/crawler/stories') // Output content for crawlers
+  
+  - else : // Output Angular app for user
+  
+    div&attributes({'ng-app': 'storiesApp'})
+      <div ui-view></div>
+    
+  - endif

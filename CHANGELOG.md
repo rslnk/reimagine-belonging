@@ -1,12 +1,21 @@
 # CHANGELOG
 
-## HEAD
+## 1.9.0 May 23rd, 2016
 
--  Update `amazon-s3-and-cloudfront` and `wordpress-seo` plugins
--  Update to ACF Pro 5.3.8
--  Update to WordPress 4.5.2
+-   Remove hardcoded 'how-to' (guide) and 'workshops' templates
+-   Rename 'Timeline' tabs in Site Settings to Event
+-   Rename `template-timeline.php` to `template-events.php`
+-   Simplify 'events' and 'stories' templates intended for crawlers (no need for cosmetic styles)
+-   Improve ui routing for custom post types
+-   Add timeline taxonomy terms to 'event' post slug for URL consistency between ng app and crawler
+-   Add `templates` directory content to `.gitignore`
+-   Re-write all PHP templates with Jade
+-   Add `gulp-jade-php` task to `gulp`
+-   Update `amazon-s3-and-cloudfront` and `wordpress-seo` plugins
+-   Update to ACF Pro 5.3.8
+-   Update to WordPress 4.5.2
 
-## 1.8.0
+## 1.8.0 May 19th, 2016
 
 -   Add 'events' and 'stories' page titles to side dictionary
 -   Update default page head desing

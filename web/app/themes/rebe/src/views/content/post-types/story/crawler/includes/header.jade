@@ -1,0 +1,13 @@
+:php
+  $story_post_cities  = wp_get_object_terms($post->ID, 'story_city');
+  $city_name          = $story_post_cities[0]->name;
+
+header
+  - App\list_categories()
+  h1
+    - the_title()
+
+  h2: strong
+    - the_field('protagonist_name')
+    |, 
+    - echo $city_name

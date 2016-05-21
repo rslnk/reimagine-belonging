@@ -313,8 +313,8 @@
         },
         {
             "key": "field_553120d400007",
-            "label": "Timeline",
-            "name": "",
+            "label": "Events",
+            "name": "events",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -493,5 +493,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1459727473
+    "modified": 1463777443
 }

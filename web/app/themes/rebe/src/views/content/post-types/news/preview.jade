@@ -1,0 +1,14 @@
+article
+  header
+    h2.c-news__title
+      a(href!="<?php the_permalink(); ?>")
+        - the_title()
+    
+    div.c-news__meta
+      time(datetime="<?= get_the_time('c'); ?>")
+        - get_the_date()
+      a(href!="<?= get_author_posts_url(get_the_author_meta('ID')); ?>").c-news__author
+        - get_the_author()
+
+  div.c-news__excerpt
+    - the_excerpt()

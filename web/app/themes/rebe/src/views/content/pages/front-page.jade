@@ -1,0 +1,32 @@
+main.c-home__content.js-content
+  - if(have_rows('front_page_tagline')):
+    h1.c-tagline
+      - while(have_rows('front_page_tagline')) : the_row()
+        - if(get_row_layout() == 'word_blocks') :
+          - if(have_rows('line_wrapper')) :
+            div.c-tagline__line
+              - while(have_rows('line_wrapper')) : the_row()
+                span.c-tagline__word
+                  - the_sub_field('block')
+              - endwhile
+          - endif
+        - endif
+      - endwhile
+  - endif
+
+  div.c-home__cta
+    - if(get_field('front_page_first_button_text')) :
+      a(href!="/<?php the_field('front_page_first_button_url'); ?>").c-cta-button--home
+        span.c-icon-play--circle.c-cta-button__icon
+        span.c-cta-button__label
+          - the_field('front_page_first_button_text')
+    - endif
+    
+    - if(get_field('front_page_second_button_text')) :
+      a(href!="/<?php the_field('front_page_second_button_url'); ?>").c-cta-button--home
+        span.c-icon-time--circle.c-cta-button__icon
+        span.c-cta-button__label
+          - the_field('front_page_second_button_text')
+    - endif
+
+div.c-home__tanya-image

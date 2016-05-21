@@ -16,12 +16,16 @@ add_action('parse_request', function() {
     register_api_endpoints();
 
     /**
-     * Catches HTTP requests to an entry of a specific post type and based on
-     * user agent (defaults to 'browser') rerouts request to a post type base (slug).
-     * Necessary for enries dynamic view (i.e. AngularJS app)
+     * Rewrite rules for 'story' and 'event' post types requests.
+     * Mimics Single Page Application behaviour, allowing post-to-post navigation
+     * on pages that include Angular applications while stil upadting URL.
+     *
+     * Switch between 'browser' and 'crawler' to test how requested page/post
+     * rendered for diferent user-agents.
     */
-    RewriteRoutes::reroute_posts_to_post_type_base('events', 'event_timeline');
-    RewriteRoutes::reroute_posts_to_post_type_base('stories');
+    RewriteRoutes::post_type_ui_routing('browser', 'stories');
+    RewriteRoutes::post_type_ui_routing('browser', 'events', 'event_timeline');
+
 }, 0);
 
 /**
@@ -167,11 +171,11 @@ add_action('init', function() {
         'event',
         'Event',
         [
-            'rewrite'       => ['slug' => get_field('event_post_type_slug', 'option')],
+            //'rewrite'       => ['slug' => get_field('event_post_type_slug', 'option')],
+            'rewrite'       => ['slug' => get_field('event_post_type_slug', 'option') . '/%event_timeline%'],
             'supports'      => ['title', 'thumbnail'],
             'menu_position' => 6,
             'menu_icon'     => 'dashicons-clock',
-
         ]
     );
 

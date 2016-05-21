@@ -70,12 +70,12 @@ angular.module('eventsApp', [
       $stateProvider
         .state('timeline', {
           url: '/:timeline',
-          templateUrl: templatesPath + 'events/timeline.html',
+          templateUrl: templatesPath + 'content/pages/events/ng/list.html',
           controller: 'TimelineController'
         })
         .state('timeline.event', {
           url: '/:event',
-          templateUrl: templatesPath + 'events/event.html',
+          templateUrl: templatesPath + 'content/post-types/event/ng/single.html',
           controller: 'EventController'
         });
     }

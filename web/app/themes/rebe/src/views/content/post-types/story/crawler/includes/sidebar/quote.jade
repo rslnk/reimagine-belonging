@@ -1,0 +1,11 @@
+- if(get_field('excerpt')) :
+    blockquote
+      h2
+        - the_field('excerpt')
+    div
+      span —
+      span 
+        - the_field('protagonist_name')
+      span
+        - echo $city_name
+- endif

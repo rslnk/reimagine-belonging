@@ -1,0 +1,31 @@
+//- Post type query
+:php
+  $the_query = new WP_Query([
+  	'post_type'        => 'story',
+  	'posts_per_page'   => -1,
+  	'meta_key'         => 'story_city',
+  	'orderby'          => 'meta_value',
+  	'order'            => 'DESC'
+  ]);
+
+- if($the_query->have_posts()) :
+  - while($the_query->have_posts()) : $the_query->the_post()
+  
+    :php
+      // Get Story's protagonist name and city
+      $story_post_cities  = wp_get_object_terms($post->ID, 'story_city');
+      $city_name          = $story_post_cities[0]->name;
+
+    div
+      h2
+        a(href!="<?php the_permalink();?>")
+          - the_title()
+      strong
+        - the_field('protagonist_name', $post->ID) 
+        |,
+        - echo $city_name
+
+    - wp_reset_postdata()
+    
+  - endwhile
+- endif

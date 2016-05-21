@@ -1,6 +1,4 @@
-<?php
-
-use ReBe\Routing\UserAgent;
+<?php use ReBe\Routing\UserAgent;
 
 /**
  * Template Name: Stories
@@ -14,12 +12,9 @@ use ReBe\Routing\UserAgent;
  */
 ?>
 <main class="c-stories__content">
-    <?php
-    // Output content for crawlers
-    if (UserAgent::check('crawler')): get_template_part('content/stories'); ?>
-    <?php else: ?>
-        <div ng-app="storiesApp">
-            <div ui-view></div>
-        </div>
-    <?php endif; ?>
+  <?php if (UserAgent::check('crawler')) :  ?>
+  <?php get_template_part('content/pages/stories/crawler/stories') // Output content for crawlers; ?>
+  <?php else : // Output Angular app for user; ?>
+  <div ng-app="storiesApp"><div ui-view></div></div>
+  <?php endif; ?>
 </main>

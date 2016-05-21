@@ -11,6 +11,7 @@ var gulpif            = require('gulp-if');
 var iconfont          = require('gulp-iconfont');
 var imagemin          = require('gulp-imagemin');
 var imageminPngquant  = require('imagemin-pngquant');
+var jadePhp           = require('gulp-jade-php');
 var jeet              = require('jeet');
 var koutoSwiss        = require('kouto-swiss');
 var lazypipe          = require('lazypipe');
@@ -166,6 +167,25 @@ var writeToManifest = function(directory) {
 // ## Gulp tasks
 // Run `gulp -T` for a task summary
 
+// ### Templates
+// `gulp templates` - Compiles jade-php templates
+// By default this task will only log a warning if a precompiler error is
+// raised. If the `--production` flag is set: this task will fail outright.
+gulp.task('templates', function() {
+  gulp.src('!./src/views/**/*.jade')
+  gulp.src([
+    './src/views/**/*.jade',
+    '!./src/views/partials/**/*.jade', // exclude `partials` directories
+    '!./src/views/**/includes/**/*.jade', // exclude `includes` directories
+  ])
+    .pipe(plumber())
+    .pipe(jadePhp({
+      "pretty": true
+    }))
+    .pipe(plumber.stop())
+    .pipe(gulp.dest('./templates'));
+});
+
 // ### Styles
 // `gulp styles` - Compiles, combines, and optimizes Bower CSS and project CSS.
 // By default this task will only log a warning if a precompiler error is
@@ -243,7 +263,7 @@ gulp.task('iconfont', function(done){
           gulp.src('./src/assets/styles/templates/_icons.styl') /* components template */
             .pipe(consolidate('lodash', {
               glyphs: glyphs,
-              objectsClass: objectsClass,              
+              objectsClass: objectsClass,
               componentsClass: componentsClass
             }))
             .pipe(gulp.dest('./src/assets/styles/components/common-ui'))
@@ -303,6 +323,7 @@ gulp.task('watch', function() {
       blacklist: ['/wp-admin/**']
     }
   });
+  gulp.watch(['src/views/**/*'], ['templates']);
   gulp.watch([path.source + 'icons/**/*'], ['iconfont', 'styles']);
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['lint', 'scripts']);
@@ -315,9 +336,10 @@ gulp.task('watch', function() {
 // Generally you should be running `gulp` instead of `gulp build`.
 gulp.task('build', function(callback) {
   runSequence(
-    'iconfont',
+    'templates',
     'styles',
     'scripts',
+    'iconfont',
     'images',
     callback
   );

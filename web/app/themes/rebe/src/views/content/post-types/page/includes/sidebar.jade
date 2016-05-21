@@ -1,0 +1,12 @@
+div.c-page__sidebar
+  div.c-sidenote
+
+    - if(get_field('page_sidenote_title')) :
+      h2.c-sidenote__title--page
+        - the_field('page_sidenote_title')
+    - endif
+
+    - if(get_field('page_sidenote_text')) :
+      div.c-sidenote__caption.s-paragraphs--small.s-links
+        - the_field('page_sidenote_text')
+    - endif
