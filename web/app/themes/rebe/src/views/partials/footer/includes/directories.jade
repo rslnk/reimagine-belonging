@@ -42,5 +42,7 @@ div.c-directories
             div(data-target=".js-directory-list-4").c-icon-plus--circle.c-directories__toggle.js-directory-section-toggle
         - endif
         - wp_nav_menu(['theme_location' => 'directory_section_4', 'menu_class' => 'c-directories__list js-directory-list-4'])
-        - get_template_part('templates/partials/footer/social-links') // Get social links
+        
+        include ./social-links.jade
+  
   - endif

@@ -130,25 +130,38 @@
         </div>
 
         <!-- share event -->
-        <div class="c-post-sharing">
-
-          <ul class="c-post-sharing__list">
-
-            <h4 class="c-post-sharing__label">Share event:</h4>
-
-            <li class="c-post-sharing__item">
-              <a class="c-icon-facebook--circle c-post-sharing__link--event" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
-                <span class="u-visually-hidden">Share on Facebook</span>
-              </a>
-            </li>
-            <li class="c-post-sharing__item">
-              <a class="c-icon-twitter--circle c-post-sharing__link--event" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
-                <span class="u-visually-hidden">Share on Twitter</span>
-              </a>
-            </li>
-          </ul>
-
-        </div>
+        <ul class="c-post-sharing__list">
+          <h4 class="c-post-sharing__label">{{ siteConfig.share_event_label }}:</h4>
+          <li class="c-post-sharing__item">
+            <a class="c-icon-facebook--circle c-post-sharing__link--event" href="#"
+              socialshare
+              socialshare-provider="facebook"
+              socialshare-url="{{ shareUrl }}"
+              socialshare-text="{{ event.title }}"
+              socialshare-via="{{ facebook_app_id }}"
+              socialshare-ref="{{ facebook_user_name }}">
+              <span class="u-visually-hidden">{{ siteConfig.share_label}} Facebook</span>
+            </a>
+          </li>
+          <li class="c-post-sharing__item">
+            <a class="c-icon-twitter--circle c-post-sharing__link--event" href="#"
+              socialshare
+              socialshare-provider="twitter"
+              socialshare-text="{{ event.title }}"
+              socialshare-hashtags="{{ siteConfig.social_hashtags }}"
+              socialshare-url="{{ shareUrl }}">
+              <span class="u-visually-hidden">{{ siteConfig.share_label}} Twitter</span>
+            </a>
+          </li>
+          <li class="c-post-sharing__item">
+            <a class="c-icon-googleplus--circle c-post-sharing__link--event" href="#"
+              socialshare
+              socialshare-provider="google"
+              socialshare-url="{{ shareUrl }}">
+              <span class="u-visually-hidden">{{ siteConfig.share_label}} Google Plus</span>
+            </a>
+          </li>
+        </ul>
 
       </aside>
 

@@ -337,27 +337,6 @@
             "endpoint": 0
         },
         {
-            "key": "field_552fae4884838",
-            "label": "Share story",
-            "name": "story_share_story_label",
-            "type": "text",
-            "instructions": "E.g. \"Share this story\"",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 25,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_55fcc5ff0ec9a",
             "label": "Subtitles notice title",
             "name": "story_cc_notice_title",
@@ -387,7 +366,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 100,
                 "class": "",
                 "id": ""
             },
@@ -437,6 +416,27 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fae4884838",
+            "label": "Share story",
+            "name": "share_story_label",
+            "type": "text",
+            "instructions": "E.g. \"Share story\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -558,6 +558,27 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_574380597465f",
+            "label": "Share event",
+            "name": "share_event_label",
+            "type": "text",
+            "instructions": "E.g. \"Share event\"",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -1354,10 +1375,10 @@
         },
         {
             "key": "field_5700370d9d2fa",
-            "label": "Facebook page url label",
-            "name": "facebook_page_url_label",
+            "label": "Follow label",
+            "name": "follow_label",
             "type": "text",
-            "instructions": "Example: Follow us on Facebook",
+            "instructions": "Example: \"Follow us on\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1374,32 +1395,11 @@
             "disabled": 0
         },
         {
-            "key": "field_570038209d2fc",
-            "label": "Twitter account url label",
-            "name": "twitter_account_url_label",
+            "key": "field_5743811e74660",
+            "label": "Share label",
+            "name": "share_label",
             "type": "text",
-            "instructions": "Example: Follow us on Twitter",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 30,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_57003ca83999c",
-            "label": "Vimeo account url label",
-            "name": "vimeo_account_url_label",
-            "type": "text",
-            "instructions": "Example: Follow us on Vimeo",
+            "instructions": "Example: \"Share on\"",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1449,5 +1449,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1463777413
+    "modified": 1464042038
 }

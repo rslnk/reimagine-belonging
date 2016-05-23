@@ -2,6 +2,11 @@
 
 ## HEAD
 
+-   Add google plus to post sharing options
+-   Add `angularjs-socialshare` and imporove UX of posts social sharing
+-   Add dinamic accessability labels to navigation elements (such as social links)
+-   Improve API 'Services' fields names in Site Settings and Dictionary
+-   Fix include of social links in footer template
 -   Minor 'Event', 'Story', 'Page' templates cosmetic tweaks
 -   Add 'Share Story' lable to 'Story' template sidebar
 -   Improve share post options hover animation

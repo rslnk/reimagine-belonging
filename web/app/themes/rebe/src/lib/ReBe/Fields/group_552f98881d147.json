@@ -149,7 +149,7 @@
         {
             "key": "field_5547409311978",
             "label": "Facebook admin ID",
-            "name": "facebook_user_id",
+            "name": "facebook_admin_id",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -169,8 +169,8 @@
         },
         {
             "key": "field_55fd9d761aeae",
-            "label": "Facebook Page ID",
-            "name": "facebook_page_id",
+            "label": "Facebook user ID",
+            "name": "facebook_user_id",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -189,9 +189,9 @@
             "disabled": 0
         },
         {
-            "key": "field_570037be9d2fb",
-            "label": "Facebook page URL",
-            "name": "facebook_page_url",
+            "key": "field_5743781535976",
+            "label": "Facebook user name",
+            "name": "facebook_user_name",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -211,8 +211,8 @@
         },
         {
             "key": "field_5545436518640",
-            "label": "Twitter handle",
-            "name": "twitter_handle",
+            "label": "Twitter user name",
+            "name": "twitter_user_name",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -231,9 +231,9 @@
             "disabled": 0
         },
         {
-            "key": "field_570038569d2fd",
-            "label": "Twitter account URL",
-            "name": "twitter_url",
+            "key": "field_5743739e0e941",
+            "label": "Vimeo user name",
+            "name": "vimeo_user_name",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -252,15 +252,15 @@
             "disabled": 0
         },
         {
-            "key": "field_57003cd03999d",
-            "label": "Vimeo page URL",
-            "name": "vimeo_url",
+            "key": "field_5743720b698f1",
+            "label": "Social #hashtags",
+            "name": "social_hashtags",
             "type": "text",
-            "instructions": "",
+            "instructions": "Hashtags for facebook and twitter post sharing. No # symbol, no space, coma divided.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 100,
                 "class": "",
                 "id": ""
             },
@@ -493,5 +493,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1463777443
+    "modified": 1464040223
 }

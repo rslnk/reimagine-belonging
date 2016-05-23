@@ -2,6 +2,7 @@ angular.module('storiesApp', [
     'ui.router',
     'ngCookies',
     'constants',
+    '720kb.socialshare',
     'api.service',
     'story.service',
     'stories.list.controller',

@@ -18,7 +18,8 @@
           </svg>
           <h1 class="u-visually-hidden">
             <?php bloginfo('name'); ?>
-          </h1></a><a data-target=".js-modal-menu" class="js-modal-menu-open c-icon-more--circle c-header__menu-icon<? echo $modifier; ?>"></a>
+          </h1></a><a data-target=".js-modal-menu" class="js-modal-menu-open c-icon-more--circle c-header__menu-icon<? echo $modifier; ?>"><span class="u-visually-hidden">
+            <?php the_field('toggle_navigation_button_screen_text', 'option'); ?></span></a>
         <?php if (has_nav_menu('primary_navigation')) : ?>
         <?php wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'c-header__list' . $modifier]); ?>
         <?php endif; ?>
@@ -75,7 +76,20 @@
           <div data-target=".js-directory-list-4" class="c-icon-plus--circle c-directories__toggle js-directory-section-toggle"></div>
           <?php endif; ?>
           <?php wp_nav_menu(['theme_location' => 'directory_section_4', 'menu_class' => 'c-directories__list js-directory-list-4']); ?>
-          <?php get_template_part('templates/partials/footer/social-links') // Get social links; ?>
+          <ul class="c-social-links__list">
+            <?php if(get_field('facebook_page_url', 'option')) : ?>
+            <li class="c-social-links__item"><a href="<?php echo 'https://www.facebook.com/' . get_field('facebook_user_name', 'option'); ?>" class="c-icon-facebook--circle c-social-links__icon"><span class="u-visually-hidden">
+                  <?php echo get_field('follow_label', 'option') . ' Facebook'; ?></span></a></li>
+            <?php endif; ?>
+            <?php if(get_field('twitter_url', 'option')) : ?>
+            <li class="c-social-links__item"><a href="<?php echo 'https://www.twitter.com/' . get_field('twitter_user_name', 'option'); ?>" class="c-icon-twitter--circle c-social-links__icon"><span class="u-visually-hidden">
+                  <?php echo get_field('follow_label', 'option') . ' Twitter'; ?></span></a></li>
+            <?php endif; ?>
+            <?php if(get_field('vimeo_url', 'option')) : ?>
+            <li class="c-social-links__item"><a href="<?php echo 'https://www.vimeo.com/' . get_field('vimeo_user_name', 'option'); ?>" class="c-icon-vimeo--circle c-social-links__icon"><span class="u-visually-hidden">
+                  <?php echo get_field('follow_label', 'option') . ' Vimeo'; ?></span></a></li>
+            <?php endif; ?>
+          </ul>
         </div>
         <?php endif; ?>
       </div>

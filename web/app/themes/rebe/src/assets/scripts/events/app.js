@@ -2,6 +2,7 @@ angular.module('eventsApp', [
     'ui.router',
     'ngCookies',
     'constants',
+    '720kb.socialshare',  
     'api.service',
     'event.service',
     'events.timeline.controller',
