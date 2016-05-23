@@ -6,18 +6,48 @@
 */
 .c-page__head
   position relative
+  overflow hidden
   clearfix()
   width 100%
 
-  background-color $mint
+  background-repeat no-repeat
+  background-size cover
+  background-position 50%
+  background-color $indigo // fallback color
+  transition all .5s ease // smooth transition on screen orientation change
+
+  +below('m')
+    margin-bottom 30px
+    min-height rem(180px)
+
+  +between('m', 'l')
+    margin-bottom 30px
+    min-height rem(240px)
+
+  +between('l', 'xl')
+    margin-bottom 40px
+    min-height rem(340px)
+
+  +above('xl')
+    margin-bottom 40px
+    height 50vh
+    min-height rem(380px)
 
   +below('l')
-    min-height rem(180px)
-    margin-bottom 30px
+    background-image url(../images/home/diagonals--mobile.jpg)
+    +retina()
+      background-image url(../images/home/diagonals--mobile@hidpi.jpg)
 
-  +above('l')
-    min-height rem(340px)
-    margin-bottom 40px
+  +between('l', 'hd')
+    background-image url(../images/home/diagonals--desktop.jpg)
+
+    +retina()
+      background-image url(../images/home/diagonals--desktop@hidpi.jpg)
+
+  +above('hd')
+    background-image url(../images/home/diagonals--hd-screen@hidpi.jpg)
+    +retina()
+      background-image url(../images/home/diagonals--hd-screen@hidpi.jpg)
 
   .c-page__head-content
     @extend .o-centered-content

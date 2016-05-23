@@ -1,0 +1,24 @@
+/*
+ * Style dropcaps in submitted content (i.e. via WordPress editor)
+*/
+.s-dropcaps
+  p
+    &:first-child
+      &:first-letter
+        float left
+        font-weight $light
+        color $indigo
+
+        +below('l')
+          padding-right rem(8px)
+          font-size rem(53px)
+          line-height rem(53px)
+
+        +between('l', 'xl')
+          padding-right rem(10px)
+          font-size rem(55px)
+          line-height rem(55px)
+
+        +above('xl')
+          font-size rem(90px)
+          line-height rem(80px)

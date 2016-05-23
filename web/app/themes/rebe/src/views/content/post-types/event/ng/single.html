@@ -22,35 +22,7 @@
     </div>
 
     <!-- event header -->
-    <div class="c-event__head">
-
-      <!-- categories list (timelines) -->
-      <div class="c-event__categories">
-
-        <ul class="c-categories__list">
-
-          <!-- timelines -->
-          <li ng-repeat="timeline in event.timelines"
-            class="c-categories__item t-mint">
-            {{ timeline.term_name }}
-          </li>
-
-          <!-- topics -->
-          <li ng-repeat="topic in event.topics"
-            class="c-categories__item t-indigo"
-            ng-bind-html="topic.term_name">
-          </li>
-
-          <!-- groups -->
-          <li ng-repeat="group in event.groups"
-            class="c-categories__item t-yolk"
-            style="background-color: {{ group.term_color }}">
-            {{ group.term_name }}
-          </li>
-
-        </ul>
-
-      </div>
+    <header class="c-event__head">
 
       <!-- event date -->
       <div ng-show="event.start_date" class="c-event__date">
@@ -61,18 +33,18 @@
 
       <h1 class="c-event__title">{{ event.title }}</h1>
 
-    </div>
+    </header>
 
     <!-- event content -->
     <div class="c-event__content">
 
       <!-- main content (article) -->
-      <div class="c-event__main s-headings s-paragraphs s-links s-text-lists">
+      <main class="c-event__main s-headings s-paragraphs s-links s-text-lists">
         <div ng-bind-html="event.main_content"></div>
-      </div>
+      </main>
 
       <!-- sidebar -->
-      <div class="c-event__sidebar">
+      <aside class="c-event__sidebar">
 
         <div ng-repeat="item in event.sidebar" ng-switch="item.type">
 
@@ -125,6 +97,38 @@
 
         </div>
 
+        <!-- categories list (timelines) -->
+        <div class="c-event__categories">
+
+          <ul class="c-categories__list">
+
+            <!-- timelines -->
+            <li ng-repeat="timeline in event.timelines"
+              class="c-categories__item t-mint">
+              {{ timeline.term_name }}
+            </li>
+
+          </ul>
+
+          <ul class="c-categories__list">
+
+            <!-- topics -->
+            <li ng-repeat="topic in event.topics"
+              class="c-categories__item t-indigo"
+              ng-bind-html="topic.term_name">
+            </li>
+
+            <!-- groups -->
+            <li ng-repeat="group in event.groups"
+              class="c-categories__item t-yolk"
+              style="background-color: {{ group.term_color }}">
+              {{ group.term_name }}
+            </li>
+
+          </ul>
+
+        </div>
+
         <!-- share event -->
         <div class="c-post-sharing">
 
@@ -146,386 +150,390 @@
 
         </div>
 
-      </div>
+      </aside>
 
     </div>
 
     <!-- post footnotes -->
-    <div class="c-footnotes">
+    <footer class="c-event__footer">
 
-      <!-- post sources -->
-      <div ng-if="event.sources" class="c-footnotes__column">
+      <div class="c-footnotes">
 
-        <h4 class="c-footnotes__title">{{ siteConfig.event_sources_title }}</h4>
+        <!-- post sources -->
+        <div ng-if="event.sources" class="c-footnotes__column">
 
-        <!-- list of sources -->
-        <ol class="c-footnotes__list">
+          <h4 class="c-footnotes__title">{{ siteConfig.event_sources_title }}</h4>
 
-          <li ng-repeat="item in event.sources" ng-switch="item.source_type" class="c-footnotes__item">
+          <!-- list of sources -->
+          <ol class="c-footnotes__list">
 
-            <!-- source: book -->
-            <span ng-switch-when="book">
-              <span ng-if="item.authors && item.author!='0'">
-                {{ item.authors }}.
-              </span>
-              <span ng-if="item.chapter">
-                "{{ item.chapter }}".
-              </span>
-              <span ng-if="item.title && item.url">
-                <em><a href="{{ item.url }}">{{ item.title }}</a></em>.
-              </span>
-              <span ng-if="item.title && !item.url">
-                <em>{{ item.title }}</em>.
-              </span>
-              <span ng-if="item.editor && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translator && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.volume">
-                {{ siteConfig.event_source_volume }} {{ item.volume }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-            </span>
+            <li ng-repeat="item in event.sources" ng-switch="item.source_type" class="c-footnotes__item">
 
-            <!-- source: article -->
-            <span ng-switch-when="article">
-              <span ng-if="item.authors && item.author!='0'">
-                {{ item.authors }}.
+              <!-- source: book -->
+              <span ng-switch-when="book">
+                <span ng-if="item.authors && item.author!='0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.chapter">
+                  "{{ item.chapter }}".
+                </span>
+                <span ng-if="item.title && item.url">
+                  <em><a href="{{ item.url }}">{{ item.title }}</a></em>.
+                </span>
+                <span ng-if="item.title && !item.url">
+                  <em>{{ item.title }}</em>.
+                </span>
+                <span ng-if="item.editor && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translator && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.volume">
+                  {{ siteConfig.event_source_volume }} {{ item.volume }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
               </span>
-              <span ng-if="item.title && item.url">
-                "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
-              </span>
-              <span ng-if="item.title && !item.url">
-                "{{ item.title }}".
-              </span>
-              <span ng-if="item.periodical_title">
-                <em>{{ item.periodical_title }}</em>.
-              </span>
-              <span ng-if="item.editors && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translators && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-            <!-- source: website -->
-            <span ng-switch-when="website">
-              <span ng-if="item.title">
-                "<a ng-if="item.url" href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+              <!-- source: article -->
+              <span ng-switch-when="article">
+                <span ng-if="item.authors && item.author!='0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.title && item.url">
+                  "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.title && !item.url">
+                  "{{ item.title }}".
+                </span>
+                <span ng-if="item.periodical_title">
+                  <em>{{ item.periodical_title }}</em>.
+                </span>
+                <span ng-if="item.editors && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translators && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
               </span>
-              <span ng-if="item.website_name">
-                <em>{{ item.website_name }}</em>.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-            <!-- source: misc -->
-            <span ng-switch-when="misc">
-              <span ng-if="item.authors && item.author=!'0'">
-                {{ item.authors }}.
+              <!-- source: website -->
+              <span ng-switch-when="website">
+                <span ng-if="item.title">
+                  "<a ng-if="item.url" href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.website_name">
+                  <em>{{ item.website_name }}</em>.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
               </span>
-              <span ng-if="item.title && item.url">
-                "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
-              </span>
-              <span ng-if="item.title && !item.url">
-                "{{ item.title }}".
-              </span>
-              <span ng-if="item.periodical_title">
-                <em>{{ item.periodical_title }}</em>.
-              </span>
-              <span ng-if="item.editors && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translators && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.volume">
-                {{ siteConfig.event_source_volume}} {{ item.volume }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-          </li>
-        </ol>
+              <!-- source: misc -->
+              <span ng-switch-when="misc">
+                <span ng-if="item.authors && item.author=!'0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.title && item.url">
+                  "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.title && !item.url">
+                  "{{ item.title }}".
+                </span>
+                <span ng-if="item.periodical_title">
+                  <em>{{ item.periodical_title }}</em>.
+                </span>
+                <span ng-if="item.editors && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translators && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.volume">
+                  {{ siteConfig.event_source_volume}} {{ item.volume }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
+              </span>
 
-      </div>
+            </li>
+          </ol>
 
-      <!-- post resources -->
-      <div ng-if="event.resources" class="c-footnotes__column">
+        </div>
 
-        <h4 class="o-heading c-footnotes__title">{{ siteConfig.event_resources_title }}</h4>
+        <!-- post resources -->
+        <div ng-if="event.resources" class="c-footnotes__column">
 
-        <!-- list of resources -->
-        <ol class="c-footnotes__list">
+          <h4 class="o-heading c-footnotes__title">{{ siteConfig.event_resources_title }}</h4>
 
-          <li ng-repeat="item in event.resources" ng-switch="item.resource_type" class=" c-footnotes__item">
+          <!-- list of resources -->
+          <ol class="c-footnotes__list">
 
-            <!-- resource: book -->
-            <span ng-switch-when="book">
-              <span ng-if="item.authors && item.author=!'0'">
-                {{ item.authors }}.
-              </span>
-              <span ng-if="item.chapter">
-                "{{ item.chapter }}".
-              </span>
-              <span ng-if="item.title && item.url">
-                <em><a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a></em>.
-              </span>
-              <span ng-if="item.title && !item.url">
-                <em>{{ item.title }}</em>.
-              </span>
-              <span ng-if="item.editors && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translators && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.volume">
-                {{ siteConfig.event_source_volume }} {{ item.volume }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-            </span>
+            <li ng-repeat="item in event.resources" ng-switch="item.resource_type" class=" c-footnotes__item">
 
-            <!-- resource: article -->
-            <span ng-switch-when="article">
-              <span ng-if="item.authors && item.author!='0'">
-                {{ item.authors }}.
+              <!-- resource: book -->
+              <span ng-switch-when="book">
+                <span ng-if="item.authors && item.author=!'0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.chapter">
+                  "{{ item.chapter }}".
+                </span>
+                <span ng-if="item.title && item.url">
+                  <em><a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a></em>.
+                </span>
+                <span ng-if="item.title && !item.url">
+                  <em>{{ item.title }}</em>.
+                </span>
+                <span ng-if="item.editors && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translators && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.volume">
+                  {{ siteConfig.event_source_volume }} {{ item.volume }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
               </span>
-              <span ng-if="item.title && item.url">
-                "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
-              </span>
-              <span ng-if="item.title && !item.url">
-                "{{ item.title }}".
-              </span>
-              <span ng-if="item.periodical_title">
-                <em>{{ item.periodical_title }}</em>.
-              </span>
-              <span ng-if="item.editors && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translators && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-            <!-- resource: webstie -->
-            <span ng-switch-when="website">
-              <span ng-if="item.title">
-                "<a ng-if="item.url" href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+              <!-- resource: article -->
+              <span ng-switch-when="article">
+                <span ng-if="item.authors && item.author!='0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.title && item.url">
+                  "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.title && !item.url">
+                  "{{ item.title }}".
+                </span>
+                <span ng-if="item.periodical_title">
+                  <em>{{ item.periodical_title }}</em>.
+                </span>
+                <span ng-if="item.editors && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translators && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
               </span>
-              <span ng-if="item.website_name">
-                <em>{{ item.website_name }}</em>.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-            <!-- resource: misc -->
-            <span ng-switch-when="misc">
-              <span ng-if="item.authors && item.author!='0'">
-                {{ item.authors }}.
+              <!-- resource: webstie -->
+              <span ng-switch-when="website">
+                <span ng-if="item.title">
+                  "<a ng-if="item.url" href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.website_name">
+                  <em>{{ item.website_name }}</em>.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
               </span>
-              <span ng-if="item.title && item.url">
-                "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
-              </span>
-              <span ng-if="item.title && !item.url">
-                "{{ item.title }}".
-              </span>
-              <span ng-if="item.periodical_title">
-                <em>{{ item.periodical_title }}</em>.
-              </span>
-              <span ng-if="item.editors && item.editor!='0'">
-                {{ siteConfig.event_source_editors }} {{ item.editors }}.
-              </span>
-              <span ng-if="item.translators && item.translator!='0'">
-                {{ siteConfig.event_source_translators }} {{ item.translators }}.
-              </span>
-              <span ng-if="item.edition">
-                {{ siteConfig.event_source_edition}} {{ item.edition }}.
-              </span>
-              <span ng-if="item.volume">
-                {{ siteConfig.event_source_volume}} {{ item.volume }}.
-              </span>
-              <span ng-if="item.location && !item.publisher">
-                {{ item.location }}.
-              </span>
-              <span ng-if="item.location && item.publisher">
-                {{ item.location }}:
-              </span>
-              <span ng-if="item.publisher && !item.date_published && !item.year_published">
-                {{ item.publisher }}.
-              </span>
-              <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
-                {{ item.publisher }},
-              </span>
-              <span ng-if="item.date_published">
-                {{ item.date_published }}.
-              </span>
-              <span ng-if="item.year_published && !item.date_published ">
-                {{ item.year_published }}.
-              </span>
-              <span ng-if="item.pages">
-                {{ siteConfig.event_source_pages }} {{ item.pages }}.
-              </span>
-              <span ng-if="item.isbn">
-                {{ item.isbn }}.
-              </span>
-              <span ng-if="item.date_accessed">
-                {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
-              </span>
-            </span>
 
-          </li>
-        </ol>
+              <!-- resource: misc -->
+              <span ng-switch-when="misc">
+                <span ng-if="item.authors && item.author!='0'">
+                  {{ item.authors }}.
+                </span>
+                <span ng-if="item.title && item.url">
+                  "<a href="{{ item.url }}" class="o-text-link">{{ item.title }}</a>".
+                </span>
+                <span ng-if="item.title && !item.url">
+                  "{{ item.title }}".
+                </span>
+                <span ng-if="item.periodical_title">
+                  <em>{{ item.periodical_title }}</em>.
+                </span>
+                <span ng-if="item.editors && item.editor!='0'">
+                  {{ siteConfig.event_source_editors }} {{ item.editors }}.
+                </span>
+                <span ng-if="item.translators && item.translator!='0'">
+                  {{ siteConfig.event_source_translators }} {{ item.translators }}.
+                </span>
+                <span ng-if="item.edition">
+                  {{ siteConfig.event_source_edition}} {{ item.edition }}.
+                </span>
+                <span ng-if="item.volume">
+                  {{ siteConfig.event_source_volume}} {{ item.volume }}.
+                </span>
+                <span ng-if="item.location && !item.publisher">
+                  {{ item.location }}.
+                </span>
+                <span ng-if="item.location && item.publisher">
+                  {{ item.location }}:
+                </span>
+                <span ng-if="item.publisher && !item.date_published && !item.year_published">
+                  {{ item.publisher }}.
+                </span>
+                <span ng-if="item.publisher && item.date_published || item.publisher && item.year_published">
+                  {{ item.publisher }},
+                </span>
+                <span ng-if="item.date_published">
+                  {{ item.date_published }}.
+                </span>
+                <span ng-if="item.year_published && !item.date_published ">
+                  {{ item.year_published }}.
+                </span>
+                <span ng-if="item.pages">
+                  {{ siteConfig.event_source_pages }} {{ item.pages }}.
+                </span>
+                <span ng-if="item.isbn">
+                  {{ item.isbn }}.
+                </span>
+                <span ng-if="item.date_accessed">
+                  {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}.
+                </span>
+              </span>
 
-      </div>
+            </li>
+          </ol>
+
+        </div>
+
+      </div><!-- .c-footnotes -->
 
     <!-- <h2>Related Stories</h2>
     <ul>
@@ -541,5 +549,5 @@
       </li>
     </ul> -->
 
-  </div>
+  </footer>
 </div>

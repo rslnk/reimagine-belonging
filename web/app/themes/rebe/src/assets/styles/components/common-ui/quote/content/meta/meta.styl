@@ -1,9 +1,11 @@
 /**
  * Quote meta
  *
- *    `c-quote__meta`
- *      `c-quote__author`
- *      `c-quote__source`
+ *    Wraps:
+ *       - `c-quote__meta`
+ *         - `c-quote__author`
+ *         - `c-quote__source`
+ *
  */
 .c-quote__meta
   @extend .o-paragraph
@@ -23,3 +25,12 @@
   @extend .c-quote__meta
 
   float left
+
+  +below('xl')
+    font-size $nano
+
+  +between('xl', 'hd')
+    font-size $micro
+
+  +above('hd')
+    font-size $centi

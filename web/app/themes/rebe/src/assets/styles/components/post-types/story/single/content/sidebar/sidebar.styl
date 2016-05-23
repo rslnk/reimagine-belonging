@@ -1,7 +1,14 @@
 /**
  * Story post sidebar
+ *
+ *    Wraps:
+ *      - `c-quote--story`
+ *      - `c-cc-notice`
+ *      - `c-story__categories`
+ *      - `c-post-sharing`
  */
 .c-story__sidebar
+  clearfix()
 
   +below('l')
     stack()

@@ -1,0 +1,18 @@
+/**
+ * Event post sidebar
+ *
+ *    Wraps:
+ *      - `c-media-block`
+ *      - `c-sidenote`
+ *      - `c-quote--event`
+ *      - `c-event__categories`
+ *      - `c-post-sharing`
+ */
+.c-event__sidebar
+  clearfix()
+
+  +below('l')
+    stack()
+
+  +above('l')
+    column(1/3)

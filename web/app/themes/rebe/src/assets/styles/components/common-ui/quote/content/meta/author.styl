@@ -1,7 +1,12 @@
 /**
  * Quote author
  */
- .c-quote__author
+.c-quote__author
   padding-left rem(3px) // between dash symbol and author name
   text-align right
   color $carbon-black
+
+// Story modifier
+.c-quote__author--story
+  @extend .c-quote__author
+  padding-left 0 // no dash symbol in this case

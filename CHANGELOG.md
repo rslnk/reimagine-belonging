@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## HEAD
+
+-   Minor 'Event', 'Story', 'Page' templates cosmetic tweaks
+-   Add 'Share Story' lable to 'Story' template sidebar
+-   Improve share post options hover animation
+-   Move category list to main content on 'Story' template
+-   Move category list to sidebar on 'Event' template
+-   Add head background image to 'Page' template
+-   Add drop caps style to 'Page' template
+
 ## 1.9.0 May 23rd, 2016
 
 -   Remove hardcoded 'how-to' (guide) and 'workshops' templates

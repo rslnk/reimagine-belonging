@@ -1,0 +1,20 @@
+/**
+ * Story post main
+ *
+ *   Wraps:
+ *      - `c-story__video`
+ *      - `c-categories`
+ *
+ */
+.c-story__main
+
+  +below('m')
+    stack()
+    margin-bottom rem(30px) // between main and sidebar when stacked
+
+  +between('m', 'l')
+    margin-bottom rem(50px)
+
+  +above('l')
+    column(4/6)
+    margin-bottom 0

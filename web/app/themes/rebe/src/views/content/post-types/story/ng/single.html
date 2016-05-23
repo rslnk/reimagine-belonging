@@ -14,9 +14,9 @@
   </div>
 
   <!-- Theater content -->
-  <div ng-cloak ng-show="story.video_url" class="c-story c-theater-view__content js-content">
+  <div ng-cloak ng-show="story.video_url" class="c-theater-view__content js-content">
 
-    <div >
+    <div class="c-story">
 
       <!-- close button -->
       <div class="c-icon-close--circle c-post-navigation__close" ng-click="closeLightbox()">
@@ -24,43 +24,43 @@
       </div>
 
       <!-- story header -->
-      <div class="c-story__head">
-
-        <!-- categories list (timelines) -->
-        <div class="c-story__categories">
-
-          <!-- categories list (topics & groups)-->
-          <ul class="c-categories__list">
-
-            <!-- topics -->
-            <li ng-repeat="topic in story.topics"
-              class="c-categories__item t-blueberry"
-              ng-bind-html="topic.term_name">
-            </li>
-
-          </ul>
-
-        </div>
+      <header class="c-story__head">
 
         <h1 class="o-heading c-story__title">{{ story.title }}</h1>
 
-      </div>
+      </header>
 
       <!-- story post content -->
       <div class="c-story__content">
 
         <!-- main content -->
-        <div class="c-story__main s-headings s-paragraphs s-links s-text-lists">
+        <main class="c-story__main s-headings s-paragraphs s-links s-text-lists">
 
           <!-- video content -->
           <div class="c-story__video u-video-container">
             <ngvideo ng-model="story.video_url"></ngvideo>
           </div>
 
-        </div>
+          <!-- categories list -->
+          <div class="c-story__categories">
+
+            <!-- categories list -->
+            <ul class="c-categories__list">
+
+              <!-- topics -->
+              <li ng-repeat="topic in story.topics"
+                class="c-categories__item t-blueberry"
+                ng-bind-html="topic.term_name">
+              </li>
+
+            </ul>
+
+          </div>
+
+        </main>
 
         <!-- sidebar -->
-        <div class="c-story__sidebar">
+        <aside class="c-story__sidebar">
 
           <!-- protagonist/hero quote (excerpt) -->
           <blockquote ng-if="story.excerpt" class="c-quote--story">
@@ -68,7 +68,7 @@
             <div class="c-quote__content">
               <h2 ng-bind-html="story.excerpt" class="c-quote__text--story"></h2>
               <div class="c-quote__meta--story">
-                <span class="c-quote__author">
+                <span class="c-quote__author--story">
                   <strong>{{ story.hero }}</strong>,
                 </span>
                 <span>
@@ -79,31 +79,42 @@
           </blockquote>
 
           <!-- video closed caption notice -->
-          <div ng-if="story.subtitles_notification == 1" class="c-closed-captions-notice">
-            <div class="c-icon-closed-captions c-closed-captions-notice__icon"></div>
-            <div class="c-closed-captions-notice__content">
-              <h3 ng-bind-html="siteConfig.story_cc_notice_title" class="c-closed-captions-notice__title"></h3>
-              <p ng-bind-html="siteConfig.story_cc_notice_text" class="c-closed-captions-notice__text"></p>
+          <div ng-if="story.subtitles_notification == 1" class="c-cc-notice">
+            <div class="c-icon-closed-captions c-cc-notice__icon"></div>
+            <div class="c-cc-notice__content">
+              <h3 ng-bind-html="siteConfig.story_cc_notice_title" class="c-cc-notice__title"></h3>
+              <p ng-bind-html="siteConfig.story_cc_notice_text" class="c-cc-notice__text"></p>
             </div>
           </div>
 
-          <!-- share story -->
-          <ul class="c-post-sharing__list">
-            <li class="c-post-sharing__item">
-              <a class="c-icon-facebook--circle c-post-sharing__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
-                <span class="u-visually-hidden">Share on Facebook</span>
-              </a>
-            </li>
-            <li class="c-post-sharing__item">
-              <a class="c-icon-twitter--circle c-post-sharing__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
-                <span class="u-visually-hidden">Share on Twitter</span>
-              </a>
-            </li>
-          </ul>
+          <!-- share event -->
+          <div class="c-post-sharing">
 
-        </div><!-- .c-story__sidebar -->
+            <ul class="c-post-sharing__list">
+
+              <h4 class="c-post-sharing__label">Share story:</h4>
+
+              <li class="c-post-sharing__item">
+                <a class="c-icon-facebook--circle c-post-sharing__link--story" target="_blank" href="http://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">
+                  <span class="u-visually-hidden">Share on Facebook</span>
+                </a>
+              </li>
+              <li class="c-post-sharing__item">
+                <a class="c-icon-twitter--circle c-post-sharing__link--story" target="_blank" href="http://www.twitter.com/share?url={{ shareUrl }}">
+                  <span class="u-visually-hidden">Share on Twitter</span>
+                </a>
+              </li>
+            </ul>
+
+          </div>
+
+        </aside><!-- .c-story__sidebar -->
 
       </div><!-- .c-story__content -->
+
+      <footer class="c-story__footer">
+        <!-- Related stories and events shoulld go here -->
+      </footer>
 
     </div>
 

@@ -1,0 +1,23 @@
+/**
+ * Closed Captions Notice content
+ *
+ *    Wraps:
+ *        - `c-cc-notice__icon`
+ *        - `c-cc-notice__content`
+ */
+.c-cc-notice
+  clearfix()
+
+  border-top rem(1px) solid $gray--light
+
+  +below('m', orientation: portrait)
+    margin-bottom rem(25px)
+    padding-top rem(20px) // between content and top-border
+
+  +between('s', 'm', orientation: landscape)
+    margin-bottom rem(25px)
+    padding-top rem(20px)
+
+  +above('l')
+    margin-bottom rem(40px)
+    padding-top rem(30px)

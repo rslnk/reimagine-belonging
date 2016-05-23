@@ -1,9 +1,10 @@
 /**
  * Quote
  *
- *    `c-quote`
- *      `c-quote__icon`
- *      `c-quote__content`
+ *    Wraps:
+ *      - `c-quote__icon`
+ *      - `c-quote__content`
+ *
  */
 .c-quote
   clearfix()
@@ -29,8 +30,11 @@
   +below('s')
     margin-bottom rem(20px) // space between quote and other sidebar objects
 
-  +between('s', 'hd')
+  +between('s', 'l')
     margin-bottom rem(30px)
 
-  +above('hd')
+  +between('l', 'hd')
     margin-bottom rem(40px)
+
+  +above('hd')
+    margin-bottom rem(45px)
