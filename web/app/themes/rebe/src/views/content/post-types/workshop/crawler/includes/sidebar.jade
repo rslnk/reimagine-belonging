@@ -1,0 +1,23 @@
+aside     
+  include ./details.jade
+  
+  h4
+    strong
+      - echo get_field('workshop_topic_label', 'option') . ': '
+    span
+      - App\taxonomy_terms('workshop_topic', 'name')
+      
+  div
+    a(href!="<? the_field('workshop_external_form_url', 'option') ?>")
+      - the_field('workshop_booking_button_label', 'option')
+
+  - if(get_field('sidebar_content')) :
+    - while( have_rows('sidebar_content')) : the_row()
+
+      include ../../../../../partials/media-blocks/video.jade
+      include ../../../../../partials/media-blocks/image.jade
+      include ../../../../../partials/media-blocks/quote.jade
+      include ../../../../../partials/media-blocks/sidenote.jade
+
+    - endwhile
+  - endif

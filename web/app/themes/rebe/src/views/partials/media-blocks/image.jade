@@ -6,7 +6,7 @@
       - endif
 
       - if (get_sub_field('credit')) :
-        a(href!="<?php the_sub_field('credit_link'); ?>")
+        a(href!="<? the_sub_field('credit_link'); ?>")
           - the_sub_field('credit')
       - endif
       h4

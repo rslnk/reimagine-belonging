@@ -1,0 +1,16 @@
+:php
+  $posts = get_field('related_events');
+
+- if($posts) :
+  
+  h4
+    - echo get_field('event_related_events_title', 'option') . ': '
+  
+  - foreach($posts as $post) :
+  
+    //- Get Event preview template
+    - get_template_part('content/post-types/event/crawler/preview')
+    
+    - wp_reset_postdata()
+  - endforeach
+- endif

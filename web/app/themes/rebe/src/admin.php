@@ -75,13 +75,15 @@ add_action('admin_menu', function () {
         return
         [
             'index.php',
-            'edit.php', // blog posts
             'edit.php?post_type=event',
             'edit.php?post_type=story',
-            'edit.php?post_type=page',
+            'edit.php?post_type=workshop',
+            'edit.php', // news (blog posts)
             'separator1',
-            'upload.php',
+            'edit.php?post_type=page',
             'separator2',
+            'upload.php',
+            'separator3',
             'site-settings', // ACF PRO options page
             'separator-last',
             'profile.php',

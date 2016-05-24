@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_5532202ba30ac",
-            "label": "Note",
+            "label": "Custom template",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -15,7 +15,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "This page uses custom template. See <strong>Page Attributes<\/strong> on the right sidebar for details.",
+            "message": "This page is set to use custom template. The content for this page is either set with the chosen template or in the <strong>Site Settings<\/strong>.",
+            "new_lines": "wpautop",
             "esc_html": 0
         }
     ],
@@ -24,21 +25,14 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-timeline.php"
+                "value": "templates\/template-stories.php"
             }
         ],
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "template-stories.php"
-            }
-        ],
-        [
-            {
-                "param": "page_type",
-                "operator": "==",
-                "value": "front_page"
+                "value": "templates\/template-events.php"
             }
         ]
     ],
@@ -63,6 +57,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "Custom template use notification + hides WP editor",
-    "modified": 1444390738
+    "description": "Custom template notification + hides WP editor",
+    "modified": 1464192651
 }

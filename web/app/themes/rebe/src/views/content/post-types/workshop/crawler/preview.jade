@@ -1,0 +1,14 @@
+article
+  header
+    h2
+      a(href!="<? App\\custom_post_url('workshop'); ?>")
+        - the_title()
+  main    
+    p
+      - the_field('caption', $post->ID)
+    
+    include ./includes/details.jade
+
+  footer
+    a(href!="<? the_field('workshop_external_form_url', 'option') ?>")
+      - the_field('workshop_preview_cta_button_label', 'option')

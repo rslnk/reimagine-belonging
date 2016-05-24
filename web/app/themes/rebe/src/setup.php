@@ -166,16 +166,15 @@ add_action('after_setup_theme', function () {
 */
 add_action('init', function() {
 
-    /* Book */
+    /* Event */
     $event = new PostType(
         'event',
         'Event',
         [
-            //'rewrite'       => ['slug' => get_field('event_post_type_slug', 'option')],
             'rewrite'       => ['slug' => get_field('event_post_type_slug', 'option') . '/%event_timeline%'],
             'supports'      => ['title', 'thumbnail'],
             'menu_position' => 6,
-            'menu_icon'     => 'dashicons-clock',
+            'menu_icon'     => 'dashicons-backup',
         ]
     );
 
@@ -299,14 +298,80 @@ add_action('init', function() {
         ]
     );
 
+    /* Workshop */
+    $workshop = new PostType(
+        'workshop',
+        'Workshop',
+        [
+            'rewrite'       => ['slug' => get_field('workshop_post_type_slug', 'option')],
+            'supports'      => ['title', 'thumbnail'],
+            'menu_position' => 6,
+            'menu_icon'     => 'dashicons-universal-access-alt'
+        ]
+    );
+
+    $workshop->add_taxonomy(
+        'workshop_location',
+        'Location',
+        [
+            'public'            => false,
+            'show_in_nav_menus' => false,
+            'meta_box_cb'       => false,
+            'show_admin_column' => true,
+        ]
+    );
+
+    $workshop->add_taxonomy(
+        'workshop_language',
+        'Language',
+        [
+            'public'            => false,
+            'show_in_nav_menus' => false,
+            'meta_box_cb'       => false,
+            'show_admin_column' => true,
+        ]
+    );
+
+    $workshop->add_taxonomy(
+        'workshop_type',
+        'Type',
+        [
+            'public'            => false,
+            'show_in_nav_menus' => false,
+            'meta_box_cb'       => false,
+            'show_admin_column' => true,
+        ]
+    );
+
+    $workshop->add_taxonomy(
+        'workshop_topic',
+        'Topic',
+        [
+            'public'            => false,
+            'show_in_nav_menus' => false,
+            'meta_box_cb'       => false,
+        ]
+    );
+
+    $workshop->add_taxonomy(
+        'workshop_group',
+        'Group',
+        [
+            'public'            => false,
+            'show_in_nav_menus' => false,
+            'meta_box_cb'       => false,
+            'show_admin_column' => true,
+        ]
+    );
+
     /*
     * Tag taxonomy
-    * Shared between 'Event' and 'Story' post types
+    * Shared between 'Event', 'Story' and 'Wokshop' post types
     */
     new Taxonomy(
         'global_tag',
         'Tag',
-        ['event', 'story'],
+        ['event', 'story', 'workshop'],
         [
             'public'                => false,
             'show_in_nav_menus'     => false,

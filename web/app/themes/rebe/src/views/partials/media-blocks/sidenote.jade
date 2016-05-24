@@ -1,9 +1,9 @@
 - if(get_sub_field('sidebar_content_type') == 'sidenote') :
+  div.c-sidenote
   - while(have_rows('sidenote')) : the_row()
-    div
-      h4
+      h4.c-sidenote__title--page
         - the_sub_field('title')
-        p
-          - the_sub_field('caption')
+      p.c-sidenote__caption
+        - the_sub_field('caption')
   - endwhile
 - endif

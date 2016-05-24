@@ -1,0 +1,16 @@
+:php
+  $posts = get_field('related_workshops');
+
+- if($posts) :
+  
+  h4
+    - echo get_field('workshop_related_workshops_label', 'option') . ': '
+  
+  - foreach($posts as $post) :
+  
+    //- Get Workshop preview template
+    - get_template_part('content/post-types/workshop/crawler/preview')
+    
+    - wp_reset_postdata()
+  - endforeach
+- endif

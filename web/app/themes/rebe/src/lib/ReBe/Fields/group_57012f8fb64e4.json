@@ -1,7 +1,23 @@
 {
     "key": "group_57012f8fb64e4",
-    "title": "Front page options",
+    "title": "Front page content",
     "fields": [
+        {
+            "key": "field_5745c7e0b0460",
+            "label": "Tagline",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
         {
             "key": "field_5602d17cee495",
             "label": "Tagline",
@@ -72,6 +88,22 @@
                     "max": ""
                 }
             ]
+        },
+        {
+            "key": "field_5745c7f5b0461",
+            "label": "Buttons",
+            "name": "_copy",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
         },
         {
             "key": "field_553125cc746ec",
@@ -188,5 +220,5 @@
     ],
     "active": 1,
     "description": "Front\/Homepage settings",
-    "modified": 1459697960
+    "modified": 1464190988
 }

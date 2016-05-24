@@ -1,6 +1,6 @@
 div.c-page__head
   div.c-page__head-content
-    - if(get_field('subtitle')) :
+    - if(get_field('page_title')) :
       h1.c-page__title
-        - the_field('subtitle')
+        - the_field('page_title')
     - endif

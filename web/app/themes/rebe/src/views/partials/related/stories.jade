@@ -1,0 +1,16 @@
+:php
+  $posts = get_field('related_stories');
+
+- if($posts) :
+  
+  h4
+    - echo get_field('story_related_stories_title', 'option') . ': '
+  
+  - foreach($posts as $post) :
+
+    //- Get Story preview template
+    - get_template_part('content/post-types/story/crawler/preview')
+    
+    - wp_reset_postdata()
+  - endforeach
+- endif

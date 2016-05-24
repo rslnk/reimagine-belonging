@@ -1,6 +1,28 @@
 # CHANGELOG
 
-## HEAD
+## 1.9.2 May 25th, 2016
+
+-   Change 'Events' dash icon
+-   Improve Site Settings, Dictionary and Advanced settings tabbed layout
+-   Add human readable 'Event' date to helpers function
+-   Add helpers function that outputs post taxonomy terms names
+-   Add custom post url constructor to helpers functions
+-   Add reusable preview templates (crawler)
+-   Move 'Event' sidebar includes to `partials/media-blocks` to make it reusable with other post types (crawler)
+-   Add related posts to 'Event', 'Story', 'Workshop' templates (crawler)
+-   Add lead text field to 'Event article' fields group, output it in API and ng template
+-   Drop defualt page template sidenote field in favour of `The content` sidebar
+-   Drop default content editor for page template in favour of `The content` custom field group
+-   Rename page `subtitle` field to `page_title` make it exclusive to default page templates
+-   Add page titles to 'Event' and 'Story' page templates (crawler)
+-   Extend 'Workshop' templates with data fields (crawler)
+-   Add 'Workshop' options to Site Settings and Dictionary
+-   Add 'Workshop' post specific fields group
+-   Add 'Workshop' page and single templates
+-   Reorganize WordPress admin menu order
+-   Register 'Workshop' post type and its taxonomies
+
+## 1.9.1 May 24th, 2016
 
 -   Add google plus to post sharing options
 -   Add `angularjs-socialshare` and imporove UX of posts social sharing

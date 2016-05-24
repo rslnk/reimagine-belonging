@@ -1,13 +1,13 @@
 {
     "key": "group_5521bebb8642a",
-    "title": "Subtitle",
+    "title": "Page title",
     "fields": [
         {
             "key": "field_5521beccb9f06",
-            "label": "Subtitle",
-            "name": "subtitle",
+            "label": "Page title",
+            "name": "page_title",
             "type": "text",
-            "instructions": "Use subtitle to extend the meaning of the post or page main title. Tip: use &#60strong&#62 tag for the words with strong importance. E.g. \"<strong>Reimagine<\/strong> Belonging\".  ",
+            "instructions": "Tip: use &#60strong&#62 tag for the words with strong importance. Example: <strong>Reimagine<\/strong> Belonging ",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -27,16 +27,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "page_template",
                 "operator": "==",
-                "value": "event"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
+                "value": "default"
             },
             {
                 "param": "page_type",
@@ -50,8 +43,10 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": "",
+    "hide_on_screen": [
+        "the_content"
+    ],
     "active": 1,
-    "description": "Pages\/Singular posts subtitle",
-    "modified": 1444390836
+    "description": "Pages main title",
+    "modified": 1464192404
 }

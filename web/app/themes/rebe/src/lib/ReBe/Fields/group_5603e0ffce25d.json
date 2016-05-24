@@ -4,7 +4,7 @@
     "fields": [
         {
             "key": "field_561550e24b883",
-            "label": "Posts URLs",
+            "label": "Post types",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -15,12 +15,12 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
             "key": "field_5615515eb7257",
-            "label": "Events and Stories posts URLs",
+            "label": "Post types slugs (base urls)",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -31,7 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Events and Stories slugs appear in URL before each post slugs. <strong>Example:<\/strong> reimaginebelonging.org\/<strong>stories<\/strong>\/story-post-name. <br\/>\r\n<br\/><br\/>\r\n<strong style=\"color:#000;\">Caution:<\/strong> changing Events and Stories posts slugs overwrites URL structure for these post types. In order for changes to take effect WordPress rewrite rules must be flushed. One way to do this is to update permalink settings. If you don't have permission to access WordPress \"Permalink Settings\", ask site administrator to flush rewrite rules.",
+            "message": "Post slugs appear in URL before each post slugs. <strong>Example:<\/strong> reimaginebelonging.org\/<strong>stories<\/strong>\/story-post-name. <br\/>\r\n<br\/><br\/>\r\n<strong style=\"color:#000;\">Caution:<\/strong> changing posts slug overwrites URL structure of a post type. In order for changes to take effect WordPress rewrite rules must be flushed. One way to do this is to update permalink settings. If you don't have permission to access WordPress \"Permalink Settings\", ask site administrator to flush rewrite rules.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
@@ -44,7 +44,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 20,
                 "class": "",
                 "id": ""
             },
@@ -58,18 +58,39 @@
         },
         {
             "key": "field_55383ce90495c",
-            "label": "Story posts slug",
+            "label": "Story post type slug",
             "name": "story_post_type_slug",
             "type": "text",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 50,
+                "width": 20,
                 "class": "",
                 "id": ""
             },
             "default_value": "stories",
+            "placeholder": "",
+            "prepend": "\/",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_574427e1069b3",
+            "label": "Workshop post type slug",
+            "name": "workshop_post_type_slug",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "workshops",
             "placeholder": "",
             "prepend": "\/",
             "append": "",
@@ -95,5 +116,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Site Settings: Event and Story custom post types url",
-    "modified": 1459695473
+    "modified": 1464173167
 }

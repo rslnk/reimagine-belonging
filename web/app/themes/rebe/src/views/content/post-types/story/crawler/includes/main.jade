@@ -4,5 +4,5 @@ main
   - elseif(get_field('story_video_host') == 'vimeo') :
     iframe(src="https://player.vimeo.com/video/<?php the_field('story_video_id'); ?>?title=0&byline=0")
   - else :
-      <!-- oEmbeded video code goes here -->
+    - the_field('story_oembed_video');
   - endif

@@ -83,6 +83,7 @@ Class Event
             'header_image_overlay_opacity'   => $this->dataFilter->acf_repeater_subfields('header_image', 'overlay_opacity'),
 
             // Content
+            'lead_text'                      => get_field('lead_text', $this->post->ID),
             'main_content'                   => get_field('main_content', $this->post->ID),
             'sidebar'                        => $this->dataFilter->post_sidebar(get_field('sidebar_content', $this->post->ID)),
             'sources'                        => $this->dataFilter->post_sources(get_field('sources', $this->post->ID)),

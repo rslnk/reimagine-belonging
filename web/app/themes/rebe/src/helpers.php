@@ -140,35 +140,114 @@ function get_facebook_sdk()
 /**
 * List object's taxonomy terms
 *
-* Outputs post taxonomy terms as a list (no links)
+* Outputs taxonomy terms assinged to post. Must be used in the loop.
 *
+* @param $taxomomy (taxonomy)
+* @param $fields ('slug', 'name')
 * @return string,
-* @link http://codex.wordpress.org/Function_Reference/get_the_terms
+* @link https://codex.wordpress.org/Function_Reference/wp_get_object_terms
 */
-function list_categories()
+function taxonomy_terms($taxonomy, $field)
 {
     global $wp_query, $post;
-    // get post by post id
     $post = get_post($post->ID);
-    // get post type by post
-    $post_type = $post->post_type;
-    // get post type taxonomies
-    $taxonomies = get_object_taxonomies($post_type, 'objects');
+    $the_terms = wp_get_object_terms($post->ID,  $taxonomy);
 
-    $out = [];
-    foreach ($taxonomies as $taxonomy_slug => $taxonomy) {
-        // get the terms related to post
-        $terms = get_the_terms($post->ID, $taxonomy_slug);
-        if (!empty($terms)) {
-            $out[] = '<ul class="c-categories__list">';
-            foreach ($terms as $term) {
-                $out[] =
-                '<li class="c-categories__item">'
-                . $term->name
-                . '</li>';
+    if (!empty($the_terms)) {
+        if (! is_wp_error($the_terms)) {
+            foreach ($the_terms as $term) {
+                echo $term->$field . ' ';
             }
-            $out[] = "</ul>";
         }
     }
-    echo implode('', $out);
 }
+
+/**
+* Construct custom post url
+*
+* Returns event post date in human-readable format
+* Example: reimaginebelonging.org/<events-page-slug>/<timeline-term-slug>/<post-slug>/
+* @param $date ('start', 'end')
+* @return string
+*/
+function custom_post_url($post_type, $taxonomy = null)
+{
+    global $wp_query, $post;
+
+    $post = get_post($post->ID);
+
+    // Check if taxonomy is provided
+    if($taxonomy !== null) {
+        $post_taxonomy_terms    = wp_get_object_terms($post->ID, $taxonomy);
+        $taxonomy_term_slug     = $post_taxonomy_terms[0]->slug . '/';
+    }
+    else {
+        $taxonomy_term_slug  = null;
+    }
+
+    $site_url               = get_bloginfo('url') . '/';
+    $post_name              = $post->post_name . '/';
+
+    switch($post_type) {
+        case 'event':
+            $base_slug = get_field('event_post_type_slug', 'option') . '/';
+            break;
+        case 'story':
+            $base_slug = get_field('story_post_type_slug', 'option') . '/';
+            break;
+        case 'workshop':
+            $base_slug = get_field('workshop_post_type_slug', 'option') . '/';
+            break;
+        default:
+            $base_slug = null;
+            break;
+    }
+
+    // Construct URL
+    $custom_post_url  = $site_url . $base_slug . $taxonomy_term_slug . $post_name;
+
+    echo $custom_post_url;
+}
+/**
+* Event date
+*
+* Returns event post date in human-readable format
+*
+* @param $date ('start', 'end')
+* @return string
+*/
+function event_date($date)
+{
+    if(get_field('unknown_date') == 0) {
+        switch($date) {
+            case 'start':
+                $start_date_full = get_field('start_date');
+                $start_date = date("F jS, Y",strtotime($start_date_full));
+                echo $start_date;
+                break;
+            case 'end':
+                if(!empty(get_field('end_date'))) {
+                    $end_date_full = get_field('end_date');
+                    $end_date = date("F jS, Y",strtotime($end_date_full));
+                    echo '— ' . $end_date;
+                }
+                break;
+        }
+    }
+    else {
+        switch($date) {
+            case 'start':
+                $start_date_full = get_field('start_date');
+                $start_date = date("Y",strtotime($start_date_full));
+                echo $start_date;
+                break;
+            case 'end':
+                if(!empty(get_field('end_date'))) {
+                    $end_date_full = get_field('end_date');
+                    $end_date = date("Y",strtotime($end_date_full));
+                    echo '— ' . $end_date;
+                }
+                break;
+        }
+    }
+ }

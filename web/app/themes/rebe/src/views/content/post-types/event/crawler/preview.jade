@@ -1,0 +1,8 @@
+article
+  dateformat
+    - App\event_date('start');
+  h3
+    - App\taxonomy_terms('event_timeline', 'name')
+  h2
+    a(href!="<? App\\custom_post_url('event', 'event_timeline'); ?>")
+      - the_title()

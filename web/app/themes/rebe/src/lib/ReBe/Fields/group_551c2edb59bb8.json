@@ -109,6 +109,7 @@
             "max": 1,
             "layout": "row",
             "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_551dc1f57a5f8",
@@ -342,5 +343,5 @@
     ],
     "active": 1,
     "description": "Event post: title, dates, classification, related",
-    "modified": 1444391426
+    "modified": 1464092012
 }

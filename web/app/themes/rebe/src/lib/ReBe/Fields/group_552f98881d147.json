@@ -15,7 +15,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -51,7 +51,7 @@
             "label": "Date format",
             "name": "site_date_format",
             "type": "text",
-            "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format.",
+            "instructions": "Select date format. Using DD\/MM\/YYYY format will output European and UK date format. \u041c\u041c\/DD\/YYYY will output US date format",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -91,7 +91,7 @@
         {
             "key": "field_553120e300008",
             "label": "Services",
-            "name": "services",
+            "name": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -101,7 +101,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -109,7 +109,7 @@
             "label": "Google Analytics ID",
             "name": "google_analytics_id",
             "type": "text",
-            "instructions": "Format: UA-XXXXX-Y.",
+            "instructions": "Format: UA-XXXXX-Y",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -274,7 +274,7 @@
         },
         {
             "key": "field_5542637121823",
-            "label": "Stories",
+            "label": "Stories app",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -285,7 +285,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -313,8 +313,8 @@
         },
         {
             "key": "field_553120d400007",
-            "label": "Events",
-            "name": "events",
+            "label": "Events app",
+            "name": "events_app",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -332,7 +332,7 @@
             "label": "Public timelines",
             "name": "public_timelines",
             "type": "taxonomy",
-            "instructions": "Timelines selected here will appear in the dropdown on \"history\" page.",
+            "instructions": "Timelines selected here will appear in the dropdown on \"history\" page",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -344,18 +344,17 @@
             "field_type": "multi_select",
             "allow_null": 0,
             "add_term": 0,
-            "load_save_terms": 0,
-            "return_format": "object",
-            "multiple": 0,
+            "save_terms": 0,
             "load_terms": 0,
-            "save_terms": 0
+            "return_format": "object",
+            "multiple": 0
         },
         {
             "key": "field_552f98afc3321",
             "label": "Default Timeline",
             "name": "default_timeline",
             "type": "taxonomy",
-            "instructions": "Select default Timeline.",
+            "instructions": "Set Timeline that will appear by default",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -366,12 +365,11 @@
             "taxonomy": "event_timeline",
             "field_type": "select",
             "allow_null": 0,
-            "load_save_terms": 0,
-            "return_format": "object",
-            "multiple": 0,
             "add_term": 1,
+            "save_terms": 0,
             "load_terms": 0,
-            "save_terms": 0
+            "return_format": "object",
+            "multiple": 0
         },
         {
             "key": "field_554263da21825",
@@ -397,9 +395,9 @@
             "save_terms": 0
         },
         {
-            "key": "field_5701364d60eed",
-            "label": "Misc",
-            "name": "misc",
+            "key": "field_5744c74184f1d",
+            "label": "Workshops app",
+            "name": "workshops_app",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -409,7 +407,44 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57444eb0d7267",
+            "label": "Booking form url",
+            "name": "workshop_external_form_url",
+            "type": "text",
+            "instructions": "Link to the external booking form (e.i. Google Forms)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 75,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5701364d60eed",
+            "label": "Misc",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -493,5 +528,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1464040223
+    "modified": 1464173364
 }

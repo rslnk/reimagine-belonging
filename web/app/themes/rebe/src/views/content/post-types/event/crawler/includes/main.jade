@@ -1,2 +1,6 @@
 main
+  - if (get_field('lead_text')) :
+    h2
+      - the_field('lead_text')
+  - endif
   - the_field('main_content')

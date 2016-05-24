@@ -1,0 +1,26 @@
+ul
+  li
+    strong
+      - echo get_field('workshop_target_group_label', 'option') . ': '
+    span
+      - echo get_field('target_group', $post->ID)
+  li
+    strong
+      - echo get_field('workshop_group_size_label', 'option') . ': '
+    span
+      - echo get_field('group_size', $post->ID)
+  li
+    strong
+      - echo get_field('workshop_duration_label', 'option') . ': '
+    span            
+      - echo get_field('duration', $post->ID)
+  li
+    strong
+      - echo get_field('workshop_language_label', 'option') . ': '
+    span            
+      - App\taxonomy_terms('workshop_language', 'name')
+  li
+    strong
+      - echo get_field('workshop_location_label', 'option') . ': '
+    span            
+      - App\taxonomy_terms('workshop_location', 'name')

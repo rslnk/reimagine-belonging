@@ -15,15 +15,15 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
-            "endpoint": 0
+            "placement": "left",
+            "endpoint": 1
         },
         {
             "key": "field_573dbbc641d09",
             "label": "Stories page title",
             "name": "stories_page_title",
             "type": "text",
-            "instructions": "E.g. \"Stories of Belonging\".",
+            "instructions": "Example: Stories of Belonging",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -40,30 +40,9 @@
             "disabled": 0
         },
         {
-            "key": "field_553110edd5ac7",
-            "label": "\"Add story\" button label",
-            "name": "stories_add_story_button_label",
-            "type": "text",
-            "instructions": "E.g. \"Add your story\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_5707afa6cdab9",
             "label": "Filter labels",
-            "name": "_copy",
+            "name": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -73,16 +52,16 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Labels for filter results.",
             "new_lines": "wpautop",
             "esc_html": 0
         },
         {
             "key": "field_55339055eafeb",
-            "label": "\"All stories\" label",
+            "label": "All stories",
             "name": "all_stories_filter_label",
             "type": "text",
-            "instructions": "All stories filter text label. E.g. \"All stories\".",
+            "instructions": "Example:  All stories",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -100,10 +79,10 @@
         },
         {
             "key": "field_553105136d8dc",
-            "label": "\"Total stories\" label",
+            "label": "Stories total",
             "name": "total_stories_label",
             "type": "text",
-            "instructions": "Text label before total number of stories. E.g. \"Stories\".",
+            "instructions": "Example:  Stories",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -121,10 +100,10 @@
         },
         {
             "key": "field_553105826d8dd",
-            "label": "\"Filtered stories\" label",
+            "label": "Filtered stories",
             "name": "flitered_stories_label",
             "type": "text",
-            "instructions": "Text label before number of filtered stories. E.g. \"Filtered\".",
+            "instructions": "Example: Filtered",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -142,10 +121,10 @@
         },
         {
             "key": "field_57002e67c71e7",
-            "label": "\"Pages\" label",
+            "label": "Pages",
             "name": "stories_filter_pagination_label",
             "type": "text",
-            "instructions": "Pagination text label. E.g. \"Pages\".",
+            "instructions": "Pagination label. Example: Pages",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -162,167 +141,8 @@
             "disabled": 0
         },
         {
-            "key": "field_5530ee0604c02",
-            "label": "Events page",
-            "name": "events_page",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_573dbc0141d0a",
-            "label": "Events page title",
-            "name": "timeline_page_title",
-            "type": "text",
-            "instructions": "E.g. \"History of Migration, Citizenship and Belonging\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 100,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5707ad58e9be9",
-            "label": "Timeline switcher",
-            "name": "timeline_switcher_label",
-            "type": "text",
-            "instructions": "Accessibility text. E.g. \"Select Timeline\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 25,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530e22430857",
-            "label": "\"About Timeline\" button text",
-            "name": "timeline_info_button_text",
-            "type": "text",
-            "instructions": "E.g. \"About this Timeline\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 25,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5707aef9e1795",
-            "label": "Filter labels",
-            "name": "filter_labels",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "new_lines": "wpautop",
-            "esc_html": 0
-        },
-        {
-            "key": "field_55339103eafec",
-            "label": "\"All events\" label",
-            "name": "timeline_all_events_filter_label",
-            "type": "text",
-            "instructions": "All events filter text label. E.g. \"All events\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33,33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530ee6204c05",
-            "label": "\"Total events\" label",
-            "name": "timeline_total_events_label",
-            "type": "text",
-            "instructions": "Text label before total number of events. E.g. \"Events\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33,33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
-            "key": "field_5530ee2204c04",
-            "label": "\"Filtered events\" label",
-            "name": "timeline_filtered_events_label",
-            "type": "text",
-            "instructions": "Text label before number of filtered events. E.g. \"Filtered\".",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "33,33",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_5530d7f2530c4",
-            "label": "Story",
+            "label": "Story post",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -333,7 +153,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -383,7 +203,7 @@
             "label": "Related stories title",
             "name": "story_related_stories_title",
             "type": "text",
-            "instructions": "E.g. \"Related stories\".",
+            "instructions": "Example: Related stories",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -404,7 +224,7 @@
             "label": "Related events title",
             "name": "story_related_events_title",
             "type": "text",
-            "instructions": "E.g. \"Related events\".",
+            "instructions": "Example: Related events",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -425,7 +245,7 @@
             "label": "Share story",
             "name": "share_story_label",
             "type": "text",
-            "instructions": "E.g. \"Share story\"",
+            "instructions": "Example: Share story",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -442,8 +262,8 @@
             "disabled": 0
         },
         {
-            "key": "field_552fd97c4751e",
-            "label": "Event",
+            "key": "field_5530ee0604c02",
+            "label": "Events page",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -454,7 +274,166 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_573dbc0141d0a",
+            "label": "Events page title",
+            "name": "events_page_title",
+            "type": "text",
+            "instructions": "Example: History of Migration, Citizenship and Belonging",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5707ad58e9be9",
+            "label": "Timeline switcher",
+            "name": "timeline_switcher_label",
+            "type": "text",
+            "instructions": "Example:  Select Timeline",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530e22430857",
+            "label": "About Timeline button label",
+            "name": "timeline_info_button_text",
+            "type": "text",
+            "instructions": "Example:  About this Timeline",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5707aef9e1795",
+            "label": "Filter labels",
+            "name": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Labels for filter results.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
+            "key": "field_55339103eafec",
+            "label": "All events label",
+            "name": "timeline_all_events_filter_label",
+            "type": "text",
+            "instructions": "Example: All events",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee6204c05",
+            "label": "\"Total events\" label",
+            "name": "timeline_total_events_label",
+            "type": "text",
+            "instructions": "Example:  Events",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5530ee2204c04",
+            "label": "Filtered events",
+            "name": "timeline_filtered_events_label",
+            "type": "text",
+            "instructions": "Example:  Filtered",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33,33",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fd97c4751e",
+            "label": "Event post",
+            "name": "event_post",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -462,7 +441,7 @@
             "label": "Impact counter",
             "name": "event_impact_counter_label",
             "type": "text",
-            "instructions": "Impact counter label, e.g \"Impacts\".",
+            "instructions": "Example:  Impacts",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -483,7 +462,7 @@
             "label": "Impact button (default)",
             "name": "event_impact_button_default_label",
             "type": "text",
-            "instructions": "E.g. \"Were you impacted?\".",
+            "instructions": "Example:  Were you impacted?",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -504,7 +483,7 @@
             "label": "Impact button (active)",
             "name": "event_impact_button_active_label",
             "type": "text",
-            "instructions": "E.g. \"Event impacted me\".",
+            "instructions": "Example:  Event impacted me",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -525,7 +504,7 @@
             "label": "Related events title",
             "name": "event_related_events_title",
             "type": "text",
-            "instructions": "E.g. \"Related events\".",
+            "instructions": "Example: Related events",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -546,7 +525,7 @@
             "label": "Related stories title",
             "name": "event_related_stories_title",
             "type": "text",
-            "instructions": "E.g. \"Related stories\".",
+            "instructions": "Example: Related stories",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -567,7 +546,7 @@
             "label": "Share event",
             "name": "share_event_label",
             "type": "text",
-            "instructions": "E.g. \"Share event\"",
+            "instructions": "Example: Share event",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -596,16 +575,16 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Labels and titles for information displayed in event entries sources and resources.",
-            "esc_html": 0,
-            "new_lines": "wpautop"
+            "message": "Labels and titles for information displayed in event entries sources and resources",
+            "new_lines": "wpautop",
+            "esc_html": 0
         },
         {
             "key": "field_554394e8a2381",
             "label": "Sources title",
             "name": "event_sources_title",
             "type": "text",
-            "instructions": "E.g. \"Sources\"",
+            "instructions": "Example:  Sources",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -626,7 +605,7 @@
             "label": "Resources title",
             "name": "event_resources_title",
             "type": "text",
-            "instructions": "E.g. \"Resources\".",
+            "instructions": "Example: Resources",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -647,7 +626,7 @@
             "label": "Editors",
             "name": "event_source_editors_title",
             "type": "text",
-            "instructions": "Example \"Edited by\" or \"Editors\"",
+            "instructions": "Example:  Edited by",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -658,7 +637,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -668,7 +647,7 @@
             "label": "Translators",
             "name": "event_source_translators_title",
             "type": "text",
-            "instructions": "Example \"Translated by\" or \"Translators\"",
+            "instructions": "Example: Translated by",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -679,7 +658,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -689,7 +668,7 @@
             "label": "Edition",
             "name": "event_source_edition_title",
             "type": "text",
-            "instructions": "Example: \"Edition\" or \"Ed.\"",
+            "instructions": "Example: Edition",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -700,7 +679,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -710,7 +689,7 @@
             "label": "Volume",
             "name": "event_source_volume_title",
             "type": "text",
-            "instructions": "Example: \"Volume\" or \"Vol.\"",
+            "instructions": "Example: Volume",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -731,7 +710,7 @@
             "label": "Pages",
             "name": "event_source_pages_title",
             "type": "text",
-            "instructions": "Example: \"Pages\" or \"pp.\"",
+            "instructions": "Example: Pages",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -752,7 +731,28 @@
             "label": "Date accessed",
             "name": "event_date_accessed_title",
             "type": "text",
-            "instructions": "Example: \"Date accessed\"",
+            "instructions": "Example: Date accessed",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_552fa083b8f50",
+            "label": "Suggest resource button",
+            "name": "event_suggest_resource_button_label",
+            "type": "text",
+            "instructions": "Example: Suggest a resource",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -769,11 +769,232 @@
             "disabled": 0
         },
         {
-            "key": "field_552fa083b8f50",
-            "label": "Suggest resource button",
-            "name": "event_suggest_resource_button_label",
+            "key": "field_574448be130d9",
+            "label": "Workshops page",
+            "name": "workshops_page",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_574576f8eb299",
+            "label": "Workshops page title",
+            "name": "workshops_page_title",
             "type": "text",
-            "instructions": "E.g. \"Suggest a resource\"",
+            "instructions": "Example: Workshops & Screenings",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57457ad227049",
+            "label": "Featured workshops label",
+            "name": "featured_workshops_label",
+            "type": "text",
+            "instructions": "Example: Featured Workshops",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 100,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_574579cd55f6b",
+            "label": "Workshop post",
+            "name": "workshop_post",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_57444cc8130db",
+            "label": "Target group label",
+            "name": "workshop_target_group_label",
+            "type": "text",
+            "instructions": "Example: For",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57444d09130dc",
+            "label": "Group size label",
+            "name": "workshop_group_size_label",
+            "type": "text",
+            "instructions": "Example: Group size",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57444d25130dd",
+            "label": "Duration label",
+            "name": "workshop_duration_label",
+            "type": "text",
+            "instructions": "Example: Duration",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57444d5a130de",
+            "label": "Location label",
+            "name": "workshop_location_label",
+            "type": "text",
+            "instructions": "Example: Location",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57444d6e130df",
+            "label": "Language label",
+            "name": "workshop_language_label",
+            "type": "text",
+            "instructions": "Example: Language",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5744c656ee194",
+            "label": "Topic label",
+            "name": "workshop_topic_label",
+            "type": "text",
+            "instructions": "Example: Themes",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5744c67eee195",
+            "label": "Type label",
+            "name": "workshop_type_label",
+            "type": "text",
+            "instructions": "Example: Type",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_574448cb130da",
+            "label": "Preview CTA button label",
+            "name": "workshop_preview_cta_button_label",
+            "type": "text",
+            "instructions": "Example: More details",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -785,6 +1006,48 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5744ca1999c4a",
+            "label": "Booking button label",
+            "name": "workshop_booking_button_label",
+            "type": "text",
+            "instructions": "Example: Book now",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5744de039dc25",
+            "label": "Related workshops label",
+            "name": "workshop_related_workshops_label",
+            "type": "text",
+            "instructions": "Example: Related workshops",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -802,7 +1065,7 @@
                 "class": "",
                 "id": ""
             },
-            "placement": "top",
+            "placement": "left",
             "endpoint": 0
         },
         {
@@ -954,8 +1217,8 @@
         },
         {
             "key": "field_5546833b8a366",
-            "label": "Page not found",
-            "name": "",
+            "label": "Error page",
+            "name": "error_page",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1091,8 +1354,8 @@
         },
         {
             "key": "field_563a22b654e10",
-            "label": "Donate",
-            "name": "",
+            "label": "Donate page",
+            "name": "donate_page",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1212,8 +1475,8 @@
         },
         {
             "key": "field_5530e21030856",
-            "label": "Common UI & Accessibility",
-            "name": "common",
+            "label": "UI & Accessibility",
+            "name": "ui_&_accessibility",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -1231,7 +1494,7 @@
             "label": "Toggle navigation button screen text",
             "name": "toggle_navigation_button_screen_text",
             "type": "text",
-            "instructions": "E.g. \"Toggle navigation\".",
+            "instructions": "Example: Toggle navigation",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1252,7 +1515,7 @@
             "label": "Newsletter sign up button label",
             "name": "newsletter_sign_up_button_label",
             "type": "text",
-            "instructions": "E.g. \"Sign up\"",
+            "instructions": "Example: Sign up",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1273,7 +1536,7 @@
             "label": "Contact us button label",
             "name": "contact_us_button_label",
             "type": "text",
-            "instructions": "E.g. \"Contact us\".",
+            "instructions": "Example:  Contact us",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1294,7 +1557,7 @@
             "label": "Search",
             "name": "search_label",
             "type": "text",
-            "instructions": "Search text label. E.g. \"Search\".",
+            "instructions": "Example:  Search",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1315,7 +1578,7 @@
             "label": "Close button",
             "name": "close_button_label",
             "type": "text",
-            "instructions": "Close button text label.",
+            "instructions": "Close button text label",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1336,7 +1599,7 @@
             "label": "Next button",
             "name": "next_button_label",
             "type": "text",
-            "instructions": "'Next' button text label.",
+            "instructions": "'Next' button text label",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1357,7 +1620,7 @@
             "label": "Previous button",
             "name": "previous_button_label",
             "type": "text",
-            "instructions": "'Previous' button text label.",
+            "instructions": "'Previous' button text label",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1378,7 +1641,7 @@
             "label": "Follow label",
             "name": "follow_label",
             "type": "text",
-            "instructions": "Example: \"Follow us on\"",
+            "instructions": "Example: Follow us on",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1389,7 +1652,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -1399,7 +1662,7 @@
             "label": "Share label",
             "name": "share_label",
             "type": "text",
-            "instructions": "Example: \"Share on\"",
+            "instructions": "Example: Share on",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -1410,7 +1673,7 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -1449,5 +1712,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1464042038
+    "modified": 1464173773
 }

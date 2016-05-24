@@ -23,20 +23,20 @@ class Dictionary
             'stories_load_more_label'                => get_field('stories_load_more_label', 'option'),
             'stories_search_result_none_message'     => get_field('stories_search_result_none_message', 'option'),
 
-            // Events page (Timeline)
-            'timeline_page_title'                    => get_field('timeline_page_title', 'option'),
-            'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
-            'all_events_filter_label'                => get_field('timeline_all_events_filter_label', 'option'),
-            'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),
-            'timeline_filtered_events_label'         => get_field('timeline_filtered_events_label', 'option'),
-            'timeline_search_result_none_message'    => get_field('timeline_search_result_none_message', 'option'),
-
             // Story post
             'story_cc_notice_title'                  => get_field('story_cc_notice_title', 'option'),
             'story_cc_notice_text'                   => get_field('story_cc_notice_text', 'option'),
             'share_story_label'                      => get_field('share_story_label', 'option'),
             'story_related_stories_title'            => get_field('story_related_stories_title', 'option'),
             'story_related_events_title'             => get_field('story_related_events_title', 'option'),
+
+            // Events page (Timeline)
+            'events_page_title'                     => get_field('events_page_title', 'option'),
+            'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
+            'all_events_filter_label'                => get_field('timeline_all_events_filter_label', 'option'),
+            'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),
+            'timeline_filtered_events_label'         => get_field('timeline_filtered_events_label', 'option'),
+            'timeline_search_result_none_message'    => get_field('timeline_search_result_none_message', 'option'),
 
             // Event post
             'event_impact_counter_label'             => get_field('event_impact_counter_label', 'option'),
@@ -55,7 +55,7 @@ class Dictionary
             'event_source_date_accessed'             => get_field('event_date_accessed_title', 'option'),
             'event_add_resource_button_label'        => get_field('event_suggest_resource_button_label', 'option'),
 
-            // Common
+            // UI & Accessability
             'toggle_navigation_button_screen_text'   => get_field('toggle_navigation_button_screen_text', 'option'),
             'newsletter_sign_up_button_label'        => get_field('newsletter_sign_up_button_label', 'option'),
             'contact_us_button_label'                => get_field('contact_us_button_label', 'option'),

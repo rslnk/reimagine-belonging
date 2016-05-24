@@ -1,32 +1,12 @@
-:php
-  // Construct human-readable date
-  if(get_field('unknown_date') == 0) {
-    $start_date_full = get_field('start_date');
-    $start_date = date("F jS, Y",strtotime($start_date_full));
-    $end_date_full = get_field('end_date');
-    $end_date = date("F jS, Y",strtotime($end_date_full));
-  }
-  else {
-    $start_date_full = get_field('start_date');
-    $start_date = date("Y",strtotime($start_date_full));
-    $end_date_full = get_field('end_date');
-    $end_date = date("Y",strtotime($end_date_full));
-  }
-
 header
-  - App\list_categories()
-
   h1 
     - the_title()
-  
-  - if (get_field('subtitle')) :
-    h2
-      - the_field('subtitle')
-  - endif
-    
   div
     dateformat
-      - echo $start_date
-    span —
-    dateformat
-      - echo $end_date
+      - App\event_date('start');
+    dateformat  
+      - App\event_date('end');
+  h3
+    - App\taxonomy_terms('event_timeline', 'name')
+  h4
+    - App\taxonomy_terms('event_topic', 'name')
