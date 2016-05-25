@@ -14,6 +14,7 @@
   font-weight $thin
   font-style normal
   text-transform uppercase
+  letter-spacing rem(1px)
   color $gray--medium
 
   strong
@@ -22,11 +23,9 @@
 
   +below('m')
     font-size $femto
-    letter-spacing rem(.5px)
 
   +between('m', 'l')
     font-size $pico
-    letter-spacing rem(1px)
 
   +between('l', 'xl')
     font-size $nano
@@ -34,3 +33,14 @@
   +above('xl')
     letter-spacing rem(2px)
     font-size $micro
+
+// Workshops page modifier
+.c-dashboard--workshops
+  @extend .c-dashboard
+
+  margin-bottom 0
+  color $gray--light
+
+  strong
+    font-weight $regular
+    color $white

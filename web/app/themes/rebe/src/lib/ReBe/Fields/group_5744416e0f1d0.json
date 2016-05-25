@@ -708,7 +708,9 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
-            },
+            }
+        ],
+        [
             {
                 "param": "post_type",
                 "operator": "==",
@@ -742,5 +744,5 @@
     ],
     "active": 1,
     "description": "General content for pages and posts: lead, main + sidebar",
-    "modified": 1464191869
+    "modified": 1464516665
 }

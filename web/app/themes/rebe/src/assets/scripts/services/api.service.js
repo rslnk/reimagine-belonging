@@ -12,6 +12,24 @@ angular.module('api.service', ['ngLodash'])
         req.send(null);
         return req;
       },
+      getPage: function (path) {
+        return $http.get('/api/?action=page-data&path='+path).then(function (response) {
+          return response.data;
+        });
+      },
+      getPages: function () {
+        return $http.get('/api/?action=list-all-pages').then(function (response) {
+          var pages = response.data;
+
+          pages.map(function (page) {
+            if (page.permalink) {
+              page.slug = page.permalink.split('/').slice(-2,-1)[0];
+            }
+          });
+
+          return pages;
+        });
+      },
       getEvent: function (path) {
         return $http.get('/api/?action=event-data&path='+path).then(function (response) {
           return response.data;
@@ -57,6 +75,26 @@ angular.module('api.service', ['ngLodash'])
       },
       getStory: function (path) {
         return $http.get('/api/?action=story-data&path='+path).then(function (response) {
+          return response.data;
+        });
+      },
+      getWorkshops: function () {
+        return $http.get('/api/?action=list-all-workshops').then(function (response) {
+          var workshops = response.data;
+
+          workshops.map(function (workshop) {
+            if (workshop.permalink) {
+              workshop.slug = workshop.permalink.split('/').slice(-2,-1)[0];
+            }
+          });
+
+          // result = lodash.sortBy(result, 'published_date_gmt');
+
+          return workshops;
+        });
+      },
+      getWorkshop: function (path) {
+        return $http.get('/api/?action=workshop-data&path='+path).then(function (response) {
           return response.data;
         });
       }

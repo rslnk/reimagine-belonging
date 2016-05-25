@@ -11,6 +11,7 @@
 
     font-family $base-heading-font
     font-weight $thin
+    color $white
 
     +between('xs', 'm')
       font-size $femto
@@ -24,3 +25,27 @@
       padding-top rem(12px) // font render hight fix
       font-size $nano
       letter-spacing rem(1px)
+
+.c-categories__item--workshop-topic
+  @extend .o-btn, .o-btn--small, .o-btn--disabled
+
+  display inline-block
+  float left
+  margin-right rem(1px) // horizontal space between items
+  margin-bottom rem(1px) // vertical space between items
+
+  padding rem(8px) rem(10px)
+
+  font-family $base-heading-font
+  font-weight $thin
+  color $white
+
+  background-color saturation($blueberry, 60%) + 10%
+
+  +between('xs', 'm')
+    font-size $femto
+    letter-spacing rem(.5px)
+
+  +above('m')
+    font-size $pico
+    letter-spacing rem(1px)

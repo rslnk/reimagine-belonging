@@ -4,90 +4,90 @@
       - the_field('event_sources_title', 'option')
     ol
       - while(have_rows('sources')) : the_row()
-        li
-          - if(get_sub_field('author')) :
-            - while(have_rows('author')) : the_row()
+          li
+            - if(get_sub_field('author')) :
+              - while(have_rows('author')) : the_row()
+                - the_sub_field('first_name')
+                - the_sub_field('last_name')
+              - endwhile
+            - endif
+
+          - if(get_sub_field('title')) :
+            - the_sub_field('title')
+          - endif
+
+          - if(get_sub_field('chapter')) :
+            - the_sub_field('chapter')
+          - endif
+
+          - if(get_sub_field('url')) :
+              a(href!="<? the_sub_field('url'); ?>")
+                - the_sub_field('url')
+          - endif
+
+          - if(get_sub_field('editor')) :
+            - the_field('event_source_editors_title', 'option')
+            - while(have_rows('editor')) : the_row()
               - the_sub_field('first_name')
               - the_sub_field('last_name')
             - endwhile
           - endif
 
-        - if(get_sub_field('title')) :
-          - the_sub_field('title')
-        - endif
+          - if(get_sub_field('translator')) :
+            - the_field('event_source_translators_title', 'option')
+            - while(have_rows('translator')) : the_row()
+              - the_sub_field('first_name')
+              - the_sub_field('last_name')
+            - endwhile
+          - endif
 
-        - if(get_sub_field('chapter')) :
-          - the_sub_field('chapter')
-        - endif
+          - if(get_sub_field('periodical_title')) :
+            - the_sub_field('periodical_title')
+          - endif
 
-        - if(get_sub_field('url')) :
-          a(href!="<? the_sub_field('url'); ?>")
-            - the_sub_field('url')
-        - endif
+          - if(get_sub_field('website_name')) :
+            - the_sub_field('website_name')
+          - endif
 
-        - if(get_sub_field('editor')) :
-          - the_field('event_source_editors_title', 'option')
-          - while(have_rows('editor')) : the_row()
-            - the_sub_field('first_name')
-            - the_sub_field('last_name')
-          - endwhile
-        - endif
+          - if(get_sub_field('location')) :
+            - the_sub_field('location')
+          - endif
 
-        - if(get_sub_field('translator')) :
-          - the_field('event_source_translators_title', 'option')
-          - while(have_rows('translator')) : the_row()
-            - the_sub_field('first_name')
-            - the_sub_field('last_name')
-          - endwhile
-        - endif
+          - if(get_sub_field('publisher')) :
+            - the_sub_field('publisher')
+          - endif
 
-        - if(get_sub_field('periodical_title')) :
-          - the_sub_field('periodical_title')
-        - endif
+          - if(get_sub_field('pages')) :
+            - the_field('event_source_pages_title', 'option')
+            - the_sub_field('pages')
+          - endif
 
-        - if(get_sub_field('website_name')) :
-          - the_sub_field('website_name')
-        - endif
+          - if(get_sub_field('volume')) :
+            - the_field('event_source_volume_title', 'option');
+            - the_sub_field('volume')
+          - endif
 
-        - if(get_sub_field('location')) :
-          - the_sub_field('location')
-        - endif
+          - if(get_sub_field('edition')) :
+            - the_field('event_source_edition_title', 'option')
+            - the_sub_field('edition')
+          - endif
 
-        - if(get_sub_field('publisher')) :
-          - the_sub_field('publisher')
-        - endif
+          - if(get_sub_field('isbn')) :
+            - the_sub_field('isbn') 
+          - endif
 
-        - if(get_sub_field('pages')) :
-          - the_field('event_source_pages_title', 'option')
-          - the_sub_field('pages')
-        - endif
+          - if(get_sub_field('year_published')) :
+            - the_sub_field('year_published')
+          - endif
 
-        - if(get_sub_field('volume')) :
-          - the_field('event_source_volume_title', 'option');
-          - the_sub_field('volume')
-        - endif
+          - if(get_sub_field('date_published')) :
+            - the_sub_field('date_published')
+          - endif
 
-        - if(get_sub_field('edition')) :
-          - the_field('event_source_edition_title', 'option')
-          - the_sub_field('edition')
-        - endif
-
-        - if(get_sub_field('isbn')) :
-          - the_sub_field('isbn') 
-        - endif
-
-        - if(get_sub_field('year_published')) :
-          - the_sub_field('year_published')
-        - endif
-
-        - if(get_sub_field('date_published')) :
-          - the_sub_field('date_published')
-        - endif
-
-        - if(get_sub_field('date_accessed')) :
-          - the_field('event_date_accessed_title', 'option')
-          - the_sub_field('date_accessed')
-        - endif
+          - if(get_sub_field('date_accessed')) :
+            - the_field('event_date_accessed_title', 'option')
+            - the_sub_field('date_accessed')
+          - endif
 
       - endwhile
 - endif

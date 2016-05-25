@@ -1,0 +1,21 @@
+- if(get_sub_field('sidebar_content_type') == 'video') :
+  - while(have_rows('video')) : the_row()            
+      div.c-media-block
+        div.u-video-container
+          - if(get_sub_field('video_host') == 'youtube') :
+              iframe(src="http://www.youtube.com/embed/<?php the_sub_field('id'); ?>?modestbranding=0&nologo=1&iv_load_policy=3&autoplay=0&showinfo=0&controls=1&cc_load_policy=1&rel=0" frameborder="0", allowfullscreen='allowfullscreen')
+          - else :
+              iframe(src="https://player.vimeo.com/video/<?php the_sub_field('id'); ?>?title=0&byline=0")
+          - endif
+
+        - if (get_sub_field('credit')) :
+            a(href!="<? the_sub_field('credit_link'); ?>").c-media-block__credits
+              - the_sub_field('credit')
+        - endif
+      
+        h4.c-media-block__title
+          - the_sub_field('title')              
+        p.c-media-block__caption
+          - the_sub_field('caption')      
+  - endwhile
+- endif

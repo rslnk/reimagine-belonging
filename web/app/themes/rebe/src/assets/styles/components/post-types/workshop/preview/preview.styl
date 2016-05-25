@@ -3,16 +3,64 @@
  *
  *    Wraps:
  *      - `c-workshop-preview__head`
- *      - `c-workshop-preview__summary`
+ *      - `c-workshop-preview__content`
+ *      - `c-workshop-preview__footer`
+ *
  */
 .c-workshop-preview
-  column(1/6)
+  @extend .o-btn
 
-  margin-bottom rem(20px)
-  padding rem(30px)
-  min-height rem(490px)
+  position relative
+
+  padding rem(20px)
   background-color $gray--light
 
-// Featured modifier
-.c-workshop-preview--featured
-  colum(3/6)
+  transition all .35s ease-in-out
+
+  &:hover
+  &:focus
+    transform scale(1.1)
+    box-shadow 0 0 40px $blueberry - 45%
+
+  +below('m')
+    stack()
+    margin-bottom rem(15px)
+
+  +between('m', 'l')
+    column(1/2, cycle: 2)
+    margin-bottom rem(20px)
+    min-height rem(450px)
+
+  +between('xl', rem(1400px)) // unique width case
+    column(1/3, uncycle: 2, cycle: 3)
+    margin-bottom rem(30px)
+    min-height rem(480px)
+
+  +above(rem(1400px))
+    column(1/4, uncycle: 3, cycle: 4)
+    margin-bottom rem(40px)
+    min-height rem(460px)
+
+// Related post modifier
+.c-workshop-preview--related
+  @extend .c-workshop-preview
+
+  background-color $white
+
+  transition all .21s ease-in-out
+
+  &:hover
+  &:focus
+    transform none
+    box-shadow none
+    transform scale(1.02)
+    box-shadow 0 0 10px $gray--medium
+
+  +between('m', 'l')
+    min-height rem(400px)
+
+  +between('xl', rem(1400px)) // unique width case
+    min-height rem(430px)
+
+  +above(rem(1400px))
+    min-height rem(415px)

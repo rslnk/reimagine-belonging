@@ -5,3 +5,26 @@
   @extend .o-ui-list
 
   float right
+
+  .is-active
+    font-weight $regular
+    color $carbon-black
+
+    &:hover
+    &:focus
+      // no hover effect
+      color $carbon-black
+      cursor default
+
+
+// Workshops page modifier
+.c-pagination__list--workshops
+  @extend .c-pagination__list
+
+  .is-active
+    color $white
+
+    &:hover
+    &:focus
+      // no hover effect
+      color $white

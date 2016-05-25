@@ -8,7 +8,7 @@
   @extend .o-heading
 
   font-weight $thin
-  line-height 1.4
+  line-height 1.3
 
   strong
   em
@@ -17,12 +17,22 @@
 
   +below('m')
     font-size $micro
+    margin-bottom rem(20px)
 
-  +between('m', 'xl')
+  +between('m', 'l')
+    font-size $centi
+    margin-bottom rem(25px)
+
+  +between('l', 'xl')
     font-size $deca
 
-  +above('xl')
+  +between('xl', 'hd')
+    font-size rem(33px)
+    margin-bottom rem(30px)
+
+  +above('hd')
     font-size $mega
+
 
 // Size modifier
 .c-lead--small

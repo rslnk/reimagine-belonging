@@ -120,27 +120,6 @@
             "disabled": 0
         },
         {
-            "key": "field_57002e67c71e7",
-            "label": "Pages",
-            "name": "stories_filter_pagination_label",
-            "type": "text",
-            "instructions": "Pagination label. Example: Pages",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 35,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_5530d7f2530c4",
             "label": "Story post",
             "name": "",
@@ -814,7 +793,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 100,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
@@ -822,6 +801,27 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_574ada16c98e6",
+            "label": "Total workshops label",
+            "name": "total_workshops_label",
+            "type": "text",
+            "instructions": "Example: All workshops",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -1574,6 +1574,27 @@
             "disabled": 0
         },
         {
+            "key": "field_574adb6ea4461",
+            "label": "Pagination page label",
+            "name": "pagination_page_label",
+            "type": "text",
+            "instructions": "Example:  Pages",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ":",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_5530e23930858",
             "label": "Close button",
             "name": "close_button_label",
@@ -1712,5 +1733,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1464173773
+    "modified": 1464523667
 }

@@ -1,0 +1,14 @@
+div(ng-show="(workshops|showWorkshops:filter).length > perPage").c-dashboard--workshops
+  ul.c-dashboard__info
+    //- total entries
+    li.c-dashboard__posts-total {{ siteConfig.total_workshops_label }}: 
+      strong {{ workshops.length }}
+  //-- pagination 
+  div.c-dashboard__pagination
+    div.c-pagination--dashboard
+      span.c-pagination__label {{ siteConfig.pagination_page_label }}: 
+      ul.c-pagination__list--workshops
+        li(ng-repeat="(k, v) in getPages() track by $index"
+          class="c-pagination__item--workshops"
+          ng-click="toPage(k)"
+          ng-class="{'is-active': k === page }") {{ k+1 }}

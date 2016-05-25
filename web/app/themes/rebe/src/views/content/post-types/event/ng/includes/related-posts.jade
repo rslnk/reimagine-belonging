@@ -1,0 +1,17 @@
+div.c-workshop__related-posts
+  h2 Related Stories
+  ul
+    li(ng-repeat="item in workshop.related_stories")
+      img(ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}}")
+      h3 {{ item.title }}
+      a(href!="/{{ siteConfig.stories_slug }}/{{ item.post_slug }}")
+        | Open Story
+
+div.c-workshop__related-posts
+  h2 Related Events
+  ul
+    li(ng-repeat="item in workshop.related_events")
+      img(ng-if="item.preview_image" ng-src="{{ item.previewImgPath }}" alt="{{ item.post_title}}")
+      h3 {{ item.title }}
+      a(href="/{{ siteConfig.events_slug }}/{{ item.timelines[0].term_slug }}/{{ item.post_slug }}")
+        | Open Event

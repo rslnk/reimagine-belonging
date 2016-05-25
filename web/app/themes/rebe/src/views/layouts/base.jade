@@ -6,12 +6,12 @@ doctype html
 //- bypassing by using an actual html tag.
 <html <? language_attributes(); ?>>
 
-include ../partials/head.jade
+include ../partials/wp/head.jade
 
 body
   - App\get_facebook_sdk()
-  include ../partials/header.jade
+  include ../partials/wp/header.jade
   - include App\template_unwrap()
-  include ../partials/footer/footer.jade
+  include ../partials/wp/footer/footer.jade
   
 </html>

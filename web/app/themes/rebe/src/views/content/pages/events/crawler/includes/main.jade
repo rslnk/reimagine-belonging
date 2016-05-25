@@ -11,8 +11,8 @@
 - if($the_query->have_posts()) :
   - while($the_query->have_posts()) : $the_query->the_post()
 
-    //- Get Event preview template
-    - get_template_part('content/post-types/event/crawler/preview')
+      //- Get Event preview template
+      - get_template_part('content/post-types/event/crawler/preview')
 
     - wp_reset_postdata()
   - endwhile

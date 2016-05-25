@@ -2,6 +2,8 @@
 
 use ReBe\API\Data\Event;
 use ReBe\API\Data\Story;
+use ReBe\API\Data\Workshop;
+use ReBe\API\Data\Page;
 
 /**
  * Filter object's data for cleaner API output
@@ -36,6 +38,13 @@ class PostDataFilter
             foreach ($posts as $post) {
                 $story_preview = new Story($post);
                 $result[] = $story_preview->teaser();
+            }
+            return $result;
+        }
+        else if(!empty($posts) && $post_type == 'workshop'){
+            foreach ($posts as $post) {
+                $workshop_preview = new Workshop($post);
+                $result[] = $workshop_preview->teaser();
             }
             return $result;
         }

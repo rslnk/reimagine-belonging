@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## 1.9.3 May 31th, 2016
+
+-   Implement ng app for 'Workshop' post type
+-   Add Jade templates task for ng templates
+-   Add 'Page' post type to API
+-   Add 'Workshop' post type and app settings to API
+-   Split `partials` template folders for `wp` and `ng` templates
+
 ## 1.9.2 May 25th, 2016
 
 -   Change 'Events' dash icon

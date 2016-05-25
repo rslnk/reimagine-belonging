@@ -1,0 +1,24 @@
+/**
+ * Workshop post content
+ *
+ *    Wraps:
+ *      - `c-workshop__main`
+ *      - `c-workshop__sidebar`
+*/
+.c-workshop__content
+  clearfix()
+
+  +below('m')
+    padding rem(15px)
+
+  +between('m', 'l')
+    padding rem(30px)
+
+  +between('l', 'xl')
+    padding rem(40px)
+
+  +between('xl', 'uhd')
+    padding rem(50px) rem(80px)
+
+  +above('uhd')
+    padding rem(60px) rem(100px)

@@ -6,10 +6,19 @@
  *      - `c-event__sidebar`
 */
 .c-event__content
-  center()
+  clearfix()
 
-  +below('xl')
-    margin-bottom rem(30px) // between main content and footnotes
+  +below('m')
+    padding rem(15px)
 
-  +above('xl')
-    margin-bottom rem(70px)
+  +between('m', 'l')
+    padding rem(30px)
+
+  +between('l', 'xl')
+    padding rem(30px) rem(40px)
+
+  +between('xl', 'uhd')
+    padding rem(40px) rem(80px)
+
+  +above('uhd')
+    padding rem(60px) rem(100px)

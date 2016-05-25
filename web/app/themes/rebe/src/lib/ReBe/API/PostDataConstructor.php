@@ -2,6 +2,8 @@
 
 use ReBe\API\Data\Event;
 use ReBe\API\Data\Story;
+use ReBe\API\Data\Workshop;
+use ReBe\API\Data\Page;
 use WP_Query;
 
 
@@ -163,8 +165,16 @@ class PostDataConstructor
                 $the_type = new Story($this->post);
                 $this->the_type = $the_type;
                 break;
+            case 'workshop':
+                $the_type = new Workshop($this->post);
+                $this->the_type = $the_type;
+                break;
+            case 'page':
+                $the_type = new Page($this->post);
+                $this->the_type = $the_type;
+                break;
             default:
-                die('No such post type: ' . $this->post_type . '. Use `event` or `story`.');
+                die('No such post type: ' . $this->post_type . '. Use `event`, `story`, `workshop`, `page`.');
                 break;
         }
 

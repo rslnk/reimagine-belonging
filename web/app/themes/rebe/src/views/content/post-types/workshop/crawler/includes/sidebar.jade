@@ -14,10 +14,10 @@ aside
   - if(get_field('sidebar_content')) :
     - while( have_rows('sidebar_content')) : the_row()
 
-      include ../../../../../partials/media-blocks/video.jade
-      include ../../../../../partials/media-blocks/image.jade
-      include ../../../../../partials/media-blocks/quote.jade
-      include ../../../../../partials/media-blocks/sidenote.jade
+        include ../../../../../partials/wp/media-blocks/video.jade
+        include ../../../../../partials/wp/media-blocks/image.jade
+        include ../../../../../partials/wp/media-blocks/quote.jade
+        include ../../../../../partials/wp/media-blocks/sidenote.jade
 
     - endwhile
   - endif

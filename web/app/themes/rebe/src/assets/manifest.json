@@ -29,6 +29,18 @@
         "scripts/stories/app.js"
       ]
     },
+    "workshops.js": {
+      "files": [
+        "scripts/services/api.service.js",
+        "scripts/services/workshop.service.js",
+        "scripts/workshops/filters/list.filter.js",
+        "scripts/workshops/directives/preview.directive.js",
+        "scripts/workshops/controllers/list.controller.js",
+        "scripts/workshops/controllers/workshop.controller.js",
+        "scripts/constants.js",
+        "scripts/workshops/app.js"
+      ]
+    },
     "main.js": {
       "files": [
         "scripts/main.js"

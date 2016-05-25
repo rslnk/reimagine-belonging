@@ -2,6 +2,7 @@
  * Hero (page hero)
  *
  *   Wraps:
+ *      - `c-hero__content`
  *      - `c-hero__title`
  *
  */
@@ -21,3 +22,23 @@
 
   +above('hd')
     margin-bottom rem(60px)
+
+// Workshops page modifier
+.c-hero--workshops
+  @extend .c-hero
+
+  min-height rem(600px)
+  transition all .3s ease-in-out
+  background-color $blueberry
+
+  +below('m')
+    padding-bottom rem(30px)
+
+  +between('m', 'l')
+    padding-bottom rem(40px)
+
+  +between('l', 'xl')
+    padding-bottom rem(60px)
+
+  +above('hd')
+    padding-bottom rem(80px)

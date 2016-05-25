@@ -1,0 +1,7 @@
+main.c-workshops__main
+  - if (get_field('lead_text')) :
+      h2.c-workshops__lead
+        - the_field('lead_text')
+    - endif
+  div.s-headings.s-paragraphs.s-links.s-text-lists
+    - the_field('main_text')

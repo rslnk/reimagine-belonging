@@ -34,8 +34,31 @@
   @extend .c-sidenote__title
 
   color $mint
-//  color $indigo
 
+// Workshops post modifier
+.c-sidenote__title--workshop
+  @extend .c-sidenote__title
+
+  color $mint
+
+// Workshops page modifier
+.c-sidenote__title--workshops
+  @extend .c-sidenote__title
+
+  color $blueberry
+
+  +below('m')
+    font-size $centi
+
+  +between('m', 'l')
+    font-size $deca
+
+  +between('l', 'xl')
+    font-size $mega
+
+  +above('xl')
+    font-size $tera
+    line-height 1.2
 
 // Page modifier
 .c-sidenote__title--page

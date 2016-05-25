@@ -1,0 +1,7 @@
+div.c-workshop__categories
+  //- types
+  ul.c-categories__list
+    li(ng-repeat="type in workshop.types" ng-bind-html="type.term_name").c-categories__item.t-mint
+  //- topics
+  ul.c-categories__list
+    li(ng-repeat="topic in workshop.topics" ng-bind-html="topic.term_name").c-categories__item--workshop-topic

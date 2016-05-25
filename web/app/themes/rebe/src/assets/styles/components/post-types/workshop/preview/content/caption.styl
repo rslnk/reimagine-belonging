@@ -2,4 +2,21 @@
  * Workshop preview caption (short description)
  */
 .c-workshop-preview__caption
-  margin-bottom rem(30px)
+  @extend .o-paragraph
+
+  line-height 1.65
+  color $carbon-black + 20%
+
+  +below('l')
+    margin-bottom rem(15px)
+
+  +above('l')
+    margin-bottom rem(20px)
+
+// Related post modifier
+.c-workshop-preview__caption--related
+  @extend .c-workshop-preview__caption
+  @extend .o-paragraph--small
+
+  color $carbon-black + 20%
+  margin-bottom rem(15px)

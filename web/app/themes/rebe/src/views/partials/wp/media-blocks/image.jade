@@ -1,0 +1,17 @@
+- if(get_sub_field('sidebar_content_type') == 'image') :
+  - while(have_rows('image')) : the_row()
+      div.c-media-block
+        - if(get_sub_field('url')) :
+            div(style="background-image: url(<? the_sub_field('url'); ?>)").u-image-cover.u-image-cover--4x3.c-media-block__placeholder
+        - endif
+
+        - if (get_sub_field('credit')) :
+            a(href!="<? the_sub_field('credit_link'); ?>").c-media-block__credits
+              - the_sub_field('credit')
+        - endif
+        h4.c-media-block__title
+          - the_sub_field('title')
+        p.c-media-block__caption
+          - the_sub_field('caption')
+  - endwhile
+- endif

@@ -16,7 +16,7 @@ add_action('parse_request', function() {
     register_api_endpoints();
 
     /**
-     * Rewrite rules for 'story' and 'event' post types requests.
+     * Rewrite rules for 'story', 'event', 'workshops' post types requests.
      * Mimics Single Page Application behaviour, allowing post-to-post navigation
      * on pages that include Angular applications while stil upadting URL.
      *
@@ -25,6 +25,7 @@ add_action('parse_request', function() {
     */
     RewriteRoutes::post_type_ui_routing('browser', 'stories');
     RewriteRoutes::post_type_ui_routing('browser', 'events', 'event_timeline');
+    RewriteRoutes::post_type_ui_routing('browser', 'workshops');
 
 }, 0);
 
@@ -38,6 +39,7 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('rebe/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
     wp_enqueue_script('events/js', asset_path('scripts/events.js'), [], null, true);
     wp_enqueue_script('stories/js', asset_path('scripts/stories.js'), [], null, true);
+    wp_enqueue_script('workshops/js', asset_path('scripts/workshops.js'), [], null, true);
     // External fonts
     wp_enqueue_style('fonts/css', 'http://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css', false, null);
     wp_enqueue_style('google/fonts/css', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700', false, null);

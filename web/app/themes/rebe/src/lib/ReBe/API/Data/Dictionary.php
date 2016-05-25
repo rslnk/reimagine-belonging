@@ -10,8 +10,8 @@
 class Dictionary
 {
 
-    public static function site_dictionary() {
-
+    public static function site_dictionary()
+    {
         $data = [
 
             // Stories page
@@ -31,7 +31,7 @@ class Dictionary
             'story_related_events_title'             => get_field('story_related_events_title', 'option'),
 
             // Events page (Timeline)
-            'events_page_title'                     => get_field('events_page_title', 'option'),
+            'events_page_title'                      => get_field('events_page_title', 'option'),
             'timeline_info_banner_text'              => get_field('timeline_info_banner_text', 'option'),
             'all_events_filter_label'                => get_field('timeline_all_events_filter_label', 'option'),
             'timeline_total_events_label'            => get_field('timeline_total_events_label', 'option'),
@@ -55,11 +55,29 @@ class Dictionary
             'event_source_date_accessed'             => get_field('event_date_accessed_title', 'option'),
             'event_add_resource_button_label'        => get_field('event_suggest_resource_button_label', 'option'),
 
+            // Workshops page
+            'workshops_page_title'                   => get_field('workshops_page_title', 'option'),
+            'featured_workshops_label'               => get_field('featured_workshops_label', 'option'),
+            'total_workshops_label'                  => get_field('total_workshops_label', 'option'),
+
+            // Workshop post
+            'workshop_target_group_label'            => get_field('workshop_target_group_label', 'option'),
+            'workshop_group_size_label'              => get_field('workshop_group_size_label', 'option'),
+            'workshop_duration_label'                => get_field('workshop_duration_label', 'option'),
+            'workshop_location_label'                => get_field('workshop_location_label', 'option'),
+            'workshop_language_label'                => get_field('workshop_language_label', 'option'),
+            'workshop_topic_label'                   => get_field('workshop_topic_label', 'option'),
+            'workshop_topic_label'                   => get_field('workshop_topic_label', 'option'),
+            'workshop_preview_cta_button_label'      => get_field('workshop_preview_cta_button_label', 'option'),
+            'workshop_booking_button_label'          => get_field('workshop_booking_button_label', 'option'),
+            'workshop_related_workshops_label'       => get_field('workshop_related_workshops_label', 'option'),
+
             // UI & Accessability
             'toggle_navigation_button_screen_text'   => get_field('toggle_navigation_button_screen_text', 'option'),
             'newsletter_sign_up_button_label'        => get_field('newsletter_sign_up_button_label', 'option'),
             'contact_us_button_label'                => get_field('contact_us_button_label', 'option'),
             'search_label'                           => get_field('search_label', 'option'),
+            'pagination_page_label'                  => get_field('pagination_page_label', 'option'),
             'close_button_label'                     => get_field('close_button_label', 'option'),
             'next_button_label'                      => get_field('next_button_label', 'option'),
             'previous_button_label'                  => get_field('previous_button_label', 'option'),

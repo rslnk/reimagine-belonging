@@ -18,20 +18,20 @@
 
     <div class="c-story">
 
-      <!-- close button -->
-      <div class="c-icon-close--circle c-post-navigation__close" ng-click="closeLightbox()">
-        <span class="u-visually-hidden">{{ siteConfig.close_button_label }}</span>
-      </div>
-
-      <!-- story header -->
-      <header class="c-story__head">
-
-        <h1 class="o-heading c-story__title">{{ story.title }}</h1>
-
-      </header>
-
       <!-- story post content -->
       <div class="c-story__content">
+
+        <!-- close button -->
+        <div class="c-icon-close--circle c-post-navigation__close" ng-click="closeLightbox()">
+          <span class="u-visually-hidden">{{ siteConfig.close_button_label }}</span>
+        </div>
+
+        <!-- story header -->
+        <header class="c-story__head">
+
+          <h1 class="o-heading c-story__title">{{ story.title }}</h1>
+
+        </header>        
 
         <!-- main content -->
         <main class="c-story__main s-headings s-paragraphs s-links s-text-lists">

@@ -6,4 +6,11 @@
  *
 */
 .c-event__footer
+  float left
   clearfix()
+
+  +below('xl')
+    margin-top rem(30px) // between  main/sidebar and footer
+
+  +above('xl')
+    margin-top rem(70px)

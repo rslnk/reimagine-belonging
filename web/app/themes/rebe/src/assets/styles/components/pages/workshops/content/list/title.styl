@@ -1,9 +1,25 @@
 /**
- * Workshops title
+ * Workshops page title
  */
-.c-workshop__title
+.c-workshops__title
   @extend .o-heading
 
-  margin-top rem(10px)
-  margin-bottom rem(35px)
+  line-height 1.2
   color $white
+
+  +below('s')
+    font-size $hecto
+
+  +between('s', 'm')
+    font-size $mega
+
+  +between('m', 'l')
+    font-size $tera
+
+  +between('l', 'xl')
+
+    font-size $exa
+
+  +above('xl')
+    font-size $yotta
+    line-height 1

@@ -38,3 +38,16 @@
 
   +above('hd')
     margin-bottom rem(45px)
+
+// Workshop modifier
+.c-quote--workshop
+  @extend .c-quote
+
+  +below('l')
+    margin-bottom rem(15px) // space between quote and other sidebar objects
+
+  +between('l', 'hd')
+    margin-bottom rem(20px)
+
+  +above('hd')
+    margin-bottom rem(40px)

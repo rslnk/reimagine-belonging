@@ -1,0 +1,14 @@
+header.c-hero--workshops
+  div.c-hero__content
+    h1(ng-bind-html="siteConfig.workshops_page_title").c-workshops__title
+
+    div(ng-cloak ng-show="(workshops|showWorkshops:filter).length > perPage").js-workshops-list.c-workshops__list
+      workshop-preview(
+        ng-repeat="(k, workshop) in workshops" 
+        ng-show="inPaginatorScope(k)"
+        ng-click="openWorkshop(workshop.slug)"
+      ).c-workshop-preview
+  
+    include ./includes/dashboard.jade
+    
+    div(ui-view="")

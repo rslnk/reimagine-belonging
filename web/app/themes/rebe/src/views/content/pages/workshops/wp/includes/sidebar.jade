@@ -1,0 +1,11 @@
+aside.c-workshops__sidebar
+  - if(get_field('sidebar_content')) :
+    - while( have_rows('sidebar_content')) : the_row()
+
+        include ../../../../../partials/wp/media-blocks/video.jade
+        include ../../../../../partials/wp/media-blocks/image.jade
+        include ./quote.jade
+        include ./sidenote.jade
+
+    - endwhile
+  - endif

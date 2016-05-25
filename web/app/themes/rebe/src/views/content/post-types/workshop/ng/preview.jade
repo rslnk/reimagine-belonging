@@ -1,0 +1,26 @@
+article
+  header.c-workshop-preview__head
+    h2.c-workshop-preview__title {{ workshop.title }}
+
+  main.c-workshop-preview__content
+    p.c-workshop-preview__caption {{ workshop.caption }}
+    
+    //- Details
+    div.c-workshop-preview__details
+      div.is-detail
+        strong {{ siteConfig.workshop_target_group_label }}: 
+        span {{ workshop.target_group }}
+      div.is-detail
+        strong {{ siteConfig.workshop_group_size_label }}: 
+        span {{ workshop.group_size }}    
+      div.is-detail
+        strong {{ siteConfig.workshop_duration_label }}: 
+        span {{ workshop.duration }}
+      div.is-detail
+        strong {{ siteConfig.workshop_language_label }}: 
+        span(ng-repeat="language in workshop.language")
+          | {{ language.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
+
+  footer.c-workshop-preview__footer
+    a(ng-click="openWorkshop(workshop.slug)").c-workshop-preview__cta
+      | {{ siteConfig.workshop_preview_cta_button_label }}

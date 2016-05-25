@@ -1,0 +1,37 @@
+/**
+ * Workshop Booking CTA button
+ */
+.c-workshop__cta-button
+  @extend .o-btn
+
+  font-family $base-heading-font
+  font-weight $thin
+  color $white
+
+  background-color $blueberry
+
+  &:hover
+  &:focus
+    color $blueberry + 90%
+    background-color $blueberry - 20%
+    // animate icon on button hover
+    .has-icon
+      transform translateX(rem(5px))
+
+  +below('l')
+    padding rem(16px) rem(28px)
+    font-size $micro
+    letter-spacing rem(.5px)
+
+  +above('l')
+    padding rem(18px) rem(30px)
+    font-size $deci
+    letter-spacing rem(1px)
+
+  .has-icon
+    display inline-block
+    margin-left rem(15px) // between icon and text
+    vertical-align middle // align icon with text
+    font-size rem(20px)
+
+    transition all .25s ease-in-out

@@ -11,12 +11,14 @@ var gulpif            = require('gulp-if');
 var iconfont          = require('gulp-iconfont');
 var imagemin          = require('gulp-imagemin');
 var imageminPngquant  = require('imagemin-pngquant');
+var jade              = require('gulp-jade');
 var jadePhp           = require('gulp-jade-php');
 var jeet              = require('jeet');
 var koutoSwiss        = require('kouto-swiss');
 var lazypipe          = require('lazypipe');
 var less              = require('gulp-less');
 var merge             = require('merge-stream');
+var ngAnnotate        = require('gulp-ng-annotate');
 var cssNano           = require('gulp-cssnano');
 var plumber           = require('gulp-plumber');
 var rev               = require('gulp-rev');
@@ -172,11 +174,13 @@ var writeToManifest = function(directory) {
 // By default this task will only log a warning if a precompiler error is
 // raised. If the `--production` flag is set: this task will fail outright.
 gulp.task('templates', function() {
-  gulp.src('!./src/views/**/*.jade')
+  // PHP Templates
   gulp.src([
     './src/views/**/*.jade',
+    // Exclude following patterns:
     '!./src/views/partials/**/*.jade', // exclude `partials` directories
     '!./src/views/**/includes/**/*.jade', // exclude `includes` directories
+    '!./src/views/**/ng/**/*.jade', // exclude 'ng' directories (angluar templates)
   ])
     .pipe(plumber())
     .pipe(jadePhp({
@@ -184,6 +188,16 @@ gulp.task('templates', function() {
     }))
     .pipe(plumber.stop())
     .pipe(gulp.dest('./templates'));
+
+  // Angular apps templates
+  gulp.src([
+    './src/views/**/ng/**/*.jade', // only from ng directories
+    '!./src/views/**/ng/**/includes/*.jade', // exclude `includes` directories
+  ])
+    .pipe(jade({
+      pretty: true
+    }))
+    .pipe(gulp.dest('./templates'))
 });
 
 // ### Styles

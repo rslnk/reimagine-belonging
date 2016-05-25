@@ -2,7 +2,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <?php if (is_page_template('templates/template-events.php') || is_page_template('templates/template-stories.php')) : ?>
+  <?php if (is_page_template('templates/template-events.php') || is_page_template('templates/template-stories.php') || is_page_template('templates/template-workshops.php')) : ?>
   <?php App\set_template_uri_base(); ?>
   <?php endif; ?>
   <?php wp_head(); ?>
@@ -94,8 +94,8 @@
         <?php endif; ?>
       </div>
       <div class="c-locale">
-        <?php if(get_field('site_alternative_locale_url', 'option') && get_field('footer_alternative_locale_button_text', 'option')) : // Get locale; ?><a href="<?php the_field('site_alternative_locale_url', 'option'); ?>" class="c-locale__button"><span class="c-locale__text">
-            <?php the_field('footer_alternative_locale_button_text', 'option'); ?></span><span class="c-icon-arrow--circle c-locale__icon"> </span></a>
+        <?php if(get_field('site_alternative_locale_url', 'option') && get_field('footer_alternative_locale_button_text', 'option')) : // Get locale; ?><a href="<? the_field('site_alternative_locale_url', 'option'); ?>" class="c-locale__button"><span class="c-locale__text">
+            <?php the_field('footer_alternative_locale_button_text', 'option'); ?><span class="c-icon-arrow-right--circle c-locale__icon"> </span></span></a>
         <?php endif; ?>
       </div>
       <div class="c-legal">

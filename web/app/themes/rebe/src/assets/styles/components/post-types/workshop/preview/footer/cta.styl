@@ -1,0 +1,40 @@
+/**
+ * Workshop preview cta button
+ */
+.c-workshop-preview__cta
+  @extend .o-btn, .o-btn--medium
+
+  font-family $base-heading-font
+  font-weight $thin
+  color $white
+
+  background-color $blueberry - 10%
+
+  &:hover
+  &:focus
+    background-color $blueberry - 30%
+
+  +between('xs', 'm')
+    font-size $pico
+    letter-spacing rem(.5px)
+
+  +between('m', 'l')
+    font-size $nano
+    letter-spacing rem(1px)
+
+  +above('l')
+    padding-top rem(12px) // font render hight fix
+    font-size $milli
+    letter-spacing rem(1px)
+
+// Related post modifier
+.c-workshop-preview__cta--related
+  @extend .c-workshop-preview__cta
+
+  +between('xs', 'm')
+    font-size $pico
+    letter-spacing rem(.5px)
+
+  +above('m')
+    padding-top rem(12px) // font render hight fix
+    font-size $nano

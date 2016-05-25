@@ -1,0 +1,25 @@
+/**
+ * Workshop post title
+*/
+.c-workshop__title
+  @extend .o-heading
+
+  font-weight $regular
+  line-height 1.2
+
+  +below('m')
+    font-size $hecto
+
+  +between('m', 'l')
+    font-size $giga
+
+  +between('l', 'xl')
+    margin-top 0 // overwrites default heading margin
+    font-size $tera
+
+  +between('xl', 'hd')
+    font-size $exa
+
+  +above('hd')
+    font-size $zetta
+    line-height 1

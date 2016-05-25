@@ -2,8 +2,23 @@
  * Workshop preview details list
  */
 .c-workshop-preview__details
-  margin-left 0
+  @extend .o-paragraph
 
-  .is-item
-    margin-bottom rem(13px)
-    color $carbon-black
+  .is-detail
+    font-size $nano
+    line-height 1.8
+    color $carbon-black + 20%
+
+    strong
+    em
+    b
+      font-weight $semibold
+      color $carbon-black
+
+// Related post modifier
+.c-workshop-preview__details--related
+  @extend .c-workshop-preview__details
+
+  .is-detail
+    font-size $pico
+    line-height 1.7

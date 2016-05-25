@@ -1,0 +1,15 @@
+- if(get_sub_field('sidebar_content_type') == 'quote') : 
+    - while(have_rows('quote')) : the_row()
+        blockquote.c-quote--event
+          div.c-icon-quote.c-quote__icon--event
+          div.c-quote__content
+            h4.c-quote__text--event
+              - the_sub_field('text')
+            div.c-quote__meta
+              span —
+              span.c-quote__author
+                - the_sub_field('author')
+              span.c-quote__source
+                - the_sub_field('source')
+  - endwhile
+- endif

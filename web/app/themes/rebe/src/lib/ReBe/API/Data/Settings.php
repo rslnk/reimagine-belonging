@@ -28,13 +28,21 @@ class Settings
             'vimeo_user_name'     => get_field('vimeo_user_name', 'option'),
             'social_hashtags'     => get_field('social_hashtags', 'option'),
 
-            // Timeline
+            // Events app
             'timelines'           => get_field('public_timelines', 'option'),
             'default_timeline'    => get_field('default_timeline', 'option'),
-
-            // Filters
             'event_filters'       => get_field('event_filters', 'option'),
+
+            // Stories app
             'story_filters'       => get_field('story_filters', 'option'),
+
+            // Workshops app
+            'workshop_external_form_url'    => get_field('workshop_external_form_url', 'option'),
+
+            // Advanced srttings
+            'events_slug'                   => get_field('event_post_type_slug', 'option'),
+            'stories_slug'                  => get_field('story_post_type_slug', 'option'),
+            'workshops_slug'                => get_field('workshop_post_type_slug', 'option'),
 
         ];
 

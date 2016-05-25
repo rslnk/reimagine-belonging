@@ -4,28 +4,28 @@
 .c-workshop-preview__title
   @extend .o-heading
 
-  float left
-  width 100%
-
   font-weight $medium
-  text-transform none
+  line-height 1.15
   color $carbon-black
 
-  strong
-  em
-  b
-    font-weight $semibold
-
-  +below('m')
-    font-size $deca
-    line-height 1.2
-
-  +between('m', 'l')
+  +below('l')
     font-size $centi
-    line-height 1.35
+
+  +between('l', 'xl')
+    font-size $milli
+
+  +above('xl')
+    font-size $centi
+
+// Related post modifier
+.c-workshop-preview__title--related
+  @extend .c-workshop-preview__title
+
+  +below('l')
+    font-size $centi
 
   +between('l', 'xl')
     font-size $micro
 
   +above('xl')
-    font-size $centi
+    font-size $milli

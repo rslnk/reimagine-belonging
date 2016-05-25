@@ -1,4 +1,6 @@
 :php
+  use ReBe\Routing\UserAgent;
+  
   /**
    * Template Name: Workshops
    *
@@ -6,5 +8,16 @@
    *
    */
 
-main.c-workshop__content  
-  - get_template_part('content/pages/workshops/crawler/workshops')
+main.c-workshops__content
+
+  - if (UserAgent::check('crawler')) : 
+    - get_template_part('content/pages/workshops/crawler/workshops') // Output content for crawlers
+  
+  - else : // Output Angular app for browser user-agents + wp 'about' section template 
+  
+    div&attributes({'ng-app': 'workshopsApp'})
+      <div ui-view></div>
+    
+    - get_template_part('content/pages/workshops/wp/about')
+
+  - endif

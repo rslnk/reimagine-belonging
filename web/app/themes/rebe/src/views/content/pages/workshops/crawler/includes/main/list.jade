@@ -9,8 +9,8 @@
 - if($the_query->have_posts()) :
   - while($the_query->have_posts()) : $the_query->the_post()
     
-    //- Get Workshop preview template
-    - get_template_part('content/post-types/workshop/crawler/preview')
+      //- Get Workshop preview template
+      - get_template_part('content/post-types/workshop/crawler/preview')
     
     - wp_reset_postdata()
   - endwhile

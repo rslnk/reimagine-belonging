@@ -1,0 +1,11 @@
+footer.c-workshop__footer
+  div.c-workshop__content
+    
+    //- Related posts
+    h2.c-section-title {{ siteConfig.workshop_related_workshops_label }}
+    ul.c-workshop__related-posts  
+      li(
+        ng-repeat="item in workshop.related_workshops"
+        ng-click="openWorkshop(item.slug)"
+      ).c-workshop-preview--related
+        include ../preview--related-post.jade

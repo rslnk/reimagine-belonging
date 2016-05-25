@@ -17,8 +17,12 @@ use ReBe\API\PostDataConstructor;
  * @link reimaginebelonging.dev/api/?action=site-configuration
  * @link reimaginebelonging.dev/api/?action=list-all-events
  * @link reimaginebelonging.dev/api/?action=list-all-stories
+ * @link reimaginebelonging.dev/api/?action=list-all-workshops
+ * @link reimaginebelonging.dev/api/?action=list-all-pages
  * @link reimaginebelonging.dev/api/?action=event-data&id=820
  * @link reimaginebelonging.dev/api/?action=story-data&id=1474
+ * @link reimaginebelonging.dev/api/?action=workshop-data&id=1851
+ * @link reimaginebelonging.dev/api/?action=page-data&id=1699
  */
 function register_api_endpoints()
 {
@@ -47,6 +51,16 @@ function register_api_endpoints()
                 $output = $object->get_post_data();
                 break;
 
+            case 'list-all-workshops':
+                $object = new PostDataConstructor('workshop', 'teaser', 'list');
+                $output = $object->get_post_data();
+                break;
+
+            case 'list-all-pages':
+                $object = new PostDataConstructor('page', 'teaser', 'list');
+                $output = $object->get_post_data();
+                break;
+
             case 'event-data':
                 $object = new PostDataConstructor('event', 'full', 'single');
                 $output = $object->get_post_data();
@@ -54,6 +68,16 @@ function register_api_endpoints()
 
             case 'story-data':
                 $object = new PostDataConstructor('story', 'full', 'single');
+                $output = $object->get_post_data();
+                break;
+
+            case 'workshop-data':
+                $object = new PostDataConstructor('workshop', 'full', 'single');
+                $output = $object->get_post_data();
+                break;
+
+            case 'page-data':
+                $object = new PostDataConstructor('page', 'full', 'single');
                 $output = $object->get_post_data();
                 break;
 
