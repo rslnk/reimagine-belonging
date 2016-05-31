@@ -1,0 +1,25 @@
+//- book
+span(ng-switch-when="book")
+  //- Authors, chapter, title
+  span(ng-if="item.authors && item.author!='0'") {{ item.authors }}. 
+  span(ng-if="item.chapter") "{{ item.chapter }}". 
+  span(ng-if="item.title && item.url")
+    em
+      a(href="{{ item.url }}") {{ item.title }}. 
+  span(ng-if="item.title && !item.url")
+    em {{ item.title }}. 
+  //- Editors, translator
+  span(ng-if="item.editor && item.editor!='0'") {{ siteConfig.event_source_editors }} {{ item.editors }}. 
+  span(ng-if="item.translator && item.translator!='0'") {{ siteConfig.event_source_translators }} {{ item.translators }}. 
+  span(ng-if="item.edition") {{ siteConfig.event_source_edition}} {{ item.edition }}. 
+  //- Volume, location, publisher, date/year
+  span(ng-if="item.volume") {{ siteConfig.event_source_volume }} {{ item.volume }}. 
+  span(ng-if="item.location && !item.publisher") {{ item.location }}. 
+  span(ng-if="item.location && item.publisher") {{ item.location }}: 
+  span(ng-if="item.publisher && !item.date_published && !item.year_published") {{ item.publisher }}. 
+  span(ng-if="item.publisher && item.date_published || item.publisher && item.year_published") {{ item.publisher }}, 
+  span(ng-if="item.date_published") {{ item.date_published }}. 
+  span(ng-if="item.year_published && !item.date_published") {{ item.year_published }}. 
+  //- Pages, ISBN
+  span(ng-if="item.pages") {{ siteConfig.event_source_pages }} {{ item.pages }}. 
+  span(ng-if="item.isbn") {{ item.isbn }}. 

@@ -1,3 +1,3 @@
 angular.module('constants',[])
   .constant('apiUrl', '/api/')
-  .constant('templatesPath', '/app/themes/rebe/src/views/');
+  .constant('templatesPath', '/app/themes/rebe/templates/');

@@ -4,7 +4,7 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      templateUrl:  '/app/themes/rebe/src/views/content/post-types/story/ng/preview.html',
+      templateUrl:  '/app/themes/rebe/templates/content/post-types/story/ng/preview.html',
       link: function (scope, element) {
         //
       }

@@ -1,0 +1,6 @@
+span(ng-switch-when="website")
+  //- Title, site name, url, date accessed
+  span(ng-if="item.title")
+    a(ng-if="item.url" href="{{ item.url }}").o-text-link {{ item.title }}.     
+  span(ng-if="item.website_name") {{ item.website_name }}. 
+  span(ng-if="item.date_accessed") {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}. 

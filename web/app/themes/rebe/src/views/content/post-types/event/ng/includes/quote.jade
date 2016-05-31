@@ -1,0 +1,7 @@
+blockquote(ng-switch-when="quote").c-quote--event
+  div.c-icon-quote.c-quote__icon--event
+  div.c-quote__content
+    h4(ng-bind-html="item.text").c-quote__text--event {{ item.text }}
+    div.c-quote__meta
+      span.c-quote__author — {{ item.author }}
+      span(ng-if="item.source").c-quote__source {{ item.source }}

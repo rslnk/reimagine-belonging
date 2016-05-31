@@ -1,13 +1,10 @@
-aside(ng-cloak ng-show="workshop.sidebar").c-workshop__sidebar
-  include ./categories.jade  
-  include ./details.jade
-  include ./booking.jade
-  
+aside.c-event__sidebar
   //- Sidebar objects from the content
-  div(ng-repeat="item in workshop.sidebar" ng-switch="item.type")
+  div(ng-repeat="item in event.sidebar" ng-switch="item.type")
     include ../../../../../partials/ng/media-blocks/video.jade
     include ../../../../../partials/ng/media-blocks/image.jade
     include ./quote.jade
     include ./sidenote.jade
   
+  include ./categories.jade
   include ./share.jade

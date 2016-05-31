@@ -45,7 +45,8 @@ angular.module('storiesApp', [
       $stateProvider
         .state('list', {
           url: '/',
-          templateUrl: templatesPath + 'content/pages/stories/ng/list.html',
+          //templateUrl: templatesPath + 'content/pages/stories/ng/list.html',
+          templateUrl: '/app/themes/rebe/templates/content/pages/stories/ng/list.html',
           controller: 'ListController'
         })
         .state('list.story', {

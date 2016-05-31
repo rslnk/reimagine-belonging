@@ -1,0 +1,7 @@
+div.c-theater-view.js-overlay
+  include ../../../../partials/ng/post-navigation.jade
+  //- Theater view content
+  div(ng-cloak ng-show="event.main_content").c-theater-view__content.c-event.js-content
+    include ../../../../partials/ng/close-button.jade
+    include ./includes/content.jade
+    include ./includes/footer.jade

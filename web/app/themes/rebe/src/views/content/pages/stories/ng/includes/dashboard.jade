@@ -1,0 +1,13 @@
+div(ng-cloak ng-show="siteConfig.total_stories_label").c-dashboard
+  
+  ul.c-dashboard__info  
+    //- total entries
+    li.c-dashboard__posts-total {{ siteConfig.total_stories_label }}: 
+      strong {{ stories.length }}
+
+    //- filtered entries
+    li(ng-show="stories.length != (stories|showStories:filter).length").c-dashboard__posts-filtered
+      | {{ siteConfig.flitered_stories_label }}: 
+      strong {{ (stories|showStories:filter).length }}
+
+  include ./pagination.jade

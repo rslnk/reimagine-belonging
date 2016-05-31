@@ -1,0 +1,13 @@
+div(
+  class="u-image-cover c-story-preview c-story-preview--{{ story.preview_image_color }}"
+  style="background-image: url({{ story.preview_image }})"
+)
+  div(class="c-strory-preview__gradient c-strory-preview__gradient--{{ story.preview_image_color }}")
+  
+  div.c-story-preview__content
+    div.c-story-preview__caption
+      h2(class="c-story-preview__title c-story-preview__title--{{ story.preview_image_color }}")
+        | {{ story.title }}
+      h3.c-story-preview__protagonist
+        strong {{ story.hero }}, 
+        | {{ story.city[0].term_name }}

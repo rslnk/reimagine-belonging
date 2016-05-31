@@ -1,0 +1,5 @@
+div(ng-if="story.subtitles_notification == 1").c-cc-notice
+  div.c-icon-closed-captions.c-cc-notice__icon
+  div.c-cc-notice__content
+    h3(ng-bind-html="siteConfig.story_cc_notice_title").c-cc-notice__title
+    p(ng-bind-html="siteConfig.story_cc_notice_text").c-cc-notice__text

@@ -1,0 +1,11 @@
+div(ng-show="(stories|showStories:filter).length > perPage").c-dashboard__pagination
+  div.c-pagination--dashboard
+    div.c-pagination__label {{ siteConfig.pagination_page_label }}:  
+    
+    ul.c-pagination__list
+      li(
+        ng-repeat="(k, v) in getPages() track by $index"
+        ng-click="toPage(k)"
+        ng-class="{'is-active': k === page }"
+      ).c-pagination__item 
+        | {{ k+1 }}

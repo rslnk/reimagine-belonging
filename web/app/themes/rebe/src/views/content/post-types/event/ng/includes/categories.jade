@@ -1,0 +1,15 @@
+div.c-event__categories
+  //- timelines
+  ul.c-categories__list
+    li(ng-repeat="timeline in event.timelines").c-categories__item.t-mint
+      | {{ timeline.term_name }}
+  //- topics & groups
+  ul.c-categories__list  
+    li(
+      ng-repeat="topic in event.topics"
+      ng-bind-html="topic.term_name"
+    ).c-categories__item.t-indigo
+    
+    li(ng-repeat="group in event.groups"
+      style="background-color: {{ group.term_color }}").c-categories__item.t-yolk
+      | {{ group.term_name }}

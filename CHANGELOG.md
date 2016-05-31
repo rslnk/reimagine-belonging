@@ -3,6 +3,7 @@
 ## 1.9.3 May 31th, 2016
 
 -   Implement ng app for 'Workshop' post type
+-   Rewrite 'Events' and 'Stories' ng templates with Jade
 -   Add Jade templates task for ng templates
 -   Add 'Page' post type to API
 -   Add 'Workshop' post type and app settings to API

@@ -3,6 +3,5 @@ blockquote(ng-switch-when="quote").c-quote--workshop
   div.c-quote__content
     h4(ng-bind-html="item.text").c-quote__text--workshop {{ item.text }}
     div.c-quote__meta
-      span —
-      span.c-quote__author {{ item.author }}
+      span.c-quote__author — {{ item.author }}
       span(ng-if="item.source").c-quote__source {{ item.source }}

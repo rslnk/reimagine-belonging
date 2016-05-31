@@ -320,6 +320,27 @@
             "disabled": 0
         },
         {
+            "key": "field_574dbf1bd8541",
+            "label": "Select Timeline label",
+            "name": "timeline_select_timeline_label",
+            "type": "text",
+            "instructions": "Example:  Choose timeline",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_5707aef9e1795",
             "label": "Filter labels",
             "name": "",
@@ -1733,5 +1754,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1464523667
+    "modified": 1464712740
 }

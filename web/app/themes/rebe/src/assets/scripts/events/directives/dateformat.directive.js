@@ -9,7 +9,7 @@ angular
         unknown: '@',
         lang: '@'
       },
-      templateUrl: '/app/themes/rebe/src/views/partials/ng/date.html',
+      templateUrl: '/app/themes/rebe/templates/partials/ng/date.html',
       controller: function ($scope) {
         var months = {
           'en_US': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],

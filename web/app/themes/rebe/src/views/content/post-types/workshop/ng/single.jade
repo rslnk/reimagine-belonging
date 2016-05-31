@@ -2,10 +2,6 @@ div.c-theater-view--workshop.js-overlay
   
   //- Theater view content
   div(ng-cloak ng-show="workshop.main_text").js-workhop.c-workshop.c-theater-view__content
-    
-    //- Close theater view button
-    div(ng-click="closeLightbox()").c-icon-close--circle.c-post-navigation__close
-      span.u-visually-hidden : | {{ siteConfig.close_button_label }}
-
+    include ../../../../partials/ng/close-button.jade
     include ./includes/content.jade
     include ./includes/footer.jade

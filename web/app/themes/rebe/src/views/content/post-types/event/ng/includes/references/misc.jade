@@ -1,0 +1,19 @@
+span(ng-switch-when="misc")
+  span(ng-if="item.authors && item.author!='0'") {{ item.authors }}. 
+  span(ng-if="item.title && item.url")
+    a(href="{{ item.url }}").o-text-link {{ item.title }}. 
+  span(ng-if="item.title && !item.url") "{{ item.title }}". 
+  span(ng-if="item.periodical_title") {{ item.periodical_title }}. 
+  span(ng-if="item.editors && item.editor!='0'") {{ siteConfig.event_source_editors }} {{ item.editors }}. 
+  span(ng-if="item.translators && item.translator!='0'") {{ siteConfig.event_source_translators }} {{ item.translators }}. 
+  span(ng-if="item.edition") {{ siteConfig.event_source_edition}} {{ item.edition }}. 
+  span(ng-if="item.volume") {{ siteConfig.event_source_volume}} {{ item.volume }}. 
+  span(ng-if="item.location && !item.publisher") {{ item.location }}. 
+  span(ng-if="item.location && item.publisher") {{ item.location }}: 
+  span(ng-if="item.publisher && !item.date_published && !item.year_published") {{ item.publisher }}. 
+  span(ng-if="item.publisher && item.date_published || item.publisher && item.year_published") {{ item.publisher }}, 
+  span(ng-if="item.date_published") {{ item.date_published }}. 
+  span(ng-if="item.year_published && !item.date_published ") {{ item.year_published }}. 
+  span(ng-if="item.pages") {{ siteConfig.event_source_pages }} {{ item.pages }}. 
+  span(ng-if="item.isbn") {{ item.isbn }}. 
+  span(ng-if="item.date_accessed") {{ siteConfig.event_source_date_accessed }}: {{ item.date_accessed }}. 

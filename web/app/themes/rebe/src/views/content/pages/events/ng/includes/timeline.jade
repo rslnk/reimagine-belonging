@@ -1,0 +1,23 @@
+div.c-timeline
+
+  carousel(
+    ng-if="filter.topics" 
+    data-options="{ items: 5, touchDrag: true, navigation: false, pagination: true, rewindnav: false }"
+  ).c-timeline__events
+      
+    event-preview(
+      carousel-item=""
+      class="c-event-preview"
+      ng-class="{'c-event-preview--disabled': event.hide === true}"
+      ng-repeat="event in events|showEvents:filter"
+      ng-click="openEvent(event.slug)"
+      title="{{event.title}}"
+      image="{{event.preview_image}}"
+      year="{{event.year}}"
+    )
+
+  //- carousel navigation
+  div.c-timeline__navigation
+    a(href="#").c-icon-arrow-left--circle.is-previous.js-timeline__previous
+    div.c-timeline__line
+    a(href="#").c-icon-arrow-right--circle.is-next.js-timeline__next

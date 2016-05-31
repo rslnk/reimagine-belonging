@@ -1,0 +1,17 @@
+div.c-categories-filter
+  ul.c-category-filter__list
+
+    //- 'all topics' button
+    li(
+      ng-class="{ 'is-active--events': filter.topics.length === 0 }"
+      ng-click="resetTopicsFilter()"
+    ).c-category-filter__item
+      | {{ siteConfig.all_events_filter_label }}
+
+    //- topics
+    li(
+      ng-repeat="topic in siteConfig.event_filters"
+      ng-class="{ 'is-active--events': filter.topics.indexOf(topic.slug) > -1 }"
+      ng-click="toggleTopicInFilter(topic.slug)"
+      ng-bind-html="topic.name"
+    ).c-category-filter__item

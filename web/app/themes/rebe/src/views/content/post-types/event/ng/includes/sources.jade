@@ -1,0 +1,15 @@
+div(ng-if="event.sources").c-footnotes__column
+
+  h4.c-section-title {{ siteConfig.event_sources_title }}
+
+  ol.c-footnotes__list
+
+    li(
+      ng-repeat="item in event.sources" 
+      ng-switch="item.source_type"
+    ).c-footnotes__item
+    
+      include ./references/book.jade
+      include ./references/article.jade
+      include ./references/website.jade
+      include ./references/misc.jade

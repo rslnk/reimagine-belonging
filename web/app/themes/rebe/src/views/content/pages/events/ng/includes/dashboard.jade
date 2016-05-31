@@ -1,0 +1,9 @@
+div.c-dashboard
+  ul.c-dashboard__info
+
+    li.c-dashboard__posts-total {{ siteConfig.timeline_total_events_label }}: 
+      strong {{ events.length }}
+
+    li(ng-show="events.length != (events|filter: {hide: false}).length").c-dashboard__posts-filtered
+      | {{ siteConfig.timeline_filtered_events_label }}: 
+      strong {{ (events|filter: {hide: false}).length }}

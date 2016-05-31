@@ -4,7 +4,7 @@ angular
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '/app/themes/rebe/src/views/partials/ng/timeline-switcher.html',
+      templateUrl: '/app/themes/rebe/templates/partials/ng/timeline-switcher.html',
       controller: function ($scope, $element) {
         this.open = false;
         this.toggle = function () {

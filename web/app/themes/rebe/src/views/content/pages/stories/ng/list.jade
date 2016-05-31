@@ -1,0 +1,11 @@
+include ./includes/head.jade
+
+div.c-stories__list
+  story-preview(
+    ng-click="openStory(story.slug)"
+    ng-class="{'c-story-preview--disabled': story.hide === true}"
+    ng-repeat="(k, story) in stories|showStories:filter" 
+    ng-show="inPaginatorScope(k)"
+  )
+
+div(ui-view="")
