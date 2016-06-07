@@ -1,0 +1,12 @@
+//- Related stories (external uri, relative to events app)
+div(ng-if="event.related_stories").c-event__content.c-event__related-stories
+  h2.c-section-title {{ siteConfig.event_related_stories_title }}
+  ul.c-event__related-posts
+    li
+      a(
+        ng-repeat="item in event.related_stories"
+        class="c-story-preview--related c-story-preview--{{ item.preview_image_color }}"      
+        style="background-image: url({{ item.preview_image }})"
+        ng-href="{{ item.external_slug }}"
+      ).u-image-cover
+        include ../../../../story/ng/preview--related-post.jade

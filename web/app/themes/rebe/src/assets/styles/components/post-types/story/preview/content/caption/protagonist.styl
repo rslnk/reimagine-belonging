@@ -10,8 +10,7 @@
   font-family $base-heading-font
   font-weight $thin
   font-style normal
-  letter-spacing rem(1px)
-  text-transform uppercase
+  letter-spacing rem(1.2px)
   color $white
 
   strong
@@ -19,16 +18,24 @@
   b
     font-weight $regular
 
-  +below('m')
-    font-size $nano
-    letter-spacing rem(1.2px)
-
-  +between('m', 'l')
-    font-size $pico
+  +below('l')
+    font-size $micro
 
   +between('l', 'xl')
-    font-size $pico
+    font-size $milli
 
   +above('xl')
-    letter-spacing rem(2px)
+    font-size $centi
+
+// Related post modifier
+.c-story-preview__protagonist--related
+  @extend .c-story-preview__protagonist
+
+  +below('l')
+    font-size $micro
+
+  +between('l', 'xl')
+    font-size $nano
+
+  +above('xl')
     font-size $micro

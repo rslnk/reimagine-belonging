@@ -35,7 +35,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 4,
-            "new_lines": "wpautop",
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -344,12 +344,10 @@
                         "image": "Image",
                         "quote": "Quote",
                         "sidenote": "Sidenote",
-                        "event": "Related event",
-                        "story": "Related story"
+                        "story": "Featured story",
+                        "workshop": "Featured workshop"
                     },
-                    "default_value": {
-                        "": ""
-                    },
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -904,45 +902,9 @@
                     ]
                 },
                 {
-                    "key": "field_55244b206db1b",
-                    "label": "Related event",
-                    "name": "related_event",
-                    "type": "relationship",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_544aa77b1969c",
-                                "operator": "==",
-                                "value": "event"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "post_type": [
-                        "event"
-                    ],
-                    "taxonomy": [],
-                    "filters": [
-                        "search",
-                        "taxonomy"
-                    ],
-                    "elements": [
-                        "featured_image"
-                    ],
-                    "min": 1,
-                    "max": 1,
-                    "return_format": "object"
-                },
-                {
                     "key": "field_55244b716db1d",
-                    "label": "Related story",
-                    "name": "related_story",
+                    "label": "Featured story",
+                    "name": "featured_story",
                     "type": "relationship",
                     "instructions": "",
                     "required": 0,
@@ -962,6 +924,42 @@
                     },
                     "post_type": [
                         "story"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 1,
+                    "max": 1,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_5756c39a9b977",
+                    "label": "Featured workshop",
+                    "name": "featured_workshop",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_544aa77b1969c",
+                                "operator": "==",
+                                "value": "workshop"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "workshop"
                     ],
                     "taxonomy": [],
                     "filters": [
@@ -2923,5 +2921,5 @@
     ],
     "active": 1,
     "description": "Event post content + sidebar",
-    "modified": 1464189744
+    "modified": 1465308899
 }

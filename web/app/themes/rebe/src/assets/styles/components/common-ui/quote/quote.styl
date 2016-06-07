@@ -9,7 +9,7 @@
 .c-quote
   clearfix()
 
-// Event modifier
+// Event post modifier
 .c-quote--event
   @extend .c-quote
 
@@ -22,8 +22,11 @@
   +above('hd')
     margin-bottom rem(40px)
 
+// Event post sidebar (related) story modifier
+.c-quote--featured-story
+  @extend .c-quote
 
-// Story modifier
+// Story post modifier
 .c-quote--story
   @extend .c-quote
 
@@ -39,7 +42,7 @@
   +above('hd')
     margin-bottom rem(45px)
 
-// Workshop modifier
+// Workshop post modifier
 .c-quote--workshop
   @extend .c-quote
 

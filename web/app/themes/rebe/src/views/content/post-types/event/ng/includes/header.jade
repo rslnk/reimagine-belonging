@@ -1,16 +1,16 @@
 header.c-event__head
   div(ng-show="event.start_date").c-event__date
     dateformat(
-      thedate="{{event.start_date}}" 
-      lang="{{siteConfig.site_language}}" 
-      unknown="{{event.exact_dates_uknown}}"
+      thedate="{{ event.start_date }}" 
+      lang="{{ siteConfig.site_language }}" 
+      unknown="{{ event.exact_dates_uknown }}"
     )
     span(ng-show="event.end_date")  —  
     dateformat(
       ng-show="event.end_date" 
-      thedate="{{event.end_date}}" 
-      lang="{{siteConfig.site_language}}" 
-      unknown="{{event.exact_dates_uknown}}"
+      thedate="{{ event.end_date }}" 
+      lang="{{ siteConfig.site_language }}" 
+      unknown="{{ event.exact_dates_uknown }}"
     )
 
   h1.c-event__title {{ event.title }}

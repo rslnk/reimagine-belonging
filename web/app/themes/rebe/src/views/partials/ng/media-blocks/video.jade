@@ -1,8 +1,14 @@
 div(ng-switch-when="video").c-media-block
   div.u-video-container
     ngvideo
-      iframe(ng-src="{{ trustSrc(item.videoUrl) }}" frameborder="0" allowfullscreen="allowfullscreen")
-  a(ng-if="item.credit_link || item.credit" href!="{{ item.credit_link }}").c-media-block__credits
-    | {{ item.credit }}
+      iframe(
+        ng-src="{{ trustSrc(item.videoUrl) }}" 
+        frameborder="0" 
+        allowfullscreen="allowfullscreen"
+      )
+  a(
+    ng-if="item.credit_link || item.credit" 
+    href="{{ item.credit_link }}"
+  ).c-media-block__credits {{ item.credit }}
   h4.c-media-block__title {{ item.title }}
   p.c-media-block__caption {{ item.caption }}

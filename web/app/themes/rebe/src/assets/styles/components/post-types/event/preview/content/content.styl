@@ -8,9 +8,7 @@
 .c-event-preview__content
   display block
   position absolute
-  bottom rem(20px) // compensates `c-event-preview__strip` height
-
-  //border-right solid rem(1px) rgba($white, .3)
+  bottom rem(20px) // compensates `.c-event-preview__strip` height
 
   width 100%
 
@@ -21,3 +19,10 @@
 
   +above('l')
     padding rem(25px)
+
+// Related post modifier
+.c-event-preview__content--related
+  @extend .c-event-preview__content
+
+  bottom 0 // no `.c-event-preview__strip` in this modifier
+  padding rem(15px)

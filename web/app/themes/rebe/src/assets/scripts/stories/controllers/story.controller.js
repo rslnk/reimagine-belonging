@@ -43,7 +43,7 @@ angular.module('stories.story.controller', [
         $scope.story.related_stories = StoryService.relatedStories($scope.story.related_stories);
 
         // Temporary solution, otherwise we should avoid jQury in angular!
-        $('.js-content').fadeToggle('fast');
+        $('.js-content').fadeIn('fast');
       });
 
     $scope.shareUrl = $location.absUrl();

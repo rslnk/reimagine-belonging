@@ -7,8 +7,10 @@
 */
 .c-footnotes
   clearfix()
-  float left
-
-  padding-top rem(30px) // horizontal line padding
-  width 100%
   border-top rem(1px) solid $gray--light
+
+  +below('xl')
+    padding-top rem(30px) // horizontal line padding
+
+  +above('xl')
+    padding-top rem(40px)

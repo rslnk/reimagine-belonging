@@ -35,15 +35,15 @@
     .c-story-preview__title
       background-position -99%
 
-    // decrease gradient intensitiy
+    // decrease gradient intensity
     .c-strory-preview__gradient
       opacity .45
 
   // Aspect ratios
-  +between('xs', 'm', orientation: landscape)
+  +below('m', orientation: landscape)
     padding-bottom 65%
 
-  +between('xs', 'm', orientation: portrait)
+  +below('m', orientation: portrait)
     padding-bottom 80%
 
   // Only square ratio starting from 'm' size

@@ -46,9 +46,9 @@ angular.module('events.event.controller', [
         $scope.event.related_stories = EventService.relatedStories($scope.event.related_stories);
         $scope.event.sources = EventService.sources($scope.event.sources);
         $scope.event.resources = EventService.sources($scope.event.resources);
-        
+
         // Temporary solution, otherwise we should avoid jQury in angular!
-        $('.js-content').fadeToggle('fast');
+        $('.js-content').fadeIn('fast');
       });
 
     $scope.shareUrl = $location.absUrl();

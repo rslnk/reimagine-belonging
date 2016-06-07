@@ -24,3 +24,33 @@
 
   +above('hd')
     font-size $centi
+
+// Related post modifier
+.c-event-preview__year--related
+  @extend .c-event-preview__year
+
+  letter-spacing rem(2px)
+
+  +below('m')
+    margin-bottom rem(20px)
+    padding rem(8px) rem(10px)
+    font-size $micro
+
+  +between('m', 'l')
+    margin-bottom rem(15px)
+    padding rem(6px) rem(8px)
+    font-size $nano
+
+  +between('l', 'xl')
+    margin-bottom rem(12px)
+    padding rem(4px) rem(6px)
+    font-size $pico
+
+  +between('xl', 'hd')
+    margin-bottom rem(12px)
+    padding rem(6px) rem(8px)
+    font-size $nano
+    letter-spacing rem(2px)
+
+  +above('hd')
+    font-size $milli

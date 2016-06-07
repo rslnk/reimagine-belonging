@@ -1,0 +1,15 @@
+//- Related events (external uri, relative to events app)
+div(
+  ng-if="story.related_events" 
+  ng-cloak ng-show="story.video_url"
+).c-story__related-events
+  div.c-story__content
+    h3.c-section-title--negative {{ siteConfig.story_related_events_title }}
+    ul.c-story__related-posts
+      li
+        a(
+          ng-repeat="item in story.related_events"
+          ng-href="{{ item.external_slug }}"
+          style="background-image: url({{ item.thumbnail_image }})"
+        ).c-event-preview--related-post.u-image-cover
+          include ../../../event/ng/preview--related-post.jade

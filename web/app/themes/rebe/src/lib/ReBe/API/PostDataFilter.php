@@ -106,7 +106,8 @@ class PostDataFilter
                     $post                    = $item['related_event'][0];
 
                     $i['title']              = $post->post_title;
-                    $i['slug']               = get_permalink($post->ID);
+                    $i['slug']               = $post->post_name;
+                    $i['app_base']           = get_field('event_post_type_slug', 'option');
                     $i['start_date']         = $post->start_date;
                     $i['preview_image']      = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                     $i['type']               = 'event';
@@ -115,15 +116,34 @@ class PostDataFilter
 
                 case 'story':
                     $i                       = [];
-                    $post                    = $item['related_story'][0];
+                    $post                    = $item['featured_story'][0];
 
                     $i['title']              = $post->post_title;
-                    $i['slug']               = get_permalink($post->ID);
-                    $i['hero']               = $post->hero_name;
-                    $i['hero_age']           = $post->hero_age;
-                    $i['hero_city']          = $post->hero_city;
+                    $i['slug']               = $post->post_name;
+                    $i['app_base']           = get_field('story_post_type_slug', 'option');
+                    $i['hero']               = $post->protagonist_name;
+                    $i['cities']             = self::post_taxonomy(get_the_terms($post->ID, 'story_city'));
+                    $i['excerpt']            = $post->excerpt;
+                    $i['story_video_host']   = $post->story_video_host;
+                    $i['story_video_id']     = $post->story_video_id;
                     $i['preview_image']      = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                     $i['type']               = 'story';
+                    $result[]                = $i;
+                    break;
+
+                case 'workshop':
+                    $i                       = [];
+                    $post                    = $item['featured_workshop'][0];
+
+                    $i['title']              = $post->post_title;
+                    $i['slug']               = $post->post_name;
+                    $i['app_base']           = get_field('workshop_post_type_slug', 'option');
+                    $i['caption']            = $post->caption;
+                    $i['target_group']       = $post->target_group;
+                    $i['group_size']         = $post->group_size;
+                    $i['duration']           = $post->duration;
+                    $i['types']              = self::post_taxonomy(get_the_terms($post->ID, 'workshop_type'));
+                    $i['type']               = 'workshop';
                     $result[]                = $i;
                     break;
 

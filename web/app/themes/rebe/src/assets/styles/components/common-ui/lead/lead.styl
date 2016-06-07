@@ -38,8 +38,7 @@
 .c-lead--small
   @extend .c-lead
 
-  font-weight $thin
-  line-height 1.6
+  font-weight $light
 
   strong
   em
@@ -47,10 +46,12 @@
     font-weight $medium
 
   +below('m')
-    font-size $nano
+    font-size $micro
 
   +between('m', 'xl')
-    font-size $milli
+    font-size $centi
+    line-height 1.4
 
   +above('xl')
-    font-size $deci
+    font-size $deca
+    line-height 1.45

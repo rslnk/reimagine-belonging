@@ -1,0 +1,52 @@
+/**
+ * Event: related event post preview
+ */
+.c-event-preview--related-post
+  @extend .o-btn
+
+  position relative
+  overflow hidden
+    
+  background-color $yolk // image fallback
+
+  &:hover
+  &:focus
+
+    .c-event-preview__gradient--related
+      background-image linear-gradient(0deg, rgba(5, 7, 24, 1) 15%, rgba(5, 7, 24, .1) 100%)
+
+  +below('m')
+    stack()
+    padding-bottom 65% // aspect ratio
+
+    margin-bottom rem(20px) // between stacked items
+
+  +between('m', 'l')
+    column(1/3, gutter: 2, cycle: 3)
+    padding-bottom 35%
+
+    margin-top 0
+    margin-bottom 0
+
+    &:nth-child(n+4) // add top margin to every element in the new row
+      margin-top rem(15px)
+
+  +between('l', 'xl')
+    column(1/4, gutter: 2, uncycle: 3, cycle: 4)
+    padding-bottom 25% // square ratio from here on
+
+    &:nth-child(n+4) // reset margin set by rule above
+      margin-top 0
+
+    &:nth-child(n+5)
+      margin-top rem(15px)
+
+  +above('xl')
+    column(1/5, gutter: 2, uncycle: 4, cycle: 5)
+    padding-bottom 20%
+
+    &:nth-child(n+5)
+      margin-top 0
+
+    &:nth-child(n+6)
+      margin-top rem(22px)

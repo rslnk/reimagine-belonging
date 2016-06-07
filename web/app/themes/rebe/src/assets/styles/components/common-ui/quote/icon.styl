@@ -25,13 +25,29 @@
     margin-bottom rem(20px)
     font-size rem(70px)
 
-// Event modifier
+// Event post modifier
 .c-quote__icon--event
   @extend .c-quote__icon
 
   color $mint
 
-// Story modifier
+// Event post sidebar related story modifier
+.c-quote__icon--featured-story
+  @extend .c-quote__icon
+
+  color $blueberry
+
+  +between('l', 'xl')
+    font-size rem(35px)
+
+  +between('xl', 'hd')
+    margin-bottom rem(10px)
+    font-size rem(35px)
+
+  +above('hd')
+    font-size rem(45px)
+
+// Story post modifier
 .c-quote__icon--story
   @extend .c-quote__icon
 
@@ -43,16 +59,16 @@
     font-size rem(45px)
 
   +between('xl', 'hd')
-    margin-top rem(-40px)
+    margin-top rem(-35px)
     margin-bottom rem(25px)
     font-size rem(65px)
 
   +above('hd')
-    margin-top rem(-45px)
+    margin-top rem(-40px)
     margin-bottom rem(25px)
     font-size rem(80px)
 
-// Workshop modifier
+// Workshop post modifier
 .c-quote__icon--workshop
   @extend .c-quote__icon
 

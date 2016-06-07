@@ -33,3 +33,34 @@
   +above('hd')
     font-size $deca
     line-height 1.2
+
+// Related post modifier
+.c-event-preview__title--related
+  @extend .o-heading
+
+  display block
+
+  font-weight $thin
+  text-transform none
+  line-height 1.25
+  color $white
+
+  strong
+  em
+  b
+    font-weight $semibold
+
+  +below('m')
+    font-size $deca
+
+  +between('m', 'l')
+    font-size $micro
+
+  +between('l', rem(1400px))
+    font-size $nano
+
+  +between(rem(1400px), 'hd')
+    font-size $micro
+
+  +above('hd')
+    font-size $deca

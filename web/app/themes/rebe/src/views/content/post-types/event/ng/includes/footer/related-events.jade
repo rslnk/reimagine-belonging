@@ -1,0 +1,10 @@
+//- Related events (within events app)
+div(ng-if="event.related_events").c-event__content.c-event__related-events
+  h2.c-section-title--negative {{ siteConfig.event_related_events_title }}
+  ul.c-event__related-posts
+    li(
+      ng-repeat="item in event.related_events"
+      ng-click="openEvent(item.slug)"
+      style="background-image: url({{ item.thumbnail_image }})"
+    ).c-event-preview--related-post.u-image-cover
+      include ../../preview--related-post.jade

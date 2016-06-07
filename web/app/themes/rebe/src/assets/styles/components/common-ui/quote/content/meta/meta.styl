@@ -20,7 +20,22 @@
   strong
     font-weight $medium
 
-// Story modifier
+// Event post featured story modifier
+.c-quote__meta--featured-story
+  @extend .c-quote__meta
+
+  float left
+
+  +below('xl')
+    font-size $pico
+
+  +between('xl', 'hd')
+    font-size $nano
+
+  +above('hd')
+    font-size $micro
+
+// Story post modifier
 .c-quote__meta--story
   @extend .c-quote__meta
 

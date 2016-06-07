@@ -31,7 +31,8 @@ class Workshop
             'id'                         => $this->post->ID,
             'title'                      => $this->post->post_title,
             'published_date_gmt'         => $this->post->post_date_gmt,
-            'post_slug'                  => $this->post->post_name,
+            'slug'                       => $this->post->post_name,
+            'app_base'                   => get_field('workshop_post_type_slug', 'option'),
             'permalink'                  => get_permalink($this->post->ID),
             'preview_image'              => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
             'caption'                    => $this->post->caption,
@@ -57,10 +58,10 @@ class Workshop
             'id'                         => $this->post->ID,
             'title'                      => $this->post->post_title,
             'published_date_gmt'         => $this->post->post_date_gmt,
-            'post_slug'                  => $this->post->post_name,
+            'slug'                       => $this->post->post_name,
+            'app_base'                   => get_field('workshop_post_type_slug', 'option'),
             'permalink'                  => get_permalink($this->post->ID),
             'preview_image'              => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
-            'caption'                    => $this->post->caption,
 
             'target_group'               => $this->post->target_group,
             'group_size'                 => $this->post->group_size,
@@ -69,7 +70,6 @@ class Workshop
             // Taxonomy terms
             'language'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_language')),
             'location'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_location')),
-
             'types'                      => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_type')),
             'topics'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_topic')),
             'groups'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_group')),

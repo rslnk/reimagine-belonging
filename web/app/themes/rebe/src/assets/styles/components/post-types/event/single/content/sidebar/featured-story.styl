@@ -1,0 +1,45 @@
+/**
+ * Featured story
+ */
+.c-event__featured-story
+  @extend .o-btn
+
+  border-bottom rem(2px) solid $blueberry
+
+  &:hover
+  &:focus
+    background-image linear-gradient(0deg, rgba($gray--light, .7) 5%, rgba($gray--light, 0) 80%)
+
+  +below('l')
+    margin-bottom rem(30px)
+    padding-bottom rem(25px)
+
+  +above('l')
+    margin-bottom rem(40px)
+    padding-bottom rem(25px)
+
+    padding-right rem(8px)
+    padding-left rem(8px)
+
+    .has-title
+      @extend .o-heading
+
+      font-size $nano
+
+      span
+        padding rem(3px) rem(8px)
+        letter-spacing rem(1px)
+        color $white
+        background-color $blueberry
+
+      +below('l')
+        margin-bottom rem(20px)
+
+      +between('l', 'xl')
+        margin-bottom rem(25px)
+
+      +above('xl')
+        margin-bottom rem(30px)
+
+    .has-video
+      margin-bottom rem(20px)

@@ -11,9 +11,9 @@ div.c-timeline
       ng-class="{'c-event-preview--disabled': event.hide === true}"
       ng-repeat="event in events|showEvents:filter"
       ng-click="openEvent(event.slug)"
-      title="{{event.title}}"
-      image="{{event.preview_image}}"
-      year="{{event.year}}"
+      title="{{ event.title }}"
+      image="{{ event.preview_image }}"
+      year="{{ event.year }}"
     )
 
   //- carousel navigation

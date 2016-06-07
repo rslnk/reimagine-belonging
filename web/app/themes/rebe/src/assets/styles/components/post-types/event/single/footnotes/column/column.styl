@@ -9,18 +9,13 @@
  *    on small screens — stacked.
 */
 .c-footnotes__column
+  margin-bottom rem(30px) // when columns stacked on top of each other
+
+  &:last-of-type
+    margin-bottom 0
 
   +below('l')
     stack()
 
   +above('l')
     column(1/2)
-
-  // Add bottom margin to the first column when stacked
-  &:first-of-type
-
-    +below('l')
-      margin-bottom rem(30px)
-
-    +above('l')
-      margin-bottom 0

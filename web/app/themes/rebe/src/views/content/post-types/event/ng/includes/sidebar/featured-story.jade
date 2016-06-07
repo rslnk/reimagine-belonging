@@ -1,0 +1,28 @@
+div(ng-switch-when="story").c-event__featured-story
+  //- Section title
+  h3.has-title
+    span {{ siteConfig.event_featured_story_title }}
+
+  //- Featured story video
+  div.has-video.u-video-container
+    ngvideo
+      iframe(
+        ng-src="{{ trustSrc(item.videoUrl) }}" 
+        frameborder="0" 
+        allowfullscreen="allowfullscreen"
+      )
+        
+  //- Clickable quote/title
+  a(
+    ng-if="item.excerpt"
+    ng-href="{{ item.external_slug }}"
+  )
+    blockquote.c-quote--featured-story
+      div.c-icon-quote.c-quote__icon--featured-story
+      div.c-quote__content
+        h4(ng-bind-html="item.title").c-quote__text--featured-story
+        div.c-quote__meta--featured-story
+          span.c-quote__author--story
+            strong {{ item.hero }},&nbsp;
+            | {{ item.city }}
+  

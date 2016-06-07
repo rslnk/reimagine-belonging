@@ -3,8 +3,10 @@ aside.c-event__sidebar
   div(ng-repeat="item in event.sidebar" ng-switch="item.type")
     include ../../../../../partials/ng/media-blocks/video.jade
     include ../../../../../partials/ng/media-blocks/image.jade
-    include ./quote.jade
-    include ./sidenote.jade
+    include ./sidebar/quote.jade
+    include ./sidebar/sidenote.jade
+    include ./sidebar/featured-story.jade
+    include ./sidebar/featured-workshop.jade
   
-  include ./categories.jade
-  include ./share.jade
+  include ./sidebar/categories.jade
+  include ./sidebar/share.jade

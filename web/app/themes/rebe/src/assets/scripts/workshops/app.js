@@ -45,14 +45,12 @@ angular.module('workshopsApp', [
       $stateProvider
         .state('list', {
           url: '/',
-          //templateUrl: templatesPath + 'content/pages/workshops/ng/list.html',
-          templateUrl: '/app/themes/rebe/templates/content/pages/workshops/ng/list.html',
+          templateUrl: templatesPath + 'content/pages/workshops/ng/list.html',
           controller: 'ListController'
         })
         .state('list.workshop', {
           url: ':workshop',
-          //templateUrl: templatesPath + 'content/post-types/workshop/ng/_single.html',
-          templateUrl: '/app/themes/rebe/templates/content/post-types/workshop/ng/single.html',
+          templateUrl: templatesPath + 'content/post-types/workshop/ng/single.html',
           controller: 'WorkshopController'
         });
     }

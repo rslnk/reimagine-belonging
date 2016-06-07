@@ -14,8 +14,7 @@ web/.htaccess
 
 # Theme
 web/app/themes/rebe/dist
-web/app/themes/rebe/templates/*
-!web/app/themes/rebe/templates/.gitkeep
+web/app/themes/rebe/templates
 web/app/themes/rebe/bower_components
 web/app/themes/rebe/node_modules
 web/app/themes/rebe/npm-debug.log

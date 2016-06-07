@@ -35,7 +35,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": 6,
-            "new_lines": "wpautop",
+            "new_lines": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -128,12 +128,11 @@
                         "image": "Image",
                         "quote": "Quote",
                         "sidenote": "Sidenote",
-                        "event": "Related event",
-                        "story": "Related story"
+                        "event": "Featured event",
+                        "story": "Featured story",
+                        "workshop": "Featured workshop"
                     },
-                    "default_value": {
-                        "": ""
-                    },
+                    "default_value": [],
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -686,6 +685,114 @@
                             "disabled": 0
                         }
                     ]
+                },
+                {
+                    "key": "field_5756d370c1aa4",
+                    "label": "Featured Event",
+                    "name": "featured_event",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5744416ef41c8",
+                                "operator": "==",
+                                "value": "event"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "event"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 0,
+                    "max": 1,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_5756d3dbc1aa5",
+                    "label": "Featured Story",
+                    "name": "featured_story",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5744416ef41c8",
+                                "operator": "==",
+                                "value": "story"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "story"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 0,
+                    "max": 1,
+                    "return_format": "object"
+                },
+                {
+                    "key": "field_5756d3efc1aa6",
+                    "label": "Featured Workshop",
+                    "name": "featured_workshop",
+                    "type": "relationship",
+                    "instructions": "",
+                    "required": "",
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5744416ef41c8",
+                                "operator": "==",
+                                "value": "workshop"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "workshop"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search",
+                        "taxonomy"
+                    ],
+                    "elements": [
+                        "featured_image"
+                    ],
+                    "min": 0,
+                    "max": 1,
+                    "return_format": "object"
                 }
             ]
         }
@@ -744,5 +851,5 @@
     ],
     "active": 1,
     "description": "General content for pages and posts: lead, main + sidebar",
-    "modified": 1464516665
+    "modified": 1465308164
 }

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.9.4 June 10th, 2016
+
+-   Update .gitignore to exclude `templates/` dir
+-   Add featured story, featured workshop to 'Event' post
+-   Add related posts feature to 'Story' post
+-   Add related posts feature to 'Events' post
+
 ## 1.9.3 May 31th, 2016
 
 -   Implement ng app for 'Workshop' post type

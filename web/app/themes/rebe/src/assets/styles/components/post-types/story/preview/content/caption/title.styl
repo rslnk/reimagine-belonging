@@ -44,6 +44,15 @@
   +above('xl')
     font-size $kilo
 
+// Related post modifier
+.c-story-preview__title--related
+  @extend .c-story-preview__title
+
+  +between('m', 'l')
+    font-size $micro
+
+  +above('l')
+    font-size $milli
 
 // Color modifiers
 .c-story-preview__title--red

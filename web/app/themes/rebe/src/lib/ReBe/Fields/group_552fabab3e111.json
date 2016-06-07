@@ -542,6 +542,48 @@
             "disabled": 0
         },
         {
+            "key": "field_5756c4cc5bcec",
+            "label": "Featured story title",
+            "name": "event_featured_story_title",
+            "type": "text",
+            "instructions": "Example: Featured story",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5756c5035bced",
+            "label": "Featured workshop title",
+            "name": "event_featured_workshop_title",
+            "type": "text",
+            "instructions": "Example: Featured workshop",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 25,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_574380597465f",
             "label": "Share event",
             "name": "share_event_label",
@@ -1754,5 +1796,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1464712740
+    "modified": 1465304351
 }

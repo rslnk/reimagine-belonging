@@ -1,6 +1,7 @@
 angular.module('workshop.service', ['ngLodash'])
   .service('WorkshopService', ['$http','lodash', function ($http, lodash) {
 
+    // Switch YouTube/Vimeo embeded code for sidebar video
     this.sidebar = function (sidebar) {
       if (sidebar) {
         sidebar.map(function (item) {
@@ -18,51 +19,6 @@ angular.module('workshop.service', ['ngLodash'])
       }
 
       return sidebar;
-    };
-
-    this.relatedWorkshops = function (workshops) {
-      if (workshops) {
-        workshops.map(function (item) {
-          if (item.preview_image) {
-            var imgArr = item.preview_image.split('.');
-            imgArr[imgArr.length-2] += '-250x250';
-            item.previewImgPath = imgArr.join('.');
-          }
-
-          item.slug = item.post_slug;
-
-        });
-      }
-
-      return workshops;
-    };
-
-    this.relatedEvents = function (events) {
-      if (events) {
-        events.map(function (item) {
-          if (item.preview_image) {
-            var imgArr = item.preview_image.split('.');
-            imgArr[imgArr.length-2] += '-250x250';
-            item.previewImgPath = imgArr.join('.');
-          }
-        });
-      }
-
-      return events;
-    };
-
-    this.relatedStories = function (stories) {
-      if (stories) {
-        stories.map(function (item) {
-          if (item.preview_image) {
-            var imgArr = item.preview_image.split('.');
-            imgArr[imgArr.length-2] += '-250x250';
-            item.previewImgPath = imgArr.join('.');
-          }
-        });
-      }
-
-      return stories;
     };
 
   }]);
