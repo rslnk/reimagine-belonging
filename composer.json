@@ -34,12 +34,12 @@
     {
       "type": "package",
       "package": {
-        "name": "advancedcustomfields/acf-pro",
+        "name": "advancedcustomfields/advancedcustomfields-pro",
         "version": "5.3.8",
         "type": "wordpress-muplugin",
         "dist": {
           "type": "zip",
-          "url": "http://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzYwMTd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMjkgMDA6MTM6MDg="
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MzYwMTd8dHlwZT1wZXJzb25hbHxkYXRlPTIwMTQtMDctMjkgMDA6MTM6MDg="
         }
       }
     }
@@ -51,8 +51,8 @@
     "johnpbloch/wordpress": "4.5.2",
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "^1.0",
-    "advancedcustomfields/acf-pro": "5.3.8",
     "roots/soil": "3.6.2",
+    "advancedcustomfields/advancedcustomfields-pro": "5.3.8",
     "wpackagist-plugin/amazon-s3-and-cloudfront": "1.0.3",
     "wpackagist-plugin/amazon-web-services": "0.3.5",
     "wpackagist-plugin/wordpress-seo": "3.2.5",
