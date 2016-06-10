@@ -2,6 +2,7 @@
 
 # HEAD
 
+-   Fix `function.php` includes and Composer autoload
 -   Replace 'language' with 'type' on workshop preview
 
 ## 1.9.4 June 10th, 2016

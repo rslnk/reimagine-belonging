@@ -225,7 +225,7 @@ gulp.task('styles', ['wiredep'], function() {
 // ### Scripts
 // `gulp scripts` - Runs ESLint then compiles, combines, and optimizes Bower JS
 // and project JS.
-gulp.task('scripts', ['lint'], function() {
+gulp.task('scripts', function() {
   var merged = merge();
   manifest.forEachDependency('js', function(dep) {
     merged.add(
