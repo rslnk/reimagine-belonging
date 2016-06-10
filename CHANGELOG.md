@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# HEAD
+
+-   Replace 'language' with 'type' on workshop preview
+
 ## 1.9.4 June 10th, 2016
 
 -   Update .gitignore to exclude `templates/` dir

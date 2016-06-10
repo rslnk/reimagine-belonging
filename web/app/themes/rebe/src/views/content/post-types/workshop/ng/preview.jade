@@ -17,9 +17,9 @@ article
         strong {{ siteConfig.workshop_duration_label }}: 
         span {{ workshop.duration }}
       div.is-detail
-        strong {{ siteConfig.workshop_language_label }}: 
-        span(ng-repeat="language in workshop.language")
-          | {{ language.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
+        strong {{ siteConfig.workshop_type_label }}: 
+        span(ng-repeat="type in workshop.types")
+          | {{ type.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
 
   footer.c-workshop-preview__footer
     a(ng-click="openWorkshop(workshop.slug)").c-workshop-preview__cta

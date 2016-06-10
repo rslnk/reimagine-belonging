@@ -41,8 +41,9 @@ class Workshop
             'group_size'                 => $this->post->group_size,
             'duration'                   => $this->post->duration,
 
-            'language'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_language')),
-            'location'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_location')),
+            'types'                        => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_type')),
+            'languages'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_language')),
+            'locations'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_location')),
 
         ];
 
@@ -68,9 +69,9 @@ class Workshop
             'duration'                   => $this->post->duration,
 
             // Taxonomy terms
-            'language'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_language')),
-            'location'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_location')),
             'types'                      => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_type')),
+            'languages'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_language')),
+            'locations'                   => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_location')),
             'topics'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_topic')),
             'groups'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'workshop_group')),
             'tags'                       => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'global_tag')),

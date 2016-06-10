@@ -10,9 +10,9 @@ div.c-workshop__details
     span {{ workshop.duration }}
   div.is-detail
     strong {{ siteConfig.workshop_language_label }}: 
-    span(ng-repeat="language in workshop.language")
+    span(ng-repeat="language in workshop.languages")
       | {{ language.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
   div.is-detail
     strong {{ siteConfig.workshop_location_label }}: 
-    span(ng-repeat="location in workshop.location")
+    span(ng-repeat="location in workshop.locations")
       | {{ location.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
