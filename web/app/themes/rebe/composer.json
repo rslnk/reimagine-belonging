@@ -26,9 +26,16 @@
   "autoload": {
     "psr-4": {
       "Roots\\Sage\\": "src/lib/Sage/",
-      "ReBe\\": "src/lib/ReBe/",
-      "WPBasic\\": "src/lib/WPBasic/"
-    }
+      "WPBasic\\": "src/lib/WPBasic/",
+      "ReBe\\": "src/lib/ReBe/"
+    },
+    "files": [
+      "src/helpers.php",
+      "src/setup.php",
+      "src/filters.php",
+      "src/admin.php",
+      "src/api.php"
+    ]
   },
   "require": {
     "php": ">=5.5.0",
