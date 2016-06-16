@@ -26,6 +26,13 @@
   "config": {
     "preferred-install": "dist"
   },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Sage\\": "web/app/themes/rebe/src/lib/Sage/",
+      "WPBasic\\": "web/app/themes/rebe/src/lib/WPBasic/",
+      "ReBe\\": "web/app/themes/rebe/src/lib/ReBe/"
+    }
+  },
   "repositories": [
     {
       "type": "composer",
