@@ -7,7 +7,6 @@
         "scripts/events/filters/events.filter.js",
         "scripts/events/filters/topics.filter.js",
         "scripts/events/directives/preview.directive.js",
-        "scripts/events/directives/timeline.switcher.directive.js",
         "scripts/events/directives/timeline.carousel.directive.js",
         "scripts/events/directives/dateformat.directive.js",
         "scripts/events/controllers/timeline.controller.js",

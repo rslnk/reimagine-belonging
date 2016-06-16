@@ -1,12 +1,12 @@
 div.c-timeline-switcher
-
-  h2(ng-click="ctrl.toggle()").is-active
+  //- Default timeline (as dropdown default)
+  h2(ng-click="isOpen = !isOpen").is-active
     span.c-timeline-switcher__timeline {{ timeline.name }}
     span.c-icon-arrow-down--circle.c-timeline-switcher__icon
       span.u-visually-hidden {{ siteConfig.timeline_select_timeline_label }}
   
   //- list of timelines
-  ul(ng-show="ctrl.open").c-timeline-switcher__list
+  ul(ng-show="isOpen").c-timeline-switcher__list
     li(
       ng-repeat="country in siteConfig.timelines" 
       ng-click="switchTimeline(country.slug)"

@@ -8,7 +8,6 @@ angular.module('eventsApp', [
     'events.timeline.controller',
     'events.event.controller',
     'events.preview.directive',
-    'events.timeline.switcher.directive',
     'events.timeline.carousel.directive',
     'events.dateformat.directive'
   ])

@@ -2,6 +2,9 @@
 
 # HEAD
 
+-   Update `screenshot.png` and theme version
+-   Remove 'Events' ng app `timelineSwitcher` directive, simply use ng-click instead
+-   Fix 'Events' ng app `dateformat` directive
 -   Fix `function.php` includes and Composer autoload
 -   Replace 'language' with 'type' on workshop preview
 
