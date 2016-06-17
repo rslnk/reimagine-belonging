@@ -41,8 +41,8 @@ add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('stories/js', asset_path('scripts/stories.js'), [], null, true);
     wp_enqueue_script('workshops/js', asset_path('scripts/workshops.js'), [], null, true);
     // External fonts
-    wp_enqueue_style('fonts/css', 'http://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css', false, null);
-    wp_enqueue_style('google/fonts/css', 'http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700', false, null);
+    wp_enqueue_style('fonts/css', 'https://fast.fonts.net/cssapi/dae2ada1-fb62-4216-ab20-8072b137a586.css', false, null);
+    wp_enqueue_style('google/fonts/css', 'https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700', false, null);
     // OWL Carousel (used for Events timeline)
     wp_enqueue_style('owl.carousel.main', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css', false, null);
     wp_enqueue_style('owl.carousel.theme', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css', false, null);

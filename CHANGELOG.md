@@ -2,6 +2,7 @@
 
 # HEAD
 
+-   Use https for theme fonts assets
 -   Update `screenshot.png` and theme version
 -   Remove 'Events' ng app `timelineSwitcher` directive, simply use ng-click instead
 -   Fix 'Events' ng app `dateformat` directive
