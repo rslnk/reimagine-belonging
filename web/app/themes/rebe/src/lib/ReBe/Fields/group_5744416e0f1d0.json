@@ -169,6 +169,44 @@
                     "collapsed": "",
                     "sub_fields": [
                         {
+                            "key": "field_5777fee76365a",
+                            "label": "Video URL",
+                            "name": "video_url",
+                            "type": "text",
+                            "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5777ffa26365b",
+                            "label": "Or use video ID",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
+                        {
                             "key": "field_5744416f1ada8",
                             "label": "Video service",
                             "name": "video_host",
@@ -216,7 +254,7 @@
                             "key": "field_5744416f1b2ad",
                             "label": "Title",
                             "name": "title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -227,9 +265,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
                             "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "",
                             "readonly": 0,
                             "disabled": 0
                         },
@@ -249,7 +287,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -385,7 +423,7 @@
                             "key": "field_5744416f8ea52",
                             "label": "Title",
                             "name": "title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -396,9 +434,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
                             "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "",
                             "readonly": 0,
                             "disabled": 0
                         },
@@ -418,7 +456,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -550,7 +588,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -658,7 +696,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -679,7 +717,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 6,
+                            "rows": 8,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -851,5 +889,5 @@
     ],
     "active": 1,
     "description": "General content for pages and posts: lead, main + sidebar",
-    "modified": 1465308164
+    "modified": 1467547724
 }

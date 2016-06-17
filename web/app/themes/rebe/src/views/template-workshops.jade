@@ -15,7 +15,7 @@ main.c-workshops__content
   
   - else : // Output Angular app for browser user-agents + wp 'about' section template 
   
-    div&attributes({'ng-app': 'workshopsApp'})
+    div&attributes({'ng-app': 'workshopsApp', 'ng-strict-di': 'true'})
       <div ui-view></div>
     
     - get_template_part('content/pages/workshops/wp/about')

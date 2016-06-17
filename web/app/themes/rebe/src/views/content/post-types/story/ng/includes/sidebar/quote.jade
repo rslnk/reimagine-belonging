@@ -4,5 +4,5 @@ blockquote(ng-if="story.excerpt").c-quote--story
     h2(ng-bind-html="story.excerpt").c-quote__text--story
     div.c-quote__meta--story
       span.c-quote__author--story
-        strong {{ story.hero }},&nbsp;
+        strong {{ story.hero[0].term_name }},&nbsp;
         | {{ story.cities[0].term_name }}

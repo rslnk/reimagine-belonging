@@ -4,4 +4,4 @@ article
     div.c-story-preview__caption
       h2(class="c-story-preview__title--related c-story-preview__title--{{ item.preview_image_color }}")
         | {{ item.title }}
-      h3.c-story-preview__protagonist--related {{ item.hero }}
+      h3.c-story-preview__protagonist--related {{ item.hero[0].term_name }}

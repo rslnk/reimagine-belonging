@@ -1,14 +1,5 @@
 main.c-story__main
   h1.c-story__title {{ story.title }}
 
-  //-- video
-  div.c-story__video.u-video-container
-    ngvideo(ng-model="story.video_url")
-
-  //- post categories
-  div.c-story__categories
-    ul.c-categories__list
-      //- topics
-      li(ng-repeat="topic in story.topics"
-        ng-bind-html="topic.term_name"
-      ).c-categories__item.t-blueberry
+  include ./main/video.jade
+  include ./main/categories.jade

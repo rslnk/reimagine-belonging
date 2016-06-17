@@ -2,6 +2,10 @@
   "root": true,
   "extends": "eslint:recommended",
   "extends": "angular",
+  "plugins": [
+    "angular",
+    "disable" # disable eslint for specific files, See https://github.com/mradionov/eslint-plugin-disable
+  ],
   "globals": {
     "wp": true,
   },
@@ -9,9 +13,16 @@
     "browser": true,
     "jquery": true,
     "node": true,
-    "amd": true
+    "amd": true,
   },
   "rules": {
     "no-console": 0
+  },
+  "settings": {
+    "eslint-plugin-disable": {
+      "paths": {
+        "angular": ["**/src/assets/scripts/main.js"] #disable angular eslint for main.js.
+      }
+    }
   }
 }

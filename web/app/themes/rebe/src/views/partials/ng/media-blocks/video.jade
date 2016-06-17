@@ -1,11 +1,16 @@
 div(ng-switch-when="video").c-media-block
   div.u-video-container
-    ngvideo
-      iframe(
-        ng-src="{{ trustSrc(item.videoUrl) }}" 
-        frameborder="0" 
-        allowfullscreen="allowfullscreen"
-      )
+    embed-video(
+      data-ng-href="{{ item.video_url }}" 
+      controls="1"
+      showinfo="0"
+      cc_load_policy="1"
+      rel="0"
+      iframe-id="videoID"
+      nologo="1"
+      title="0"
+      byline="0"
+    )
   a(
     ng-if="item.credit_link || item.credit" 
     href="{{ item.credit_link }}"

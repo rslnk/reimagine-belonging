@@ -20,24 +20,25 @@
         },
         {
             "key": "field_553f92f52fb79",
-            "label": "Protagonist name",
+            "label": "Name",
             "name": "protagonist_name",
-            "type": "text",
-            "instructions": "The name of the key character of the story. Protagonist's name is displayed on the story preview.",
-            "required": 0,
+            "type": "taxonomy",
+            "instructions": "Name of the protagonist",
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 45,
+                "width": 25,
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
+            "taxonomy": "story_person",
+            "field_type": "select",
+            "allow_null": 0,
+            "add_term": 1,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "id",
+            "multiple": 0
         },
         {
             "key": "field_553f992db6caa",
@@ -45,7 +46,7 @@
             "name": "story_city",
             "type": "taxonomy",
             "instructions": "Select city from the list or add a new one.",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": 25,
@@ -56,8 +57,8 @@
             "field_type": "select",
             "allow_null": 0,
             "add_term": 1,
-            "save_terms": 0,
-            "load_terms": 0,
+            "save_terms": 1,
+            "load_terms": 1,
             "return_format": "object",
             "multiple": 0
         },
@@ -115,6 +116,7 @@
             "max": 1,
             "layout": "row",
             "button_label": "Add Row",
+            "collapsed": "",
             "sub_fields": [
                 {
                     "key": "field_553f9261c8140",
@@ -145,7 +147,7 @@
                     "name": "topics",
                     "type": "taxonomy",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -156,57 +158,10 @@
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "add_term": 0,
-                    "load_save_terms": 1,
-                    "return_format": "id",
-                    "multiple": 0,
+                    "save_terms": 1,
                     "load_terms": 0,
-                    "save_terms": 1
-                },
-                {
-                    "key": "field_553f9261bf9d4",
-                    "label": "Cities",
-                    "name": "cities",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "story_city",
-                    "field_type": "multi_select",
-                    "allow_null": 0,
-                    "add_term": 1,
-                    "load_save_terms": 1,
                     "return_format": "id",
-                    "multiple": 0,
-                    "load_terms": 0,
-                    "save_terms": 1
-                },
-                {
-                    "key": "field_553f946ab9a12",
-                    "label": "People",
-                    "name": "people",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "story_person",
-                    "field_type": "select",
-                    "allow_null": 0,
-                    "add_term": 1,
-                    "load_save_terms": 1,
-                    "return_format": "id",
-                    "multiple": 0,
-                    "load_terms": 0,
-                    "save_terms": 1
+                    "multiple": 0
                 },
                 {
                     "key": "field_553f9261c85d8",
@@ -325,5 +280,5 @@
     ],
     "active": 1,
     "description": "Story post: title, hero name, city, classification, related",
-    "modified": 1444391644
+    "modified": 1466274956
 }

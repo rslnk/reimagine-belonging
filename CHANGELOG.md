@@ -2,7 +2,21 @@
 
 # HEAD
 
--   Use https for theme fonts assets
+-   Switch from `anguvideo` to `ng-videosharing-embed` module
+-   Add `video.service` to ng apps that checks if video is provided via ID/host or URL
+-   Add `video_url` fields to Story editor and posts sidebars, add to API
+-   Set 'Stories' and 'Workshop' ng apps to use post per pages settings from the site config
+-   Set dynamic cookie name (based on provide ng apps base slugs)
+-   Refactor ngCookies in compliance with Agular 1.5.8
+-   Refactor ng apps services
+-   Refactor ng apps controllers/directives/modules names
+-   Refactor ng apps code in compliance with Angular standards
+-   Bump angular packages versions
+-   Bump angular version 1.5.8
+-   Improve content editors fields UI
+-   Improve 'Story' basic info backend UI (make use of `story_city`, `story_person` taxonomy)
+-   Use secure hhtps connection for ng apps videos
+-   Use secure `https` urls for theme fonts assets requests
 -   Update `screenshot.png` and theme version
 -   Remove 'Events' ng app `timelineSwitcher` directive, simply use ng-click instead
 -   Fix 'Events' ng app `dateformat` directive

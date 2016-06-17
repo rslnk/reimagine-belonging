@@ -5,7 +5,7 @@ ul.c-post-sharing__list
     a(href="#"
       socialshare
       socialshare-provider="facebook"
-      socialshare-url="{{ shareUrl }}"
+      socialshare-url="{{ absoluteUrl }}"
       socialshare-text="{{ event.title }}"
       socialshare-via="{{ facebook_app_id }}"
       socialshare-ref="{{ facebook_user_name }}"
@@ -18,7 +18,7 @@ ul.c-post-sharing__list
       socialshare-provider="twitter"
       socialshare-text="{{ event.title }}"
       socialshare-hashtags="{{ siteConfig.social_hashtags }}"
-      socialshare-url="{{ shareUrl }}"
+      socialshare-url="{{ absoluteUrl }}"
     ).c-icon-twitter--circle.c-post-sharing__link--event
       span.u-visually-hidden {{ siteConfig.share_label }} Twitter
   //- google plus
@@ -26,6 +26,6 @@ ul.c-post-sharing__list
     a(href="#"
       socialshare
       socialshare-provider="google"
-      socialshare-url="{{ shareUrl }}"
+      socialshare-url="{{ absoluteUrl }}"
     ).c-icon-googleplus--circle.c-post-sharing__link--event
       span.u-visually-hidden {{ siteConfig.share_label }} Google Plus

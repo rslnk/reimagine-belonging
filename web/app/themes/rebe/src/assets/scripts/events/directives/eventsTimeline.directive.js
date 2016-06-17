@@ -1,5 +1,5 @@
-angular
-  .module('events.timeline.carousel.directive', [])
+/*eslint angular/di: [2,"array"]*/
+angular.module('eventsTimeline.directive', [])
   .directive('carousel', function () {
     return {
       restrict: 'E',
@@ -12,19 +12,19 @@ angular
             navigation: true,
             navigationText: ["prev","next"]
           };
-          var customOptions = scope.$eval($(element).attr('data-options'));
+          var customOptions = scope.$eval(angular.element(element).attr('data-options'));
           for (var key in customOptions){
             defaultOptions[key] = customOptions[key];
           }
 
-          var owl = $(element).owlCarousel(defaultOptions);
+          var owl = angular.element(element).owlCarousel(defaultOptions);
 
-          $('.js-timeline__next').click(function (e) {
+          angular.element('.js-timeline__next').click(function (e) {
             e.preventDefault();
             owl.trigger('owl.next');
           });
 
-          $('.js-timeline__previous').click(function (e) {
+          angular.element('.js-timeline__previous').click(function (e) {
             e.preventDefault();
             owl.trigger('owl.prev');
           });
@@ -42,4 +42,4 @@ angular
           }
         }
     };
-  });
+});

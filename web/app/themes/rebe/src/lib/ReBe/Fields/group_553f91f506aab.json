@@ -3,6 +3,44 @@
     "title": "Story video",
     "fields": [
         {
+            "key": "field_576699c1c0b9a",
+            "label": "Video URL",
+            "name": "video_url",
+            "type": "text",
+            "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57785430dfbbf",
+            "label": "Or use video ID",
+            "name": "or_use_video_",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        },
+        {
             "key": "field_553f9f8688f0b",
             "label": "Video service",
             "name": "story_video_host",
@@ -17,9 +55,9 @@
             },
             "choices": {
                 "youtube": "YouTube",
-                "vimeo": "Vimeo",
-                "oembed": "Embed"
+                "vimeo": "Vimeo"
             },
+            "allow_null": 0,
             "other_choice": 0,
             "save_other_choice": 0,
             "default_value": "vimeo",
@@ -62,35 +100,11 @@
             "disabled": 0
         },
         {
-            "key": "field_553faa19f7019",
-            "label": "Embeded video",
-            "name": "story_oembed_video",
-            "type": "oembed",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_553f9f8688f0b",
-                        "operator": "==",
-                        "value": "oembed"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "width": "",
-            "height": ""
-        },
-        {
             "key": "field_55fcc971a1bf7",
-            "label": "Subtitles",
+            "label": "Closed Captions",
             "name": "subtitles_notification",
             "type": "true_false",
-            "instructions": "Show on subtitles notification for this video",
+            "instructions": "Show Closed Captions notification\/tip for this video",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -98,7 +112,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Show on subtitles notification?",
+            "message": "Show Closed Captions notification?",
             "default_value": 0
         }
     ],
@@ -124,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Story post content: video",
-    "modified": 1444391226
+    "modified": 1467550623
 }

@@ -83,6 +83,13 @@ class PostDataFilter
 
             switch ($item['sidebar_content_type']) {
 
+                case 'video':
+                    $i                       = $item['video'][0];
+                    $i['type']               = 'video';
+                    $i['video_id']           = $i['id']; // legacy support
+                    $result[]                = $i;
+                    break;
+
                 case 'image':
                     $i                       = $item['image'][0];
                     $i['type']               = 'image';
@@ -146,13 +153,6 @@ class PostDataFilter
                     $i['type']               = 'workshop';
                     $result[]                = $i;
                     break;
-
-                case 'video':
-                    $i                       = $item['video'][0];
-                    $i['type']               = 'video';
-                    $result[]                = $i;
-                    break;
-
               }
         }
 

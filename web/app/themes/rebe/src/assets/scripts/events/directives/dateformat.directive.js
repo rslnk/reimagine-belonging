@@ -1,9 +1,10 @@
-angular.module('events.dateformat.directive', [])
-  .directive('dateformat', function () {
+/*eslint angular/di: [2,"array"]*/
+angular.module('dateFormat.directive', [])
+  .directive('dateFormat', ['templatesPath', function (templatesPath) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '/app/themes/rebe/templates/partials/ng/date.html',
+      templateUrl: templatesPath + 'partials/ng/date.html',
       scope: {
         thedate: '@',
         unknown: '@',
@@ -28,4 +29,4 @@ angular.module('events.dateformat.directive', [])
         };
       }
     };
-  });
+}]);

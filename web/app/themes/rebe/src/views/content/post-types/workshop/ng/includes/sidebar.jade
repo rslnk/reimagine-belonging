@@ -4,7 +4,7 @@ aside(ng-cloak ng-show="workshop.sidebar").c-workshop__sidebar
   include ./sidebar/booking.jade
   
   //- Sidebar objects from the content
-  div(ng-repeat="item in workshop.sidebar" ng-switch="item.type")
+  div(ng-repeat="item in workshop.sidebar" ng-switch="item.type") 
     include ../../../../../partials/ng/media-blocks/video.jade
     include ../../../../../partials/ng/media-blocks/image.jade
     include ./sidebar/quote.jade

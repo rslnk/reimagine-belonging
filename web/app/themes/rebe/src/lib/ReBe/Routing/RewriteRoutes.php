@@ -24,7 +24,7 @@ class RewriteRoutes {
     {
         global $wp;
 
-        $base = "/\b$post_type_slug\b/i";
+        $base = "/^$post_type_slug(.*)$/";
         $uri  = $_SERVER["REQUEST_URI"];
 
         if (substr($uri, -1) == '/') {

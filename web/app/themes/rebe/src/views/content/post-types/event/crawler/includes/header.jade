@@ -2,10 +2,8 @@ header
   h1 
     - the_title()
   div
-    dateformat
-      - App\event_date('start');
-    dateformat  
-      - App\event_date('end');
+    - App\event_date('start'); 
+    - App\event_date('end');
   h3
     - App\taxonomy_terms('event_timeline', 'name')
   h4

@@ -96,201 +96,6 @@
             "disabled": 0
         },
         {
-            "key": "field_55265e4a303bc",
-            "label": "Header",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_55265eb1303bf",
-            "label": "Header image",
-            "name": "display_header_image",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Display image?",
-            "default_value": 0
-        },
-        {
-            "key": "field_55265f3e303c2",
-            "label": "Image",
-            "name": "header_image",
-            "type": "repeater",
-            "instructions": "Add large high quality image. E.g. 1600 x 1200 px.",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_55265eb1303bf",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": 80,
-                "class": "",
-                "id": ""
-            },
-            "min": 1,
-            "max": 1,
-            "layout": "block",
-            "button_label": "Add Row",
-            "collapsed": "",
-            "sub_fields": [
-                {
-                    "key": "field_55265f3e303c3",
-                    "label": "Image",
-                    "name": "url",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "url",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_55265f3e303c7",
-                    "label": "Credit",
-                    "name": "credit",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": 50,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_55265f3e303c8",
-                    "label": "Credit link",
-                    "name": "credit_link",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": 50,
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5526606ae5bb3",
-                    "label": "Image overlay",
-                    "name": "display_image_overlay",
-                    "type": "true_false",
-                    "instructions": "Add an overlay in case header image is too bright.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "Show overlay?",
-                    "default_value": 0
-                },
-                {
-                    "key": "field_552660b5e5bb4",
-                    "label": "Overlay opacity",
-                    "name": "overlay_opacity",
-                    "type": "select",
-                    "instructions": "Choose overlay opacity level. 0.95 \u2014 almost opaque, 0.5 \u2014 almost transparent.",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5526606ae5bb3",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": 35,
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "0.95": "0.95",
-                        "0.9": "0.9",
-                        "0.85": "0.85",
-                        "0.8": "0.8",
-                        "0.75": "0.75",
-                        "0.7": "0.7",
-                        "0.65": "0.65",
-                        "0.6": "0.6",
-                        "0.55": "0.55",
-                        "0.5": "0.5",
-                        "0.45": "0.45",
-                        "0.4": "0.4",
-                        "0.35": "0.35",
-                        "0.3": "0.3",
-                        "0.25": "0.25",
-                        "0.2": "0.2",
-                        "0.15": "0.15",
-                        "0.1": "0.1"
-                    },
-                    "default_value": [
-                        "0.5"
-                    ],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "disabled": 0,
-                    "readonly": 0
-                }
-            ]
-        },
-        {
             "key": "field_5525b01292823",
             "label": "Sidebar",
             "name": "",
@@ -319,11 +124,11 @@
                 "class": "",
                 "id": ""
             },
+            "collapsed": "",
             "min": 1,
             "max": "",
             "layout": "block",
-            "button_label": "Add another object",
-            "collapsed": "",
+            "button_label": "Add object",
             "sub_fields": [
                 {
                     "key": "field_544aa77b1969c",
@@ -377,12 +182,50 @@
                         "class": "",
                         "id": ""
                     },
+                    "collapsed": "",
                     "min": 1,
                     "max": 1,
                     "layout": "block",
                     "button_label": "Add Row",
-                    "collapsed": "",
                     "sub_fields": [
+                        {
+                            "key": "field_577851f470ec7",
+                            "label": "Video URL",
+                            "name": "url",
+                            "type": "text",
+                            "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_5778520070ec8",
+                            "label": "Or use video ID",
+                            "name": "",
+                            "type": "message",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
+                            "new_lines": "wpautop",
+                            "esc_html": 0
+                        },
                         {
                             "key": "field_55355e245ff91",
                             "label": "Video service",
@@ -431,7 +274,7 @@
                             "key": "field_55245e591525e",
                             "label": "Title",
                             "name": "title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -442,9 +285,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
                             "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "",
                             "readonly": 0,
                             "disabled": 0
                         },
@@ -464,7 +307,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -600,7 +443,7 @@
                             "key": "field_552447c56db0c",
                             "label": "Title",
                             "name": "title",
-                            "type": "text",
+                            "type": "textarea",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -611,9 +454,9 @@
                             },
                             "default_value": "",
                             "placeholder": "",
-                            "prepend": "",
-                            "append": "",
                             "maxlength": "",
+                            "rows": 3,
+                            "new_lines": "",
                             "readonly": 0,
                             "disabled": 0
                         },
@@ -633,7 +476,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 4,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -765,7 +608,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -873,7 +716,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
+                            "rows": 6,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -894,7 +737,7 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 6,
+                            "rows": 8,
                             "new_lines": "br",
                             "readonly": 0,
                             "disabled": 0
@@ -2921,5 +2764,5 @@
     ],
     "active": 1,
     "description": "Event post content + sidebar",
-    "modified": 1465308899
+    "modified": 1467503436
 }

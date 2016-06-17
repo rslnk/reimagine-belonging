@@ -3,14 +3,17 @@ div(ng-switch-when="story").c-event__featured-story
   h3.has-title
     span {{ siteConfig.event_featured_story_title }}
 
-  //- Featured story video
   div.has-video.u-video-container
-    ngvideo
-      iframe(
-        ng-src="{{ trustSrc(item.videoUrl) }}" 
-        frameborder="0" 
-        allowfullscreen="allowfullscreen"
-      )
+    embed-video(
+      data-ng-href="{{ item.video_url }}" 
+      controls="0"
+      iframe-id="videoID"
+      nologo="1"
+      showinfo="0"
+      rel="0"
+      title="0"
+      byline="0"
+    )
         
   //- Clickable quote/title
   a(

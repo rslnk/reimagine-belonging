@@ -1,10 +1,10 @@
-angular
-  .module('events.preview.directive', ['ui.router'])
-  .directive('eventPreview', function () {
+/*eslint angular/di: [2,"array"]*/
+angular.module('eventPreview.directive', [])
+  .directive('eventPreview', ['templatesPath', function (templatesPath) {
     return {
       restrict: 'E',
       replace: true,
-      templateUrl: '/app/themes/rebe/templates/content/post-types/event/ng/preview.html',
+      templateUrl: templatesPath + 'content/post-types/event/ng/preview.html',
       scope: {
         image: '@',
         title: '@',
@@ -22,4 +22,4 @@ angular
         element.css('background-image', 'url('+ previewImgPath +')');
       }
     };
-  });
+}]);

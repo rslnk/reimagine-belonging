@@ -312,6 +312,29 @@
             "save_terms": 0
         },
         {
+            "key": "field_5776350adafac",
+            "label": "Stories Per Page",
+            "name": "stories_per_page",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
             "key": "field_553120d400007",
             "label": "Events app",
             "name": "events_app",
@@ -419,7 +442,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": 75,
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -428,6 +451,29 @@
             "prepend": "",
             "append": "",
             "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57763566dafad",
+            "label": "Workshops Per Page",
+            "name": "workshops_per_page",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 20,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
             "readonly": 0,
             "disabled": 0
         },
@@ -528,5 +574,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1464173364
+    "modified": 1467375349
 }

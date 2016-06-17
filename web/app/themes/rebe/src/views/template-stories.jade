@@ -19,7 +19,7 @@ main.c-stories__content
   
   - else : // Output Angular app for user
   
-    div&attributes({'ng-app': 'storiesApp'})
+    div&attributes({'ng-app': 'storiesApp', 'ng-strict-di': 'true'})
       <div ui-view></div>
     
   - endif

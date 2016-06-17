@@ -23,9 +23,9 @@ add_action('parse_request', function() {
      * Switch between 'browser' and 'crawler' to test how requested page/post
      * rendered for diferent user-agents.
     */
-    RewriteRoutes::post_type_ui_routing('browser', 'stories');
-    RewriteRoutes::post_type_ui_routing('browser', 'events', 'event_timeline');
-    RewriteRoutes::post_type_ui_routing('browser', 'workshops');
+    RewriteRoutes::post_type_ui_routing('browser', get_field('story_post_type_slug', 'option'));
+    RewriteRoutes::post_type_ui_routing('browser', get_field('event_post_type_slug', 'option'), 'event_timeline');
+    RewriteRoutes::post_type_ui_routing('browser', get_field('workshop_post_type_slug', 'option'));
 
 }, 0);
 

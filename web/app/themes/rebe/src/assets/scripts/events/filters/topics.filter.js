@@ -1,4 +1,4 @@
-angular.module('events.topics.filter', [])
+angular.module('topics.filter', [])
   .filter('showTopics', function () {
     return function (events) {
       var topics = [];
@@ -26,4 +26,4 @@ angular.module('events.topics.filter', [])
 
       return fetchTopics();
     };
-  });
+});

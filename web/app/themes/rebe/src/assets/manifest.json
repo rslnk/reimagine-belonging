@@ -3,40 +3,46 @@
     "events.js": {
       "files": [
         "scripts/services/api.service.js",
-        "scripts/services/event.service.js",
+        "scripts/services/postFootnotes.service.js",
+        "scripts/services/postSidebar.service.js",
+        "scripts/services/relatedPosts.service.js",
+        "scripts/services/video.service.js",
         "scripts/events/filters/events.filter.js",
         "scripts/events/filters/topics.filter.js",
-        "scripts/events/directives/preview.directive.js",
-        "scripts/events/directives/timeline.carousel.directive.js",
-        "scripts/events/directives/dateformat.directive.js",
-        "scripts/events/controllers/timeline.controller.js",
-        "scripts/events/controllers/event.controller.js",
-        "scripts/constants.js",
+        "scripts/events/directives/eventsTimeline.directive.js",
+        "scripts/events/directives/eventPreview.directive.js",
+        "scripts/events/directives/dateFormat.directive.js",
+        "scripts/events/controllers/events.controller.js",
+        "scripts/events/controllers/singleEvent.controller.js",
+        "scripts/projectConstants.js",
         "scripts/events/app.js"
       ]
     },
     "stories.js": {
       "files": [
         "scripts/services/api.service.js",
-        "scripts/services/story.service.js",
-        "scripts/stories/filters/list.filter.js",
-        "scripts/stories/directives/preview.directive.js",
-        "scripts/stories/directives/ngvideo.directive.js",
-        "scripts/stories/controllers/list.controller.js",
-        "scripts/stories/controllers/story.controller.js",
-        "scripts/constants.js",
+        "scripts/services/relatedPosts.service.js",
+        "scripts/services/video.service.js",
+        "scripts/stories/filters/stories.filter.js",
+        "scripts/stories/filters/stories.filter.js",
+        "scripts/stories/directives/storyPreview.directive.js",
+        "scripts/stories/controllers/stories.controller.js",
+        "scripts/stories/controllers/singleStory.controller.js",
+        "scripts/projectConstants.js",
         "scripts/stories/app.js"
       ]
     },
     "workshops.js": {
       "files": [
         "scripts/services/api.service.js",
-        "scripts/services/workshop.service.js",
-        "scripts/workshops/filters/list.filter.js",
-        "scripts/workshops/directives/preview.directive.js",
-        "scripts/workshops/controllers/list.controller.js",
-        "scripts/workshops/controllers/workshop.controller.js",
-        "scripts/constants.js",
+        "scripts/services/postSidebar.service.js",
+        "scripts/services/relatedPosts.service.js",
+        "scripts/services/video.service.js",
+        "scripts/workshops/filters/workshops.filter.js",
+        "scripts/workshops/directives/workshopPreview.directive.js",
+        "scripts/workshops/controllers/workshops.controller.js",
+        "scripts/workshops/controllers/singleWorkshop.controller.js",
+        "scripts/projectConstants.js",
         "scripts/workshops/app.js"
       ]
     },
@@ -44,7 +50,7 @@
       "files": [
         "scripts/main.js"
       ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies", "angularjs-socialshare"],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies", "angularjs-socialshare", "ng-videosharing-embed"],
       "main": true
     },
     "main.css": {

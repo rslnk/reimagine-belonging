@@ -24,7 +24,7 @@
             "name": "start_date",
             "type": "text",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": 25,
@@ -117,7 +117,7 @@
                     "name": "timelines",
                     "type": "taxonomy",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -128,11 +128,10 @@
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "add_term": 0,
-                    "load_save_terms": 1,
+                    "save_terms": 1,
+                    "load_terms": 1,
                     "return_format": "id",
-                    "multiple": 0,
-                    "load_terms": 0,
-                    "save_terms": 1
+                    "multiple": 0
                 },
                 {
                     "key": "field_551dc2847a5f9",
@@ -186,7 +185,7 @@
                     "name": "topics",
                     "type": "taxonomy",
                     "instructions": "",
-                    "required": 0,
+                    "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
@@ -197,11 +196,10 @@
                     "field_type": "multi_select",
                     "allow_null": 0,
                     "add_term": 0,
-                    "load_save_terms": 1,
+                    "save_terms": 1,
+                    "load_terms": 1,
                     "return_format": "id",
-                    "multiple": 0,
-                    "load_terms": 0,
-                    "save_terms": 1
+                    "multiple": 0
                 },
                 {
                     "key": "field_551dc2f17a5fb",
@@ -343,5 +341,5 @@
     ],
     "active": 1,
     "description": "Event post: title, dates, classification, related",
-    "modified": 1464092012
+    "modified": 1466277699
 }

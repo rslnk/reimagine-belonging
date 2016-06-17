@@ -180,7 +180,7 @@ gulp.task('templates', function() {
     // Exclude following patterns:
     '!./src/views/partials/**/*.jade', // exclude `partials` directories
     '!./src/views/**/includes/**/*.jade', // exclude `includes` directories
-    '!./src/views/**/ng/**/*.jade', // exclude 'ng' directories (angluar templates)
+    '!./src/views/**/ng/**/*', // exclude 'ng' directories (angluar templates)
   ])
     .pipe(plumber())
     .pipe(jadePhp({
@@ -192,7 +192,8 @@ gulp.task('templates', function() {
   // Angular apps templates
   gulp.src([
     './src/views/**/ng/**/*.jade', // only from ng directories
-    '!./src/views/**/ng/**/includes/*.jade', // exclude `includes` directories
+    '!./src/views/**/ng/includes/**/*.jade', // exclude `includes` directories
+    '!./src/views/**/ng/**/includes/**/*.jade', // exclude `includes` directories
   ])
     .pipe(jade({
       pretty: true
@@ -210,7 +211,7 @@ gulp.task('styles', ['wiredep'], function() {
     var cssTasksInstance = cssTasks(dep.name);
     if (!enabled.failStyleTask) {
       cssTasksInstance.on('error', function(err) {
-        console.error(err.message);
+        console.$log.log(err.message);
         this.emit('end');
       });
     }

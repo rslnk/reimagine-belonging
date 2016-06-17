@@ -1,14 +1,14 @@
-angular.module('events.events.filter', [])
+angular.module('events.filter', [])
   .filter('showEvents', function () {
     return function (events, filter) {
       var result = [];
 
       function filterIsSet () {
-        return typeof filter !== 'undefined' && (typeof filter.topics !== 'undefined' || typeof filter.searchText !== 'undefined');
+        return typeof filter !== angular.isUndefined && (typeof filter.topics !== angular.isUndefined || typeof filter.searchText !== angular.isUndefined);
       }
 
       function topicsFilterIsSet () {
-        return typeof filter.topics !== 'undefined' && filter.topics.length > 0 && filter.topics instanceof Array;
+        return typeof filter.topics !== angular.isUndefined && filter.topics.length > 0 && filter.topics instanceof Array;
       }
 
       function withinTopicsFilter (topics) {
@@ -53,4 +53,4 @@ angular.module('events.events.filter', [])
 
       return filterEvents();
     };
-  });
+});

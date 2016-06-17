@@ -39,10 +39,9 @@ class Story
 
             'format'                     => get_post_format($this->post->ID),
 
-            'hero'                       => $this->post->protagonist_name,
+            'hero'                       => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_person')),
             'cities'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_city')),
             'topics'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_topic')),
-            'people'                     => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_person')),
 
         ];
 
@@ -62,30 +61,21 @@ class Story
             'permalink'                     => get_permalink($this->post->ID),
             'preview_image'                 => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
             'preview_image_color'           => $this->post->color,
-
             'format'                        => get_post_format($this->post->ID),
-
-            'hero'                          => $this->post->protagonist_name,
             'excerpt'                       => $this->post->excerpt,
 
             // Taxonomy terms
             'groups'                        => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_group')),
             'topics'                        => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_topic')),
+            'hero'                          => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_person')),
             'cities'                        => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_city')),
-            'people'                        => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'story_person')),
             'tags'                          => $this->dataFilter->post_taxonomy(get_the_terms($this->post->ID, 'global_tag')),
 
             // Content: video (default)
-            'story_video_host'              => $this->post->story_video_host,
-            'story_video_id'                => $this->post->story_video_id,
-            'story_oembed_video'            => $this->post->story_oembed_video,
+            'video_url'                     => $this->post->video_url,
+            'video_host'                    => $this->post->story_video_host, // legacy support
+            'video_id'                      => $this->post->story_video_id, // legacy support
             'subtitles_notification'        => $this->post->subtitles_notification,
-
-            // Content: audio
-            'story_oembed_audio'            => $this->post->story_oembed_audio,
-
-            // Content: standart (text)
-            'story_text'                    => get_field('text', $this->post->ID),
 
             // Related posts
             'related_stories'               => $this->dataFilter->post_related(get_field('related_stories', $this->post->ID), 'story'),

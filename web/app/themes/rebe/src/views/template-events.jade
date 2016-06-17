@@ -19,7 +19,7 @@ main.c-events__content
   
   - else : // Output Angular app for user
     
-    div&attributes({'ng-app': 'eventsApp'})
+    div&attributes({'ng-app': 'eventsApp', 'ng-strict-di': 'true'})
       <div ui-view></div>
   
   - endif

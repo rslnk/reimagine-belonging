@@ -35,9 +35,11 @@ class Settings
 
             // Stories app
             'story_filters'       => get_field('story_filters', 'option'),
+            'stories_per_page'    => get_field('stories_per_page', 'option'),
 
             // Workshops app
             'workshop_external_form_url'    => get_field('workshop_external_form_url', 'option'),
+            'workshops_per_page'            => get_field('workshops_per_page', 'option'),
 
             // Advanced srttings
             'events_slug'                   => get_field('event_post_type_slug', 'option'),
