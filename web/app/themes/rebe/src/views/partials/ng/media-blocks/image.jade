@@ -1,5 +1,9 @@
 div(ng-switch-when="image").c-media-block
-  div(style="background-image: url({{item.url}})").u-image-cover.u-image-cover--8x2.c-media-block__placeholder
+  div(
+    style="background-image: url({{item.url}})"
+    class="u-image-cover c-media-block__placeholder"
+    ng-class="{ 'is-landscape': item.orientation === 'landscape', 'is-portrait': item.orientation === 'portrait', 'is-fit': item.orientation === 'fit' }"
+    )
   a(ng-if="item.credit_link || item.credit" href!="{{ item.credit_link }}").c-media-block__credits
     | {{ item.credit }}
   h4(ng-bind-html="item.title").c-media-block__title {{ item.title }}

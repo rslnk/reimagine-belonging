@@ -204,28 +204,6 @@
                     "multiple": 0
                 },
                 {
-                    "key": "field_574434c83f4e3",
-                    "label": "Location",
-                    "name": "location",
-                    "type": "taxonomy",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "taxonomy": "workshop_location",
-                    "field_type": "multi_select",
-                    "allow_null": 0,
-                    "add_term": 0,
-                    "save_terms": 1,
-                    "load_terms": 0,
-                    "return_format": "id",
-                    "multiple": 0
-                },
-                {
                     "key": "field_574434c83fd42",
                     "label": "Groups",
                     "name": "group",
@@ -400,5 +378,5 @@
     ],
     "active": 1,
     "description": "Workshop post: title, details, classification, related",
-    "modified": 1466277962
+    "modified": 1467644341
 }

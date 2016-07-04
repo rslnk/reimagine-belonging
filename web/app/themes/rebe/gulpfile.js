@@ -341,7 +341,7 @@ gulp.task('watch', function() {
   gulp.watch(['src/views/**/*'], ['templates']);
   gulp.watch([path.source + 'icons/**/*'], ['iconfont', 'styles']);
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
-  gulp.watch([path.source + 'scripts/**/*'], ['lint', 'scripts']);
+  gulp.watch([path.source + 'scripts/**/*'], ['scripts']);
   gulp.watch([path.source + 'images/**/*'], ['images']);
   gulp.watch(['bower.json', 'src/assets/manifest.json'], ['build']);
 });

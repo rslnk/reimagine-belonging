@@ -24,11 +24,11 @@
             "disabled": 0
         },
         {
-            "key": "field_57785430dfbbf",
-            "label": "Or use video ID",
-            "name": "or_use_video_",
-            "type": "message",
-            "instructions": "",
+            "key": "field_577a33bf43e8d",
+            "label": "Video ID",
+            "name": "video_id_option",
+            "type": "true_false",
+            "instructions": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -36,9 +36,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
-            "new_lines": "wpautop",
-            "esc_html": 0
+            "message": "Use video ID?",
+            "default_value": 0
         },
         {
             "key": "field_553f9f8688f0b",
@@ -47,7 +46,15 @@
             "type": "radio",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_577a33bf43e8d",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -73,12 +80,22 @@
             "conditional_logic": [
                 [
                     {
+                        "field": "field_577a33bf43e8d",
+                        "operator": "==",
+                        "value": "1"
+                    },
+                    {
                         "field": "field_553f9f8688f0b",
                         "operator": "==",
                         "value": "youtube"
                     }
                 ],
                 [
+                    {
+                        "field": "field_577a33bf43e8d",
+                        "operator": "==",
+                        "value": "1"
+                    },
                     {
                         "field": "field_553f9f8688f0b",
                         "operator": "==",
@@ -122,11 +139,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "story"
-            },
-            {
-                "param": "post_format",
-                "operator": "==",
-                "value": "video"
             }
         ]
     ],
@@ -138,5 +150,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Story post content: video",
-    "modified": 1467550623
+    "modified": 1467636231
 }

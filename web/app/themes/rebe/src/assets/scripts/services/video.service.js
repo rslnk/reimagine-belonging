@@ -1,6 +1,6 @@
 /*eslint angular/di: [2,"array"]*/
 angular.module('video.service', [])
-  .factory('VideoService', ['$http', 'lodash', function ($http, lodash) {
+  .factory('VideoService', ['$http', '$log', 'lodash', function ($http, $log, lodash) {
 
     var service = {
       getVideoURL: getVideoURL
@@ -23,7 +23,7 @@ angular.module('video.service', [])
             var url = 'https://vimeo.com/'+object.video_id;
             break;
           }
-          //console.log('Using ID! Constructed URL: ' + url);
+          //$log.log('Using ID! Constructed URL: ' + url);
           return url;
         }
       // Else use data from the video URL field
@@ -32,7 +32,7 @@ angular.module('video.service', [])
         // ng-videosharing-embed module will take care of the rest.
         // See: https://github.com/erost/ng-videosharing-embed
         var url = object.video_url;
-        //console.log('Using URL! Fetched URL: ' + url);
+        //$log.log('Using URL! Fetched URL: ' + url);
         return url;
       }
     };

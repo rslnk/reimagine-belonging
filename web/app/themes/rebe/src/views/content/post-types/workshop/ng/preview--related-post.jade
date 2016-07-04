@@ -7,16 +7,16 @@ article
     
     //- Details
     div.c-workshop-preview__details--related
-      div.is-detail
+      div(ng-if="item.target_group").is-detail
         strong {{ siteConfig.workshop_target_group_label }}: 
         span {{ item.target_group }}
-      div.is-detail
+      div(ng-if="item.group_size").is-detail
         strong {{ siteConfig.workshop_group_size_label }}: 
         span {{ item.group_size }}    
-      div.is-detail
+      div(ng-if="item.duration").is-detail
         strong {{ siteConfig.workshop_duration_label }}: 
         span {{ item.duration }}
-      div.is-detail
+      div(ng-if="type.term_name").is-detail
         strong {{ siteConfig.workshop_type_label }}: 
         span(ng-repeat="type in item.types")
           | {{ type.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}

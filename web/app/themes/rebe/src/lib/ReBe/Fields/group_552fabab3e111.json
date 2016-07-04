@@ -969,27 +969,6 @@
             "disabled": 0
         },
         {
-            "key": "field_57444d5a130de",
-            "label": "Location label",
-            "name": "workshop_location_label",
-            "type": "text",
-            "instructions": "Example: Location",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": 20,
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ":",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_57444d6e130df",
             "label": "Language label",
             "name": "workshop_language_label",
@@ -1796,5 +1775,5 @@
     ],
     "active": 1,
     "description": "Set UI text and labels",
-    "modified": 1465304351
+    "modified": 1467644367
 }

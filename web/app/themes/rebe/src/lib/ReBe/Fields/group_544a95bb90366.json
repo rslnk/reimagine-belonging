@@ -210,11 +210,11 @@
                             "disabled": 0
                         },
                         {
-                            "key": "field_5778520070ec8",
-                            "label": "Or use video ID",
-                            "name": "",
-                            "type": "message",
-                            "instructions": "",
+                            "key": "field_577a32695985b",
+                            "label": "Video ID",
+                            "name": "video_id_option",
+                            "type": "true_false",
+                            "instructions": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -222,9 +222,8 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "message": "Alternatively, you can enter video ID and select YouTube\/Vimeo service.",
-                            "new_lines": "wpautop",
-                            "esc_html": 0
+                            "message": "Use video ID?",
+                            "default_value": 0
                         },
                         {
                             "key": "field_55355e245ff91",
@@ -233,7 +232,15 @@
                             "type": "radio",
                             "instructions": "",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_577a32695985b",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -243,11 +250,11 @@
                                 "youtube": "YouTube",
                                 "vimeo": "Vimeo"
                             },
+                            "allow_null": 0,
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "youtube : YouTube",
-                            "layout": "vertical",
-                            "allow_null": 0
+                            "layout": "vertical"
                         },
                         {
                             "key": "field_55245e191525d",
@@ -256,7 +263,15 @@
                             "type": "text",
                             "instructions": "Enter YouTube or Vimeo video ID. Copy part of the video's URL that contains ID. E.g. http:\/\/youtu.be\/<strong style=\"color:#000;\">9D05ej8u-gU<\/strong>.",
                             "required": 0,
-                            "conditional_logic": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_577a32695985b",
+                                        "operator": "==",
+                                        "value": "1"
+                                    }
+                                ]
+                            ],
                             "wrapper": {
                                 "width": "",
                                 "class": "",
@@ -429,7 +444,7 @@
                                 "id": ""
                             },
                             "return_format": "url",
-                            "preview_size": "thumbnail",
+                            "preview_size": "medium",
                             "library": "all",
                             "min_width": "",
                             "min_height": "",
@@ -438,6 +453,30 @@
                             "max_height": "",
                             "max_size": "",
                             "mime_types": ""
+                        },
+                        {
+                            "key": "field_577a38f712a79",
+                            "label": "Image orientation",
+                            "name": "orientation",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "landscape": "Landscape",
+                                "portrait": "Portrait",
+                                "fit": "Fit"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "landscape",
+                            "layout": "horizontal"
                         },
                         {
                             "key": "field_552447c56db0c",
@@ -2764,5 +2803,5 @@
     ],
     "active": 1,
     "description": "Event post content + sidebar",
-    "modified": 1467503436
+    "modified": 1467632152
 }

@@ -19,11 +19,9 @@ angular.module('postSidebar.service', [])
           // Featured Story object
           if (item.type === 'story') {
             item.video_url = VideoService.getVideoURL(item);
-            item.city = item.cities[0].term_name;
             // Build path for when related post is queried in another ng app
             // Example: app-base/post-name
             item.external_slug = '/' + item.app_base + '/' + item.slug + '/';
-
           }
           // Featured Workshop object
           if (item.type === 'workshop') {

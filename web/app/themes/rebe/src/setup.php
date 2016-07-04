@@ -85,7 +85,7 @@ add_action('after_setup_theme', function () {
      * Enable post formats
      * @link http://codex.wordpress.org/Post_Formats
      */
-     add_theme_support('post-formats', ['video', 'audio']);
+     add_theme_support('post-formats', ['video']);
 
     /**
      * Enable HTML5 markup support
@@ -241,7 +241,7 @@ add_action('init', function() {
         'Story',
         [
             'rewrite'       => ['slug' => get_field('story_post_type_slug', 'option')],
-            'supports'      => ['title', 'thumbnail', 'post-formats'],
+            'supports'      => ['title', 'thumbnail'],
             'menu_position' => 6,
             'menu_icon'     => 'dashicons-format-status'
         ]
@@ -309,17 +309,6 @@ add_action('init', function() {
             'supports'      => ['title', 'thumbnail'],
             'menu_position' => 6,
             'menu_icon'     => 'dashicons-universal-access-alt'
-        ]
-    );
-
-    $workshop->add_taxonomy(
-        'workshop_location',
-        'Location',
-        [
-            'public'            => false,
-            'show_in_nav_menus' => false,
-            'meta_box_cb'       => false,
-            'show_admin_column' => true,
         ]
     );
 

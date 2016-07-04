@@ -26,6 +26,6 @@ div(ng-switch-when="story").c-event__featured-story
         h4(ng-bind-html="item.title").c-quote__text--featured-story
         div.c-quote__meta--featured-story
           span.c-quote__author--story
-            strong {{ item.hero }},&nbsp;
-            | {{ item.city }}
+            strong {{ item.hero[0].term_name }},&nbsp;
+            | {{ item.cities[0].term_name }}
   

@@ -128,11 +128,12 @@ class PostDataFilter
                     $i['title']              = $post->post_title;
                     $i['slug']               = $post->post_name;
                     $i['app_base']           = get_field('story_post_type_slug', 'option');
-                    $i['hero']               = $post->protagonist_name;
+                    $i['hero']               = self::post_taxonomy(get_the_terms($post->ID, 'story_person'));
                     $i['cities']             = self::post_taxonomy(get_the_terms($post->ID, 'story_city'));
                     $i['excerpt']            = $post->excerpt;
-                    $i['story_video_host']   = $post->story_video_host;
-                    $i['story_video_id']     = $post->story_video_id;
+                    $i['video_url']          = $post->video_url;
+                    $i['video_host']         = $post->story_video_host; // legacy support
+                    $i['video_id']           = $post->story_video_id; // legacy support
                     $i['preview_image']      = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                     $i['type']               = 'story';
                     $result[]                = $i;

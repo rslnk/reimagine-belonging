@@ -1,13 +1,13 @@
 {
     "key": "group_553fdc6648144",
-    "title": "Preview image color",
+    "title": "Color",
     "fields": [
         {
             "key": "field_553fdc773ebb4",
             "label": "Select color",
             "name": "color",
             "type": "select",
-            "instructions": "Assign color to the preview image.",
+            "instructions": "Assign color to the post.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -16,17 +16,17 @@
                 "id": ""
             },
             "choices": {
-                "red": "Red",
+                "red": "Rose",
                 "orange": "Orange",
-                "yellow": "Yellow",
-                "green": "Green",
-                "blue": "Blue",
+                "yellow": "Yolk Yellow",
+                "green": "Mint",
+                "blue": "Sky Blue",
                 "indigo": "Indigo",
-                "violet": "Violet"
+                "violet": "Raspberry"
             },
-            "default_value": {
-                "blue": "blue"
-            },
+            "default_value": [
+                "blue"
+            ],
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -53,5 +53,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Story post preview image color",
-    "modified": 1444390802
+    "modified": 1467627303
 }

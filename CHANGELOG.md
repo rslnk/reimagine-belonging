@@ -1,7 +1,16 @@
 # CHANGELOG
 
-# HEAD
+# 2.0.0 July 4th, 2016
 
+-   Update to ACF Pro 5.3.9
+-   Update to WordPress 4.5.3
+-   Smaller caption font-size on workshop previews
+-   Remove Location taxonomy and options from 'Wokrshops' ng app, admin UI and API
+-   Fix 'Event' post sidebar featured story video URL and hero name
+-   Add post sidebar image orientation options (landscape/portrait, fit)
+-   Rename Story post UI colors options in compliance with RB palette colors names
+-   Remove 'audio' post format, hide 'post-formats' from Story admin UI
+-   Add conditional logic to video ID and video host fields in admin UI
 -   Switch from `anguvideo` to `ng-videosharing-embed` module
 -   Add `video.service` to ng apps that checks if video is provided via ID/host or URL
 -   Add `video_url` fields to Story editor and posts sidebars, add to API
