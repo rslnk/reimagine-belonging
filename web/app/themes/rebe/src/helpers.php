@@ -250,4 +250,24 @@ function event_date($date)
                 break;
         }
     }
- }
+}
+/**
+* Get vido embedded code
+*
+* Returns YouTube/Vimeo embedded vido code based on provided host and ID
+*
+* @param $host, $id
+* @return string
+*/
+function get_embed_video($host, $id) {
+    switch($host) {
+        case 'youtube' :
+            $object = "<iframe src='https://www.youtube.com/embed/$id?modestbranding=0&nologo=1&iv_load_policy=3&autoplay=0&showinfo=0&controls=1&cc_load_policy=1&rel=0' frameborder='0', allowfullscreen></iframe>";
+            echo $object;
+            break;
+        case 'vimeo' :
+            $object = "<iframe src='https://player.vimeo.com/video/$id?title=0&byline=0'></iframe>";
+            echo $object;
+            break;
+    }
+}

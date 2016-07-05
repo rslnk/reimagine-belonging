@@ -1,5 +1,11 @@
 # CHANGELOG
 
+# HEAD
+
+-   Add helper function that constructs video embed code from video ID and host (legacy support for WP templates)
+-   Switch `video_url` field type to oEmbed to support embeded from the URL on WP templates
+-   Add page sidebar image orientation options to WP templates
+
 # 2.0.0 July 4th, 2016
 
 -   Update to ACF Pro 5.3.9

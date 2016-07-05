@@ -2,10 +2,13 @@
   - while(have_rows('video')) : the_row()            
       div.c-media-block
         div.u-video-container
-          - if(get_sub_field('video_host') == 'youtube') :
-              iframe(src="https://www.youtube.com/embed/<?php the_sub_field('id'); ?>?modestbranding=0&nologo=1&iv_load_policy=3&autoplay=0&showinfo=0&controls=1&cc_load_policy=1&rel=0" frameborder="0", allowfullscreen='allowfullscreen')
+          //- Construct video embed code if video ID and host are provided
+          //- otherwise use video url.
+          - if(get_sub_field('id') && empty(get_sub_field('video_url'))) :
+              - echo 'We have video ID'
+              - App\get_embed_video(get_sub_field('video_host'), get_sub_field('id'))
           - else :
-              iframe(src="https://player.vimeo.com/video/<?php the_sub_field('id'); ?>?title=0&byline=0")
+            - the_sub_field('video_url')
           - endif
 
         - if (get_sub_field('credit')) :

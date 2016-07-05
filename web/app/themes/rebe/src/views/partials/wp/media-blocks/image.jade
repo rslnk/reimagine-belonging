@@ -1,8 +1,21 @@
 - if(get_sub_field('sidebar_content_type') == 'image') :
   - while(have_rows('image')) : the_row()
       div.c-media-block
+        //- Get image orientation settings and set coresponding class for each case
+        :php
+          if(get_sub_field('orientation') == 'portrait') { 
+            $image_orientation = 'is-portrait'; 
+          } elseif(get_sub_field('orientation') == 'fit') { 
+            $image_orientation = 'is-fit'; 
+          } else {
+            $image_orientation = 'is-landscape'; 
+          }
+          
         - if(get_sub_field('url')) :
-            div(style="background-image: url(<? the_sub_field('url'); ?>)").u-image-cover.u-image-cover--4x3.c-media-block__placeholder
+            div(
+              class="u-image-cover c-media-block__placeholder <? echo $image_orientation; ?>"
+              style="background-image: url(<? the_sub_field('url'); ?>)"
+            )
         - endif
 
         - if (get_sub_field('credit')) :
