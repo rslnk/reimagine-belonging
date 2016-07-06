@@ -18,9 +18,18 @@
   @extend .o-btn
 
   position relative
+  overflow hidden
   float left
 
   background-color $yolk // image fallback
+  transition all .3s ease-in-out
+
+  // Preview image
+  .has-image
+    position absolute
+    z-index 0
+    background-size cover
+    transition all .3s ease-in-out
 
   // Conditional class (see note above)
   .is-disabled
@@ -38,12 +47,20 @@
     height 20px
     height 0 // initial position
 
-    background-image linear-gradient(0deg, rgba($yolk, 1) 5%, rgba($yolk, .65) 100%)
+    background-image linear-gradient(0deg, rgba($yolk, 1) 5%, rgba($yolk, .55) 100%)
 
-    transition all .3s ease-in-out
+    transition all .13s ease-in-out
 
   &:hover
   &:focus
+
+    // Blur image
+    .has-image
+      -webkit-filter blur(5px)
+      -moz-filter blur(5px)
+      -o-filter blur(5px)
+      -ms-filter blur(5px)
+      filter blur(5px)
 
     // Move content up
     .c-event-preview__content

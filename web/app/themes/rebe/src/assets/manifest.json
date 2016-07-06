@@ -50,13 +50,16 @@
       "files": [
         "scripts/main.js"
       ],
-      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies", "angularjs-socialshare", "ng-videosharing-embed"],
+      "bower": ["angular", "angular-sanitize", "angular-ui-router", "ng-lodash", "angular-cookies", "angularjs-socialshare", "ng-videosharing-embed", "owl.carousel"],
       "main": true
     },
     "main.css": {
       "files": [
-        "styles/main.styl"
+        "styles/main.styl",
+        "styles/owl.carousel.min.css",
+        "styles/owl.theme.default.css"
       ],
+      "bower": ["owl.carousel"],
       "main": true
     }
   },

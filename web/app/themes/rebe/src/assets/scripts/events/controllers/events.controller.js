@@ -1,6 +1,6 @@
 /*eslint angular/di: [2,"array"]*/
 angular.module('events.controller', [])
-  .controller('EventsController', ['$rootScope', '$scope', '$location', '$state', '$stateParams', 'lodash', 'ApiService', function ($rootScope, $scope, $location, $state, $stateParams, lodash, ApiService) {
+  .controller('EventsController', ['$rootScope', '$scope', '$sce', '$location', '$state', '$stateParams', 'lodash', 'ApiService', function ($rootScope, $scope, $sce, $location, $state, $stateParams, lodash, ApiService) {
 
   var viewModel = $scope;
 
@@ -11,6 +11,10 @@ angular.module('events.controller', [])
   });
   viewModel.events = [];
   viewModel.filter = { topics: [], searchText: '' };
+
+  viewModel.trustSrc = function(src) {
+    return $sce.trustAsResourceUrl(src);
+  };
 
   viewModel.loadEvents = function () {
     ApiService

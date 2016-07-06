@@ -1,0 +1,41 @@
+/**
+ *  Owl Carousel pagination item (dot) (overwrites)
+ */
+.c-timeline__pagination // dots wrapper
+  @extend .o-centered-content
+
+  text-align center
+
+  +below('m')
+    margin-top rem(25px)
+
+  +above('m')
+    margin-top rem(40px)
+
+  .c-timeline__dot
+    @extend .o-btn
+
+    margin-right rem(15px)
+    size rem(12px)
+
+    background $gray--medium
+    border-radius rem(100px)
+    transition all .2s ease-in
+
+    &:last-of-type
+      margin-right 0
+
+    &:hover
+    &:focus
+      transform scale(1.35)
+
+    // Hide dots pagination on small screens
+    +below('m')
+      display none
+
+    +above('m')
+      display inline-block
+
+  // Active item
+  .active
+    background $yolk
