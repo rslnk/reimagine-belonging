@@ -2,6 +2,7 @@
 
 # 2.1.0 July 11th, 2016
 
+-   Update Facebook SDK, fix `facebook_app_id` call in ng apps
 -   Fix social links conditional statements in footer
 -   Fix `type` fields in Workshop ng app templates
 -   Improve ng app posts previews templates and styles

@@ -1,12 +1,11 @@
 head
   meta(charset="utf-8")
   meta(name="viewport")&attributes({'content': 'width=device-width, initial-scale=1'})
-  
-  //- Set base URL path for Events and Stories Angular apps
+  //- Set base URL path for Angular apps
   - if (is_page_template('templates/template-events.php') || is_page_template('templates/template-stories.php') || is_page_template('templates/template-workshops.php')) :
     - App\set_template_uri_base();
   - endif
   
   - wp_head()
   
-  link(rel='shortcut icon', href="<?php echo get_template_directory_uri() ?>/dist/images/meta/favicon-32.png", type='image/x-icon') 
+  link(rel='shortcut icon', href="<? echo get_template_directory_uri() ?>/dist/images/meta/favicon-32.png", type='image/x-icon') 

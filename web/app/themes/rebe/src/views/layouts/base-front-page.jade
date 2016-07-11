@@ -9,6 +9,7 @@ doctype html
 include ../partials/wp/head.jade
 
 body.c-home.js-home
+  - App\get_facebook_sdk()
   div.has-background.js-background-image
     include ../partials/wp/header.jade
     - include App\template_unwrap()

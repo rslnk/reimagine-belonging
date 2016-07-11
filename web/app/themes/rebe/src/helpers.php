@@ -125,15 +125,26 @@ function get_facebook_sdk()
 {
     // Get Facebook App ID and site language values set via WordPress admin
     if (get_field('facebook_app_id', 'option')) {
-        $app_id   = get_field('facebook_app_id', 'option');
-        $language = get_field('site_language', 'option');
-        echo '<div id="fb-root"></div>';
-        echo '<script>(function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return; js = d.createElement(s);
-      js.id = id; js.src = "//connect.facebook.net/'
-      . $language . '/sdk.js#xfbml=1&version=v2.3&appId='
-      . $app_id . '"; fjs.parentNode.insertBefore(js, fjs); }
-      (document, \'script\', \'facebook-jssdk\'));</script>';
+        $app_id        = get_field('facebook_app_id', 'option');
+        $site_language = get_field('site_language', 'option');
+        echo '
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '. $app_id .',
+              xfbml      : true,
+              version    : \'v2.6\'
+            });
+          };
+
+          (function(d, s, id){
+             var js, fjs = d.getElementsByTagName(s)[0];
+             if (d.getElementById(id)) {return;}
+             js = d.createElement(s); js.id = id;
+             js.src = "//connect.facebook.net/'. $site_language . '/sdk.js";
+             fjs.parentNode.insertBefore(js, fjs);
+         }(document, \'script\', \'facebook-jssdk\'));
+        </script>';
     }
 }
 
