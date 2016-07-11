@@ -4,11 +4,11 @@ header.c-hero--workshops
 
     div(ng-cloak ng-show="(workshops|showWorkshops:filter).length > perPage").js-workshops-list.c-workshops__list
       workshop-preview(
-        ng-repeat="(k, workshop) in workshops" 
         ng-show="inPaginatorScope(k)"
+        ng-repeat="(k, workshop) in workshops" 
         ng-click="openWorkshop(workshop.slug)"
-      ).c-workshop-preview
-  
+      )
+
     include ./includes/dashboard.jade
     
-    div(ui-view="")
+div(ui-view="")

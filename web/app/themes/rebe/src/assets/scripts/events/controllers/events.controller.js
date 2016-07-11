@@ -6,7 +6,7 @@ angular.module('events.controller', [])
 
   viewModel.siteConfig = $rootScope.siteConfig;
   // Get timeline slug from the list of timelines set in the Site Configuration
-  viewModel.timeline = lodash.findWhere(viewModel.siteConfig.timelines, {
+  viewModel.timeline = lodash.find(viewModel.siteConfig.timelines, {
     slug: $stateParams.timeline
   });
   viewModel.events = [];
@@ -27,17 +27,17 @@ angular.module('events.controller', [])
   viewModel.loadEvents();
 
   viewModel.toggleTopicInFilter = function (topic) {
-    var i = $scope.filter.topics.indexOf(topic);
+    var i = viewModel.filter.topics.indexOf(topic);
 
     if (i > -1) {
-      $scope.filter.topics.splice(i,1);
+      viewModel.filter.topics.splice(i,1);
     } else {
-      $scope.filter.topics.push(topic);
+      viewModel.filter.topics.push(topic);
     }
   };
 
   viewModel.resetTopicsFilter = function () {
-    $scope.filter.topics = [];
+    viewModel.filter.topics = [];
   };
 
   viewModel.switchTimeline = function (slug) {
@@ -48,15 +48,15 @@ angular.module('events.controller', [])
     $state.go('timeline.event', { event: slug });
   };
 
-  $scope.$watch('filter.topics', function () {
+  viewModel.$watch('filter.topics', function () {
     viewModel.checkTopics();
   }, true);
 
   viewModel.checkTopics = function () {
-    if ($scope.filter.topics.length === 0) {
+    if (viewModel.filter.topics.length === 0) {
       $location.search('topics', null);
     } else {
-      $location.search('topics', $scope.filter.topics.join(','));
+      $location.search('topics', viewModel.filter.topics.join(','));
     }
   };
 

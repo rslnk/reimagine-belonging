@@ -17,33 +17,33 @@ angular.module('singleWorkshop.controller', [])
     });
 
   viewModel.next = function () {
-    var currentWorkshop = lodash.find($scope.workshops, function (workshop) {
+    var currentWorkshop = lodash.find(viewModel.workshops, function (workshop) {
       return workshop.slug === $stateParams.workshop;
     });
 
-    var i = lodash.indexOf($scope.workshops, currentWorkshop);
+    var i = lodash.indexOf(viewModel.workshops, currentWorkshop);
 
-    if (i === $scope.workshops.length) {
+    if (i === viewModel.workshops.length) {
       i = 0;
     }
 
-    var nextWorkshop = $scope.workshops[i+1];
+    var nextWorkshop = viewModel.workshops[i+1];
 
     $state.go('list.workshop', { workshop: nextWorkshop.slug });
   };
 
   viewModel.prev = function () {
-    var currentWorkshop = lodash.find($scope.workshops, function (workshop) {
+    var currentWorkshop = lodash.find(viewModel.workshops, function (workshop) {
       return workshop.slug === $stateParams.workshop;
     });
 
-    var i = lodash.indexOf($scope.workshops, currentWorkshop);
+    var i = lodash.indexOf(viewModel.workshops, currentWorkshop);
 
     if (i === 0) {
-      i = $scope.workshops.length;
+      i = viewModel.workshops.length;
     }
 
-    var prevWorkshop = $scope.workshops[i-1];
+    var prevWorkshop = viewModel.workshops[i-1];
 
     $state.go('list.workshop', { workshop: prevWorkshop.slug });
   };

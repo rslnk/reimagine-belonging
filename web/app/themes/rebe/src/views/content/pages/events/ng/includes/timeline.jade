@@ -2,18 +2,17 @@ div.c-timeline
 
   timeline(
     ng-if="filter.topics"
-    data-options=""
+    data-options="{ nav: false, dots: true, dotClass: 'c-timeline__dot', dotsClass: 'c-timeline__pagination' }"
   ).c-timeline__events.owl-carousel
       
     event-preview(
       timeline-item=""
-      class="c-event-preview"
-      ng-class="{'c-event-preview--disabled': event.hide === true}"
       ng-repeat="event in events|showEvents:filter"
       ng-click="openEvent(event.slug)"
       title="{{ event.title }}"
       image="{{ event.preview_image }}"
       year="{{ event.year }}"
+      filtered="{{ event.hide }}"
     )
 
   //- carousel navigation

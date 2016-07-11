@@ -43,34 +43,30 @@ angular.module('api.service', [])
     function getPages () {
       return $http.get('/api/?action=list-all-pages').then(function (response) {
         var pages = response.data;
-
-        pages.map(function (page) {
-          if (page.permalink) {
-            page.slug = page.permalink.split('/').slice(-2,-1)[0];
-          }
-        });
         return pages;
       });
     };
 
     function getEvents (timeline) {
+      // Get all events
       return $http.get('/api/?action=list-all-events').then(function (response) {
         var result = [];
         var events = response.data;
 
+        // Return events for requested timeline
         lodash.forEach(events, function (event) {
           if( !!lodash.find(event.timelines, { 'term_slug': timeline })) {
             result.push(event);
           }
         });
-
+        // Reutrn timeline events sorted by start date
+        // NB! Consider using `orderBy` inside the controller instead.
         result.map(function (event) {
-          if (event.permalink) {
-            event.slug = event.permalink.split('/').slice(-2,-1)[0];
-            event.year = event.start_date.split('/')[0];
+          if (event.slug) {
+            event.startDate = event.start_date;
           }
         });
-        result = lodash.sortBy(result, 'year');
+        result = lodash.sortBy(result, 'startDate');
         return result;
       });
     };
@@ -84,13 +80,6 @@ angular.module('api.service', [])
     function getStories () {
       return $http.get('/api/?action=list-all-stories').then(function (response) {
         var stories = response.data;
-
-        stories.map(function (story) {
-          if (story.permalink) {
-            story.slug = story.permalink.split('/').slice(-2,-1)[0];
-          }
-        });
-        // result = lodash.sortBy(result, 'published_date_gmt');
         return stories;
       });
     };
@@ -104,12 +93,6 @@ angular.module('api.service', [])
     function getWorkshops () {
       return $http.get('/api/?action=list-all-workshops').then(function (response) {
         var workshops = response.data;
-
-        workshops.map(function (workshop) {
-          if (workshop.permalink) {
-            workshop.slug = workshop.permalink.split('/').slice(-2,-1)[0];
-          }
-        });
         return workshops;
       });
     };

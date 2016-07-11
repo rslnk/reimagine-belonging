@@ -2,10 +2,15 @@ include ./includes/head.jade
 
 div.c-stories__list
   story-preview(
-    ng-click="openStory(story.slug)"
-    ng-class="{'c-story-preview--disabled': story.hide === true}"
-    ng-repeat="(k, story) in stories|showStories:filter" 
     ng-show="inPaginatorScope(k)"
+    ng-repeat="(k, story) in stories|showStories:filter" 
+    ng-click="openStory(story.slug)"
+    title="{{ story.title }}"
+    image="{{ story.preview_image }}"
+    color="{{ story.preview_image_color }}"
+    hero="{{ story.hero[0].term_name }}"
+    city="{{ story.cities[0].term_name }}"
+    filtered="{{ story.hide }}"
   )
 
 div(ui-view="")

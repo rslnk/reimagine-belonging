@@ -16,7 +16,7 @@ angular.module('workshopsApp', [
   '720kb.socialshare',
   'videosharing-embed'
 ])
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'templatesPath', function($stateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
+.config(['$stateProvider', '$sceDelegateProvider', '$urlRouterProvider', '$locationProvider', 'templatesPath', function($stateProvider, $sceDelegateProvider, $urlRouterProvider, $locationProvider, templatesPath) {
   $locationProvider.html5Mode(true);
   $stateProvider
     .state('list', {
@@ -31,6 +31,13 @@ angular.module('workshopsApp', [
       controller: 'SingleWorkshopController as viewModel',
       controllerAs: 'viewModel'
     });
+    $sceDelegateProvider.resourceUrlWhitelist([
+      // Allow same origin resource loads.
+      'self',
+      // Allow loading from our assets domain. Notice the difference between * and **.
+      'http://cdn*.reimaginebelonging.org/**',
+      'http://cdn*.reimaginebelonging.de/**'
+    ]);
 }])
 .run(['$rootScope', '$document', '$state', '$stateParams', '$cookies', '$location', 'ApiService', function ($rootScope, $document, $state, $stateParams, $cookies, $location, ApiService){
   $rootScope.$state = $state;

@@ -33,7 +33,6 @@ class Workshop
             'published_date_gmt'         => $this->post->post_date_gmt,
             'slug'                       => $this->post->post_name,
             'app_base'                   => get_field('workshop_post_type_slug', 'option'),
-            'permalink'                  => get_permalink($this->post->ID),
             'preview_image'              => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
             'caption'                    => $this->post->caption,
 
@@ -60,7 +59,6 @@ class Workshop
             'published_date_gmt'         => $this->post->post_date_gmt,
             'slug'                       => $this->post->post_name,
             'app_base'                   => get_field('workshop_post_type_slug', 'option'),
-            'permalink'                  => get_permalink($this->post->ID),
             'preview_image'              => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
 
             'target_group'               => $this->post->target_group,

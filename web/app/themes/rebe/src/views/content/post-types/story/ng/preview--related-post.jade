@@ -1,7 +1,24 @@
-article
-  div(class="c-strory-preview__gradient c-strory-preview__gradient--{{ item.preview_image_color }}")
+//- Related story preview
+//- Note: This template must be included into parent element 
+//- that has `c-story-preview--related` class
+
+//- Wrapper for nested classes (like `is-<color>`, `in-focus`)
+div(ng-class="{'in-focus': mouseHover}")
+  //- Background image with fallback color
+  div.c-story-preview__image
+    div(
+      class="has-image is-{{ story.preview_image_color }}"
+      style="background-image: url({{ story.preview_image }})"
+    )
+  //- Color gradient layer
+  div(class="c-story-preview__gradient")
+    div(class="has-gradient is-{{ story.preview_image_color }}")
+  //- Preview content wrapper
   div.c-story-preview__content--related
     div.c-story-preview__caption
-      h2(class="c-story-preview__title--related c-story-preview__title--{{ item.preview_image_color }}")
-        | {{ item.title }}
-      h3.c-story-preview__protagonist--related {{ item.hero[0].term_name }}
+      //- Title with gradient background color animation on `ng-mouseenter`
+      h2.c-story-preview__title--related
+        span(class="has-background is-{{ story.preview_image_color }}") {{ story.title }}
+      h3.c-story-preview__protagonist--related
+        strong {{ story.hero[0].term_name }},&nbsp;
+        | {{ story.cities[0].term_name }}

@@ -19,33 +19,33 @@ angular.module('singleStory.controller', [])
     });
 
   viewModel.next = function () {
-    var currentStory = lodash.find($scope.stories, function (story) {
+    var currentStory = lodash.find(viewModel.stories, function (story) {
       return story.slug === $stateParams.story;
     });
 
-    var i = lodash.indexOf($scope.stories, currentStory);
+    var i = lodash.indexOf(viewModel.stories, currentStory);
 
-    if (i === $scope.stories.length) {
+    if (i === viewModel.stories.length) {
       i = 0;
     }
 
-    var nextStory = $scope.stories[i+1];
+    var nextStory = viewModel.stories[i+1];
 
     $state.go('list.story', { story: nextStory.slug });
   };
 
   viewModel.prev = function () {
-    var currentStory = lodash.find($scope.stories, function (story) {
+    var currentStory = lodash.find(viewModel.stories, function (story) {
       return story.slug === $stateParams.story;
     });
 
-    var i = lodash.indexOf($scope.stories, currentStory);
+    var i = lodash.indexOf(viewModel.stories, currentStory);
 
     if (i === 0) {
-      i = $scope.stories.length;
+      i = viewModel.stories.length;
     }
 
-    var prevStory = $scope.stories[i-1];
+    var prevStory = viewModel.stories[i-1];
 
     $state.go('list.story', { story: prevStory.slug });
   };

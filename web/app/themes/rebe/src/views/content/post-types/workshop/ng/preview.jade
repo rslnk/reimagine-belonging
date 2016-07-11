@@ -1,4 +1,7 @@
-article
+article(
+  ng-mouseenter="mouseHover=true"
+  ng-mouseleave="mouseHover=false"
+).c-workshop-preview
   header.c-workshop-preview__head
     h2.c-workshop-preview__title {{ workshop.title }}
 
@@ -10,17 +13,14 @@ article
       div(ng-if="workshop.target_group").is-detail
         strong {{ siteConfig.workshop_target_group_label }}: 
         span {{ workshop.target_group }}
-      div(ng-if="workshop.group_size").is-detail
-        strong {{ siteConfig.workshop_group_size_label }}: 
-        span {{ workshop.group_size }}    
       div(ng-if="workshop.duration").is-detail
         strong {{ siteConfig.workshop_duration_label }}: 
         span {{ workshop.duration }}
-      div(ng-if="type.term_name").is-detail
+      div(ng-if="workshop.types").is-detail
         strong {{ siteConfig.workshop_type_label }}: 
         span(ng-repeat="type in workshop.types")
           | {{ type.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
-
+          
   footer.c-workshop-preview__footer
     a(ng-click="openWorkshop(workshop.slug)").c-workshop-preview__cta
       | {{ siteConfig.workshop_preview_cta_button_label }}

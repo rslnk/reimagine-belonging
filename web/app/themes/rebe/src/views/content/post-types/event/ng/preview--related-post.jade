@@ -1,5 +1,15 @@
-article
+//- Related event preview
+//- Note: This template must be included into parent element 
+//- that has `c-event-preview--related` class
+
+//- Wrapper for nested classes (like in-focus`)
+div(ng-class="{'in-focus': mouseHover}")
+  //- Background image
+  div.c-event-preview__image
+    div(style="background-image: url({{ event.preview_image }})").has-image
+  //- Dark gradient layer
   div.c-event-preview__gradient--related
+  //- Preview content wrapper  
   div.c-event-preview__content--related
-    div.c-event-preview__year--related {{ item.year }}
-    h3.c-event-preview__title--related {{ item.title }}
+    div.c-event-preview__year--related {{ event.year }}
+    h2.c-event-preview__title--related {{ event.title }}

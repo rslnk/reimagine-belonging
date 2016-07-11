@@ -8,7 +8,7 @@ div.c-workshop__details
   div(ng-if="workshop.duration").is-detail
     strong {{ siteConfig.workshop_duration_label }}: 
     span {{ workshop.duration }}
-  div(ng-if="language.term_name").is-detail
+  div(ng-if="workshop.languages").is-detail
     strong {{ siteConfig.workshop_language_label }}: 
     span(ng-repeat="language in workshop.languages")
       | {{ language.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}

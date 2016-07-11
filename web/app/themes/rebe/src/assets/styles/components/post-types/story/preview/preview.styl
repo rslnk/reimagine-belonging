@@ -2,44 +2,25 @@
  * Story preview
  *
  *    Wraps:
- *      - `c-strory-preview__gradient, c-strory-preview__gradient--{color-modifier}`
+ *      - `c-strory-preview__image`
+ *      -  c-strory-preview__gradient`
  *      - `c-story-preview__content`
  *
- *    Focus/hover:
- *      - Triggers title animation
- *      - Changes color gradient opacity
- *
- *    Color modifiers:
+ *    Note on colors:
  *
  *    Each story has a color variable assigned to it. This variable's value is passed to
  *    the story preview item elements as CSS class modifier, like `--{{ story.preview_image_color }}`.
  *
- *    To style story preview based on assigned color we use
- *    predifined color modifiers for the following elements:
- *
- *    .c-story-preview--{color}          - color modifiers for the background image fallback
- *    .c-strory-preview__gradient--color - color modifiers for gradient overlaying the background image
- *    .c-story-preview__title--color     - color modifiers for title highlight animation on hover
- *
  */
 .c-story-preview
+  @extend .o-btn
+
   position relative
+  overflow hidden
 
   transition .5s ease-in-out
 
-  // Animation effects for child elements
-  &:hover
-  &:focus
-
-    // trigger title background animation
-    .c-story-preview__title
-      background-position -99%
-
-    // decrease gradient intensity
-    .c-strory-preview__gradient
-      opacity .45
-
-  // Aspect ratios
+  // Preview Aspect ratios
   +below('m', orientation: landscape)
     padding-bottom 65%
 
@@ -67,24 +48,73 @@
     span(1/6)
     padding-bottom 16.5%
 
-// Fallback color modifiers
-.c-story-preview--red
-  background-color $rose
+  // Conditional classes
+  .in-focus
 
-.c-story-preview--orange
-  background-color $orange
+    .c-story-preview__image
+      // Blur image
+      .has-image
+        -webkit-filter blur(4px)
+        -moz-filter blur(4px)
+        -o-filter blur(4px)
+        -ms-filter blur(4px)
+        filter blur(4px)
 
-.c-story-preview--yellow
-  background-color $yolk
+    .c-story-preview__gradient
+      padding-top 0
+      // Decrease gradient opacity
+      .has-gradient
+        opacity 1
 
-.c-story-preview--green
-  background-color $mint
+    .c-story-preview__title
+      // Animate title background by chnaging bg position
+      .has-background
+        background-position -99%
 
-.c-story-preview--blue
-  background-color $sky
+// Related story modifier
+.c-story-preview--related
+  @extend .c-story-preview
 
-.c-story-preview--indigo
-  background-color $indigo
+  +below('m')
+    stack()
+    padding-bottom 65% // aspect ratio
 
-.c-story-preview--violet
-  background-color $violet
+    margin-bottom rem(20px) // between stacked items
+
+  +between('m', 'l')
+    column(1/3, gutter: 2, cycle: 3)
+    padding-bottom 35%
+
+    margin-top 0
+    margin-bottom 0
+
+    &:nth-child(n+4) // add top margin to every element in the new row
+      margin-top rem(15px)
+
+  +between('l', 'xl')
+    column(1/4, gutter: 2, uncycle: 3, cycle: 4)
+    padding-bottom 25% // square ratio from here on
+
+    &:nth-child(n+4) // reset margin set by rule above
+      margin-top 0
+
+    &:nth-child(n+5)
+      margin-top rem(15px)
+
+  +above('xl')
+    column(1/5, gutter: 2, uncycle: 4, cycle: 5)
+    padding-bottom 20%
+
+    &:nth-child(n+5)
+      margin-top 0
+
+    &:nth-child(n+6)
+      margin-top rem(22px)
+
+  // Conditional classes
+  .in-focus
+
+    .c-story-preview__title--related
+      // Animate title background by chnaging bg position
+      .has-background
+        background-position -99%

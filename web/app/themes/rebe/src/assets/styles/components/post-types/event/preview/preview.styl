@@ -5,14 +5,6 @@
  *      - `c-event-preview__gradient`
  *      - `c-event-preview__content`
  *
- *    Note: this class has nested `is-disabled` class. As a temporary solution `is-disabled` class
- *    is not applyied dynamically (as it should be), so by default it set to `opacity: 0`.
- *    When filter is applied, a `c-event-preview--disabled` modifier is added by Angular, thereofore
- *    we describe `is-disabled` class one more time under this modifier. This solution is clumsy and
- *    and should be reworked when the timeline functionality is refactored.
- *
- *    `is-in-focus` nested class helps to create animation on preview item hover/focus.
- *
  */
 .c-event-preview
   @extend .o-btn
@@ -21,66 +13,136 @@
   overflow hidden
   float left
 
-  background-color $yolk // image fallback
+  // preview dimensions 1:1 ratio
+  width 101% // adding extra 1% fixes strange 1px 'border' glitch when overflow: hidden
+  padding-bottom 100%
+
+  background-color $gray--medium // image fallback color
   transition all .3s ease-in-out
 
-  // Preview image
-  .has-image
-    position absolute
-    z-index 0
-    background-size cover
+  // Conditional classes
+
+  // Event is filtered out
+  // When event is being filtered out (doesn't belong to selected topic)
+  .is-filtered
+    // Disable pointer
+    // Eevents are still clickable yet, let's not encourage this behaviour
+    cursor default
+
+    .c-event-preview__image
+      // Blur image, reduce opacity
+      .has-image
+        opacity .6
+
+        -webkit-filter blur(7px)
+        -moz-filter blur(7px)
+        -o-filter blur(7px)
+        -ms-filter blur(7px)
+        filter blur(7px)
+
+    .c-event-preview__content
+      // Reduce content opacity
+      opacity .5
+
+  // Event is in focus (mouse enter)
+  .in-focus
     transition all .3s ease-in-out
 
-  // Conditional class (see note above)
-  .is-disabled
-    opacity 0
-    transition opacity .3s ease-in-out
+    .c-event-preview__image
+      // Blur image
+      .has-image
+        -webkit-filter blur(5px)
+        -moz-filter blur(5px)
+        -o-filter blur(5px)
+        -ms-filter blur(5px)
+        filter blur(5px)
 
-  // This sub-class presets our preview hover/focus animation
-  .is-in-focus
-    display block
-    position absolute
-    bottom 0
+    .c-event-preview__gradient
+      // Increase gradient opacity
+      opacity 1
 
-    width 100%
+    .c-event-preview__content
+      // Move content up
+      bottom 20%
 
-    height 20px
-    height 0 // initial position
+// Related event preview modifier
+.c-event-preview--related
+  @extend .c-event-preview
 
-    background-image linear-gradient(0deg, rgba($yolk, 1) 5%, rgba($yolk, .55) 100%)
+  +below('m')
+    stack()
+    padding-bottom 65% // aspect ratio
 
-    transition all .13s ease-in-out
+    margin-bottom rem(20px) // between stacked items
 
-  &:hover
-  &:focus
+  +between('m', 'l')
+    column(1/3, gutter: 2, cycle: 3)
+    padding-bottom 35%
 
-    // Blur image
-    .has-image
+    margin-top 0
+    margin-bottom 0
+
+    &:nth-child(n+4) // add top margin to every element in the new row
+      margin-top rem(15px)
+
+  +between('l', 'xl')
+    column(1/4, gutter: 2, uncycle: 3, cycle: 4)
+    padding-bottom 25% // square ratio from here on
+
+    &:nth-child(n+4) // reset margin set by rule above
+      margin-top 0
+
+    &:nth-child(n+5)
+      margin-top rem(15px)
+
+  +above('xl')
+    column(1/5, gutter: 2, uncycle: 4, cycle: 5)
+    padding-bottom 20%
+
+    &:nth-child(n+5)
+      margin-top 0
+
+    &:nth-child(n+6)
+      margin-top rem(22px)
+
+  // Conditional classes
+
+  // Event is filtered out
+  // When event is being filtered out (doesn't belong to selected topic)
+  .is-filtered
+    // Disable pointer
+    // Eevents are still clickable yet, let's not encourage this behaviour
+    cursor default
+
+    .c-event-preview__image
+      // Blur image
+      opacity .6
+      -webkit-filter blur(7px)
+      -moz-filter blur(7px)
+      -o-filter blur(7px)
+      -ms-filter blur(7px)
+      filter blur(7px)
+
+    .c-event-preview__content--related
+      // Reduce content opacity
+      opacity .5
+
+  // Event is in focus (mouse enter)
+  .in-focus
+    transition all .3s ease-in-out
+
+    .c-event-preview__image
+      // Blur image
       -webkit-filter blur(5px)
       -moz-filter blur(5px)
       -o-filter blur(5px)
       -ms-filter blur(5px)
       filter blur(5px)
 
-    // Move content up
-    .c-event-preview__content
-      bottom 30%
+    .c-event-preview__gradient--related
+      // Increase gradient opacity
+      opacity 1
 
-    // Fill preview with solid color (from bottom up)
-    .is-in-focus
-      height 100%
-
-// Disabled modifier
-.c-event-preview--disabled
-  cursor default
-
-  .is-disabled
-      opacity .7
-
-      position absolute
-      z-index 99
-      size 100% // spans across entire preview
-
-      background-color: $lemon + 30%
-
-      transition opacity .3s ease-in-out
+    .c-event-preview__content--related
+      // Move content up
+      bottom 15%

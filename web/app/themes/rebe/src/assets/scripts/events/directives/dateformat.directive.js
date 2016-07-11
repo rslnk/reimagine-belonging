@@ -6,9 +6,9 @@ angular.module('dateFormat.directive', [])
       replace: true,
       templateUrl: templatesPath + 'partials/ng/date.html',
       scope: {
-        thedate: '@',
-        unknown: '@',
-        lang: '@'
+        eventdate: '@',
+        notexact: '@',
+        sitelanguage: '@'
       },
       link: function ($scope) {
         var months = {
@@ -16,14 +16,25 @@ angular.module('dateFormat.directive', [])
           'de_DE': ['Januar', 'Februar', 'March', 'April', "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember "],
         };
 
-        $scope.format = function () {
-          if( $scope.unknown === "1" ) {
-            return $scope.thedate.split('/')[0];
+        $scope.getEventYearOrFullDate = function () {
+          // Check if the exact date set to `unknown`
+          // If true, split date and return only year
+          if($scope.notexact === "1") {
+            return $scope.eventdate.split('/')[0];
           } else {
-            var date = new Date($scope.thedate);
+            // Otherwise construct full human-readable date in `d M y` format (i.e. 7 November, 1917)
+            // Use `site_language` settings from Site Config to determine date format and translation of the monts
+            var date = new Date($scope.eventdate);
             var d = date.getDate();
-            var m = months[$scope.lang][date.getMonth()];
+            var m = months[$scope.sitelanguage][date.getMonth()];
             var y = date.getFullYear();
+          }
+          // Output US date format
+          if($scope.sitelanguage == "en_US") {
+            return m + ' ' + d + ', ' + y;
+          }
+          // Output EU date format
+          else {
             return d + ' ' + m + ', ' + y;
           }
         };

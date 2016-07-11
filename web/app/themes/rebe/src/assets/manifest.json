@@ -55,9 +55,7 @@
     },
     "main.css": {
       "files": [
-        "styles/main.styl",
-        "styles/owl.carousel.min.css",
-        "styles/owl.theme.default.css"
+        "styles/main.styl"
       ],
       "bower": ["owl.carousel"],
       "main": true

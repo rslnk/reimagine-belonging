@@ -1,7 +1,17 @@
 # CHANGELOG
 
-# HEAD
+# 2.1.0 July 11th, 2016
 
+-   Fix `type` fields in Workshop ng app templates
+-   Improve ng app posts previews templates and styles
+-   Improve `dateFormat` directive for events ng app (now supports US date format)
+-   Replace `$scope` with `viewModel` in ng controllers
+-   Sort timeline events by event `start_date` instead of the `year`
+-   Add event year to API
+-   Update `ng-lodash` to 0.5.0
+-   Add `resourceUrlWhitelist` to ng apps to allow resource loading from trusted sources
+-   Improve timeline carousel UX and UI
+-   Switch to Owl Carousel 2, add it to bower
 -   Add helper function that constructs video embed code from video ID and host (legacy support for WP templates)
 -   Switch `video_url` field type to oEmbed to support embeded from the URL on WP templates
 -   Add page sidebar image orientation options to WP templates

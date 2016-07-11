@@ -31,7 +31,6 @@ class Page
             'id'                         => $this->post->ID,
             'title'                      => $this->post->post_title,
             'slug'                       => $this->post->post_name,
-            'permalink'                  => get_permalink($this->post->ID),
             'published_date_gmt'         => $this->post->post_date_gmt,
 
         ];

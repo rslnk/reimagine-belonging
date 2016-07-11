@@ -3,7 +3,6 @@ div(ng-switch-when="workshop").c-event__featured-workshop
   h3.has-title
     span {{ siteConfig.event_featured_workshop_title }}
         
-  //- Clickable quote/title
   article
     header.c-workshop-preview__head
       h2.c-workshop-preview__title {{ item.title }}
@@ -17,9 +16,6 @@ div(ng-switch-when="workshop").c-event__featured-workshop
           strong {{ siteConfig.workshop_target_group_label }}: 
           span {{ item.target_group }}
         div.is-detail
-          strong {{ siteConfig.workshop_group_size_label }}: 
-          span {{ item.group_size }}    
-        div.is-detail
           strong {{ siteConfig.workshop_duration_label }}: 
           span {{ item.duration }}
         div.is-detail
@@ -28,5 +24,5 @@ div(ng-switch-when="workshop").c-event__featured-workshop
             | {{ type.term_name }}{{ $last ? '' : ($index==term_name.length-2) ? ', and ' : ',&nbsp;' }}
 
     footer.c-workshop-preview__footer__
-      a(href="{{ item.external_slug }}").c-workshop-preview__cta
+      a(ng-href="{{ item.external_slug }}").c-workshop-preview__cta
         | {{ siteConfig.workshop_preview_cta_button_label }}

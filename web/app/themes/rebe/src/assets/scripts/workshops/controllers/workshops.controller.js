@@ -25,16 +25,16 @@ angular.module('workshops.controller', [])
   viewModel.toggleTopicInFilter = function (topic) {
     viewModel.page = 0;
 
-    var i = $scope.filter.topics.indexOf(topic);
+    var i = viewModel.filter.topics.indexOf(topic);
     if (i > -1) {
-      $scope.filter.topics.splice(i,1);
+      viewModel.filter.topics.splice(i,1);
     } else {
-      $scope.filter.topics.push(topic);
+      viewModel.filter.topics.push(topic);
     }
   };
 
   viewModel.resetTopicsFilter = function () {
-    $scope.filter.topics = [];
+    viewModel.filter.topics = [];
   };
 
   viewModel.loadWorkshops = function () {
@@ -51,15 +51,15 @@ angular.module('workshops.controller', [])
     $state.go('^');
   };
 
-  $scope.$watch('filter.topics', function () {
+  viewModel.$watch('filter.topics', function () {
     viewModel.checkTopics();
   }, true);
 
   viewModel.checkTopics = function () {
-    if ($scope.filter.topics.length === 0) {
+    if (viewModel.filter.topics.length === 0) {
       $location.search('topics', null);
     } else {
-      $location.search('topics', $scope.filter.topics.join(','));
+      $location.search('topics', viewModel.filter.topics.join(','));
     }
   };
 
@@ -68,8 +68,8 @@ angular.module('workshops.controller', [])
   };
 
   viewModel.getPages = function () {
-    var total = $filter('showWorkshops')($scope.workshops, $scope.filter).length;
-    var pages = Math.ceil(total/$scope.perPage);
+    var total = $filter('showWorkshops')(viewModel.workshops, viewModel.filter).length;
+    var pages = Math.ceil(total/viewModel.perPage);
     return new Array( pages );
   };
 
@@ -86,12 +86,12 @@ angular.module('workshops.controller', [])
   };
 
   viewModel.inPaginatorScope = function (i) {
-    var min = $scope.page*$scope.perPage;
-    var max = min + $scope.perPage;
+    var min = viewModel.page*viewModel.perPage;
+    var max = min + viewModel.perPage;
     return (i >= min && i < max);
   };
 
   viewModel.activePage = function (i) {
-    return (i === $scope.page);
+    return (i === viewModel.page);
   };
 }]);

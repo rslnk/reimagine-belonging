@@ -1,13 +1,24 @@
-div(
-  class="u-image-cover c-story-preview c-story-preview--{{ story.preview_image_color }}"
-  style="background-image: url({{ story.preview_image }})"
-)
-  div(class="c-strory-preview__gradient c-strory-preview__gradient--{{ story.preview_image_color }}")
-  
-  div.c-story-preview__content
-    div.c-story-preview__caption
-      h2(class="c-story-preview__title c-story-preview__title--{{ story.preview_image_color }}")
-        | {{ story.title }}
-      h3.c-story-preview__protagonist
-        strong {{ story.hero[0].term_name }},&nbsp;
-        | {{ story.cities[0].term_name }}
+article(
+  ng-mouseenter="mouseHover=true"
+  ng-mouseleave="mouseHover=false"
+).c-story-preview
+  //- Wrapper for nested classes (like `is-<color>`, `in-focus`)
+  div(ng-class="{'in-focus': mouseHover}")
+    //- Background image with fallback color
+    div.c-story-preview__image
+      div(
+        class="has-image is-{{ color }}"
+        style="background-image: url({{ image }})"
+      )
+    //- Color gradient layer
+    div(class="c-story-preview__gradient")
+      div(class="has-gradient is-{{ color }}")
+    //- Preview content wrapper
+    div.c-story-preview__content
+      div.c-story-preview__caption
+        //- Title with gradient background color animation on `ng-mouseenter`
+        h2.c-story-preview__title
+          span(class="has-background is-{{ color }}") {{ title }}
+        h3.c-story-preview__protagonist
+          strong {{ hero }},&nbsp;
+          | {{ city }}

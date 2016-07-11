@@ -9,7 +9,8 @@ angular.module('eventPreview.directive', [])
         image: '@',
         title: '@',
         year: '@',
-        slug: '@'
+        slug: '@',
+        filtered: '@'
       },
       link: function (scope, element, attr) {
         //

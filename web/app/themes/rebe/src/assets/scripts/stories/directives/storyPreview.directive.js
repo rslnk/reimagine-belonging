@@ -5,7 +5,16 @@ angular.module('storyPreview.directive', [])
       restrict: 'E',
       replace: true,
       templateUrl:  templatesPath + 'content/post-types/story/ng/preview.html',
-      link: function (scope, element) {
+      scope: {
+        image: '@',
+        color: '@',
+        title: '@',
+        hero: '@',
+        city: '@',
+        slug: '@',
+        filtered: '@'
+      },
+      link: function (scope, element, attr) {
         //
       }
     };

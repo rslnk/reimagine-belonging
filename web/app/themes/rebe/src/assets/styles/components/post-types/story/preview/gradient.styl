@@ -1,33 +1,38 @@
 /**
- * Preview gradient
- *
- *    Color gradient overlaying preview image
+ * Story preview gradient (color gradient layer)
  */
-.c-strory-preview__gradient
-  display block
+.c-story-preview__gradient
   position absolute
-  size 100%
+  width 100%
+  height 100%
+  padding-top 30% // intitial state that is changed on focus
 
-  transition .5s ease-in // on `.c-story-preview__content` hover/focus
+  transition .3s ease-in-out
 
-// Color gradient modifiers
-.c-strory-preview__gradient--violet
-  background-image linear-gradient(0deg, rgba($raspberry, .5) 0, rgba($raspberry, .0) 80%)
+  // Gradient container
+  .has-gradient
+    size 100%
+    opacity .6
+    transition .3s ease-in-out
 
-.c-strory-preview__gradient--indigo
-  background-image linear-gradient(0deg, rgba(saturation($indigo, 120%), .5) 0, rgba($indigo, .0) 80%)
+  // Preview gradient
+  .is-violet
+    background-image linear-gradient(0deg, rgba($raspberry, .8) 0, rgba($raspberry, .0) 80%)
 
-.c-strory-preview__gradient--blue
-  background-image linear-gradient(0deg, rgba($sky, .5) 0, rgba($sky, .0) 80%)
+  .is-indigo
+    background-image linear-gradient(0deg, rgba(saturation($indigo, 120%), .5) 0, rgba($indigo, .0) 80%)
 
-.c-strory-preview__gradient--green
-  background-image linear-gradient(0deg, rgba(saturation($mint, 120%), .5) 0, rgba($mint, .0) 80%)
+  .is-blue
+    background-image linear-gradient(0deg, rgba($sky, .8) 0, rgba($sky, .0) 80%)
 
-.c-strory-preview__gradient--yellow
-  background-image linear-gradient(0deg, rgba(saturation($yolk, 150%), .5) 0, rgba($yolk, .0) 80%)
+  .is-green
+    background-image linear-gradient(0deg, rgba(saturation($mint, 120%), .8) 0, rgba($mint, .0) 80%)
 
-.c-strory-preview__gradient--orange
-  background-image linear-gradient(0deg, rgba($orange, .5) 0, rgba($orange, .0) 80%)
+  .is-yellow
+    background-image linear-gradient(0deg, rgba(saturation($yolk, 150%), .8) 0, rgba($yolk, .0) 80%)
 
-.c-strory-preview__gradient--red
-  background-image linear-gradient(0deg, rgba($rose, .5) 0, rgba($rose, .0) 80%)
+  .is-orange
+    background-image linear-gradient(0deg, rgba($orange, .8) 0, rgba($orange, .0) 80%)
+
+  .is-red
+    background-image linear-gradient(0deg, rgba($rose, .8) 0, rgba($rose, .0) 80%)

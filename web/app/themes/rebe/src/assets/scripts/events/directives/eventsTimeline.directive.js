@@ -7,13 +7,7 @@ angular.module('eventsTimeline.directive', [])
       link: function (scope, element) {
         scope.initCarousel = function (element) {
           var defaultOptions = {
-            nav: false,
-            dots: true,
-            baseClass: 'c-timeline__carousel',
-            //itemClass:
-            dotClass: 'c-timeline__dot',
-            dotsClass: 'c-timeline__pagination',
-            // lazyLoad: true,
+            // lazyLoad: true, // needs additional implementation to work with Angular!
             // loop: true,
             responsive: {
               0 : {

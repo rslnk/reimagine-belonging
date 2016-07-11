@@ -33,7 +33,6 @@ class Story
             'published_date_gmt'         => $this->post->post_date_gmt,
             'slug'                       => $this->post->post_name,
             'app_base'                   => get_field('story_post_type_slug', 'option'),
-            'permalink'                  => get_permalink($this->post->ID),
             'preview_image'              => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
             'preview_image_color'        => $this->post->color,
 
@@ -58,7 +57,7 @@ class Story
             'title'                         => $this->post->post_title,
             'published_date_gmt'            => $this->post->post_date_gmt,
             'slug'                          => $this->post->post_name,
-            'permalink'                     => get_permalink($this->post->ID),
+            'app_base'                      => get_field('story_post_type_slug', 'option'),
             'preview_image'                 => wp_get_attachment_url(get_post_thumbnail_id($this->post->ID)),
             'preview_image_color'           => $this->post->color,
             'format'                        => get_post_format($this->post->ID),

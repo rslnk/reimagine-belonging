@@ -1,11 +1,11 @@
 //- Related stories (within stories app)
 div(ng-if="story.related_stories").c-story__content.c-story__related-stories
   h3.c-section-title {{ siteConfig.story_related_stories_title }}
-  ul.c-story__related-posts
-    li(
-      ng-repeat="item in story.related_stories"
-      ng-click="openStory(item.slug)"
-      class="c-story-preview--related c-story-preview--{{ item.preview_image_color }}"      
-      style="background-image: url({{ item.preview_image }})"
-    ).u-image-cover
+  div.c-story__related-posts
+    article(
+      ng-repeat="story in story.related_stories"
+      ng-click="openStory(story)"
+      ng-mouseenter="mouseHover=true"
+      ng-mouseleave="mouseHover=false"  
+    ).c-story-preview--related
       include ../../preview--related-post.jade

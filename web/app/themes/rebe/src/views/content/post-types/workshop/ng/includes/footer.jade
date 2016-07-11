@@ -3,9 +3,11 @@ footer.c-workshop__footer
     
     //- Related posts
     h2.c-section-title {{ siteConfig.workshop_related_workshops_label }}
-    ul.c-workshop__related-posts  
-      li(
+    div.c-workshop__related-posts  
+      article(
         ng-repeat="item in workshop.related_workshops"
         ng-click="openWorkshop(item.slug)"
+        ng-mouseenter="mouseHover=true"
+        ng-mouseleave="mouseHover=false"      
       ).c-workshop-preview--related
         include ../preview--related-post.jade

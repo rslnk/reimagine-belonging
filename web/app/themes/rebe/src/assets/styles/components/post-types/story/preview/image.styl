@@ -1,0 +1,37 @@
+/**
+ * Story preview (background) image
+ */
+.c-story-preview__image
+  position absolute
+  size 100%
+  transform scale(1.1) // hides blurred edges
+
+  // Preview image container
+  .has-image
+    size 100%
+    background-size cover
+    background-position center
+    
+    transition all .3s ease-in-out
+
+  // Fallback color (bg color while image is loading)
+  .is-red
+    background-color $rose
+
+  .is-orange
+    background-color $orange
+
+  .is-yellow
+    background-color $yolk
+
+  .is-green
+    background-color $mint
+
+  .is-blue
+    background-color $sky
+
+  .is-indigo
+    background-color $indigo
+
+  .is-violet
+    background-color $violet

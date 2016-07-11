@@ -1,9 +1,16 @@
-article.c-event-preview.u-image-cover.u-image-cover--square
-  div(style="background-image: url('{{ image }}')").has-image.u-image-cover--square
-  div.c-event-preview__strip
-  div.is-disabled
-  div.c-event-preview__gradient
-  div.is-in-focus
-  div.c-event-preview__content
-    div.c-event-preview__year {{ year }}
-    h2.c-event-preview__title {{ title }}
+article(
+  ng-mouseenter="mouseHover=true"
+  ng-mouseleave="mouseHover=false"
+).c-event-preview
+  div(ng-class="{'is-filtered': filtered == 'true', 'in-focus': mouseHover && filtered !== 'true'}")
+    //- Background image
+    div.c-event-preview__image
+      div(style="background-image: url({{ image }})").has-image
+    //- Yellow strip on the bottom of each preview
+    div.c-event-preview__strip
+    //- Dark gradient
+    div.c-event-preview__gradient
+    //- Preview content wrapper
+    div.c-event-preview__content
+      div.c-event-preview__year {{ year }}
+      h2.c-event-preview__title {{ title }}

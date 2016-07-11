@@ -21,33 +21,33 @@ angular.module('singleEvent.controller', [])
     });
 
   viewModel.next = function () {
-    var currentEvent = lodash.find($scope.events, function (event) {
+    var currentEvent = lodash.find(viewModel.events, function (event) {
       return event.slug === $stateParams.event;
     });
 
-    var i = lodash.indexOf($scope.events, currentEvent);
+    var i = lodash.indexOf(viewModel.events, currentEvent);
 
-    if (i === $scope.events.length) {
+    if (i === viewModel.events.length) {
       i = 0;
     }
 
-    var nextEvent = $scope.events[i+1];
+    var nextEvent = viewModel.events[i+1];
 
     $state.go('timeline.event', { event: nextEvent.slug });
   };
 
   viewModel.prev = function () {
-    var currentEvent = lodash.find($scope.events, function (event) {
+    var currentEvent = lodash.find(viewModel.events, function (event) {
       return event.slug === $stateParams.event;
     });
 
-    var i = lodash.indexOf($scope.events, currentEvent);
+    var i = lodash.indexOf(viewModel.events, currentEvent);
 
     if (i === 0) {
-      i = $scope.events.length;
+      i = viewModel.events.length;
     }
 
-    var prevEvent = $scope.events[i-1];
+    var prevEvent = viewModel.events[i-1];
 
     $state.go('timeline.event', { event: prevEvent.slug });
   };
