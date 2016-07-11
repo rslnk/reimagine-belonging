@@ -2,6 +2,7 @@
 
 # 2.1.0 July 11th, 2016
 
+-   Fix social links conditional statements in footer
 -   Fix `type` fields in Workshop ng app templates
 -   Improve ng app posts previews templates and styles
 -   Improve `dateFormat` directive for events ng app (now supports US date format)
