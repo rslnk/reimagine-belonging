@@ -8,8 +8,15 @@ angular.module('workshops.controller', [])
   viewModel.workshops = [];
   viewModel.filter = { topics: [], searchText: '' };
   viewModel.page = 0;
+
   // Get # of items per page form the stie config
-  viewModel.perPage = viewModel.siteConfig.workshops_per_page;
+  // NB! Taking value from `siteConfig.workshops_per_page` causes bug
+  // where limit is applied only to the first page in pagination,
+  // the rest of the pages ignore this value. Needs further investigation.
+  //viewModel.perPage =  viewModel.siteConfig.workshops_per_page;
+
+  // Setting perPage value manually for now:
+  viewModel.perPage = 4;
 
   viewModel.loadConfig = function () {
     ApiService

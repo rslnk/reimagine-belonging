@@ -5,7 +5,7 @@ div.c-stories__list
     ng-show="inPaginatorScope(k)"
     ng-repeat="(k, story) in stories|showStories:filter" 
     ng-click="openStory(story.slug)"
-    title="{{ story.title }}"
+    thetitle="{{ story.title }}"
     image="{{ story.preview_image }}"
     color="{{ story.preview_image_color }}"
     hero="{{ story.hero[0].term_name }}"

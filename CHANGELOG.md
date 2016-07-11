@@ -2,6 +2,8 @@
 
 # 2.1.0 July 11th, 2016
 
+-   Switch to manual `perPage` value in Stories/Workshops ng-apps until better solution
+-   Replace `title` attr with `thetitle` to avoid alt text showing up on `ng-mouseenter`
 -   Update Facebook SDK, fix `facebook_app_id` call in ng apps
 -   Fix social links conditional statements in footer
 -   Fix `type` fields in Workshop ng app templates

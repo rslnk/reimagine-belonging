@@ -316,7 +316,7 @@
             "label": "Stories Per Page",
             "name": "stories_per_page",
             "type": "number",
-            "instructions": "",
+            "instructions": "NB: This option is not yet unavailable!",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -459,7 +459,7 @@
             "label": "Workshops Per Page",
             "name": "workshops_per_page",
             "type": "number",
-            "instructions": "",
+            "instructions": "NB: This option is not yet unavailable!",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -574,5 +574,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "Language, Date, Google Analytics, Social, Timelines, Stories and Filters settings",
-    "modified": 1467375349
+    "modified": 1468252687
 }

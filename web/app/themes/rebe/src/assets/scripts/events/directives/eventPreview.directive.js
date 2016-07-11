@@ -7,7 +7,7 @@ angular.module('eventPreview.directive', [])
       templateUrl: templatesPath + 'content/post-types/event/ng/preview.html',
       scope: {
         image: '@',
-        title: '@',
+        thetitle: '@',
         year: '@',
         slug: '@',
         filtered: '@'

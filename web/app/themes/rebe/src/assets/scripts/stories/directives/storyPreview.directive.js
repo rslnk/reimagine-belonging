@@ -8,7 +8,7 @@ angular.module('storyPreview.directive', [])
       scope: {
         image: '@',
         color: '@',
-        title: '@',
+        thetitle: '@',
         hero: '@',
         city: '@',
         slug: '@',

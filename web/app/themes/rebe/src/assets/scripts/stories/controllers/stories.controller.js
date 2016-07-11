@@ -8,8 +8,15 @@ angular.module('stories.controller', [])
   viewModel.stories = [];
   viewModel.filter = { topics: [], searchText: '' };
   viewModel.page = 0;
+
   // Get # of items per page form the stie config
-  viewModel.perPage =  viewModel.siteConfig.stories_per_page;
+  // NB! Taking value from `siteConfig.stories_per_page` causes bug
+  // where limit is applied only to the first page in pagination,
+  // the rest of the pages ignore this value. Needs further investigation.
+  //viewModel.perPage =  viewModel.siteConfig.stories_per_page;
+
+  // Setting perPage value manually for now:
+  viewModel.perPage =  25;
 
   viewModel.loadConfig = function () {
     ApiService
