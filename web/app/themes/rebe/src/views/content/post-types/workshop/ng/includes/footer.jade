@@ -5,8 +5,8 @@ footer.c-workshop__footer
     h2.c-section-title {{ siteConfig.workshop_related_workshops_label }}
     div.c-workshop__related-posts  
       article(
-        ng-repeat="item in workshop.related_workshops"
-        ng-click="openWorkshop(item.slug)"
+        ng-repeat="workshop in workshop.related_workshops"
+        ng-click="openWorkshop(workshop.slug)"
         ng-mouseenter="mouseHover=true"
         ng-mouseleave="mouseHover=false"      
       ).c-workshop-preview--related

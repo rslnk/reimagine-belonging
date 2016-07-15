@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# HEAD
+
+-   Fix `ng-repeat` for related workshops on single workshop `footer.jade` template
+
 # 2.1.0 July 11th, 2016
 
 -   Switch to manual `perPage` value in Stories/Workshops ng-apps until better solution
