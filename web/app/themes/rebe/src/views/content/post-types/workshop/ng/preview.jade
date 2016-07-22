@@ -3,10 +3,10 @@ article(
   ng-mouseleave="mouseHover=false"
 ).c-workshop-preview
   header.c-workshop-preview__head
-    h2.c-workshop-preview__title {{ workshop.title }}
+    h2(ng-bind-html="workshop.title").c-workshop-preview__title
 
   main.c-workshop-preview__content
-    p.c-workshop-preview__caption {{ workshop.caption }}
+    p(ng-bind-html="workshop.caption").c-workshop-preview__caption
     
     //- Details
     div.c-workshop-preview__details

@@ -5,10 +5,10 @@
 //- Wrapper for nested classes (like `in-focus`)
 div(ng-class="{'in-focus': mouseHover}")
   header.c-workshop-preview__head
-    h2.c-workshop-preview__title--related {{ workshop.title }}
+    h2(ng-bind-html="workshop.title").c-workshop-preview__title--related
 
   main.c-workshop-preview__content
-    p.c-workshop-preview__caption--related {{ workshop.caption }}
+    p(ng-bind-html="workshop.caption").c-workshop-preview__caption--related
 
   footer.c-workshop-preview__footer
     div.c-workshop-preview__cta--related

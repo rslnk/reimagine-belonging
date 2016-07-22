@@ -1,7 +1,9 @@
 # CHANGELOG
 
-# HEAD
+# 2.1.1 July 22nd, 2016
 
+-   Set `ng-bind-html` for sidebar content and in previews
+-   Replace Event post sidebar video `url` field name with `video_url`
 -   Fix `ng-repeat` for related workshops on single workshop `footer.jade` template
 
 # 2.1.0 July 11th, 2016

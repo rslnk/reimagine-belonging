@@ -191,7 +191,7 @@
                         {
                             "key": "field_577851f470ec7",
                             "label": "Video URL",
-                            "name": "url",
+                            "name": "video_url",
                             "type": "oembed",
                             "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
                             "required": 1,
@@ -2798,5 +2798,5 @@
     ],
     "active": 1,
     "description": "Event post content + sidebar",
-    "modified": 1467723760
+    "modified": 1469179287
 }

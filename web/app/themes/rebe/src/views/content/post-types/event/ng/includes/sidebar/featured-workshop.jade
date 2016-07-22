@@ -5,10 +5,10 @@ div(ng-switch-when="workshop").c-event__featured-workshop
         
   article
     header.c-workshop-preview__head
-      h2.c-workshop-preview__title {{ item.title }}
+      h2(ng-bind-html="item.title").c-workshop-preview__title
 
     main.c-workshop-preview__content
-      p.c-workshop-preview__caption {{ item.caption }}
+      p(ng-bind-html="item.caption").c-workshop-preview__caption
       
       //- Details
       div.c-workshop-preview__details
