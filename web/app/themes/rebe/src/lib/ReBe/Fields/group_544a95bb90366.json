@@ -192,7 +192,7 @@
                             "key": "field_577851f470ec7",
                             "label": "Video URL",
                             "name": "video_url",
-                            "type": "oembed",
+                            "type": "text",
                             "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
                             "required": 1,
                             "conditional_logic": 0,
@@ -201,8 +201,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "width": "",
-                            "height": ""
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
                         },
                         {
                             "key": "field_577a32695985b",
@@ -2798,5 +2803,5 @@
     ],
     "active": 1,
     "description": "Event post content + sidebar",
-    "modified": 1469179287
+    "modified": 1469552653
 }

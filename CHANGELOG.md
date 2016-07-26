@@ -1,5 +1,9 @@
 # CHANGELOG
 
+# HEAD
+
+-   Change sidebar `video_url` field type from oEmbed to text field
+
 # 2.1.1 July 22nd, 2016
 
 -   Set `ng-bind-html` for sidebar content and in previews

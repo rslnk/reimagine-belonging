@@ -172,7 +172,7 @@
                             "key": "field_5777fee76365a",
                             "label": "Video URL",
                             "name": "video_url",
-                            "type": "oembed",
+                            "type": "text",
                             "instructions": "URL must be secure: 'https:\/\/'. Available services:  YouTube, Vimeo, Dailymotion, Vine, Youku.",
                             "required": 1,
                             "conditional_logic": 0,
@@ -181,8 +181,13 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "width": "",
-                            "height": ""
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
                         },
                         {
                             "key": "field_577a316d098ca",
@@ -923,5 +928,5 @@
     ],
     "active": 1,
     "description": "General content for pages and posts: lead, main + sidebar",
-    "modified": 1467723791
+    "modified": 1469552682
 }
