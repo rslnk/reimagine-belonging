@@ -2,6 +2,7 @@
 
 # HEAD
 
+-   Set dev server host to https in `rebe/src/assets/manifest.json`
 -   Switch from `gulp-jade` to `gulp-pug` task (for `ng/` templates only)
 -   Change sidebar `video_url` field type from oEmbed to text field
 
