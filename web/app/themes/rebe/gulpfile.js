@@ -11,7 +11,7 @@ var gulpif            = require('gulp-if');
 var iconfont          = require('gulp-iconfont');
 var imagemin          = require('gulp-imagemin');
 var imageminPngquant  = require('imagemin-pngquant');
-var jade              = require('gulp-jade');
+var pug               = require('gulp-pug');
 var jadePhp           = require('gulp-jade-php');
 var jeet              = require('jeet');
 var koutoSwiss        = require('kouto-swiss');
@@ -191,11 +191,11 @@ gulp.task('templates', function() {
 
   // Angular apps templates
   gulp.src([
-    './src/views/**/ng/**/*.jade', // only from ng directories
-    '!./src/views/**/ng/includes/**/*.jade', // exclude `includes` directories
-    '!./src/views/**/ng/**/includes/**/*.jade', // exclude `includes` directories
+    './src/views/**/ng/**/*.pug', // only from ng directories
+    '!./src/views/**/ng/includes/**/*.pug', // exclude `includes` directories
+    '!./src/views/**/ng/**/includes/**/*.pug', // exclude `includes` directories
   ])
-    .pipe(jade({
+    .pipe(pug({
       pretty: true
     }))
     .pipe(gulp.dest('./templates'))

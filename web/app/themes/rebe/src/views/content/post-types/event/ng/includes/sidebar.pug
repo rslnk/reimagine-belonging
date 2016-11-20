@@ -1,0 +1,12 @@
+aside.c-event__sidebar
+  //- Sidebar objects from the content
+  div(ng-repeat="item in event.sidebar" ng-switch="item.type")
+    include ../../../../../partials/ng/media-blocks/video.pug
+    include ../../../../../partials/ng/media-blocks/image.pug
+    include ./sidebar/quote.pug
+    include ./sidebar/sidenote.pug
+    include ./sidebar/featured-story.pug
+    include ./sidebar/featured-workshop.pug
+  
+  include ./sidebar/categories.pug
+  include ./sidebar/share.pug

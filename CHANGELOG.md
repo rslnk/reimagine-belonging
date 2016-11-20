@@ -2,6 +2,7 @@
 
 # HEAD
 
+-   Switch from `gulp-jade` to `gulp-pug` task (for `ng/` templates only)
 -   Change sidebar `video_url` field type from oEmbed to text field
 
 # 2.1.1 July 22nd, 2016

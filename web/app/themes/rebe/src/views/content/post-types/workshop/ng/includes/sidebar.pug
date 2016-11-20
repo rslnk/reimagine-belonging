@@ -1,0 +1,13 @@
+aside(ng-cloak ng-show="workshop.sidebar").c-workshop__sidebar
+  include ./sidebar/categories.pug  
+  include ./sidebar/details.pug
+  include ./sidebar/booking.pug
+  
+  //- Sidebar objects from the content
+  div(ng-repeat="item in workshop.sidebar" ng-switch="item.type") 
+    include ../../../../../partials/ng/media-blocks/video.pug
+    include ../../../../../partials/ng/media-blocks/image.pug
+    include ./sidebar/quote.pug
+    include ./sidebar/sidenote.pug
+  
+  include ./sidebar/share.pug
