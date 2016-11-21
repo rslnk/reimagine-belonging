@@ -2,30 +2,18 @@
 
 use Roots\Sage\Asset;
 use Roots\Sage\Assets\JsonManifest;
-use Roots\Sage\Template\WrapperCollection;
-use Roots\Sage\Template\WrapperInterface;
+use Roots\Sage\Template;
 use ReBe\Redirects\UserAgents;
 
-/**
- * @param WrapperInterface $wrapper
- * @param string $slug
- * @return string
- * @throws \Exception
- * @SuppressWarnings(PHPMD.StaticAccess) This is a helper function, so we can suppress this warning
- */
-function template_wrap(WrapperInterface $wrapper, $slug = 'base')
+function template($layout = 'base')
 {
-    WrapperCollection::add($wrapper, $slug);
-    return $wrapper->getWrapper();
+    return Template::$instances[$layout];
 }
 
-/**
- * @param string $slug
- * @return string
- */
-function template_unwrap($slug = 'base')
+function template_part($template, array $context = [], $layout = 'base')
 {
-    return WrapperCollection::get($slug)->getTemplate();
+    extract($context);
+    include template($layout)->partial($template);
 }
 
 /**
@@ -35,7 +23,7 @@ function template_unwrap($slug = 'base')
 function asset_path($filename)
 {
     static $manifest;
-    isset($manifest) || $manifest = new JsonManifest(get_template_directory() . '/' . Asset::$dist . '/assets.json');
+    isset($manifest) || $manifest = new JsonManifest(get_template_directory() . '/assets.json');
     return (string) new Asset($filename, $manifest);
 }
 

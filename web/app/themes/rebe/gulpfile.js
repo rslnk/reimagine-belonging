@@ -12,7 +12,7 @@ var iconfont          = require('gulp-iconfont');
 var imagemin          = require('gulp-imagemin');
 var imageminPngquant  = require('imagemin-pngquant');
 var pug               = require('gulp-pug');
-var jadePhp           = require('gulp-jade-php');
+var jadeToPhp         = require('gulp-jade-php');
 var jeet              = require('jeet');
 var koutoSwiss        = require('kouto-swiss');
 var lazypipe          = require('lazypipe');
@@ -118,7 +118,7 @@ var cssTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'src/assets/styles/'
+        sourceRoot: path.source + 'styles'
       }));
     })();
 };
@@ -147,7 +147,7 @@ var jsTasks = function(filename) {
     })
     .pipe(function() {
       return gulpif(enabled.maps, sourcemaps.write('.', {
-        sourceRoot: 'src/assets/scripts/'
+        sourceRoot: path.source + 'scripts'
       }));
     })();
 };
@@ -170,35 +170,36 @@ var writeToManifest = function(directory) {
 // Run `gulp -T` for a task summary
 
 // ### Templates
-// `gulp templates` - Compiles jade-php templates
+// `gulp templates` - Compiles templates using `gulp-jade-php` for converting 
+// `.jade` files to `.php` and `gulp-pug` for converting `.pug` files to `.html`
 // By default this task will only log a warning if a precompiler error is
 // raised. If the `--production` flag is set: this task will fail outright.
 gulp.task('templates', function() {
-  // PHP Templates
+  // PHP templates for WordPress
   gulp.src([
-    './src/views/**/*.jade',
+    path.source + 'views/**/*.jade',
     // Exclude following patterns:
-    '!./src/views/partials/**/*.jade', // exclude `partials` directories
-    '!./src/views/**/includes/**/*.jade', // exclude `includes` directories
-    '!./src/views/**/ng/**/*', // exclude 'ng' directories (angluar templates)
+    '!' + path.source + 'views/partials/**/*.jade',
+    '!' + path.source + 'views/**/includes/**/*.jade',
+    '!' + path.source + 'views/**/ng/**/*'
   ])
     .pipe(plumber())
-    .pipe(jadePhp({
+    .pipe(jadeToPhp({
       "pretty": true
     }))
     .pipe(plumber.stop())
-    .pipe(gulp.dest('./templates'));
+    .pipe(gulp.dest(path.dist + 'templates'));
 
-  // Angular apps templates
+  // HTML templates for Angular applications
   gulp.src([
-    './src/views/**/ng/**/*.pug', // only from ng directories
-    '!./src/views/**/ng/includes/**/*.pug', // exclude `includes` directories
-    '!./src/views/**/ng/**/includes/**/*.pug', // exclude `includes` directories
+    path.source + 'views/**/ng/**/*.pug',
+    '!' + path.source + 'views/**/ng/includes/**/*.pug',
+    '!' + path.source + 'views/**/ng/**/includes/**/*.pug'
   ])
     .pipe(pug({
       pretty: true
     }))
-    .pipe(gulp.dest('./templates'))
+    .pipe(gulp.dest(path.dist + 'templates'))
 });
 
 // ### Styles
@@ -249,7 +250,7 @@ gulp.task('iconfont', function(done){
   var objectsClass    = 'o-icon';
   var componentsClass = 'c-icon';
 
-  var iconStream = gulp.src(['./src/assets/icons/*.svg'])
+  var iconStream = gulp.src([path.source + 'icons/*.svg'])
     .pipe(iconfont({
       fontName: fontName,
       formats: ['ttf', 'eot', 'woff'],
@@ -261,34 +262,34 @@ gulp.task('iconfont', function(done){
       // Generate icons CSS objects classes
       function GenerateIconCssObjects(cb) {
         iconStream.on('glyphs', function(glyphs, options) {
-          gulp.src('./src/assets/styles/templates/_icon.styl') /* objects template */
+          gulp.src(path.source + 'styles/templates/_icon.styl') /* objects template */
             .pipe(consolidate('lodash', {
               glyphs: glyphs,
               fontName: fontName,
               fontPath: fontPath,
               objectsClass: objectsClass
             }))
-            .pipe(gulp.dest('./src/assets/styles/objects/'))
+            .pipe(gulp.dest(path.source + 'styles/objects/'))
             .on('finish', cb);
         });
       },
       // Generate icons CSS components classes
       function GenerateIconCssComponents(cb) {
         iconStream.on('glyphs', function(glyphs, options) {
-          gulp.src('./src/assets/styles/templates/_icons.styl') /* components template */
+          gulp.src(path.source + 'styles/templates/_icons.styl') /* components template */
             .pipe(consolidate('lodash', {
               glyphs: glyphs,
               objectsClass: objectsClass,
               componentsClass: componentsClass
             }))
-            .pipe(gulp.dest('./src/assets/styles/components/common-ui'))
+            .pipe(gulp.dest(path.source + 'styles/components/common-ui'))
             .on('finish', cb);
         });
       },
       // Output web fonts
       function outputFonts(cb) {
         iconStream
-          .pipe(gulp.dest('./dist/fonts/'))
+          .pipe(gulp.dest(path.dist + 'fonts'))
           .on('finish', cb);
       }
     ], done);
@@ -331,14 +332,14 @@ gulp.task('clean', require('del').bind(null, [path.dist]));
 // See: http://www.browsersync.io
 gulp.task('watch', function() {
   browserSync.init({
-    files: ['{src,templates}/**/*.php', 'src/views/**/*.html'],
+    files: ['{src,dist}/**/*.php', 'dist/**/*.html'],
     proxy: config.devUrl,
     snippetOptions: {
       whitelist: ['/wp-admin/admin-ajax.php'],
       blacklist: ['/wp-admin/**']
     }
   });
-  gulp.watch(['src/views/**/*'], ['templates']);
+  gulp.watch([path.source + 'views/**/*'], ['templates']);
   gulp.watch([path.source + 'icons/**/*'], ['iconfont', 'styles']);
   gulp.watch([path.source + 'styles/**/*'], ['styles']);
   gulp.watch([path.source + 'scripts/**/*'], ['scripts']);

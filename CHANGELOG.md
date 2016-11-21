@@ -2,6 +2,8 @@
 
 # HEAD
 
+-   Move `templates/` to `dist` — update theme wrapper, ng paths and gulp tasks
+-   Fix theme activation updates 'stylesheet' option instead of 'template'
 -   Add extra `padding-bottom` to home page tags (Proxima Nova baseline issue workaround)
 -   Simplify hover animations on stories and events previews to avoid text rendering issue in Safari
 -   Set `-webkit-font-smoothing` to `subpixel-antialiased` in `html` tag to force subpixel-antialiased font rendering in Safari

@@ -1,5 +1,5 @@
-//- Front page (home) specific layout
- 
+//- Basic layout
+
 doctype html
 
 //- Note: 'gulp-jade-php' doesn't support php functions inside tag, 
@@ -8,12 +8,10 @@ doctype html
 
 include ../partials/wp/head.jade
 
-body.c-home.js-home
+body
   - App\get_facebook_sdk()
-  div.has-background.js-background-image
-    include ../partials/wp/header.jade
-    - include App\template_unwrap()
-
+  include ../partials/wp/header.jade
+  - include App\template()->main()
   include ../partials/wp/footer/footer.jade
-
+  
 </html>

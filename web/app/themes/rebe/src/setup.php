@@ -1,5 +1,6 @@
 <?php namespace App;
 
+use Roots\Sage\Template;
 use ReBe\Routing\RewriteRoutes;
 use WPBasic\Navigation\NavWalker;
 use WPBasic\Post\PostType;

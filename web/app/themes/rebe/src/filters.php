@@ -39,23 +39,42 @@ add_filter('sage/display_sidebar', function ($display) {
     return $display ? !in_array(true, [
         is_404(),
         is_front_page(),
-        is_page_template('template-custom.php'),
+        is_page_template('templates/template-custom.php'),
     ]) : $display;
+});
+
+/**
+ * Add <body> classes
+ */
+add_filter('body_class', function (array $classes) {
+    // Add page slug if it doesn't exist
+    if (is_single() || is_page() && !is_front_page()) {
+        if (!in_array(basename(get_permalink()), $classes)) {
+            $classes[] = basename(get_permalink());
+        }
+    }
+
+    // Add class if sidebar is active
+    if (display_sidebar()) {
+        $classes[] = 'sidebar-primary';
+    }
+
+    return $classes;
 });
 
 /**
  * Add "… Continued" to the excerpt
  */
 add_filter('excerpt_more', function () {
-    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'rebe') . '</a>';
+    return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'cosmos') . '</a>';
 });
 
 /**
  * Use theme wrapper
  */
 add_filter('template_include', function ($main) {
-    if (!is_string($main) || !(string) $main) {
+    if (!is_string($main) && !(is_object($main) && method_exists($main, '__toString'))) {
         return $main;
     }
-    return template_wrap(new Wrapper(basename($main)));
+    return ((new Template(new Wrapper($main)))->layout());
 }, 109);

@@ -1,4 +1,5 @@
-//- Basic layout
+//- 404 Error page specific layout
+//- No header and no footer in this layout.
 
 doctype html
 
@@ -8,10 +9,8 @@ doctype html
 
 include ../partials/wp/head.jade
 
-body
-  - App\get_facebook_sdk()
-  include ../partials/wp/header.jade
-  - include App\template_unwrap()
-  include ../partials/wp/footer/footer.jade
-  
+body.c-404.js-404
+  - include App\template()->main()
+  - wp_footer()
+
 </html>

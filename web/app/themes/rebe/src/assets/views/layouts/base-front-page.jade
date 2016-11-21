@@ -1,0 +1,19 @@
+//- Front page (home) specific layout
+ 
+doctype html
+
+//- Note: 'gulp-jade-php' doesn't support php functions inside tag, 
+//- bypassing by using an actual html tag.
+<html <? language_attributes(); ?>>
+
+include ../partials/wp/head.jade
+
+body.c-home.js-home
+  - App\get_facebook_sdk()
+  div.has-background.js-background-image
+    include ../partials/wp/header.jade
+    - include App\template()->main()
+
+  include ../partials/wp/footer/footer.jade
+
+</html>
