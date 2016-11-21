@@ -4,8 +4,10 @@
  *    - enforces relative positioning
  *    - enforces 100% height
  *    - sets body substrate background color
+ *    - force subpixel-antialiased smoothing (for Safari)
  */
 html
   position relative
   height 100%
   background-color $gray--light
+  -webkit-font-smoothing subpixel-antialiased

@@ -18,8 +18,6 @@
   position relative
   overflow hidden
 
-  transition .5s ease-in-out
-
   // Preview Aspect ratios
   +below('m', orientation: landscape)
     padding-bottom 65%
@@ -54,11 +52,11 @@
     .c-story-preview__image
       // Blur image
       .has-image
-        -webkit-filter blur(4px)
-        -moz-filter blur(4px)
-        -o-filter blur(4px)
-        -ms-filter blur(4px)
-        filter blur(4px)
+        -webkit-filter blur(5px)
+        -moz-filter blur(2px)
+        -o-filter blur(2px)
+        -ms-filter blur(2px)
+        filter blur(2px)
 
     .c-story-preview__gradient
       padding-top 0
@@ -78,7 +76,6 @@
   +below('m')
     stack()
     padding-bottom 65% // aspect ratio
-
     margin-bottom rem(20px) // between stacked items
 
   +between('m', 'l')

@@ -24,7 +24,7 @@
 
   +above('m', orientation: portrait)
     padding rem(12px) rem(14px)
-    padding-bottom rem(14px) // Proxima Nova iPad rendering fix
+    padding-bottom rem(14px) // Proxima Nova baseline rendering issue fix
     font-size $kilo
 
   +below('m', orientation: landscape)
@@ -38,19 +38,19 @@
   // Laptops & Desktop screens
   +between('l', 'xl')
     padding rem(12px) rem(14px)
-    padding-bottom rem(14px) // Proxima Nova iPad rendering fix
+    padding-bottom rem(16px) // Proxima Nova baseline rendering issue fix
     font-size $kilo
 
   +at('xl')
     padding rem(14px) rem(16px)
-    padding-top rem(16px) // Proxima Nova iPad rendering fix
+    padding-bottom rem(18px) // Proxima Nova baseline rendering issue fix
     font-size $mega
 
   +at('hd')
     margin-right rem(5px)
     margin-bottom rem(5px)
     padding rem(16px) rem(20px)
-    padding-top rem(18px) // Proxima Nova iPad rendering fix
+    padding-bottom rem(20px) // Proxima Nova baseline rendering issue fix
     font-size $exa
     letter-spacing rem(1.8px)
 
@@ -58,5 +58,5 @@
     margin-right rem(7px)
     margin-bottom rem(7px)
     padding rem(18px) rem(24px)
-    padding-bottom rem(20px)
+    padding-bottom rem(22px) // Proxima Nova baseline rendering issue fix
     font-size $zetta

@@ -2,6 +2,9 @@
 
 # HEAD
 
+-   Add extra `padding-bottom` to home page tags (Proxima Nova baseline issue workaround)
+-   Simplify hover animations on stories and events previews to avoid text rendering issue in Safari
+-   Set `-webkit-font-smoothing` to `subpixel-antialiased` in `html` tag to force subpixel-antialiased font rendering in Safari
 -   Set dev server host to https in `rebe/src/assets/manifest.json`
 -   Switch from `gulp-jade` to `gulp-pug` task (for `ng/` templates only)
 -   Change sidebar `video_url` field type from oEmbed to text field

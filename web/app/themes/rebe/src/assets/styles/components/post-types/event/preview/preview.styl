@@ -10,15 +10,13 @@
   @extend .o-btn
 
   position relative
-  overflow hidden
   float left
 
   // preview dimensions 1:1 ratio
-  width 101% // adding extra 1% fixes strange 1px 'border' glitch when overflow: hidden
+  width 100%
   padding-bottom 100%
 
   background-color $gray--medium // image fallback color
-  transition all .3s ease-in-out
 
   // Conditional classes
 
@@ -41,13 +39,11 @@
         filter blur(7px)
 
     .c-event-preview__content
-      // Reduce content opacity
-      opacity .5
+      opacity .5 // Reduce content opacity
 
   // Event is in focus (mouse enter)
   .in-focus
-    transition all .3s ease-in-out
-
+    
     .c-event-preview__image
       // Blur image
       .has-image
@@ -58,21 +54,20 @@
         filter blur(5px)
 
     .c-event-preview__gradient
-      // Increase gradient opacity
-      opacity 1
+      opacity 1 // Increase gradient opacity
 
     .c-event-preview__content
-      // Move content up
-      bottom 20%
+      bottom 20% // Move content up
 
 // Related event preview modifier
 .c-event-preview--related
   @extend .c-event-preview
+  
+  overflow hidden
 
   +below('m')
     stack()
     padding-bottom 65% // aspect ratio
-
     margin-bottom rem(20px) // between stacked items
 
   +between('m', 'l')
@@ -124,12 +119,10 @@
       filter blur(7px)
 
     .c-event-preview__content--related
-      // Reduce content opacity
-      opacity .5
+      opacity .5 // Reduce content opacity
 
   // Event is in focus (mouse enter)
   .in-focus
-    transition all .3s ease-in-out
 
     .c-event-preview__image
       // Blur image
@@ -140,9 +133,7 @@
       filter blur(5px)
 
     .c-event-preview__gradient--related
-      // Increase gradient opacity
-      opacity 1
+      opacity 1 // Increase gradient opacity
 
     .c-event-preview__content--related
-      // Move content up
-      bottom 15%
+      bottom 15% // Move content up
